@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Heart } from "lucide-react"
 import { useState } from "react"
 
 interface HeaderProps {
@@ -30,8 +30,11 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           <Link href="#subscribe" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Iscriviti
           </Link>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Ultimo Episodio
+          <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
+            <Link href="/supportaci" className="flex items-center gap-1.5">
+              <Heart className="w-4 h-4 fill-current" />
+              Supportaci
+            </Link>
           </Button>
         </nav>
 
@@ -57,8 +60,11 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           <Link href="#subscribe" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
             Iscriviti
           </Link>
-          <Button size="sm" className="w-full bg-primary text-primary-foreground">
-            Ultimo Episodio
+          <Button size="sm" asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
+            <Link href="/supportaci" className="flex items-center justify-center gap-1.5" onClick={() => setMenuOpen(false)}>
+              <Heart className="w-4 h-4 fill-current" />
+              Supportaci
+            </Link>
           </Button>
         </nav>
       )}

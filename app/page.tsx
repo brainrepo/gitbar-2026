@@ -25,20 +25,17 @@ export default async function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-sm font-medium text-primary mb-4 tracking-wide uppercase">
-                  Un podcast per i curiosi
+                <p className="text-base font-bold text-foreground/90 mb-4 tracking-normal uppercase">
+                  Il dopolavoro digitale degli sviluppatori
                 </p>
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 text-balance">
+                <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 text-balance tracking-tight">
                   {info.title}
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-                  {info.description.substring(0, 200)}{info.description.length > 200 ? "..." : ""}
+                <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-lg">
+                Chiacchiere sincere tra quelli che una volta erano developer e oggi si chiedono se il codice lo stiamo ancora scrivendo noi o se siamo diventati i <strong>prompt-sitter</strong> di intelligenze artificiali capricciose. Le bestemmie, almeno quelle, restano artigianali e 100% umane.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                    Ascolta Ora
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-border hover:bg-secondary bg-transparent" asChild>
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                     <Link href="/episodes">Sfoglia Episodi</Link>
                   </Button>
                 </div>
@@ -104,13 +101,13 @@ export default async function HomePage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6 text-balance">
-                  Storie che ispirano, idee che contano
+                  Il circolo del dopolavoro degli sviluppatori
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  {info.description}
+                  Gitbar è il circolo del dopolavoro degli sviluppatori e ingegneri del software, dove la birra anche se virtuale è esentasse. Qui si chiacchiera di tutto: JavaScript e del suo ecosistema che cambia framework prima che finisci il caffè, Rust e della sua community che ti fa sentire inadeguato solo perché non hai riscritto il progetto per la terza volta, AI, DevOps, architetture, soft skills e blockchain (quella cosa che sta bene su tutto come il prezzemolo). Interviste con developer, dev rel e chiunque abbia storie interessanti da raccontare sul mondo dello sviluppo software.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Condotto da {info.author}, ogni episodio è un invito a esplorare le profondità dell'esperienza umana attraverso conversazioni stimolanti.
+                  Non ci prendiamo mai sul serio. Zero atteggiamenti da guru, zero formalità. Solo conversazioni oneste tra persone che scrivono codice, sbagliano, imparano e ogni tanto si domandano perché hanno scelto questa professione (per poi ricordarsi che è bellissima).
                 </p>
                 <div className="flex items-center gap-6">
                   <div>
