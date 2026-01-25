@@ -80,11 +80,11 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
           <div>
             <h4 className="font-medium text-foreground mb-4">Contatti</h4>
             <a
-              href="mailto:hello@thequiethour.com"
+              href="mailto:info@gitbar.it"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail className="w-4 h-4" />
-              hello@thequiethour.com
+              info@gitbar.it
             </a>
             <p className="mt-4 text-sm text-muted-foreground">
               Vuoi essere ospite? Ci piacerebbe sentirti.
