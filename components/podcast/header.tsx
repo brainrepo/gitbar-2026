@@ -19,7 +19,7 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           {podcastTitle}
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Navigazione Desktop */}
         <nav className="hidden md:flex items-center gap-8">
           <Link href="/episodes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Episodi
@@ -35,17 +35,17 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           </Button>
         </nav>
 
-        {/* Mobile Menu Toggle */}
+        {/* Pulsante Menu Mobile */}
         <button
           className="md:hidden p-2"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Apri/Chiudi menu"
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Navigazione Mobile */}
       {menuOpen && (
         <nav className="md:hidden border-t border-border bg-background px-6 py-4 space-y-4">
           <Link href="/episodes" className="block text-sm text-foreground" onClick={() => setMenuOpen(false)}>

@@ -10,13 +10,13 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
     <footer className="bg-secondary border-t border-border">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 md:gap-8">
-          {/* Brand */}
+          {/* Brand e Descrizione */}
           <div className="md:col-span-2">
             <Link href="/" className="font-serif text-2xl text-foreground">
               {podcastTitle}
             </Link>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-              A podcast dedicated to thoughtful conversations with creators, thinkers, and doers who are shaping the future. New episodes every Monday.
+              Un podcast dedicato a conversazioni stimolanti con creatori, pensatori e innovatori che stanno plasmando il futuro. Nuovi episodi ogni settimana.
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
@@ -49,23 +49,23 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Collegamenti */}
           <div>
             <h4 className="font-medium text-foreground mb-4">Podcast</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  All Episodes
+                  Tutti gli Episodi
                 </Link>
               </li>
               <li>
                 <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  About
+                  Chi Siamo
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Transcripts
+                  Trascrizioni
                 </Link>
               </li>
               <li>
@@ -76,9 +76,9 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contatti */}
           <div>
-            <h4 className="font-medium text-foreground mb-4">Contact</h4>
+            <h4 className="font-medium text-foreground mb-4">Contatti</h4>
             <a
               href="mailto:hello@thequiethour.com"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -87,21 +87,21 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
               hello@thequiethour.com
             </a>
             <p className="mt-4 text-sm text-muted-foreground">
-              Want to be a guest? We would love to hear from you.
+              Vuoi essere ospite? Ci piacerebbe sentirti.
             </p>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 {podcastTitle}. All rights reserved.
+            © 2026 {podcastTitle}. Tutti i diritti riservati.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Privacy
             </Link>
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Terms
+              Termini
             </Link>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _sans = Inter({ subsets: ["latin"] });
 const _serif = Space_Grotesk({ subsets: ["latin"] });
+const _mono = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   title: 'The Quiet Hour | A Podcast for Thoughtful Conversations',
@@ -37,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased ${_mono.variable}`}>
         {children}
         <Analytics />
       </body>

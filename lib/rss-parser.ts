@@ -145,11 +145,14 @@ export async function fetchPodcastData(): Promise<PodcastData> {
     const duration = getTagContent(item, "itunes:duration") || "0:00"
     const audioUrl = getAttr(item, "enclosure", "url")
     const episodeImage = getAttr(item, "itunes:image", "href") || info.image
-    const episodeNum = getTagContent(item, "itunes:episode")
+
+    // Extract episode number from title (format: "Ep.123 - Title")
+    const episodeMatch = title.match(/^Ep\.(\d+)\s*-/)
+    const episodeNum = episodeMatch ? parseInt(episodeMatch[1], 10) : items.length - index
 
     return {
       id: generateSlug(title, index),
-      number: episodeNum ? parseInt(episodeNum, 10) : items.length - index,
+      number: episodeNum,
       title,
       description: description.substring(0, 300) + (description.length > 300 ? "..." : ""),
       guest: {

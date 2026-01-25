@@ -7,36 +7,83 @@ import type { Episode } from "@/lib/rss-parser"
 interface EpisodeCardProps {
   episode: Episode
   featured?: boolean
+  youtubeUrl?: string
 }
 
-export function EpisodeCard({ episode, featured = false }: EpisodeCardProps) {
+// Estrai l'ID del video YouTube dall'URL
+const getYouTubeVideoId = (url: string): string | null => {
+  try {
+    const urlObj = new URL(url)
+    if (urlObj.hostname === 'youtu.be') {
+      return urlObj.pathname.slice(1)
+    }
+    if (urlObj.hostname.includes('youtube.com')) {
+      return urlObj.searchParams.get('v')
+    }
+  } catch {
+    return null
+  }
+  return null
+}
+
+export function EpisodeCard({ episode, featured = false, youtubeUrl }: EpisodeCardProps) {
+  const youtubeVideoId = youtubeUrl ? getYouTubeVideoId(youtubeUrl) : null
+
   if (featured) {
     return (
       <Link href={`/episode/${episode.id}`} className="group block">
         <article className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-          <div className="grid md:grid-cols-[400px_1fr] gap-0">
-            <div className="relative aspect-square max-h-[400px]">
-              <Image
-                src={episode.guest.image || "/placeholder.svg"}
-                alt={episode.guest.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-              <div className="absolute bottom-4 left-4 md:hidden">
-                <span className="text-xs font-medium text-card bg-primary px-2 py-1 rounded-full">
-                  Latest Episode
-                </span>
-              </div>
+          <div className={youtubeVideoId
+            ? "grid md:grid-cols-[500px_1fr] gap-0 items-stretch"
+            : "grid md:grid-cols-[400px_1fr] gap-0"
+          }>
+            <div className={`relative bg-black ${
+              youtubeVideoId
+                ? "aspect-video md:aspect-auto md:h-full w-full"
+                : "aspect-square max-h-[400px]"
+            }`}>
+              {youtubeVideoId ? (
+                // Mostra il video YouTube se disponibile (16:9)
+                <>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+                    title={episode.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                  <div className="absolute bottom-4 left-4 md:hidden z-10">
+                    <span className="text-xs font-medium text-card bg-primary px-2 py-1 rounded-full">
+                      Ultimo Episodio
+                    </span>
+                  </div>
+                </>
+              ) : (
+                // Mostra l'immagine di copertina come fallback (1:1)
+                <>
+                  <Image
+                    src={episode.guest.image || "/placeholder.svg"}
+                    alt={episode.guest.name}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 md:hidden">
+                    <span className="text-xs font-medium text-card bg-primary px-2 py-1 rounded-full">
+                      Ultimo Episodio
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
             <div className="p-6 md:p-8 flex flex-col justify-center">
               <div className="hidden md:block mb-3">
                 <span className="text-xs font-medium text-primary-foreground bg-primary px-3 py-1 rounded-full">
-                  Latest Episode
+                  Ultimo Episodio
                 </span>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
-                Episode {episode.number}
+                Episodio {episode.number}
               </p>
               <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3 group-hover:text-primary transition-colors text-balance">
                 {episode.title}
@@ -64,7 +111,7 @@ export function EpisodeCard({ episode, featured = false }: EpisodeCardProps) {
                 </span>
                 <span className="flex items-center gap-1.5 text-primary font-medium group-hover:underline">
                   <Play className="w-4 h-4 fill-primary" />
-                  Listen Now
+                  Ascolta Ora
                 </span>
               </div>
             </div>
@@ -113,7 +160,7 @@ export function EpisodeCard({ episode, featured = false }: EpisodeCardProps) {
               </div>
               <span className="flex items-center gap-1.5 text-xs text-primary font-medium flex-shrink-0">
                 <Play className="w-3 h-3 fill-primary" />
-                Play
+                Riproduci
               </span>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, Share2, YoutubeIcon } from "lucide-react"
 import { Header } from "@/components/podcast/header"
 import { Footer } from "@/components/podcast/footer"
 import { AudioPlayer } from "@/components/podcast/audio-player"
@@ -9,6 +9,8 @@ import { EpisodeCard } from "@/components/podcast/episode-card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { fetchPodcastData, getEpisodeById } from "@/lib/rss-parser"
+import { getEpisodeContent, getEpisodeTranscript } from "@/lib/episode-content"
+import ReactMarkdown from "react-markdown"
 
 interface EpisodePageProps {
   params: Promise<{ id: string }>
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: EpisodePageProps) {
   const episode = getEpisodeById(episodes, id)
   
   if (!episode) {
-    return { title: "Episode Not Found" }
+    return { title: "Episodio Non Trovato" }
   }
 
   return {
@@ -45,22 +47,44 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
     notFound()
   }
 
+  // Ottieni contenuto aggiuntivo
+  const episodeContent = await getEpisodeContent(episode.number)
+  const episodeTranscript = await getEpisodeTranscript(episode.number)
+
   const relatedEpisodes = episodes.filter((ep) => ep.id !== episode.id).slice(0, 3)
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString("it-IT", {
       year: "numeric",
       month: "long",
       day: "numeric",
     })
   }
 
+  // Estrai l'ID del video YouTube dall'URL
+  const getYouTubeVideoId = (url: string): string | null => {
+    try {
+      const urlObj = new URL(url)
+      if (urlObj.hostname === 'youtu.be') {
+        return urlObj.pathname.slice(1)
+      }
+      if (urlObj.hostname.includes('youtube.com')) {
+        return urlObj.searchParams.get('v')
+      }
+    } catch {
+      return null
+    }
+    return null
+  }
+
+  const youtubeVideoId = episodeContent?.youtubeUrl ? getYouTubeVideoId(episodeContent.youtubeUrl) : null
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header podcastTitle={info.title} />
 
       <main className="flex-1">
-        {/* Hero */}
+        {/* Sezione Hero */}
         <section className="py-8 md:py-12 px-6 bg-secondary/50">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -68,7 +92,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to all episodes
+              Torna a tutti gli episodi
             </Link>
 
             <div className="grid md:grid-cols-[200px_1fr] gap-8 items-start">
@@ -83,7 +107,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               </div>
               <div>
                 <p className="text-sm text-primary font-medium mb-2">
-                  Episode {episode.number}
+                  Episodio {episode.number}
                 </p>
                 <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4 text-balance">
                   {episode.title}
@@ -113,7 +137,27 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           </div>
         </section>
 
-        {/* Audio Player */}
+        {/* Video YouTube */}
+        {youtubeVideoId && (
+          <section className="py-8 px-6 border-b border-border bg-secondary/30">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-serif text-2xl text-foreground mb-6">
+                Guarda su YouTube
+              </h2>
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-xl"
+                  src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+                  title={episode.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Lettore Audio */}
         <section className="py-8 px-6 border-b border-border">
           <div className="max-w-4xl mx-auto">
             <AudioPlayer
@@ -124,14 +168,14 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           </div>
         </section>
 
-        {/* Content */}
+        {/* Contenuto */}
         <section className="py-12 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-[1fr_280px] gap-12">
-              {/* Show Notes */}
+              {/* Note dell'Episodio */}
               <div>
                 <h2 className="font-serif text-2xl text-foreground mb-6">
-                  Show Notes
+                  Note dell'Episodio
                 </h2>
                 <div className="prose prose-neutral max-w-none">
                   {episode.showNotes.split("\n\n").map((paragraph, index) => {
@@ -161,14 +205,118 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                     )
                   })}
                 </div>
+
+                {/* Descrizione Estesa */}
+                {episodeContent && (
+                  <div className="mt-12 pt-12 border-t border-border">
+                    <div className="prose prose-lg prose-neutral max-w-none prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium prose-strong:text-foreground prose-ul:text-muted-foreground prose-ul:my-6 prose-li:my-2 prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none">
+                      <ReactMarkdown
+                        components={{
+                          h1: ({children}) => (
+                            <h1 className="font-serif text-3xl text-foreground mt-8 mb-6 pb-3 border-b border-border">
+                              {children}
+                            </h1>
+                          ),
+                          h2: ({children}) => (
+                            <h2 className="font-serif text-2xl text-foreground mt-10 mb-5">
+                              {children}
+                            </h2>
+                          ),
+                          h3: ({children}) => (
+                            <h3 className="font-serif text-xl text-foreground mt-8 mb-4 flex items-center gap-2">
+                              <span className="inline-block w-2 h-2 rounded-full bg-primary"></span>
+                              {children}
+                            </h3>
+                          ),
+                          h4: ({children}) => (
+                            <h4 className="font-serif text-lg text-foreground mt-6 mb-3">
+                              {children}
+                            </h4>
+                          ),
+                        }}
+                      >
+                        {episodeContent.content}
+                      </ReactMarkdown>
+                    </div>
+                  </div>
+                )}
+
+                {/* Trascrizione */}
+                {episodeTranscript && (
+                  <div className="mt-12 pt-12 border-t border-border">
+                    <h2 className="font-serif text-2xl text-foreground mb-6">
+                      Trascrizione
+                    </h2>
+                    {(() => {
+                      // Funzione helper per formattare il testo con interruzioni di riga dopo i punti
+                      const formatTextWithLineBreaks = (text: string) => {
+                        // Dividi su ". " (punto seguito da spazio) ma mantieni il punto
+                        const sentences = text.split(/(\. )/g).reduce((acc: string[], part, i, arr) => {
+                          if (part === '. ' && i > 0) {
+                            // Aggiungi il punto alla frase precedente
+                            acc[acc.length - 1] += part.trim()
+                          } else if (part.trim()) {
+                            acc.push(part)
+                          }
+                          return acc
+                        }, [])
+
+                        return sentences.map((sentence, i) => (
+                          <span key={i} className="block mb-2">
+                            {sentence}
+                          </span>
+                        ))
+                      }
+
+                      // Controlla se questo è un monologo (singolo segmento con speaker/timestamp predefiniti)
+                      const isMonologue = episodeTranscript.segments.length === 1 &&
+                                         episodeTranscript.segments[0].speaker === "Host" &&
+                                         episodeTranscript.segments[0].timestamp === "00:00"
+
+                      if (isMonologue) {
+                        // Visualizza come testo semplice per i monologhi con font-mono
+                        return (
+                          <div className="prose prose-lg prose-neutral max-w-none">
+                            <div className="text-muted-foreground leading-relaxed font-mono text-sm">
+                              {formatTextWithLineBreaks(episodeTranscript.segments[0].text)}
+                            </div>
+                          </div>
+                        )
+                      }
+
+                      // Visualizza con speaker/timestamp per le conversazioni
+                      return (
+                        <div className="space-y-6">
+                          {episodeTranscript.segments.map((segment, index) => (
+                            <div key={index} className="flex gap-4">
+                              <div className="flex-shrink-0">
+                                <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-secondary border border-border text-xs font-mono text-foreground font-medium">
+                                  {segment.timestamp}
+                                </span>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-semibold text-foreground mb-1 uppercase tracking-wide">
+                                  {segment.speaker}
+                                </p>
+                                <div className="text-muted-foreground leading-relaxed font-mono text-sm">
+                                  {formatTextWithLineBreaks(segment.text)}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )
+                    })()}
+                  </div>
+                )}
               </div>
 
-              {/* Sidebar */}
+              {/* Barra Laterale */}
               <aside className="space-y-8">
-                {/* Host Info */}
+                {/* Informazioni Conduttore */}
                 <div className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-sm font-medium text-muted-foreground mb-4">
-                    Hosted by
+                    Condotto da
                   </h3>
                   <div className="flex items-center gap-4 mb-4">
                     <Image
@@ -180,26 +328,44 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                     />
                     <div>
                       <p className="font-medium text-foreground">{info.author}</p>
-                      <p className="text-sm text-muted-foreground">Host</p>
+                      <p className="text-sm text-muted-foreground">Conduttore</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Share */}
+                {/* Condivisione */}
                 <div className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-sm font-medium text-muted-foreground mb-4">
-                    Share this Episode
+                    Condividi questo Episodio
                   </h3>
                   <Button variant="outline" className="w-full justify-center gap-2 bg-transparent">
                     <Share2 className="w-4 h-4" />
-                    Share
+                    Condividi
                   </Button>
                 </div>
 
-                {/* Listen On */}
+                {/* Link YouTube */}
+                {episodeContent?.youtubeUrl && (
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <h3 className="text-sm font-medium text-muted-foreground mb-4">
+                      Guarda su YouTube
+                    </h3>
+                    <a
+                      href={episodeContent.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+                    >
+                      <YoutubeIcon className="w-5 h-5" />
+                      Apri su YouTube
+                    </a>
+                  </div>
+                )}
+
+                {/* Ascolta Su */}
                 <div className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-sm font-medium text-muted-foreground mb-4">
-                    Listen On
+                    Ascolta su
                   </h3>
                   <div className="space-y-3">
                     <a
@@ -242,12 +408,12 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
           </div>
         </section>
 
-        {/* Related Episodes */}
+        {/* Episodi Correlati */}
         {relatedEpisodes.length > 0 && (
           <section className="py-16 px-6 bg-secondary/50">
             <div className="max-w-6xl mx-auto">
               <h2 className="font-serif text-2xl text-foreground mb-8">
-                More Episodes
+                Altri Episodi
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedEpisodes.map((ep) => (

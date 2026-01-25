@@ -4,6 +4,7 @@ import { Header } from "@/components/podcast/header"
 import { Footer } from "@/components/podcast/footer"
 import { EpisodeCard } from "@/components/podcast/episode-card"
 import { fetchPodcastData } from "@/lib/rss-parser"
+import { getEpisodeContent } from "@/lib/episode-content"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -11,12 +12,15 @@ export default async function HomePage() {
   const { info, episodes } = await fetchPodcastData()
   const [latestEpisode, ...otherEpisodes] = episodes
 
+  // Ottieni contenuto aggiuntivo per l'ultimo episodio (per ottenere l'URL YouTube se disponibile)
+  const latestEpisodeContent = latestEpisode ? await getEpisodeContent(latestEpisode.number) : null
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header podcastTitle={info.title} />
 
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Sezione Hero */}
         <section className="py-16 md:py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -61,17 +65,21 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Featured Episode */}
+        {/* Episodio in Evidenza */}
         {latestEpisode && (
           <section className="py-16 px-6 bg-secondary/50">
             <div className="max-w-6xl mx-auto">
               <h2 className="font-serif text-3xl text-foreground mb-8">Ultimo Episodio</h2>
-              <EpisodeCard episode={latestEpisode} featured />
+              <EpisodeCard
+                episode={latestEpisode}
+                featured
+                youtubeUrl={latestEpisodeContent?.youtubeUrl}
+              />
             </div>
           </section>
         )}
 
-        {/* Episode Grid */}
+        {/* Griglia Episodi */}
         {otherEpisodes.length > 0 && (
           <section className="py-16 px-6">
             <div className="max-w-6xl mx-auto">
@@ -90,7 +98,7 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* About Section */}
+        {/* Sezione Chi Siamo */}
         <section id="about" className="py-16 px-6 bg-secondary/50">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -130,7 +138,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Newsletter */}
+        {/* Iscrizione Newsletter */}
         <section id="subscribe" className="py-16 px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4 text-balance">

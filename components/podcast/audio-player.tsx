@@ -18,7 +18,8 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
   const [duration, setDuration] = useState(0)
   const [volume, setVolume] = useState(80)
   const [isMuted, setIsMuted] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
+  const [hasUserInteracted, setHasUserInteracted] = useState(false)
 
   useEffect(() => {
     const audio = audioRef.current
@@ -65,12 +66,50 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
     const audio = audioRef.current
     if (!audio) return
 
+    // Carica la sorgente audio solo quando l'utente interagisce per la prima volta
+    if (hasUserInteracted && audioUrl && !audio.src) {
+      setIsLoading(true)
+      audio.src = audioUrl
+      audio.load()
+    }
+
     if (isPlaying) {
       audio.play().catch(() => setIsPlaying(false))
     } else {
       audio.pause()
     }
-  }, [isPlaying])
+  }, [isPlaying, hasUserInteracted, audioUrl])
+
+  // Configura l'API Media Session per i controlli nativi
+  useEffect(() => {
+    if (!('mediaSession' in navigator) || !hasUserInteracted) return
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: title,
+      artist: 'GitBar Podcast',
+      album: `Episodio ${episodeNumber}`,
+      artwork: [
+        { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+        { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      ]
+    })
+
+    navigator.mediaSession.setActionHandler('play', () => setIsPlaying(true))
+    navigator.mediaSession.setActionHandler('pause', () => setIsPlaying(false))
+    navigator.mediaSession.setActionHandler('seekbackward', () => skipBack())
+    navigator.mediaSession.setActionHandler('seekforward', () => skipForward())
+    navigator.mediaSession.setActionHandler('previoustrack', null)
+    navigator.mediaSession.setActionHandler('nexttrack', null)
+
+    return () => {
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.setActionHandler('play', null)
+        navigator.mediaSession.setActionHandler('pause', null)
+        navigator.mediaSession.setActionHandler('seekbackward', null)
+        navigator.mediaSession.setActionHandler('seekforward', null)
+      }
+    }
+  }, [title, episodeNumber, hasUserInteracted])
 
   useEffect(() => {
     const audio = audioRef.current
@@ -122,26 +161,29 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
   }
 
   const togglePlay = () => {
+    // Segna che l'utente ha interagito (per attivare il caricamento audio)
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true)
+    }
     setIsPlaying(!isPlaying)
   }
 
   return (
     <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-      {audioUrl && (
-        <audio ref={audioRef} src={audioUrl} preload="metadata" />
-      )}
-      
+      {/* Elemento audio con caricamento lazy - src è impostato programmaticamente al primo play */}
+      <audio ref={audioRef} preload="none" />
+
       <div className="flex items-center gap-4 mb-6">
         <div className="w-16 h-16 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-serif text-lg">
           {episodeNumber}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-muted-foreground mb-1">Now Playing</p>
+          <p className="text-xs text-muted-foreground mb-1">In Riproduzione</p>
           <h3 className="font-serif text-lg text-foreground truncate">{title}</h3>
         </div>
       </div>
 
-      {/* Progress Bar */}
+      {/* Barra di Progresso */}
       <div className="mb-4">
         <Slider
           value={[currentTime]}
@@ -157,7 +199,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
         </div>
       </div>
 
-      {/* Controls */}
+      {/* Controlli */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Button
@@ -168,7 +210,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             disabled={!audioUrl}
           >
             <SkipBack className="w-5 h-5" />
-            <span className="sr-only">Skip back 15 seconds</span>
+            <span className="sr-only">Indietro di 15 secondi</span>
           </Button>
 
           <Button
@@ -184,7 +226,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             ) : (
               <Play className="w-5 h-5 ml-0.5" />
             )}
-            <span className="sr-only">{isPlaying ? "Pause" : "Play"}</span>
+            <span className="sr-only">{isPlaying ? "Pausa" : "Riproduci"}</span>
           </Button>
 
           <Button
@@ -195,7 +237,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             disabled={!audioUrl}
           >
             <SkipForward className="w-5 h-5" />
-            <span className="sr-only">Skip forward 30 seconds</span>
+            <span className="sr-only">Avanti di 30 secondi</span>
           </Button>
         </div>
 
@@ -212,7 +254,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             ) : (
               <Volume2 className="w-4 h-4" />
             )}
-            <span className="sr-only">{isMuted ? "Unmute" : "Mute"}</span>
+            <span className="sr-only">{isMuted ? "Riattiva audio" : "Silenzia"}</span>
           </Button>
           <Slider
             value={[isMuted ? 0 : volume]}
