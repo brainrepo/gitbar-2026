@@ -24,9 +24,7 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           <Link href="/episodes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Episodi
           </Link>
-          <Link href="/speakers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Speaker
-          </Link>
+    
           <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
             <Link href="/supportaci" className="flex items-center gap-1.5">
               <Heart className="w-4 h-4 fill-current" />
