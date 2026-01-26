@@ -353,9 +353,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               <aside className="space-y-8">
                 {/* Informazioni Conduttore */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
+                  <p className="text-sm font-medium text-muted-foreground mb-4">
                     Condotto da
-                  </h3>
+                  </p>
                   <div className="flex items-center gap-4 mb-4">
                     <Image
                       src={info.image || "/placeholder.svg"}
@@ -373,9 +373,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
                 {/* Condivisione */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
+                  <p className="text-sm font-medium text-muted-foreground mb-4">
                     Condividi questo Episodio
-                  </h3>
+                  </p>
                   <Button variant="outline" className="w-full justify-center gap-2 bg-transparent">
                     <Share2 className="w-4 h-4" />
                     Condividi
@@ -385,9 +385,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                 {/* Link YouTube */}
                 {episodeContent?.youtubeUrl && (
                   <div className="bg-card border border-border rounded-xl p-6">
-                    <h3 className="text-sm font-medium text-muted-foreground mb-4">
+                    <p className="text-sm font-medium text-muted-foreground mb-4">
                       Guarda su YouTube
-                    </h3>
+                    </p>
                     <a
                       href={episodeContent.youtubeUrl}
                       target="_blank"
@@ -402,9 +402,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
                 {/* Ascolta Su */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
+                  <p className="text-sm font-medium text-muted-foreground mb-4">
                     Ascolta su
-                  </h3>
+                  </p>
                   <div className="space-y-3">
                     <a
                       href="#"
