@@ -1,0 +1,1557 @@
+Mauro Murru (01:51)
+Bene, bene e benvenuti su GitBAR. Nuova settimana e nuovo ritorno per GitBAR qua nei microfoni del nostro podcast che non è morto ma è andato in letargo liturgico per circa sette mesi, sei mesi, ormai ho perso il conto. Siamo di nuovo qua con una vistosa emozione perché quando si riaccendono i microfoni...
+
+è una cosa indescrivibile, semplicemente questo. Siamo di nuovo qua, non vi abbiamo abbandonato del tutto, nel senso che parte del nostro pensiero era ancora rivolto al podcast, a tutti gli amici che... che... amiche che ci ascoltano. E... eccoci qua Luca allora, abbiamo di nuovo preso s...
+
+Luca (02:40)
+Ed
+
+eccoci qua ed eccoci qua. Sì sì no io già avevamo detto che avevamo preso una lunga pausa estiva e ci siamo no insomma io le luci di Natale non le ho ancora messe quindi siamo siamo ancora in estate
+
+Mauro Murru (02:51)
+Sì l'estate ha appena finito.
+
+in realtà qua hanno già messo
+
+tutte le illuminazioni ma non le accendono fino a credo l'immacolata però sì ormai è natale ormai è natale e siamo qua tra l'altro riguardando la sigla penso che sia l'unica sigla di un podcast o di un canale youtube che parla di tecnologia che non menziona l'ai credo che debba essere un po' svecchiata no?
+
+Massimo Artizzu (03:22)
+No, ci avrò un passaggio!
+
+Davide (03:24)
+No, no, c'era un passaggio
+
+dove lo mettevi. Anche Mauro si è piegato, sì, sì.
+
+Mauro Murru (03:27)
+⁓ sì!
+
+Luca (03:30)
+Ma oggi non parliamo di AI applicato? No, no dai, oggi no, niente, basta AI.
+
+Mauro Murru (03:30)
+C'era.
+
+No, assolutamente no. No, no, no per ora, no per
+
+ora, però magari potrebbe esserci una rubrica, una rubrica. ⁓ attenzione, attenzione.
+
+Davide (03:41)
+parleremo anche dei AI, fidatevi.
+
+Così svegliamo quelli che stanno addormentando, sentono iai e si accende il... esatto, si accende il neurone.
+
+Mauro Murru (03:51)
+⁓ E-esatto, ormai...
+
+Luca (03:53)
+Ai ai in
+
+Emiliano Pisu (03:54)
+⁓
+
+Luca (03:54)
+quel senso,
+
+Emiliano Pisu (03:54)
+sì!
+
+Luca (03:55)
+ai ai ai.
+
+Mauro Murru (03:56)
+Ormai ormai non si sente parlare di altri, io mi sono anche un po' rotto le balle, onestamente. Questa cosa l'ho già condivisa con Emiliano, Davide e Luca un po' di mesi fa, due mesi fa, un mese e mezzo fa, quando quando ci siamo visti. Però però abbiamo già svelato gli ospiti e questa non è cosa buona, ormai abbiamo perso, abbiamo perso il filo.
+
+Luca (04:25)
+mi ho perso
+
+il ritmo, filo.
+
+Mauro Murru (04:25)
+Allora presentiamo
+
+i nostri ospiti. Allora, avrei potuto presentarli uno per uno, e questa lo farò, però mi piace introdurli così, sono i tre moschettieri del CSS. Eeeh, oggi abbiamo infatti Davide di Pumpo, Emiliano Pisu, Massimo Artizzu, eeeh,
+
+parlare di css insomma in poche parole l'episodio di oggi Potrebbe essere intitolato facciamo a merda mauro e il suo tailwind css qualcosa del genere no
+
+Massimo Artizzu (05:07)
+ma non sapevo che tu fossi l'autore di quello di cui andremo a parlare perché non lo sai, sei un merutizio.
+
+Mauro Murru (05:12)
+No, non sono... non sono l'autore
+
+ma son...
+
+Davide (05:17)
+Sei un fan, sei un fan. Ti senti come tipo i milanisti che pensano di essere il Milan,
+
+Massimo Artizzu (05:19)
+...
+
+Mauro Murru (05:23)
+in realtà in realtà
+
+sono sono tipo tipo boh più che fan direi che sono quello che l'ha trovato utile e dice ⁓ questa cosa funziona per me si fotano tutti gli altri funziona per me è bom sai sapete quando si superano i 40 anni
+
+non sei manco più fan della vita, quindi alla fine si passa a questa visione utilitaristica delle cose, tale per cui manca proprio quell'attaccamento morboso e ingiustificato alle cose e soprattutto manca quello da qui a tutta la vita, perché tanto sai che dopo due mesi puoi cambiare idea perché ormai hai cambiato idea su tutto, vi faccio un esempio.
+
+fino a sette anni fa tutti pensavano che Elon Musk era un genio tutti tutti adesso guardiamoci attorno e proviamo a immaginare cosa la gente pensa di Elon Musk no quindi alla fine quella tifoseria da stadio viene via via mancando e secondo me è un bene nella tecnologia allora vi faccio una domanda per iniziare
+
+C'è mai stata la tifoseria da stadio per CSS che invece ha per tanto tempo dominato come tecnologia unica per descrivere la parte estetica e visuale delle cose?
+
+Massimo Artizzu (07:02)
+parte.
+
+Davide (07:05)
+Guarda io ti dico che avevo fatto un talk al CSSD 8 anni fa che era CSS figli di un dio minore proprio per dire che invece non è mai successo almeno non che io sappia dalle tempi di io ho iniziato il primo sito nel 98 iniziato il primo progetto pagato 2003
+
+che gli verso mensilmente i contributi con regolarità quindi non ho mai sentito questa roba qua ho sentito magari tipo, mi sono fatto tutte le fasi A tipo ⁓ noi usiamo Rubio on Rails, io sono stato uno dei primi a vedere SASS quando ero ancora solo su Rubio on Rails ho visto la fase di Bootstrap, post CSE, ho visto le varie guerre ma ha sempre fatto
+
+Cacare a tutti è una cosa che mi ha sempre accomunato. Ma non quel cacare bello tipo l'HTML, no? Se tu prendi, faccio un'analogia, se tu prendi i Cavalieri dello Zodiaco, ok? Tu c'hai Pegasus, che quello figo che piace, c'è il protagonista, bla bla bla. Poi c'hai quello che nei cartoon animati giapponesi è il Bassista Charismatico, Litomi, Ikki di Phoenix, cioè che è capito?
+
+E poi c'è anche magari altri personaggi che soffighiano. C'è stato Andromeda. È sempre stato il personaggio che tu nessuno voleva fare quando si impersonava. Volevo fare che gli... Esatto, lo stendino.
+
+Mauro Murru (08:44)
+lo stendino in poche parole, no?
+
+poi in fine trasmissione vi spiegheremo perché di questo stendino
+
+Davide (08:50)
+⁓
+
+Emiliano Pisu (08:55)
+mentre invece magari lo stendino è tailwind, capito? potrebbe essere così? più o di 3... buona sera!
+
+Davide (08:59)
+⁓ magari no è più l'idraulico secondo me lo usi perché ne bisogno e poi esatto e
+
+Massimo Artizzu (09:09)
+C'è da dire che
+
+Davide (09:10)
+poi
+
+Massimo Artizzu (09:10)
+se c'è stato un momento in cui si sono proprio formate delle sorte di tifoserie forse stiamo assistendo proprio a quel momento perché è anche vero che sì mentre per quanto riguarda css ci sono sempre state poche opinioni bold opinions in realtà noi qui ne abbiamo una fraccata però
+
+di fatto sono sempre state abbastanza localizzate. Per quanto riguarda invece Tailwind e la sua doazione che è stata così virulenta ed estesa, Jocoforza si sono replicati alcuni meccanismi che abbiamo visto invece con altri sistemi come poteva essere appunto Pre-Ack
+
+anziché poteva essere Angola, poteva essere Vue eccetera eccetera un po' di queste battaglie e quindi se c'è un momento in cui sta proprio forse capitando questo in maniera un po' più significativa forse proprio questo è momento
+
+Luca (10:23)
+forse però c'è stato un momento, che poi è passato un attimo, momento in cui quel CSS si è un po' evoluto e si è cominciato a fare a meno un pochino del JavaScript con il JavaScript dove facevi l'over con il tanto tanto tanto del tuo file e poi c'è stato un momento a Noma
+
+via adesso si fa col css facciamolo e tant'è che sono nati un sacco di esperimenti applicativi e ho comunque anche pagine fatte completamente in css con il badge senza uso di javascript sfoggiato con grande orgoglio però è durato poco a quel momento ci siamo abituati abbastanza in fretta forse perché javascript fa cacare del css non lo so forse forse ci siamo
+
+ci siamo abituati a questa. No, io riporto il comune sentore, io doro JavaScript a Mojang Query, niente. Non posso che parlar bene.
+
+Emiliano Pisu (11:14)
+Sei andato molto bold su questa Luca,
+
+Mauro Murru (11:26)
+No!
+
+Massimo Artizzu (11:26)
+anche a me piace molto
+
+Davide (11:26)
+per di conoscenza.
+
+Massimo Artizzu (11:29)
+soltanto che se c'è una cosa che posso fare con css la faccio con css
+
+Davide (11:35)
+Questa cosa qui si chiama, senza scomodare le influencer su Instagram, si chiama resilienza, che c'ha un significato nell'informatica molto più importante del tatuaggio che magari ci facciamo sulla vambraccio sinistro, che sì, esatto, è un linguaggio resiliente. Questa cosa qui è una cosa che a molti non viene in mente. Cioè è una figata, io non vedo molti linguaggi.
+
+senza comprare il time che tecnicamente non si spaccano mai, che? abbastanza, è il linguaggio che c'è che meno si spacca della storia dell'umanità.
+
+Mauro Murru (12:13)
+Ci sono due cose su questa cosa. La prima cosa è dal mio punto di vista questa situazione è molto strana perché io adesso sto iniziando a vedere quel seguito, quell'attrazione verso CSS ed è il momento in cui CSS secondo me ha raggiunto una maturità totale.
+
+di solito il fanatismo, il fanboyismo avviene verso le cose fresche, giovani, quasi immature non mature quindi, e il CSS di... in modo completamente strano, no? per me sta raggiungendo quel tipo di attrazione nel momento in cui ha raggiunto secondo me una maturità tenete presente che le ultime versioni di CSS come
+
+mi raccontava Emiliano e Davide un po' di tempo fa, iniziano a veramente veramente potenti anche in termini di computazionali, non solo in termini di rappresentazione estetica. E questo magari può essere l'elemento. L'altro elemento può essere, dal momento in cui io ho sviluppato delle feature che lo rendono un linguaggio con una L un po' più maiuscola di come lo era prima,
+
+probabilmente le persone iniziano a essere attrate verso questo linguaggio. Non lo so cosa ne pensate voi in merito a questo.
+
+E mi sei buttato.
+
+Emiliano Pisu (13:56)
+Se posso aggiungere un bit da parte mia ti posso dire questo nel fare public speaking, andare a mostrare quello che css oggi è in grado di fare e anche ieri è in grado di fare in qualche caso perché molte cose che non vengono utilizzate sono widely supported bassline da magari cinque anni solo che
+
+visto che si tende sempre a utilizzare delle librerie per andare incontro alle proprie esigenze, di evitare di dover scrivere quello che molto spesso viene identificato come un rinventare la ruota, tante volte in realtà è semplicemente utilizzare una ruota che già sta lì, che già gira alla perfezione.
+
+e quindi ti capita di fare, non so, un orologio con delle lancette che si muovono e vengono animate interamente in CSS con due funzioni trigonometriche in croce e le persone, hai capito, fa quell'effetto wow, le persone fanno wow è impossibile, CSS fa questa roba, CSS fa questa roba e molto di più e ti capita molto spesso di appunto sfruttare magari una cosa appariscente di questo tipo proprio per scatenare un po' quello che è la voglia di andare a studiare a
+
+di n magari o di andare a vedere cosa fa una specifica api a capire che tante cose si possono fare con veramente 0 codice a livello di javascript mi riaggancio a quello che detto prima massimo cioè seguendo un approccio più l'in quello che html è in grado di fare in autonomia io tendo a farlo fare da html per esempio un accordion che lo implementi con dei details che hanno lo stesso attributo name per dire poi là dove
+
+dove
+
+non arriva ovviamente HTML, puoi aggiungere del materiale e dell'enhancement con CSS e poi proprio in ultima analisi vado a scomodare JavaScript. Ecco, questo è un po' il mio modo.
+
+Davide (15:59)
+Guarda, l'altra cosa che ha agganciato a me a questo è che noi ci scordiamo delle volte che facciamo... e questa è veramente una cosa che mi dispiace un casino, noi ormai facciamo su internet la qualunque, cioè noi usiamo, cioè onesti, HTML, CSS, JavaScript per roba per cui HTML, CSS, JavaScript non sono stati pensati ma non sono... manco c'è diciamo, il linguaggio ideale.
+
+basta pensare Visual Studio Code, noi stiamo lanciando un browser per scrivere codice, infatti io lo dico quando sono in giro con il mio MacBook Air 8 gb di ram con sublime e safari sviluppo per 8 ore di fila con la batteria che va, apro Chrome
+
+Westcode, un'ora e mezza e l'autonomia è bella che andata, Giusto per dire la differenza. Quindi, a partire questo, noi delle volte, soprattutto quando si parla magari di sviluppatori che hanno un certo livello di seniority, che lavorano su cose complesse, noi lavoriamo su cose molto complesse, applicazioni, però il CSS non esiste solo per quello. Cioè, col CSS si fanno gli e-book, col CSS si impagina, si fanno le web app, si fanno le app.
+
+si fanno i siti dinamici, fanno i siti statici, si fa una marea di roba visuale, tanto è che spesso e volentieri alcuni concetti che esistono poi nel CSS tipo Flexbox, tipo Grid e tutta questa roba qui, andate a vedere, tipo Yoga per Canvas per avere le stesse proprietà.
+
+del CSS all'interno di linguaggi che non supportano nativamente CSS perché è diciamo... ha dovuto affrontare delle sfide che sono veramente potenti cioè trasformare in codice interleggibile comunque anche a basso livello senza cicli cosa eccetera stilare la qualunque cioè io ho scritto CSS per gli ink screen CSS per la stampa cioè ha dovuto destamparvi un libro
+
+questo linguaggio non è una roba da non col quindi. Quello l'ho fatto ma non voglio che si sappia quindi lo tagliamo dal perché non lo voglio mai più. Però sì per le imecce ci sono cose di così ci fa veramente un bordello di noi. Ma siamo lì che magari ci facciamo la nostra applicazione Cina to do con due e ben lì staglia diciamo ⁓ che schifo la cascata è fatto e zi che schifo ha.
+
+Massimo Artizzu (18:19)
+Per l'email
+
+No!
+
+Davide (18:47)
+capisci perché li, b se il capisci riesci anche a capire come usarla, cioè è uno strumento. E come per dirti, io delle volte lo dico, è come se l'essere umano avesse smesso di usare il fuoco perché ti sei scottato, cioè nel senso se tu prendi l'accendino e te lo infili, ti bruci il naso, non dici che madonna mia gli accendini fanno veramente schifo raga, no? Forse cioè capisci che l'utilizzo non è quello.
+
+per farti il silky pill alle narici. che Milano lo fa spesso però secondo me potresti usare altri altri tool.
+
+Emiliano Pisu (19:23)
+A
+
+me il tuo approccio metaforico mi fa morire, tu lo sai. Però non posso ridere così,
+
+Davide (19:28)
+Ciao!
+
+Massimo Artizzu (19:32)
+Il fatto è che comunque CSS in tutti questi anni ha dovuto cominciare a doversi adattare a stilare delle cose sempre più complesse quindi chiaramente con la complessità sono aumentati anche i problemi. Il fatto è che CSS nonostante tutto non è rimasto fermo, si è evoluto e anzi si sta evolvendo molto più velocemente anche rispetto ad un tempo
+
+tanti di quelli strumenti nuovi che ormai sono supportati anche da tutti i browser l'ultimo escopo arriverà dalla prossima release di firefox che ci consentono di superare tutti questi nemici in maniera nativa senza tirare in ballo invece anche tanti combinatori che già da tempo ci consentivano di fare comunque un passettino in più ma il fatto è questo è che se noi per
+
+prima di utilizzare queste cose per metterci a stilare il nostro target, nostro markup dobbiamo invece passare da un altro layer collitivo che dovrebbe essere una qualsiasi framework css senza fare nomi ma in realtà ne stiamo facendo sempre solo uno di fatto abbiamo uno schema in più che ci impedisce anche di capire questi nuovi strumenti
+
+perché sono nati, qual è il loro scopo e voglio dire appunto scope, che c'è la scope, la lettera scope come la vuoi utilizzare all'interno di un contesto come quello di Tailwind non la usi perché in realtà va intorno al problema non che lo risolvi ci va intorno per cui è un approccio completamente diverso
+
+oppure il nostro layer, layer si, si poteva utilizzare in tailwind 3 non poteva nemmeno utilizzarlo. in futuro avremo funzioni e mixin in css, una roba pazzesca la tendevamo da sempre e utilizzaranno, gli mixin utilizzaranno apply e questo creerà un altro conflitto penso nella community di tailwind
+
+questo quindi si sta creando un po' una dichotomia tra quello che è la vera piattaforma che sta alla base di tutto e poi questo layer cognitivo che invece vorrebbe essere equipollente ma pone tante di queste difficoltà che nascono di meggio e di meggio
+
+Mauro Murru (22:16)
+perché dici
+
+vorrebbe essere equipollente? perché secondo me sta proprio l'elemento differenziante
+
+Massimo Artizzu (22:24)
+perché con Tailwind si vorrebbe fare tutto quello che vuoi fare con CSS, quello è l'obiettivo di base. In effetti se tu vai sul sito di Tailwind chiaramente è fatto interamente con Tailwind, non c'è un foglio di CSS che non sia generato. In realtà no, l'ho beccato che c'è qualcosa che invece viene probabilmente da una libreria esterna e che ce l'hanno buttato dentro lo stesso.
+
+Davide (22:32)
+Guarda la bracket syntax. Guarda la bracket syntax.
+
+Massimo Artizzu (22:53)
+però per il resto effettivamente è tutto così
+
+Mauro Murru (22:58)
+Per cui dalla vostra posizione quella che anche se quello che devi fare è piccolo, è rapido o la tua conoscenza di CSS non è alta o non sei un esperto di design related code, comunque utilizza CSS eliminando questo layer intermediativo
+
+cognitivo che in realtà aggiunge complessità. Mi sembra di capire questo.
+
+Davide (23:32)
+la mia opinione è... è un mutuo ok? è un mutuo se tu sei pronto a prenderti in cesso e tu vai una persona e ⁓ risp... stai facendo un mutuo e praticamente appena fai il primo install è debito tecnico che hai installato se sei pronto a ripagartelo ⁓ io sono... sono a posto cioè quello che dici tu è mi serve per dire...
+
+mi serve una roba che funzioni velocemente e io non ne voglio sapere niente di design. Allora, io non sono un odiatore... cioè io non odio perché ignoro, io odio perché lo so. Nel senso, questa frase che tu ci tuoi. E' la prima cosa che dicono tutti. Io vado lì, vado, il mio team è veloce, capiamo, blablabla, tutto spettacolare, tutto bellissimo. Allora, ci tengo a precisare una cosa. Io...
+
+Ho iniziato la mia carriera da speaker 12 13 anni fa non mi ricordo nemmeno più con due talk uno era su flexbox che sapete che non lo so se lo sapete era supportato quasi perfettamente da explorer 10 e l'altro era stop using boost trap please. Quello su flexbox l'ho portato 7 8 volte in 7 8 posti diversi
+
+Quello su bootstrap l'ho fatto solo una volta perché ovviamente mi è arrivata dietro una carica di audio che non lo potete immaginare, sono insulti su Reddit, gente che dice ma questo che vuole... Adesso se tu dici usiamo bootstrap la gente dirì in faccia per motivi che erano... Adesso sono la Palissiani e da quel momento lì ho sempre evitato di fare talk contro, ok?
+
+perché non me ne porta niente, cioè preferisco dirti i talk della roba bella, se ti vai a vedere il mio ultimo storico dico ho usato questo, penso che addirittura, sempre parlando di CSS, ho fatto un talk su emotion che io sconsiglio e ho sconsigliato per ovvi motivi, ma dove ne ho parlato dei lati positivi, trovando addirittura uno use case in cui potrebbe avere senso. Il sito della nascita della mia prima figlia è fatto in emotion, cioè quindi non è che non l'ho usato, trovi le cose, quindi tu mi dici...
+
+io devo fare una roba veloce, rapida, non so niente, questo tool è ben utilizzato, eccetera lo installo, vado, è una roba pronta ok, sei pronto ad usarlo? sai quali sono i lati negativi? perché la maggior parte delle volte no, tu hai una trazione, come per dirti io non so niente di HTML, CSS e JavaScript sono uno sviluppatore React cioè tu quando senti una roba del genere dici ma come fa? perché stai imparando React?
+
+se non sai cos'è una... cioè dove pensi di arrivare con questa roba qui? Magari arrivi e parti da lì, ci sto, e poi capisci cosa c'è sotto. Conosco un sacco di, soprattutto quei bootcamp di gente che ha iniziato con React, Vue e poi ha fatto... io stesso, io ho iniziato a sviluppare sul serio quando c'era jQuery, jQuery UI, la parte di sviluppo ciccia proprio corposa, io facevo roba abbastanza...
+
+impegnata per quei tempi al riguardo e poi ho fatto capito lo step indietro cioè ho imparato javascript perché io venivo raga io ho iniziato a sviluppare davvero anche con motori fisici in flash quindi ho imparato i miei primi prodotti erano in flash e action script poi ti ritrovi su javascript e raga la cosa che puoi dire soprattutto javascript pensiamo a quell'anno lì c'è ecma script 4 ma
+
+Mauro Murru (27:05)
+Era una merda comparato ad ActionScript era una merda
+
+Davide (27:09)
+fotonica, tu pensa che non potevi nemmeno selezionare un elemento del DOM in un modo univo, dovevi farlo per Explorer, per Firefox, per Netflix, era veramente una ciofega, c'è roba come io era abituato, pensate nel 2004, una roba tipo ho un array, faccio un map, invece là stavo forl con l'incrementato, c'è, stiamo a parlare, era una roba del genere, no?
+
+Emiliano Pisu (27:11)
+È imbarazzante!
+
+folia
+
+Massimo Artizzu (27:35)
+mamma mia
+
+Davide (27:37)
+però poi è uscito jQuery che diciamo ha tolto molte di queste robe e da jQuery ho fatto il passaggio debbaggando jQuery capivo cosa c'era sotto no? e tanto amore c'era una figata lucida c'era jQuery libreria che ha fatto il suo tempo ma è stata devastante ed è la stessa cosa tu inizi con tyloon a me mi sta bene non conosci però prima cosa tu mi dice molto veloce perché io applico due regolette e c'ho più o meno la cosa che voglio
+
+Massimo Artizzu (27:53)
+con la
+
+Davide (28:06)
+esattamente come un altro milione di siti lì. Quindi, prima domanda, ti serve una roba che non sembri l'ennesimo sito del cavolo?
+
+Mauro Murru (28:16)
+perché
+
+dici così scusa? Allora su questo su questo io non non sono d'accordo e ti interrompo intanto faccio step back la mia capacità estetica è decente almeno il mio gusto estetico è decente la mia capacità estetica è mediocre ok quindi là se io devo
+
+Non ho uno UI designer o UX designer a portata di mano. Questo è il primo elemento da tenere in considerazione. Non tutti i team, i prodotti, i progetti hanno uno UX, UI designer. Quindi si inizia in fase smartellamento estetico. Possiamo discuterne, ma è una risorsa che non sempre è a disposizione. Partiamo da questo presupposto che è il case study per cui io mi batto.
+
+Davide (28:46)
+certo
+
+Mauro Murru (29:13)
+nell'utilizzo di Tailwind. Quindi ho bisogno di un elemento che mi dia in primis delle primitive tale per cui quello che io faccio out of the box non sia una merda totale. Vi faccio l'esempio dei colori delle palette di colori che coprano più o meno tutto lo spettro ma che abbiano una coerenza estetica senza che io debba calcolarmi la triangolazione. ESA
+
+Davide (29:32)
+Certo. Stai parlando dei design token.
+
+però una mia domanda sono due punti che ci sono due fallacità logiche nel quello che hai detto siamo al primo punto ma ci sono già due fallacità logiche il primo è io ho un bel gusto estetico ma non ho capacità, puoi starci e lì ti ripeto non abbiamo un designer eccetera
+
+Mauro Murru (29:43)
+Questo è... Questo è...
+
+Bye!
+
+Davide (30:00)
+l'appiattimento del design sul web e dovrebbe essere sui crinimi di norenberga perché la maggior parte dei designer che vedi magari anche è diventato tutto un fai così non far colà ok? è diventato un non si fa questo non si fa questo non si fa questo e questo qui è un problema enorme perché appunto tutte le UI, cioè se tu vai a leggerti il libro che c'è su queste fondazioni di
+
+di tailwind su come è stato disegnato non è tanto è più metti stai robe qui che più o meno stanno bene insieme ed è lo stesso problema che c'hai delle case ikea tu non c'è più se tu stai facendo il sito di una un'azienda quindi questa roba qui sì tu stai rinunciando a quella che può essere la tua personalità per una roba che è standard però ti venga a dire mi sta anche bene ma là fuori c'è
+
+a livello di design token c'è una quantità di design token open UI, open props, material design ci sta gel di bibisci, ci sono un sacco di cose, quindi se bisogno di... quello che mi stai dicendo tu però io non ho nemmeno UX designer tu ti stai prendendo i mattoncini Lego per costruire una biblioteca, ok? Stai facendo, io faccio l'esempio di Zoolander 2 quando lui costruisce
+
+la casa, la biblioteca per bambini che non sanno leggere e fanno il prima il mock up in cartone e colla poi lo fanno realizzare e lo fanno in cartone e colla perché è uguale al design crolla, muoiono tutti e Zolander deve scappare via il lince pit non ve lo ho spoilerato il lince pit e Zolander 2 tu stai facendo la stessa cosa perché se tu non conosci i pattern buttare dei colori carucci così non ti aiuterà
+
+Mauro Murru (31:47)
+Perché?
+
+Davide (31:54)
+in nessuna maniera, ti sta dando una falsa sicurezza a differenza di roba come React, Spectre, Adobe che ci hanno anche BBC Gello di nomino ma pure quelli, che ne so, quello di ENGIE che ti danno non solo delle palette, sono i token su cui disegni, ma ti danno anche dei pattern di accessibilità che sono...
+
+che funzionano e solitamente questi guarda un po' ti permettono poi di scegliere colori che ti puoi andare a prendere da OpenPros, Colors, UI, di Adobe, cioè come vedi ce ne stanno nominati a memoria se ti faccio vedere la mia cronologia su design di tutte solamente la roba per scegliere colori stiamo facendo una puntata a parte ma io d'accordo con te, tu lo prendi perché? perché c'è attrazione perché attrazione perché di tutta la roba che ti ho parlato giustamente che è il
+
+il discorso di prima che faceva Bootstrap. A me sta bene che usi Bootstrap se ti prendi quella roba lì, ma l'hai preso perché non ho un designer e ripeto Bootstrap era meglio di te. no, io ti sto dicendo, tu hai bisogno, io sto giocando, quindi tu hai bisogno dei colori, ok, perché usi una libreria di colori che c'hanno tantissimi siti, ha molto successo quando esiste Open Props, sapevi che esisteva Open Props?
+
+Mauro Murru (32:59)
+Allora stiamo comparando ceci e fagioli.
+
+No.
+
+Davide (33:18)
+Questa è proprio la cosa, cioè quindi lo stai facendo, non ti... se... ritorniamo al mutuo, devi andare a fare un mutuo. Il consiglio che dai è fermati alla prima banca o chiedi due o tre preventivi. Questa è la questione.
+
+Massimo Artizzu (33:35)
+e spiega cosa è OpenProps, già che ci siamo.
+
+Davide (33:39)
+Vai, ti lascia andare, che sennò parlo solo io.
+
+Massimo Artizzu (33:40)
+allora
+
+quello che stai descrivendo Mauro è di fatto il fatto che Tailwind ha un design token come si dice che è buono nessuno lo nega effettivamente esatto ma non vuol dire che non ci siano delle alternative perfettamente valide una di queste appunto è open props che a differenza di Tailwind
+
+Davide (33:55)
+È fenomenale, bellissima, io lo dico così.
+
+Massimo Artizzu (34:08)
+non ti costringe a sposare tutta una filosofia di sviluppo, dà il token cioè sarebbe una serie di valori da utilizzare nell'interno del tuo progetto che possono spazzire appunto da una paletta di colori ma anche distanze ritmi tra interline tra curvature elevation una serie di valori il sito si chiama open-probs.style se non mi sbaglio
+
+non lo potremo indicare più nello specifico ma appunto non ti costringe a legarti mani e piedi a tutto un sistema che di fatto pervade gran parte della tua code base a parte la parte javascript che poi parliamo anche di
+
+Davide (35:00)
+e su questo quando faccio un esempio eclatante ovvero tu prendi perché non è gusto estetico ti sei preso i colori? ti sei preso i colori? bene, sei preso anche i break point che è una cosa devastante cioè nel momento in perché io questa roba qui penso di averci litigato migliaia di volte nella mia vita si chiamano break point e non device point per un motivo molto preciso
+
+C'è questa, diciamo, similaritudine tra i device e i break point, è uno dei motivi che a me mi fa, da UX engineer, da persona che fa sia design che sviluppo, mi fa venire proprio l'orticaria. Per quale motivo? Prima di tutto, non esiste solo gente che naviga i siti a schermo intero, senza barre che sembrano pubbite.
+
+L'altra cosa non esistono solo i device della Apple. Sto roba qui lo so che è affermazione fortissima, ma c'è gente. Non esiste solo gente che naviga al 100 per cento dello zoom. Esiste gente che naviga al 125, allo 075, al 200 per cento e questo è quelli che navigano al 200 per cento. Lo ricordo è una roba che se il vostro sito non funziona non va bene per l'accessibilità. LWCAG.
+
+Quindi c'è tutta questa serie di cose. Quindi i breakpoints si chiamano breakpoint perché si devono applicare quando il tuo design si rompe. E tu sei sicuro che 7 breakpoints, 7 IF ti basteranno per tutta la vita? per quanto... ⁓ mi sta bene, sto dicendo, sto facendo il sita... fatto. Il sito per la prenotazione dell'epilazione del gatto che usa la... ma masticaci, va bene.
+
+Se stai facendo un intero portale facendo di questa domanda qua ti basteranno questi se domani devi farlo, cioè devi adattarlo per un visore per l'accessibilità come fai? Cioè io adesso che faccio spesso e volentieri ho di test per l'accessibilità è un dramma perché tu vedi a 320 che si vede in una maniera poi lo metto a... ma adesso l'hanno fixato uno di quelli che avevo fatto
+
+Il sito di Italy vedi che se zoomi sparisce il menu perché si aspettano che sia mobile e il mobile si attiva con lo swipe. Vai, fallo su un monitor 1300 con 200 % di zoom lo swipe left per cercare la roba. che faccio? Cioè, questo tipo di idee... Noi non possiamo più progettare per i device ma anche tipo tablet, ogni volta che dico... ma...
+
+Questa è la dimensione dei tablet, su tablet non ci naviga nessuno. No ragazzi, gente che è incredibile come me, io navigo con metà schermo, perché sull'altra metà c'ho altra roba. Quindi io ho la misura di un 27 pollici, io navigo su un tablet nella vostra testa e vedi la media query medium. Medium che? Rispetto a cosa? Esatto, e questa roba qui, tu la stai sposando a p...
+
+Emiliano Pisu (38:13)
+medium key anche, key!
+
+Davide (38:19)
+E non iniziamo nemmeno a parlare degli stati, perché poi c'è... Tutte le cose che avvengono su internet hanno almeno tre stati che sono Error, loading... e quindi tu devi gestire tutti questi stati come te lo dice Tailwind o facendoti dei porcai con class names, cioè quindi... questa è l'altra cosa. Altra cosa da sviluppatoria, parliamo da sviluppatoria.
+
+Alzi la mano chi consiglierebbe mai a qualcuno di partire con codice imperativo a iniziare a sviluppare.
+
+Ok, codice dichiarativo? Ci fa schifo. Corretto?
+
+Tu mi... Mauro mi stai dicendo con un'estante elettuale che è meglio il codice imperativo, quindi con anche GoTo rispetto a un codice dichiarativo?
+
+Emiliano Pisu (39:24)
+Non sta rispondendo in realtà Mauro,
+
+Massimo Artizzu (39:27)
+l'abbiamo secca
+
+Luca (39:27)
+si è frizzato!
+
+Mauro Murru (39:30)
+No, ho iniziato a sentire le voce, aiuto. È partita la sigla di nuovo, senza nessun motivo. Ok, La stavi dicendo, Davide? Continua la tarringa, ti prego.
+
+Davide (39:31)
+Presidente, presidente!
+
+Massimo Artizzu (39:37)
+No, qui non si è sentito, tranquilli.
+
+Davide (39:43)
+anche qui c'è.
+
+Tu consiglieresti a una persona di provare col codice imperativo o dichiarativo?
+
+Quale se quando te una
+
+Mauro Murru (39:55)
+Sei
+
+sicuro di volermi fare questa domanda?
+
+Davide (39:58)
+Sì, sono sicuro di farti questa domanda, perché tu puoi anche rispondere imperativo.
+
+Mauro Murru (40:02)
+Dieci anni fa
+
+ti avrei detto dichiarativo, oggi ti rispondo imperativo.
+
+Davide (40:07)
+Perfetto,
+
+e tu gli suggerisci anche di continuare imperativo per tutta la vita?
+
+Mauro Murru (40:14)
+Sì?
+
+Davide (40:14)
+perché
+
+questo... tu ok. Quindi non usare React, non usare View, non usare Angular, non usare proprio accesso al DOM, dare i nomi a qualsiasi cosa e vabbè... io no, cioè nel senso, mia modo di vedere il mondo tra un FORGE con OWNWILE con EXIT CONDITION e un MAP, una roba fluente di quel genere, consiglio di vedersi.
+
+Mauro Murru (40:41)
+ti dico
+
+solo che ho fatto una code review oggi e ho fatto eliminare due reduce
+
+Davide (40:50)
+su questo possiamo parlarle, Reduce ha i suoi fan e ha gente che dipende dai casi, può essere abusato però
+
+Mauro Murru (41:02)
+specie
+
+se tu chiedi spiegami questo reduce dopo un mese e non sono in grado di spiegartelo
+
+Massimo Artizzu (41:10)
+nell'abusato problema in mente
+
+Davide (41:13)
+Bene, adesso ti faccio la domanda, specie se ci sono 25 classi su un oggetto e non ti ricordi che cavolo di colore deve avere.
+
+Luca (41:13)
+Claude
+
+Mauro Murru (41:24)
+Perché le
+
+classi esprimono se stesse?
+
+Davide (41:32)
+Sì, sono dei... e quindi, mentre tu stai debaggando un problema di UI, sapere che quella roba lì ha un colore, ha un bordo rosa, arrotondato, eccetera, eccetera, ti è molto utile, è molto espressivo dal punto di vista del... Tu capisci quel componente che behavior ha da come è fatto.
+
+Mauro Murru (41:54)
+No, non... Scusami, sono un po' tonto, non...
+
+Massimo Artizzu (41:56)
+un
+
+esempio può essere apri il sito di Tailwind e ispezionalo e cerca di capire che cosa sta succedendo lì il Markup
+
+Mauro Murru (42:02)
+Uhum.
+
+Luca (42:12)
+Secondo me qua stiamo Guardando il problema da diversi d'angolazioni completamente diversi innanzitutto davide c'è tutta tutto il discorso che tu fai a parte sono problemi che non mi era assolutamente posto perché tanto non sono fatto in vista quindi va bene però la domanda è ma se io mi mettesse a fare in css puro riuscirei a pensare a tutto quello che hai elencato probabilmente non c'è sicuramente no e penserei ancora meno a tutto quello che
+
+Massimo Artizzu (42:19)
+Sì, sicuro!
+
+Luca (42:42)
+un tailwind magari lo fa di nascosto o lo fa funzionare parlo anche di... adesso non so alcune cose basi di accessibilità mi sembra che ce l'abbia gratis cioè io non ci devo pensare poi magari no allora era bootstrap a quel allora quello era bootstrap ok
+
+Davide (42:57)
+no, questo è proprio problema, no assolutamente e qua e qua se ce l'aveva a bootstrap e per
+
+Massimo Artizzu (43:01)
+Alla vera, bootstrap!
+
+Davide (43:04)
+quello che ti dico a me sta bene se tu mi dici voglio andare veloce voglio usare qualcosa eccetera eccetera top grande spettacolare ci sono dei tool tra tutti appunto per il mondo react reactaria ma ce ne stanno 12.000 c'è il progetto di emiliano e massimo così non lo sponsorizzano loro lo sponsorizzo io di componenti ui wukag
+
+di questo, quindi ce ne stanno di roba che fanno quello che dici tu, cioè tu non ci devi pensare, perché lì è il trick, che io ti sto dicendo non pensare ai colori, non pensare a questo, non pensare a quell'altro e poi quando devo andare a fare qualcosa devi pensare, devi pensare a Ben Affleck, il tutto poi come dicevo prima con una capacità di fare vendor lock-in devastante, perché una volta che è iniziato in quella maniera lì
+
+Non puoi tornare indietro, non c'è modo di tornare indietro. Per quello che dicevo è un mutuo. Tu non è che domani prendi e lo stingui. Sai che per 30 anni lo devi pagare e non c'è... Cioè, a meno che non prendi, a un certo punto non ti arriva nell'eredità un sacco di tempo per fare questa roba qui. E anche lì.
+
+Emiliano Pisu (44:07)
+di accollare.
+
+Davide (44:18)
+Nel senso, è lì la questione, io ripeto, se tu sei pronto, cioè se tu non... La questione è che spesso e volentieri, tornando al figlio di un dio minore, queste domande non ce le siamo nemmeno mai poste. Scegliamo il tool in base alla trazione. Cioè per esempio il quando... sì sì, quando c'era bootstrap, io non è che non usavo una roba del genere perché era su... io usavo Foundation o Bulma.
+
+Emiliano Pisu (44:32)
+un bel trend
+
+Davide (44:41)
+ho un altro tool che aveva la maggior parte dei componenti che si sposava bene a quello che stavo facendo. Non ti dicevo usi bool, anche lì non è che ti stai dicendo usi tailwind si strunze. Usi tailwind va bene, sai quella roba lì, sai quali sono le... Cioè deve essere una scelta, perché se la scelta è ⁓ perché uno standard, no, perché questa roba qui ovviamente non esistono standard.
+
+che non siano gli standard del web. Non può essere uno standard. Se lo fai, lo faccio perché ha una buona... Cioè, ogni domanda, dà la risposta, se tutte le risposte sono a posto e ti vuoi prendere la responsabilità di prenderti, diciamo, una scelta, tra virgolette, per tutta la vita, perché vedi, infatti mi va molto il bracetto con React. React fino alla versione 18, anche era un vendor lock-in devastante.
+
+ma addirittura React adesso si è inventata che dalla 19 mi sembra tu la puoi usare con varie istanze di React nella pagina. non è più venduto, puoi avere un pezzo in React, un pezzo e puoi fare i micro front-end senza stare lì a fare vendor lock-in per tutta la vita su quel pezzo. E noi abbiamo un'unica tecnologia mainstream oggi che è questa qui a cui invece tu lo stai facendo. Cioè non c'è nessun'altra roba che si insinua, l'ha detto prima Massimo, con questa viralità.
+
+che ti costringe a fare queste cose qua. Cioè, tu la scegli per un motivo placido, va bene, l'hai scelto per i colori Mauro, benissimo. Sei pronto ad accollarti gli stati coi due punti? Sei pronto ad accollarti la bracket syntax? Sei pronto ad accollarti i loro breakpoint? Sei pronto a non poter usare scope? Perché poi mi puoi dire, ⁓ no, ma io ho un approccio ibrido, posso fare l'ibritazione.
+
+e io me ne scampi perché poi tutti quelli che sono i problemi per dire io vi sfido ma vi sfido a vedere una roba di tailwind e a capire qual è la cascata è vero che sono tutti una classe, tutti 0-1-0 però nel momento in cui tu fai un override quel tuo override lo metti dopo? lo metti prima?
+
+Emiliano Pisu (46:38)
+non ce la puoi fare
+
+Davide (47:06)
+cioè se inizia a usare poi i token di Tilewind, perché poi vuoi usare i token di Tilewind, e avere una specificità maggiore, perché vuoi fare una roba custom, un approccio ibrido, buona foto, io vivo, uno dei motivi per fatto sto talk è perché uno dei miei, adesso faccio, cioè da un anno faccio il Friends, uno dei miei clienti principali usa Tilewind 3, non riusciamo, su un'istanza magento, non riusciamo a passare alla 4, ma anche con le bombe, perché ovviamente nessuno si sognerebbe
+
+ma manco dipinto senza dei test visuali, regression test di vedere quali pagine in un e-commerce magento da migliaia di pagine si spacca e quindi stelli con la 3. Esce la feature nuova, dici, cioè, questo non lo possiamo usare, e siamo ribloccati lì, noi vorremmo usare magari i colori P3 e non li possiamo usare e iniziasse... poi soprattutto altra cosa che... layer ma che...
+
+Massimo Artizzu (48:01)
+Sì, dai,
+
+Davide (48:04)
+Tant'è che, se come lavoriamo noi, al momento per fare le nuove feature, coi Web Component, ci prendiamo un Web Component, lo spariamo in pagina, isoliamo tutti e buonanotte al secchio. Peccato che che si aggiornano per caso come è fatto il bottone da una parte. Io non posso fare innerit, mi devono aprire un task per dirmi ⁓ abbiamo aumentato il border radius dei bottoni. E pov per bacco, c'è capito? Non posso mancan...
+
+Emiliano Pisu (48:28)
+Questo ricorda
+
+un po' il periodo Davide in cui tutti adottavano Bootstrap. Tutto il web era diventato una fotocopia di Bootstrap. Nella maggior parte dei casi, fra l'altro, la libreria veniva adottata solo per usufruire del grid system, questo ce lo possiamo dire, con po' di onestà intellettuale, e ti portavi dietro tutta la UI dei bottoni di tutti quanti gli altri token che oggi chiamiamo the same token.
+
+E alla fine con Tailwind succede un po' la stessa cosa, il sito internet è fatto molto bene, è molto marketing, perché ti faccio vedere che in tre secondi tu modifica una classe e si modifica un layout di un componente, si modifica la forma di qualcosa e lo vedi senza dover aprire un altro file che è il file CSS, lo vedi aggiungendo delle classi, no? Sulla HTML e sul DOM.
+
+e io qui voglio fare un attimo una metafora su questo però seguendo quello che si vede sull'homepage di Tailwind ci si rende rapidamente conto che nel momento in cui tu devi replicare tre elementi uguali che fanno la stessa cosa, due elementi uguali che fanno la stessa cosa, ti ritroverai con la stessa sbrodolata di classici SS aggiunte nel DOM
+
+e ricordiamoci che ogni carattere è un byte quindi noi stiamo andando ad appesantire il DOM sotto qualche punto di vista, ma dopo ne parliamo. Il discorso quale è? Che ovviamente, coscienti di questa cosa, chi ha scritto Tailwind hanno creato poi let apply
+
+in modo tale da spostare dentro CSS le stesse identiche classi, compilarle a BuildTime e assegnare a quel gruppo di token di Tailwind una classe CSS. Però diciamo che quello che dico sempre io, una volta che sono arrivato a quel punto mi scrivo comunque il CSS a mano, ma a prescindere da questo il problema nasce secondo me da una tendenza brutta che c'è nel nostro settore, cioè favorire la Devex
+
+a discapito della UX. Mi immagino sempre, faccio sempre questa metafora sugli ingegneri che hanno scritto il codice della cartuccia di Super Mario sul NES nell'85 e avevano 32k di memoria a disposizione e lì dentro c'era tutto. C'era il motore di gioco, gli asset di gioco, le tiles, c'era ogni cosa.
+
+e sicuramente lo possiamo dire, si saranno fatti il culo per mettere tutto un videogioco molto rapido, molto performante per l'epoca dentro 32 KB.
+
+e perché l'obiettivo era la UX, non era la Devex. Ovviamente il nostro settore poi si è spanzo, sono nate cose, sono nati filo con i trend a movimenti agile e abbiamo portato tutto a cercare di dare una importanza che è giusto che ci sia, io sono d'accordissimo con molte cose, della Devex perché comunque è un mestiere che ha bisogno di avere un experience anche lato...
+
+developer ma quando quella cosa va a discapito poi del del prodotto finale dell'utente e io ho sposto sull'HTML mettendo non so due trecento kilobyte di classi a livello di caratteri dentro al dom che viene parzato, questo noi lo sappiamo tutti, prima
+
+caricare qualunque FALCSS perché il DOM deve essere letto interamente dal browser per essere parzato e prima che Tailwind venga caricato o qualunque altro FALCSS quelle classi verranno comunque parzate e vai a rallentare anche il motore di parsing del DOM che diciamo lavora prima che Tailwind e JavaScript entrino in gioco e secondo me
+
+tecnicamente e a livello di accessibilità e a livello di Core Web Vitals non è affatto una scelta giusta, ecco, non è affatto una best practice.
+
+Mauro Murru (52:35)
+Credo che qua emerga chiaramente dove sta la discrepanza di divisione. La discrepanza sta nel fatto che da una parte abbiamo dei professionisti del settore, abbiamo di gente che della UI, UX, ne fa una missione personale e non solo professionale, o anche se sia professionale, ok, ma sono focalizzati su quegli elementi principali.
+
+e delle altre persone come posso essere io dove la UI è un elemento accidentale di qualcos'altro. Io posso portare la mia esperienza qua, è perché adesso out of the box quando inizio un progetto utilizzo Tailwind. Posto che ho dato un'occhiata a OpenProps e parzialmente rispondono alle mie esigenze,
+
+Quello che in realtà succede a livello di flusso quando inizia un progetto è questo. Installo React. Senza neanche più pensarci, perché React è la mia chiave inglese, mio papà che utilizzava sempre lo stesso cacciavite scomodo dagli anni 70, che tagliava le mani ma ormai quello per lui era il cacciavite. E per me oggi è quello, perché...
+
+perché non sono in grado di accollarmi della capacità cognitiva o del carico cognitivo per valutare un altro ventaglio di tool visto che da ormai due anni sono focalizzato 100 % sul mondo LPI e sul mondo backend, ok? Quindi, quello è il mio cacciavite, il cacciavite che suggestire bene, che controllo in ogni suo difetto, ok? E lo installo. A quel punto arriva la parte estetica.
+
+Come vi ho detto ho delle capacità limitate, non ho nessuno che mi disegni su FIG, ma quello che devo realizzare, quindi non ho punti di riferimento, cosa importante. I punti di riferimento estetici sono veramente importanti. E quindi mi servono quelli che voi chiamate e che tutti chiamano design token, ok? E per quello è una prima esigenza. La seconda esigenza è un'esigenza in termini di Devex.
+
+Per tanto tempo il CSS almeno è stato abbastanza frammentato nell'approccio da utilizzare per organizzare le classi nella creazione di un'applicazione. C'è chi utilizzava dei naming methods per avere delle strutture coerenti coi nomi delle classi, chi utilizzava delle strategie, delle tecniche per evidenziare l'ereditarietà delle classi.
+
+e via discorrendo, per uno che non ha questo come focus principale è tanto carico cognitivo ragazzi è veramente tanto e soprattutto è come react la prima volta che lo usi non c'è niente out of the box, ti devi pensare il modo di gestire le cose e questa cosa se tu non hai quello come focus principale è del carico cognitivo che vuoi evitare e che io personalmente ho sempre evitato accollandomi un mutuo come dice Davide però è del carico cognitivo
+
+su un elemento che per me non era l'elemento centrale e solitamente non è l'elemento centrale, potrebbe esserlo per altri, io parlo però per me, non è l'elemento centrale e quindi tendo a delegare e lo vedo un po' come ok non utilizzo che chip per scrivere le cose, mi utilizzo qualcosa di molto più alto di livello dove perdo tanto controllo, troppo controllo come dite voi
+
+però riesco ad ottenere un risultato che è più o meno accettabile in quel settore, più o meno accettabile in quella branca, è abbastanza buono per me. C'è un elemento che secondo me vale la pena, cioè almeno a me a livello emozionale, non emozionale, a livello proprio di flusso mi ha spinto verso Tailwind. E'... Fatemelo descrivere come la fluidità.
+
+Ok, questo è più a livello percettivo che a livello razionale, ok? Quello che io percepisco quando scrivo le classi Tailwind su un tag, ok? Sull'attributo class è una certa discorsività. Quindi io vomito la mia idea estetica in una sequenza di classi che si autodefiniscono e che sono molto chiare.
+
+se dovessi farlo con css e l'ho fatto perché per larga parte della mia vita ho scritto il css dovevo in primis saltare su un altro file adesso non parliamo di css in gs o così questo dio però saltare su un altro file e quello è già un op cognitivo secondo il css non è un linguaggio fluido in termini orizzontali è difficile da spiegare cioè è
+
+proprietà valore, propiettica, punti virgola, proprietà valore, punti virgola, proprietà valore, punti virgola e questo è a livello di ritmo lo so che non ha senso se ci si focalizza sulla UIUX ma se si parla in termini di the experience è una sincopatura che io ho cercato di evitare
+
+Davide (58:12)
+Ma guarda.
+
+funziona, io ti dico anche quei due cose, a come dici tu react tu hai il tuo coltellino svizzero e react non ha css come first citizen c'è nel senso qualsiasi qualsiasi framework moderno implementa senza andare in un altro file gli style inline, inline nello stesso file ok, view ha single file component, astro glielo metti sotto, addirittura html
+
+Vanilla JavaScript tu puoi scrivere, CSS a fianco all'elemento con scoping, ecc. React non gliene frega niente e quindi il problema...
+
+Mauro Murru (58:55)
+E allora, perché non scriverlo nel Markup il CS?
+
+Esattamente con te, Lwind.
+
+Davide (59:00)
+perché
+
+infatti ci arriviamo quella che infatti cioè tu lo lo stai scrivendo ma infatti la mia domanda è io vomito classico io ti dico quando devi fare un bottone tu stai scrivendo il markup di un bottone pensando a come deve essere esteticamente ti ritrovi e io vi dico aprite l'home page di di tailwind aprite l'home page di tailwind andate a vedervi
+
+Massimo Artizzu (59:04)
+è successo e non da ora
+
+Davide (59:29)
+C'è ad un certo punto un Read More, una card. Ok, c'è una card con un Read More. Andate a vedere, quello lì sembra un Link. Show More, scusatemi. C'è un Check Abailability per sponsorizzare. E quella roba lì non è quello che sembra. Ci sei, è questo proprio la problematica. Tu stai. Per carità funziona. Tra l'altro su questo c'è anche un'altra appunto. Il fatto che funzioni per te...
+
+è dimostrato, e te lo sai perché ce l'abbiamo entrambi, che in realtà leggere, mark up di quel genere lì, ne abbiamo parlato perché abbiamo trovato un articolo a riguardo, può essere difficile per chi ha proprietà cognitive, perché vedersi la cosiddetta div soup, con tutti i div con tutte queste classi, tu hai trovato il tuo ritmo, la tua sincope, eccetera, io non mi ci posso ritrovare in quella roba lì magari.
+
+Perché? Perché sempre se ispezionate quella card lì, tu c'hai lì un etmin team breakpoint lg passato con una classe di per capire, cioè io faccio appunto, tutto detto, siamo professionisti del settore, min team breakpoint lg, quindi un immagino una roba che arriva da una variabile css con una sintastica e due punti, py8. Ora io quel py8 non so a cosa si riferisca, siamo d'accordo?
+
+Mauro Murru (1:00:55)
+Padding Y8
+
+Davide (1:00:58)
+si, eit che cos'è? sono pixel, sono rem, sono ⁓ sono le misure che... si, che ti... cioè capito? quindi non è che viene che poi per carità per te che ormai preso questa roba qui ci sta
+
+Mauro Murru (1:01:01)
+no, sono le misure del loro design system
+
+Massimo Artizzu (1:01:03)
+...
+
+Mauro Murru (1:01:10)
+Sì, in
+
+più io ci aggiungo anche il fatto che è vero quando vedi questa zuppa di classi, ma è anche vero che in fase di sviluppo io quella zuppa la vedo parzialmente, perché faccio tanto uso della creazione di componenti in React, per cui il mio componente ha un pezzetto di markup veramente limitato, l'ereditarietà è...
+
+Davide (1:01:35)
+Perfetto e quindi
+
+la mia domanda è se hai i due bottoni hai i due bottoni hai i due bottoni le feature utili di apple hai i due bottoni di cui uno è primario uno è secondario come fai a comandare?
+
+Mauro Murru (1:01:38)
+fatto a livello di componente e quindi
+
+Davide (1:01:59)
+devi cambiare on fly le classi col tilewil. E come lo fai? Installandoti in un'altra libreria, class names magari, clsx,
+
+Mauro Murru (1:02:02)
+sì?
+
+che le nome
+
+vennero dal box scusami CLSX
+
+Davide (1:02:11)
+ehm... sì CL6X
+
+Massimo Artizzu (1:02:12)
+e non ribrevi più.
+
+Davide (1:02:15)
+perché è Class Name adesso per questioni di performance quindi tu stai, se quello che dicevamo prima, aggiungendo rate al mutuo per fare una roba come... che viene risolta GRATIS senza JavaScript o qualcun altro la questione è se quale è che quando poi il progetto, anche lì il progetto io ho il bottone primario, il bottone large se il bottone è dentro al footer se è dentro a un... per dirti questo è il problema
+
+Mauro Murru (1:02:17)
+Sì sì, sì sì, ce la sei.
+
+Emiliano Pisu (1:02:19)
+aggiungendo rate al mutuo
+
+Davide (1:02:39)
+Cosa succede quando, per questioni di accessibilità, il bottone è su uno sfondo nero? Perché magari c'ho la pagina bianca e quella nera. Devo aggiungerli li ho scritti.
+
+Mauro Murru (1:02:49)
+Ma me
+
+l'ha ordinato il dottore di fare un solo bottone.
+
+Davide (1:02:55)
+No, quindi non è più un solo componente, ne hai già 2 3, che devi decidere dove andare a mettere nella tua roba, secondo una scelta tua. Esattamente tu mi stai dicendo, io non voglio scegliere dove mettere il CSS, perché non voglio fare T-CSS, non voglio fare BEM, li voglio lì, però poi mi stai dicendo, sto nascondendo, ho preso la polvere da un lato, ma hai solo spostato la problematica, perché poi avrai bottone 1, bottone 2, bottone 3, la cosa più brutta se quale è?
+
+Mauro Murru (1:03:19)
+e lo spostate in un ambito che controllo però, è questa in realtà dove ho il massimo
+
+Davide (1:03:22)
+ma perché
+
+Luca (1:03:23)
+le stesse astrazioni
+
+però le fai anche in css nativo però scusami cioè no il però il problema ce l'hai lo stesso anzi di più perché comunque io penso che voi tre io penso che se vi do un layout moderatamente complesso a tre persone differenti in puro css me lo fanno me lo fate in tre modi differenti con le vostre stili e le vostre astrazioni certo certo
+
+Davide (1:03:28)
+Esatto, senza avere una libreria!
+
+Massimo Artizzu (1:03:36)
+di più.
+
+Davide (1:03:48)
+La stessa cosa succederà con Tailwind, come dicono loro stesso.
+
+Qualsia... Lo dicono sull'orocito,
+
+Luca (1:03:55)
+Però
+
+voglio sapere la verità del 90 % è che almeno io prendo un template già fatto e praticamente non lo tocco. Prendo il backoffice, lo compro e praticamente non lo tocco. Che poi alla fine è quello, è incidentale che venga fatto con Tailwind. Alla fine il vero discorso che stiamo utilizzando Tailwind è che abbiamo un fottio di risorse da scaricare.
+
+Davide (1:04:09)
+va benissimo, però sotto, sì sì, però sotto.
+
+Cioè, sì sì sì, ma quello mi sta bene! Però c'è qualcuno...
+
+Luca (1:04:24)
+e sono incidentalmente quasi tutti in Italia, quindi come dieci anni fa erano quasi tutti in Boots Trap.
+
+Davide (1:04:24)
+però
+
+Esatto, la questione
+
+è però poi quel tema lì, domani, e lo dico perché è successo adesso, devi aggiornarlo da Tailwind 3 a 4?
+
+C'è capito? E ti trovi... Non lo aggiorno! Ti rimane in l'acqua a questa roba qui? È come noi, Come questa roba qui, e che quindi non è più sopportata, vuoi farci qualcosa di nuovo? Non lo puoi più fare, a meno che non ci inizi come...
+
+Luca (1:04:39)
+No, no, non alla giorni, non alla giorni.
+
+Mauro Murru (1:04:48)
+Ma quali sono le
+
+problematiche nell'aggiornamento? Scusa, perché... Cioè, poi alla fine al netto di tutto, se tutto gli layer di complessità di Tailwind, quelle sono classi. Quindi paradossalmente potresti rimuovere completamente Tailwind, pre-compilarti un CSS con quelle classi e il gioco è perfetto.
+
+Davide (1:04:52)
+nell'aggiornamento
+
+Massimo Artizzu (1:04:53)
+e
+
+mi affidato di...
+
+ma il fatto che la camera si intassi intanto da 3 4 cambia la configurazione che prima era un file javascript e adesso è soltanto uno css come dovrebbero dire loro cambiano diverse cose il fatto appunto l'utilizzo layer che prima era molto bloccato nel 3 diventa più libero nel 4 diventano approcci... non è facile e contando poi ci sono anche tanti problemi
+
+uno di quelli è cominci a sviluppare con Tailwind benissimo esce una nuova major voglio passare anche voglio utilizzare questa nuova major esce Tailwind 5 magari nel mio flusso di lavoro utilizzo tanto l'intelligenza artificiale e succede che con l'intelligenza artificiale per diversi mesi continuerà a darti risultati compatibili con Tailwind 4 perché dico che succederà perché già c'è il cesso
+
+e in passaggio da 3 a 4 ma questo è già un punto che magari sto già anticipando un altro punto però io quello che volevo dire per fare un po' il riassunto di quello che non detto sia Emiliano sia Davide è che Emiliano ha posizionato il fatto che stiamo puntando solo a the Vex ma in realtà neanche più di tanto stiamo puntando sul avere dei vantaggi immediati a livello di the Vex
+
+Mauro Murru (1:06:05)
+contesto.
+
+Massimo Artizzu (1:06:33)
+senza benissimo renderci conto di quale sono... di quanto è grande questo mutuo perché non è soltanto una questione che io butto giù le classi eccetera eccetera e dietro tutto questo ci sono tanti problemi che si portano indietro. Uno abbiamo già accennato, la dimensione della pagina ad esempio l'homepage di Tailwind è presente quant'è il solo markup della prima pagina di Tailwind?
+
+sapendo di non fare spoiler, sono 660 kilobyte ok cioè circa 20 volte Super Mario nella cartuccia che stava dicendo Liliano e va bene d'accordo non sono tutte classi tailwind però già ci fa un po' apprezzare il problema parte del problema è derivata anche dall'utilizzo di Next e anche quello potrebbe essere un capitolo a parte perché ricordiamoci che Next di base ti propone tailwind come strumento per stilizzare
+
+ok e che potrebbe essere anche la causa del suo grande successo ma il fatto che si utilizzi tu prendi e butti giù le classi e tu riconosci le tue classi benissimo è un progetto che riesci ad avere una certa presa perché il tuo progetto magari non è neanche tanto grande però poi dobbiamo anche rientrare in una realtà di un team che è formato da persone differenti con esperienze differenti
+
+tutti devono leggere queste classiche e magari tutti dovrebbero essere capaci di debaggare quello che succede una volta nella pagina e dica ok c'è questa cosa che non torna bene benissimo non ho capito che dov'è che stai il problema cerchi di debaggare tu cosa fai parti da quello che vedi in pagina ispezioni e poi devi cercare di capire che cos'è che ci sta sotto
+
+e a questo punto negli strumenti di sviluppo hai una sbrodolata di classi che devi passare con i tuoi occhi perché non c'è niente che lì ti possa aiutare a fare una cosa del genere e cercare di risalire che cos'è che ha generato quello che potrebbe essere anche non la
+
+Mauro Murru (1:08:43)
+sulla destra
+
+sulla destra hai tutta la lista delle classi applicate con le proprietà computate quindi in realtà non
+
+Massimo Artizzu (1:08:48)
+hai la lista di tutte le classi ma è lunga un
+
+chilometro e questo è un problema ma non c'è soltanto quello c'è anche il problema del potere anche scrivere dei test visuali che magari si uno vorrebbe utilizzare anche dei nomi di classi per poter andare a selezione di elementi c'è anche un problema questo me l'aveva detto Andrea Berlichi che è uno che
+
+Mauro Murru (1:09:16)
+Ma non c'è l'attributo data test ID o qualcosa del genere per farlo?
+
+Davide (1:09:21)
+sei una brutta persona se vuoi ti dico perché? Cioè come dicono gli stessi dei tester, cioè la maggior parte dei test dovrebbe essere un'eccezione, tu devi testare quello che effettivamente impagina perché il data test ID è un gancio farlocco che viene utilizzato per quella roba lì.
+
+Massimo Artizzu (1:09:22)
+ma... sì, ta vero! comunque, fate quello!
+
+sì perché stai
+
+legando all'implementazione il tuo risultato chiaramente non dovresti farlo e invece quello che mi aveva detto appunto, che è uno esperto di performance sul web mi stava dicendo benissimo abbiamo i dati che vengono dal nostro sistema di room real use matrix
+
+Davide (1:09:45)
+il test.
+
+Mauro Murru (1:09:47)
+va be
+
+Massimo Artizzu (1:10:06)
+mi riporta degli eventi su certi elementi per individuarmi questi elementi mi dà una sbrodolata di classi e io nei log ho quello purtroppo e devo utilizzare quello per andare a cercare di capire che cosa è che successo individuarlo all'interno della mia codebase. Sono una serie di problemi che si accumulano uno sopra l'altro
+
+oltre a quelli che abbiamo già citato cioè il fatto che dobbiamo applicare delle classi o di nuovo utilizzando javascript che veramente è una cosa che non volevo più fare da parecchio tempo abbiamo invece l'applicazione di stile runtime dopo che per tanti abbiamo speso così tanto tempo dall'uscire da certi sistemi css in js tra cui lo stesso Emotion che aveva menzionato David che invece non avevano
+
+non ha senso
+
+Davide (1:11:05)
+e no no ma
+
+su questo questo io capisco la bellezza della CX cioè mettere una variabile ci sono tool poi dici ok io non voglio fare lo sforz... però Astro, Vue che dietro usano Volar riescono a farti avere la stessa identica di X e poi te lo compilano loro cioè tu hai quella parte lì già dentro al linguaggio pensata per il linguaggio
+
+fa esattamente quella roba lì ovvero ti prendo la classe ma tu almeno come diceva prima Emiliano all'utente non devi deliberare la tua scelta di ex stai deliberando quella classe lì che viene lì poi ci saranno comunque i problemi che dice massimo di io ho dovuto debbaggare lavoravo per un grosso spedizioniere che spedisce pacchi col sorriso no
+
+e questo spedizioniere qua io usavo Room per fare magari re-bug delle pagine e loro utilizzano ovviamente su pagini anche lì c'è un tool che si chiama IUI che praticamente, Thailand non è una roba nuova, Atomic CSS esiste da vent'anni ed è l'ora Atomic CSS ma sai che bello vederti tipo button, button, button, variant e poi adesso quale, cioè poi vai a vederti ti copi il coso, vai a vedere in una vecchia vista
+
+Java come cavolo è stata applicata quella classe quando se invece avesse avuto un bellissimo nome del cavolo tipo cart ok e la card che esce anche se è visuale stiamo parlando sempre di roba visuale manco di però se ti dico card io ripeto adesso la card in tailwind è un mt line clamp text sm 6 x grey 600 min template point xl max dark text grey mt3 in line block shrink ce lo sto leggendo dall'oreo e va a fan
+
+cioè nel senso mio prima che il tutto tra l'altro sempre nell'un esempio che dipende da una roba javascript per il blackpool cioè ti dai che è un problema poi come dici tu se tu nel tuo piccolo environment lo stai facendo eccetera accetti bella e ti ripeto da un certo punto di vista io sono lo dico totalmente contro il mio disinteresse cioè la maggior parte dei miei clienti mi pare a me per dire abbiamo questo merdone
+
+Viene, bene, tre volte su quattro, trovo situazioni di quel genere lì non è vero, spesso anche ancora boost però lasciamo stare però se dico questa roba qui lo faccio solo veramente per amore del web c'è zeldman chi lo conosce, a tante massimo non alzare la mano è praticamente la persona a cui dobbiamo la morte dei layout con le tabelle fu lui a farsi promotore
+
+di pasta viste fatte con le tabelle come si faceva nel 99-2000 sto povero Cristo ma chi gliel'ha fatto fa capito? io adesso mi sento tra virgolette in onere di ringraziare lui di fare più o meno la stessa cosa perché sempre lui quando ormai diciamo in una fase di fama discendente anche che non so se Zeldman già abbia più di qualche anno aveva scritto un articolo penso nel 2012
+
+Kiss my class name per dirti che tipo di dove appunto dicevo questa roba qui io che anche quando apro quando vedo un sito io ancora oggi ispeziono il codice io non so voi io faccio il frontender perché una volta aprivi il codice e cavolo tu potevi capire quello che stava succedendo sulla pagina una bellezza e ancora adesso lo faccio io vado a depredare
+
+interi concetti di roba di questo genere e invece questa roba qui non te lo permette più ma non te lo questa è un'altra delle nese, cioè se vogliamo abbiamo praticamente una una lista di motivazioni però quella che mi fa essere la motivazione principale al netto del contratto a tempo indeterminato con questa roba qui
+
+dei problemi che abbiamo sollevato, è quella la questione che tu non stai esprimendo più la tua semantica non stai più esprimendo la tua personalità su quella roba lì anche, anche da quel... sì, perché quando mi dici io scelgo dei sign... anche sto sito qua dove stiamo adesso, siamo su Riverside che c'ha quel viola lì, c'è io di questo viola qui costante che è il viola dominante di Tyrone mi sono abbottato le palle
+
+scusate per i minoremmi che ci ascoltano però è così cioè è diventata una roba che per me è diventata asa prestringente questo nero con la ticografia molto piccola spaziatura abbondanti questo border radius costante e per quello che dico cioè è diventato da quel punto di vista lì per me deprimente e io purtroppo purtroppo ho fatto sta scelta di fare per lavoro una cosa che mi piace
+
+perché quei bastardi da bambino mi hanno detto quella scemenza fai un lavoro che ti piace e non lavorerai mai un giorno della tua vita no se ci sono minorenni non ascoltatelo tenetevi vostri hobby come tali e continuate ad amarli perché se li trasformate in lavoro inizia e quindi vedere veramente questa decadenza da quel punto di parlo solo del design io vorrei vedere
+
+veramente che cazzo c'è in testa Mauro Muro senza essere filtrato da un'idea di design di qualche tipo viene un sito brutto ma benedica il sito brutto cioè voglio la... questa è per me la questione, solo che questa... questa è la questione, io per dirti il primo sito che fatto per me era fatto in flash, c'era una mia illustrazione
+
+Mauro Murru (1:17:04)
+Non lo vedrai mai!
+
+Davide (1:17:15)
+dove praticamente quando tu cliccavi il menu arrivava una motosega e mi segnava il cervello e si vedevano le parti del cervello da cliccare. C'è capito? Questo tipo di internet qua che noi... E tra l'altro la stronzata che ci diciamo costantemente, ma i siti tutti uguali performano meglio. Peccato che se poi vai a vedere molti dei siti che hanno Facebook, Instagram, Reddit, ci hanno delle UI.
+
+che sono totalmente diverse da quelle che vedi nel 99 % dei stequenbapp fatti in React e Tailwind che invece
+
+Mauro Murru (1:17:46)
+ma non ti preoccupare
+
+che il problema non sarà a Talwind con le I.O.I. uguali sarà qualcosa altro intanto voglio farti del male perché ti voglio bene tu pensa che io ho elevato questa cosa a un livello ancora successivo c'è quella bella libreria che si chiama Shaddy CN e quindi oltre a Talwind io mi prendo anche i componenti già fatti così non ci penso e quella cosa funziona
+
+Davide (1:18:04)
+⁓ signore di quella accesa non stavessimo mai offesa!
+
+Mauro Murru (1:18:15)
+e funziona bene!
+
+Davide (1:18:15)
+Certo che funziona, non la metto in dubbio. Il
+
+problema è che se tu dici a una persona Ti passo i nodebottles via FTP così te li scarichi e te li copincolli e li committi probabilmente ti vengono ad arrestare però lo fai, guarda caso con del CSS che è un figlio del Dio Minore e tutti dicono mazza che bella idea, ⁓ ma tu invece di... perché prendersi lo Dash call the bounds quando puoi andare lì e copincollartelo? Senzatissimo!
+
+C'è un bug di sicurezza in quella roba lì, una roba di accessibilità che non funziona. Invece di fare PNPM update, perché non stai lì a debuggarti quel codice che probabilmente è anche cambiato leggermente i colori e capire che cazzo è successo? Cioè, io dico, ciao.
+
+Mauro Murru (1:18:57)
+No no, io i colori
+
+non li cambio, faccio direttamente pnpm update e aspetto che lo update hanno loro.
+
+Massimo Artizzu (1:19:03)
+bene, il fatto che appunto, c'è la scienza insieme, il copincolla istituzionalizzato, ti copi codici altrui senza test, tra parentesi, e te lo devi mantenere tu, cioè è una dipendenza senza che risulti come dipendenza con tutti i crisi
+
+Mauro Murru (1:19:23)
+Chi non
+
+ha mai scaricato le classi PHP da PHP Classes e copiate nella propria folder, va, questa roba troppo da vecchi, probabilmente voi siete troppo giovani per ricordarvi.
+
+Davide (1:19:34)
+Domanda,
+
+lo fai ancora?
+
+Massimo Artizzu (1:19:37)
+Non lo faccio più ciò che vuol
+
+Mauro Murru (1:19:37)
+Sei sicuro di valermelo chiaro?
+
+Emiliano Pisu (1:19:38)
+Siamo passati tutt'e...
+
+Luca (1:19:39)
+io
+
+lo farei ancora se lo trovassi ancora alle classi su PHP Class Name vedi che è quello che è il mainstream adesso il copy e incolla da Cloud
+
+Mauro Murru (1:19:46)
+Sì, lo fai ancora e si chiama Cloud Code.
+
+Davide (1:19:51)
+100 %
+
+Mauro Murru (1:19:56)
+No, in realtà tutto
+
+quello che Davide, Massimo e Emiliano hanno detto ha senso. Secondo me però ha senso a un certo livello di professionalità o di passione. E stabilire dov'è questo break even, questo momento in cui quel ragionamento è d'obbligo, diventa molto difficile. Perché...
+
+Quello che io ho raccontato è un'esigenza molto molto...
+
+inquadrata limitata su uno scope veramente preciso è normale che se io dovessi far partire una startup io il mio prodotto lo farei con te Lwind e poi nel momento in cui sto iniziando a scalare mi chiamo Emiliano Massimo e Davide e gli dico bene vedete sto mardone ok voi siete professionisti e createmi una cosa fatta bene
+
+Questo è il mio approccio da vecchio oggi, perché? Perché se io dovessi caricarmi quel carico cognitivo oggi, che ha tutto senso, cioè un home page di 700k è enorme, enorme! Lo so, però il costo di questa cosa è percepito oltre a un certo limite. Prima di un certo limite quello non è un costo, è un non costo. E ottimizzarlo
+
+Davide (1:21:09)
+Scusa
+
+Mauro Murru (1:21:27)
+aggiungere un costo a uno un costo vi faccio un esempio c'è il parametro rischio no il rischio che quella cosa vada nel cestino se io aggiungo un coso oggi ho visto un bellissimo meme di una scala fatta alla cazzo di cane con tutte le travi tutte storte ed è una scala bellissima con i primi due gradini e il resto vuota no? scala a pioli e se io dovessi fare quell'approccio probabilmente per come sono io rimarrebbero solo due gradini
+
+e la mia visione è che
+
+Davide (1:22:01)
+Ma questo
+
+che stai dicendo è giustissimo, la mia domanda è per fare quello che stai dicendo tu, anche per fare quello che stai dicendo tu, ci sono dei tu il migliore? E la risposta è sì. Cioè per fare esattamente la stessa identica cosa, per sponsorizzare un'altra roba di italiani, siamo in Italia, ti vai a prendere Bento di Bildo, che è un design system fatto totalmente dall'altro in Types, quindi tutto tipizzato.
+
+quello che vuoi, fai, incolli il componente, non devi manco cambiare il colore e c'hai uno studio di designer e di accessibilità che ti fatto già tutto quanto, c'hai 250, non mi ricordo quanti migliaia di bottoni, jpatterni, le card, tutto già fatto, tu te lo pigli, lo installi e buonanotte al secchio, domani
+
+Mauro Murru (1:22:45)
+Ma io voglio
+
+fare il sito arancione giallo che sembra a cartuni
+
+Davide (1:22:49)
+e
+
+lo fai a l'ancione giallo con un desensistere perché solitamente i desensistere tipo questo qui fatto in maniera decente ti scarichi il tema colori che vuoi e ce lo incolli e te lo fai a l'ancione giallo semplicemente hai già come ti direi questa è la questione io non sto dicendo che il tuo bisogno è un bisogno shock è un bisogno semplice no è un bisogno vero tu devi andare veloce
+
+devi ammettere, devi vomitare quella che è la tua idea sulla pagina perché domani non sai manco se la userai. Ma va benissimo. Questa è la questione. Mi viene sempre riattaccato questo. Ho fatto ultimamente un talk sull'accessibilità dove facevo vedere come farti i tab a manella accessibili. E c'è del disclaimer con Raul di Okuto No Ken che diceva colpo delle mille mani avanti d'Okuto. Ovvero io non ti sto dicendo che tu devi fare i tab a mano.
+
+ti sto facendo vedere cosa ci vuole per fare un pattern tab a mano in maniera che tu non lo faccia e ti vai a scaricare una cazzo della libreria che lo fa o ti fai copincolla dai book ag pattern se proprio è ok? cioè questo ti sto dicendo io non ti sto dicendo ma io ti sto dicendo io voglio andare veloce io voglio fare questo voglio vomitare voglio i colori e uso uno dei tool più merdosi in commercio per farlo e beh signore mi c'è nel senso è come tu dici tuo padre
+
+hai il cacciavite, quello che io sto vedendo lì con tipo il... la roba completa al Lidl con l'avvitatore automatico con la batteria che se la scaldi esplode e muori che ti dico ⁓ a vita con questo no no col cacciavite è meglio vado più veloce ma non è vero, cioè questa è la questione ci sono, dici però c'è un carico cognitivo perché mi devo imparare un altro tool è quello che ti dicevo, tu stai lavorando per inerzia
+
+Emiliano Pisu (1:24:25)
+a cresciti!
+
+Davide (1:24:42)
+però a quel punto vista lì se la questione è io non voglio assolutamente nessun cambiamento e lì sono d'accordo non possiamo farci niente però permettimi dire se l'unica cosa è poi mi può anche dire ⁓ io ti dico prova veramente provare un se sai usare react provare reactaria è facile tipo è un carlo di robbo che fa pnp come fai con
+
+con shard cdn, te lo puoi costumizzare addirittura col tilewind se proprio c'hai questa voglia lì ma almeno c'hai dei patterns già accessibili, già fatti, cioè perché se tu mi dici io per me è solo una questione estetica è lì il problema, cioè io ti vengo a dire lo sai quanto lo so quando c'hai a cuore tu la questione sull'accessibilità la differenza tra un display none e un visibility hidden
+
+o un opacity zero non è un problema sti cazzi è un problema che qualcuno il tuo prodotto non lo potrà usare e se tu quella domanda non te la sei fatta per me sei stronzo non ce n'è niente di mezzimissura su quello che...
+
+Mauro Murru (1:25:53)
+Ma quel problema l'ha risolto?
+
+Davide (1:25:56)
+No, Tailwind
+
+non risolva perché tu puoi mettere oprasi di zero su un elemento per farlo sparire.
+
+Mauro Murru (1:26:01)
+e vabbè,
+
+Massimo Artizzu (1:26:03)
+e sì cioè non ti aiuta
+
+sicuramente in questi
+
+Davide (1:26:07)
+Invece
+
+un solitamente tool come Reactaria c'hanno questa roba qui, già c'è tipo il bottone disabilitato. Il bottone disabilitato è una delle cose più difficili da fare per l'accessibilità, spoiler perché non disabilitare i bottoni, è veramente in casino. Ci sono dei casi in cui per il bottone lo devi disabilitare, ci sono dei patterns, se no avrebbero tolto dalla specifica battone di seppolt.
+
+La domanda è... io non c'ho voglia di pensare dove mettere il CSS. Se non c'ho voglia di pensare il CSS, figurati quando voglia c'hai di stilare correttamente un bottone disable. E ti ripeto, non lo fare, ci sono librerie che lo fanno per te. Usale! Cioè, va benissimo. Domani poi, quando avrai il prodotto figo, mi viene a chiamare. La tariffa dipende dalla lunghezza, tra i 600-800 euro al mese, e al mese magari, al giorno. Non riesco nemmeno a dirlo. Mi vergogno.
+
+detto questo fallo però cioè inizia con un tool che ti metta questa roba qui a portata di mano perché come detto tu io non ho un design non posso che è fede figa e ti stai facendo il design system a mano con i mattoncini della lego per me stai perdendo tempo questa è questa la questione io ho mai c'è perditi io adesso sto usando view sto usando viewtify sotto che fa cagare per altri motivi
+
+Però non è che sto lì a rifarmi Pater la mano anche se sono un campione del CSS. Non sto là, fidatevi. Il fatto che io sappia cosa c'è sotto, io so pure cosa c'è sotto al fatto perché un pixel si colore di rosso, giallo, blu, perché me lo so studiato per cazzi mia, ma non è che vengo là, non sai come funziona? Sei un coglione. No, è quello, masticazzi. Ma grazie al cielo che non sai come funziona. Sono informazioni che volentieri estilperei.
+
+dalla mia fronte per non confondere invece i nomi dei miei figli però su questa roba qua tu mi sei dicendo, io ho questo bisogno, ⁓ guarda c'è sto tool qua che fa esattamente sta roba meglio di quello che stai usando ⁓ ma sono abituato così, ⁓ tu a tuo padre, però appunto a tuo padre gli vuoi bene, a te Mauro, ti voglio bene dico va bene Mauro, bene così Still, io tutte le volte che parleremo ti dirò, guarda cerchiamo
+
+è come... non lo so dire, è come mi padre che comunque va ancora a 110 in autostrada perché è abituato così in corsia di sorpasso. se poi uno dietro gli bestemmia e mi fa, a me mi dispiace, ma forse quello dietro un pochettino ragione ce l'ha. Cioè capisci? Eppure lui quando è iniziato, 60 anni fa, lui da s'andava a 110 in autostrada. Io non voglio cambiare, sono abituato. Dove cazzo si tira l'aria va via la macchina. Cioè, questo... Cioè, io non voglio... Spero di...
+
+speravo di averli almeno vent'anni prima, trenta pure, prima di fare questi discorsi, Questa è la questione.
+
+Mauro Murru (1:29:06)
+quanto quanto
+
+l'adoption in è l'elemento che tiene viva la cosa e lo tiene primario perché sì è vero domani utilizziamo tutti cazzo ne so react spectrum react aria o qualunque altra cosa
+
+in realtà tailwind lo conoscono tutti è un po il Kubernetes del CSS
+
+Davide (1:29:42)
+Anche su questo faccio un esempio ho parlato all'ultimo CSS no scusami penultimo CodeMotion Milano su un talk su le cose moderne del CSS e io come ho detto evito qualche maledetto che conosco mi ha fatto la domanda dimmi onestamente cosa ne pensi di Tailwind l'ho detto ma hanno chiesto ma sì ma dillo più risicato e lì ho espresso l'opinione positiva che avete visto oggi no?
+
+e io ti posso assicurarvi che più di metà della platea ha applaudito. Cioè ricordiamoci, noi, come quando... React è il tool più utilizzato... In Italia React non è nemmeno il tool più utilizzato per front-end, per il La mia risposta era... diciamo che stata molto colorita, in inglese...
+
+Massimo Artizzu (1:30:25)
+aspetta, dico che cosa è la tua risposta
+
+Davide (1:30:36)
+diciamo che mi ricorda molto una delle scene di Salò di Pasolini. Non dirò quale. Andate a vedere un capollavoro del Neorealismo italiano.
+
+Massimo Artizzu (1:30:48)
+pensavo
+
+invece giudizi fantosi sulla corazzata cotyonkin
+
+Davide (1:30:53)
+No, quello è un altro classico, non mi piace citarlo. È un altro classico, perché a me in realtà quel film piace. La Criazza da Pio l'ho visto tutto e in realtà non è un brutto film. Non è quello di Frantozzi. Esatto. Esatto. C'ho questa cosa. Però è quella la cosa. Noi è un bias cognitivo quelli che...
+
+Massimo Artizzu (1:30:56)
+un altro flasso.
+
+si ma non è quello di fantozzi
+
+Mauro Murru (1:31:05)
+Ed ecco perché ti piace anche il CSS.
+
+Massimo Artizzu (1:31:11)
+BONE!
+
+Davide (1:31:21)
+piace a tutti cioè nel senso è anche lì no per dirti ⁓ andiamoci a per far l'esempio una delle cantanti più sentite in italia e in italia nel mondo è come si chiama Taylor Swift ma in realtà chi cioè io non conosco cioè capito è ha un grandissimo successo in una suonicchia spara a nastro ma chi se l'ancula? Cioè chi qua?
+
+Se vi chiedo di andare a vedere Nino D'Angelo, Nino D'Angelo o Taylor Swift, mi viene a Taylor Swift. Ma Nino tutta la vita caschetto d'oro, cavolo. Cioè, capito? Cioè, questa è la questione. Cioè, il fatto che ci sia gente che dice... Non è vero, questa cosa qui, il fatto che tutto il web sia React è tailwind. Cioè, è vero, abbiamo dei dati... Allora,
+
+il web si basa su WordPress, perché non stiamo usando WordPress e Bootstrap che stanno là, capite? Questa è la questione viviamo in una bolle in cui, cioè per dirti io davvero ultimamente un'azienda mi ha chiamato per fare un corso di accessibilità io ho preparato gli esempi in React e Vanilla JavaScript, no? perché ho detto così avete tutti tutti gli esempi o i frontender di st'azienda
+
+Emiliano Pisu (1:32:17)
+E' vero, sì!
+
+Davide (1:32:43)
+il 60 % quindi più della metà usava Angular, il restante 40%, 20 % React, 20 % Angular React. Poi è ovvio stiamo parlando di un'azienda nel milanese che non è, però è una, no no ha un bel numero di sviluppatori, ha un numero di sviluppatori.
+
+Mauro Murru (1:32:57)
+Quanto è grande l'azienda? Ecco perché...
+
+perché io ci sono dentro. Onestamente il mio ragionamento è... Quanto è grande l'azienda? Quanti sviluppatori front-end c'ha? Quanto è ampio il gradiente della seniority degli sviluppatori front-end? Ok, angular. Non so neanche pensare.
+
+Davide (1:33:24)
+sì, però è questa la cosa. Ovvio che c'è anche vero viceversa, la maggior parte di quelle che sono uscite dai bootcamp a diciamo conoscenza zero hanno fatto React. Però lì non facciamo questo classismo. Ma no, no, ho fatto l'insegnante in bootcamp per quattro anni e si insegnava React. conosco solo una scuola che insegnava Vue e hanno smesso da tre anni, o quattro anni addirittura, e fanno invece React adesso. Vue...
+
+Mauro Murru (1:33:34)
+Io pensavo a Viu.
+
+Davide (1:33:54)
+Anche lì io pensavo più fosse morto, non solo... E invece...
+
+Mauro Murru (1:33:58)
+No, se sono meglio
+
+da essere supporto a TypeScript, mannaggia loro che...
+
+Davide (1:34:03)
+Ed
+
+è questa la cosa, anche lì, in realtà è fantastico, adesso che ce l'hanno messo su volar, tipo vi dico una cosa che dico ogni tanto, in Vue, a differenza di React, io riesco a tipizzare i children, io ti posso dire, questo children qua non lo voglio, voglio solo children di questo tipo, valla a fare, con un innestamento fino a 7-8 volte mi funziona, dopo un po' TypeScript inizia a bestemmiarmi in Aramaico, e il tutto usando una sintassi, che è standard web, coi template, follia!
+
+io posso fare invece che le render props, posso fare tipizzati gli slot quindi mettere gli slot in pagina tipizzati però anche qua questa roba qui ovviamente nella bolla twitter nella bolla hacker news nella bolla in cui diciamo spesso ci ritroviamo main premise questa roba qui non la scopri perché ci stanno un sacco a parte il fatto che Vue ha ovviamente una forte connotazione in oriente e cina soprattutto
+
+spesso e volentieri viene neutralizzata alla grande. Noi non ce ne accorgiamo perché perché noi siamo vittime del marketing di Rivers, di quella roba lì che invece spingono spingono spingono un casino per farti questo tipo di indottinamento qua.
+
+Emiliano Pisu (1:35:16)
+e ti ritrovi a sviluppare una calcolatrice con React quando ovviamente potevi farla tranquillamente in vanilla JavaScript o la maggior parte delle applicazioni che realizziamo, no? Che di fatto sono crude su una griglia? No, voglio dire, quante applicazioni gestionali scriviamo con React che di fatto è una tabella in croce con una forma per gestire i dati di quella tabella? Sono tante, no? Esatto.
+
+Massimo Artizzu (1:35:40)
+ma anche delle landing page fatte react
+
+perché? per la mina del cazzo veramente
+
+Davide (1:35:46)
+Allora posso linkare qualcosa se cercate su amazon.com, sito a caso che conosco per il caso, cercate Wicked il film, Wicked, qua metto il link, voi guardate questa pagina, scusatemi, se guardate questa pagina non solo c'è React, Styled Component ma c'è addirittura Redux per una landing page con un video
+
+Mauro Murru (1:36:01)
+da 161
+
+Davide (1:36:15)
+e due caroselli ora voi potete ben capire conosco questo ragazzo che ha lavorato lì due anni e mezzo quante bestemie che si è preso a cercare di far levare almeno Redux cioè almeno Redux da una pagina, pure no, perché Redux è uno standard de facto questa parola qui lo usano tutti conoscono Redux eppure invece
+
+Mauro Murru (1:36:39)
+lo usano ancora
+
+Davide (1:36:44)
+Vabbè se ispezioni sta pagina dentro ci sta pure jQuery e Bootstrap, ma quello è un altro paio di maniche. Però questa pagina qui che è stata fatta per la seconda oggi, l'altro ieri, usa ragazzi, usa una vecchia versione di Starled Component, usa Redux, vecchia versione di Starled Component, perché Starled Component non lo puoi più aggiornare perché è depregato. Ti tiene bloccato React alla 20, perché? Perché così c'è nel senso sono stand, c'è gli Starled Components a un certo punto.
+
+erano il tool della vita.
+
+tutti dovevano usare Starlight Component. Primo. Certo certo ma appunto lo usate anch'io non metti in dubbio e adesso c'hai per una paginetta statica un payload e ripeto grazie al cielo questi ragazzacci ci hanno sotto non so se conoscete st'azienda è WS e quindi se riescono a essere... è nuova...
+
+Massimo Artizzu (1:37:19)
+tutti lo sanno.
+
+Mauro Murru (1:37:20)
+io li usavo
+
+Massimo Artizzu (1:37:22)
+Certo
+
+che lo savi.
+
+...ho sentito mi pare.
+
+Emiliano Pisu (1:37:39)
+Ma è sentito? Ma è sentito?
+
+Davide (1:37:41)
+C'hanno sti serverini tipo probabilmente adesso che avete aprire quella pagina lì probabilmente dal sotto il vostro pavimento è stato servito il sito quindi hanno una velocità pazzesca. Io posso dire che delle volte quando sviluppavo era più veloce l'ambiente di sviluppo, di produzione che non io testavo il lag sulla mia macchina rispetto sul localhost, piuttosto che sul... anche perché c'era così tanto bloatware sopra che sulla roba...
+
+Mauro Murru (1:37:42)
+...
+
+Massimo Artizzu (1:38:01)
+localhost.
+
+Davide (1:38:10)
+E però, cioè, voi mi dovete dire se per una pagina del genere c'è senso sta roba qui, ma soprattutto appunto Redux si usa ancora.
+
+Mauro Murru (1:38:16)
+⁓ come le
+
+fai le bollicine che ti stengono lo stato del mouse scusa tra l'altro ci sto giocando da circa 12 minuti il tempo qua
+
+Davide (1:38:23)
+Come?
+
+Ma ma certo io penso che quella roba lì sia il motivo per cui c'è su. In realtà se vuoi saperlo Redux è fatto. Prova ad aggiungere qualcosa a Carello. so. Se raggiungi qualcosa al Carello Redux ti serve per tenere lo stato della Ducalto.
+
+Mauro Murru (1:38:41)
+è un contesto
+
+Davide (1:38:44)
+avevo uno stato anche proprio... pensa pensa
+
+Mauro Murru (1:38:48)
+Si vabbè
+
+Luca (1:38:48)
+ma quindi alla
+
+fine che... alla fine cos'è che è andato storto? ma io questo non lo vedo solo nel css, io lo vedo vabbè sì, in javascript e react quello che è stato ma anche ok, hai citato sempre amazon ma anche per la parte back-end, tutte le cose cloud native, cioè da quando è diventato normale
+
+Mauro Murru (1:38:48)
+ma l'altra avresti il prop drilling
+
+Luca (1:39:13)
+abbuffare le pagine, cioè fare un documento di un megabyte, aspettare una lambda che si tira su tre secondi... Quando è che è diventato normale tutto questo?
+
+Massimo Artizzu (1:39:23)
+appunto da quando non lo so, cioè qualcuno
+
+dice funziona quindi non cambia niente, continuo con la mia strada e non ci poniamo certe domande per dire ok facciamo una scelta di uno stack che abbia senso per quello che devo fare, no, riapriamo sempre tutto con lo stampino
+
+Mauro Murru (1:39:41)
+sapete
+
+il modo di dire no? nessuno è mai stato licenziato per aver comprato IBM
+
+Massimo Artizzu (1:39:48)
+Si, chiaro.
+
+Davide (1:39:49)
+Sì, sì.
+
+ma io ci vedo anche di più, cioè lo dico, io ci vedo della malvagità, cioè della malvagità in senso proprio, facciamo un esempio stupido, io ho una teoria del complotto su questo, cioè per dirti, sì sì, bold opinions moment, cioè noi, EWS è così brutto da usare, non mi dite che EWS è un'interfaccia piacevole che ti proprio dà ispirazione di fare quello che devi fare, che paghiamo, cioè comunque facciamo delle cert-
+
+Luca (1:39:58)
+un complotto.
+
+Massimo Artizzu (1:40:04)
+Bonsi e più news!
+
+Davide (1:40:20)
+per dire di saperlo usare per tirare su una lambda di 3 secondi per una landing page che devi servire da una paginetta Instagram. No no, quella è ancora una, sono d'accordo con te, cioè che non ci sia limite al peggio.
+
+Mauro Murru (1:40:28)
+e mi aiutato a sguer...
+
+Massimo Artizzu (1:40:34)
+Sì, ⁓
+
+Luca (1:40:35)
+è una gara ribasso mi sa
+
+Emiliano Pisu (1:40:41)
+Direi che è più una lotta senza quartiere, mettiamola così.
+
+Davide (1:40:41)
+Tra l'altro lo sto usando
+
+proprio mentre parliamo per altre cose. Quindi sì, e quindi cosa succede? Ci sono state due cose che sono successe. Una, io ho bisogno di rendere sempre più lo standard un servizio che ti vendo. Quindi puntiamo a Berserlo, lo fa con React.
+
+EWS lo fa con le lambda, vuoi fare qualsiasi cosa, ma perché non ti fai l'istanza qui? E' lo standard de facto. Come diceva Mauro, sfrutta questo bias del nessuno è stato licenziato per aver proposto EWS probabilmente, no? È una scelta sensata, anche quando in realtà sensata non lo è. E quindi c'è una forte spinta, cioè EWS, Vers, eccetera, pagano milioni di marketing, di marketing, sponsorizzazioni.
+
+di acquisizioni, adesso per dirti che OpenAI, no che era, Antropix si compra a bonno, E quindi da quel punto di vista, si inizierà a fare marketing, deve rientrare, deve esserci un ROI, quindi questa cosa qui, senz'altro. Dall'altra c'è stato un momento, che adesso pare finito, in cui, sembrava che avessimo bisogno più di, cioè che se sputavi dovesse spuntare a terra uno sviluppatore dall'erba, capito?
+
+Cioè, abbiamo un bisogno folle. E quindi se tu vuoi uno sviluppatore, etc., devi dargli della roba così. Ma è come con gli istru... Tu non vuoi. Questo è sempre stato il motivo per cui faccio il freelance oggi. La maggior parte delle persone, dei business people, non vogliono lo sviluppatore bravo. Lo sviluppatore bravo, caca il cazzo, signori. Lo sviluppatore bravo, ti rompi i coglioni quando... Io c'avevo uno sviluppatore back-end che è a
+
+praticamente voleva denunciare i proprietari dell'azienda perché ci avevamo scritto che la nostra azienda era paperless col bollino che era la sai come si chiama greenwashing e poi ogni volta che tu mandavi un... facevi una pratica cioè facevi un Q &A venivano stampate 72 pagine ti ho abito sotto al culo quel programmatore lì sapendo di essere bravo di poter lavorare dove cazzo voleva ha usato questo potere qua se tu non hai quel potere con...
+
+tu sei un sviluppatore del cavolo, va bene a me mi serve un code monkey, cioè la stessa gente che adesso dicono, con l'intelligenza artificiale per far salire un po' tue views Mauro, diciamole di nuovo, intelligenza artificiale AI, con le AI tutti dicono, moriranno tutti gli sviluppatori, proprio odiati.
+
+tu non pensi ai PM, i product owner, quelli che scrivono le specifiche, i tester, no, quelli che stanno sul cazzo a tutti, sono gli sviluppatori, perché gli sviluppatori hanno un potere nelle romani, che ma... ragazzi, Karl Marx che ci diceva riprendiamoci i mezzi di produzione, noi siamo l'unica classe operaia che i mezzi di produzione la posseggono, che è la knowledge che c'abbiamo, questa roba qui ovviamente, quindi teoria del complotto veramente se volete, doveva essere distrutta.
+
+devi livellare in qualche maniera verso il basso e quindi tutta l'industria, come ho detto, non solo, non parlo solo anche degli sviluppatori, parlo anche del design, cioè il design che si è appiattito, l'enscitification di qualsiasi prodotto che utilizziamo è voluta in quest'ottica. Perché? Perché non si vuole più, per fare una citazione colta, la qualità ci ha rotto il cazzo, non so se avete mai sentito questo... Non mi ricordo se era Platone o...
+
+Emiliano Pisu (1:44:21)
+coltissima!
+
+o René Ferretti diciamo!
+
+Mauro Murru (1:44:26)
+Aristotel, Aristotel, Aristotel. E'
+
+Davide (1:44:27)
+Orrere nei ferretti.
+
+Mauro Murru (1:44:30)
+una filosofia aristotelica.
+
+Davide (1:44:30)
+La qualità ci ha rotto il cazzo. Quella roba lì è vera, perché a me non interessa più darti un prodotto di qualità, avere una roba di qualità, uno sviluppo efficiente. A me mi interessa tirare fuori qualcosa, la prossima roba che devi consumare, deve durare poco e che devi dare via. Per fare questa roba qua non ho bisogno di uno sviluppatore bravo, ho bisogno di un code monkey che posso pagare poroco e che è rimpiazzabile facilmente. E quindi questo è quello che succede.
+
+Massimo Artizzu (1:44:55)
+più prevedibile
+
+come calcolo di velociti nell'ovviluppo dei progetti perché c'è anche questo da considerare.
+
+Davide (1:45:02)
+Sì, sì,
+
+Emiliano Pisu (1:45:02)
+e già
+
+Davide (1:45:03)
+certo. E quindi fai queste farm. Poi, ovvio che non... oddio. Se devo dire c'è un tizio in alphabet, la holding di Google, che proprio questa qui se l'è pensata, ma lì entriamo forse in ambiente scia chimica, eccetera. Non penso che ci sia proprio un complotto di questo tipo qua, che c'è qualche megamind che se l'è inventato. È una legge naturale del gioco del Monopole. Sì, del gioco del Monopole in cui se c'hai qualcuno...
+
+Mauro Murru (1:45:04)
+sì perché è prossima lo zero
+
+Emiliano Pisu (1:45:26)
+autoregolazione... certo
+
+Davide (1:45:31)
+se c'è qualcuno che ti rompe i maroni, cioè a me la cosa che mi fa impazzire che stiamo in Italia, gli sviluppatori non riusciamo a fare cartelle dei tassisti sì, che cavolo c'abbiamo noi di meno degli sviluppatori, cioè dei tassisti.
+
+Emiliano Pisu (1:45:42)
+Non c'è un
+
+ordine degli sviluppatori.
+
+Mauro Murru (1:45:43)
+
+
+Sainturre Play
+
+Luca (1:45:46)
+è che non ci mettiamo d'accordo
+
+tra te e lui in CSS, nativo, JavaScript e jQuery vedi?
+
+Davide (1:45:49)
+Esatto, sì, sì, riusciamo a litigare anche su questa roba.
+
+Emiliano Pisu (1:45:54)
+che da una parte è anche meno male perché almeno stimola pure la creatività e la nascita di nuove idee, di nuove librerie, per carità di Dio ci mancherebbe altro.
+
+Mauro Murru (1:46:02)
+E fu così che finimo l'episodio
+
+con Signora Contessa di Modena City Rambles,
+
+Emiliano Pisu (1:46:06)
+ahahahahh
+
+Massimo Artizzu (1:46:08)
+Sì, ma finiamo
+
+come so anche la sinistra italiana che non fa altro che litigare interamente, alla fine non ci va mai il governo.
+
+Emiliano Pisu (1:46:17)
+o se ci va ci va o se ci va ci va perché hanno una maschera di qualcos'altro poi alla fine
+
+Davide (1:46:19)
+That's it!
+
+Fortunatamente stiamo parlando da due ore e nessuno ci sta ascoltando più.
+
+Massimo Artizzu (1:46:26)
+No è fatta.
+
+Mauro Murru (1:46:26)
+No,
+
+Massimo Artizzu (1:46:28)
+Buonanotte.
+
+Mauro Murru (1:46:28)
+comunque detto questo insomma speriamo di aver dato un'idea insomma di o almeno di aver raccontato potenziali opzioni. Questo secondo me deve essere l'obiettivo dell'episodio e credo che l'abbiamo raggiunto e quindi è arrivato il momento tipico e topico di GitBark
+
+che è il momento del paese dei balocchi.
+
+Il Paese dei Balocchi è il momento in cui i guest e gli host di GitBar condividono con voi un'idea, un libro, talk, con qualunque cosa abbia catturato la loro attenzione e possano in qualche modo reputare utile e importante da condividere insomma con la community. Facciamo un rapido giro, Emiliano?
+
+Emiliano Pisu (1:47:35)
+Io vado secco e deciso su un sito che non consulta nessuno, su un sito dove nessuno si va a documentare, e il sito si chiama MDN.
+
+Mauro Murru (1:47:40)
+You're PORN
+
+Emiliano Pisu (1:47:48)
+Scusami Massimo! No, però dico sul serio Dico sul serio, diciamo che faccio public speaking da un po' meno tempo di questi altri due ragazzoni qui però lo faccio con
+
+Davide (1:47:50)
+Io gli do 10 euro al mese a quel dì.
+
+Massimo Artizzu (1:47:52)
+Il problema è che lo penso attento io così, adesso cosa metto?
+
+Luca (1:47:53)
+Non conosco.
+
+Emiliano Pisu (1:48:13)
+volta voglia di andare a condividere proprio questo, cioè andiamo a studiare i veri standard de facto, che sono HTML, CSS e JavaScript e andiamo a scoprire che poi alla fine tante cose che pensiamo si possono fare solo con una libreria e in realtà si possono fare anche senza e con delle performance non indifferenti e quindi per me il mio libro da consigliare è MDM.
+
+Mauro Murru (1:48:47)
+Non mettiamo il link nelle note dell'episodio, tutti lo conoscono.
+
+Emiliano Pisu (1:48:52)
+Direi di sì, o quantomeno tutti dovrebbero.
+
+Mauro Murru (1:48:54)
+Davide?
+
+Davide (1:48:57)
+Allora io ho un link che vi posto che è una bella lettura non concordo con tutto quello che dice penso che ci sia troppo c'è a GPT in come scritto ma è comunque un bel pensiero ed è un articolo che si chiama il giorno in cui gli hobby sono scomparsi è una cosa che mi tocca particolarmente che riguarda anche poi l'oggetto che voglio consigliare ovvero sul fatto che quant'è
+
+Ormai qualsiasi cosa facciamo, pure un hobby, cioè pure ascoltare, io ascolto questa musica qua perché mi fa essere più produttivo. Oppure quelle, quelli in-clingiate tipo ho versato il caffè sul pavimento e non sapete quanto questo mi abbia insegnato sul B2B2C, Questo tipo. Ed è vero, cioè ormai viviamo in una, siamo diventati delle macchine produttive. Oscar Wilde diceva
+
+il lavoro e il passatempo di chi non ha niente di meglio da fare. Noi stiamo così, ormai anche quando abbiamo un hobby, almeno personalmente io sono vittima in primis, quando ho un hobby decido di dire questa roba qui mi farà essere più produttivo. Se intaglio il legno, diventerò più bravo nella UI, riuscirò a portare questa matricità.
+
+A tal riguardo come Balocco, io propongo, faccio anche vedere, la colonna sonora di Metal Slug X che ho riscoperto ultimamente. Ragazzi, c'è sta roba qui è fenomenale, è fenomenale. Non me ne frega un cazzo di come è fatta, che abbiano fatto tutto su delle cartucce da 32 megabit. È una figata, cioè ascoltatevela. Se siete abbastanza vecchi da averlo giocato alla lagrima vi scende, se siete giovani è un pezzo di musica
+
+assurda, bellissima. Lo stage, quello lì con i cammelli, ragazzi è la fine del mondo. Fenomenale.
+
+Massimo Artizzu (1:50:55)
+dopo appiccio youtube e me lo ascolto
+
+anch'io allora invece ritorno un po sul tema che sapevate che davide doveva essere assolutamente il più filosofico di tutti noi io ritorno sul tema con un articolo di questo kit circle che è uno
+
+sviluppa attivamente i browser, tra cui anche Firefox eccetera, implementa le feature dei browser in questo articolo che ha il titolo CSS Classes Considered Harmful che fa parte un po' di una serie di articoli che dicono X Considered Harmful, chiaramente sono articoli molto opinionati, intitoloducono subito una sua forte opinione
+
+ma che fa un po' il sunto di quello che ci potrebbe essere in un approccio di come è quello del atomiche css e in generale anche dell'utilizzo di classi io francamente nel mio lavoro di tutti i giorni di classi css ne uso pochissime proprio in casi veramente rari perché generalmente posso utilizzare qualcosa di molto più espressivo che neanche devo mettermi a inventare
+
+perché ce l'ho già a disposizione i nomi? dei problemi che dovrebbe risolvere, Thewind diceva non devi più mettere a inventare i nomi di classi? bene io non lo faccio, io uso nomi di attributi, spesso attributi aria, pseudo classi, stati degli elementi, cose che sono già tutte a disposizione e raramente mi devo inventare qualcosa oltre al nome del componente che vabbè quello non si...
+
+Emiliano Pisu (1:52:38)
+Bello, mi piace. E condivido pienamente l'approccio classless. Pienamente.
+
+Luca (1:52:45)
+vado io, vado un po' off topic, giusto un appunto un po' di tempo fa ho provato a rifare il mio sito usando, voglio fare il css nativo, così me lo studio anche, perché ero rimasto un po' indietro non è facile, ho trovato un po' di difficoltà rispetto a quello che pensavo e quindi devo ancora metabolizzare questa cosa, soprattutto per capire perché non l'ho risultato
+
+facile. Comunque vado off topic per i balocchi, vado più sulla parte back, adesso stavo provando Authentic come identity access management, con l'alternativa keyclock, che lo installi sul server e c'hai il tuo identity access manager, non so quanto famoso sia, io non lo conoscevo quindi l'ho provato, è molto più leggero rispetto a
+
+che fa il suo e mi sto trovando bene se cercate se stai dalla ricerca di una cosa del genere potrebbe valer la pena provarlo è un secondo balocco che in realtà ho visto stamattina da un mio amico che si chiama wazoo anche questo non so quanto famoso sia però è un ex di rcm semplicemente un raccoglitore di
+
+log di eventi e tutto basato su open search, e etc. però sembra essere fatto molto molto molto bene facile da usare, ripeto non so quanto siano tu noti i lo scoperti di recente e quindi li balocco
+
+Mauro Murru (1:54:36)
+abbiamo fatto tutto il giro
+
+Emiliano Pisu (1:54:39)
+Siamo
+
+contenti, direi.
+
+Mauro Murru (1:54:42)
+⁓ hai ragione allora io abbiamo parlato di CSS è stata detta una cosa interessante spesso alcune tecnologie vengono utilizzate alcune tecnologie web vengono utilizzate anche per fare app per fare altre cose
+
+Emiliano Pisu (1:54:44)
+Ma che dù!
+
+Mauro Murru (1:55:12)
+è vero e a questo ci aggiungiamo che in moderni sistemi operativi hanno una UI che secondo me è brutta posso dirlo? ma è cosa è brutto? Windows è brutto si può dire? negli ultimi mesi ho migrato diverse applicazioni al terminale
+
+Massimo Artizzu (1:55:39)
+Hmm.
+
+Mauro Murru (1:55:41)
+ho deciso di applicare un tema colori al terminale e ho iniziato a muovere molte applicazioni sul terminale una di queste è Spotify per e ho iniziato a delle cose, a usare molto di più il terminale quindi Spotify Player è una applicazione a terminale che controlla Spotify
+
+ho riniziato ad usare i t-mux e il multiplexer per attivare e splittare lo schermo e fare tante cose a terminale e devo dire che in termini di bellezza pur non avendo ⁓ o almeno in termini di controllo sulla bellezza estetica pur non avendo una UI io la percepisco decisamente superiore e decisamente contestualizzata nel senso che il mio tema colori
+
+la mia struttura è applicata ovunque come deve essere e mi porta nel mio mondo e devo dire che questa cosa mi ha aiutato anche di più alla concentrazione quindi la cosa che volevo condividere è un sito web si chiama Terminal TROVE ed è un sito che contiene tante versioni di applicazioni
+
+terminale ho iniziato ad usare fzf ho iniziato a riutilizzare tanti di quei tool che sono super potenti e che funzionano bene senza caricando molto più velocemente senza l'esigenza di electron o di cose cose alieni che girano sotto il cofano però non voglio focalizzarmi sulla performance quanto sulla bellezza estetica delle cose e poi in un prossimo episodio
+
+in realtà parlerò sempre di queste cose ma in termini di workflow cosa ci siamo persi con il sistema desktop moderni quindi c'è anche un cliffhanger per un prossimo episodio, comunque provatele ripeto una di quelle che secondo me può essere un'apri porta è Spotify underscore player che funziona molto bene ma per esempio un altro tool che uso tantissimo a terminale è un
+
+DB Explorer che mi aiuta a muovermi tra belle dai vari database senza dover utilizzare TablePlus o cose di questo tipo. Funzionano bene, sono molto più produttivo perché c'ho un sacco di shortcut da tastiera. Uno dei problemi dei shortcut da tastiera è che non emergono. È difficile ricordarsili all'inizio, ok. Una cosa che accomuna quasi tutti questi tool è che se voi premete sul punto interrogativo vi apre
+
+una un allato una lista con le combinazioni di tasti e il loro significato e molte di questi tool ce l'hanno anche cercabile quindi in realtà il problema non sussiste e nulla insomma neovim e tutte queste belle robe buttateci un occhio perché a livello di focus a me hanno aiutato tantissimo meno distrazioni meno cose so scusate ho
+
+mi si è aperta un thread, potrei rimanere a parlare ora ma lo teniamo per un prossimo episodio. Fantastico, è stato un super episodio, sono veramente felice e mi aspettavo che ne faceste un po' di più a merda. In realtà mi avete fatto a merda, ma mi aspettavo un po' di più, sinceramente.
+
+Massimo Artizzu (1:59:23)
+ci siamo risparmiati
+
+Luca (1:59:24)
+è tardi
+
+Emiliano Pisu (1:59:25)
+perché non hai visto
+
+Davide (1:59:25)
+e taciù cio
+
+Emiliano Pisu (1:59:27)
+non hai visto la lista di la lista di link
+
+Davide (1:59:29)
+C'è ancora la lista da finire.
+
+Massimo Artizzu (1:59:31)
+no di più e si
+
+sul link di neo blast molto di più chi si sta riproponendo dei windows ogni tanto i post
+
+Davide (1:59:40)
+E se vi è piaciuta
+
+questa puntata seguite Massimo Artizzo su LinkedIn che ogni tanto vi trovate certe blastate che io mi giuccio, senso, mi arrivasse a me una roba del genere che spesso se volentino, esatto, sì sì sì sì, perché riesce a farlo con una plomba. Avete presente che ne so? I quelli che fanno Matt Drive, per dirne uno, che fanno i...
+
+Emiliano Pisu (1:59:49)
+sublime.
+
+Sì.
+
+Davide (2:00:03)
+stand up comedian UK, US che tu vai proprio lì a farti insultare. Ecco sempre di vedere una roba di quel genere là ed è gratis pure questa cosa che è bellissima.
+
+Emiliano Pisu (2:00:11)
+...da ingrarie.
+
+Mauro Murru (2:00:15)
+Ridendo e scherzando siamo a due ore di episodio quindi io ringrazio nuovamente Emiliano, Davide e Massimo per non essere venuti a trovarci. Grazie di nuovo. Vi ricordo che potete insomma trovarli sui loro social e su LinkedIn. Aggiungiamo i link alle note dell'episodio e grazie davvero per essere venuti.
+
+Emiliano Pisu (2:00:22)
+Grazie a te.
+
+Massimo Artizzu (2:00:23)
+Grazie a
+
+Davide (2:00:44)
+Grazie a te, grazie Luca, grazie Mauro.
+
+Emiliano Pisu (2:00:47)
+Grazie Luca e grazie Mauro.
+
+Luca (2:00:48)
+Grazie a voi.
+
+Mauro Murru (2:00:49)
+e...
+
+e Luca, allora, come è stata sta ripresa?
+
+Luca (2:00:54)
+Ma guarda si parlava, detto dai facciamo una puntata a Easy col CSS e poi via via non solo non era Easy ma poi si è sfociato sul filosofico per poi finire sui complotti. Va bene no? È stato pieno di sorprese insomma meglio della quinta stagione di Stranger Things.
+
+Infatti si è parlato anche di horror stories.
+
+Mauro Murru (2:01:19)
+No è stato
+
+bello, io sono davvero felice che abbiamo riacceso i nostri microfoni e che siamo... ha promesso la prossima volta ti mando una notice un po' prima perché dovete sapere che Luca ha ricevuto una notifica al novembre e un quarto e probabilmente era già in pigiama mentre stava...
+
+Luca (2:01:31)
+Ecco magari perché sul divano, quando mi arriva l'avviso sul divano...
+
+Sì, sì, oggi detto,
+
+ma oggi andiamo a letto
+
+Davide (2:01:48)
+puoi alzarti in piede e farci vedere se è sotto
+
+Mauro Murru (2:01:51)
+Non fanno, Luca, no? Non
+
+so se avete visto il meme su LinkedIn, no? C'è quella che si alza i mutand... E' il primo giorno di lavoro, Si alza i mutand... Fired! Sì, sì, è stato...
+
+Luca (2:02:04)
+il dress code.
+
+Emiliano Pisu (2:02:06)
+quello che fa
+
+la call da remoto, fa lo stand up mentre sta in moto, quello è bellissimo.
+
+Mauro Murru (2:02:12)
+vabbè ma chi è che non ha mai fatto uno stand up mentre ebu era in moto era seduto al cesso no io non l'ho mai fatto
+
+Davide (2:02:19)
+Voglio salutare su questo Matteo Guidotto, che quello che mi ha dato anche il link prima, perché se volete poi un giorno vi racconterà storie dell'orrore a riguardo.
+
+Mauro Murru (2:02:29)
+Matteo devi venire assolutamente a trovarci c'è una birra fresca anche per te. Detto questo grazie Luca di nuovo vi do appuntamento alla prossima settimana Luca promesso
+
+Davide (2:02:31)
+Esatto.
+
+Luca (2:02:44)
+Avvisami.
+
+Grazie.
+
+Mauro Murru (2:02:48)
+Ti avviso per tempo,
+
+stato un super piacere ritornare da voi e un abbraccio. Ciao ciao!
+
+Luca (2:02:54)
+Ciao!
+
+Massimo Artizzu (2:02:56)
+No
+
+Emiliano Pisu (2:02:58)
+Ciao a
+
+Luca (2:03:02)
+Beh, due ore e zero tre. ⁓ la sigla, la sigla.
+
+Davide (2:03:05)
+Bene,
+
+Emiliano Pisu (2:03:06)
+una
+
+cosetta, una cosetta
+
+Forza, forza, c'è una sigla.
+
+Davide (2:03:12)
+Non c'è una sigla di chiusura?
+
+Mauro Murru (2:03:15)
+è colpa del css che non ha attivato il pulsaccio
+
+Luca (2:03:16)
+è arrugginito
+
+Davide (2:03:18)
+E' stato vaide
+
+Massimo Artizzu (2:03:18)
+all'iniziale
+
+è la bellissima... fantastico
+
+Emiliano Pisu (2:03:21)
+Geniale!
+
+Mauro Murru (2:03:25)
+Vabbè, non parte ragazzi, alla prossima episodia!
+
+Emiliano Pisu (2:03:27)
+Va
+
+bene così, che ci frega, va bene così.
+
