@@ -136,3 +136,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Standardized focus ring utility classes for consistent keyboard navigation */
+  /* Default focus ring for buttons, links, and general interactive elements */
+  .focus-ring-default {
+    @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-2;
+  }
+
+  /* Focus ring for form inputs with smaller offset */
+  .focus-ring-input {
+    @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:ring-offset-1;
+  }
+
+  /* Focus ring for elements that need higher visibility */
+  .focus-ring-strong {
+    @apply focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}
