@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const _sans = Inter({ subsets: ["latin"] });
@@ -94,6 +95,20 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${_mono.variable}`}>
         {children}
         <Analytics />
+        <Script id="matomo-analytics" strategy="afterInteractive">
+          {`
+            var _paq = window._paq = window._paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="https://matomo.rain1.it/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '2']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   )
