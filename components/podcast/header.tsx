@@ -24,11 +24,8 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           <Link href="/episodes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Episodi
           </Link>
-          <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Chi Siamo
-          </Link>
-          <Link href="#subscribe" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Iscriviti
+          <Link href="/speakers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Speaker
           </Link>
           <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
             <Link href="/supportaci" className="flex items-center gap-1.5">
@@ -54,11 +51,8 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
           <Link href="/episodes" className="block text-sm text-foreground" onClick={() => setMenuOpen(false)}>
             Episodi
           </Link>
-          <Link href="#about" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
-            Chi Siamo
-          </Link>
-          <Link href="#subscribe" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
-            Iscriviti
+          <Link href="/speakers" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
+            Speaker
           </Link>
           <Button size="sm" asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
             <Link href="/supportaci" className="flex items-center justify-center gap-1.5" onClick={() => setMenuOpen(false)}>
