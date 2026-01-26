@@ -99,8 +99,8 @@ export default async function HomePage() {
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center justify-between mb-8">
                 <h2 className="font-serif text-3xl text-foreground">Altri Episodi</h2>
-                <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
-                  <Link href="/episodes">Vedi Tutti</Link>
+                <Button variant="ghost" className="text-muted-foreground hover:text-foreground focus-ring-default" asChild>
+                  <Link href="/episodes">Vedi tutti gli episodi</Link>
                 </Button>
               </div>
               <div className="flex flex-col gap-4">
