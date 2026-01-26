@@ -137,7 +137,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               <div className="relative aspect-square rounded-xl overflow-hidden">
                 <Image
                   src={episode.guest.image || "/placeholder.svg"}
-                  alt={episode.title}
+                  alt=""
                   fill
                   className="object-cover"
                   priority
@@ -359,7 +359,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                   <div className="flex items-center gap-4 mb-4">
                     <Image
                       src={info.image || "/placeholder.svg"}
-                      alt={info.author}
+                      alt=""
                       width={56}
                       height={56}
                       className="rounded-full object-cover"
