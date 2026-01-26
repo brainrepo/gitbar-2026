@@ -192,6 +192,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
           onValueChange={handleSeek}
           className="cursor-pointer"
           disabled={!audioUrl}
+          aria-label="Posizione riproduzione"
         />
         <div className="flex justify-between text-xs text-muted-foreground mt-2">
           <span>{formatTime(currentTime)}</span>
@@ -206,7 +207,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             variant="ghost"
             size="icon"
             onClick={skipBack}
-            className="text-muted-foreground hover:text-foreground"
+            className="w-11 h-11 text-muted-foreground hover:text-foreground"
             disabled={!audioUrl}
           >
             <SkipBack className="w-5 h-5" />
@@ -233,7 +234,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             variant="ghost"
             size="icon"
             onClick={skipForward}
-            className="text-muted-foreground hover:text-foreground"
+            className="w-11 h-11 text-muted-foreground hover:text-foreground"
             disabled={!audioUrl}
           >
             <SkipForward className="w-5 h-5" />
@@ -247,7 +248,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             variant="ghost"
             size="icon"
             onClick={toggleMute}
-            className="text-muted-foreground hover:text-foreground shrink-0"
+            className="w-11 h-11 text-muted-foreground hover:text-foreground shrink-0"
           >
             {isMuted || volume === 0 ? (
               <VolumeX className="w-4 h-4" />
@@ -262,6 +263,7 @@ export function AudioPlayer({ title, episodeNumber, audioUrl }: AudioPlayerProps
             step={1}
             onValueChange={handleVolumeChange}
             className="cursor-pointer"
+            aria-label="Volume"
           />
         </div>
       </div>
