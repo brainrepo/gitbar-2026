@@ -7,6 +7,7 @@ import { fetchPodcastData } from "@/lib/rss-parser"
 import { getEpisodeContent } from "@/lib/episode-content"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { generatePodcastSeriesSchema, generateOrganizationSchema, generateWebSiteSchema } from "@/lib/structured-data"
 
 export default async function HomePage() {
   const { info, episodes } = await fetchPodcastData()
@@ -15,8 +16,24 @@ export default async function HomePage() {
   // Ottieni contenuto aggiuntivo per l'ultimo episodio (per ottenere l'URL YouTube se disponibile)
   const latestEpisodeContent = latestEpisode ? await getEpisodeContent(latestEpisode.number) : null
 
+  const podcastSchema = generatePodcastSeriesSchema(info, episodes)
+  const organizationSchema = generateOrganizationSchema()
+  const websiteSchema = generateWebSiteSchema()
+
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(podcastSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <Header podcastTitle={info.title} />
 
       <main className="flex-1">

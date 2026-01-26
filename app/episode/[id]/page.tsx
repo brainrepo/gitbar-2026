@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Calendar, Clock, Share2, YoutubeIcon } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, Share2, Youtube } from "lucide-react"
 import { Header } from "@/components/podcast/header"
 import { Footer } from "@/components/podcast/footer"
 import { AudioPlayer } from "@/components/podcast/audio-player"
@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { fetchPodcastData, getEpisodeById } from "@/lib/rss-parser"
 import { getEpisodeContent, getEpisodeTranscript } from "@/lib/episode-content"
 import ReactMarkdown from "react-markdown"
+import { generatePodcastEpisodeSchema } from "@/lib/structured-data"
 
 interface EpisodePageProps {
   params: Promise<{ id: string }>
@@ -27,14 +28,45 @@ export async function generateMetadata({ params }: EpisodePageProps) {
   const { id } = await params
   const { episodes, info } = await fetchPodcastData()
   const episode = getEpisodeById(episodes, id)
-  
+
   if (!episode) {
     return { title: "Episodio Non Trovato" }
   }
 
+  const episodeUrl = `https://gitbar.it/episode/${episode.id}`
+  const imageUrl = episode.guest.image || info.image
+
   return {
-    title: `${episode.title} | ${info.title}`,
+    title: episode.title,
     description: episode.description,
+    keywords: [...episode.topics, 'podcast', 'gitbar', 'developer', 'tech'],
+    authors: [{ name: info.author }],
+    alternates: {
+      canonical: `/episode/${episode.id}`,
+    },
+    openGraph: {
+      type: 'music.song',
+      locale: 'it_IT',
+      url: episodeUrl,
+      title: episode.title,
+      description: episode.description,
+      siteName: info.title,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: episode.title,
+        },
+      ],
+      audio: episode.audioUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: episode.title,
+      description: episode.description,
+      images: [imageUrl],
+    },
   }
 }
 
@@ -79,8 +111,14 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
   const youtubeVideoId = episodeContent?.youtubeUrl ? getYouTubeVideoId(episodeContent.youtubeUrl) : null
 
+  const episodeSchema = generatePodcastEpisodeSchema(episode, info)
+
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeSchema) }}
+      />
       <Header podcastTitle={info.title} />
 
       <main className="flex-1">
@@ -251,7 +289,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                       // Funzione helper per formattare il testo con interruzioni di riga dopo i punti
                       const formatTextWithLineBreaks = (text: string) => {
                         // Dividi su ". " (punto seguito da spazio) ma mantieni il punto
-                        const sentences = text.split(/(\. )/g).reduce((acc: string[], part, i, arr) => {
+                        const sentences = text.split(/(\. )/g).reduce((acc: string[], part, i) => {
                           if (part === '. ' && i > 0) {
                             // Aggiungi il punto alla frase precedente
                             acc[acc.length - 1] += part.trim()
@@ -356,7 +394,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
                     >
-                      <YoutubeIcon className="w-5 h-5" />
+                      <Youtube className="w-5 h-5" />
                       Apri su YouTube
                     </a>
                   </div>

@@ -9,11 +9,61 @@ const _serif = Space_Grotesk({ subsets: ["latin"] });
 const _mono = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
 
 export const metadata: Metadata = {
-  title: 'The Quiet Hour | A Podcast for Thoughtful Conversations',
-  description: 'Join us for intimate conversations with creators, thinkers, and doers who are shaping the future.',
-  generator: 'v0.app',
+  title: {
+    default: 'Gitbar | Il dopolavoro digitale degli sviluppatori',
+    template: '%s | Gitbar Podcast'
+  },
+  description: 'Il circolo del dopolavoro degli sviluppatori e ingegneri del software. Chiacchiere su JavaScript, Rust, AI, DevOps, architetture e soft skills. Interviste con developer, dev rel e innovatori del mondo tech.',
+  keywords: ['podcast', 'sviluppatori', 'developer', 'software engineering', 'javascript', 'rust', 'AI', 'devops', 'tech', 'programmazione', 'coding', 'web development', 'gitbar'],
+  authors: [{ name: 'Gitbar' }],
+  creator: 'Gitbar',
+  publisher: 'Gitbar',
+  metadataBase: new URL('https://gitbar.it'),
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': 'https://api.riverside.fm/hosting/B4uOwdEh.rss',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'it_IT',
+    url: 'https://gitbar.it',
+    title: 'Gitbar | Il dopolavoro digitale degli sviluppatori',
+    description: 'Il circolo del dopolavoro degli sviluppatori e ingegneri del software. Chiacchiere su JavaScript, Rust, AI, DevOps, architetture e soft skills.',
+    siteName: 'Gitbar Podcast',
+    images: [
+      {
+        url: '/images/podcast-cover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Gitbar Podcast Cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gitbar | Il dopolavoro digitale degli sviluppatori',
+    description: 'Il circolo del dopolavoro degli sviluppatori e ingegneri del software. Chiacchiere su JavaScript, Rust, AI, DevOps, architetture e soft skills.',
+    images: ['/images/podcast-cover.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+      },
       {
         url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
@@ -29,6 +79,9 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  verification: {
+    google: 'google-site-verification-code',
+  },
 }
 
 export default function RootLayout({
@@ -37,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className={`font-sans antialiased ${_mono.variable}`}>
         {children}
         <Analytics />

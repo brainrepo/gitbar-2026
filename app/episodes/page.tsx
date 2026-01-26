@@ -2,6 +2,26 @@ import { Header } from "@/components/podcast/header"
 import { Footer } from "@/components/podcast/footer"
 import { EpisodeCard } from "@/components/podcast/episode-card"
 import { fetchPodcastData } from "@/lib/rss-parser"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Tutti gli Episodi',
+  description: 'Esplora la collezione completa degli episodi del podcast Gitbar. Conversazioni su JavaScript, Rust, AI, DevOps e innovazione nel mondo dello sviluppo software.',
+  openGraph: {
+    title: 'Tutti gli Episodi | Gitbar Podcast',
+    description: 'Esplora la collezione completa degli episodi del podcast Gitbar. Conversazioni su JavaScript, Rust, AI, DevOps e innovazione nel mondo dello sviluppo software.',
+    url: 'https://gitbar.it/episodes',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tutti gli Episodi | Gitbar Podcast',
+    description: 'Esplora la collezione completa degli episodi del podcast Gitbar. Conversazioni su JavaScript, Rust, AI, DevOps e innovazione nel mondo dello sviluppo software.',
+  },
+  alternates: {
+    canonical: '/episodes',
+  },
+}
 
 export default async function EpisodesPage() {
   const { info, episodes } = await fetchPodcastData()
