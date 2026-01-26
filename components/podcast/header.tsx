@@ -20,17 +20,22 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
         </Link>
 
         {/* Navigazione Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/episodes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Episodi
-          </Link>
-    
-          <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
-            <Link href="/supportaci" className="flex items-center gap-1.5">
-              <Heart className="w-4 h-4 fill-current" />
-              Supportaci
-            </Link>
-          </Button>
+        <nav className="hidden md:flex items-center gap-8" aria-label="Navigazione principale">
+          <ul className="flex items-center gap-8 list-none m-0 p-0">
+            <li>
+              <Link href="/episodes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Episodi
+              </Link>
+            </li>
+            <li>
+              <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
+                <Link href="/supportaci" className="flex items-center gap-1.5">
+                  <Heart className="w-4 h-4 fill-current" />
+                  Supportaci
+                </Link>
+              </Button>
+            </li>
+          </ul>
         </nav>
 
         {/* Pulsante Menu Mobile */}
@@ -45,19 +50,27 @@ export function Header({ podcastTitle = "The Quiet Hour" }: HeaderProps) {
 
       {/* Navigazione Mobile */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-border bg-background px-6 py-4 space-y-4">
-          <Link href="/episodes" className="block text-sm text-foreground" onClick={() => setMenuOpen(false)}>
-            Episodi
-          </Link>
-          <Link href="/speakers" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
-            Speaker
-          </Link>
-          <Button size="sm" asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
-            <Link href="/supportaci" className="flex items-center justify-center gap-1.5" onClick={() => setMenuOpen(false)}>
-              <Heart className="w-4 h-4 fill-current" />
-              Supportaci
-            </Link>
-          </Button>
+        <nav className="md:hidden border-t border-border bg-background px-6 py-4" aria-label="Navigazione principale">
+          <ul className="space-y-4 list-none m-0 p-0">
+            <li>
+              <Link href="/episodes" className="block text-sm text-foreground" onClick={() => setMenuOpen(false)}>
+                Episodi
+              </Link>
+            </li>
+            <li>
+              <Link href="/speakers" className="block text-sm text-muted-foreground" onClick={() => setMenuOpen(false)}>
+                Speaker
+              </Link>
+            </li>
+            <li>
+              <Button size="sm" asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all animate-pulse">
+                <Link href="/supportaci" className="flex items-center justify-center gap-1.5" onClick={() => setMenuOpen(false)}>
+                  <Heart className="w-4 h-4 fill-current" />
+                  Supportaci
+                </Link>
+              </Button>
+            </li>
+          </ul>
         </nav>
       )}
     </header>

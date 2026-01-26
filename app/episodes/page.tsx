@@ -30,7 +30,7 @@ export default async function EpisodesPage() {
     <div className="min-h-screen flex flex-col">
       <Header podcastTitle={info.title} />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Intestazione Pagina */}
         <section className="py-12 md:py-16 px-6 bg-secondary/50">
           <div className="max-w-6xl mx-auto">

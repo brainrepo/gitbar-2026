@@ -36,7 +36,7 @@ export default async function HomePage() {
       />
       <Header podcastTitle={info.title} />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Sezione Hero */}
         <section className="py-16 md:py-24 px-6">
           <div className="max-w-6xl mx-auto">

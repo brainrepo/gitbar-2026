@@ -19,7 +19,7 @@ export default async function SupportPage() {
     <div className="min-h-screen flex flex-col">
       <Header podcastTitle={info.title} />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <section className="py-12 md:py-16 lg:py-20 px-6">
           <div className="max-w-4xl mx-auto">
             {/* Header Section */}

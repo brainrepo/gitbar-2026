@@ -121,7 +121,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
       />
       <Header podcastTitle={info.title} />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Sezione Hero */}
         <section className="py-8 md:py-12 px-6 bg-secondary/50">
           <div className="max-w-4xl mx-auto">

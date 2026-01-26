@@ -93,6 +93,12 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`font-sans antialiased ${_mono.variable}`}>
+        <a
+          href="#main-content"
+          className="absolute -top-10 left-0 bg-black text-white px-4 py-2 z-[100] focus:top-0 transition-all"
+        >
+          Salta al contenuto principale
+        </a>
         {children}
         <Analytics />
         <Script id="matomo-analytics" strategy="afterInteractive">
