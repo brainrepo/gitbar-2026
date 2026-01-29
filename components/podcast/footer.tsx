@@ -51,7 +51,7 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
 
           {/* Collegamenti */}
           <div>
-            <p className="font-medium text-foreground mb-4">Podcast</p>
+            <h4 className="font-medium text-foreground mb-4">Podcast</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -78,7 +78,7 @@ export function Footer({ podcastTitle = "The Quiet Hour" }: FooterProps) {
 
           {/* Contatti */}
           <div>
-            <p className="font-medium text-foreground mb-4">Contatti</p>
+            <h4 className="font-medium text-foreground mb-4">Contatti</h4>
             <a
               href="mailto:info@gitbar.it"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"

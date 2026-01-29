@@ -63,7 +63,7 @@ export function EpisodeCard({ episode, featured = false, youtubeUrl }: EpisodeCa
                 <>
                   <Image
                     src={episode.guest.image || "/placeholder.svg"}
-                    alt=""
+                    alt={episode.guest.name}
                     fill
                     className="object-cover"
                   />
@@ -94,7 +94,7 @@ export function EpisodeCard({ episode, featured = false, youtubeUrl }: EpisodeCa
               <div className="flex items-center gap-3 mb-4">
                 <Image
                   src={episode.guest.image || "/placeholder.svg"}
-                  alt=""
+                  alt={episode.guest.name}
                   width={40}
                   height={40}
                   className="rounded-full object-cover"
@@ -151,7 +151,7 @@ export function EpisodeCard({ episode, featured = false, youtubeUrl }: EpisodeCa
               <div className="flex items-center gap-2 min-w-0">
                 <Image
                   src={episode.guest.image || "/placeholder.svg"}
-                  alt=""
+                  alt={episode.guest.name}
                   width={24}
                   height={24}
                   className="rounded-full object-cover flex-shrink-0"

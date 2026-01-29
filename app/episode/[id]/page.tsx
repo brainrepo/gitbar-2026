@@ -137,7 +137,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               <div className="relative aspect-square rounded-xl overflow-hidden">
                 <Image
                   src={episode.guest.image || "/placeholder.svg"}
-                  alt=""
+                  alt={episode.title}
                   fill
                   className="object-cover"
                   priority
@@ -353,13 +353,13 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
               <aside className="space-y-8">
                 {/* Informazioni Conduttore */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <p className="text-sm font-medium text-muted-foreground mb-4">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
                     Condotto da
-                  </p>
+                  </h3>
                   <div className="flex items-center gap-4 mb-4">
                     <Image
                       src={info.image || "/placeholder.svg"}
-                      alt=""
+                      alt={info.author}
                       width={56}
                       height={56}
                       className="rounded-full object-cover"
@@ -373,9 +373,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
                 {/* Condivisione */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <p className="text-sm font-medium text-muted-foreground mb-4">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
                     Condividi questo Episodio
-                  </p>
+                  </h3>
                   <Button variant="outline" className="w-full justify-center gap-2 bg-transparent">
                     <Share2 className="w-4 h-4" />
                     Condividi
@@ -385,9 +385,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
                 {/* Link YouTube */}
                 {episodeContent?.youtubeUrl && (
                   <div className="bg-card border border-border rounded-xl p-6">
-                    <p className="text-sm font-medium text-muted-foreground mb-4">
+                    <h3 className="text-sm font-medium text-muted-foreground mb-4">
                       Guarda su YouTube
-                    </p>
+                    </h3>
                     <a
                       href={episodeContent.youtubeUrl}
                       target="_blank"
@@ -402,9 +402,9 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
 
                 {/* Ascolta Su */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <p className="text-sm font-medium text-muted-foreground mb-4">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-4">
                     Ascolta su
-                  </p>
+                  </h3>
                   <div className="space-y-3">
                     <a
                       href="#"
