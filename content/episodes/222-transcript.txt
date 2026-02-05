@@ -1,0 +1,722 @@
+Brainrepo (01:39)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Avremmo potuto parlare di green computing, ma siccome io guardava al futuro ho deciso di trasferirmi casa a circa 25 minuti dalla centrale nucleare più importante, perché a noi del green computing, di tutta la roba verde ormai non ce ne frega più niente, è
+
+Cruceremo il mondo consumando token ed è questo il motivo per cui Qui a git bar finalmente parliamo dei tool che in realtà dovremo utilizzare da qui alla fine dei nostri giorni non credo ma Diciamo che c'è un potenziale rischio Vanno molto veloci le cose quindi fondamentalmente non so se a domani avrò un lavoro
+
+perché ci saranno gli agenti che lo faranno per me e io probabilmente sarò sotto un ponte col cartellino Money for Beers oppure che ne sarà di noi tra qualche anno? Lo staremo solo a vedere. Detto questo però quindi oggi parliamo di una cosa importantissima almeno per quanto riguarda l'approccio all'uso degli strumenti moderni e parliamo di Spec Driven Development
+
+⁓ io... la mia bold opinion l'ho già detta, o almeno. Ho promesso al nostro ospite che ne averai detto solo una, ma... non è vero. Abbiamo avuto bisogno di investire miliardi di euro in modelli, a battere la foresta mazzonica per creare modelli LLM, per capire che prima di scrivere quel cazzo di codice bisogna scrivere le specifiche.
+
+Però, nonostante tutto, credo che non è stato in vano, perché lo stiamo capendo! Cazzo, abbiamo distrutto Metamondo, abbiamo creato qualcosa di incredibile, però ci stiamo arrivando! Stiamo arrivando a capire che prima di scrivere il codice dobbiamo accendere il cervello e provare a scrivere che cosa vogliamo fare. diciamo che è un buon obiettivo. Ne valsa... ne valsa la pena. Allora possiamo partire.
+
+prima la nostra sigletta e poi presento l'ospite.
+
+Techlead in Earform, nonché l'uomo, uno degli uomini che hanno calcato più palchi in assoluto, ha una performance tempo slash presenza in conferenze credo più alta in Europa, è anche un mio carissimo collega Techlead a Earform. Abbiamo con noi Alfonso Graziano. Ciao Alfonso!
+
+Alfonso (04:37)
+Ciao ragazzi, ciao Mauro, buonasera e grazie per l'invito. È sempre stra bello essere qui.
+
+Brainrepo (04:45)
+Grazie a te per aver trovato il modo per chiacchierare. Io ho pensato a te per parlare di questo argomento che un po' mi scalda. Non so se si era capito dal preambolo, dall'introduzione. Un po' mi scalda perché dico a tutto senso, vediamo. Ho questa percezione che stiamo provando a sparare con il bazooka alle formiche, però...
+
+magari è una mia percezione. E quindi siccome tu sei sempre molto attivo nella tematica, so che ci stai dentro fino al collo praticamente ultimamente, ho detto ma sì, chiamiamo Alfonso per parlare di una tematica specifica, che lo Spec Driven Development. Noi, o almeno, io sono vecchio ormai, tu sei giovincello, io sono vecchio.
+
+I vecchi hanno questa tendenza a essere un po' nozionisti, no? Quindi a focalizzarsi su the must know, cioè quello che devi sapere, cazzo, studia come funziona un sistema operativo prima di fare un bottone rosa, ecco, noi vecchi diventiamo così. Ti voglio fare una domanda, quando si parla di spec driven design, quali sono i pillar, gli elementi basici?
+
+che dobbiamo avere nel nostro skillset ancora prima di analyze o specify o fammi un piano per sviluppare questa feature.
+
+Alfonso (06:26)
+Allora, pillar nel senso conoscenze di base che secondo me chiunque che lavora oggi con insomma che scrive codice aiutato supportato in in qualsiasi modo da chi scrive da chi si fa supportare alla scrittura di codice a chi fa chi scrive interamente la code base utilizzando utilizzando SDD secondo me ci sono un po di un po di cose in primis
+
+devi capire che cosa ci sta sotto al cofano. Quindi qual è l'oggetto che ti sta generando la spec, il planning e poi il codice. Quindi devi sapere come funzionano le allerne. Che non vuol dire che devi andarti a leggere come funziona la tension o come funziona un trasform. Quello...famo finta che non ci interessa. Cioè è un livello, è un layer di... è un layer di astrazione sotto quello che ci è pratico.
+
+Però ci sono alcuni concetti che ci serve sapere, cioè dobbiamo sapere cos'è una Context Window, cos'è una Context Window utile, perché io vedo tanti dev che banalmente su Cursoro c'è questa cosina che ti fa vedere una specie di progress bar circolare di quanta Context Window c'hai disponibile. E molti arrivano a 85-90-95%. No! Perché? Perché siccome appunto purtroppo per i Transformer l'attenzione quadratica è comunque
+
+quello che va a succedere è che superato una certa percentuale di context window che fiamo finta alla metà purtroppo le performance dell'LLM iniziano a degradare
+
+Brainrepo (08:03)
+Un po' come Red Dead Redemption, no? Quando sei sul cavallo, dopo un po' il cavallo inizia a essere stanco e avere sette, se tu FRUSTI il cavallo, il cavallo rallenta e degenera finché non ti schiatta sotto il culo.
+
+Alfonso (08:16)
+Esatto, capire come utilizzare il modello sottostante secondo me è importantissimo. E poi capire che sto agente che sembra un termine strano, sembra una roba complessa. Ragazzi, mi faccio questo appello a tutti gli ascoltatori di Kidbar. Se non ci avete un caspita da fare dopo aver ascoltato questa fantastica puntata di Kidbar, andatevi a leggere Tiny Agents di Hugging Face, che è un articolo che fa...
+
+un agente in 50 righe di codice. Ragazzi, un agente è un for loop. Un for loop che in primis dichiara, quindi inserisce nella finestra di contesto quali sono i tool che l'agente può utilizzare. perché pure noi diciamo, un altro dei pilastri, la parte di tool, quindi che cosa può fare questo LLM. E siccome abbiamo queste astrazioni che sono comodissime, non sappiamo che c'è sotto al copo, ma...
+
+Quando noi andiamo a caricare, tra virgolette, i tool dentro i vari aggetti, non stiamo facendo nient'altro che inserire dentro la finestra di contesto di sto robbo, di sto oggetto dell'LLM dei JSON schema che descrivono questi tool. Quando l'LLM va a fare quella che noi chiamiamo tool call,
+
+Ragà, non è nient'altro che sputare in Output JSON, cioè al posto di darci la risposta a noi, sputa in Output JSON strutturato in un certo modo, che poi la gente dice, ⁓ caspita, ma adesso vuoi che faccio una tool call perché mi dato questo JSON strutturato in questo modo? Dai! Quindi ci sarà un programma host a cui viene delegato l'utilizzare questi tool, che poi lo possiamo con il TimeCP, lo possiamo rendere complicato quanto vogliamo.
+
+Però il concetto è sempre quello. Ci sono dei token in input, token in output e quello che va a fare il chiamare tool in molti casi è o fare side effect, scrivere codice, quindi mettere questa roba da qualche altra parte, oppure fare una chiamata API, una post. Io ora lo sto utilizzando banalmente molto per fare dei sync su Azure DevOps, perché sono una persona orribile, mi scoccio di andare a spostare le carte a manina sulla bordo, quindi dico...
+
+nel mio workflow, fammelo tu, per favore, e quello è un set effect. Oppure per fare context retrieval. Quindi io, LLM, dico, mi servono queste informazioni, per favore dammi queste informazioni. Quindi questi sono due dei pilastri, il terzo pilastro che secondo me dobbiamo conoscere, e più che pilastro, l'informazione importante che dobbiamo conoscere, che può sembrare banale, però è importante.
+
+è il concetto di steering dell'LM quindi quello che noi chiamiamo human in the loop cioè sto oggetto mi tira fuori in output qualcosa questo qualcosa per me revisore umano è buono al 95 % ok? sei mutato
+
+Brainrepo (11:31)
+ho solo detto ottimista
+
+Alfonso (11:34)
+ok famo finta famo finta che famo finta che è preciso al 95 % quindi lui in output mi sputa un file markdown che è preciso al 95 % c'è un bullet point che dice di fare una cosa che io in realtà è una estuev oppure non mi interessa nel momento in cui quel markdown ritorna nella finestra di contesto e ci devo fare qualcosa mi diventa un task poi quella roba lì viene spanza e l'llm lo prende come buono quindi ci fa altre cose quindi l'errore
+
+si va a aumentare in maniera esponenziale se noi non lo controlliamo. In realtà non è un errore, è quello che l'LLM fa. Quindi se noi non abbiamo un Human in the Loop che fa verifiche, che controlla che quello che viene fatto è allineato con quella che è la nostra necessità, ci ritroviamo che dopo già poche iterazioni, sto roba è andato a fare una cosa che non è allineato a quello che vogliamo fare noi.
+
+Brainrepo (12:26)
+Quindi
+
+stai dicendo che è YOLO mode ma anche no, una roba del genere.
+
+Alfonso (12:34)
+Allora,
+
+wait, perché YOLO mode quando si parla di implementazione ancora ancora me l'accollo perché soprattutto se c'ho dei buoni test, soprattutto se c'ho dei modi per cui la gente può fare self-healing, cioè può verificare quello che ha fatto e verificare se quello che fatto è coerente con la spec, il piano, comunque quello che gli ho detto.
+
+Quello ancora ancora me l'accollo di fare YOLOmode se gli do un buon input di partenza, non voglio ancora parlare di spec, perché poi ci arriviamo, però se gli do un buon input ben strutturato di partenza e gli dico vai YOLOmode, se la gente è ben strutturato, in teoria, si spera anche nella pratica, dovrebbe in qualche modo riuscire a fare un loop di implementazione verifica e correzione. Quindi YOLOmode sull'implementazione me l'accollo, su
+
+Tutto quello che arriva prima non me l'accorre.
+
+Brainrepo (13:32)
+Questo è un punto interessante, grazie, perché anch'io sono abbastanza d'accordo, nel senso che tutto quello che viene prima lo vedo più come una sessione di brainstorming che è un vai e fallo.
+
+Alfonso (13:49)
+tutto quello che viene prima ci vuole l'umano che è allineato, che sa quello che effettivamente è necessario, che l'LLM non ha perché non ha tutto il contesto di quello che serve.
+
+Brainrepo (14:02)
+E quindi ritorniamo, cioè c'è questo parallelo che io continuo a vedere del pensare prima di scrivere il dannato codice, Immagina un contesto dove non usi l'LLM, ok? C'è chi, code first, prende, inizia a battere tasti e poi cambia pezzi, refactora il codice, dopo la prima ora e mezza sta di nuovo facendo un git init e sta iniziando Greenfield.
+
+E questo secondo me è quello, io lo modo di cui abbiamo parlato che in realtà non andrebbe a approcciarci. C'è questo parallelismo molto stretto. C'è invece chi prima di scrivere il codice come il buon vecchio Mauro che ormai preferisce passare più tempo sul divano che sulla scrivania, inizia a pensare, a ragionare, a raffinare il pensiero e spesso mi trovo, mi trovavo.
+
+non facevo a scrivere del codice già con le idee chiare, già sapendo cosa volevo. Era molto più veloce, la qualità del codice era molto superiore e non dico che si riusciva ad avere uno one shot, prendi, spari, quello che ti serve, però...
+
+Alfonso (15:10)
+riuscivi quasi
+
+ad immaginarti il codice a un certo livello di astrazione.
+
+Brainrepo (15:16)
+Sì,
+
+lo facevo girare nella mia testa.
+
+Alfonso (15:18)
+Sì, sì. E dici, caspita, si rompe. E dici, c'hai quel click. Secondo me la differenza sta... Secondo me tutto sta nel fatto che dobbiamo capire che il codice non è nient'altro che un modo per scrivere regole per implementare un'idea. Non dobbiamo delegare alla macchina, almeno non al 100%. La prima parte che è quella di passare da che cosa devo fare a come lo faccio. Cioè, questo gap di dire...
+
+che cosa sto facendo? In primis fare refinement di che cosa sto facendo, spesso e volentieri che cosa sto facendo ha uno spazio di possibilità enorme. Quindi la prima parte è fare narrow down, quindi esplorare lo spazio delle possibilità, capire quali sono le mie opzioni e anche lì, puoi passare settimane e fare rid-off analisi se devi fare qualcosa di un minimo complesso. Se tu invece dai un prompt all'LLM e gli dici, dai e fa...
+
+facciamo finta a un LLM scemo, non un agente che ha un proprio strutturato per farti challenge e quant'altro, un LLM scemo gli diciamo implementami questa roba lui va e siccome l'LLM è un oggetto statistico lui che cosa va a fare? Collassa tutte le possibilità in un'unica soluzione e quindi ti implementa roba che poi magari non c'ha senso oppure magari è molto subottimale
+
+Quindi secondo me noi non dobbiamo delegare la parte, o comunque dobbiamo farci supportare dall'LLM nella parte di... capire qual è il requisito, fare exploration, quindi esplorare le possibilità, esplorare lo spazio della soluzione, capire qual è la soluzione, scrivere la soluzione, in questo caso anche in linguaggio naturale, e poi premiamo un pulsantino e lui scrive il codice. Però noi la soluzione l'abbiamo già...
+
+pensata, ideata, interiorizzata, abbiamo ragionato, ci abbiamo lavorato. Per questo secondo me almeno in questo momento non c'ha nessun senso che dice che tra qualche anno i dev verranno verranno verranno sostituiti. C'è una cosa di Jiang Sen Wang che a me piace moltissimo che è differenziare tra porpos e task
+
+il purpose di un software ingegnere è risolvere problemi. Il task che magari viene automatizzato è lo scrivere codice, ma il purpose di risolvere problemi ce l'abbiamo ancora.
+
+Brainrepo (17:54)
+Vero, vedissimo, e allora visto che stiamo abbiamo toccato questo tema in realtà io mi fermerò un attimo a pensare a una cosa no?
+
+È vero, il nostro obiettivo è risolvere i problemi. Ieri lo facevamo in linguaggio di programmazione, quindi pensavamo in termini di linguaggio di programmazione. Oggi ci stiamo spostando verso il pensare in linguaggio naturale che apre a un ventaglio di possibilità molto più ampio.
+
+perché quando noi elaboriamo il task, elaboriamo il potenziale e ventaglio di soluzioni, lo facciamo in linguaggio naturale. Prima almeno io, io parlo di me stesso, questo è il mio campione, Mauro, io non ho un lavoratorio statistico, uno servatorio statistico, vi dico quello che penso. Io prima pensavo veramente in Ciclifor, adesso sono molto più astratto e sono anche molto più libero nel pensare.
+
+in termini di sviluppo almeno così mi sento, il problema è che il mio pensare in modo così libero spesso aggiunge distanza a quella che è l'implementazione che è un beneficio perché ti dà più libertà appunto, più potenziale ma anche si allontana molto da quello che ci sta sotto e questa paura è quella di perdere il controllo.
+
+di quello che ci sta sotto, La nostra professione sta cambiando. Lo scopo della nostra professione rimane lo stesso, il modo con cui la facciamo sta cambiando radicalmente. E io che sono un control freak, come ha detto il mio delivery manager stamattina, o come ho detto al mio delivery manager stamattina, in realtà mi rendo conto, ho quasi la percezione di perdere il control.
+
+Anche perché, comunque, la velocità nella trasformazione di pensiero-idea prodotto è innegabilmente aumentata.
+
+E noi, quanto risolutori di codice, di problemi, abbiamo quella responsabilità del essere coloro che comunque si prendono la responsabilità della soluzione al problema e quindi del tool che disolve il problema. Se noi ci spostiamo dal linguaggio macchina e ci spostiamo verso il linguaggio naturale, aggiungendo ulteriori distanza e ulteriori livelli di separazione,
+
+La mia paura maggiore è che oltre a quello che chiamavamo debito tecnico si accumuli un altro debito che ha citato Osmani in un post LinkedIn forse stamattina che mi è piaciuto tantissimo io non so come faccia quell'uomo a produrre così tanto materiale però possiamo parlarne è il debito cognitivo cazzo
+
+e quello è difficilmente colmabile.
+
+Alfonso (21:19)
+⁓ sì, tosta. Io penso che è un tema aperto e è una roba che noi come professionisti del settore, è qualcosa che ci dobbiamo porre. Quello che mi viene in mente in merito è che, almeno io, può essere che da qua a qualche anno cambio idea, però almeno io ad oggi...
+
+Voglio sì avere il ventaglio di opportunità per pensare in linguaggio naturale, però poi a un certo punto del mio workflow devo comunque capire cosa sta facendo quel codice. Quindi io sono una di quelle persone orribili che ancora va a fare review a ogni pezzo di codice. Non sempre, in realtà poi magari dopo se voi ne parliamo, di quando ha senso non fare review, troppo stretta, però...
+
+io devo avere la certezza, quanto meno di capire, quanto meno di essere allineato perché altrimenti noi ci troviamo a lavorare su applicativi che non capiamo e non conosciamo e introduciamo evolutive, introduciamo modifiche su questi sistemi e non capiamo, anche se capiamo concettualmente cosa è successo però magari su un sistema, tu me lo insegni, un sistema abbastanza complesso se io vado a modificare una riga e non ho
+
+abbastanza conoscenza di quel sistema posso avere posso avere un mi si sfonda un altro microservizio in cina la mattina dopo alle 5 perché è partito un cron che ha fatto una roba strana quindi in qualche modo io voglio ancora avere controllo non so se è un qualcosa che rimarrà nella industria l'uva questa
+
+Brainrepo (22:44)
+Butterfly Effect
+
+Tu dici che...
+
+tu dici che noi contro il freak faremo prima o poi a domesticati a dire sì signore, sì signore
+
+Alfonso (23:12)
+Secondo
+
+me però ci deve essere un balance, noi che hai menzionato tu, noi che scriviamo software siamo responsabili di quello che scriviamo. Cioè per me il modo in cui io penso al momento è se tu mi apri una VR sei responsabile di quella roba. Io ti vengo a rompere le palle alle 3 di mattina se mi hai sfondato la produzione. Perché secondo me il tema della responsabilità è fondamentale.
+
+...
+
+Brainrepo (23:42)
+Il problema
+
+sai qual è? Il problema è un problema che già è una roba che si è affrontata tantissimo ed è che noi possiamo dirci quanto cavolo vogliamo che siamo responsabili, no? Però c'è il famoso paradosso, no? Dove che è successo in medicina con l'introduzione di questo tipo di sistemi. Cioè io sono un medico, il sistema che utilizza
+
+l'inferenza, l'intelligenza artificiale, che utilizza un cavolo di algoritmo anche solo di clustering, ok? Mi dice, mi dice, ehi Mauro, guarda che potenzialmente questo paziente deve fare questo percorso perché io l'ho individuato in questo cluster, penso che faccio in questo cluster. Io mi convinco e dico, no, sono convinto per la mia esperienza, mio intuito e tutte queste robe.
+
+che non lo debba fare. Adesso abbiamo due casi, Il caso io ragione e il caso io torto. Il caso io ragione, bravi tutti, quello era solo una macchina, Mauro Bravo, cazzo sei un limna, sei come che si chiama? Dottor House, e vai ci sta. E se io fallisco? Io ho fallito nonostante la macchina, quindi ho fallito due volte e ho anche il dolo.
+
+perché la macchina me l'aveva detto. Quindi c'è un forte unbalance quando si parla di responsabilità. Io questa cosa non la vedo mitigata nel breve periodo. So che forse stiamo un po' divergendo, Parlando molto strato, però si sentiva un po' dalla mia introduzione che...
+
+Questi elementi in quanto vecchietto mi rodono il culo un po', capito? Quindi le devo portare.
+
+Alfonso (25:39)
+No ma ci
+
+sta perché come dicevi tu la nostra professione sta cambiando, sta cambiando alla velocità inquietante a cui io e penso un sacco di gente ci ha difficoltà a starci dietro quindi il fatto che ci poniamo queste queste domande secondo me importantissime almeno ragionare, non dare risposte però quantomeno ragionarci
+
+Brainrepo (25:59)
+E questa è l'idea di GitBar, Ci siamo deti che dal momento in cui portiamo l'intelligenza artificiale, il machine learning, tutta sta bella roba scintillante, perché scintillante, cazzo? Cioè, stavo giocando con B-Mod, con B &B, che è la versione di B-Mod per fare brainstorming, product brief e queste robe là. Cioè, ci ho fatto il product brief della mia azienda in Sardegna, che era una cosa fighissima.
+
+cioè ho tirato fuori delle idee che quest'estate generano business e insomma è spaventosa però nello stesso tempo dobbiamo controbilanciare con sempre delle domande aperte che ritornano e dicono ok io sto giocando con un giocattolo lo sto facendo diventare parte di me, stensioni me la clava, il fuoco come diceva padre Benanti no?
+
+però devo anche essere consapevole che quelli sono degli strumenti che devo controllare. i boh, non li controllo, bene! Allora devo essere consapevole che non li controllo e devo firmare il contratto mentale su una cosa che fuori dal mio controllo. Detto questo, è fatta questa parentesi un po' generale riflessiva
+
+Ritorniamo agli elementi più tecnici. Quindi abbiamo parlato di spec driven development. Mi ritornerà più volte oggi spec driven design, abbiate pazienza. Se sentite spec driven design fate pattern matching e fate il direttore place. Quindi tutto quello che spec driven sarà sempre development da questo momento per questo episodio.
+
+Abbiamo detto io uso il tool per fare esplorazione e poi c'è un momento dove da questa esplorazione che mi ha portato un ventaglio di X potenziali punti faccio un arrow e arrivo a più o meno un product brief che ho un... non voglio usare la parola product brief perché non è detto che stiamo facendo un prodotto no? Quindi ho un'idea che devo realizzare.
+
+Come avviene questo naro? Esistono delle cose, delle considerazioni da fare, tool utilizzo, come l'utilizzo, come utilizzo gli elementi che corredono il contesto, eventuali framework per fare questo tipo di approccio.
+
+Alfonso (28:44)
+Io direi, facciamo un caso pratico su un tool pratico che secondo me è abbastanza potente per spiegarci questa idea in maniera corretta, però anche molto semplice da utilizzare perché sono tre comandi in croce, quattro comandi in croce sta girando. Faccio l'esempio di quello che è Speckit. Per chi non lo conoscesse, un framework di Microsoft, iniziato da Microsoft.
+
+C'è anche OpenSpec, insomma ce ne sono diversi. Quello che fa SpeckIt è ti divide il tuo flusso di lavoro come dovrebbe essere in spazio del problema, spazio della soluzione. Quindi, nella prima fase, quindi quando do il primo comando, che cosa vado a fare? Vado a fare refinement di quello che devo andare a scrivere, cioè del problema che sto andando risolvere. Quindi sto andando a fare refinement insieme al modello.
+
+della problematica. Non parliamo ancora di soluzione, cioè non sappiamo ancora come risolviamo sta roba. Capiamo insieme al modello, utilizziamo il modello come, insomma, qualcuno che fa pairing con noi, un oggetto che fa pairing con noi, e lo utilizziamo per partire da magari un requisito di più alto livello a fare una row down di quali sono i vari sotto requisiti, quali sono gli edge case. A me è una cosa che
+
+piace particolarmente di questi tool in generale è che spesso e volentieri ti consentono di far emergere requisiti, edge case, necessità.
+
+presto, molto presto nella fase di sviluppo, quindi puoi andare su, il prima possibile dal tuo stakeholder e dirgli, bussare alla porta e dire raga come la gestiamo questa cosa qui, quindi qua siamo ancora nella fase di capire qual è il problema.
+
+Brainrepo (30:42)
+Quello che succedeva praticamente con una telefonata la sera tra signoro, tra Teclid dove si dice ⁓ sto facendo sta roba. ⁓ ma ti sei ricordato di risolvere questa roba? Perché fidati che ti mordo il culo tra una settimana. È una roba così, però ho un steroids. Almeno così la vedo io.
+
+Alfonso (30:58)
+Si si
+
+si, una cosa ecco come fa torniamo un attimo all'atto pratico come fa la gente a darci suggerimenti consigli o sputare in output token che noi poi leggiamo come suggerimenti e consigli perché comunque voglio partire dal presupposto che questi oggetti sputano in output token e poi siamo noi che li interpretiamo come come linguaggio naturale
+
+Questa è una distinzione che mi ha passato il buon Piero Savastano e ogni tanto provo a ricordarmela per ricordarmi che questi oggetti ancora non sono senzienti ma sputano nel non putt token che ci comunicano cose.
+
+Brainrepo (31:41)
+I famosi generatori di stronzate di Vannini. Se segui il podcast.
+
+Alfonso (31:44)
+esatto
+
+Quindi come fanno? Parliamo un po' di tecniche se... Un po' di cose. In primis, usage. Quindi possono andare nel codice, possono fare una grep, possono fare ricerca, ok? Quindi che cosa fanno? Fanno analisi. C'è un loop in cui lui dice ok fammi andare a vedere questo metodo, devo implementare questa cosa, fammi fare questa analisi.
+
+Seconda cosa, code indexing. Quando voi aprite il vostro bel cursor e gli dite apri workspace, boom, lui che cosa fa? Fa l'indexing sui loro server di tutto il codice, quindi lo spezzettano in chunk in qualche modo, lo mettono in sistema rag e poi quando la gente ha bisogno di dire ma mi serve una log... devo lavorare sulla login, mi dici dove sta la login?
+
+fare Trival con una search e dice ⁓ la login sta qua, fa mandare vedere il file. Quindi c'è tutta la parte di code indexing che funziona sotto al cofano, un sacco di gente non è cosciente che il tuo codice viene in qualche modo mandato sul server altrui e ce lo dobbiamo accollare.
+
+se vogliamo usare questa roba. Una volta che abbiamo fatto questo, che cosa abbiamo in output? Abbiamo un file markdown, quindi il nostro agente, dopo averci fatto una serie di domande, perché noi gli possiamo dire anche un trucchetto che viene utilizzato, è...
+
+domande finché non hai abbastanza informazioni, che è quello che dovrebbe fare una qualsiasi persona signora appena riceve un product brief se ne esce fuori con 500 domande, come giusto che sia. In questo caso c'è la gente che lo fa insieme a noi, quindi ci fa domande e noi capiamo se sappiamo la risposta e in quel caso gli diamo la risposta nel contesto, quindi facciamo context enrichment, oppure andiamo dal cliente, bussiamo, diciamo scusatemi, questa cosa non ci avevo pensato, come la gestiamo?
+
+Alla fine di tutto questo processo quello che viene fuori in output, quello che viene fatto è un file markdown che dato in input attraverso questo processo dato in input un requisito di abbastanza alto livello ci sputa fuori quello che pensiamo dobbiamo fare.
+
+Brainrepo (34:18)
+hai usato la parola giusta che ha aperto, che apre sempre il cassetto, Abbiamo... chiunque abbia lavorato nell'industria sa che esistono almeno due tipi di requisiti. Requisiti funzionali e requisiti non funzionali. La domanda che in realtà mi sono posto più di una volta, almeno quando usavo Bimad, E mi chiedevo, ma in quale momento io passo...
+
+analizzo o gestisco i requisiti funzionali o non funzionali nello stesso istante in istanti differenti. Il processo che l'LLM usa per dare risposte o almeno il contesto può essere inquinato dai requisiti non funzionali quando parlo di requisiti funzionali. Questo è un punto in realtà dove non ho trovato molte risposte neanche in letteratura.
+
+si parla molto di questa differenziazione.
+
+Alfonso (35:21)
+Sì, vado al volissimo su BIMAD, però Speckin fa più o meno la stessa cosa. Non c'è una differenza hard tra requisiti funzionali o non funzionali. Quindi tu gli dici, io devo fare questo. Al massimo gli dici, che ne so, ho questo SLA, oppure ho questi requisiti di qualsiasi requisito non funzionale. Quindi, che ne so, devo fare test di accessibilità, devo fare tutte queste cose.
+
+e poi lui fa un bel mischione, che non so se è una cosa che mi piace troppo, però fa un bel mischione e ti genera quello che è il tuo piano. Quindi al momento non c'è bene bene questa differenziazione.
+
+Brainrepo (36:03)
+Sì, mi
+
+chiedo se per esempio questo può essere un punto di miglioramento perché se tu stai attivando una sessione di brainstorming o comunque di sviluppo di una parte del contesto, probabilmente se sei nell'ambito funzionale, ma non lo so, potrebbero essere irrelevanti gli elementi tipo non funzionali, non lo so.
+
+Alfonso (36:28)
+non so perché in alcuni casi gli elementi che hai, i requisiti non funzionali che hai ti vanno a cambiare quali requisiti funzionali vuoi avere e come li vai a sviluppare
+
+Brainrepo (36:43)
+Come li vai
+
+a sviluppare? Sicuramente. Però vedi, come li vai a sviluppare nella mia testa malata è lo step successivo, Quando io ho il mio bel documento di requisiti allora gli dico ok, iniziamo a fare l'ertitettura. E a quel punto c'è lo sviluppo, no?
+
+Alfonso (37:04)
+però ti faccio un contro esempio facciamo finta che devo sviluppare un agente LLM un agente che utilizza AI e c'è il requisito non funzionale facciamo caso limite, caso estremo la risposta deve arrivare all'utente con una latency di 15.000 secondi non lo puoi fare!
+
+o comunque nel 99.9 % di casi non lo puoi fare quindi devi fare uno step indietro, dire guarda che questo requisito non funzionale premesso che deve stare là e anche lì possiamo fare challenge mi va a cambiare come la parte funzionale viene implementata non userò un LLM, farò qualcosa di diverso
+
+Brainrepo (37:33)
+Cosa che non uso l'LM, punto.
+
+si, ci può essere un grave problema
+
+Alfonso (37:53)
+Che ne dice se facciamo uno step back e parliamo di ora che ho fatto lo scope del problema come poi arriviamo alla soluzione? Ok, allora, adesso che abbiamo questo bel file MD Markdown che ci spiega che dobbiamo fare, passiamo dal dominio del problema al dominio della soluzione. E questa cosa la possiamo fare in 25.000 modi diversi.
+
+Brainrepo (38:01)
+E a un'ora!
+
+Alfonso (38:23)
+che va a cambiare essenzialmente come e quando andiamo a dividere in task, cioè come e quando andiamo a spezzettare il mio problema. Speckit fa una cosa molto semplice, cioè mi dà un comando per dire prendi questo file, io poi ti faccio enrichment di questo file, quindi quando andiamo a richiamare il comando per fare, non mi ricordo il nome del comando in questo momento, però quando andiamo a richiamare il comando per generarmi il piano,
+
+gli possiamo andare a dare delle informazioni e dei constraint che sono constraint tipo architetturale quindi gli possiamo dire trovami un modo per farmi questa cosa per implementarmi questa cosa seguendo questi constraint che possono essere scritti in un file che gli posso dare io a runtime insomma non ci interessa però gli dobbiamo dare questa informazione lui che cosa va a fare va a fare uno step di research quindi ci andrà a creare proprio dei file di research
+
+Capisce cosa c'è nel nostro codice. Anche qui i file di research sono importanti, poi ci torniamo. Va nel nostro codice, fa tutte le ricerche del caso. Questo step ci può mettere anche diversi minuti in base alla complessità di quello che dobbiamo fare. Fa se può servire una parte architetturale, quindi dice, ok, questo è quello che devo implementare, questa è l'architettura come la implemento. E genera quindi tutti questi, genera tutti questi artifatti.
+
+che a servono per andare a implementare la soluzione. Una volta che abbiamo questa roba, una volta che abbiamo questi file, cosa fondamentale, nel mentre in tutti questi step, noi, ovviamente, questi documenti, questi file li dobbiamo andare a rivedere. E qui entra in gioco lo human in the loop, cioè se io dico spec it, o bimud, whatever, di farmi sta roba e non rivedo nel mentre questi documenti,
+
+se lui all'inizio si è immaginato di dire ma sai che c'è usiamo open search per fare il sistema rag poi fa nella parte di planning decide si ricorda che c'è una decisione per cui bisogna usare open search poi ti implementa con open search poi vai in produzione e il tuo cluster ti costa 10.000 al mese dai ce li hai 10.000 al mese? quindi
+
+Questa è la parte di steering che noi dobbiamo fare. Magari a monte leggiamo e gli diciamo, guarda, OpenSearch non lo usiamo, c'è questa bellissima cosa che si chiamano S3 Vector Store, usa questo. E ci siamo risparmiati quasi 10.000 dollari al mese, cambiando questo pezzo di contesto. Nel momento in cui abbiamo tutti questi file,
+
+bloccami se sto dicendo cazzate oppure se qualcosa non è che quando abbiamo tutti questi file andiamo a creare i task quindi lui che cosa fa prova a fare un breakdown dei task quindi prende la parte architetturale prende questa specie di ADR in prende tutta questa roba che fatto genera dei task e poi ci troviamo alla fase di implementazione
+
+Brainrepo (41:17)
+No no no no no vai vai
+
+Alfonso (41:42)
+Perché dobbiamo farci tutto sto pipone? Perché quando io vado alla fase di implementazione e c'ho una ricerca ben fatta da parte dell'LLM, lui già ovviamente questa parte di research viene messa nel contesto. Lui, mi dispiace antropizzarlo, però questo oggetto già riconosce il fatto che dice ok devo implementare questa roba.
+
+Ecco come la devo implementare, mi va a toccare questi due micro servizi anziché mi va a toccare questi pezzi di codice attenzione perché questa cosa non la posso fare e quant'altro ovviamente sta a noi poi dargli insomma metterlo nei binari giusti però fare questi step ovvero scrivere queste specifiche che in teoria avremmo dovuto scrivere comunque aiuta tantissimo a tirar fuori un sacco di performance
+
+da questi oggetti.
+
+Brainrepo (42:46)
+Sì, io stavo, mentre parlavi, stavo ripercorrendo il parallelo con l'essere umano, del pensare prima, fare tutta l'analisi prima, arrivare scrivere il codice. La cosa che in realtà diverge là è che quando tu fai l'analisi, buona parte dei casi, mio Dio, cosa ho fatto? Buona parte dei casi, tu vai a fare degli spike.
+
+Quindi delle prove tecniche delle cose. Cosa che in realtà di base... non c'è?
+
+Alfonso (43:23)
+è vero questo questo è un pezzo che manca infatti io nel nel workflow che utilizzavo prima di utilizzare sdd facevo un sacco di dpoc un sacco di spike per capire la per capire se una roba potesse funzionare intanto vedo la maglietta ci sei tutto ok ok effettivamente questa parte qui manca
+
+Però ti dico, adesso stiamo provando a reimplementarla nel senso che quello che stiamo provando a fare è quando c'è un qualcosa che ha un rischio alto e dobbiamo fare dei rischi, dobbiamo capire come funziona una roba, vogliamo fare un test, prima di lavorare sull'implementazione vera propria
+
+il dev fa uno spike insieme alla gente in maniera molto lean cioè non facciamo queste pierdi gigantesche non facciamo queste cose gigantesche andiamo in maniera molto lean anche in web coding e proviamo delle idee, testiamo delle idee dopo che abbiamo testato delle idee sempre con la gente e in molti casi utilizzando il git diff gli diciamo guarda questo codice, fai reverse, genera me una genera me un
+
+un documento di architettura per cui questo spike funziona poi questo documento questo contesto lo andrò a dare in input alla gente vera e proprio quando deve fare il documentone quello grosso
+
+Brainrepo (45:00)
+hai mai provato ad automatizzare la questione dello spike? Io sto ragionando, utilizzando Claude talvolta, Claude mi fa e mi dice prova a fare questa roba, no cazzo ho fallito, riprovo scrivendo questo script in python e te lo ranno e vedo di fare sta roba e vediamo se ci riesca, no ho fallito aspetta fammi cambiare questo, in realtà di per se questo è
+
+un'iterazione di piccoli spike quindi mi immagino mi immagino se se si può pensare non lo so probabilmente probabilmente ci viene un side project da questa riflessione però adesso sta andando molto di moda Ralph quindi integrare una gente che di per sé
+
+un loop ralph e poi ti prego se hai due minuti ce lo spieghi, perché mi piace tantissimo il tuo modo di spiegare, un agente che utilizza un loop ralph che in realtà ha test validazione per fare lo spiking che avviene all'interno del flusso, non so come la vedi da cosa?
+
+Alfonso (46:17)
+Allora, grazie per il gancio perché è una roba che in realtà ho fatto la settimana scorsa con un collega, anzi no, questa settimana con un collega e ti do il nostro caso d'uso. Il nostro caso d'uso è stiamo lavorando su un agente, questa gente prende tante cose in input, può fare tante cose, devono passare degli eval che stanno dentro un golden data set, quindi noi ci abbiamo
+
+diciamo un centinaio di evil, ce ne sono alcuni che non passano. Però noi sappiamo che tecnicamente, in teoria, o i problemi o stanno in come la gente manipola e gestisce i dati, o stanno nei dati upstream, quindi se ci arriva qualcosa di non corretto, o stanno in come la gente formate e quant'altro. Quindi che cosa abbiamo fatto? Abbiamo fatto in realtà una skill
+
+che richiama un piccolo agent che può eseguire l'eval capire nel codice perché poi l'eval ti dice che cosa non andata a buon fine, no? Cioè, perché c'hai quello che dovresti avere nel golden dataset, quindi la risposta che ti dovrebbe dare la gente, c'hai la risposta che in realtà ti ha dato e quindi quello che noi abbiamo fatto per questo agent è stato qualcosa di simile al Ralph Loop
+
+che è, Itera cambia il codice dell'agente, modificati, cambia il codice dei dati upstream, fai dei test, fai tutte queste cose, salvati tutto in progress.md, in un file di progresso, e poi alla fine, quando o hai fallito perché non hai abbastanza dati per procedere, o sei riuscito, dimmi che cosa hai fatto, quali sono stati i tentativi, quali tentativi sono andate a buon fine, se hai bisogno dell'input di uno mano,
+
+che magari, che ne so, in alcuni casi abbiamo trovato che le risposte nel golden data set erano sbagliate, cioè degli umani dei subject matter experts avevano messo delle robe sbagliate e per questo River falliva e la gente ha detto, ma che cazzo ci avete scritto qua dentro? e quindi abbiamo fatto una roba molto simile a Ralph che sta funzionando bene, sta girando bene sei mutato
+
+Brainrepo (48:43)
+Sorry, sorry, Possiamo aprire la sta parentesis su Ralph? Perché in realtà l'abbiamo già citato 3 o 4 volte, giusto per dare un inquadramento di che cosa si tratta.
+
+Alfonso (48:57)
+Io direi, partiamo dal problema che Ralph prova a risolvere. Partiamo dal presupposto che il pattern che utilizza Ralph attualmente funziona bene solo sui modali state of the art. Infatti l'idea di Ralph mi sembra che è di luglio 2025, però inizia a funzionare ora con Sony, Toccus e GPT-5 II e Gemini III.
+
+Qual è il problema che prova a risolvere questo tool? Questo che in realtà non è nient'altro che un for loop però funziona bene. Il problema che prova a risolvere è che noi fino ad ora abbiamo avuto l'orchestrator pattern, quindi abbiamo un orchestratore, un agente principale che vede tutto, che fa attenzione, che spawna dei sub-agents per fare delle cose. Il problema principale è la context window e tu mi dirai sì ma tu spawni dei sub-agents
+
+ogni sub agent ha la propria context window di 100, 200 mila, 1 milione, whatever quindi ognuno fa la cosa? sì perfetto però la context window dell'orchestrator è una e una volta che quella si è riempita di roba di context rot, di cose, di test, agenti che hanno fallito, whatever le performance di quell'orchestrator decadono quindi ci abbiamo bisogno
+
+di un modo smart per poter fare quello che fa l'orchestra del partner, che è spawnare più agenti, fare più task, ottenere di più, avere dei task che vanno più a lungo nel tempo, in modo tale che gli posso dare dei task più complessi, ma al contempo devo riuscire a risolvere il problema della Context Widow. E quindi come lo faccio? Lo faccio in maniera...
+
+interessante ma scema nel senso che rimuovo un orchestrator, non c'ho un orchestrator, c'ho un loop che cosa va a fare? va a richiamare se stesso, c'abbiamo un file dove ci stanno scritte le cose che dobbiamo fare, ok? facciamo finta che c'abbiamo un'epica che dobbiamo implementare, questa epica ha una decina di storie non diciamo al sistema quale storia implementare prima o dopo
+
+supponiamo, speriamo che riesca a capire o comunque gli lo... insomma facciamo steering, quindi gli diciamo quali sono un po' le dipendenze e quant'altro cosa deve implementare prima e dopo. Questo loop, quindi, c'ha un set di task, un set di test, un set di cose che deve fare e inizia a prendere il primo, implementa, scrive il suo progresso in un file markdown, progress.md, whatever, quindi la memoria...
+
+dell'agente viene... viene fatta un lavoro di summarization a ogni iterazione per cui l'agente scrive in questo file di memoria solo quello che è utile all'agente successivo banalmente sto in un contesto dove uno specifico comando da terminale non funziona perché sto usando windows e wsl, whatever
+
+Quindi quella cosa specifica non funziona, nella prima interazione l'agente prova, dice caspita sta roba non funziona, riprova, trova un modo per farlo funzionare e lo scrive in progress da tamd. Appena l'agente ha finito il suo task muore, schiatta, la fine, l'agente muore. Abbiamo quindi un nuovo agente che riparte con una context window nuova, clear, tutto parte da zero.
+
+si va a leggere quel file proprio da questa tanti quindi dice ⁓ c'è stato un mio fratellino che ha fatto queste cose fammi riparti d'acqua e questa è la magia di Ralph
+
+Brainrepo (52:50)
+In
+
+realtà, realtà sì, il modo nel quale ho capito io è questo probabilmente, oversimplificando però non abbiamo controllo sul contesto, non possiamo fare il crudo del contesto, non esiste, non possiamo fare...
+
+Alfonso (53:08)
+puoi farlo ma puoi farlo a... allora l'LLM di per sé è una bestia autoregressiva non ci abbiamo al momento delle API che ci dicono togli questa roba dal contesto non nulla per questo senso
+
+Brainrepo (53:28)
+Entendevo proprio quello, Perché l'effetto che tu avresti potrebbe essere differente. Tu non hai un controllo a quel livello di granularità sul mettere e eliminare le informazioni nel contesto. Almeno mettere, probabilmente sì. Eliminarle è un po' più difficile. Avere un... Non lo chiamerei contesto, però avere una memoria.
+
+Alfonso (53:55)
+il file .md o comunque tutti questi file, tutti questi trucchetti che noi andiamo ad utilizzare è sempre per dare memoria, tra virgolette, quando si lavora con gli agenti c'hai memoria a lungo termine, a breve termine, breve termine è il contesto quello che la gente vede, a lungo termine è quello che io posso salvare dentro un file system o da qualsiasi altra parte e poi posso fare resume, quindi posso metterla un certo punto al runtime dentro al contesto
+
+Brainrepo (54:23)
+Esatto,
+
+e su questa memoria esterna tu hai controllo. L'agente numero 2 o l'agente numero 3 può decidere di togliere tutto dall'agente numero 1, perché l'agente numero 2 ha avuto successo. Questa cosa la puoi fare perché c'hai un dannato file di testo, un dannato file markdown, che puoi girare e poi a ogni interazione l'agente ti muore e quindi stai ripartendo greenfield in termini di contesto e quindi hai...
+
+è un trucchetto fondamentalmente per la gestione di cosa sta dentro quel dannato contesto. E questa cosa, dal mio punto di vista, è per quanto sia un approccio stupido, è molto intelligente, paradossalmente ti dà controllo su un elemento nel quale non avresti controllo. Semplicemente, raffresciando, ammazzando e vi anzono.
+
+Alfonso (55:18)
+che però se ci pensi è quello che noi facciamo a mano, cioè è quello che le guidelines ci dicono fatelo a mano, cioè quando noi stiamo utilizzando facciamo finta copilot, cursor, In teoria quello che dovremmo fare è ogni volta che io inizio un task differente, creo una nuova, creo una nuova window. Perché? Perché parto da un contesto fresco, perché non ciorro qua in contesto.
+
+Brainrepo (55:44)
+Sì,
+
+Sì, no, ma è un approccio comunque molto, molto smart. Adesso, probabilmente via via col tempo, il controllo diventerà sempre maggiore su queste cose, Quindi sicuramente qualcuno ci svilupperà dei framework fatti in un certo modo per ottimizzare questo tipo d'approccio. Però vedi, proprio questo approccio nel se integrato in un percorso come
+
+spec it, specialmente nella parte di discovery, può essere figo perché tu dici io devo fare questo, c'ho un sacco di potenzialità devo ottenere questo, ok? Tu cosa fai? Itera dividi in azioni molto più piccole quindi magari non hai solo 5 spike hai 5 spike con 3 azioni ognuno e noi sappiamo che
+
+più piccole sono le azioni, più controllabili sono le azioni che meglio performano e questo è ormai disaputo quindi tu paradossalmente riusciresti ad andare a letto, tornare l'indomani mattina e avere il sistema che ti ha fatto una ricerca super deep gestendo il contesto in modo molto smart e tu hai, che ne so, 70 test
+
+di cui dieci hanno avuto successo e ognuno con approcci diversi. Non lo so.
+
+Alfonso (57:11)
+Ma anche qui, non faccio nomi, però alcuni dei nostri colleghi stanno sperimentando cose del genere e c'hanno gli agenti che girano di notte, gli fanno cose, poi si svegliano la mattina e fanno le review di quello che ha funzionato. Quindi secondo me a tendere noi ci avremo una roba del genere e alla fine...
+
+Quello che possiamo fare è avere un generatore di possibilità, un qualcosa che genera idee, genera ipotesi. E un mini Ralph che va a fare l'implementazione, va a fare i test, vede se quella roba funziona e poi tutti svegli la mattina e dici, ok, queste tre idee che io avevo hanno funzionato, queste altre no. Queste idee magari me le ha generate la gente stesso.
+
+Secondo me da qui ai prossimi anni noi vedremo un ecosistema che alla fine non fa nient'altro che gestire contesto e gestire agenti che esploderà e ci darà la possibilità di fare cose finissime.
+
+Brainrepo (58:23)
+sempre qua su git bar apriamo parentesi e non ne chiudiamo quindi però è il bello di git bar no sono chiacchierate chiacchierate al bar proviamo a chiudere qualche parentesi e ritornare al nostro elemento principale abbiamo parlato di speckit quindi abbiamo ragionato facciamo un breve un breve ripilogo come funziona speckit io faccio un'analisi di quello che voglio fare magari con
+
+specifiche, i due comandi che sono specifiche clarify, faccio il mio piano, una volta che c'è il piano a quel punto io devo spezzare il piano in task e ci siamo lasciati in questo punto. Ci sono degli elementi da considerare quando avviene la fase di splitting del work logged in termini di task?
+
+Alfonso (59:22)
+io quello che... bella domanda non ci ho mai ragionato quindi ci ragiono insieme a te perché quello che io ho fatto è stato sempre utilizzare la versione di default, tra virgolette, nel senso che ho fatto slash task e lui mi ha generato, in base al system prompt della gente ovviamente di quel comando specifico, dei task che a mio avviso c'avevano senso
+
+quindi non ho mai dovuto fare steering particolare di quella roba lì non l'ho mai dovuto toccare troppo secondo me bisogna raggiungere una cosa che ho notato per esempio con Bimad devi raggiungere un buon equilibrio tra quanto è granulare il task e appunto tra il dargli task abbastanza granulari ma non troppo granulari
+
+perché se gli dai trusk troppo granulari va a finire che magari la gente poi per provare ad implementare quel task implementa in maniera subottimale quindi tu comunque devi dare abbastanza a libertà alla gente supponendo che stia utilizzando un modello state of the art di implementarlo in una maniera che in quel contesto c'ha senso
+
+Brainrepo (1:00:38)
+Guarda... esatto,
+
+guardando il task hai mai notato o identificato un balance tra global context or application architecture e task specifico da fare? C'è un balance tra queste due informazioni nella fase di definizione del task e poi di implementazione dello stesso e se sì
+
+Come lo vedi questo balance?
+
+Alfonso (1:01:11)
+non ti voglio rispondere con quello che fa Bimatt perché non voglio spoilerare però sì assolutamente se tu hai fatto la parte di research prima quando arrivi a fare la parte di research si legge quella che è la constitution di cui non abbiamo parlato quindi
+
+ci sono una serie di file che contengono il contesto di come è strutturata la tua applicazione, quali sono i pattern che già stai utilizzando all'interno della tua applicazione, come vuoi che la tua applicazione venga strutturata, tutte queste informazioni. Tutta questa roba viene utilizzata per poi definire e fare shaping, io mi immagino come della terracotta quando vai a fare un vaso, tutte queste informazioni vengono utilizzate poi dalla gente per dire ok,
+
+Non devi solo implementare questa roba, ma devi implementarla così seguendo questo pattern, facendo questa cosa... Che ne so, sei in un contesto a microservizi, stai utilizzando un message broker e devi fare comunicazione tra i tuoi microservizi. Se hai dato il contesto giusto all'agente, lui non dirà fai una fetch a questo microservizio con i ritrai, con l'exponenza, tutto quello che sappiamo. Gli dirà...
+
+mando un messaggio, sto caspita di message, perché ce l'abbiamo? Quindi questa roba qui in realtà penso che già al momento ci sia un buon balance. Non mi sono mai ritrovato in casi, premesso che il contesto sia ben strutturato, cioè premesso che abbiamo fatto il nostro lavoro da casa di strutturare bene il contesto, non mi sono mai ritrovato fino ad ora in casi, almeno di esempi sporadici, in cui vedo che lui prova ad ottimizzare localmente, cioè prova a fare il suo task.
+
+e sfonda a livello globale la fidetta.
+
+Brainrepo (1:03:06)
+Sì, in realtà a me con B-MAD stranamente è capitato più di una volta e in realtà mi ha fatto andare di matt. Dimmi una cosa invece. Proprio oggi e probabilmente troverò un modo per parlarne in un altro episodio, ragionavo col mio PO
+
+Alfonso (1:03:06)
+spero di aver risposto.
+
+Brainrepo (1:03:35)
+Su una cosa specifica, il sequencing delle attività ed i task, che una roba che apre una voragine enorme, Perché il PO non è un tecnico, ma è responsabile del prodotto, di solito è quel tizio che si occupa di gira, in modo molto brutale, però se capita che buona parte delle feature
+
+hanno della roba dietro tecnica un po' cazzuta che non è solo un to do e quindi la devi fare sequencing di task tecnici, è la responsabilità del tech lead in quei task tecnici, definizione del task tecnico nel sequencing del task tecnico e quanta è quella del product owner nel contesto generale. Adesso io mi chiedo
+
+Tutte volte che noi parliamo di questi sistemi noi parliamo di io che sviluppo qualcosa.
+
+E se shiftiamo in noi che sviluppiamo qualcosa o dove il noi rischia di essere la persona di prodotto più i developer? Stiamo semplici. Io che sviluppo qualcosa, io e il mio team che sviluppo qualcosa. Quindi rimaniamo sul mondo dei developer perché poi a me partono le parabole. Come vedi Speckit?
+
+in un contesto dove più persone sviluppano.
+
+Alfonso (1:05:16)
+è la domanda, questo è tema aperto ed è una domanda che noi ci poniamo e stiamo provando a risolverla stiamo provando a rispondere in diversi modi ti dico quello che io e altri team stiamo facendo al momento stiamo avendo buoni risultati potrebbe essere che a un certo punto quella roba diventa lo standard, non ne ho però ti dico quello che stiamo facendo
+
+Anziché assegnare a un singolo dev una storia, il singolo dev, quindi la persona che lavora nel team, ha uno stream of work, ha un pezzo di lavoro che non è la singola storia, ma può essere un'epica, essere comunque qualcosa che va su più storie, e si prova a...
+
+se lo fai bene puoi mappare le dipendenze della task perché ovviamente nel momento in cui c'è una velocità di sviluppo all'atto pratico del task poi ti diventa più complesso gestire la collaborazione col team
+
+Quindi quello che noi stiamo provando a fare è che per il momento su un team molto piccolo, poi magari parliamo anche di size the team, perché la domanda è ma c'è ancora senso avere team molto grossi? Su un team abbastanza piccolo, con uno scope abbastanza ben definito, ci stiamo trovando molto bene ad assegnare a diverse persone diversi stream of work. Premesso che, e qua è una mia credenza,
+
+ci deve essere comunque una cultura condivisa, cioè le persone devono sapere che cosa sta succedendo, ci dobbiamo fare più il review, ci devono essere momenti di scambio di informazioni, cioè se Mauro sta lavorando su una pipeline in gestione per fare qualsiasi cosa e domani va sotto a un bus, non può essere Mauro il nostro bus factor di uno, quindi comunque ci deve essere tutta la parte di condivisione della conoscenza.
+
+Brainrepo (1:07:26)
+Vabbè, almeno c'è la documentazione.
+
+Alfonso (1:07:30)
+Posso dire che per esempio documentazione e testing, almeno l'LLM lo scrive, documentazione ne scrive in alcuni casi anche troppa, però almeno ce l'abbiamo.
+
+Brainrepo (1:07:42)
+E infatti è il famoso cognitivo, il debito cognitivo, No, in realtà sì, c'è uno shifting fondamentalmente. Infatti questo approccio è ancora immaturo in termini di team. Ridefinirà il modo in cui intendiamo e abbiamo inteso la Gile in senso stretto e Scrum in senso ancora più stretto.
+
+perché secondo me la collaborazione intrateam, scusami, la collaborazione dentro il team cambia completamente. E' molto intelligente quel ragionamento che facevi tu, Divido l'applicazione in slicing, l'isolo il più possibile in termini di dipendenze o comunque definisco un bounded con, gli creo sì un perimetro attorno, mi viene in mente il domain driven design.
+
+quello ho pullato il concetto di Bonded Context, Però gli disegno un perimetro attorno e a quel punto avendo li isolati io posso andare davanti. Magari sono anche figo e faccio un sviluppo interface driven per cui alla fine ci c'è Mocko, quello che gli altri stanno ancora sviluppando, tanto in Mocko mi li fai in 72 millisecondi, no, qualche secondo lo prende.
+
+qualche secondo e siamo apposta e va bene e ci sta ma quali sono le dinamiche umane all'interno del team quello è tutto da sperimentare è tutto da vedere qua quando si spalma e si rimuove il bus factor altra cosa tutta da vedere perché se le code review sono fatte con l'lm e tu diventi il tech lead del team
+
+io ho la mia visione del TechLid che paradossalmente ha una visione ad alto livello ma spesso si perde il dettaglio implementativo perché tutti i TechLid non possono leggere e tutte le code review di tutti, no? E quindi... E quindi tu...
+
+Alfonso (1:09:49)
+veramente impossibile. Oppure fai
+
+solo quello tutto il giorno e non fai tuo lavoro.
+
+Brainrepo (1:09:55)
+Peccato che la vita reale ti porta a scazzare con gli stakeholder e ti allontana dei github o github della situazione. Il discorso è che tu non hai quella visibilità, quindi cosa fai? Vai dal tuo ingegnere oppure gli ingegneri si parlano, costruiscono un sotto livello di informazione, sedimentano l'informazione e ci sta. Oggi abbiamo strumenti di codebase discovery basati su LLM che possono aiutare ma di per sé
+
+questo modello interattivo cambia, cioè il developer diventa un LLM sitter, come lo chiamo io, Quindi un pastore di LLM, dove gli agenti pascolano e il pastore appunto dice tu devi far questo, tu devi far quello. Il problema è che quando le due gregi si scontrano diventa un bordello e tu hai voglia di dire
+
+sì ma tanto poi facciamo il rebè, facciamo la merge, troveranno... no, anche no. Quindi la definizione dei perimetri è importante e la definizione dei perimetri disegna il software che stiamo facendo, cioè gliene da una forma. È la famosa legge di Conway, Il modo con cui...
+
+Alfonso (1:11:14)
+la forma delle
+
+organizzazioni, come le organizzazioni sono strutturate così viene strutturato anche il software. Ma in realtà ti faccio una challenge che secondo me diventerà nel tempo ancora più interessante che noi stiamo in questo momento ancora pensando a un dev che lavora su una story in sequenza che succede nel momento in cui questa persona si mette a spawnare
+
+5 agenti che fanno 5 cose, 10 agenti, diventa poi lui stesso un orchestratore di agenti e riesce a fare... aumenta sicuramente di tantissimo il throughput di scrittura del codice, però lì ci sono un sacco di challenge nuove che arrivano, perché ti serve qualcuno che ti fa la review a livello proprio organizzativo, hai delle challenge nuove.
+
+Quindi secondo me queste cose qui a un certo punto l'industria le dovrà gestire.
+
+Brainrepo (1:12:13)
+e Gitwork 3 non è la soluzione è chiaro che non è la soluzione non è assolutamente la soluzione e staremo a vedere
+
+io credo che siamo arrivati alla parte implementativa, l'ultimo step della nostra catena è la parte di verifica dell'artefatto. Qualche considerazione sulla verifica dell'artefatto?
+
+Alfonso (1:12:44)
+Mannaggia, anche qua non voglio... Allora, anche qua non voglio spoilerare poi le prossime montate, perché parlere di Beamed e c'ha una funzioncina interessante per questa parte qui. Ti dico quello che è il mio workflow, che sta funzionando abbastanza bene, mi piace. Poi ti dico anche una scemenza che stiamo facendo, cioè che in realtà un collega ha sviluppato proprio negli ultimi due giorni, che è abbastanza carina.
+
+Il mio workflow è, dopo che la gente mi ha sviluppato quello che c'è da sviluppare, io faccio una code review, quindi come la farei a una PR di un'altra persona, questo punto, quindi facciamo finta che l'LLM diventa un mio collega, mi vedo il git diff, mi studio quello che sta facendo il codice, mi faccio un'analisi di quello che fa.
+
+Nel momento in cui sono contento, ovviamente faccio le mie modifiche a mano, a manina, se serve, serve sempre meno. Sarà che io non c'ho gate di qualità altissimi, nel senso che finché fai qualcosa che funziona non sono quello che ti dice hai messo lo spazio vicino al commento, pezzo di persona orribile. Finita questa cosa qui, noi facciamo PR video.
+
+Brainrepo (1:14:08)
+pensavo
+
+a un nostro collega mentre parlavi. Ti vogliamo bene.
+
+Alfonso (1:14:10)
+pensavamo lo stesso
+
+Scusate questi sono memini interni Dopo fatto questo facciamo la classica PR review Anche qui PR review non solo per revisionare il codice adesso Una cosa che sto notando è facciamo anche review dell'artefatto Markdown Non tanto per fare review di quello che scrive il Markdown, attenzione, ma per null and sharing
+
+perché il codice spesso e volentieri, a meno che non sia ben commentato e quant'altro, ti racconta quello che fa. In molti casi, però soprattutto la prima parte, ti racconta ma perché ho fatto questa scelta architetturale. E quindi questa roba qui è un side product che a me piace molto perché ti consente di fare knowledge sharing in casi in cui prima non si faceva.
+
+Brainrepo (1:14:55)
+esatto
+
+Amico mi, c'è qualcuno che sta lavorando a liberarci di questi cavolo di Markdown? Buttati là o creare una lens, un'interfaccia più human friendly per accedere a questa documentazione?
+
+Alfonso (1:15:21)
+deve essere, attendereci deve essere.
+
+Brainrepo (1:15:23)
+perché serve troppo? Cioè io mi trovo a vedere 70 mila, 1000 Markdown di 16 mila pagine, io non sono fatto per leggere così quelle robe così, quindi...
+
+Alfonso (1:15:35)
+ma quello
+
+è shinreadable, cioè il Markdown viene utilizzato molto quando si lavora con llm perché lo leggono loro e lo scrivono loro molto bene ma non è una roba che noi scriviamo e leggiamo molto
+
+Brainrepo (1:15:49)
+Secondo me questa è una di quelle cose che gli ide devono sviluppare. Secondo me sarà una funzione perché il modo in cui gli LLM scrivono il Markdown è il classico Markdown di testo che si legge top down ed è un po' così. Quello che servirà sarà un layer interpretativo non lineare quindi da top down
+
+Alfonso (1:16:16)
+Io mi immagino
+
+Brainrepo (1:16:21)
+Io
+
+mi immagino un approccio più C4, non so se hai presente i diagrammi C4 dove hai i livelli di profondità diversi, quindi mi immagino sta roba con la scroll bar che tu scendi giù e il dettaglio si espande, che è un po' il modo per esempio, credo di averlo già detto, se non l'ho detto è un po' il modo con cui oggi sto leggendo i libri, Che è completamente diverso, io mi leggo l'indice, identifico le parti che mi interessano.
+
+Alfonso (1:16:26)
+Sì.
+
+Brainrepo (1:16:51)
+Poi per ogni capitolo che identifico mi leggo i primi due tre paragrafi. Da partire da quei primi due tre paragrafi mi scrivo le domande, quindi cosa voglio ottenere da questo paragrafo e poi espando. Appena becco la fuffa dico ok questo paragrafo è andato, le informazioni, perché tanto i libri cosa ci hanno? Ci hanno quel livello introduttivo dove cita la tesi.
+
+il paragrafo a sostegno della tesi e tutto il resto è siccome il libro deve essere di 300 pagine espandiamo e colleghiamo roba a cazzo adesso non so se con la documentazione si può fare la stessa cosa mi piacerebbe testarlo avendo nel tempo però ecco mi immagino sta roba a scrollino che mi dice uehi amicumi e sta roba qua vuoi scendere in profondità scendi giù brutz e c'hai e c'hai sta specie di
+
+di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di di
+
+Alfonso (1:18:05)
+un
+
+altro problema che poi dovremmo il prima possibile risolvere a tendere è il fatto che per esempio al momento ti faccio il caso di Beamat che però vale anche per Spec-It noi le storie, gli adiarro, tutte queste cose ce le abbiamo nel repo che è discutibile se le vogliamo avere nel repo perché se hai un coltesto multirepo che fai?
+
+Ci sono mille casistiche, però io al momento devo fare... il mio bel MCP di Asia DevOps, Ciracola... E dico, fammi sync perché mi sbatte, se tu mi scrivi una storia in Markdown io non farò mai copy and call, la dico a gente, fai sync e spreco token per farmi fare un sync di una roba scritta in Markdown dentro un'interfaccia web che poi gli dirò spostami la card, aggiornami questa... Non ha nessun senso.
+
+Brainrepo (1:18:38)
+di Gira.
+
+e nel frattempo il buco dello Zono è la forestina mazzogna.
+
+Alfonso (1:19:01)
+Sì, sia voglia. Quindi
+
+questa è una delle problematiche che spero a breve risolveremo come come industri. Secondo me è una questione di tool che devono solo...
+
+Brainrepo (1:19:15)
+sì sì sono d'accordo e il problema è che se guardo la velocità con cui si aggiornà Atlassian mi viene da piangere è la cosa più intente il gente che si è riuscita a lanciare è stato Rovo che insomma ⁓ già ha la sua discutibilità in termini di qualità vabbè piccolo rant non sarebbe gith bar se non fosse stirante
+
+Alfonso (1:19:38)
+Io
+
+utilizzo esorbitare in oposito, attenzione.
+
+Brainrepo (1:19:43)
+occhio che io l'ho usato per diversi anni a Azure DevOps quando ero in un altro cliente e devo dire che la sua integrazione con le pipeline allora era una roba super figa cosa che Gira è ancora un ragazzino paragonato però solo quello io mi ricordo che avevo dei problemi col markdown con le tabelle per scrivere la roba dentro che scazzavano mi ricordo cose proprio basic e non potevo mettere il codice
+
+non potevo mettere dei pezzi di codice nelle storie o nei commenti mi ricordo all'epoca, andai da un tizio di Microsoft a un codemotion che stava proponendo proprio tutta la suite, E gli dissi no, io ho questo problema, ho cazzo spitto, non me ne ero mai accorto, e cazzo scusa, ma tu un pezzo di codice in un commento l'avevi messo?
+
+perché io un pezzo di codice in un commento di una storia lo metto sempre non c'è una mia storia dove non c'è un commento che ti dico c'è questa variabile dell'ambiente che devi settare ricordati di prenderla dal volt con il nome della variabile lo metto solo con il font mono perché tutto quello che è il codice deve essere col font mono un'altra battaglia
+
+da strozzare che mette in grassetto dei pezzi che sono di codice nelle storie o nei commenti quelli command shift ⁓ monotype e siamo a posto scusa
+
+Alfonso (1:21:10)
+fa male
+
+Piccolo rent sono, tardi stasera ci siamo.
+
+Brainrepo (1:21:28)
+Che ora abbiamo fatto? Un'ora e mezza, Alfa. Io credo che è il momento di passare al Paese dei Balocchi. Prima ancora di passare al Paese dei Balocchi, c'è qualcosa che pensi sia super interessante che stiamo dimenticando?
+
+Alfonso (1:21:47)
+Oddio.
+
+Brainrepo (1:21:49)
+Lo so, GitBar non è mai una conversazione lineare.
+
+Alfonso (1:21:53)
+Domanda orribile adesso, vedo nero. No dai, direi di no. In realtà l'ecosistema è così pieno di roba che sicuramente ci stiamo scordando qualcosa di figo. Però una cosa che ho imparato è non farsi traforgere da tutto questo noise, da tutte queste cose che arrivano.
+
+Quindi ogni tanto magari ricordiamoci di rallentare che se siamo una settimana indietro rispetto all'ultimo changelog di Copilot, non muore nessuno. E piccolo rant anche mio, scusate.
+
+Brainrepo (1:22:26)
+Questa
+
+è la mia filosofia di vita e soprattutto mi piace tantissimo sentirlo dire da te perché, insomma, amico mio, tu sei l'uomo performativo nel senso che quando esce qualcosa di... ⁓ e sei iper performativo in termini di discovery perché appena esce qualcosa di nuovo io neanche vado a leggermi the fucking manual perché vado pingo al fonso e dico ⁓ asco, ma di questa roba anzi, probabilmente anche senza pingarlo nella chat interna.
+
+C'è lui che ce lo spiega quindi. Esatto, quindi in realtà io ho di per sé il mio filtro personale che filtra, filtra il noize. No, vi suggerisco di seguirlo perché pubblica sempre anche nelle chat esterne, su LinkedIn, e realmente esterni delle robe molto interessanti. In realtà io avevo un momento che si chiamava...
+
+Luddino, era il momento luddistico dove appunto si analizzava, lanciavano delle bold opinion su dove sta andando il mercato, qualcosa di super bold su le AI, ma credo che di bold opinion ne abbiamo droppato molte, quindi lo schipiamo formalmente, quindi schipiamo quel video che ti ho mostrato, che ti ho mostrato...
+
+però sarà un video che proporrò agli altri ospiti che tu già conosci e vediamo come reagiranno. Se tu ci vuoi inviare un vocale o un video da taccare in coda col tuo commento ci farebbe super piacere. Noi con una sigla tutta nuova allora annunciamo il paese di Balocchi.
+
+Look at that! Il paese dei Balocchi, il momento in cui i nostri guest e i nostri host condividono con noi un libro, film o qualunque cosa abbia catturato la loro attenzione e pensino sia interessante a condividere con la nostra community. Quindi Alfonso, la domanda è d'obbligo. Cosa vuoi condividere con noi?
+
+Alfonso (1:24:47)
+Allora io da buon appassionato di libri purtroppo non posso fare altro che condividere un libro che ho... ho letto quest'estate vorrei dire sotto l'ombrellone però maledetto me che sto in una città di mare non sono mai andato a mare quest'anno però l'ho letto quest'estate che si chiama AI Engineering molto molto bello poca poca fuffa cioè in realtà zero fuffa c'è un capitolo che è probabilmente il capitolo che mi è piaciuto di più
+
+che è sulla parte di prompt slash context engineering molto molto bello. In realtà è un libro che serve per capire come si struttura un'applicazione AI, un'applicazione che utilizza l'LM, che utilizza questa roba. Però secondo me se fai lo sviluppatore e vuoi utilizzare tanto questa tecnologia anche un po' per capire i pillar di cui parlavamo prima
+
+Secondo me è un'ottima lettura, poi non è neanche pesantissima, scorre molto bene.
+
+Brainrepo (1:25:52)
+Molto molto figo, naturalmente il link nelle note dell'episodio, è anche un libro sai? È un libro molto bello che ho iniziato a leggere, sono ancora al terzo capitolo, il titolo è Agentic Design Pattern.
+
+Alfonso (1:25:59)
+⁓ spara!
+
+Certo, ok.
+
+Brainrepo (1:26:13)
+che lo
+
+conosci?
+
+Alfonso (1:26:16)
+Sì, ho il
+
+link in descrizione
+
+Brainrepo (1:26:19)
+è la
+
+bibbia, buttateci un occhio, io ho mandato la mail all'autore
+
+Alfonso (1:26:28)
+tra l'altro
+
+Grande, grande.
+
+Brainrepo (1:26:34)
+vediamo
+
+come va
+
+Alfonso (1:26:36)
+tra l'altro questo libro è stato scritto è stato quasi scritto come un open book nel senso che l'autore su LinkedIn man mano che scriveva roba metteva i link a google docs del libro le persone commentavano quindi è stato anche scritto in maniera collaborativa ho seguito un po' la fase di scrittura del libro andando a spucciare un pochettino molto figo e l'output è spettacolare
+
+Brainrepo (1:27:04)
+Sì, e poi c'è anche un altro piccolo elemento a supporto e che parte... adesso non ho capito se tutto parte del ricavato, comunque la parte del guadagno viene devoluta in beneficenza, quindi c'è un altro elemento, perché credo sia liberamente fruibile sulla rette, o almeno credo.
+
+Alfonso (1:27:26)
+Sì, c'era il
+
+Google Doc, non so se l'hanno tolto però c'è il Google Doc.
+
+Brainrepo (1:27:33)
+Però se acquistate il libro, sappiate che parte o tutto, non ho guardato, parte o tutto del ricavato va in
+
+⁓ ok. Come?
+
+Alfonso (1:27:51)
+e ve la gettiamo
+
+Brainrepo (1:27:53)
+Sì, ma è sempre super interessante la chiacchierata con te. Poi, tieni presente che comunque noi ti rilomperemo le scatole per avere qualche informazione, qualche nuovità, perché tu sei praticamente sempre sul pezzo, sulla tematica. Quindi sappi che, e lo dico anche a tutti gli ascoltatori, sappiate che Alfonso ha la tessera del Git Bar.
+
+e c'è proprio un cartone di birra con scritto Alfonso col pennarello e delle bile sopra, quindi quella.
+
+Alfonso (1:28:25)
+Speriamo
+
+di poterla prendere live a breve.
+
+Brainrepo (1:28:34)
+Bene bene bene, allora io voglio ringraziare di nuovo Alfonso, grazie per essere venuto a trovarci, ci fa superi per piacere, sicura ma sono sicuro che chi non l'ha ancora fatto, proverà spec kit se finirete il vostro abbonamento di cloud, di cursor o di qualunque codec, di qualunque cosa voi usiate, è colpa di Alfonso, c'è il numero di telefono in sovraimpressione.
+
+Alfonso (1:28:43)
+Grazie a
+
+Brainrepo (1:29:00)
+potete addimitare a lui i vostri costi di token. Non scherzo, scherzo grazie alfo.
+
+Alfonso (1:29:08)
+Grazie te Mauro, è stato un piacere come sempre.
+
+Brainrepo (1:29:13)
+Noi ci diamo appuntamento alla prossima settimana come d'abitudine, due cosine prima di lasciarci, una cosa, la prima cosa è che se vi fa piacere iscrivetevi al canale, cliccate sulla campanellina, insomma le classiche cose che dicono gli youtube per me è super cringe dirlo quindi mi imbarazzo come un ladro però fatelo.
+
+perché è importante per noi visto che ci conoscete in tanti però praticamente almeno su youtube siamo ancora piccolini piccolini, non che ci dispiaccia. Seconda cosa, una informazione di servizio, c'erano un po' di bot che stavano rompendo le balle nel canale, ho reso il canale privato.
+
+Devo trovare il modo per fare una roba nel sito per cui chi vuole entrare nel canale calca un pulsante nel sito, fa un caccia, compila delle robe tipo tre domande sull'informatica e quel punto appare il link. Non lo so, dobbiamo inventarci qualcosa ci sto ancora pensando. Se volete entrare nel gruppo e non avete il link scrivete una maila info che ho sulla githubar.it e ve lo mando.
+
+però veramente la questione di bot stava diventando ingestibile, uno schifo totale. L'ultima cosa è nulla, se volete supportarci nel sito nuovo c'è un link, supportaci, guardate perché la paginetta è molto simpatica. L'ultima cosa in realtà Alfonso sarebbe dovuto essere già andato via ma è ancora qua, devo ringraziare Alfonso perché avete visto le siglette?
+
+le nuove siglette ecco sappiate che parte del lavoro delle siglette è opera di Alfonso che
+
+Alfonso (1:31:18)
+di opus,
+
+comandato da promptato
+
+Brainrepo (1:31:23)
+Sì, Alfonso mi ha dato una mano per l'automazione della titolatrice, quindi grazie Alfonso da parte mia e della community.
+
+Alfonso (1:31:35)
+Grazie Mauro
+
+Brainrepo (1:31:36)
+Noi ci diamo appuntamento alla prossima settimana considerando che la prossima settimana sarà un episodio molto più breve, sarà una sorta di riflessione, durerà, immagino, attorno a una decina di minuti, sarà un format un po' diverso e questo è un modo che abbiamo per ribilanciare il carico di lavoro che GitBar porta, perché registrare una puntata prende tempo e energia, anche organizzarla, preparare tutto e quindi abbiamo
+
+stiamo cercando di trovare questa soluzione dove abbiamo delle puntate abbastanza lunghe come quella di oggi e quella che avete già sentito settimana scorsa e un paio di puntate brevi e questo in qualche modo bilancia anche e soprattutto siamo abbastanza rompiballe, un'ora e mezza e un respiro di solievo se un giovedì, ecco, ci avete quella puntata da dieci minuti e poi magari potete chiamare alla fidanzata e il fidanzato ritorna e dire amore ti amo sai
+
+5 minuti e pensavo a te, insomma, miglioriamo anche la nostra qualità di vita, la qualità di coppia per chi fosse insomma in coppia, per chi non fosse in coppia, ecco avete più tempo per broccolare un potenziale partner, è anche un modo per migliorare la società, non lo so, non ha un cazzo di senso quello che ho appena detto ma facciamo finta che ne avesse. Io vi saluto, alla prossima settimana, ciao ciao!
+
+Alfonso (1:33:02)
+Ciao!
+
