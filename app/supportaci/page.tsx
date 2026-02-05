@@ -129,8 +129,7 @@ export default async function SupportPage() {
                     </tr>
                     <tr className="border-b border-gray-300">
                       <td className="py-3 text-gray-800">
-                        <div className="font-semibold">Abbonamento ChatGPT</div>
-                        <div className="text-xs text-gray-600">Assistente AI per ricerca e contenuti</div>
+                        Ricarica Byteplus<div className="text-xs text-gray-600">Assistente AI per ricerca e contenuti</div>
                       </td>
                       <td className="text-right text-gray-700">1</td>
                       <td className="text-right text-gray-800">€ 20,00</td>
