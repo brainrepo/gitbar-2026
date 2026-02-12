@@ -1,0 +1,1262 @@
+Mauro Murru (01:40)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Ok mi sono già dimenticato di cosa parliamo oggi perché in realtà non parleremo di niente in particolare io vi avevo promesso una puntata abbastanza chill ogni due tre episodi questo perché il carico di lavoro su GitBar è molto alto per produrre un episodio quindi un episodio chill un po' ci aiutava a
+
+ad alleviare il carico e questo era quello che pensavo fino a qualche giorno fa quando appunto avevo programmato un episodio chill dove vi avrei dovuto parlare del pipe operator e di come ce lo siamo dimenticati. Poi ricevo un messaggio vocale che faceva più o meno così e tutto è cambiato.
+
+abbiamo con noi un amico, un fratello, abbiamo con noi eduardo dusi che tra l'altro l'ho preso in controppieta e credo che sia anche reato pubblicare le conversazioni
+
+Edo (03:20)
+Tu sei un deficiente. Tu sei un
+
+deficiente. Questo segnatevelo tutti. Mauro Murru è un cretino. Questa è la verità. Dovete tutti scrivere questa cosa sul suo epitafio. Fu un cretino.
+
+Mauro Murru (03:30)
+e considerate
+
+che ho tagliato le parti salienti perché in realtà... no si possono non dire? certo che si
+
+Edo (03:36)
+meno male, sennò ti avrei denunciato porca puttana ⁓ scusa si possono dire però la c'è in questo podcast?
+
+Dai perfetto
+
+perché stasera guarda stasera spareremo una quantità di cazzate che proprio non ha idea non ha idea
+
+Mauro Murru (03:51)
+Vi siete, vi siete resi conto che con noi c'è il nostro caro amico Edoardo, che non vedevamo da un po' in realtà qua nel podcast, io lo sento ogni tanto, e qualche giorno fa, per una questione legata al suo lavoro, avevo bisogno di una consulenza gratis fondamentalmente, e quindi l'ho contattato e detto, e Edo, come si fa questa cosa qua nel prodotto?
+
+Edo (04:10)
+Certo.
+
+Mauro Murru (04:17)
+dove lavora e che possiamo anche citare, non so se ci citano in giudizio o poi per quello che diremmo immediatamente dopo, però questi sono problemi tuoi.
+
+Edo (04:23)
+No?
+
+No no? ricevo una percentuale ogni volta che viene nominato il nome di StoryBlock, quindi vai pure, tranquillo.
+
+Mauro Murru (04:28)
+Sì, avevo un problema con story. Non un problema in realtà, dovevo fare una cosa con story block, siccome la documentazione è buona, non ne avevo voglia e soprattutto non avevo voglia di chiedere a un LLM come si faceva, detto va, senti che, aspetta che provo a contattare Edo che da un po' che non lo sento, buona re della favola, mi risolve il problema e poi subito dopo parte questa conversazione dove era praticamente, avete presente i due vecchi fuori dal cantiere che rantano?
+
+Edo (04:54)
+esatto i
+
+vecchi che urlano alle nuvole ma tra l'altro tu non sai che io ti ho risolto problemi a chiedendo a Claude questa è la verità
+
+Mauro Murru (05:00)
+Questo
+
+è fantastico. Sembravamo veramente due vecchi che urlavano all'inuvolo. In realtà si è parlato tanto di come la nostra professione sta cambiando, ma la domanda che voglio farti, più così per iniziare a freddo, boom! Intanto chi è Edoardo? Non so se... so. Se non lo conoscete...
+
+Edo (05:24)
+Ma è un
+
+altro cretino che fa cose.
+
+Mauro Murru (05:27)
+avete no no no eduardo se non lo conoscete avete probabilmente vissuto in una bolla fino a ieri perché oltre al nostro caro amico edu è un podcaster è un dev rel chief dev rel come che si dice dalle tue parti
+
+Edo (05:45)
+dovrebbe bene
+
+Mauro Murru (05:46)
+Insomma vede gente fa cose per story block e anche un ripeto un podcaster con buongiorno da Edo più fa un gozziardo di altre cose che non staremo qua a citare anche perché le sue passioni non dico che sono a livelli di Epstein ma sono abbastanza preoccupata. Sono abbastanza preoccupata. Scherzo Edo la prima domanda che voglio farti è
+
+Edo (06:06)
+Guarda che ti denunzio, guarda che tu sei a rischio denunzia stasera
+
+Mauro Murru (06:17)
+e il nostro lavoro sta cambiando.
+
+ma ne siamo veramente consapevoli.
+
+Edo (06:23)
+Io e te sì, non so se gli altri ne sono consapevoli. Vi siete accorti che negli ultimi due anni è cambiata qualcosina nel panorama del mercato dell'informatica? Vi siete aggiornati, siete rimasti indietro, o siete illudisti che non vogliono vedere, non vogliono capire che il mondo intorno a loro è cambiato e quindi rimangono fermi sulle loro posizioni sperando che prima o poi il mondo si fermi, rallenti gli aspetti, arrivano. Visto che metafora incredibile vi ho fatto.
+
+Mauro Murru (06:51)
+Sì,
+
+io giocherò con un'altra maglia oggi, nel senso che giocherò con la maglia del Neoludista.
+
+proprio perché è importante comparare le prospettive. Questa è la mia esigena, naturalmente questa era un unesimo tranello che ti ho giocato per questo episodio. Allora, vedere che il mondo attorno a noi sta cambiando è una cosa che penso veramente solo chi vive nella luna non se ne sia accorto. Vedere che tutta l'industria sta mutando, sta cambiando pelle e alla luce di
+
+so, di tutti, ma capire in che direzione si sta andando questa cosa è secondo me un po' più difficile. Che direzione vedi tu?
+
+Edo (07:46)
+⁓ madonna questa è una domanda che molti investitori vorrebbero farmi. No, naturalmente la direzione non la sa nessuno, o meglio la destinazione non la sa nessuno. La direzione mi pare abbastanza chiara, se non altro se seguiamo i soldi, se vedi dove stanno andando i soldi è abbastanza chiaro capire dove si sta puntando, quindi quale la direzione dell'informatica in futuro. Che poi...
+
+può anche non piacere, non è che debba per forza piacere questa roba qua, può anche, legittimamente può sentire che questa roba non gli piace e ci sono mille ragioni perché uno detesti la direzione che sta prendendo il mondo informatico, il mondo in generale forse, a livello proprio di investimenti, a livello di mercato, a livello di industria.
+
+e ci sono varie conseguenze spiacevoli di queste direzioni, ne possiamo anche parlare, il mercato cambia molto rapidamente, cambierà molto rapidamente e forse non cambierà in bene per tutti, cambierà probabilmente in bene per alcune persone, c'è il rischio che diventi peggio per tante persone.
+
+parlo naturalmente del nostro mercato poi se tu guardi anche agli altri mercati e anche lì ci sono delle complicazioni perché a livello sociale bisognerà capire come gestire il passaggio dal mondo manuale insomma che abbiamo insomma in parte manuale che c'è adesso a quello totalmente automatizzato perché la direzione quella lì no? e in un mondo totalmente automatizzato chiaramente
+
+l'essere umano deve trovare un nuovo ruolo e questo non è soltanto compito delle aziende anzi diciamo che una visione iper liberista non è per niente compito delle aziende dovrebbe essere compito delle società e dovremo porci questa domanda ma sto dando forse troppo fuori è troppo complicata questa roba che direzione sta perdendo? ripeto guardate dove vanno i soldi guardate i fatturati degli hyper scaler delle grandi aziende
+
+Sott'altro citate le guardate le prime 3 4 no? I grandi nomi guardate i fatturati che hanno fatto guardate quali sono le divisioni che fanno più fatturato e basta e vi siete dati la risposta e avete capito che i soldi vanno lì i soldi vanno nelle ii che vi piace o no e quindi dovete farci i conti sostanzialmente che dobbiamo fare? Ci rimaniamo ancorate le nostre posizioni perché non ci piace questa direzione e quindi cerchiamo in tutti i modi di andare contro
+
+Però noi siamo in quel mercato lì, siamo in quel campionato lì, dobbiamo giocare. Cosa facciamo? Non giochiamo? Ci tiriamo fuori perché a non piace il gioco? Non si può fare. Non si può fare.
+
+Mauro Murru (10:24)
+Ecco quindi la tua immagine è che c'è un treno in corsa, chi rimane a guardarlo probabilmente soccomberà in termini di mercato, termini di professioni e di quello che è e chi invece salta a bordo vince.
+
+Questo non fa una piega come ragionamento, io però penso anche a una cosa. Penso che un treno in corsa così veloce rischia di offuscare il senso critico e rischia di offuscarlo in persone che... sono persone che reputano... pensano di avere un certo senso critico, perché noi siamo...
+
+artigiani del pensiero no? Noi ci definiamo artigiani del pensiero o lavoratori del...
+
+Edo (11:16)
+tu ti
+
+definisci artigiano del pensiero, non mi appioppare questi nomi.
+
+Mauro Murru (11:19)
+Io mi
+
+definisco con piacere artigiano del pensiero, E un treno così in corsa, e in corsa così velocemente, per mia esperienza, porta alla sospensione parziale del senso critico, o almeno. Questo è un effetto che io ho sentito in me stesso, con la prima ondata. Sospensione del senso critico.
+
+tanta innovazione che diventa difficile seguirla è una rincorsa a questa innovazione senza fermarsi e analizzare l'impatto sulla società e sulla persona e sull'individuo, scusa.
+
+Edo (12:06)
+Beh, tu in... adesso tu sei probabilmente più giovane di me, Però, più o meno adesso, se tu ti ricordi in che posizioni eri e in che posizione era il mercato dieci anni fa, io ti ricordo che tra il 2015 e il 2016 il nostro mercato è stato stravolto, è cambiato completamente. È arrivata... è certo, è arrivato Docker, è arrivato Lambda.
+
+Mauro Murru (12:31)
+parli del Cloud.
+
+Edo (12:36)
+è arrivato poco dopo, arrivato Kubernetes e nostro mercato è stato rivoltato e chi è rimasto ai vecchi paradigmi è rimasto giù dal treno come dici e questo è un fatto, se sto ruovedendo adesso quanta offerta c'è sul mercato, quanta domanda c'è sul mercato per competenze che non siano legate a quel tipo di tecnologia, molto poca
+
+Molto molto poca magari sì, sistema i legacy se ne sono ancora ok però molto poca
+
+Mauro Murru (13:09)
+Ma pensi
+
+che le due rivoluzioni siano simili, perché io credo che questa rivoluzione, o almeno questo, questo cambiamento sia drasticamente diverso.
+
+Edo (13:22)
+è molto diverso, è molto diverso, è vero, sono simili dal punto di vista del rimanere al passo, rimanere aggiornati. Io credo che come informatici noi siamo molto più simili a dei...
+
+Lo so che fa ridere a volte usare questa parola, ma siamo molto più scienziati che operai. Siamo molto più ricercatori che impiegati, manovali. In che senso? Nel senso che noi dobbiamo costantemente essere aggiornati. Questo è un requisito secondo me fondamentale della nostra professione e mi fa molto incazzare, mi fa molto ridere, ma mi fa anche incazzare quando leggo su LinkedIn alcuni post, perché ormai LinkedIn è il nostro social network, è il nostro social network degli informatici, Il più brutto social network della Terra, però è diventato
+
+Mauro Murru (14:07)
+Io manto,
+
+io manto, io manto.
+
+Edo (14:10)
+è lo human to human social network esattamente è link lo chiameremo il link di inbook è veramente credo uno dei peggiori software che esistano in questo momento al mondo però purtroppo è de facto il social network degli informatici bene a volte io vedo dei post di gente che dice ⁓ guarda ti giuro perché gli ho letti davvero ⁓ non pensavo ai miei o i 50 anni di dover ancora rimettermi a studiare delle cose nuove
+
+riferendo se il fatto di essere arrivata alle IAI bisogna aggiornarsi e io dico, ecco, porca puttana tu davvero sei un informatico ai 50 anni e sei riuscito a resistere fino ai 50 anni senza studiare, senza aggiornarti, senza tenerti aggiornati come è possibile? hai avuto un... Ho capito? Sei veramente stato un miracolato allora! Ragazzi, non funziona così. Cioè questo è un mercato, questo è un settore, è un mondo
+
+Mauro Murru (14:54)
+è ancora pieno
+
+Edo (15:06)
+è un mondo di scienza e noi dobbiamo stare al passo con le ricerche scientifiche. Quando escono paper, bisognerà vedere di che cosa parlano perché potrebbero influenzare il nostro lavoro. Noi adesso non siamo, tu dicevi gli artigiani del pensiero, so che a volte ci piace definirti artisti, artigiani, insomma qualcuno che genera qualcosa a partire dalla materia prima. Se tu pensi che la materia prima sia il codice, tu generi un artefatto con il codice, ok.
+
+Mauro Murru (15:11)
+Ok.
+
+Edo (15:36)
+Secondo me questa figura qua è superata, noi non siamo più questa figura qua perché a generare un artefatto con il codice è una macchina adesso, in questo momento e lo sarà sempre di più, ok? Quindi noi non siamo più quella roba lì, non siamo più quelli che generano un artefatto con il codice, noi siamo quelli che supervisionano quelli che generano gli artefatti, che sono macchine. Poi li chiamai agenti, chiamalo come ti pare, è un software, sono delle macchine.
+
+quelli sono gli artigiani che generano un artefatto. Noi siamo supervisori. Come facciamo per essere appetibili sul mercato da supervisori? Dobbiamo conoscere le soluzioni. Per conoscere le soluzioni bisogna studiarle. E bisogna studiarle tante, perché le soluzioni si aggiornano continuamente, emergono nuovi problemi e nuove soluzioni. Bisogna vedere che soluzioni ci sono, quali implicazioni hanno. E se no, alle aziende risulta che non sei più appetibile se tu non porti delle soluzioni applicabili, capisci?
+
+Questo è un aspetto del discorso che secondo me molti ancora cercano di rifuggire perché dico no dai che sto ancora ancora per sei mesi nella sua svangata. Hai uscito opus 4.6 vediamo se a sto giro mi riesci a rimpiazzare dai sono ancora ancora più bravo io dai ce la faccio altri sei mesi resisterò veramente un atteggiamento mio
+
+Mauro Murru (16:55)
+Allora, su questo
+
+ho delle bold opinion, ma facciamo un passo indietro, perché secondo me quello che abbiamo detto e abbiamo dipinto sono due visioni differenti dello stesso mondo, Da una parte c'è chi si ritiene ancora a qualcuno che crea e ha bisogno di sentirsi qualcuno che crea perché ha abbracciato la professione.
+
+per questa esigenza. Uno dei motivi per cui io faccio la professione, ho deciso di fare la professione, che faccio è perché mi sentivo creatore, creavo i miei mondi, no? Modellavo realtà creandola, che è una cosa, un'idea molto romantica, me ne rendo conto, tu sei molto razionale dall'altra parte,
+
+però è un'idea romantica, il perdere l'azione del creare o perdere il controllo, parte del controllo, che può essere anche solo essere la manualità, no? dell'azione del creare ti fa... ti attiva una crisi d'identità ed è quello che sta succedendo stiamo vivendo una crisi d'identità e io sto vivendo questa crisi d'identità dall'altra parte ci sono persone come te che...
+
+hanno rappresentato quest'altra personas, no? Se parliamo in gergo di marketing, che è lo scienziato che controlla le macchine, che guida le macchine, Più che guida che controlla le macchine, perché stiamo arrivando a dei livelli dove la guida diventa insomma parzialmente necessaria, fammelo dire, poi possiamo anche discuterne. E quindi ti vedi con questo camice
+
+Sto cercando di dipingere un'immagine, Perché ti vedi con questo camice che controlli le macchine. Ecco, questa rappresentazione è una. C'è poi una terza rappresentazione che invece di vedersi scienziati...
+
+Edo (18:56)
+sì
+
+Mauro Murru (19:10)
+Ci si vede LLMSITTER. Cosa vuol dire? Quindi abbiamo detto l'artigiano triste e deluso, Mauro. Lo scienziato, Edo. Mauro II che si vede un LLMSITTER dove lui porta a spasso, a pascolare questi LLM senza che loro non travisino tutto ma il cui controllo dell'azione è limitato da una
+
+graduale riduzione delle capacità cognitive di chi fa l'LM-Sitter. Perché? Perché il delegare l'azione, non l'azione meccanica, ma la composizione del pensiero alla macchina, ok, la composizione del pensiero alla macchina, ha comunque, a parer mio, degli effetti di... al lungo periodo, questa cosa non l'abbiamo ancora vissuta, ovvio, ma sul lungo periodo...
+
+avrà attiverà degli effetti di deresponsabilizzazione e farà in modo che sai cosa diceva Einstein io non tengo a mente tutte le informazioni che posso reperire facilmente quindi ci sarà il delegare di alcune delle capacità fondamentali del pensiero e dell'analisi. Adesso
+
+Edo (20:31)
+ma tu
+
+sei convinto che succederà questo? perché io non ho la prova empirica
+
+Mauro Murru (20:36)
+Cristo, io ho
+
+visto troppi develope per andare in YOLO mood. Troppi nell'ultimo periodo, amico mio.
+
+Edo (20:41)
+Sì, aspetta, scusami,
+
+però se fosse come dici tu, allora io mi aspetterei di vedere ogni volta che l'umanità ha automatizzato dei processi cognitivi, mi aspetterei di vedere una regressione delle capacità cognitivi.
+
+Mauro Murru (20:54)
+Qual è l'ultimo, l'ultimo,
+
+qual è l'ultima grande automatizzazione dei pensieri cognitivi? Non mi dire la scrittura, ti prego.
+
+Edo (20:59)
+internet internet
+
+google wikipedia come no no ma ti dava delle no
+
+Mauro Murru (21:04)
+No, perché non pensava al tuo posto, non ti dava delle soluzioni, ti dava delle informazioni, non ti dava
+
+delle soluzioni pre-made o almeno non era così facile.
+
+Edo (21:16)
+best e cover flow.
+
+Certo dici, ha contribuito all'attuale disastro. No, secondo me è una visione pessimista, che capisco, posso capire, però...
+
+se tu guardi la storia, non è esatto, ho letto anche di pareri più autorevoli del tuo che dicono la stessa cosa, non che tu non sia autorevole per carità, ma di studiosi della psiche, eccetera, che dicono che effettivamente più il cervello si disabitua a un certo tipo di pensiero di ronamento, più quelle aree si atrofizzano, che ne so, e quindi pensi di peggio, vabbè, ho capito. Però io non...
+
+Mauro Murru (21:34)
+⁓
+
+Edo (22:01)
+che nella storia di umanità questa cosa sia mai successa eppure non è la prima volta che stiamo spostando le capacità cognitive dal cervello umano a quelle di una macchina, a una macchina no? Cioè è come dire allora quando è arrivato il computer abbiamo smesso di fare i calcoli a mente, arrivata la calcolatrice allora il nostro cervello è regredito perché non facciamo più i calcoli però non mi pare che sia successo no? Cioè se tu avessi una prova empirica
+
+Mauro Murru (22:26)
+Io ho visto gente dividere
+
+conto con la calcolatrice, 12 euro in 3 con la calcolatrice amico mio Ingegneri!
+
+Edo (22:35)
+Ma sì, ma certo, capisco. Ma sì, lo so, ma... Ma,
+
+ma, ma, ma, ma, ma, ma,
+
+però generalmente non mi pare di aver mai visto nella storia succedere questo anzi ogni volta che abbiamo aggiunto delle automazioni o appunto delle macchine che hanno permesso di pensare più rapidamente di risolvere problemi più rapidamente abbiamo fatto degli avanzamenti esponenziali rispetto a quello che avevamo quindi ci capisci io non lo vedo esattamente in questo modo così pessimista perché guardo la storia poi può anche andare malissimo ⁓
+
+a modè ha scritto appena adesso un saggio dove dice che è andato tutto male però non lo so sono un po' cioè mi pare una visione un po' tanto pessimista mi pare tanto estrema
+
+Mauro Murru (23:43)
+Sai,
+
+io sono partito da questo ragionamento e sono partito proprio dalla storia. E mi sono chiesto qual è la rivoluzione di questa portata legata al pensiero. La cosa che mi è venuta in mente e l'unica vera rivoluzione a questa portata era la scrittura.
+
+Edo (24:11)
+la scrittura è una forma di comunicazione non di pensiero.
+
+Mauro Murru (24:15)
+è par... sì, sì, sì, quindi è diversa, ma non ho riuscito a trovare un'altra rivoluzione nella mia ignoranza, io non sono un filosofo, non sono uno stupido ingegnere che divide un conto di 12 euro con l'attrice, no, scherzi a parte, non lo faccio, provava a cercare una rivoluzione di questa portata
+
+nella storia. E a parte la scrittura che è assimilabile ma come evidenziato è profondamente diversa, no? Perché la scrittura possiamo paragonarla anche se il paragone impari ha internet, no? Quindi la distribuzione dell'informazione in modo così massivo. Ma una cosa che si attacca così tanto al pensiero probabilmente è difficile e in più quello che dici tu c'è la questione della responsabilità.
+
+che sarà la parola chiave di questa rivoluzione. E quello che dicevi tu, noi saremmo i controllori di queste macchine della produzione. E sono d'accordo, questa è la predizione più logica che viene da fare.
+
+Edo (25:33)
+però ti
+
+posso fermare su questa cosa, perché tu dici che la responsabilità, anche io l'ho letto molte volte questa cosa qua e ti giuro che non sono mai riuscito a capirla, perché la responsabilità è un grosso problema?
+
+Mauro Murru (25:43)
+Perché in realtà quando ti faccio questo esempio, faccio sempre questo esempio, Tu pensa a un medico, ok?
+
+Il medico, cazzo, ha studiato come un pazzo. Conosce come un pazzo. E poi c'ha una macchina, l'intelligenza artificiale, che lo aiuta nel suo processo. Oggi la decisione è sempre del medico. La macchina dà informazioni. Quello che succederà è che la macchina proporrà decisioni. Non ti dà più informazioni, ti propone decisioni. Cosa succede? Aspetta, perché...
+
+Edo (26:05)
+Sì.
+
+Ma ok, ti lascio finire.
+
+Mauro Murru (26:22)
+perché
+
+corre la informazione, ok? Ti propone decisioni. Cosa succede? Quando il medico fa una decisione, prende una decisione, ci sono più elementi, c'è la parte razionale, c'è la parte istintiva, ok? E il medico sbaglia. La macchina può sbagliare. No, quindi abbiamo il medico che può sbagliare e la macchina può sbagliare. Cosa succede alla macchina se sbaglia?
+
+Edo (26:25)
+Sì.
+
+Ok, posso dirti?
+
+Mauro Murru (26:52)
+Cosa... Cosa...
+
+Aspetta, cosa succede al medico se sbaglia? Bene, oggi medico e macchina si dividono la decisione. Cosa succede se il medico decide l'opposto di un... Cosa succede, scusami, se la macchina sbaglia e il medico applica quello che la macchina gli ha detto? La regola che si applica è nessuno è mai stato licenziato per aver acquistato IBM. Quindi la macchina ha dato un errore
+
+il medico ha applicato la macchina, quello che ha detto la macchina, il medico ha sbagliato, ma l'errore è accettabile perché uno standard ha guidato verso un errore, ok? Perché la macchina verrà vista come lo standard. Cosa succede se il medico non applica quello che la macchina dice e sbaglia e ammazza?
+
+Edo (27:43)
+Ti posso dire? Ci siamo già ben oltre questo punto qua. Cioè, tu pensi davvero che il medico oggi già vada contro quello che gli dicono i risultati dei software?
+
+Mauro Murru (27:58)
+E
+
+infatti, infatti questo probabilmente iniziesse da un problema.
+
+Edo (28:01)
+Ma però perché... cioè questa roba qua non è... cioè il software in medicina non è una cosa che è arrivata adesso, stiamo parlando di decenni.
+
+Mauro Murru (28:07)
+Aspetta,
+
+aspetta amico mio, quello che sta cambiando non è il software.
+
+ma è il modo con cui guardiamo il software.
+
+Edo (28:21)
+ti dico una cosa se un medico un veterinario un qualunque chiunque abbia potere di vita di morte diciamo comunque abbia a che fare con delle decisioni molto critiche quando deve prendere una decisione quando devo intervenire che è medicinale d'arte eccetera deve consultare dei referti giusto?
+
+nella poca esperienza che ho io mi pare che abbiamo degli studi, dei framework che dicono che da tale referto discende tale decisione. È molto difficile che ci sono delle correnti di pensiero in contrasto che dicono no, con quel referto lì io prendo una decisione opposta. E quindi la decisione non è che sia proprio una cosa
+
+istintiva di un medico più bravo di un altro è che probabilmente discende da una serie di incroci di referti e certo la macchina ti può aiutare a riassumere, a capire, a evidenziare ma
+
+Mauro Murru (29:28)
+No, la macchina
+
+come la stiamo inquadrando oggi, la stiamo inquadrando come elemento che dà risposte.
+
+Edo (29:37)
+però la diagnosi
+
+è già una risposta
+
+Mauro Murru (29:41)
+Amico
+
+mio, sta cambiando il modo con cui usiamo la macchina. Probabilmente già cambiato, sì, probabilmente già cambiato. Perché prima la macchina era un elemento che ti dava delle informazioni, poi applicavi dei framework, dei protocolli come medico, sì, applicavi dei protocolli che ti guidavano verso una decisione, ok? Però in quei protocolli c'è sempre, o spesso c'è...
+
+Edo (29:46)
+DICI
+
+Ma in che senso?
+
+Mauro Murru (30:10)
+Adesso ci sono dei casi particolari tipo la gestione di tumori e queste cose dove i protocolli sono molto rigidi e spesso a volte no, si passa con un trattore su un campo, su un campo, un prato fiorito. quello che voglio dire è che da una parte c'è l'uomo che guida, dall'altra c'è una macchina che dà delle risposte. Quello che noi stiamo dicendo al computer è siccome tu hai tutta la conoscenza che io non posso farci entrare sulla mia cucuzza.
+
+Dammi una risposta, che io la prendo pedissequamente. E siccome il carico cognitivo di gestire tutte quelle informazioni è troppo, io non ho più strumenti di controllo, perché non ho più strumenti di paragone, perché potrebbero esserci altri 70.000 casi che io non ho letto, ok? Per cui il mio controllo non esiste, è finto. Per cui quel camice che dici tu, no?
+
+il camice che indosso perché guido le macchine ⁓ ma io le guido, le controllo sulla base di cosa e soprattutto che potere ho in termini di responsabilità se si attivano meccanismi tali per cui se io dico una puttanata e vado contro la macchina mi si fanno in culo se invece la macchina sbaglia è la macchina un errore statistico un errore statistico porca paletta e considera
+
+Edo (31:38)
+Ma guarda,
+
+sì, ma però già succede questa cosa, già succede, ma prima della di agilitativa. Ma secondo me la stiamo, ma secondo me la stiamo amplificando nella narrazione, in come ce la stiamo raccontando. Ma questa cosa del seguo quello che dice la macchina, ma c'è da, ma ti ricordi le bombe intelligenti, Mauro? Ma stai parlando di trent'anni fa?
+
+Mauro Murru (31:43)
+⁓ ma la stiamo amplificando amico mio! La stiamo amplificando...
+
+Edo (31:59)
+Cioè, questa cosa che decide la macchina, il fatto che alla fine qualcuno prema un pulsante o che lo fai perché hai deciso di andare contro tutte le levazioni, tutte le diagnosi, tutti i protocolli, perché sei tu e hai deciso no, come nei film, no no, ho una brutta sensazione, premo l'altro pulsante, avevi ragione, genio! No, non succede così, nella realtà uno preme il pulsante che gli indicano le macchine, comunque! Perché? Perché c'è una serie di evidenze che ti dicono, guarda, nel
+
+per cento dei casi quella lì è la decisione giusta poi sta vuoi prendere la strada sbagliata fai pure prenditi la responsabilità però guarda se segui me ma allora scusami allora ma non
+
+Mauro Murru (32:40)
+non hai responsabilità anche se sbagli. Se segui me non hai responsabilità
+
+anche se sbagli.
+
+Edo (32:46)
+così allora scusami
+
+allora scusami allora sei un giudice sei un giudice è un processo arrivano gli avvocati dicono guardi questo tizio ha fatto questo questo secondo la legge e secondo le sentenze che ci sono già state prima di noi la decisione che deve prendere lei è questa perché la cassazione ha detto questa roba qua non è che il giudice può dire aspetta però ho la sensazione che lui sia in realtà innocente quindi bum vado contro al framework legislativo no non succede così tu metti insieme una serie di dati
+
+gli applichi un framework che evidentemente conosci, in questo caso sei il controllore perché tu conosci lo spazio in cui ti stai muovendo, ma prendi una decisione che fondamentalmente è guidata, è guidata da tutti i dati che ti sono stati forniti. Noi con le IAI stiamo accelerando il processo che porta dall'entrata dei dati fino all'end user, insomma al punto finale. Stiamo accelerando questo processo, non stiamo eliminando l'entrata e l'uscita.
+
+stiamo accelerando questo processo se prima tu avevi bisogno di tante persone che raccogliesse tutti i dati per te e te li fornisce in modo strutturato adesso tutte queste persone tu le elimini perché hai un software che lo fa al posto loro quindi il problema vero secondo me non sta nell'input o nell'output sta in tutte le persone che stanno in mezzo quelle stanno vivendo un brutto sì
+
+Mauro Murru (34:01)
+Amico mio, non fa
+
+una piega, io sono d'accordo al 200 % con quello che hai appena detto, no? Cioè se mi dici, se mi dici le data driven decision sono una rivoluzione, sono la rivoluzione e le decisioni guidate dai dati sono la rivoluzione, ti dico sì, cazzo, eccetera, te lo firmo col sangue ma le decisioni guidate dagli LLM non sono data driven decision, amico mio
+
+Edo (34:07)
+Perfetto, chiudiamo qua la puntata.
+
+Sì.
+
+Mauro Murru (34:29)
+E quello io spero di risvegliarmi da questo cazzo di incubo quando no tutto tutto l'hype e tutta la storcazzo di narrazione senza senso finirà no ok Spero che di davvero addormentarmi domani risvegliarmi quando tutto questo questa bolla si stabilizza perché stiamo vivendo una bolla stiamo sentendo un nel mio foglio c'era scritto segnali di umore no
+
+questa puntata che è l'unico appunto che ho preso. Se noi riuscissimo a eliminare tutto il rumore probabilmente saremo più lucidi però quello che realmente sta succedendo e sta succedendo in settori a livelli diversi e che stanno stanno succedendo e stiamo vedendo decisioni prese dall'LLL
+
+⁓
+
+Edo (35:21)
+Fabio un esempio
+
+Mauro Murru (35:23)
+Tipo? Tipo dalla signora che dice devo dare l'aspirina a mio figlio? Ok. Ha decisioni di...
+
+Edo (35:35)
+e lo chiede a cia gpt sai
+
+quella signora due anni fa a chi lo chiedeva perfetto perfetto l'hai cambiato un cazzo
+
+Mauro Murru (35:42)
+Lo chiedeva Google, lo chiedeva Google.
+
+Ma a manager che prendono le decisioni così, fammi un piano di marketing!
+
+Edo (35:50)
+ma meglio ma ci
+
+sono ma guarda ma se sappiamo, senti ci dei manager che meglio se chiedono all'ai ma molto meglio
+
+Mauro Murru (35:58)
+Vabbè, quindi vuol dire che abbiamo già passato il punto di non ritornarmi con io.
+
+Edo (36:02)
+Ma per io non capisco perché è un punto di non ritorno. Mauro, cazzo, siamo creatori di software, dovremmo essere contenti di un software così avanzato, un software che fino a due anni fa, tre anni fa, era impensabile. Stiamo vedendo una roba incredibile e ci stiamo focalizzando sugli aspetti negativi che va bene, va benissimo, ma cazzo, ma stiamo vivendo una roba che io quando ero bambino, ma io mi sognavo di poter chattare con una macchina.
+
+Mauro Murru (36:27)
+io
+
+Edo (36:27)
+C'erano, ti
+
+Mauro Murru (36:27)
+io
+
+Edo (36:28)
+ricordi i programmi da terminale che ti simulavano il test di Turing? Ma un giorno arriveranno queste cose. Da bambino, l'unica cosa che potevo fare era parlare e far finta di parlare col grillo parlante. Ma magari, ma poi, crescendo, abbiamo capito che con le tecnologie diciamo tradizionali non saremmo mai arrivati a quel punto lì. Poi sono arrivati le reti neurali. E allora lì si è capito che ci si poteva arrivare. È incredibile quello che stiamo vivendo oggi. Però, però...
+
+Mauro Murru (36:53)
+Ma sono d'accordo con
+
+te!
+
+Edo (36:54)
+La cosa brutta poi è che intorno a questo c'è tutta una costruzione di hype, di investimenti folli, di bolla speculativa, vabbè, sono d'accordo su questa roba qua, però non possiamo fermarci solo le cose brutte.
+
+Mauro Murru (37:06)
+No, no, no...
+
+No, Edo, era già... Io ho chiuso l'entusiasmo su un cassetto, io stavo sfondando Opus 4.6 fino a 10 minuti fa, ok, però... carico! Il problema è che noi come settore ci carichiamo a molla per queste cose! Io, minchia, non riesco a parlare con colleghi, qualunque persona che lavora nelle IT...
+
+Edo (37:28)
+facciamo appassionati!
+
+Mauro Murru (37:35)
+non riesca a parlare che di questa cazzo di cosa.
+
+Edo (37:38)
+Aspetta però,
+
+Perché ci sono anche tutti i negazionisti invece.
+
+Mauro Murru (37:43)
+⁓ vabbè ma non riesco a parlare che di questa cosa! Il problema... Il... Il problema...
+
+Edo (37:46)
+vabbè ma è quello che ci pare... scusami
+
+però è come attorno al 2016 non si parlava altro che di Kubernetes e di Lambda e di serverless, la Kubernetes è stata dopo vabbè di serverless e sono i trend del momento sono questi
+
+Mauro Murru (37:54)
+Certo, amico mio.
+
+⁓ sì, io passavo le notti
+
+a parlare di DCOS perché ero quello strano della stanza. Però sì, però quello che voglio dirti è l'entusiasmo c'è. Io adesso mi sto sforzando a nasconderlo, ma se avete sentito l'episodio con Alfonso e se sentite il prossimo episodio con Davide e Luca l'entusiasmo c'è e va bene. Qual è il problema?
+
+Edo (38:06)
+si parla di questo arrivano le cose
+
+Mauro Murru (38:28)
+vero è che secondo me a differenza del cloud questa cazzo di cosa ha un impatto reale sulla società e
+
+Edo (38:37)
+aspe-
+
+aspe- perché il cloud non ce l'ha avuto un impatto reale sulla società no certo non nella stessa puntata sono quasi d'accordo però cazzo guarda che stiamo facendo delle battaglie politiche tremende per il cloud
+
+Mauro Murru (38:52)
+E per fortuna che le stiamo
+
+facendo.
+
+Edo (38:54)
+Cloud Sovereignity, queste cose. Sì, sì, sono d'accordo, però il Cloud ci ha cambiato la società, è di brutto. Tra l'altro il Cloud sta creando e ha creato quelle utopie corporative di cui si scriveva nei videogiochi e nei libri di fantascienza, Cyberpunk e queste cose qua. Perché...
+
+Mauro Murru (39:11)
+Amico mio il cloud
+
+è i nuovi modelli se non sono altro che mera geopolitica oggi
+
+Edo (39:22)
+Vabbè ma perché abbiamo permesso delle aziende di diventare troppo grosse questo è un altro problema se voi guarda possiamo lanciarci proprio con un martello contro le porte del capitalismo sono contentissimo però Se parliamo dal punto di vista tecnologico io faccio molta fatica a comprendere la narrazione che va tutto male faccio molta fatica da punto di vista invece Finanziario va bene un altro discorso
+
+Mauro Murru (39:40)
+No però!
+
+Amico mio, amico
+
+mio, da Tecno Bro ci gasiamo troppo del giocattolo e spesso l'entusiasmo. E questo è la cosa che un po' ci perde. Poi io vabbè, sto invecchiando male, però da Tecno Bro ci gasiamo del giocattolo e spesso lasciamo attenzione sull'impatto che questa cosa ha.
+
+Edo (40:13)
+si però ti dico una cosa ti dico una cosa avrò delle volte delle volte penso che molti di noi assomiglino ai fotografi ai fotografi che si lamentavano dei cellulari con le macchine fotografiche ti ricordi quando i fotografi si lamentavano perché ⁓ guarda adesso tutti fanno foto hanno tutti questi cazzo di smartphone fanno le foto le postano su instagram non ci sono più i professionisti noi che sappiamo fare le foto questa roba qua sta permettendo a tutti di creare software
+
+Mauro Murru (40:14)
+e l'abbiamo fatta anche col cloud amico mio l'abbiamo fatta anche col cloud
+
+Edo (40:43)
+tutti, tutti possono creare software e ammettiamolo questa roba ci dà fastidio, proprio la stiamo vivendo malissimo questa cosa no ma come diciamo come categoria, neanche a me però come categoria io vedo molta gente che la vive male questa cosa, la vive molto male
+
+Mauro Murru (40:49)
+A me no. A me assolutamente no.
+
+⁓ sì,
+
+perché... perché... perché... cazzo, pensano che domani mattina non sono come un'impia del frigo. Questo è il vero problema, amico.
+
+Edo (41:06)
+No, no
+
+c'è anche secondo me un piccolo discorso di superiorità intellettuale il software è una cosa sacra è una cosa seria una cosa sacra bisogna saperlo fare io sono capace tu no, tu da dove vieni hai fatto non hai fatto niente non hai mai scritto una lega di codice adesso scrivi codice scrivi le app non va bene c'è un po questa superiorità qua
+
+Mauro Murru (41:24)
+⁓ vabbè,
+
+certo, ce la tiriamo un po' e pensiamo di essere un gradino più alto e che su questo... su questo sforni una porta aperta, guarda ma... boh, io, sarà che, ripeto, sono invecchiato ma di tutta... di tutta questa roba, sono arrivato a un certo punto della vita, ma non mi fare un cazzo, fondamentalmente, Cioè, io vorrei ritirarmi nella mia casetta, probabilmente... sarà che sto guardando la pensione ormai...
+
+Edo (41:27)
+⁓
+
+Madonna,
+
+sei arrivato già a quel punto lì!
+
+Mauro Murru (41:51)
+Sì, sì, sì, io sto guardando la pensione, non sto scherzando,
+
+Edo (41:53)
+Ma guarda,
+
+se riuscissimo a trasformare il nostro mondo, la nostra società in qualcosa di un pochino più equo, potremmo davvero trasformare questa roba dell'AI nell'era dell'abbondanza dove le macchine fanno le cose che adesso dobbiamo fare noi.
+
+Mauro Murru (42:08)
+Peccato che... Peccato...
+
+Sì,
+
+con quattro società che hanno di modellina accessibili a tutti gli altri nel mondo alle quali stiamo delegando parte delle nostre decisioni e parte del nostro pensiero.
+
+Edo (42:18)
+Ma è cazzo colpa nostra!
+
+Ma è colpa nostra che siamo degli imbecilli! Che abbiamo messo un deficiente a capo della più grande potenza politica economica del mondo.
+
+Mauro Murru (42:28)
+E
+
+adesso provo a fartelo il tuo modellino bellino bellino che gira a casa tua bellina bellina dove ti devi comprare un computer che ti costa 7000 euro che è probabilmente metà del reddito anno di una persona che lavora in IT in Italia, di un mid che lavora in IT in Italia e poi te la metti a casa? Cioè, è la cosa meno equa del mondo sta cazzo intelligenza artificiale amico mio.
+
+Edo (42:46)
+ma io sono d'accordo
+
+su questo ma questo è un problema della politica non del software il software è agnostico non ha una posizione non ne frega un cazzo di chi vince al software
+
+Mauro Murru (43:02)
+Ma sono d'accordo con te, il problema è che il software, il software che usiamo...
+
+che basa su... che dettano la politica. E che arrivano nei posti pensando di essere superiori alla legge. Il problema dell'Europa che sta dicendo no fermi un attimo c'è la legge e poi ci sono le aziende che propongono software e allora ci sono i nostri tech bro, gli omologhi di Mauro
+
+Edo (43:11)
+nelle mani di poche persone. Giusto? Questa roba qua è un problema.
+
+Certo!
+
+Mauro Murru (43:38)
+che dicono ⁓ ma cazzo stiamo rallentando le informazioni tu sei un luddista di merda che sta in parlamento e va bene premesso che buona parte di quelli che stanno in parlamento non ci capiscono una mazza però quando c'è qualcuno che ci capisce viene tichettato come luddista perché dice no ⁓ dobbiamo mettere dei confini ma questi confini spesso limitano l'innovazione è stato fatto con l'orionautica è stato fatto con tutti gli ambiti critici
+
+Però col software no, perché stiamo limitando l'innovazione. Allora qua c'è metà fetta di Mauro che è il tech bro, metà fetta di Mauro, il ludista che si scontrano tra di loro e dicono ma no ma cazzo stai limitando l'innovazione, dobbiamo dobbiamo sviluppare questa è una roba fighissima. Nell'altra dici sì ma tu c'è una figlia, che mondo vuoi dargli a tua figlia? Ne mettiamo le regole e qua vedi Mauro che si guarda allo specchio e dopo un po' dice ma... Perché...
+
+perché questa è la credentità che ne stiamo vivendo. E l'etichetta di dire sei un luddista, vuoi andare contro l'intelligenza artificiale a tutti i costi? È un problema perché è un'etichetta adatta a quelli che magari erano contro il green pass come documento e gli si diceva no sei un antivaccinista, terrapiattista! Solo perché dicevano no guarda per me è sbagliato avere un documento per entrare in un posto.
+
+e della famosa etichetta dove io ti vomito tutto, ti metto su un calderone talmente eterogeneo da fare una riconduzione, non so come cazzo si dice in latino, ad assurdo una riconduzione a stupidità generale.
+
+Edo (45:24)
+ma io sono super d'accordo sulla regolamentazione il caso recente di grock che fa i nudi e queste cose qua mette i guardrail e limitarle regolamentare quello che fa ma per me è 100 % sì è fondamentale regolamentare queste cose dal punto di vista di quello che il software può fare perché può fare anche cose pericolose è giusto chiedersi cosa può e cosa non può fare intervenire e mettere dei guardrail e da punto di vista economico finanziario geopolitico
+
+è giusto fare, cosa non è giusto fare, cos'è etico, cosa non è etico, come la società dovrebbe reagire e plasmarsi con il nuovo assetto del mercato che adesso è questo qua. Su quello lì sono super d'accordo, ma questa roba è qua non hanno secondo menu, a che fare con il software. Cioè il software non ha idee, non ha idee proprie, non ha ideologia, non ha etica, il software non ha niente. Noi, società, dobbiamo regolamentare il software e dobbiamo regolamentare chi...
+
+possiede i mezzi di produzione, Del software. Però questo è un altro piano, è un altro piano che possiamo discutere secondo me con dei sociologi e degli economisti, ma dal punto di vista tecnico, puramente tecnico, se tu vivessi sulla luna e non ti interessasse nulla delle cose del mondo e guardassi solamente il software, saresti soltanto entusiasta di quello che il software fa. Il punto che voglio che sottolineo io è che se noi siamo
+
+appassionati di tecnologia e programmatori e ci piace quello che facciamo in informatica e allora per forza dobbiamo essere dobbiamo non nessuno deve però per forza siamo entusiasti di questo avanzamento tecnologico perché ci sta dando ci sta facendo vedere delle cose incredibili quello che sognavamo di vedere e ci sta tra l'altro stiamo capendo che ha il limite che ha stiamo capendo che sta arrivando a dei limiti che probabilmente dovremo superare in altri modi e quindi stiamo pensando anche delle alternative dei modelli diversi cioè si aprono
+
+una
+
+serie di cose molto fighe da punto di vista tecnico e scientifico. Poi, queste siano un problema per la società, non sono d'accordo, ma è un piano diverso, però che non dobbiamo secondo me affrontare noi informatici. Noi informatici possiamo soltanto, come si dice, consulare, fare consulta, consigliare, ecco, consigliare. Noi possiamo consigliare da tecnici, possiamo dire
+
+cosa si può, cosa non si può fare, quali sono tutti i vari constraint, questo sì perché siamo esperti della materia, dopodiché però le regolamentazioni stanno alla società, non agli individui.
+
+Mauro Murru (48:00)
+Credo
+
+che però ci sia un problema nel ragionamento che fai. Il problema sta nel fatto che è della cosa che temo di più in assoluto, è la cosa che combato personalmente su me stesso di più in assoluto, è che si tenda a scindere il nostro ruolo da tecnico col nostro ruolo da cittadino o parte della comunità.
+
+che ha come responsabilità quella di comprendere e di reagire a dei cambiamenti che riputa pericolosi sulla comunità. Adesso io non voglio dire che quello che viene da te ti dice, lei ha tutto la merda, ci ha ammazzato e tutta colpa del codice scritto alle varie... No, è un pochino più profondo il ragionamento, no? Però credo, perlomeno io in me stesso non riesco a fare la distinzione.
+
+tra il tecnico puro, il tech bro che ho detto prima, E il cittadino, il papà di lambda che si preoccupa del futuro. Quindi c'è questo conflitto. Se io potessi liberarmi di una delle due parti sarebbe molto più semplice prendere posizione. Però c'è comunque questo conflitto, per cui l'innovazione tecnologica va bene, ma non posso neanche mettermi le fette di prosciutto e dire
+
+l'innovazione tecnologica sì ci sono quattro società che costruiscono gli unici modelli che realmente funzionano bene e noi stiamo delegando a parte delle nostre capacità cognitive a questi modelli è un errore che abbiamo fatto in passato e che lo stiamo pagando in termini geopolitici e lo stiamo rifacendo adesso è colpa del codice? no è colpa della tecnologia? no
+
+però la tecnologia è uno degli elementi, è come dire, è colpa della pietra se me la lanciano in faccia? Assolutamente no! Ma... No no, vai vai, assolutamente no, io poi quando mi gaso...
+
+Edo (49:59)
+è la... vabbè vai finisce secondo me è
+
+lo stesso atteggiamento pericoloso che abbiamo avuto quando abbiamo deciso di delegare il controllo di internet a tre aziende cioè tre aziende controllano internet no non è vero lo sappiamo benissimo ma lo sappiamo dall'inizio ora
+
+Mauro Murru (50:13)
+Sì. Sì. E non ce ne siamo ancora accorti, stiamo sempre facendo lo stesso errore.
+
+No ma stiamo sempre
+
+facendo lo stesso errore, no?
+
+Edo (50:24)
+Certo,
+
+Poi, secondo me, guarda gli informatici hanno un pessimo track record di informiamo la società su quello che sta avvenendo. Proprio abbiamo sempre, o non ce l'è mai fregato particolarmente, perché ci siamo, secondo me, sempre un po' sentiti superiori e quindi vedete, va beh, voi non capite un cazzo, lasciate fare a noi, che noi sappiamo come si devono fare le cose. Un po' anche perché diciamo che la materia che trattiamo è sempre stata vista un po' come un po' ostica e quindi, no...
+
+Mauro Murru (50:51)
+Sì gli alchimisti no?
+
+Edo (50:52)
+sì sono un po' cose esoteriche, sono difficili, non le capiamo fate voi non ci interessa però noi abbiamo secondo me sempre sbagliato tantissimo a non riuscire a divulgare correttamente quello che stavamo facendo e quindi abbiamo sempre fatto utilizzare le nostre piattaforme alle persone senza spiegargli cosa diavolo stessero facendo e questa roba qua poi è un problema grossissimo guarda la cyber security no è un problema enorme tu dici la stessa cosa sta avvenendo con l'ai certo però
+
+perché ci stiamo ponendo un problema adesso non ce lo siamo posti con il cloud non ce lo siamo posti con internet non ce lo siamo posti con con tante cose, capisci? con windows cioè ritorniamo sempre alle stesse cose no secondo me non è così non è che finalmente ci sono state a me è che è una è una cosa che seguiamo se è cambiato sono cambiati un po i tempi stiamo seguendo un po degli hype
+
+Mauro Murru (51:31)
+⁓ sì vabbè, finalmente ce lo stiamo imponendo però.
+
+Edo (51:47)
+C'è una cosa che è molto cambiata ed è il peso economico delle aziende. Quando è nata Internet o quando è nata il Cloud non c'erano quattro aziende che avevano messo insieme tutto il PIL dell'Unione Europea. Sto esagerando. Però adesso siamo effettivamente arrivati a un punto in cui la concentrazione di potere e di risorse economiche è senza precedenti nella storia. Questo è il vero tema secondo me, il vero problema. Cioè quella roba lì...
+
+più aspetti più sarà difficile da fermare no? è quello lì un problema serio ma non è perché c'è l'AI, cioè l'AI è soltanto il combustibile di questa cosa è quello che ha accelerato questo processo qua è quello che ha fatto sì che queste aziende potessero andare a batter cassa da Trump e dai giapponesi e dirgli bene datemi 500 miliardi che devo fare data center e questi glieli danno quello è il combustibile, potrebbe essere per un'altra cosa capisci? cioè non è l'AI, non è la tecnologia
+
+Mauro Murru (52:41)
+Ehm,
+
+ma le jai c'ha il concetto... c'ha il concetto di delegare il pensiero...
+
+Edo (52:44)
+è un trigger
+
+Ma no, Mauro, ma delegare... Delegare
+
+è pensiero, l'hai già fatto in passato, forse non te ne rendi conto, ma l'hai già fatto di delegare il pensiero.
+
+Mauro Murru (52:58)
+Non in modo così plateale
+
+e orizzontale che tocca tutti anche mia nonna. Va beh, io non ce l'ho più la nonna.
+
+Edo (53:03)
+Secondo me molti
+
+informatici quando hanno inventato i compilatori si sono risentiti. Hanno detto no, ma io quando perforavo le schede da solo...
+
+Mauro Murru (53:13)
+Secondo me... allora io non ti posso dire che hai torto perché io con la figura dell'informatico che si sente superiore, l'ho ben chiara, no? E sono stato io per alcune parti della mia vita, sarevate in una parte di nirvana assoluto da quel punto, di nirvana dell'ego assoluto per cui ce ne me ne frega più un cazzo, l'ego non esiste più con me. Fatevi una figlia, funziona sempre perché...
+
+Edo (53:18)
+Questo non te lo permetterei mai.
+
+Mauro Murru (53:42)
+L'ego sparisce nel momento in cui nasce la figlia e tua moglie manco ti guarda, la tua compagna, tua partner manco ti guarda. No, scherzi a parte. Quell'ego, quella parte di ego ormai l'ho messa in standby, lo so terrata, ma sono due elementi diversi. Allora se ragioniamo su quello che buona parte del segmento, del nostro segmento, dello sviluppatore andrà a sparire sì certo, ne rimarranno solo pochi esattamente come sono rimasti pochi fotografi.
+
+Edo (53:48)
+Challenge accepted.
+
+Mauro Murru (54:13)
+così come sono rimasti pochi cartolibrera, quelle robe là, così come... in realtà ho visto da poco sui social un tizio fighissimo, lo vorrei portare una puntata di GitBar, non saprei come giustificare il contenuto ma troverò un modo. No, però ne sono rimasti pochi, quindi sì, come che vai...
+
+Edo (54:19)
+amanuensi
+
+mmm
+
+Mauro Murru (54:38)
+domani mattina all'ordine dei giornalisti gli dici no stiamo chiudendo l'ordine perché tanto gli articoli verranno scritti tutti dagli LLM vedi cosa ti succede io sono stato nel luogo di giornalisti so cosa che è praticamente la stessa indica cosa
+
+Edo (54:51)
+sì ma
+
+questo perché tu stai vedendo questi effetti amplificati ma anni fa i giornalisti pigliavano gli articoli di una testata americana facevano copia in colla traducevano con translate e mettevano la loro firma perfetto cosa che cosa cambia cambia la portata la velocità la portata la dimensione cambia ma non è che metto il nostro processo mentale
+
+Mauro Murru (55:03)
+Lo so bene, sono dodici anni giornalista scritto all'albo,
+
+Sì, ma
+
+su questo segmento io sono d'accordo con te e te lo firmo col sangue. Quindi il developer che mi fa incazzare, che dice... perché non vuole studiare, perché ha capito che è morto... vabbè, è amico mio, dati all'eepic, che è una cosa che sto valutando. Ma a parte quello, in realtà, la parte critica non è legata, secondo me...
+
+Edo (55:17)
+Ok.
+
+Mauro Murru (55:44)
+per come la vivo io, la mia criticità, il mio approccio critico allea in generale non è data dal fatto che domani io sono fritto perché se non scrivo codice fino a sei anni fa io non mi occupavo di codice, mi occupavo di turismo, ok? Quindi certo sono sempre stato un ingegnere informatico tutta la mia vita ma facevo altro nel mio... ritorno a fare altro, mi spaventa, ok?
+
+a me perché sono fortunato, mi rendo conto che per qualcuno è questo un individuo di morte, perché anche questo va considerato, la reazione va considerata come un gesto estremo di sto affogando, e porca puttana, cioè tiro un urlo. Quindi proviamo a inquadrarlo anche così. Lo so, sto facendo il demo cristiano e sto dando ragione a tutti. La mia posizione è che in realtà
+
+Edo (56:37)
+infatti non capisco qual è la tua posizione Mauro, spiegati
+
+Mauro Murru (56:44)
+sta succedendo qualcosa di veramente grande, gli impatti sulla società saranno enormi, e la cosa che più mi fa incazzare è che siamo, e siamo e mi ci metto me in mezzo, siamo talmente presi dalla rivoluzione tecnologica e dalle lucine colorate di quello che ci sta venendo incontro, che è davvero rivoluzionario per le aspettative che abbiamo sempre alimentato, e questo porci a guardare questa cosa rivoluzionaria
+
+ci sta ofuscando il senso critico sull'analisi dell'impatto che avrà questa cosa nella società.
+
+Edo (57:23)
+ma è compito nostro valutare l'impatto sulla società
+
+Mauro Murru (57:26)
+Come cittadino sì.
+
+E' su quello che la mia visione è diversa dalla tua. Secondo me è una mia responsabilità in quanto cittadino e quanto padre capirne l'impatto. Perché io in quanto padre adesso ho ritrovato i vestiti al babbino pancino,
+
+Edo (57:43)
+Ma allora tu sei uno di
+
+quelli che menterebbe nelle licenze open source il Dumbie Evil?
+
+⁓ Il software è agnostico, tu lo puoi usare per quello che cazzo ti pare, è una responsabilità individuale ed è la società che deve regolamentare gli usi che se ne fanno. Non possiamo porci noi che creiamo software il problema.
+
+Mauro Murru (58:07)
+la vedo come però questa frase sì, ma la vedo anche come una ponzio pila
+
+Edo (58:17)
+perché scusami
+
+Mauro Murru (58:21)
+perché le responsabilità di quello che si fa sono spesso troppo grandi e preferiamo guardare il micro e sentirci senza responsabilità che guardare il macro dell'azione che stiamo facendo di cui siamo parte o tassello perché la responsabilità è molto pesante o potrebbe essere molto pesante.
+
+Edo (58:38)
+Cioè
+
+tu stai dicendo, Antropic domani fa uscire una serie di tool che rendono completamente inutile il 60 % del mercato SaaS. È giusto o è sbagliato? Dovevano farlo o non dovevano farlo? È etico o non è etico? È loro responsabilità, forse questo problema, o non lo è?
+
+Mauro Murru (58:58)
+non è loro responsabilità perché viviamo in un sistema capitalistico, loro hanno tutto il diritto di farlo, finché mi preoccupo se non abbiamo uno stato abbastanza forte da dire ehi, abbiamo un sistema antitrust e io ti blocco. Quindi il mio problema è che, il mio problema viene quando Antropik diventa troppo grande e lo stato si cala alle brane.
+
+perché non può bloccare una cosa troppo grande, perché starebbe bloccando l'innovazione.
+
+Edo (59:31)
+No, ma io su questo sono d'accordo, Cioè, l'azienda troppo grande secondo me non dovrebbe esistere.
+
+Mauro Murru (59:36)
+Per
+
+cui io me la prendo, io non mi preoccupo di Antropic in quanto tale. Io mi preoccupo di un sistema che non è in grado di gestire Antropic. Allora a quel punto sì Antropic mi spaventa. Antropic, OpenAI, Google, Microsoft, allora sì che la grande corporation mi spaventa. Perché la grande corporation di Don't Behave Evil, ne frega un cazzo.
+
+Edo (1:00:05)
+Sì ma tu stai guardando la corporation non il software, cioè di nuovo non è il software il problema
+
+Mauro Murru (1:00:12)
+⁓ lo so ma se io faccio un'arma super nucleare... Ok il software non è un problema, sì il software non è un problema. Perché il software non è un problema.
+
+Edo (1:00:25)
+i software, gli algoritmi non sono un problema sono le regole i problemi sono... sono quelli
+
+Mauro Murru (1:00:27)
+Non sono mai un problema. Non sono un problema.
+
+Sì, sì, sì, sì, non
+
+posso dirti di no, non posso dirti di no, perché in realtà sarebbe assurdo dirti di no. Però dire che il software non è un problema, quindi non c'è un problema e dobbiamo essere woooo perché c'è innovazione, ⁓ no, no amico mio, perché sì, Hitler aveva tutto il diritto di scrivere in Maincamp.
+
+Edo (1:01:02)
+stai facendo la reduzione la reduzione a Italy Room ⁓ te lo dico?
+
+Mauro Murru (1:01:03)
+Ok? No,
+
+sì, sto provando a fare un doppio salto carpiato, ma per dirti che il pensiero, il software, il pensiero, non sono un problema potenzialmente, io sono uno di quelli che qualunque cosa che venga dalla testa può essere scritta e condivisa. Sì, però occhio, perché c'è una correlazione tra tutto quello che è successo negli anni 30 e 40 e quel manifesto.
+
+Non posso far finta che non ci sia. Quindi, c'è esiste una correlazione tra questa Megacorp e il software che si fa? Sì. Si deve controllare il software? Non credo. Il software sia parte del meccanismo? Sì. Non posso dire che non lo è.
+
+Edo (1:01:57)
+il software è la risorsa, ci potrebbe essere qualsiasi altra cosa
+
+Mauro Murru (1:02:00)
+Il software è la pietra no?
+
+E il software è la pietra? Te la stiro in faccia e sto usando la pietra e non sto usando il coltello che è il classico esempio che si fa per un motivo specifico.
+
+o un'arma per un motivo specifico, perché la pietra è ancora più generalista di un coltello o di un fucile, Quando si dice il fucile non ha colpe, è un cazzo, il fucile è un'arma fatta per ferire barra uccidere.
+
+Edo (1:02:29)
+ma capisci che
+
+però il fucile viene creato esattamente con quello scopo non è che puoi usarlo anche per dare dei colpi a un chiodo
+
+Mauro Murru (1:02:35)
+E infatti nel mio
+
+esempio io ti ho parlato della pietra e non del fucile.
+
+Edo (1:02:41)
+ma perfetto però il problema è che le iai io la posso anche usare per scoprire delle nuove medicine
+
+Mauro Murru (1:02:47)
+Si? Si, con l'LM ne dubito!
+
+Edo (1:02:51)
+No, ma come no c'è ho capito
+
+non con non con Gpt 5.2 però capisci che l'avanzamento tecnologico mi permette di arrivare a buoni risultati e a cattivi risultati in quel senso i software non è Invece le ha con le armi c'è c'è chi anche mi scrive di commenti del merda dove cerca di fare un paragone con le armi le armi non è che hanno
+
+diversi scopi, adesso io ti faccio un'arma poi vedi sta a te a decidere come usarla puoi anche semplicemente farci bughi nel muro e poi appenderci quadri no l'arma ha un preciso scopo viene creata a quello scopo e la gente la compra per quello scopo non per altri scopi no quindi
+
+Mauro Murru (1:03:35)
+Etichettare il software. Come il problema?
+
+è figlio.
+
+di un approccio culturale e soluzionista.
+
+che è esattamente quello che noi, come segmento, abbiamo abbracciato. Se per vent'anni ci siamo venduti dicendo che il software ti risolve i problemi, la stronzata più grande che potevamo fabbricare, il software ti risolve i problemi, non è vero. Il software ti può aiutare nei processi, può fare... ma non ti risolve i problemi. I problemi ti li devi risolvere tu, col software, ma te li devi risolvere.
+
+che quindi per vent'anni noi abbiamo venduto il software come colui che risolveva i problemi e allora oggi quando le persone che non hanno una consapevolezza come ce la possiamo avere noi dicono è colpa del software non possiamo fargliene una colpa a prescindere perché siamo stati noi per vent'anni come settore
+
+che gli abbiamo detto è merito del software. Quindi oggi non possiamo andare da loro e no sai, ieri era merito del software, oggi è colpa tua. C'è anche questa considerazione da fare.
+
+Edo (1:04:59)
+qui
+
+Quindi alla fine mi dai ragione.
+
+Mauro Murru (1:05:06)
+in cosa? perché... ma no! ma il software è una cazzo di cosa! ma per forza non è colpa del software
+
+Edo (1:05:07)
+che non è colpa del software, il software non c'entra niente e allora di che
+
+parliamo? qual è il punto del rant contro l'ai?
+
+Mauro Murru (1:05:22)
+Scusa, l'AI non è il software?
+
+Il rant, secondo me, poi il rant fatto male sì, è colpa del software, sì va bene, e ti ho appena detto che il rant contro il software in se stesso è figlio di una struttura culturale che secondo me abbiamo creato noi, no? Ma il vero senso critico che tu etichiti come rant verso lei è dato verso gli effetti di un'iniezione di tecnologie di questo tipo,
+
+fatto da un elemento controllante, un'entità controllante verso una massa che non ha il controllo e non capisce che cazzo sta succedendo. Questa cosa è un problema e non è il problema dei tensori amico mio, non è un problema a livello di... tecnico.
+
+Edo (1:06:22)
+Cioè perché? Perché il fatto che tu stia democratizzando il software vuol dire che entreranno molte più teste di cazzo e quindi...
+
+Mauro Murru (1:06:31)
+Ma dove, dove, dove, dove la
+
+democratizzazione del software? Non lo spieghi?
+
+Edo (1:06:34)
+Adesso molte più persone possono creare software, prima non potevano farlo.
+
+Mauro Murru (1:06:38)
+Si prima andavano
+
+dal programmatore, oggi vanno da Antropi che è OpenAI e se lo fanno fare... Cos'è cambiato? Cos'è cambiato il costo?
+
+Edo (1:06:41)
+esatto esatto aprono la chat esatto
+
+il costo è anche il volume ci sono molte più persone che lo fanno l'opportunità che metà l'opportunità
+
+Mauro Murru (1:06:49)
+costo, esatto, è cambiato costo...
+
+⁓ esatto perché è molto più economico, è molto più rapido e n'è n'è molto di più, va bene. Ma in realtà questi tre elementi sono abbastanza per dire che si sta democratizzando il software, parzialmente, però se i milioni di sviluppatori si riconducono a quattro modelli...
+
+Edo (1:06:56)
+Esatto. Esatto.
+
+non ci vedo, cioè non è un problema
+
+Ma guarda, il software secondo me...
+
+Mauro Murru (1:07:17)
+di alta qualità controllati da quattro corporation e tu mi dici sì ma questo già succedeva col cloud cazzo, pubblicavi le lambda poi mettevi su google mettevi su asur e poi c'erano quattro pazzi come te che magari c'erano le vps su ethner solo perché erano europee o scaleway solo perché erano a volte sì.
+
+Edo (1:07:38)
+Il fatto è il software è sempre stato democratico. L'accesso all'informatica non è mai stato così complesso. È la specializzazione che è complessa, cioè è il padroneggiare l'informatica ad alti livelli che è complesso, poi inizia a parlare di integrazione oppure di situazioni particolari in cui si è bisogno di capire come esistire le risorse in un certo modo, eccetera. Però l'accesso è molto democratico, cioè scrivere delle righe di...
+
+Mauro Murru (1:08:05)
+No, no,
+
+no, no, è democratico, è democratico perché tu sei un occidentale in terra occidentale e questa è una cosa che mi hanno fatto capire moglie e amici. Aspetta, stiamo parlando di un mondo dove un presidente di uno stato può dire a una società come Microsoft chiudigli gli account
+
+Edo (1:08:11)
+chiunque può scrivere chiunque
+
+vabbè ma ho capito stiamo parlando certamente di una fetta sola di mondo ma...
+
+Mauro Murru (1:08:32)
+e l'email a un'entità terza e indipendente, ok? Chiudi perché io ho deciso così. Ma dove cazzo... e oggi l'ha detto a Microsoft per l'email, domani lo dice a OpenAI o Antropiq per il modello usato in un certo stato, in Biallorussia. Allora dove cazzo è la democrazia?
+
+Edo (1:08:54)
+sì, sì però i testamenti...
+
+ma la democratico non vuol dire la democrazia, democratico vuol dire accessibile al demos, ok?
+
+Mauro Murru (1:09:01)
+accessibile per... perché o... sì, ma è accessibile
+
+per concessione, non per diritto. E quello è il problema.
+
+Edo (1:09:09)
+Ma lo era...
+
+sì, ho capito, ma allora lo era anche prima! Allora anche prima avevi bisogno di un laptop per scrivere software! Cosa no?
+
+Mauro Murru (1:09:12)
+No, no, no, non hai mai sprogrammato
+
+sulla carta.
+
+Edo (1:09:20)
+A parte che Ada Lovelace ti direbbe diversamente, ma stronzate a parte, avevi bisogno di un computer per programmare, giusto? Quindi tu dici la barriera di ingresso era alta, era tanto alta quanto il costo del computer, ok?
+
+Mauro Murru (1:09:37)
+Nessuno poteva
+
+venire a casa tua a portarti via il computer per questioni geopolitiche.
+
+Edo (1:09:44)
+cosa cosa c'entra questo? Non c'entra niente, no, spariamo cose a caso, no, non c'entra un cazzo, questo no, Ma perché? Allora, aspetta, aspetta, allora tu mi dici, allora tu mi dici, io, perché tu stai spostando la creazione di software intesa come motore, come engine, come runtime, dalla tua macchina locale scollegata dalla network a un cloud.
+
+Mauro Murru (1:09:46)
+Cazzo si centra, cazzo si centra. No, non è una cosa, no, non è una cosa a caso, è proprio puntuale sull'argomento.
+
+Edo (1:10:10)
+Siccome il mezzo di produzione non è più tuo ma lo stai dando in mano in mano in qualcun altro Questo è un problema perché quello là può tagliarmi l'accesso questo mi stai dicendo e su questo posso anche posso anche dirti va bene Va bene ma questo è soltanto un mezzo cioè è una parte cioè è l'ai in cloud non c'è solo questa cioè scrivere una riga di c è ancora la portata di tutti
+
+Mauro Murru (1:10:20)
+Certo, è un problema geopolitico.
+
+Edo (1:10:39)
+Giusto? Quindi l'informatica... No, no, lascia stare i modelli locali che sono una... sono un giocattolo. Sì, ma scrivere software non è una cosa per... non è Rocket Science, che non è mandare in uno spazio un satellite. Ok.
+
+Mauro Murru (1:10:39)
+sì ma ci sono i modelli locali che sono potentissimi, ci puoi fare quello che fai con Opus 4.6... è quello che ti sto dicendo, Edo, la cosa che io non accetto.
+
+Nooo ma che... assolutamente sì. Mio fratello è
+
+un architetto scrive paito.
+
+Edo (1:11:01)
+Esatto lo può fare chiunque poi ci sono gradi diversi di comprensione della materia come c'è ma l'accesso all'informatico ora ora abbiamo una dei software che permettono al negoziante di crearsi l'app ⁓ sì
+
+Mauro Murru (1:11:07)
+sì
+
+No, fammi correggere
+
+la cosa. Abbiamo dei servizi che permettono a un negoziante la differenza tra un linguaggio democratico. Il C è un modello, è che domani il cordone del modello te lo tagliano. io mi sono attaccato sul concetto di democratico, perché per me non è democratico.
+
+Edo (1:11:21)
+va bene abbiamo dei servizi
+
+mmm
+
+Mauro Murru (1:11:42)
+perché l'accesso è un accesso dato per concessione e quella è cosa che è dato per concessione da un'entità che
+
+Edo (1:11:47)
+su questo... ma su questo sono d'accordo con te, su questo sono d'accordo con te
+
+Mauro Murru (1:11:57)
+è guidata dal capitalismo e va bene, ci può anche stare, ma soprattutto che tendenzialmente per natura culturale ha deciso di eliminare il non essere diabolico dal proprio statuto, anzi probabilmente hanno eliminato solo non essere e diabolico lo hanno lasciato. No, scherzi a pari.
+
+Edo (1:12:17)
+No, adesso un
+
+grande differenziatore potrebbe diventare effettivamente il costo di acce... la barriera di accesso agli LLM. Cioè se domani Opus 5 costasse 2000 euro al mese, ecco che allora avresti un inizio di differenziazione tra chi se lo può permettere chi no. Poi, ampliando sempre di più questo gap, rischi di creare...
+
+Mauro Murru (1:12:39)
+Amico mio,
+
+consideri che buona parte di queste società sono ancora in rosso e quindi che i prezzi, i prezzi attuali sono prezzi sotto costo.
+
+Edo (1:12:45)
+ma manco
+
+sì però comunque non stiamo centrando il punto cioè non è questo
+
+Mauro Murru (1:12:56)
+Qual è il punto se
+
+non è questo?
+
+mi odia
+
+Edo (1:13:03)
+Sì, perché stai continuando a buttare
+
+dentro nuove cose e non sto capendo qual è il fio del discorso, cazzo.
+
+Mauro Murru (1:13:08)
+Il filo del
+
+discorso è che non mi puoi dire che è una rivoluzione democratica, non puoi, perché ci sono troppi elementi che centralizzano, troppi elementi che eliminano la democraticità. È per quello che io mi cazzo, è perché... Non posso dire che si può fare altrimenti, perché no, perché...
+
+Edo (1:13:26)
+Ma se
+
+la vedi così allora tutto, niente è democratico, è tutto controllabile. E no, e no, è il tuo un cazzo di trucco etico, perché gli iraniani sono scollegati da internet e allora non c'è un cazzo di democratico al mondo. Allora smettiamo di fare i programmatori perché tanto tutta questa roba è controllata da chi c'ha i soldi e il potere e non facciamo più un cazzo.
+
+Mauro Murru (1:13:31)
+E vabbè, questo è un trucco dialettico amico mio.
+
+No, però
+
+siamo consapevoli di rischi, è quello che sto evidenziando.
+
+Edo (1:13:54)
+Ma sì che ne siamo consapevoli, però cosa facciamo
+
+allora? Ci smettiamo di lavorare? C'è un tizio che mi ha scritto, tu non puoi parlare del fatto che le ram aumentano di prezzo perché tu stai usando cloud code, quindi cazzo è colpa tua. Ma perché è colpa mia? Non sono io che... e se anche...
+
+Mauro Murru (1:14:10)
+C'è uno stronzo, mi volevo fare la nuova macchina da
+
+gaming, è per colpa tua, Diedo! Certo.
+
+Edo (1:14:15)
+è colpa mia esatto che uso che uso code ma cazzo non è colpa mia cioè non possiamo continuare
+
+a dire che il problema sono gli utilizzatori finali espressione creata da un grandissimo del passato non sono gli utilizzatori lo sei qui al maestro non sono gli utilizzatori finali non possiamo continuare a
+
+Mauro Murru (1:14:24)
+Ma non possiamo... O sei qui...
+
+Edo (1:14:34)
+spostare la responsabilità sugli utilizzatori. Cazzo, responsabilità sono di chi possiede i mezzi di produzione. Ora che siamo entrati nella sfera comunista, tra l'altro c'è la ferpa nella maglia del colore giusto proprio per parlare di questa roba. Ora... bellissimo, bellissimo. Berlinguarti voglio bene.
+
+Mauro Murru (1:14:37)
+Ma non possiamo far finta?
+
+l'ho messo apposta sai? Anche la camicia di flanella sotto è presente quella da Bosca a Iolo proprio per evidenziare le mie origini proletarie.
+
+Edo (1:15:02)
+Il fatto che il fatto che cazzo ci sia un problema perché l'accentramento del potere e dei mezzi stia in poche mani Che quello sia un problema ma sono super d'accordo Ma non può essere non può ricadere su di me questa responsabilità di dire no allora tu tu Siccome questa roba qua è sbagliata ed è un problema per il mondo allora tu personalmente tu sacrifichi la tua vita la tua professione il tuo mercato la tua passione quello che ti pare
+
+Mauro Murru (1:15:16)
+mmm
+
+Edo (1:15:31)
+perché questa roba qua è sbagliata eticamente e socialmente ma no cazzo questa qua questo è esattamente il tipo di pensiero che le grandi corporation vogliono che sposiamo sto facendo il complottista perché perché così guardi me e non guardi loro capisci se tu punti il dito contro di me
+
+loro non fanno altro che dirti in effetti guarda ci avete ragione puntiamo tutti il dito contro di lui se voi usate le cose in modo responsabile allora il mondo migliora che bello facciamo google sustainability capisci la responsabilità è individuale ognuno può fare le sue scelte sì siamo tutti facendo una grossa campagna per puntare il dito contro gli utilizzatori cioè io così non abbiamo più tempo per parlare e puntare il dito contro i produttori
+
+Mauro Murru (1:16:11)
+Ok però...
+
+Edo (1:16:26)
+Il problema sono gli produttori, non i consumatori.
+
+Mauro Murru (1:16:29)
+In realtà ha senso quello che dici e sono d'accordo con te. La cosa che mi fa incazzare, però probabilmente non il tuo caso, è che nel contempo non si può dire che non ci sia un problema.
+
+Edo (1:16:33)
+⁓ grazie!
+
+certo che c'è un problema ma sì c'è un problema però però però capisci però capisci che non può essere sempre non può essere sempre un peso che ricade sulle spalle di chi deve utilizzare queste cose per sopravvivere e per vivere decentemente cioè non mi posso continuare a sentire mi sembra essere tornato agli anni 90 quando c'era la lotta windows linux no
+
+Mauro Murru (1:16:47)
+Ok, poi allora siamo d'accordo! ci abbiamo messo un'ora e un quarto!
+
+Edo (1:17:11)
+Il fatto che Windows sia di proprietà di un'azienda non etica e che è un problema per il mondo non può volertire che allora io devo soffrire e usare cazzo Emacs. Non può essere questo, perché se è questo allora si siamo tutti concentrando per risolvere dei piccoli problemi localizzati invece di girarci e dirci ma sai che c'è? Ma cazzo il problema è Microsoft.
+
+non è l'inu, cioè non è noi che usiamo Windows, il problema è Microsoft
+
+Mauro Murru (1:17:42)
+Però non puoi neanche far finta, adesso faccio l'avvocatore del diavolo, che il tuo agire non alimenti il problema. Allora, mi rendo conto che boicottare è difficile, specie se sei in una condizione come quella che viviamo noi, Che dopo l'elemento diventa la tua essenza professionale. È praticamente impossibile boicottare. E lo è ancora di più in un contesto
+
+dove l'individuo ha assunto un'importanza molto più alta del concetto di collettività. Noi ci siamo spogliati del concetto di comunità. Ci abbiamo pisciato sopra il concetto di comunità. In termini culturali negli ultimi 50 anni, 70 anni, lo ammettiamo, io non sono un antropologo, quindi potrei dire stronzate, però è ovvio, mia nonna
+
+mia nonna era meno individualista di mia mamma e mia mamma era meno individualista di come lo sono io. No, quindi abbiamo pisciato nel concetto di comunità e oggi diventa veramente impossibile fare delle azioni collettive di quel tipo. La cosa che penso, io non sarei in grado di farlo, la cosa che penso è che non sono
+
+Convinto che azioni di quel tipo non siano efficaci Dopo i negazioni quindi credo che azioni di boicottaggio a quei livelli Possono essere efficaci Qual è il problema? è che azioni di boicottaggio a quei livelli non sono fattibili quindi sì sarebbero efficaci ma in una cultura individualista come la mia non è più fattibile
+
+Edo (1:19:20)
+nel breve termine.
+
+Mauro Murru (1:19:36)
+perché io non sono nelle condizioni culturali di boycottato.
+
+Non so se sono riuscite a spiegare quello che penso.
+
+Edo (1:19:45)
+sì ma
+
+il punto è che noi dobbiamo creare un mondo, una società in cui le aziende che creano AI possano farlo in modo sostenibile per il mondo non lo debbano fare il problema è
+
+Mauro Murru (1:19:59)
+Ecco pensi sia
+
+possibile.
+
+Edo (1:20:03)
+le so, è tutto possibile avendo sufficienti mezzi e potere
+
+Mauro Murru (1:20:08)
+⁓
+
+Edo (1:20:15)
+Certo bisogna essere nei consapevoli, bisogna informare, bisogna essere informati, bisogna riuscire a influenzare le decisioni e ci può fare. stiamo lì a guardare quello che puoi fare tu come singolo, tu potrai decidere, ma cosa non sposti niente come singolo? E poi perché dovrebbe essere...
+
+perché dovremmo limitarci a risolvere un problema locale e magari, non so, spostare il problema dall'altra parte, tra qualche anno, tra qualche mese, ma risolviamolo in modo strutturale, cazzo, problema. Se c'è, è come, ma adesso non è che a Git bar risolviamo il problema delle corporation, cazzo.
+
+Mauro Murru (1:20:53)
+...
+
+Vabbè, o...
+
+Cioè, abbiamo fatto, abbiamo fatto... ...la puntata credo più politica di Git Baro oggi.
+
+Edo (1:21:05)
+Grande, ma vabbè, GitBar
+
+è un podcast politico. Voi pensavate che si parlava di informatica, GitBar? Non è mai stato vero. Si sempre parlato di politica mascherata da informati.
+
+Cioè, te pensa... te pens... Cos'è questa roba?
+
+Mauro Murru (1:21:20)
+Questo è partita praticamente a 1h20
+
+Edo (1:21:25)
+C'è te pensate che mauroma ha scritto a certo punto ma e do che dici viene a parlare di cms C'è pensa che cazzo di noia sarebbe stato un'altra fusa di cui parliamo di cms due coglioni infiniti per fortuna che aveva fatto un pochino più movimentata così così magari Tutte quelle capre come sirio negri tutti questi qua a maledetti che stanno a commentare sul telegram di git bar potranno avere qualcosa di cui parlare no
+
+Mauro Murru (1:21:40)
+MASS
+
+Sfogati sfogati No no no lo diceva sirio di sfogarti contro di te Sirio prendi la cazzotti ti prego No ed ho mi fatto mi ha fatto piacere soprattutto al di là al di là un po dei giochetti dialetici chi ci conosce ormai lo sa e volendo rimandiamo a un episodio registrato al FOSDEM dove proprio di capriole dialetiche ne abbiamo fatto
+
+Edo (1:21:54)
+Maledetto, Maledetto Sirio, ti sta guardando a te! No, Sirio, smetti a disfogarti!
+
+che bella la dialettica, che bella
+
+Mauro Murru (1:22:21)
+altissimi. No, io credo che è stato interessante perché abbiamo provato ad affrontare il discorso con meno pregiudizi possibile e provando a mettere
+
+Edo (1:22:21)
+stupendo.
+
+Mauro Murru (1:22:38)
+sul piatto quello che pensiamo. Sono pochi pensieri e ben confusi, ma almeno ci sono e questo è il primo passo,
+
+Edo (1:22:47)
+Esatto ma sto piano forte deve continuare ancora un po' Cosa non c'è l'angolo della lettura non fa più l'angolo della lettura, l'angolo dei libri
+
+Mauro Murru (1:22:55)
+Questo
+
+è scarlatto amico mio, questa niente è una cosa che abbiamo perso. Comunque prima di questo e prima di lasciarci c'è il nostro momento tipico e topico di Gitbar che è il paese dei baloti.
+
+Il paese dei balocchi, paese dove... il paese sì, il momento in cui si condivide un libro con qualunque cosa sì...
+
+Edo (1:23:21)
+Ormai sei finito Mauro, sei finito. Poi tra l'altro non
+
+so avete notato che bel filmato fatto interamente a mano che ha mandato Mauro. Interamente proprio cesellato da esperti amanuensi.
+
+Mauro Murru (1:23:30)
+Sì.
+
+Guarda
+
+che le nostre nuove siglette hanno un prompt artigianale.
+
+Edo (1:23:40)
+Mmh.
+
+Non lo metto in dubito, artista del prompt.
+
+Mauro Murru (1:23:48)
+Prima o poi pubblicheremo l'enciclopedia di prompt per creare queste siglette e se sei curioso di sapere il prompt che ho usato per la tua sigletta, lo allego alle nostre siglette.
+
+Edo (1:23:59)
+Non vedo l'ora.
+
+La cosa bella è che se lo rieranno io, potrei ottenere un risultato molto diverso dal tuo. Che bello l'indeterminismo.
+
+Mauro Murru (1:24:07)
+Sì, maledetta non prediccibilità.
+
+Esatto. Edo, hai qualcosa da condividere con noi?
+
+Edo (1:24:13)
+Bene.
+
+Sì, vi voglio condividere una cosa che non potete avere. Così flexo una cosa che ho io e che no forse potete averla, non so se potete averla, credo di no. Guarda qua, questo lo vedi? Sinfoni. Questo è il libretto fatto per il ventennale di Sinfoni e ciò rocca.
+
+Mauro Murru (1:24:31)
+Sinfoni
+
+Ma dentro ci
+
+c'è tipo l'autografo originale di Fabien?
+
+Edo (1:24:44)
+sì, guarda, qui ci sono dei disegni, c'è la storia di Fabien, Fabien, con, insomma, narrata con disegni e scritte e racconta proprio tutta la storia di come lui ha creato il framework, poi l'azienda, Science Labs, eccetera, ha disegni, perché normalmente sono francesi, quindi giustamente hanno fatto un comic book, giustamente, hanno fatto una graphic novel, è molto molto carino
+
+Mauro Murru (1:25:07)
+è una delle cose più belle
+
+della Francia quella
+
+Edo (1:25:10)
+vero vero vero vero il fumetto sono d'accordo e no in effetti è un libro che ha un sbn quindi si può comprare se lo trovate si chiama symphony comic book quindi penso che potete anche cercarlo su qualche store di libri ed è molto molto figo io ho detto scherzando che non potete averlo ce l'ho solo io perché l'avevano dato alla symphony con però effettivamente non è una cosa limitata forse probabilmente non è una cosa limitata solamente alla symphony con se lo trovate
+
+è interessante, molto carino, una lettura che consiglio non solo per gli amanti di PHP e symphony ma per tutti insomma, per gli appassionati di informatica è una lettura carina è anche un bel regalo, perché ha dei bei disegni, dei fumetti basta
+
+Mauro Murru (1:25:54)
+Io non ho un balocco perché lo sto tenendo in caldo per il prossimo episodio... nulla quindi ringrazio Edo, amico mio mi ha fatto sempre tantissimo piacere scontrarmi con te, tu sai che è un sport che ci piace tantissimo?
+
+Edo (1:26:12)
+Bellissimo, grazie Mauro. Ci piace tanto,
+
+ma soprattutto proprio io sentivo che dovevo venire a tirarti su, ti sentivo troppo giù Mauro, io sentivo di avere questo compito proprio stasera dovevo tirare su Mauro che era troppo giù.
+
+Mauro Murru (1:26:28)
+e ci sei riuscito benissimo, grazie, grazie Davedo. Vi ricordo naturalmente il podcast di Edo che trovate qua sotto, qua sotto, che tra l'altro è comodissimo perché se tu praticamente vivi in una bolla, ascolti il podcast di Edo e sai i flame che si bisticia in pochi minuti.
+
+Edo (1:26:55)
+uscite dalla bolla ascoltate il buongiorno per uscire dalla bolla bellissimo
+
+Mauro Murru (1:27:00)
+Ma perché
+
+non è chiamata il buongiornissimo?
+
+Edo (1:27:03)
+Ma non lo so, il nome è un nome così, lo chiamo poi come vi pare, buongiornone, buongiornissimo, buongiornello, quello che vuoi. Sì, sì, quello che vuoi, il nome non è importante.
+
+Mauro Murru (1:27:09)
+Buon giornale!
+
+No, vi metto il link, ascoltatelo perché è uno di quei pochi podcast che ho ottenuto attivi. So che stai bollendo qualcosa in pentola sulla divulgazione, ho visto bene.
+
+Edo (1:27:27)
+Ma non lo so, sto sempre bollendo, poi dipende sempre dalla voglia e il tempo che ho, cioè vorrei sempre fare più cose come che sto facendo, però ho stai minissimo pure te, però, cazzo non c'è mai tempo di fare niente, non c'è mai tempo di fare niente. Ma se sono più vecchi di te, stai dicendo, maledetto? Io sono in 84.
+
+Mauro Murru (1:27:37)
+Ma vai, tu sei un giovinotto, hai il tempo. Non credo.
+
+io sono dove ero 85 quindi si sei più vecchio SISISI Detto questo io vi do appuntamento al prossimo episodio sempre qua su github alla prossima ciao ciao
+
+Edo (1:27:50)
+Tanto dopo il 35 è tutto uguale.
+
+Grande!
+
