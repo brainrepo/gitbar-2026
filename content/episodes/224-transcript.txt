@@ -1,0 +1,1608 @@
+Brainrepo (00:01)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. E questo periodo in realtà non si parla di altro, si parla di LLM, si parla di LLM che bisticciano tra di loro e fanno conversazioni interessanti, LLM che conquisteranno il futuro, LLM che ci soffieranno il lavoro, o almeno già in parte lo stanno facendo, ne parleremo anche più tardi, con i nostri ospiti.
+
+e si parla solo di queste cose. Voi avete già sentito nelle precedenti puntate alcune delle mie bold opinion, una bella ripeto perché ci tengo molto, c'è evoluto lo sviluppo di modelli che hanno consumato gozziliardi di milioni di dollari, stanno distruggendo il pianeta per insegnarci che prima di scrivere il codice dobbiamo scrivere delle cazzo di specifiche, ebbene sì la risposta è
+
+sì finalmente stiamo imparando che vanno scritte le specifiche diciamo che insomma l'apprendimento ha i suoi costi e lo mettiamo e lo mettiamo a bilancia detto questo prima di iniziare vi ricordo rapidamente i nostri contati infocchioccio alla git bar punto it at brain reposut no non ce l'ho più x quindi che cazzo sto dicendo infocchioccio alla git bar punto it git bar punto it il nostro sito web il nostro canale youtube
+
+GitBar è il nostro gruppo Telegram. Detto questo, allora facciamo partire la sigla e iniziamo.
+
+Davanti a una birra tutto ci sembra un po' meno grave e ci sembra un po' meno grave se davanti a questa birra insomma siamo con due amici e quindi è arrivato il momento di presentarvi gli ospiti di oggi.
+
+Eccoci qua eccoci qua qua nello studio di githbar abbiamo con noi due amici due colleghi Che stanno ridendo sotto i baffi per la sigletta abbiamo con noi davide fiorello staff engineer in ear form e luca lanziani luca technical director head of the vox Frustatore di senior engineer
+
+Luca Lanziani (03:57)
+un po' tutto, faccio anche il caffè
+
+no quello no quello
+
+mai mai li tratto molto bene
+
+Brainrepo (04:08)
+Ciao ragazzi, benvenuti a GitBar!
+
+Davide Fiorello (04:12)
+Ciao Mauro, grazie, intanto sarà un po' un problema decidere chi parla per primo perché... Come facciamo poi sempre del resto? Ha un piacere essere qui di nuovo.
+
+Luca Lanziani (04:17)
+ci parleremo sopra, non è un problema.
+
+Brainrepo (04:22)
+Questa... facciamo un inside
+
+joke. Questa serata ricorderà un po' le conversazioni del lunedì mattina nei nostri canali interni. E un po' insomma, portiamo fuori parte di quel format salutando tutti i colleghi che ci ascoltano. Ho scoperto che sono in tanti. La cosa mi rende piacevolmente sorpreso. Ok.
+
+tema di oggi, B-Mod. So che ci state martellando da un po', lo state smontando ai minimi termini, vi state un po' dedicando all'analisi, allo studio per capire in realtà se questo strumento, tool, robot...
+
+può veramente fare il caso nostro in situazioni complesse, articolate e via dicendo. Se doveste descrivere B-Mod con due parole, come
+
+Davide Fiorello (05:27)
+scusa scusa
+
+sai sai che siamo incontrollabili quindi ti interrompo subito hai detto ci state martellando e mi aspettavo che la frase finisse con ci state martellando i maroni
+
+Brainrepo (05:38)
+I coglioni! In realtà è anche quello. Dovete sapere
+
+che ci sono diversi canali intra-aziendali e extra-aziendali dove Davide e Luca non parlano di altro, quindi...
+
+Davide Fiorello (05:53)
+siamo a Mono Temma, comunque
+
+basta, ti lascio a Luca la risposta a questa domanda che io non ho seguito perché ero troppo intento a cercare di interrompere.
+
+Brainrepo (06:00)
+ahahahahhahahh
+
+Luca Lanziani (06:04)
+Mauro stava chiedendo cosa è BIMED in due parole e la risposta è un framework per implementare Spectrum Development detto proprio in due parole e per framework è un insieme di Markdown files perché poi quello è nel senso insieme di Markdown files perché sappiamo tutti che l'interfaccia per le AI sono semplicemente fare Markdown neppure meno dove si hanno una serie di processi definiti
+
+Davide Fiorello (06:07)
+Bene Luca dicelo.
+
+Luca Lanziani (06:34)
+che si chiamano workflow in Bmed che fanno, che referenziano alcuni template che danno poi a Bmed il modo di creare determinati artefatti e in più ci sono la definizione di alcuni agenti che è cosa più bella o tipo di agent persona in italiano, bene delle personalità per gli agenti diciamo che poi diciamo sono la parte bella di Bmed perché ti permettono di
+
+evitarti di fare il framoso prompt engineering dove tu inizi e dici sei un fotografo con anni di esperienza e questo è il tuo ruolo e lì ce l'hai già bello definito e ci sono agenti tipo developer tipo QA tipo lo Scrum Master tipo Product Owner eccetera eccetera questo è Bement
+
+non ti sentiamo
+
+Brainrepo (07:26)
+Davide per te invece hai qualcosa da aggiungere su quello che ha detto?
+
+Luca Lanziani (07:26)
+⁓
+
+Brainrepo (07:33)
+Sì, muto!
+
+Davide Fiorello (07:35)
+questo muto non muta, sto acceso e sentirete anche i rumori di fondo allora cosa dobbiamo aggiungere? Luca è stato abbastanza chiaro e ha definito in maniera molto seriosa quello che è B-MAD, cosa altro aggiungiamo? aggiungiamo che è un po' una malattia ultimamente
+
+ci riguarda perché diciamo che mi ha dato, ci ha dato quella struttura per approcciarci a un mondo che possiamo dirlo bellamente, sia io che Luca fino a qualche mesofaso non bavamo con l'aria superiore come tanti hanno fatto e come tanti continuano a fare e invece proprio questa struttura, questo modo di fare, questo guidarti passo passo
+
+come l'angular dello spec driven development quindi insomma da una bella struttura non devi inventarti niente devi semplicemente seguire il flusso che lui ti dà e ti porta, ci ha portato, mi ha portato insomma a
+
+imparare questa cosa e quindi questa è la bellezza aggiungo rispetto a quello che ha detto Luca fondamentalmente che noi lo usiamo da sviluppatori ma in teoria Bmed si è addestrato come si deve e potrebbe creare tranquillamente insomma dei flussi di lavoro per dei sales manager per
+
+per qualsiasi tipo di produzione è ovvio che lo sviluppo è la parte facile perché tutto nasce da noi e quindi è la nostra prima applicazione quello di sviluppo però permette veramente di fare qualsiasi tipo di produzione di cosa ovviamente produzione per quello che riguarda
+
+parti scritte. In realtà con le giuste interfacce, con l'integrazione, con gli MCP giusti penso che non sia tanto difficile utilizzare Bimed anche per fare produzione video, per fare design spinto e già c'è dentro il flusso per fare videogiochi che è molto divertente se mai dopo ci facciamo quattro chiacchiere riguardo
+
+insomma è un bel giochino al momento è un giocchino è un logo di grande sperimentazione perché diciamocelo lo cito qualcuno che ho letto di recente noi non siamo esperti perché nessuno è esperto in questo periodo noi siamo degli sperimentatori perché questo è quello che stiamo facendo ogni giorno c'è qualcosa di nuovo che esce ogni giorno noi proviamo cose nuove e soprattutto testiamo i limiti di queste tecnologie
+
+di queste diavolerie che tanto ci fanno divertire insomma siamo tornati un po' bambini, diciamo questa cosa
+
+Brainrepo (10:43)
+Senza dubbio, l'entusiasmo è forte. Quando usiamo B-Mod o B-Med o chiamatelo come vi pare, la prima cosa che noi facciamo è appunto lo installiamo, un NPM install classicissimo. Questa roba fa dello scaffolding dentro una cartella e crea tutto l'ecosistema. Una volta che noi... Sto cercando un attimino di disegnare un minimo di processo.
+
+Una volta che noi abbiamo lo stock scaffolding abbiamo un workflow articolato, probabilmente sotto il cover non sono più di uno di workflow, però noi possiamo immaginarlo come un workflow articolato che ci porta da un brainstorming iniziale alla feature completata con una serie di agenti come diceva Luca che hanno dei ruoli diversi e interagiscono o svolgono
+
+i loro compiti creando o tracciando le azioni dentro un set di documenti definito. Quindi più o meno, ecco, se dovessimo descrivere il processo di B-Mod è questo. Adesso, voi lo state usando da un po'. Io l'ho usato in un side project che ho abortito e vi dico la verità, il motivo per cui ho abortito il side project è perché mi sono...
+
+cacato il cazzo del processo. Detto letteralmente, cioè ho percepito l'up front iniziale, l'effort dell'up front iniziale come troppo per quello che stavano andando a creare. È qualcosa che ho percepito io come singolo o è un'esperienza condivisa?
+
+Luca Lanziani (12:34)
+Partiamo dalla domanda, quale versione ha usato? Ecco, la 6 è diventata molto più verbosa della 4. Quindi no, comunque sia, anche con la 4 non è una cosa che percepiti tu, quella è uno dei drawback o dei downside di B-Med. È molto molto verboso, devi seguire il suo processo, il processo qualche volta esagerato, sul 6 andavi proprio...
+
+Brainrepo (12:37)
+La sei.
+
+Luca Lanziani (12:57)
+overboard cioè sono proprio partiti per la tangente hanno creato tipo 12 step per creare il PRD 12 step per creare l'architettura troppo c'è lo YOLO MOD se vuoi quindi te li puoi saltare nel senso gli vai YOLO e lui te lo tira giù tutto e poi ti divide il file a mano però no la risposta è sì è vero è estremamente verboso e se non ti ci impegni almeno su quella prima parte non sei testardo abbastanza da arrivare fino in fondo ti rompi
+
+Davide Fiorello (13:27)
+però, però, questa è discussione, hai fatto una domanda?
+
+che fondamentalmente è la discussione che viene riportata spesso e su cui abbiamo avuto modo di ragionarci molto bene. Io ho fatto la presentazione beat mad per Bologna JS un paio di mesi fa e dopo da lì tutti hanno iniziato a sperimentare e tutti hanno detto ma se faccio con Kiro si fa prima, se faccio con Anthropic si fa prima, certo, è vero.
+
+Luca Lanziani (13:58)
+se faccio con
+
+plan mode si vio prima
+
+Davide Fiorello (14:00)
+esatto ma ma ma c'è un concetto che allora intanto noi abbiamo fretta partendo da questo fatto noi vogliamo arrivare subito alla fine perché siamo sviluppatori perché vogliamo vedere vogliamo vedere i pixel che si muovono sullo schermo e quindi e quindi quella quello è il motivo per cui ci dà fastidio tutto questo processo e poi perché bimed ci impone un processo
+
+prima non facevamo noi prima non faceva qualcun altro c'è tutto il ragionamento soprattutto sul prodotto sull'architettura neanche tanto perché può anche essere divertente però sul prodotto è una cosa che prima faceva qualcun altro non noi sviluppatori è ovvio che adesso a noi viene in mente un'idea e lo sviluppiamo
+
+e quindi con un antigravity, schermo antigravity, con antigravity tu scrivi quattro cose, ti fa il prodotto al volo e tu quella parte la salti completamente perché non sei abituato a ragionarla così come, giriamoci, così come probabilmente un un un product owner, un product manager che dice voglio fare software
+
+e quindi usa uno di questi oggetti se mai lui è abituato a stare molto sul prodotto e a lui non pesa probabilmente tutta quella parte di ragionamento sul prodotto però se mai gli pesa tutta la parte di sviluppo e non solo non è abituato a metterci l'attenzione
+
+che noi ci mettiamo banalmente probabilmente noi siamo abituati a fare del codice o a farlo fare all'AI e a passare del tempo sulle review perché è il nostro lavoro fare le review uno che non fa questa cosa esattamente come noi non facciamo prodotto uno che non fa questa cosa ha l'effetto contrarario dice che due scatole però devo fare le review io accetto dico va bene va bene e invia la mia carta di credito sui siti c'è tanto che se ne frega cioè ripariamo dopo secondo me
+
+Questo è il problema. E poi il fatto che è un side project, non è un progetto importante. Non importante per te o per qualcuno, importante in senso come dimensioni. Noi non facciamo tutti i nostri side project. Io ho visto, perché insomma ne parliamo fra colleghi, fra amici, stiamo tutti facendo delle cosine, ma sono tutte delle cosine rispetto, pensate a quelli che sono i nostri ambienti lavorativi e che cosa vuol dire per noi un progetto.
+
+e qui andiamo.
+
+Luca Lanziani (16:29)
+sono tutte cosine in
+
+cui probabilmente il contesto lo puoi tenere in testa tu quindi lo sa già quello che vuoi, se esattamente però ancora per girarla verso Mauro, Mauro è partito dicendo finalmente abbiamo capito che dobbiamo scrivere le specifiche e poi mi ha appena detto che non ti andava di scrivere specifiche per il tuo progetto quindi come la mettiamo? Voglio dire è facile è facile
+
+Davide Fiorello (16:33)
+Esatto, esatto.
+
+Brainrepo (16:46)
+Allora,
+
+allora, considera, considera questa cosa che in realtà io ho un conflitto di idee dentro la mia testa dato da questi tool che è molto forte e non, non fatico a nasconderlo tanto che sono sempre caustico per cui i tool mi incazzo con quell'area di superiorità che, che insomma tutti noi abbiamo avuto.
+
+qualcuno se ne liberato, io non ancora, perché ci sono degli elementi che stridono nella mia testa ancora e non mi sono ancora supinizato totalmente, anche se ci sono abbastanza vicino, chiusa parentesi. Il vero problema che io trovo è che, senza dubbio, un problema che ho sempre evidenziato è quello che
+
+la tendenza a scrivere il codice che l'ha appena detto Davide adesso, la tendenza a scrivere il codice one shot appena ci viene un'idea in testa è deleteria, ok? Ma esiste tutta una serie di sfumature tra mi viene l'idea, scrivo il codice e faccio un processo totalmente waterfall. Se parliamo in termini di sensazioni, io quello che ho percepito su Bimad è che nonostante utilizzi delle persona
+
+tipiche dell'Agile è un cazzo di processo waterfall, è questa cosa stride nella mia testa a livelli altissimi, perché se io ho provato, ho provato a cambiare idea durante il processo di sviluppo, quindi dire no, questa feature al posto di deliberarla come sette, sprint sette già, dargli sprint a una macchina mi sembra proprio
+
+antropizzare una cosa che non ha senso, quindi stiamo usando del gergo che non ha senso, stiamo utilizzando dei modelli che secondo me li stiamo inserendo a calci così come avevamo inserito a calci l'urologio da la forma della sveglia nell'iphone nei primi anni 2010, no? Quindi il fatto che il lavoro di progettazione è terminato
+
+io dovessi creare una nuova feature o paralizzare diversamente il lavoro e provandoci due tre volte questa cosa diventava difficilissima e smerdasse dappertutto adesso non so se sono io un incapace o è proprio il tool che ha delle difficoltà a uscire da quel processo design quel processo molto strutturato e quel workflow che ha
+
+16.000 passaggi prima di andare a droppare un po' di codice. Davide, io lo so che tu sei pronta da zannarmi la gola.
+
+Davide Fiorello (19:44)
+secondo me non
+
+sei tu che non sei capace, siamo noi che non siamo capaci nel senso dobbiamo ancora capire come muoverci tu come tutti vediamo anche internamente in azienda vedo un po' i commenti in giro si narra di questo ritorno al waterfall non è un ritorno al waterfall perché il ritorno al waterfall no a parte quello che avremo
+
+Brainrepo (20:07)
+non l'abbiamo mai lasciato
+
+Davide Fiorello (20:13)
+un giorno quando non saremo più condizionati da NDA faremo una puntata speciale ma al netto di questo secondo me non siamo in waterfall con questi nuovi sistemi è un agile un po più largo nel senso che deployiamo di tutto poi di nuovo non abbiamo l'esperienza non abbiamo l'esperienza di capire che quando lui inizia a farci le domande noi
+
+siamo così abbiamo in testa tutta nostra applicazione iniziamo a fargli un prodotto gigante lui ci fa delle proposte che nessuno gli ha chiesto ma ce le fa lo stesso ci fa delle proposte e pensiamo ma sì dai aggiungiamo anche questa feature e aggiungi aggiungi quindi viene una roba gigante tu io la mia prima esperienza con bimed ho iniziato a vedere il primo codice dopo circa 8-9 ore che ci stavo lavorando perché
+
+perché ho detto, faccio tutto, faccio tutto, sbagliato, perché poi poi io fatto in due mesi, in tre mesi di questi side project di cui parli ne ho fatti 6 o 7 buttati via non cose che poi ho mantenuto proprio per provare tutto tutto il processo cercare di capire bisogna tenere tenere ricordo, tenere ricordo poi molti mi sono a certo punto rotto le balle e sono andato in solo mode va a fanculo e così però perché perché perché non ho un
+
+perché non ho uno stakeholder dietro. Dobbiamo iniziare a ragionare con abbiamo o non abbiamo uno stakeholder dietro finché noi usiamo questo tool senza un qualcuno che ci guida ma noi non ci interessa, noi andiamo avanti per la nostra strada perché come ho detto prima, noi la cosa che vogliamo sono i puntini che si accendono e si spengono sullo spec-harm. Quello è il punto.
+
+Brainrepo (22:01)
+Però scusa
+
+Davide, quello che dici tu è che noi abbiamo bisogno di qualcuno che ci obblighi a usare il tool perché c'è un processo, c'è uno stakeholder, dobbiamo fare quello. Ma se noi deragliamo e molliamo il tool e la tendenza è quella sistematica a mollare il tool, perché io non c'è persona che ha usato B-MED che non vi abbia detto mi sono rotto i coglioni, probabilmente
+
+Una cosa da discutere è anche l'ergonomia del tool. Premessa che hai ragione, e sono pienamente d'accordo quando dici ci sono, c'è una parte che deve essere fatta da figure professionali che non sei tu. E che ti deve arrivare già pronta, che c'è tutta la parte di feature design, tutta la parte di...
+
+Davide Fiorello (22:50)
+e questa sarà
+
+un problema enorme perché noi siamo pronti loro no.
+
+Brainrepo (22:54)
+Però paradossalmente quella è stata la parte più divertente di B-Mod, detto tra di noi. La parte di brainstorming è la parte più dannatamente figa di B-Mod. La parte del ciclo di implementazione io l'ho trovata veramente devastante.
+
+Davide Fiorello (23:01)
+Sì.
+
+Luca Lanziani (23:11)
+è
+
+noiosa, noiosa, è? Adesso tu hai detto che molti hanno detto che si sono rotte le scatole di B-Med, quando è che si sono rotte le scatole di B-Med? In che punto? Perché io con chiunque ho parlato si sono rotte le scatole nel processo dall'analista, ecco, da lì alla parte di produzione architetturale, da lì di solito si rompono, poi quando inizi a scrivere i codici, logicamente scrivere i ci sono tre comandi in croce, l'unica cosa che devi fare è fare il review.
+
+Brainrepo (23:27)
+superata la parte di idiazione
+
+Luca Lanziani (23:40)
+usi B-Med, usi Plan Mode, quella parte è uguale per tutti. Il problema qui è, come detto Davide, che B-Med non è per lo sviluppatore. O per lo meno è anche per lo sviluppatore, ok? Cioè è lì la differenza, è per il team. B-Med è per un team. Se tutti...
+
+Davide Fiorello (23:43)
+Dai, parto.
+
+per il team.
+
+Brainrepo (23:57)
+Peccato che non
+
+ha alcuna ergonomia per essere usato nei team.
+
+Davide Fiorello (24:01)
+Per
+
+Luca Lanziani (24:01)
+No,
+
+Davide Fiorello (24:01)
+la voglia.
+
+Luca Lanziani (24:02)
+ha, lo ha, cioè nel senso devi sapere dove stiamo imparando, come diceva Davide, stiamo imparando. Io ti posso dire che in questo momento, dopo averlo usato per diverse volte, lo potrai far funzionare in un team. Cioè una volta che tu hai le storie, le storie sono esattamente come gira. Tu hai delle storie, le hai su Trello, le hai su Gira, su GitHub, Issue, sono storie. Perché l'ergonomia è diversa da quel punto in poi? Non cambia nulla.
+
+Giusto.
+
+Brainrepo (24:28)
+Sì,
+
+voglio vedervi insomma a gestire le studio con l'Emerger e Quest, so.
+
+Davide Fiorello (24:31)
+ti faccio una domanda ti faccio una domanda
+
+Mauro quando tu fai tuoi side project non un side project che deve andare in produzione ti fai un side project perché hai voglia di giocare ok? ti fai il tuo codice, puoi fare una bella coverage dei test al 100 % vero? si ⁓ si lo facciamo tutti e poi curiamo molto le commit se tu vedessi le commit dei miei side
+
+Luca Lanziani (24:50)
+sempre.
+
+Brainrepo (24:53)
+si, ma io no...
+
+Davide Fiorello (25:00)
+sono una roba da... e quindi questo per dire, questo per tornare e sottolineare quello che dicevo prima nel senso che io mi ritengo una persona professionalmente, insomma faccio il mio, mettiamola così, e quando sono su un progetto con degli stakeholder, con gente con una finalizzazione di un certo tipo, io su questo progetto ci sto con
+
+Brainrepo (25:02)
+No ma... Davide.
+
+Davide Fiorello (25:26)
+test fatti come si deve, review fatti come si deve, tutto, tutto. Cioè la mia parte, la mia parte di sviluppatore la faccio al 100%, al 150 % a volte. Quando, quando io, stesso sviluppatore messo su delle robe che che devono girare, che mi devono dare dei risultati ma che non hanno un'importanza, che non hanno qualcuno che paga dietro, siccome lo faccio al 98 % delle volte per divertirmi,
+
+io tutte le robe un po' noiose le tolgo quindi non trovo esattamente la stessa similitudine per quello che riguarda il ho iniziato il progetto, l'ho fatto con b-med, l'ho fatto per beni, ho fatto tutto il ciclo e poi a un certo punto mi sono rotto le scatole e le tre feature che dovevo aggiungere alla fine non ho neanche avuto voglia di ricominciare perché volevo vedere le feature
+
+Luca Lanziani (26:15)
+ma guardate ragazzi c'è
+
+qui c'è una congiunzione straordinarissante noi tre siamo le tre figure che di solito lavorano su un progetto non poteva capire meglio no io sono il technical director ma ora il tl e tu sei lo sviluppatore davide quindi noi tre si esatto noi tre in teoria potremmo far partire un progetto dove io interagisco con il cliente faccio creare il cliente il produttone parlo con lui per capire quale è il prodotto
+
+Davide Fiorello (26:23)
+Sì, esatto. Sì,
+
+Brainrepo (26:31)
+TN, Paper Technical Lead
+
+Luca Lanziani (26:45)
+Tu, Mauro, potresti tranquillamente occuparti della parte architetturale e definire le epiche e le storie, Davide prende le storie e le sviluppa. Questo è il role playing, ok? Ognuno di noi potrebbe lavorare su una parte di B-Med, tirare fuori un artefatto che poi passa alla prossima persona e continua il flusso. Di fondo, alla fine arriva tutto a Davide che da solo si gestisce i 20 agenti che ci sono e sviluppa tutto lui.
+
+Quindi meglio di noi per discutere questa cosa non c'è nessuno, nel senso abbiamo tutte le figure qui necessarie. manca il prodotto, o ne ci manca qualcuno che definisce il prodotto, ma quello è.
+
+Brainrepo (27:17)
+ok ed è perfetto noi abbiamo tranquillamente cercato di assegnare una posizione a B-Med ed è chiaro che quello che stiamo dicendo e sono pienamente d'accordo la valutazione che noi facciamo di B-Med è che lo stiamo provando come Site Project e stiamo sbagliando perché l'outcome che noi stiamo prendendo da B-Med è completamente
+
+decontestualizzato da quello che dovrebbe essere e va bene. Secondo punto, probabilmente, B-Med è ancora immaturo in termini di prodotto, di product owner, di feature design, di tutte queste robe, perché io non ce lo vedo il mio product owner per quanto gli voglio bene a utilizzare il terminale per parlare con B-Ma, ma non ce lo vedo neanche con...
+
+con Cloud Code nel client di Cloud, capito? Lui lavora in modo diverso, ecco, questo è un processo che si dovrà attivare.
+
+Luca Lanziani (28:22)
+deve essere aiutato in questo caso deve essere affiancato da qualcuno di noi
+
+Brainrepo (28:25)
+Si, chi ama una società di consulenza che viene... Un esperto che...
+
+Luca Lanziani (28:28)
+Esatto, cioè io ti dico, ti faccio le domande, esatto, ti faccio girare i bimèdi io,
+
+parli con me e lo creiamo insieme.
+
+Brainrepo (28:36)
+Quello che però di B-Med mi lascia un po' perplesso è che B-Med mima un processo che è il processo attuale. E quello che io credo profondamente, ed è l'elemento che più mi lascia un punto interrogativo quando parlo di B-Med, e l'ho prima detto parlando di schiumorfismo, è che siamo sicuri che...
+
+L'attuale processo fatto da persone e azioni, no? E ruoli diversi dove ogni ruolo ha il suo silo, ok? Il produttone ha il suo silo di knowledge del produttone, di attività del produttone, per quanto interagisca con gli altri, comunque un'entità sestante. Mi chiedo se con l'evoluzione di questi strumenti e con l'evoluzione delle dimensioni del contesto
+
+L'avere è queste figure separate.
+
+limitante, cioè mi chiedo stiamo ci stiamo limitando nel pensare di riprodurre dei workflow e dei modelli che sono pensati per le persone e farli girare con gli agenti
+
+Luca Lanziani (29:55)
+vado vado prima io David se non ti dispiace diciamo che in questo momento è necessario in questo momento è necessario non lavoriamo con persone lavoriamo con aziende che non utilizzerebbero bmed magari lo stesso sviluppatore con cui lavoriamo non utilizza bmed e allora tu hai necessità di lavorare con gli stessi processi precedenti così che tu puoi utilizzare bmed o non utilizzare bmed perché una storia che sia implementata da un agente o sia implementata da un essere umano è comunque una storia
+
+Quindi, indipendentemente dalla capacità delle modelle, indipendentemente dal contesto, indipendentemente dai tool che tu usi in questo momento, diciamo l'industria non è pronta ad adottare un processo diverso. Cioè, già adesso facciamo fatica, perché come hai detto tu, già adesso andare da un prodotto in eredità e lavora con me con Cloud Code, lavora con me sull'editor, non funziona. Io le storie le voglio in gira. Sono abitato a vederle in gira, le voglio in gira. Quindi già adesso quello non funziona.
+
+Quindi necessariamente in questo momento ci dobbiamo avvicinare il più possibile ai processi esistenti. Ci ho detto, sono sicuro che successivamente quando in futuro questa cosa diventerà più utilizzata a livello globale, a livello di aziende, eccetera eccetera, potremmo poi cambiare i processi perché si avvicinano di più a una modalità che sia più adeguata a quella delle altre.
+
+Però in questo momento credo che sia necessario che processi siano il più possibili e simili proprio per facilitare la transizione di cui parlavamo. Quello è.
+
+Davide Fiorello (31:25)
+sono assolutamente d'accordo con quello che hai appena detto Luca, cioè il concetto che noi non dobbiamo sottovalutare l'esistente e quello dobbiamo farlo così come quello che dice Mauro è sacrosanto, il processo, il processo non è che sia giusto quello che stiamo facendo, è quello che conosciamo e quindi la prima implementazione ovviamente è stata quella
+
+è stata quella di prendere quello che conoscevamo e automatizzarlo con questi nuovi strumenti. non banalmente l'architect è un ruolo che raramente ha l'importanza di b-med se ci pensate. Lo dico quando ci guarderete, se avrete voglia di guardarlo, solo per diudetevi, scoprirete che l'architect è uno che in b-med fa tanto ma fa
+
+quello che in un processo agile fanno gli sviluppatori fondamentalmente perché l'architect una volta che ha deciso usiamo React usiamo Node finisce lì la sua decisione non è che l'architect si mette lì decide la struttura del progetto le cartelle e i pattern da utilizzare mentre l'architect in b-med fa tutte queste operazioni è ovvio che è una divisione data dal
+
+insomma perché è obbligatorio farlo perché perché dall'altra parte c'è una macchina non c'è una persona che capisce che potrebbe fare le robe in un modo piuttosto che nell'altro quindi che cos'è l'architecto di bimed è quella parte di processo che fa quella cosa lì prende il prodotto il design e tutto il business stavo dicendo business analism scusate ma
+
+Brainrepo (33:13)
+Sì...
+
+Davide Fiorello (33:14)
+però avete capito, volevo
+
+dire business analism per capire tutta quella parte lì ma mi è venuta fuori un po' così anyway, e ne fa, e la trasforma in tutte quelle parti, quello alla fine l'architecto quello che mette giù veramente le specie
+
+Brainrepo (33:33)
+è
+
+il developer 2.0 che si chiamerà LLM sitter domani e che si occupa di fare in modo che gli agenti facciano esattamente quello che devono fare senza deragliare
+
+Davide Fiorello (33:37)
+esatto
+
+sì, fondamentalmente quello
+
+Luca Lanziani (33:48)
+Se
+
+volete un po' il principio di alcune aziende, diciamo quello che ha supervisione, ma sì, dipende, c'è... fa un po' troppo, va po' troppo a fondo.
+
+Brainrepo (33:51)
+Mano!
+
+Davide Fiorello (33:51)
+si però fa un po di overstep fa un po di overstep fa un bel po di overstep però servono però
+
+servono perché poi con il documento o i documenti che vengono creati da questo architect quando si creano le storie o gli sprint cioè quello che detto prima è plateale a che cacchio servono gli sprint anche perché la cosa divertente vi assicuro la cosa divertente che dà anche una stima in giorni uomo
+
+queste meraviglie... totalmente... certo però invece avere alla fine delle storie fatte finite realizzate bene descritte come di nuovo io sono uno sviluppatore scrivo codice non scrivo storie esatto mai visto prima bellissimo un'architettura hai un bug lui ti fa il report ma quello in realtà te lo fa le Yans cioè il vibe coding in generale
+
+Luca Lanziani (34:21)
+è totalmente inutile e sovrastimata.
+
+Brainrepo (34:22)
+⁓ esatto, non è divertente, è raccapricciante.
+
+non ne abbiamo mai visto prima
+
+Davide Fiorello (34:51)
+ti fa tutte queste parti però insomma vuoi dei pattern che puoi dare utilizzare in altri progetti insomma ci sono tutta una serie di cose che vanno oltre B-MED poi di nuovo siamo qua parlare di B-MED perché è nostro esempio però in generale lo spec driven development è quello di cui stiamo parlando diciamo che B-MED è il framework che abbiamo provato pesantemente e che più o meno si fa
+
+Brainrepo (35:16)
+AB-MED è
+
+quello più rigido in termini spec driven development, quello più articolato in termini di processo di quelli che visto io.
+
+Luca Lanziani (35:23)
+quello più ampio
+
+perché se lo vuoi più rigido spec it è altrettanto rigido, spec it ha addirittura dei comandi molto specifici a turn-launch, quindi non lo so se è il più rigido.
+
+Brainrepo (35:32)
+Bah,
+
+io li ho provati tutti e due e devo dire che mi sono sentito molto più cowboy con Speckit, tanto che quel side project che aveva iniziato con B-Mad, ho cancellato tutto quello che c'era in B-Mad di B-Mad. installato Speckit, po' fatto... L'ho fatto partire, gli ho dato un po' di contesto così, creato qualche filetto che... Ho riuscito a terminarlo.
+
+Luca Lanziani (35:39)
+No, lo sei.
+
+Brainrepo (36:01)
+e va bene. Pensavo una cosa però rispetto a B-Med, promesso che in questa puntata arriverà un momento dove inizierà a parlare super bene di B-Med, ma quando dico super bene da fanboy quindi questa cosa vi spiazzerà.
+
+Davide Fiorello (36:22)
+E lì noi inizieremo a parlarne male.
+
+Brainrepo (36:24)
+Esatto, c'è un'inversione di ruoli.
+
+Luca Lanziani (36:25)
+⁓
+
+Brainrepo (36:27)
+Dovete sapere che lo script di questo episodio è stato fatto con Cloud. No, scherzi a parte. C'è una cosa interessante di BeMade che è la quantità di documentazione che butta giù. Ne ho parlato con Alfonso qualche puntata fa. Naturalmente voi non l'avete sentito perché non è ancora uscito oggi quell'episodio.
+
+Luca Lanziani (36:32)
+Certo, logico.
+
+Brainrepo (36:54)
+Ma in realtà il vero problema è che, o almeno il problema che io ho avuto con Bmed è stato un carico cognitivo legato alla documentazione. Cioè il throughput di documentazione, di testo prodotto è diventato veramente ingestibile.
+
+per quanto mi riguardava, probabilmente perché ero in un contesto di side project però raga raga side project quanto cazzo può essere side project io non ho mai visto nessuno di noi leggersi tutto a cazzo di confluence di un progetto
+
+Luca Lanziani (37:39)
+e magari è sbagliato e magari lo dovevi fare. Quindi sei tu che sei pigro o è stato il modello che ti ha tirato fuori troppo?
+
+Brainrepo (37:40)
+e quindi... ⁓ sì,
+
+No, non sono io e siamo tutti che siamo pigri,
+
+perché se sono io che sono pigro Luca è il problema mio. Se siamo tutti che siamo pigri probabilmente c'è un meccanismo che non sta funzionando.
+
+Luca Lanziani (37:58)
+Ma noi
+
+siamo tutti, l'hai detto all'inizio, nessuno scrive le storie. Siamo tutti pigri. E siamo tutti pigri perché diamo per assunto che la persona dall'altra parte è abbastanza intelligente, abbastanza capace, o non lo so come la vogliamo definire, da poter tappare i buchi che io ho lasciato. E sappiamo tutti che questa cosa non funziona.
+
+perché non scriviamo le storie, le storie mancano, il developer è pigro quindi non chiede informazioni sulle informazioni che mancano le storie, fa delle assunzioni come le fa l'LM stesso, scrive una storia che non è quella che il prodotto owner o il team leader si aspettava, fa il deploy e poi ci sono i bug, quindi dobbiamo iniziare, quindi essere più dettagliati sicuramente aiuta, vogliamo dire che i modelli sono troppo dettagliati, forse sono troppo dettagliati, è un male, ⁓ dipende.
+
+è un male e se siamo pigri abbastanza non raggiungere la fine delle storie. Io riposto dire che personalmente, come ha detto Davide, prima io non credevo nell'intervistazione, cioè non è che non credevo ecco forse questo è sbagliato, ero diciamo sanamente scettico nel senso che avevo provato tutte quante quelle cose che erano uscite e non mi produceva l'output che desideravo e quindi avevo sempre lasciato andare la cosa dicendo non sta funzionando. Da quando sono uscite questa nuova metodologia che è lo Spectrum in Development i risultati
+
+un po' per lo spec driven development, un po' per l'avanzamento dei modelli, perché io sono diventato un credente ad ottobre dell'anno scorso dopo che uscito sonnet 4.5, non è una coincidenza. Io mi sono definito un believer, ok? Da ascettico a believer, ok? Sono un believer, quindi ci credo da quando ho provato sonnet 4.5 accoppiato con lo spec driven development.
+
+Brainrepo (39:22)
+Ti prego non dire a credente, per favore che...
+
+Luca Lanziani (39:39)
+ho perso anch'io, poi perso, ho investito, possiamo dire quello che voglio, due giorni soltanto sulla PRD e sull'architettura e solo dopo che tutto quello che c'era scritto lì me l'ero letto, capito e aggiustato ho chiesto al modello di aggiustarlo, tra l'altro ho chiesto alla gente di aggiustarlo soltanto dopo ho iniziato con le storie e ogni fottuta storia ogni volta che io l'inizio me la leggo tutta
+
+pesante è assolutamente pesante ma perché sei solo perché stai da solo a fare un set project in un team questa cosa non dovrebbe essere pesante perché tu non ti devi sorbire la lettura di 20 documenti te ne leggi uno al giorno, ti fai una tua storia al giorno, ti leggi la tua storia e vai avanti così
+
+Brainrepo (40:26)
+mmm
+
+Davide Fiorello (40:31)
+adesso visto
+
+che detto che sei un believer devi dire alle lui a tre volte se no non ti credi a
+
+Brainrepo (40:37)
+No, in realtà forse sbaglio, ma io in qualità di technical lead leggo tutte le storie che stanno sulla board e ho trovato overwhelming leggere le storie di chi ti fa da cloud con b-mad perché sono storie fatte con un livello di dettaglio, un livello di micro management, infatti
+
+Luca Lanziani (40:38)
+Santa Clau,
+
+e quindi lo vedi?
+
+e ci vedo.
+
+Brainrepo (41:02)
+andiamo a fare blame agli agenti perché fanno micromanagement e l'overwhelming è su di noi umani che facciamo la review paradossalmente però io capisco quello che dici continuo a vedere che l'effort... credo che nella mediocrità della qualità delle storie che abbiamo oggi c'è una sostenibilità implicita
+
+nella precisione data da una macchina nel creare testo che definisce le storie
+
+può nascondersi una non sostenibilità.
+
+Luca Lanziani (41:47)
+possibile però lo svantaggio quale nel senso oltre a essere pesante dal fare il video eccetera eccetera considera che questo quello che necessario per i modelli attuali non significa che i modelli di domani non avranno bisogno di meno dettagli ok di fatto no neanche io però non è detto no davide diciamo che questo in questo momento è quello che ci permette di arrivare a un punto in cui e forse si potrebbe anche fare un po di meno e non dico che che b mad crei una quantità di testo che è necessario forse si potrebbe ridurre un po quel testo
+
+Davide Fiorello (42:00)
+non penso però.
+
+Certo.
+
+Luca Lanziani (42:17)
+però di fatto questo è quello che ci permette di dare poi quella storia al modello e essere abbastanza confident che l'output sarà un output decente che rispetta diciamo i requisiti. Se è questo quello che necessario probabilmente l'unica cosa che possiamo fare in questo momento.
+
+Brainrepo (42:30)
+...
+
+Sai cosa penso
+
+che si sia rotto in Bmed, almeno dal mio punto di vista? È il bilanciamento tra la knowledge della gente e la knowledge implicita nel task. Cioè, quando creo un progetto, secondo me, poi potete contraddirmi, anzi vi invito a farlo, credo che, no, noi abbiamo un livello di dettaglio della storia
+
+Luca Lanziani (42:56)
+e sennò che siamo qui a fare
+
+Brainrepo (43:02)
+è un livello di knowledge dell'agente implementatore. Io credo che già lavorando nel bilanciamento di questi due elementi, quindi quella knowledge che è l'agente Davide, è uno staff engineer che sa esattamente come deve essere strutturata la sua... sto banalizzando, la struttura di folder nel suo progetto in Ofastify, come deve gestire...
+
+alcune cose specifiche, quali design pattern usare e quali design pattern completamente ignorare tipo façade, no non lo usiamo perché non va bene. Una volta che la distribuzione di queste informazioni, il purgare di queste informazioni alle storie e muovendoli in una skill, una capacità implicità della gente può aiutare in questa direzione. E paradossalmente l'investimento in questi agenti che secondo me è una cosa che
+
+ancora a livello aziendale non se ne parla abbastanza. Si parla di queste metodologie per lo sviluppo. Ma quello di cui non si parla è la creazione di skill che possano diventare quella forza lavoro sviluppatrice di un domani, quindi con i guardrails, non nella storia, non nella feature, ma nella gente che implementa.
+
+e questo bilanciamento secondo me cambierà i giochi.
+
+Davide Fiorello (44:31)
+però
+
+guarda queste skill che leggevo un messaggio proprio ieri a riguardo sui nostri canali interni dell'integrazione fra B-Mod e the agent skill, allora secondo me queste agent skill B-Mod è un po' modo sull'interpretare perché...
+
+Brainrepo (44:50)
+⁓ ma sono molto superficiali, io l'ho visto, l'ho sviluppato, API, TypeScript,
+
+che c'ha, c'ha, c'ha tre cose.
+
+Davide Fiorello (44:59)
+no allora guarda ti faccio un esempio proprio pratico nel mio primo esperimento ho sprecato due calendari perché la localizzazione, porto proprio un esempio pratico perché la localizzazione dell'applicazione perché sono partito subito col botto l'ha fatta in un modo che non mi piaceva che slash et slash en slash qualcosa insomma mi metteva la localizzazione nell'url pattern molto comune ma che a me
+
+sta po' sull'anima e quindi io volevo che ci fosse un bel cookie salvato e che usasse quello. Alla terza storia in cui insomma se non mi vedrete in paradiso saprete che quella parte della mia vita ha contribuito molto a questa cosa alla fine l'ho costretto l'ho costretto a scrivere una skill neppiune meno. detto allora questo è il pattern adesso mi scrivi per favore una skill non l'ho chiamata skill perché all'epoca ancora
+
+non si usava queste terminologie, ti scrivi da qualche parte che queste sono le regole e non devi più sbagliarli e lui effettivamente da quel momento si è messo lì mi ha creato un bel markdown di quelli che ci piacciono tanto con tutti sì no questa cosa si fa così e con la non ha più sbagliato niente cioè lui è arrivato alla fine senza senza averne necessità
+
+di riportare questa cosa nei task, dopo i task che erano già stati creati, non c'era scritto da nessuna parte però tutti i task da lì in avanti hanno implementato questa localizzazione però dopo c'era questo filettino che lui all'epoca ero talmente esaltato da questa cosa che non sono neanche andato a vedere che cosa aveva fatto, dovrei recuperare il repo per capire
+
+perché poi invece successivamente per altri progetti sono andato a fondo su b-med e insomma me lo sono un po' ricostruito ricostruito per quello che mi serviva e quindi insomma so so come funziona sotto e all'epoca no e quindi ho lasciato un po' perdere però questa è una skill più nemmeno lui da qualche parte si è segnato un modo di fare le cose e quel modo di fare le cose se l'è tenuto buono se noi questa roba gliela diamo in pasto in qualche maniera
+
+all'inizio se noi abbiamo un repository aziendale, repository personale, chiamalo come vuoi con queste skill fatte finite io mi aspetto che il il codice venga fatto poi rispettando questi metodi come dici tu senza dover ripetere nel task questo lo devi fare così, questo lo devi fare colà
+
+Brainrepo (47:36)
+Sì sì, io ho Pedro, il mio agente
+
+backender che è un genio a fare le API in Fastify perché sa esattamente come le voglio, dove le voglio e come voglio chiamare le variabili e funziona. Però vedete, questo succede in un'iterazione successiva nel flusso di B-Med. Faccio una provocazione che è un test che secondo me dobbiamo fare.
+
+Davide Fiorello (47:46)
+⁓
+
+Luca Lanziani (47:47)
+Ma guarda che...
+
+Brainrepo (48:03)
+In fase di pianificazione, quando noi creiamo le specifiche generali, secondo me in quella posizione, quando lavora l'architetto in B-Med, dobbiamo dire, hey signore architetto, quindi creare un elemento successivo. Dopo l'architetto ci chiamiamo l'HCR, chiamiamo uno step aggiuntivo. L'HCR, sto pensando a voce alta, l'HCR, cosa fa l'HCR? Analizza.
+
+Davide Fiorello (48:28)
+Certo.
+
+Brainrepo (48:33)
+Quello che si deve fare, ti fa una sessione di brainstorming come quelle sessioni bellissime che fai in fase di diazione prodotto, che sono fantastiche con 70 milioni di metodi. Raccoglie tutte le informazioni e ti crea gli agenti implementatori che contengono quella knowledge basic che poi ti permette di eliminare quella fase di micromanagement dalle storie, alleggerire tutto, perché tu cosa fai? Da architect fai una review dettagliata?
+
+non degli acquisiti ma delle competenze della gente che le va a implementare. Non lo so, sto pensando a voce altra.
+
+Luca Lanziani (49:11)
+Ma allora,
+
+in questo momento vi posso dire come l'abbiamo gestita su alcuni dei progetti. Il problema principale in questo momento è che c'è talmente tanta differenza tra i tool, non c'è allineamento per quanto riguarda come i disifredi definiscono le cose, stiamo parlando di cose che cambiano dall'oggi al domani. Però noi abbiamo implementato esattamente le skill prima che esistessero le skill, semplicemente definendo delle copate instructions, che poi, se non sapete come le copate instructions funzionano, sono due fare markdown che descrivono come si deve comportare l'agente.
+
+Ora le copaleo destructions si possono mettere in vari posti, possono mettere nelle cartelle all'interno della .github folder e quindi tu cambia il modo in cui si comportano che ha successo, cosa ho detto, che ho fatto, si possono mettere in vari posti, ragazzi miei, ragazzi miei, ragazzi miei, è difficile, io ho due figlie piccole, non posso. Allora, poi il copaleo destructions lo mette dove vi pare, però di solito si mette all'interno del progetto.
+
+Davide Fiorello (49:54)
+siamo tornati al business analyst di prima
+
+Luca Lanziani (50:07)
+Ok? Quindi già quello ti permette di fare questo comportamento che dicevi tu nel senso lo metti in un posto e dove lo metti definisci cosa ci devi fare in quel posto, ok? E cambia il comportamento della gente. Detto questo, B-Med ti permette di caricare le squeal quando vuoi. Lì però, qual è il problema in quella cosa che tu detto Mauro? È che andiamo a... dobbiamo definire il livello in cui vogliamo specificare la gente, perché se non lo mettiamo troppo in basso finiamo ad avere un front-end, un back-end, un infrastructure engineer e forse stiamo un po' esagerando.
+
+perché la cosa bella di questi modelli è che sono generalisti ora sono, qualche volta sono troppo generalisti, se tu non gli dici nulla fanno tutto e fanno troppo però anche andare nella direzione opposta e dirgli troppo secondo me si perde il valore perché a quel punto poi ti serve qualcuno che orchestra questa cosa allora se devi implementare una funzionalità un po' più grande che la cosa bella di questi modelli che con due minuti, con dieci minuti ti implementano quello che tre sviluppatori ci mettono tre giorni a farlo
+
+se dopo devi implementare quella cosa e ti serve il back-end per fare le pieghe dietro, serve il front-end per fare il front-end e poi ti serve il terzo agent per fare il QA e dopo lì ti serve l'orchestrator e quindi dove ci fermiamo? Cioè a che punto vogliamo arrivare? Capisci che ti voglio dire? Lì c'è un trade-off che dobbiamo raggiungere.
+
+Brainrepo (51:22)
+La
+
+dipende da come bilanci il tuo progetto, esempio io almeno ho tre agenti e non ho infrastruttura li tiro dentro, mi tiro dentro. Il mio agentino che mi fa il backhand senza di lui sono morto perché fa esattamente... cioè sembra... un minimauro, cioè alla fine fa esattamente quello che farei e si fa anche le review lui, quindi non ho come molti hanno un agente per fare le review, no. Lui si fa le review. Ho un frontender.
+
+che si smazza tutta la parte tailwind, CSS, HTML, React, sta roba e sono veramente due scope che sì, hai ragione, posso fare una feature che tocca entrambi ma non lo vedo come un costo aggiuntivo orchestrare questi due agentini ce n'è un terzo che è molto edge perché voi sapete, probabilmente o ne avete sentito più il tempo passa e più io
+
+divento vecchio e opinionato ho eliminato gli ORM dalle mie applicazioni e sto andando a smartellare SQL direttamente nelle applicazioni o tra tra l'altro vanno di una velocità che non potete capire amici miei e tra l'altro Postgres ha tante di quelle feature fighe e performanti interessanti che non potete capire prossimamente ne parleremo
+
+anche perché sto andando al meetup di Postgre, sto scoprendo una quantità di robe super interessanti, però ho detto questo, esempio avere l'Agentino che mi scrive le sequel mi ha aperto un mondo e soprattutto bilancia gli elementi.
+
+Luca Lanziani (53:01)
+però dimmi una cosa, io questa cosa la posso capire ma nella storia cosa hai scritto? se una storia è voglio fare il rendering degli utenti, la lista degli utenti come la fai a implementare?
+
+Brainrepo (53:17)
+Beh, per esempio, c'è il backhender che chiama e triggera la gente...
+
+Luca Lanziani (53:27)
+quindi devi fare un coordinamento, devi avere un coordinatore, come ti ho detto può essere il back-end
+
+e va bene ci sta però a punto il back-end deve avere all'interno la skills per sapere che quando trova implement SQL devo chiamare l'Agent e quindi capisci che c'è un overhead da quel punto di vista, funziona? teoricamente siccome stiamo sperimentando dovremmo vedere qual è il giusto bilanciamento
+
+Brainrepo (53:52)
+Secondo me,
+
+per quello che ti posso dire, almeno nell'ultimo progetto, che è un CMS, uno stupidissimo CMS a blocchi, come può essere StoryBlock, avere questi agenti separati, che può sembrare ridicolo, ma ha aumentato la velocità del gruppo.
+
+Luca Lanziani (54:15)
+e ci potrebbe stare infatti
+
+quello che dovremmo fare dovremmo fare dei benchmark che è l'unica cosa che in questo momento si possono fare ma io lo chiederò anche a david nel senso david se tu devi interagire quando tu devi implementare quella storia tu sei lo sviluppatore ok? e ti devi fare una query SQL e poi devi fare l'api e poi devi fare il front-end che fa rendere in te la lista degli utenti lo fai da solo perché sei un signore engineer oppure lo fai per o vai a chiedere in giro fammi il front-end io faccio il back-end e qualcun altro scrive la query
+
+Davide Fiorello (54:42)
+io lo faccio da solo io lo faccio da solo però insomma faccio da solo perché l'esempio che avete portato è un esempio in cui io mi trovo a mio agio a toccare tutto quanto che sia sql che sia un api che sia del front-end faccio una tecnologia però però ovviamente se invece dovessi fare una parte di infrastruttura per una roba seria non per mettere sul mio progettino il mio progettino andrei a parlare con the Vops che
+
+perché lui ha le conoscenze per farlo io ho le mie assunzioni ma non è che le mie assunzioni sono robe con cui manderei in produzione una roba
+
+Luca Lanziani (55:18)
+ma questa non è
+
+una cosa, però ragazzi questa non è una cosa nuova nel senso da quant'è che esistono i full stack engineering front-end engineering back-end engineering stiamo parlando della stessa cosa solo che ne stiamo parlando sui confronti di un agente
+
+Davide Fiorello (55:21)
+⁓ no, assolutamente.
+
+Sì, esatto.
+
+Brainrepo (55:26)
+Sì, Lu, però vedi,
+
+se tu mi dici una storia dove c'è un select star, hai ragione, cioè può essere un overhead. Però vedi, nel CMS stupido, esempio, c'era tutta la parte di modellizzazione dell'albero dei contenuti su Postgre. E là, avere un agente...
+
+Luca Lanziani (55:34)
+Ma certo, siamo generalizzando assolutamente.
+
+Brainrepo (55:52)
+che si era ciucciato, sono copia incollato tutte le skill di Super Base dentro dell'Agentino, che sono skill di SQL, mi ha costruito dentro il database, usando funzioni native, una struttura ad albero che per forma da Dio, perché per forma molto bene, è un back-ending, agente back-end... Io non sarei stato in grado di farlo, permesso che io da full stack...
+
+non sarei stato in grado di...
+
+Davide Fiorello (56:22)
+Quindi c'è del codice nativo che gira su Postgres?
+
+Brainrepo (56:26)
+No, c'è un'estensione che permette la gestione degli alberi.
+
+Davide Fiorello (56:30)
+Ok, va a pensare.
+
+Luca Lanziani (56:31)
+ma comunque vedi
+
+è di nuovo, cioè da quant'è che voi non lavorate con DBA? con database administrator
+
+Brainrepo (56:36)
+Ma io credo che non ha...
+
+Davide Fiorello (56:38)
+Io ci ho lavorato
+
+Brainrepo (56:38)
+Luca...
+
+Davide Fiorello (56:39)
+2-3 volte nella mia vita perché ormai il backend moderno lavori quasi sempre con delle API. Cioè, sono pochi fortunati che lavorano con i database.
+
+Luca Lanziani (56:46)
+e stiamo parlando
+
+della stessa cosa, solo che in questo momento Mauro ha ragione, magari c'è quella funzionaria specifica per cui ti conviene avere l'agente, quindi è una questione di bilanciare. Io se voi avete visto in Nearform, quando era l'anno scorso a novembre, ho creato degli agenti, ho creato il React Engineer, ma semplicemente per testare come funzionava su Bimed, quindi su Bimed si può estendere con tutti gli agenti che vuole dare al loro, c'è anche il flusso per creare degli agenti, che è fantastico, no? Ho creato quegli agenti.
+
+la realtà dei fatti è che quasi nessuno li ha usati perché il dev stesso nella maggior parte dei casi era sufficiente ok nel nostro caso come tu hai fatto l'esempio 2 nel nostro caso noi abbiamo il developer e il QA il developer fa tutta l'implementazione front-end back-end database quello che è dopodiché arriva il QA che si fa la review però ci sta quello che detto tu è vero
+
+Brainrepo (57:35)
+Però che livello di dettaglio tu dai al developer?
+
+Luca Lanziani (57:39)
+con il copilot con l'eco pilot instruction gli dai molto dettaglio cioè la copilot di straccio che cambia il comportamento del developer il developer è una persona, è la persona che scrive diciamo la persona intesa come il ruolo per l'agente che scrive i codici e poi l'eco pilot instruction va ad aggiungere dettagli in più su che tipo di codice va a scrivere a seconda della cartella in cui interagisce quindi tu lo fai a livello di agente quindi quando tu assumi la persona esatto io faccio livello di skill bravissimo
+
+Brainrepo (58:05)
+e invece tu lo fai a livello di skills, per cui la gente è
+
+Davide Fiorello (58:08)
+ma
+
+poi c'è un altro
+
+Luca Lanziani (58:09)
+pre-fette.
+
+Brainrepo (58:09)
+generalista. L'unica cosa che ti perdi è l'ottimizzazione del contesto che non isoli il contesto specifico.
+
+Luca Lanziani (58:14)
+e sì,
+
+oppa, guarda, può farlo, sì, sì, assolutamente, assolutamente.
+
+Davide Fiorello (58:16)
+è stato
+
+poi c'è un altro punto torniamo alla pigrizia di cui parlava prima quando abbiamo lanciato la creazione dell'architettura su bimed abbiamo fatto ok ok d'accordo fai questo fai quello perché io torniamo all'esempio stupido che fatto prima sulla localizzazione quello era una cosa che se io avessi affrontato a livello di architettura non avrei avuto quel problema io semplicemente ho aspettato che il problema saltasse fuori nel momento in cui
+
+come se l'è inventata lui non mi andava bene ma se io da prima gli dicevo ok, quando lui mi ha finito di il documento di architettura e avessi detto bene ci sono un po' di punti che vorrei definire prima e avessi discusso con lui bene il discorso localizzazione lui io non me lo sarei ritrovato quel problema come la naming convention noi abbiamo un'idea di naming convention che è sempre
+
+superficiale perché è vero che funziona ma poi quando andiamo a programmare in testa abbiamo un sacco di cose che noi non gli abbia raccontato lui e che pretendiamo vengano fatte in questa maniera
+
+Brainrepo (59:31)
+Raga nel mio agent io ho una frase che dice mai iniziare un metodo con un aggettivo. Questo per farvi capire il livello con cui...
+
+Davide Fiorello (59:45)
+ma perché ce l'hai?
+
+ti faccio domanda, perché ce l'hai? ma parte di incassarti, ma perché ti incassi? perché lui a un certo punto te l'ha fatto e quindi tu e quindi gliele hai aggiunto
+
+Brainrepo (59:48)
+Perché mi incazzo come una bestia quando lo leggo
+
+e cosa facevo? cosa facevo in un paio di iterazioni gli
+
+dicevo gli dicevo auto apprendi e migliora non voglio più rivederlo tanto che il mio agent
+
+Davide Fiorello (1:00:03)
+No, queste sono le parole,
+
+quelle sono le parole che ci stai raccontando ma io le so le parole che gli hai detto. Essenziale, essenziale.
+
+Luca Lanziani (1:00:10)
+Quella è una cosa essenziale che va fatta, cioè continuare a correggere
+
+il processo, mano a mano, si va avanti e dirgli scrivitelo, scrivitelo, scrivitelo da qualche parte, fa giusta questa cosa e scrivitelo, perché questo è i Cupola Destruction di cui parlavamo, li ha scritti lui, Nel senso, se voi usate via SCOD, c'è proprio il tastino per crearsi le Cupola Destruction, e la cosa importante è continuare a migliorarli, scusate, noi stiamo parlando, parlando, però ripetiamolo un'altra volta, nessuno di noi sa cosa sta facendo.
+
+Brainrepo (1:00:16)
+e soprattutto forzarlo
+
+Luca Lanziani (1:00:39)
+Noi stiamo tutti sperimentando, stiamo provando. Cioè non c'è il modo giusto e sbagliato di fare queste cose. C'è quello che funziona un po' meglio e quello che funziona un po' peggio. Quello che funziona un po' meglio oggi e domani potrebbe funzionare peggio perché il modello cambia e non ci risponde più come ci aspettiamo. Per cui è inutile che continui... noi stiamo discutendo, stiamo parlando del nulla, stiamo parlando di cose che noi sperimentiamo e da quello che abbiamo visto noi funziona. E' probabilmente che coloro che stanno ascoltando in questo momento hanno provato qualcos'altro e funzionano altrettanto bene.
+
+Davide Fiorello (1:00:41)
+esatto stiamo sperimentando
+
+Luca Lanziani (1:01:10)
+No.
+
+Brainrepo (1:01:10)
+Ed è tutto, è quasi tutto, almeno tantissimo. È empirico, E paradossalmente rischia di non essere a volte anche predicibile e riproducibile.
+
+Luca Lanziani (1:01:15)
+Esatto, cioè l'unica cosa che possiamo dire è che noi...
+
+no
+
+ma questa questa è una guarda c'è un articolo che abbiamo scritto dove effettivamente la prima cosa che dico è che non vi potete aspettare determinismo questi sistemi sono non deterministici e quindi tutto quello che stiamo dicendo funziona perché ha funzionato a noi in quel momento sentito la mia stessa spi io ho sentito molte persone dire sarebbe bello che durante un po il codice non esistesse più si stessero solo le specifiche dalle specifiche scriviamo il codice
+
+in questo preciso momento io non riesco a vedere quella cosa perché non essendo termistica io non ti posso dare una specifica e aspettarmi che risultato che tu ottieni lo stesso che ottenuto io ok? e questo
+
+Davide Fiorello (1:02:01)
+Tu Luca intendi l'idea che una volta che il progetto è fatto, in teoria con le specifiche fatte, potremo spingere un bottone e ricostruirlo da zero.
+
+Luca Lanziani (1:02:08)
+qualche
+
+persona sostiene questa ipotesi sì però qualche persona sostiene questa ipotesi che un giorno il codice tu lo ricrei quando ti pare quindi tu ti tieni solo le specifiche e domani esce un nuovo linguaggio di pronomazione vi è ottimizzato il linguaggio di pronomazione vuoi cambiare il linguaggio di pronomazione tieni solo le specifiche e quelle specifiche ti fanno creare i codici essendo le macchine non deterministiche c'è il modello non deterministico
+
+Brainrepo (1:02:10)
+si chiama codice, quale specifiche si chiamano codice
+
+Luca Lanziani (1:02:32)
+per me in questo momento quella cosa non è realizzabile, non dico che non lo sia in futuro ⁓ già lo vediamo che con maggiori specie risultate più predicibile cioè più diciamo non deterministiche perché deterministiche è difficile dirlo però diciamo c'è più probabilità la probabilità è più alta che tu ottieni quello che ti aspetti ok quindi stai aumentando la probabilità per cui di nuovo noi stiamo parlando di queste cose vi potremmo pure far vedere qualche esempio ma è possibilissimo che voi applicate lo stesso esempio che
+
+vi faremo, vi potremmo far vedere noi e otterrete un risultato diverso e quindi non c'è nulla di male in questo momento a chi mi dice no io l'ho provato a questa cosa e non mi ha funzionato quello che vi possiamo dire che a noi ha funzionato a me ha funzionato senza dover avere l'agente del DB, l'agente del backhand, l'agente del fronthand però Mauro giustamente ha detto io ho trovato maggior vantaggio nell'usare nel suo caso fronthand, backhand e DB punto non sappiamo
+
+Qual è la cosa giusta da fare in questo momento?
+
+Davide Fiorello (1:03:32)
+esatto
+
+sopra per esempio c'è gente che lancia su github il repo e la mattina si trova la cosa fatta io è una roba che non concepisco
+
+Luca Lanziani (1:03:44)
+ma ce l'abbiamo, ce l'abbiamo,
+
+cioè, è stile near from questa persona, senso, non stiamo parlando di gente, cioè...
+
+Davide Fiorello (1:03:47)
+Sì sì, esatto, no no no no!
+
+Brainrepo (1:03:49)
+L'abbiamo
+
+salutato la prontata precedente, lo risalutiamo oggi.
+
+Luca Lanziani (1:03:51)
+E' perfetto!
+
+Davide Fiorello (1:03:52)
+No, lui riesce
+
+a lavorare così io devo stare e guardare in tempo reale quello che succede perché io lo fermo gli dico che cazzo stai facendo torna indietro chi ti ha detto chi ti ha detto di fare questo e di quello e è l'unico modo che ho per portare bene a casa il risultato io sto parlando adesso stiamo un po uscendo stiamo entrando un po nel vibe puro senza senza senza dei quindi insomma
+
+Brainrepo (1:04:03)
+mi avete mi avete mi avete aperto
+
+no ma GitBar è Mero Vibe quindi...
+
+mi avete mi aperto un portone intremi di riflessione no?
+
+Un'altra cosa che ho notato di B-Mod è che è molto sequenziale, i ticket sono molto sequenziali. Un approccio alla Matteo, ciao, dove tu lanci un'azione, lo lasci macinare e l'indomani mattina fai review e alla
+
+Se ogni notte ti fa un task, stai perdendo il beneficio della... o fai un task molto grande con tutto il rischio di deragliamento che puoi avere, o gli dai delle specifiche veramente strette, strette, strette e fai del micromanagen della Madonna a quel punto, probabilmente forse era meglio che te la scrivi tu il codice, oppure paralelizzi task più piccoli, Quindi mi fai la localizzazione...
+
+dall'altra parte magari mi sviluppi delle API che non si interfacciano oppure un'altra cosa che ho pensato è ma ha senso il contract driven design per agenti in modo che non si scazzano, si share il contratto in termini di interface typescript o contratto API e io posso
+
+buttare 7-8 agenti che sviluppano cose diverse perché c'hanno già i contratti definiti con degli stab e quindi prima o poi si integrano. Però con... sì...
+
+Luca Lanziani (1:06:04)
+ma nelle storie ci sono gli stab ⁓ nell'architettura
+
+c'è lo stab quindi questa cosa in parti
+
+Brainrepo (1:06:09)
+Però mi dico, io questa cosa la vedo funzionare nella mia testa, probabilmente se gestisci in autonomia il processo la vedo funzionare, nella mia esperienza lo so che è parziale, un set project, tutto quello che ci siamo detti 70 volte fino ad ora, però l'ho vista difficilmente possibile con un approccio B-Mod dove le storie che ho visto erano step, step, step, step, avanti, vai avanti, vai avanti, vai avanti, anche...
+
+Davide Fiorello (1:06:38)
+Allora,
+
+non è così in realtà.
+
+perché le storie sono parallelizzabili probabilmente il processo che hai fatto, anche io nella mia prima esperienza ho fatto una roba che mi le fatte tutte in fila invece invece nel progetto che ho fatto successivamente si vede che insomma le cose erano un po' diverse tu non non hai un processo seriale ma hai assolutamente un processo parallelo e ti dirò di più, dirò di più...
+
+Brainrepo (1:07:07)
+ma l'hai guidato per ottenere...
+
+Davide Fiorello (1:07:10)
+ti dirò che lui se tu gli dici un certo punto fammi la storia 3.27 ok? dico un numero a caso, lui ti dice ⁓ non posso fartela perché
+
+manca la storia 1.5 da cui dipende quindi finché non è fatta quella quindi ovviamente dopo tu devi andare a fare 1.5 ma dopo che hai fatto la 1.5 ti potrebbe sbloccare 10 storie che tu puoi fargli fare in assoluto parallelismo con le problematiche di conflitti e tutto quello che ben conosciamo della programmazione parallela però e ti dirò di più lui fa a volte anche se tu guardi come sono fatte le storie di bimed lui a volte fa
+
+lui fa gli step, cioè la storia in realtà è una raccolta di task e lui prende la storia e di solito prende i task e le fa uno dietro l'altro però capita spesso che non solo il task che la storia dipenda da un'altra storia ma proprio ci potrebbe essere un task all'interno di quella storia che dipende da un altro punto e quindi lui ti lascia una storia fondamentalmente incompleta perché dice finché non hai fatto
+
+quell'altra tu non puoi fare questa piccola parte del task quindi insomma la versione 6 è migliorata molto secondo me da questo punto di vista forse queste erano cose tant'è che la prima esperimento l'ho fatto nella 4 e aveva una roba assolutamente lineare quando si fa anche con la 4 ok
+
+Luca Lanziani (1:08:33)
+No, ma si può fare... Guarda, risponda a tutte le domande... Sì, sì, no, risponda a tutte le domande,
+
+a tutte e due le domande, Maro. Allora, sulla quattro considera che nel progetto in cui siamo gli abbiamo fatto fare il diagramma del grafo delle dipendenze. In Mermaid. Fantastico. Cioè l'ha fatto con tanto di colori che ti dice quale storia stanno in progress, quale storia sono già implementate. L'ha fatto da solo, nel senso, queste sono le cose belle di usare in modelli, se vuoi. Nel senso che quando ti viene un'idea tu gliela chiede per se riesci a farla, non ti devi tu spremere nei meningi, cioè lo chiede per di che trovarla.
+
+Davide Fiorello (1:08:50)
+⁓
+
+Luca Lanziani (1:09:03)
+Facendo quello, tu hai tutte le dipendenze, sai quando è che puoi far partire le storie in parallelo. Ok, questa è la prima cosa. Si possono far partire le storie in parallelo senza problemi. Ora parliamo invece di lanciare le cose alla notte, perché questa è una cosa di cui stiamo discutendo internamente. Primo problema, il tuo processo deve poter girare...
+
+sul github action o quello che vuoi quindi devi poter far girare il processo, avere la pipeline giusta, avere gli ncp abilitati e in questo momento l'interfaccia è un po' ostica per queste cose nel senso che funzionano bene sul tuo editor funzionano un po meno bene sono un po più da configurare ok non siamo lì diciamo con l'ambiente pronto e quello è un problema secondo problema devi avere l'energia mentale per fare questa cosa cioè prima di andare a letto prima di tanto è vero che
+
+la persona di cui parliamo Matteo lui se le fa girare dal telefono, cioè lui sta sul telefono e fa partire le cose quindi tu immagini che tu ti sei fatto già una sessione di 8 ore ok? e alla fine delle 8 ore tu dici adesso guarda penso un attimo a cosa gli faccio fare stanotte ma anche no sono le 5 io stacco vado a prendere una birra oppure esco fuori per con la famiglia e ci vediamo domattina ok? ci sono questi paio di problemi ma superando questo paio di problemi quale sarebbe il problema di far partire le storie la notte?
+
+io oggi discutevo con il management che non vediamo nessun problema a far partire le storie la notte ma ti dirò di più, la stessa storia la puoi far partire un paio di volte, due o tre volte con due tre modelli differenti per vedere qual è il risultato dei tre modelli la mattina perché il costo è assolutamente ridicolo in questo momento, siamo... quelli che dicono che in questo momento i modelli sono costosi secondo me non è assolutamente vero cioè per quello che fanno
+
+Davide Fiorello (1:10:34)
+Vero?
+
+Luca Lanziani (1:10:46)
+per quello che ti producono, un'azienda il costo è ridicolo, è ridicolarmente basso. Quindi cosa ti blocca nel far partire 6 story alla notte, se ce ne sono iniziali in parallelo, ok? Ne fai partire 12, uno con Codex e una con Cloud, ok? Opus 4.5, e vedi una mattina quello che succede.
+
+Davide Fiorello (1:10:52)
+Sì, sì.
+
+Luca Lanziani (1:11:09)
+le storie sono definite ce l'hai sub markdown
+
+Davide Fiorello (1:11:11)
+Scusi
+
+Brainrepo (1:11:12)
+Ma
+
+io sono d'accordo, sono d'accordo e se non lo so...
+
+Davide Fiorello (1:11:14)
+io lo so però io so perché
+
+non voglio fare una roba così invece
+
+Luca Lanziani (1:11:16)
+⁓
+
+perché? Adesso parliamo di perché, perché quella era la partita.
+
+Brainrepo (1:11:18)
+perché di poi ti sale
+
+Davide Fiorello (1:11:19)
+io
+
+Brainrepo (1:11:19)
+la scimmia che vuoi vedere il progresso dal letto
+
+Davide Fiorello (1:11:19)
+lo so, io lo so esattamente io lo so esattamente perché mi ritengo uno bravo scriver codice ma non altrettanto fare le review
+
+Luca Lanziani (1:11:28)
+Esatto, e lì è il punto. Crea un overhead, crea un...
+
+Davide Fiorello (1:11:30)
+cioè nel senso che sono uno... esatto è un overhead
+
+è un overhead immesso quindi quindi se io la cosa la faccio passo passo anche con due computer che le guardo tutte e due parallelamente ho un continuo controllo del codice che è una cosa importante perché mi dà anche un ownership del codice man mano che si va avanti
+
+perché poi se ha sbagliato, cioè se alla fine ha fatto le cose come non doveva farle perché ha preso una tangente che non doveva prendere non è che si correggia, di solito si fa prima a fargli rifare tutto e questa cosa mi permette di stare sul codice di vedere che cosa fa, come va io man mano che mi fa la modifichina vedo ogni tanto vedo subito che prendo la tangente lo fermo gli faccio fare le cose a volte mi rendo conto che il suo processo cognitivo è troppo
+
+pesante e quindi gli dico io passo passo che cosa fare e scrive il codice esattamente come se lo scrivesse io in questa maniera poi ovvio ci devo stare lì perché di nuovo noi diamo per scontato che lui faccia per noi questo deve essere un tool, essere qualcosa che ci aiuta nel nostro processo quindi per quello che io faccio fatica a pensare di lanciare e tornare e tornare a giochi fatti così come io invidio Matteo che lui
+
+ma andà su e tutto contento la mattina fa... è tutto verde.
+
+Brainrepo (1:12:53)
+Sono curioso di sapere come è il suo setup, quante skill
+
+ha, quanto micromanagement ha fatto in quella direzione che gli... Si, domani mattina Luca farà partire una random call alle 9 e un quarto.
+
+Davide Fiorello (1:13:00)
+è capita?
+
+Luca Lanziani (1:13:01)
+guarda fortemente ci lavoriamo insieme quindi domani mattina volendo lo chiamamogli la prima cosa è fortuna la ma la cosa ma la cosa bella di
+
+essere qui a quella nel senso che noi abbiamo persone intorno a noi che stanno sperimentando il più possibile ora per tornare a quella cosa che dice davide logicamente è l'overhead che ti blocca in quel momento è il fatto che può tenere le cose sotto controllo però parlando sempre di quello perché vogliamo lanciare storie io con il mio team ne parlavo perché durante la notte non gli facciamo fixare i bug
+
+Davide Fiorello (1:13:19)
+⁓ sì,
+
+Luca Lanziani (1:13:30)
+perché durante la notte non gli facciamo fare degli aggiustamenti che sono piccoli? perché non aggiungiamo quel piccolo valore che non avremmo aggiunto perché non abbiamo tempo durante il giorno perché stiamo seguendo l'implementazione della storia? e secondo me quello sarà il futuro secondo me sarà una combinazione di tutte queste cose di cui stiamo parlando sarà una combinazione di skill, una combinazione di agenti, una combinazione di bimed una combinazione di cose che girano in background e continuano a sistemare cose in background senza il nostro bisogno perché sono fixatamente piccoli che la review è un attimo ok? son queste
+
+Brainrepo (1:13:59)
+accedono
+
+a sonar cube, si guardano le fixe, vanno e...
+
+Luca Lanziani (1:14:02)
+Sì, esatto, ma perché no? Ma in
+
+questo momento, perché non usate MCP? Cioè, questo momento io gli agge... non io, ma il team, logicamente, perché io non voglio dire mai, è il team che lo sta facendo, ha l' MCP che accede a Terminate Tool e l' MCP che accede a Terminate Tool prende delle decisioni.
+
+Brainrepo (1:14:21)
+vi svelo un trucco quando devo scrivere un messaggio un po' particolare di lavoro io ho il mio Claude che si collega al mio MCP dentro il mio MCP c'ho tutta la mia knowledge base in termini di gestione dei conflitti
+
+tutta la parte di comunicazione, come deve essere scritta una parola. Faremo una puntata su questo e gli dico fammi una review utilizzando tutta la knowledge base che sta su obsidian su queste cose. Ora mi scrive delle mail che sono da quando sto usando questa tecnica non ho ricevuto un no nelle mail ed è incredibile.
+
+Davide Fiorello (1:15:03)
+Vedi il vantaggio di essere uno sviluppatore, che io queste cose non le devo fare.
+
+Luca Lanziani (1:15:14)
+attenzione una cosa che voglio rendere chiara quello di cui stiamo parlando non sono progetti necessariamente aziendali, stiamo parlando di molti esperimenti che facciamo anche noi, che sia chiaro perché altrimenti magari confondiamo le acque, qui si sta parlando di cose che facciamo noi durante la sperimentazione ma alcune cose che si fa anche in azienda però molte di queste cose che stiamo dicendo sono sperimentazioni quando diciamo che Matteo lancia queste cose lo dice lui stesso, lo fa su progetti open che lui ha, quindi si sta sperimentando
+
+Davide Fiorello (1:15:22)
+Certo.
+
+Luca Lanziani (1:15:43)
+Lo voglio render chiaro perché non vorrei che poi ci fossero confusioni e poi esce che Nierform fa cose, vede gente.
+
+Davide Fiorello (1:15:49)
+anche perché io tutto quello che ho fatto con queste cose al momento sono tutte cose pesanti perché insomma ci ho dedicato veramente un sacco di tempo fuori dal mio tempo lavorativo ma io per me sono assolutamente tutti side project quindi ci stanno lavorando pesantemente insomma però di nuovo siamo
+
+Luca Lanziani (1:16:03)
+No, ma noi possiamo dirlo che Niafrom ci lavora con queste cose, però logicamente...
+
+però dobbiamo stare attenti a chiarire che non tutto quello
+
+che condividiamo, perché non vorrei che poi passasse un messaggio sbagliato, scusate se ho fatto questa precisazione, però...
+
+Davide Fiorello (1:16:15)
+No no certo no no hai ragione, assolutamente
+
+ragione assolutamente.
+
+Luca Lanziani (1:16:21)
+però ecco tornando a quello io sono sicuro che a un certo punto lo aggiungeremo
+
+Brainrepo (1:16:24)
+Queste
+
+sono le precisazioni da colletto bianco, si vede Luca è il colletto bianco tra di noi ⁓
+
+Luca Lanziani (1:16:28)
+Ragazzi, purtroppo
+
+il ruolo è anche quello, senso, quanto volete, non l'ho detto, ma sono ufficialmente 11 anni che sono in mia forma, questo mese. Però diciamo che dicevo, quello che secondo me succederà è che nel futuro prossimo, immagino, aggiungeremo qualche stabilità, qualche maturità di questi due, perché non ci ricordiamo, non ci scordiamo che noi stiamo parlando di Elma da 3 anni.
+
+era il 2022 se non mi sbaglio quando è iniziato GPT3, di qualcosa, O il 2, non mi ricordo neanche più cos'era, però la realtà dei fatti è che i tool stanno maturando adesso.
+
+lo Spec River Development è una cosa di tre mesi fa.
+
+Brainrepo (1:17:10)
+Sì, sì.
+
+Io ho fatto proprio l'altro giorno parlando con mia moglie mentre le configuravo l'MCP di GitLab che scazzava su Windows, giusto per confermare quello che dice Luca, sì, i MCP sono belli, ma a volte sono un po' più compliche. Cioè, in realtà per noi che usiamo un sistema Unix sono veramente una cagata, però nel cloud e in altri ambienti inizia, talvolta sono un po' più...
+
+postici. Quello che volevo dire è che mentre facevo sta cosa parlavo con mia moglie e ci ricordavamo, io ho avuto Github Copilot in early preview quando era ancora chiuso e mi ricordo che io quello che c'era in realtà era solo l'autocompliter allora e mi ricordo che partivano queste
+
+questi schizzi che lui ripeteva all'ultimo chunk della parola 70 volte in... ce l'avete presente il meme della Promisel in JavaScript che è una specie di onda energetica e faceva una roba così e stavo chiacchierando con lui, ci siamo ricordati questa scena e pensare che veramente sono passati buf due anni completamente cambiati
+
+Luca Lanziani (1:18:33)
+che da una parte è spaventoso dall'altro
+
+ti rendi conto che è tutto in evoluzione non c'è verso di uscire da questa cosa e noi continueremo
+
+Davide Fiorello (1:18:37)
+Esatto.
+
+e chissà
+
+perchè non è in evoluzione ancora.
+
+Luca Lanziani (1:18:48)
+noi continueremo a testare questa cosa, continueremo a testarla e un giorno le cose magari si stabilizzeranno ancora di più come abbiamo citato ci sono persone in questo momento sono fortemente promotori di questi tool e dicono che questi tool sono evoluzionali ci sono persone per cui questi tool non hanno funzionato e dicono ancora che non li vogliono usare e così sarà mi aspetto per un altro anno almeno
+
+Brainrepo (1:19:16)
+⁓ ragà, guardavo l'orologio, siamo tipo a un'ora e dieci, il tempo vola, però io voglio dedicare almeno dieci minuti a parlare di due cose importanti di B-Mod. Il primo è almeno provare a inquadrare B-Mod in un modo un po' diverso da come l'ho inquadrato, quindi ho detto che ne parlavo bene, adesso inizierò a parlare bene. B-Mod è, dal mio punto di vista, una miniera d'oro.
+
+Davide Fiorello (1:19:21)
+Sì.
+
+Brainrepo (1:19:46)
+Aprire il repository di B-Mod è mind-blowing perché c'è una quantità di informazioni... Allora, noi tutti usiamo il processo Agile, noi tutti sappiamo cosa fa uno Scrum Master, cosa fa... Ma leggere quelle cose scritte nere e su bianco, che non sono altro che il racconto di quello che succede nelle migliori delle situazioni, è una cazzo di enciclopedia di best practice!
+
+Ed è incredibile il lavoro di raccolta che è stato fatto. Io ho guardato la parte di coding, ma la cosa che ho approfondito di più è stata la parte di brainstorming. C'è un'inciclopedia di tutte le tecniche di brainstorming esistenti con delle indicazioni capaci di triggerare il modello ad arci. Più informazioni, perché quelle informazioni che c'avete in BIMAD sono la porta per attivare parti del modello che...
+
+sviluppano e ti danno più informazioni, Perché noi sappiamo che i nostri prompt sono una chiave che attivano parti del modello e fa bubble up della conoscenza embeddata nel modello. Ed è incredibile ragazzi, questa cosa mi ha lasciato scioccato tanto che io cosa ho fatto? Vi sono preso titolo per titolo tutte le tecniche di brainstorming e sono andato a vedermi la letteratura con chat GPT per capire che tipo di tecnica era...
+
+quali erano gli obiettivi che... è stato veramente bello, io non so se voi avete guardato nel codice interno al di là della parte ingegneristica di processo, come funzionano i workflow, come funzionano i template che ne parliamo subito dopo, però dico più la parte di...
+
+Luca Lanziani (1:21:30)
+Io l'ho
+
+fatto, l'ho fatto col quattro, col sei di iutinci che non li ho riletti e dobbiamo soltanto ringraziare, perché non so se lo abbiamo detto, ma Brian Madison è colui che ha creato B-Med, B-Med sta proprio per Brian Madison, dobbiamo ringraziare questa persona che così da nulla, se ci pensate, B-Med è un progetto relativamente sconosciuto, nel senso, questa persona ha deciso di dire su queste, esattamente queste specifiche come tutt'altro Mauro e non so se lui le conoscesse, non so se fatto un processo di ricerca, ma hai ragione.
+
+cioè è impressionante la quantità di conoscenza che questa persona ha messa all'interno di Bmed per forzare gli agenti a seguire i processi che io personalmente come dicendo neanche conoscevo
+
+Brainrepo (1:22:14)
+ma ci sono
+
+anche tutte le pratiche di prompt design, tutte le best practice di prompt design, è incredibile e tra l'altro ci sono un sacco di suoi video youtube dove una parte di queste le racconta e questa è veramente spettacolare di Beemath, è la cosa che mi ha impressionato di più.
+
+Luca Lanziani (1:22:17)
+Sì, sì, no, esatto.
+
+è come se lui fosse stato un
+
+Product Manager, un produttone, quindi sapesse queste cose, ha semplicemente buttato giù tutte le cose che dovremmo sapere quando gestiamo un progetto e le ha formalizzate, che è una cosa eccezionale, sono d'accordo.
+
+Davide Fiorello (1:22:47)
+scusate ero mutato stavo guardando proprio ora e poi è stato anche supportato bene perché parliamo comunque di un progetto che ha un centinaio di contributor quindi quindi è tanta è tanta roba non c'è non sono tanti progetti che hanno tutti questi contributor e se guardate insomma l'elenco dei contributi di tutte queste persone è abbastanza elevato quindi ho fatto un lavorone un lavorone di ricerca si vede si vede che sapeva quello che faceva dal punto di
+
+di vista quello che gli ha messo dentro. Poi i workflow per esempio si vede che nascono in momenti diversi, alcuni sono scritti in una maniera, altri sono scritti in un'altra maniera, c'è un po' di clean up che andrebbe fatto a questo progetto però dobbiamo veramente ringraziare questa persona perché veramente ha creato un qualcosa che potrebbe essere che fra due mesi non esiste più.
+
+ce lo siamo detti, Ma veramente è una persona tanto di cappello alla voglia e all'impegno che ci ha messo, perché poi è un progetto, guardate anche i comics over time, c'è una regolarità costante, anzi era un po' scemato verso la fine di settembre e poi è ricominciato fortissimo da allora ad adesso.
+
+Brainrepo (1:24:12)
+C'è stata un'operazione che ha fatto, che è stata molto interessante, che è passato da essere un workflow specifico per lo sviluppo ad essere un framework, che questo passaggio è stato determinante. E perché lo dico? Perché io, qualche mese fa, ho fatto, ho utilizzato B &B, lui lo chiama... no, BMM, che è la parte di ma. Di bomba è il framework, se non mi sbaglio, per creare...
+
+Luca Lanziani (1:24:36)
+mi bombe
+
+sì,
+
+perché il workflow è esatto
+
+Brainrepo (1:24:42)
+processi, workflow,
+
+contemporanea lui ha lanciato un altro tool che stanno tutte sullo stesso repo che è BMM che è la parte di brainstorming, crea product design, business analysis di mercato, queste robe. Io ho fatto un esperimento con i miei business partner perché stavamo provando a progettare una nuova esperienza.
+
+Davide Fiorello (1:25:08)
+⁓ tu stai...
+
+scusa, scusa ti interrompo per correttezza, stai parlando del Creative Intelligence Suite, il CIS, perché BMM è quello per i software. Esatto, è il BMADMETAL. Esatto, quella lì, quella lì, quella lì, ⁓ no, io... no, no, no, no, ma io semplicemente perché ho citato sotto e non perché... ti stessi... cioè, era solo per i nostri utenti, per insomma, ci ascolta, che sa esattamente di quello
+
+Brainrepo (1:25:14)
+Yes
+
+Luca Lanziani (1:25:17)
+BMM è quello di default, è il core se vuoi, quindi per quello che forse era... ok, fantastico, ok. Ma sì, sì, come abbiamo detto...
+
+Brainrepo (1:25:21)
+La Creative Intelligence Suite, si, scusate. ⁓ raga, è successo un paio di mesi fa.
+
+Esatto e non so se voi avete mai sentito parlare del pensiero laterale, no? Il fatto che ci sono delle tecniche di pensiero laterale che sono bellissime perché tu prendi due parole che non c'entra, stai cercando idee, una delle tecniche di brainstorming è prendi la parola fissa e ne unisci a una randomica e vedi dove ti porta il ragionamento e vengono fuori certe porcate totali ma a volte vengono delle idee generali, no? E cosa abbiamo fatto? Noi abbiamo preso
+
+le risorse che avevamo.
+
+le abbiamo unite a delle parole chiavi relative ai feelings, è in un'opera di iterativa di brainstorming dove l'uomo era quello che guidava, che è un elemento fondamentale, eravamo noi che guidavamo, cioè diciamo, evolvi in questa direzione. Ha creato il design di un'esperienza
+
+che era spettacolare, di una profondità che noi ne abbiamo creato esperienze simili, in una sera abbiamo tirato fuori un output comparabile al lavoro di un mese di 5 anni fa, di brainstorming. Le stesse persone, ed è brainstorming fatto dall'uomo, però cosa succedeva? Ti faceva talmente tante domande, faceva evolvere il pensiero talmente veloce che non ti...
+
+Il problema di quando fai queste sessioni di brainstorming tra persone è che il metodo non è inforzato. E quindi certe volte si dirà aglia. Ognuno di noi durante una sessione di brainstorming, una tavola rotonda, ha trovato quello che ripete sette volte la stessa cosa solo perché deve... Ecco, questa cosa non è successa. È ha ottimizzato i tempi a livelli altissimi e soprattutto...
+
+proponeva i pro e i contro di ogni elemento, quindi tutta la mega discussione no ma no si fa così ma si fa così no ma era già chiara e schematica al massimo quello che noi facevamo era aggiungere un pro o aggiungere un contro ed evolvere su quel pro e contro per completare ed era incredibile abbiamo usato sei o sette metodi diversi brainstorming, ce ne sono una ventina là dentro ed era stato veramente incredibile
+
+Luca Lanziani (1:28:04)
+e questo
+
+ti riporta a quello che diceva Davide all'inizio, noi parliamo di sviluppo software ma quello che questo metodo può fare è molto di più questo può automatizzare, accelerare perché automatizzare è forse eccessivo, ma accelerare molti processi, molti processi
+
+Brainrepo (1:28:20)
+I miei business partner che
+
+non sono sviluppatori appena hanno visto che ho aperto una command line hanno detto no Mauro ti abbiamo già mollato quando poi siamo entrati nel processo e hanno iniziato a vedere quello che stava avendo fuori hanno detto non ce ne frega più del font, cioè questa roba è fighissima
+
+Luca Lanziani (1:28:38)
+e adesso
+
+e adesso vedi appena detto una cosa c'è molto ritorno davide se ti muti forse riusciamo e adesso appena hai appena detto una cosa no? noi sappiamo benissimo che Kiro e Kiro lo conosciamo tutti e tre che è un altro tool di spec development che è quello di amazon ha una delle UX migliori per fare spec development perché ti guida molto quindi
+
+Penso che effettivamente, se vogliamo parlare un pochino del futuro, il futuro di queste piattaforme sarà proprio migliorare l'esperienza utente. Perché di base il valore c'è. Di base il valore lo abbiamo descritto.
+
+Brainrepo (1:29:18)
+Pensate che andremo a finire... oggi oggi l'interfaccia con cui interagiamo con gli LLM anche in un contesto B-Mod ma non solo è abbastanza simile a una command line o il nostro editor. Pensate che un domani ci sarà una specializzazione di più strumenti cioè avremo il debugger
+
+avremo l'editor, il code reviewer, ho visto che Matteo ha creato un progettino per la review delle emerging, l'ho visto rapidamente Matteo Gullia, ha creato un progettino per la review delle PR se non ricordo, quindi comunque iniziano a esserci un po' di specializzazioni.
+
+Luca Lanziani (1:30:02)
+sì sì sì assolutamente ma dovrà dovrà esserci
+
+io non sono non sono desana quindi non la posso immaginare che interfaccia abbiamo ma il fatto che noi continuiamo di reagire con queste cose tramite un text box perché quello è quello che facciamo ⁓ abbiamo un box di testo con qualche oggettino intorno qualche opzione intorno ma è molto limitato come tipo di interazione funziona per quello che deve fare però
+
+Davide Fiorello (1:30:24)
+che funziona pure male.
+
+in textbox.
+
+Luca Lanziani (1:30:28)
+sì, sì, però è obiettivo, ormai è diventato abbastanza oggettivo il fatto che c'è del valore lì, ok? chi dice una bolla io pensavo fosse overhyped, non una bolla necessariamente, ma c'era troppo hype all'inizio e tutti dicono, funziona, miracoloso quando non lo era, ma in questo momento tutte e tre, se non mi sbaglio, stiamo dicendo che lì c'è del valore c'è del valore per fare i brainstorming, c'è del valore per definire le storie, c'è del valore per scrivere il codice, c'è del valore
+
+Brainrepo (1:30:59)
+Assolutamente sì.
+
+Luca Lanziani (1:30:59)
+e tutte e
+
+stiamo dicendo che però arrivare a quel valore è faticoso. L'abbiamo detto tutte e tre, no?
+
+Brainrepo (1:31:04)
+Ed è il
+
+motivo per cui probabilmente non perderemo il nostro lavoro Luca.
+
+Luca Lanziani (1:31:08)
+Ma magari! Però, però,
+
+però, per quanto è faticoso, qual è la parte faticosa? È l'interazione. Quindi, io quello che mi aspetta è che il livello di interazione o il modo in cui interagiremo con queste cose cambierà, ok? Ci saranno interfacce migliori, ci saranno modi di interagire migliori, saranno modi di interagire che facileranno i tuoi business partner, Mauro, per lavorare lì non dovranno aprire una common line, avranno una comoda interfaccia che gli permetterà di fare più cose.
+
+e quando questo valore arriverà all'utente finale o a più utenti finali vedremo quello che secondo me i famosi guru stanno professando da molto tempo dove le arriverà comunque, dovunque perché il valore c'è, ormai è innegabile, lì c'è del valore se riusciamo ad applicarlo bene, riusciamo a portare di mano all'utente finale e a fuggire da questa gabbia di matti che siamo sviluppatori in cui noi lo vediamo perché siamo appassionati
+
+allora veramente ci saranno le esplosioni e ci sarà questa bolla non sarà più una bolla ma effettivamente portere valore che deve portare
+
+Davide Fiorello (1:32:12)
+i tool devono evolvere per forza perché così? perché i tool ancora non esistono i tool sono degli adattamenti degli adattamenti ai tool da sviluppatore che cosa me ne faccio del browser del folder? non me ne faccio niente non serve niente cosa me ne faccio dell'editor dell'editor di testo dell'editor del codice mentre sto facendo il prodotto? non me ne faccio niente
+
+ed è proprio sbagliato, perché devo averla lì sul lato? infatti perché Kiro?
+
+Luca Lanziani (1:32:43)
+Ma anche perché
+
+devo lanciarla da Command Line, però Davide, ci sono delle tui. Cioè è assurdo che Cloud Code è assurdo che una società Command Tropic che rilascia Cloud Code viene battuta da un team che fa da due persone che fanno open source e rilasciano open code. Cioè in questo momento l'interfaccia stiamo capendo. In questo momento non lo sa nemmeno chi produce gli LLM e quale è l'interfaccia.
+
+Davide Fiorello (1:32:50)
+⁓ certo, assolutamente!
+
+Brainrepo (1:32:51)
+No,
+
+dove l'interfaccia di cloud
+
+code, la tweet di cloud code glicia ogni minuto
+
+Luca Lanziani (1:33:14)
+Però
+
+questo ti dà esattamente la misura di come noi in questo momento, chi crea il modello stesso, non ha idea di qual è il modo giusto per usare il modello. Ok?
+
+Davide Fiorello (1:33:24)
+ma sì sì assolutamente assolutamente io
+
+ho avuto un sacco di problemi all'inizio perché non essendo un utente ebs code e però sono stato costretto a virare lì sopra per iniziare a fare le cose ho avuto un sacco di problemi e comunque sia lo trovo lo trovo limitante lo trovo limitante se sono su uno schermo piccolo è un disastro non riesco non ci sto mai dentro abbastanza su uno schermo grande bene o male porto a casa tutto
+
+ma nello schermo piccolo ho sempre aperta una finestra che non deve essere aperta ho sempre il terminale che mi si apre che se sto facendo dello sviluppo mi interessa aver aperto ma se non sto facendo dello sviluppo non lo voglio avere un terminale aperto
+
+Luca Lanziani (1:34:07)
+ragazzi
+
+ma github ha tre o quattro modi per lanciare gli agenti sulla propria interfaccia? cioè gli puoi assegnare l'issue, puoi far partire da agenti sul progetto oppure venne l'interfaccia quella unica che non mi ricordo neanche più sia slash github, agents o qualcosa del genere, ok? unified interface quindi lo vedete che tutti quanti sono confusi, le grandi aziende sono confusi, non è che lo sviluppatore non sa come farlo girare
+
+Davide Fiorello (1:34:10)
+e ciao
+
+Luca Lanziani (1:34:31)
+non c'è un modo giusto gemini alla sua interfaccia lo vuoi far girare da la sua interfaccia con le gemme oppure lo vuoi far girare da google drive e produce due cose differenti
+
+Brainrepo (1:34:40)
+vi faccio
+
+una domanda tutti questi modelli o almeno quelli che performano in modo decente appartengono a delle aziende io adesso
+
+Luca Lanziani (1:34:56)
+Che è successo? Chi è partito?
+
+Davide Fiorello (1:34:59)
+Le aziende ti stanno ascoltando Mauro.
+
+Brainrepo (1:35:01)
+Cioè io non dico niente ok mi stuzzisco è meglio No e tra l'altro stavo per dire una cosa una cosa un po così no tutti questi grandi modelli appartengono a delle aziende
+
+fino a oggi noi abbiamo visto situazioni o un mercato dove il concetto di marketplace era un elemento fondamentale, no? Guardiamo l'app store, guardiamo tutto il congli, l'amazon marketplace, naturalmente questi marketplaces si sono dimostrati essere quello che sono. La tendenza di questi LLM è che andranno a creare dei marketplaces e a centralizzarli.
+
+Io adesso vi faccio vedere un video di Kalkanis, non so se lo conoscete, lui è uno degli editorialisti di Engaget, la conoscete? La testata americana famosista. È uno degli editorialisti di Punta che ha fatto questa clippina che voglio farvi vedere, il momento è il momento bold opinion e voglio la vostra, vorrei la vostra su questa clippina.
+
+Luca Lanziani (1:35:59)
+si engage sì ma lui no
+
+Brainrepo (1:37:37)
+momento bold opinion ragazzi voglio la vostra su questo secondo voi vivremo in un marketplace o ci sarà qualcos'altro
+
+Luca Lanziani (1:37:55)
+diciamo che quello che ha appena descritto come si chiama Lutkusam l'hai detto ma lo sono già dimenticato
+
+Brainrepo (1:38:04)
+calcanis.
+
+Luca Lanziani (1:38:05)
+calcanis
+
+quello che detto calcanis è il capitalismo non è nulla a fare con con facebook non è nulla a fare con con microsoft non è nulla a fare con qualche figura che è particolarmente evil rispetto a altri nel senso che succede su qualunque azienda cioè non è che il lo spiaggia industriale è nato su queste aziende chiunque lo faceva prima e lo continueremo a fare sempre rispondendo alla tua domanda esisterebbe un marketplace
+
+diciamo in questo momento noi sappiamo benissimo che c'è un predominio è evidente no? degli Stati Uniti ma per assurdo una risposta abbastanza aggressiva della Cina che sta rilasciando modelli open ad un rate dal mio punto di vista assurdo nel senso che anche lì penso che ci sia qualcosa di ero se poi vogliamo andare sulle teorie complottiste ne possiamo parlare esisterà un marketplace
+
+probabilmente esisterà un marketplace, probabilmente ci sarà qualcuno che riuscirà in un modo o nell'altro a prendere, come si sistemano po' tutte le tecnologie nel senso che vediamo, se è un marketplace a pagamento o non a pagamento esisterà qualcuno che centralizzerà un pochino la situazione, decentralizzare ha funzionato sempre male, lo sappiamo, Andremo a, diciamo, arriveremo a un punto in cui OpenAI effettivamente avrà questo predomini assoluto come lui stava descrivendo, no non penso.
+
+nel senso che OpenAI ha già tanti competitor abbastanza diciamo anche aggressivi e lo stiamo vedendo che OpenAI sta già scricchiolando quindi non credo che non credo che ci sarà o per lo meno non lo vedo a breve una rivoluzione per cui ognuno avrà il proprio modello a casa come si parlava o per lo meno modelli performanti perché l'art da non è lì forse in futuro ci saremo ma penso comunque ci sarà un
+
+uno standard che nascerà e qualcuno che centralizzerà un po' le cose. Quella è la mia visione.
+
+Davide Fiorello (1:40:10)
+con posso aggiungere... concordo con quello che hai detto Luca e del resto
+
+giusto, ha nominato lui ma lo stesso fa amazone, fanno tutti in un modo o nell'altro a loro modo. Quello voglio essere ottimista, voglio essere ottimista perché
+
+un certo punto si potrebbe arrivare a una sintoto superiore no oltre di lì non si va e quindi vuol dire che si potrebbe arrivare a un punto in cui tu non sarai più costretto ad affidarti a questa azienda per fare cose ma le soluzioni open
+
+comunque minori saranno sufficienti per molti casi e quindi non saremo costretti ad andare a elemusinare token ai vari cloud insomma come ha detto Luca, c'è una cina molto forte queste cose open solo questione di accessibilità poi ci sarà sempre che ci guadagna qualcosa ci mancarebbe altro
+
+brevettare cose inizieranno ad avere cose che un servizio ha e l'altro non può avere perché non è brevettabile. lo so, è talmente veloce in certo questa cosa che si fa veramente fatica a capire dal punto di vista del business oltre alla vendita del servizio così come adesso che cosa succederà. Poi in un certo senso il marketplace c'è già perché alla fine
+
+sono tre fornitori, quattro fornitori e sono tutte appoggiate lì sopra però io tutte queste queste e insomma tutti questi wrapper attorno ai questi servizi che potrebbero insomma che si potrebbe ragionare come una sorta di marketplace
+
+li vedo semplicemente come un momento di transizione a un certo punto forse non avremo più accesso non avremo più bisogno del servizio X che fa cose perché la gente diventerà abbastanza smart per fare le cose direttamente su queste 4 o 5 piattaforme e mi chiedo quanto a parte cose complesse come quelle che facciamo noi che non sono complesse, sono molto strutturate
+
+provo a usare questo termine che più adatto forse che complesse a parte cose molto strutturate come facciamo noi mi chiedo in quanti abbiano bisogno di questa complessità strutturale quindi per prendere il creative intelligence suite torniamo al
+
+all'esempio che facevo prima e fare del brainstorming elevato con un sistema non hai bisogno di un'applicazione che hai bisogno di un'interfaccia che sia user friendly
+
+in cui tu possa mettere il tuo token che chiunque può fare se noi tre ci mettiamo lì in un weekend fare un creative intelligence suite che lavora direttamente ad interfaccia dove l'utente mette il proprio token lo copia e incolla dentro lo usa direttamente è una cosa secondo me abbastanza
+
+abbastanza alla portata di tutti perché poi questa cosa permette di creare molto velocemente cose e quando puoi creare velocemente cose l'unica cosa veramente che cambierà sarà il servizio che sta dietro e che risolve però come ha detto Luca c'è una grande concorrenza forse per la prima volta nella storia siamo arrivati a un salto tecnologico di questo tipo così grosso
+
+e nell'immediato dietro ci sono dei player così grossi subito subito perché è vero che c'ha gtp open ai quando quando partite sembrava fosse irraggiungibile l'unico vi ricordate il grande fallimento il grande fallimento del motore di ricerca di google quando ha provato cioè non è che google non cessesse lavorando semplicemente come ben conosciamo la legge del mercato
+
+Luca Lanziani (1:44:19)
+l'unico esatto
+
+Davide Fiorello (1:44:32)
+OpenAI non aveva niente da perdere quindi quello che mandava fuori mandava fuori, Google non poteva permettersi di mandare fuori un prodotto che non funzionasse tant'è che ne ha fatti. I primi ed aerei erano un disastro, erano un disastro. No ma non è... cioè...
+
+Luca Lanziani (1:44:39)
+Ma ha fatto degli errori, i primi modelli erano... Sì, erano... avevano bias, ragazzi, che
+
+Brainrepo (1:44:42)
+sì perché erano guidati dalla fretta di salvare
+
+Luca Lanziani (1:44:51)
+si ricorda le immagini in generale dove c'erano praticamente solo persone di colore o mancavano le persone di colore perché hanno rilasciato questi modelli con training molto veloce, bias evidenti.
+
+Davide Fiorello (1:44:57)
+sì certo quindi invece
+
+siamo arrivati a solo un anno, un anno e mezzo in cui ci sono dei player mostruosi sul codice è arrivato Claude che secondo me è quello più avanzato di tutti non se l'aspettava nessuno probabilmente un'evoluzione di quel tipo antropic esatto
+
+Brainrepo (1:45:06)
+Sì, sì, vero.
+
+Luca Lanziani (1:45:19)
+antropic, cioè che antropic che non era google non era capito open eye
+
+Davide Fiorello (1:45:24)
+Poi è ovvio che Google prende e compra, ci mancherebbe altro però insomma ci si aspettava dalle grandi... io ricorderò sempre a questo amico che è un fanboy Apple di quelli seri, quelli seri, seri, seri, seri che lavora per l'Apple e che mi disse ⁓ ma perché...
+
+spazzerà via tutti con l'AI perché sta facendo grandissimi investimenti quindi testuali parole sue non ce n'è per nessuno se c'è l'unica azienda l'unica azienda che non è riuscita a fare il roba con l'AI è stata Apple. Punto.
+
+Luca Lanziani (1:45:57)
+infatti adesso ho fatto
+
+l'accordo però se vogliamo tornare sul discorso c'è le cose sono due qui monopolismo cioè il monopolio ok il monopolio delle AI fortunatamente in questo momento non c'è l'abbiamo visto su molti mercati cioè c'è stata sempre l'azienda che è partita per prima e doveva avere il monopolio per molti si è realizzato si pensava che amazon avesse il monopolio del cloud poi sono arrivati reginamente le concorrenti e un po' gli stanno poi in camminino mangiando il mercato
+
+Davide Fiorello (1:46:08)
+Non c'è.
+
+Luca Lanziani (1:46:23)
+sulle AI siamo stati fortunati, si vedeva il monopoglio di OpenAI come dicevamo poi c'è stato il monopoglio di Nvidia che tutti dicevano Nvidia è l'unica che ha i chip e poi invece che Google s'è riuscita con le TPU
+
+quindi sembrerebbe che il monopoli in questo momento non esiste. L'altra cosa che differenziava un pochino le AI era l'idea della singolarità, cioè che si arrivasse a un punto in cui la società che avesse le AI più avanzata raggiungesse un escape veloce di talmente alta che gli altri non avrebbero raggiunto perché le AI miglioravano se stessa. C'è chi sta dicendo che in questo momento
+
+alcune società come OpenAI, come Anthropic hanno dei modelli interni che non hanno rilasciato che sono migliori di quelli che abbiamo noi e non li rilasciano proprio per evitare che gli altri possano usarli per raggiungerli, io in questo momento però ve lo dico onestamente a parte queste ipotesi non le vedo io queste cose, cioè non vedo nessuna società che sta andando a una velocità diversa delle altre.
+
+quando si parlava, quando molti amministratori delegati hanno dichiarato tra sei mesi il 90 % del codice sarà scritto dalle AI gli sviluppatori non saranno più necessari chiunque adesso sta vedendo Cloud Code che era l'interfaccio di cui parlavamo prima che è con pieno di glitch, che aprono i problemi ma se quelle cose che hanno detto fossero vere non pensate che Cloud Code sarebbe stato non perfetto di più se le AI potessero sviluppare a livello che dichiaravano loro?
+
+Brainrepo (1:47:43)
+Allora io credo che ci sia un ragionamento da fare in termini di... lo so, sono sempre rompi i coglioni. Entro in modalità FOSDEM per favore e sopportatemi.
+
+Quando si parla di...
+
+di monopolio, per me monopolio uguale oligopolio è la stessa cosa. Sulle AI si sta giocando una battaglia geopolitica ed è il motivo per cui la Cina ci sta andando giù di brutto e sta facendo così tanto open perché ha bisogno di portare la gente dalla loro parte e attirare.
+
+e ha più che senso. Quindi questa è la mia visione. Seconda cosa, marketplace vuol dire applicazioni costruite sopra questi modelli, cioè praticamente tutte da domani mattina. Quello che io credo succederà è che tutta una fetta di medio semplice applicazioni andranno a morire, che era una fetta che devo ancora capirlo, devo ancora sedimentarla questa idea, perché mi devo chiedere se era...
+
+quella fetta di applicazioni che erano già morte con i CRM open source, gli RP open source,
+
+Luca Lanziani (1:49:05)
+allora aspetta,
+
+allora cambiamo il termine da marketplace a piattaforma tu stai parlando di una piattaforma immagino cioè quello che potesse essere l'iPhone ok? tu usavi l'iPhone, poi c'era un'applicazione che usava l'iPhone e la usavano tutti
+
+Brainrepo (1:49:14)
+Sì, sì, sì.
+
+Quello
+
+che può essere Google Maps o steroid, ok? Esatto. Tutta una parte di applicazioni andranno a morire perché A. Le persone potranno farsele B. Le persone non avranno bisogno di farselo perché il modello di per sé già risponde a quelle domande. 2. UI agentiche. Il momento in cui
+
+Luca Lanziani (1:49:23)
+Se vuoi, esatto, esatto, sì, diventi dipendente dalla loro API.
+
+Brainrepo (1:49:50)
+il modello sarà in grado di costruirsi delle UI per semplificare l'interazione con mia mamma, mia zia che ha 70 anni
+
+che possono essere UI o voce fate in un certo modo e già la voce qualcosa ce l'abbiamo sulle UI non annunciamo abbastanza
+
+Luca Lanziani (1:50:10)
+no Gemini lo fa, non c'è ragione, ai canvas no Gemini, quindi in parte già lo fa anche Gemini assolutamente
+
+Brainrepo (1:50:14)
+Sì, sì, ma siamo davvero all'anno zero ancora.
+
+Però nel momento in cui questa cosa succederà, tutta quella fetta di software verrà spazzata via. Ecco, e tutta quella fetta di software andrà a centralizzarsi in un unico tool, un po' come è successo con i motori di ricerca. Devo capire in realtà, e questo è un ragionamento aperto, non è chiuso, io non ho la risposta, ho solo domande.
+
+Luca Lanziani (1:50:26)
+sì
+
+Brainrepo (1:50:41)
+dove posizionare questa sticella, questa barretta nella scala della complessità del software? Perché questa barretta non è fissa ed è mobile e sale a seconda della potenza del modello e di quello che ci aspettiamo. E quella barretta sarà uno degli allamenti fondamentali che ci condizioneranno.
+
+Luca Lanziani (1:51:08)
+Allora, le due cose. La prima, non penso che nessuno riuscirà a tenere il monopolio come è successo per Google Maps o come successo per Apple con l'iPhone, con l'Apple Store. Semplicemente perché Google Maps lo sappiamo, bisogno di investimenti enormi per tenere i mappi aggiornati, quindi logicamente solo Google e pochi altri Open Stream mappi ci ha provato, ma sappiamo tutti che insomma non c'è confronto, La Apple è riuscita a vendere talmente tanti iPhone che si è creato uno spazio che poi difficile da recuperare, anche perché hanno acquisito una certa quantità,
+
+tipologia di utenti che è disposta a spendere più dell'utente android sul modello l'abbiamo già detto la concorrenza esiste cioè abbiamo visto come per dire ola ma appena rilasciato un API compatibile con cloud code quindi il sistema sta correndo proprio per vedere
+
+Brainrepo (1:51:54)
+Sì Luca,
+
+però perché siamo in AIP, ma il problema è che quanto costa trenare un modello? Arriveremo a livelli dove il costo del training del modello sarà insostenibile per una sola azienda e i monopolisti, non sono altro che delle teste di legno messe dall'assemblia degli azionisti, non faranno altro che far convogliare tutti gli azionisti in un'entità
+
+con un investimento in termini di capitale che già l'investimento che c'hanno ci fa pisciare le mutande. Immaginate mettere quegli investimenti in USA.
+
+Luca Lanziani (1:52:33)
+Ma perché non
+
+è successo col cloud però? Mauro, la stessa cosa non è successo col cloud? Il cloud è la stessa cosa. Non c'è... Questa cosa può essere... Potrebbe realizzarsi, ok? Potrebbe succedere. Però col cloud non è successo.
+
+Brainrepo (1:52:49)
+perché il cloud non ha bisogno di un nocciolo che assorbe così tanti... è molto più frammentato. La proposta, il core, l'elemento core è molto più frammentato, non è un'entità che assorbe così tanto e soprattutto di per sé il cloud è pensato per essere distribuito in termini di datacenter, zone e quant'altro.
+
+Luca Lanziani (1:52:53)
+Ma no, i data center sono quelli... Ma possib... possibile, guarda, possib... non ti dico di no.
+
+potrebbe essere.
+
+ma lo stesso sarà l'LM, il modello dovrà girare in un data center che più sta vicino a te più la risposta sarà più veloce il training sono d'accordo che ci potrebbe essere però pure lì penso che ci saranno forze in gioco che saranno le personalità delle persone tu guarda, un Elon Musk non si rimetterà mai con OpenAI, dovrà spingere XeA a tutti i costi
+
+Brainrepo (1:53:21)
+Sì, ma io sto parlando di training del modello Luca, non di farlo gire, non di inferenza.
+
+lo è geopolitico,
+
+giochiamo a livelli geopolitici di nazioni secondo me.
+
+Luca Lanziani (1:53:43)
+potrebbe essere potrebbe
+
+essere potrebbe esserci il momento in cui potrebbe esserci il momento in cui lo stato entra e dice le AI deve essere nostre e quindi dobbiamo poi adesso, Google, Nvidia, OpenAI, lavorate insieme, tutti fottuti da data center, tutti insieme e facciamo il training della prossima intelligenza artificiale sì, sì, quello potrebbe essere
+
+Davide Fiorello (1:53:52)
+certo
+
+Brainrepo (1:53:59)
+Ma lui è già con il cloud e con i dati europei lui
+
+Davide Fiorello (1:54:02)
+ma c'è un altro punto in
+
+cui si potrebbe arrivare in cui fare il prossimo modello ha un costo talmente elevato che non lo fanno
+
+perché... cos'era? è costato 7... no Luca, perché adesso Claudio, c'erano i dati, li guardavamo insieme
+
+Luca Lanziani (1:54:19)
+Ma se non lo fanno loro però...
+
+Brainrepo (1:54:21)
+Fairpoint
+
+Luca Lanziani (1:54:27)
+No no, aspetta,
+
+ti dico se non lo fanno loro fa la Cina, perché dopo lì diventa veramente geopolitica.
+
+Davide Fiorello (1:54:31)
+no sì
+
+sì però poi anche lì è il passaggio cioè guardiamola guardiamo proviamo a guardarla così il il vantaggio che ti dà il nuovo modello rispetto a quanto è costato ok valutiamo che adesso l'ultimo modello costa 100
+
+e per farlo è costato Claude lo leggevamo insieme 7 miliardi 8 miliardi per di computazione mi ricordo una roba del genere posso sbagliare quindi siamo quelle cose lì e per fare quello hanno fatto una roba che vale 100 se per fare una roba che vale 120
+
+Brainrepo (1:55:07)
+Sì, siamo sotto costo oggi in termini di costi.
+
+Luca Lanziani (1:55:07)
+No, ogni investimento ci sono. Sì, sì.
+
+Davide Fiorello (1:55:23)
+ok che comunque tanto ne spendi 10 possono dire ma sì dai facciamo di nuovo sto giro ma arriveremo al punto che a meno che non ci sia proprio il salto e il salto e il salto e il salto che arriva dopo mi fa un po paura però questo è un discorso che ci teniamo per un'altra volta a meno che non si faccia proprio il salto il salto potrebbe essere a un certo punto per andare dai 120 che sono costati 10 miliardi ai 130
+
+Luca Lanziani (1:55:34)
+Certo, un cambio di archiviatura, un cambio di...certo.
+
+Davide Fiorello (1:55:50)
+non ce ne vogliono 12 ma per un qualche motivo ce ne vogliono 100 miliardi.
+
+Luca Lanziani (1:55:55)
+No ma la
+
+legge di screen engage a quello, serve dieci volte tanto per raggiungere il prossimo livello
+
+Davide Fiorello (1:55:59)
+quindi e quindi
+
+a un certo punto si fermano o banalmente perché le memorie finiscono perché adesso sono già finite ma potrebbe essere che le memorie finiscono anche per loro a un certo punto
+
+Brainrepo (1:56:11)
+che andano a comprare
+
+Luca Lanziani (1:56:12)
+ma
+
+ci fermeremo sicuramente però quello che sto dicendo è che siccome c'è una geopolitica in questo momento è un po' come la corsa alla luna nel senso perché siamo andati sulla luna non perché fosse come noi insomma perché sono andati sulla luna non perché fosse come niente ma perché c'era in quel momento una lotta geopolitica quindi per esempio se vogliamo fare il discorso di ci crediamo che a un certo punto arriveremo con questa tecnologia alle GI dal mio punto di vista io penso di no ok penso
+
+Brainrepo (1:56:13)
+le RAM
+
+Davide Fiorello (1:56:22)
+Certo.
+
+Luca Lanziani (1:56:42)
+però se quello fosse il target, diciamo, a cui vogliamo, se quello fosse l'obiettivo, cosa bloccherebbe la Cina dall'investire tutto ciò che ha per fare ciò? Cioè la Cina non ce lo dimentichiamo, diciamo, la Cina che sta raggiungendo il primato sul solare, quella che sta raggiungendo il primato sulle macchine elettriche, cioè le batterie, cosa blocca loro da fare il prossimo step?
+
+Davide Fiorello (1:57:06)
+no ma ci sta, sta Luca, Luca
+
+ci sta però dopo questo ne avrà uno successivo capito nel senso che è vero ci sarà quello che dici ok vado in all in e investo tutto e poi però quello è comunque un ultimo step capito perché poi, perché poi quello dopo, quello dopo ne costa mille di miliardi capito e allora o fai, o c'è un intervento statale oppure
+
+Luca Lanziani (1:57:24)
+a Svendorosa ci sarà comunque un ultimo assolutamente assolutamente
+
+Davide Fiorello (1:57:34)
+oppure insomma ci saranno un po' non lo so, si stia parlando un di fantascienza perché non lo sappiamo in realtà
+
+Luca Lanziani (1:57:37)
+e poi non vi preoccupate
+
+che ci sarà l'europe che farà la regulation che andrà a bloccare
+
+Davide Fiorello (1:57:42)
+⁓
+
+certo, certo punto, comunque.
+
+Brainrepo (1:57:44)
+per fortuna.
+
+Luca Lanziani (1:57:46)
+Lo dovevamo dire, scherzi a parte, un po'
+
+demoralizzante il vedere che anche Mistral, poteva essere il nostro competitor, non ha paragone e l'Europa su questa cosa non si riesce, non ci siamo.
+
+Davide Fiorello (1:58:06)
+comunque stiamo un po' uscendo dal discorso
+
+Brainrepo (1:58:07)
+No, non lo so, io sono super opinionato su questo, ma credo
+
+che è arrivato il paese dei balocchi.
+
+Luca Lanziani (1:58:13)
+siamo arrivati
+
+Davide Fiorello (1:58:21)
+io avevo preparato una cosa.
+
+Brainrepo (1:58:24)
+E allora spara pure!
+
+Davide Fiorello (1:58:26)
+Allora io un libro, pertanto insomma io gioco leggo quindi devo ricercarlo. Allora un libro di
+
+Terry Miles che si chiama Rabbits. Un gioco... parla di una alternate reality in cui insomma una roba un po' strana parliamo di una roba relativa a un gruppo di ragazzi che fanno un gioco nella realtà è una roba interessante non non non entro nei dettagli insomma se vi piace un po questa fantascienza
+
+Brainrepo (1:58:43)
+Di cosa parla?
+
+Davide Fiorello (1:59:06)
+un po' nel mondo reale vale la pena di leggere. è piaciuto molto. Terry Miles Rabbits in italiano edito dalla Harper Collins. Giocca se ne hai il coraggio.
+
+Luca Lanziani (1:59:20)
+cosa vuole il PseBlock? Vuole una risorsa o una qualunque cosa?
+
+Brainrepo (1:59:25)
+Qualunque cosa.
+
+Luca Lanziani (1:59:27)
+Ok, me la sono rivista da poco e sto aspettando la serie 2, Three Body Problem, che è una serie Netflix. A me è piaciuta molto. Parla di questa civiltà che vive lontana da noi e ha il famoso problema dei tre corpi celesti che non si riesce a provvedere dove vanno e poiché hanno questo problema sono sotto pressione per evolvere più velocemente per andarsene e sono avanti a noi e stanno venendo a conquistarci.
+
+La cosa bella è che c'è tutto, diciamo, la fisica teorica, diciamo le più dimensioni che esistono nell'universo teoricamente. C'è la cosa che realizzano che mentre stanno viaggiando verso di noi, per raggiungere ci metteranno 400 anni e nei 400 anni noi evolveremo più velocemente di loro e quindi potremo distruggerli quando arrivano. C'è l'E.I. perché logicamente c'è l'E.I. e lo comunicano tramite un E.I. Molto fantascientifica, molto interessante.
+
+Brainrepo (2:00:27)
+Cool!
+
+Luca Lanziani (2:00:30)
+se vi piacciono
+
+Brainrepo (2:00:30)
+Naturalmente vi
+
+chiedo di condividermi i link così li mettiamo nelle note dell'episodio.
+
+Luca Lanziani (2:00:36)
+Assolutamente.
+
+Brainrepo (2:00:41)
+Io... allora, questo pomeriggio qualcuno nella nostra... nel nostro Slack aziendale ha condiviso un link che mi ha strappato una risatta, una risatta amara ma sempre una risatta, ha condiviso questo sito che si chiama rentahuman.ai il payoff dice robots need your body e i robot hanno bisogno del tuo corpo
+
+Davide Fiorello (2:00:42)
+di viso.
+
+Brainrepo (2:01:10)
+e ai cannot touch the grass you can get paid when agents need someone in the real world. L'AI non può toccare l'erba, tu puoi, vieni pagato quando gli agenti hanno bisogno di qualcuno nel mondo reale. Quindi sono gli AI agents che attraverso un MCP fanno hiring di te, che fai qualcosa nel mondo reale, gli dai il feedback dietro.
+
+E mi immagino sia semplicemente un troll, però paradossalmente è una roba che può funzionare, che può assolutamente funzionare, è tanto distopica quanto basta, però è una roba che può avere senso. E questo fatto che può avere senso mi ha lasciato un po' la mare in bocca.
+
+Luca Lanziani (2:02:05)
+è bello perché mi è fatto venire in mente una discussione che stavamo avendo dove dicevamo se un giorno forse neanche troppo lontano il software attrigianale fatto a mano avrà un valore quello fatto dall'essere umano a mano
+
+Brainrepo (2:02:19)
+tipo le tazze e tutto è storte che ha fatto tuo cugino con la terracotta
+
+Luca Lanziani (2:02:21)
+esatto tipo tipo tipo la cintura
+
+Davide Fiorello (2:02:23)
+baggato, senza test.
+
+Luca Lanziani (2:02:26)
+in pelle fatta dall'artigiano toscano e noi qui avremo il software fatto da davide bolognese
+
+Brainrepo (2:02:36)
+Ma non lo so e con questa domanda io direi che...
+
+Davide Fiorello (2:02:40)
+va andrai mercatina
+
+e vieni re soff.
+
+Luca Lanziani (2:02:42)
+Esatto.
+
+Brainrepo (2:02:44)
+Beh, un po' di anni fa succedeva e io ricordo i mercatini dove compravo i floppy disk con le robe dentro.
+
+Luca Lanziani (2:02:51)
+Esatto, andrai con il floppy disk d'epoca, con il gestionale fatto a mano, e lo venderai.
+
+Brainrepo (2:02:59)
+Bene, bene. Io, Davide e Luca siamo arrivati alla fine.
+
+⁓
+
+Luca Lanziani (2:03:10)
+Grazie dell'ospitalità.
+
+Davide Fiorello (2:03:12)
+Grazie
+
+dell'ospitalità.
+
+Brainrepo (2:03:13)
+No, intanto sono io a ringraziare voi perché queste chiacchierate sono sempre illuminanti. Io, come sempre, ho poche idee ben confuse avere persone che comunque in zone esplorano e saltano a bordo. Settima una prossima!
+
+Luca Lanziani (2:03:26)
+quando ce l'hai queste persone che poi almeno ce sentiamo l'episodio ok ok grande
+
+Davide Fiorello (2:03:29)
+Esatto!
+
+Brainrepo (2:03:34)
+No, scherzi a parte, è sempre bello avere due amici, colleghi con cui si può chiacchierare seriamente e anche meno di cose importanti con una profondità che insomma dà quel valore. Quindi grazie di nuovo Davide, grazie di nuovo Luca.
+
+Davide Fiorello (2:03:53)
+a restare
+
+Luca Lanziani (2:03:53)
+Grazie a te.
+
+Brainrepo (2:03:55)
+Noi ci diamo appuntamento alla prossima settimana, sempre qua su GitBar, con una puntata un pochino più breve, perché come dicevo abbiamo questo format nella nuova stagione dove abbiamo alcune interviste e delle piccole riflessioni segmentali o su punti specifici che durano circa 10-15 minuti. Ecco, la settimana prossima sarà una pillola così in modo che...
+
+vi possiate anche rilassare, potete recuperare la parte dell'appuntata precedente che non avete ancora finito visto che durano tipo due ore io vi do appuntamento alla prossima settimana ringraziano di nuovo Davide e Luca alla prossima ciao ciao
+
+Luca Lanziani (2:04:39)
+Ciò a tutti.
+
