@@ -168,7 +168,7 @@ export default async function HomePage() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <a
-                  href="https://t.me/gitbar"
+                  href="https://t.me/+TIRZVmcXiA_2s7NE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
