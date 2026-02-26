@@ -1,0 +1,769 @@
+Brainrepo (00:01)
+Bene e benvenuti su Gatebar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Qua stiamo registrando praticamente un giorno sì e un giorno no e sono super felice che abbiamo ripreso questo ritmo, la macchina si sta riattivando con gli ingranaggi visto che iniziamo ad avere di nuovo l'apprezzamento di voi ragazzi ragazze della community, quindi grazie davvero.
+
+perché lo sentiamo e questa energia ci ritorna appunto nelle registrazioni. Stiamo cercando di portare sempre nuovi episodi, nuovi argomenti, quindi se avete qualcosa in particolare da suggerirci, nostra me la sapete, info che ho c'è la github.it o il gruppo Telegram che come vi ho detto precedente puntata ho chiuso per via dei maledetti bot morissero tutti.
+
+maledetti bot, per cui se volete entrare nel gruppo Telegram basta un email e vi diamo il link di invito, nessun problema, rimane sempre aperto, l'unica cosa è che ci sono delle saracinesche antiparasiti Detto questo io direi che possiamo introdurre l'argomento di oggi
+
+Se davanti a voi ci fosse il Mauro di tre anni fa, probabilmente introdurrebbe la puntata di oggi dicendo, oggi non parliamo di intelligenza artificiale ma di deficienze naturali. Quello era un Mauro un po' caustico, molto opinionato e che non aveva capito il contesto di cui andava a parlare. Il Mauro di oggi, superato i 40 anni, inquadra l'argomento in un modo completamente diverso.
+
+e l'argomento di oggi è appunto il ruolo del TechLead in generale in un ambiente enterprise con le complessità dell'ambiente enterprise ma per parlare di questo argomento da solo non sarei in grado e ho bisogno di supporto ho portato infatti qua a GitBar un collega che adesso vi presento e che insieme a un altro collega
+
+che si chiama Polo Chiodi e che salutiamo e mandiamo un grande abbraccio, sono stati gli elementi che mi hanno spinto a tenere la barra dritta quando quel Mauro molto opinionato che urlava qua sono tutti pazzi doveva fare questo appunto passaggio e comprendere il contesto. Queste due persone sono state, diciamo, la guida.
+
+lo posso ammettere sono state la mia guida mi hanno dato un botto di consigli utili e proprio questi consigli e parte di questi consigli vogliamo portarli oggi in un episodio ma band alle ciance a questo punto presentiamo l'ospite del giorno
+
+Just keep moving, l'uomo che avete visto nel piccolo filmatino che attraversa questa specie di labirinto escheriano schivando quelli che sono questi fantasmini che non sono altro che colletti bianchi e cravate del mondo enterprise e Filippo De Santis. Ciao Filippo!
+
+Filippo De Santis (03:31)
+Ciao a tutti, buonasera, buongiorno a seconda di quando ci sentite.
+
+Brainrepo (03:36)
+Ciao Filippo, in realtà noi ci rivediamo dopo un paio d'ore, po' qualche ore fa eravamo in riunione insieme. Filippo è senior tech leader, insomma, sei il decano dei tech lead in earform.
+
+Filippo De Santis (03:49)
+E l'Ul
+
+Diciamo di sì, nel nostro gruppo di lavoro sono quello che penso sia da lì da più tempo con Nierform.
+
+Brainrepo (04:04)
+⁓ sì, il decano è colui che in realtà ci dà una mano a comprendere cosa succede. E con Filippo oggi proviamo a inquadrare il ruolo di TechLead appunto in ambito enterprise. Filippo, la prima domanda che voglio farti è che differenze sostanziali vedi tra il TechLead che opera in un ambito magari startup o un ambito ridotto limitato?
+
+e un tech lead che opere in ambito enterprise. Sono lo stesso lavoro.
+
+Filippo De Santis (04:41)
+Come dicevi tu? No. Come hai posto la domanda è esattamente quello. Non sono lo stesso lavoro. Sicuramente ci sono libertà in più quando sei in una startup. Non hai tanti fronzoli, tanta politica che magari hai nell'enterprise. E nell'enterprise però hai delle challenge un po' più ostiche a volte.
+
+Anche proprio tecniche, quindi devi confrontarti magari con altri 10 team nel lavoro che fai, perché stai toccando dei servizi che sono comuni agli altri. Nella startup di solito non è così. Almeno la mia esperienza breve di un paio d'anni in una startup a Dubai era molto focus sul prodotto. Eravamo un team di 7-8 persone e avevamo
+
+gestivamo una bella infrastruttura anche abbastanza grande, tutto noi cioè non avevi altri team, altri tecnici con cui ti confrontavi, sì c'era la warehouse dove spedivamo vestiti, ecco una Zalando, Middle East Zalando diciamo e però basta, quello era il massimo dell'integrazione che facevamo.
+
+Brainrepo (06:02)
+Tra l'altro se non ricordo male avevate
+
+un blog super seguito all'epoca. Esatto, lo ricordo molto molto bene.
+
+Filippo De Santis (06:06)
+sì sì sì sì sì sì sì sì sì sì sì sì
+
+sì sì sì sì sì sì sì sì sì sì sì sì sì sì
+
+gestire le aspettative degli altri, di te stesso, del tuo team, di chiunque ti circondi praticamente e dalla parte enterprise quella è fondamentale. Non vale nessuna parte senza di quella lì.
+
+Brainrepo (06:53)
+Uno degli elementi che in realtà mi hanno colpito di più dal lavorare nel mondo dell'enterprise è l'approccio alla velocità. Nel senso che è risaputo che il mondo enterprise è sempre molto lento, no? E spesso repelle il cambiamento e la trasformazione, ma semplicemente per una questione di complessità. Nel senso che il...
+
+L'enterprise alla fine dei conti, data la grandezza, si comporta come un sistema autonomo. I sistemi autonomi in natura sono quei sistemi che sono enormi, fatti da tantissime parti di cui la forma si dà dall'interazione di queste parti, perché tanto quando l'azienda è molto grande il coordinamento top down viene a collassare e questa è una cosa che abbiamo capito. L'azienda tende più possibile a piramidizzarsi
+
+ma comunque i livelli di controllo sono talmente tanti che alla fine l'azienda prende la forma sua naturale che è data dall'interazione degli elementi, per quanto li si provi a imbrigliare. Imbrigliare questi elementi è praticamente impossibile, per cui i team costruiscono questo blob gigante che è l'azienda. Il problema
+
+è che cambiare un sistema così complesso vuol dire cambiare buona parte dei sistemi autonomi che hanno nello status quo e nella struttura l'elemento della mera sopravvivenza di loro stessi, no? E non voglio fare i rompipalle che dice sono le persone che sono attaccate alle poltronne, mettiamo da parte quel problema, facciamo finta che non esiste, no? Il problema delle persone che cercano di tutelare i ruoli.
+
+che omero problema politico, ma anche in termini di processo, quell'entità ha interiorizzato talmente tanto il processo che è diventata il processo. Per cui andare in quell'entità e dire, hey, stiamo tutti cambiando, tu devi cambiare processo. È veramente complesso, è una cosa graduale, a meno che tu non sei Elon Musk, e come diceva il nostro amico Paolo, entri a Twitter con un lavandino
+
+licenzi tutti per riassumerne un paio che ormai hanno imparato a chinarsi. fondamentalmente, rivalutare quello schema ti aiuta a capire, senso che quando hai interiorizzato quel processo, capisci la velocità. La cosa che più mi manda ai pazzi è che abbiamo un sistema lento per natura e ostico al cambiamento per struttura.
+
+ma in compenso tutta la parte prodotto e tutta la pa... tutto, tutta la struttura cerca di misurarsi in velocità. Quanto tempo mettiamo a deliberare una feature? Quanto tempo? Quindi stai provando a misurare una tartaruga ai 100 metri? Questa era la cosa che mi mandava, mi mandava i pazzi. Tu come la vedi questa cosa?
+
+Filippo De Santis (10:11)
+La mia esperienza con...vabbè, tutti due lavoriamo a Nearform, abbiamo lavorato per questo cliente per un po', sia io che te. Io ho anche esperienza prima, come tu hai esperienza in altri progetti, anche enterprise, quindi anche abbastanza grandi.
+
+Io ho sempre visto...
+
+questa velocità che dipendeva tantissimo dalla collaborazione. A me i posti in cui ho visto più velocità sono i posti in cui anche se erano grandi c'era tanta collaborazione ma non solo tra i team tecnici, anche tra i non tecnici. E questa cosa dipendeva dalla fiducia. Tanta fiducia tra prodotto e tech.
+
+fiducia tra diciamo il non tecnico che ha bisogno di una cosa deliberata di un esperimento da fare eccetera e
+
+diciamo che quella era la base per andare d'accordo e per riuscire a pianificare bene le cose che si facevano. In altri ambiti invece dove c'è poca fiducia, c'è più il noi contro di voi, oppure sia tra i team che tra i reparti, diciamo tra il prodotto, delivery, operations, tech, tutto quanto.
+
+e allora lì si vede di più questa cosa che stai dicendo tu secondo me questa si vede di più in quei momenti momenti lì in quelle aziende lì in cui c'è poca poca collaborazione fondamentalmente e quindi tu diventi ⁓ ma no ma noi sappiamo fare meglio ⁓ ma loro sono lenti ⁓ ma ci hanno detto così e poi è andata cos'ha e torniamo a uno delle prime cose che ti ho detto
+
+si ha fiducia quando si è molto trasparenti, quindi quando le aspettative sono ben chiari a tutti, quando se io ho un problema te lo dico e te lo posso dire e tu dici ok troviamo la soluzione insieme tra virgolette, se questa cosa non c'è si si valenti perché c'è tanto processo perché devi avere uno scudo e quindi questo scudo ti serve per dire ⁓
+
+io metto in piedi questo fantastico processo che se qualcosa va male posso dare a colpa all'altro che uno non mi ha dato le specifiche nel giorno giusto o alla quantità giusta o con i dettagli giusti e quindi diventa il classico contratto che lo fai non per creare fiducia ma per pensando che prima o poi andrai dall'avvocato e dovrai discutere su quel contratto e quindi dovrai avere ragione o torto in base a quello.
+
+Brainrepo (13:14)
+Sì, questo poi porta a situazioni completamente disfunzionali come tenere traccia di tutto. Mi è dato questo requisito, tale giorno a tale ora e poi ho questi altri elementi e quindi è colpa di Tizia, è colpa di Caia. Abbiamo parlato di fiducia, Che è l'elemento che si contrappone alla blaming culture. Ma come cavolo si fa? Tu hai detto, a trasparenza è l'elemento fondamentale.
+
+Filippo De Santis (13:22)
+Sì.
+
+Brainrepo (13:43)
+ma in un contesto dove c'hai 20, 30 team come si fa a costruire fiducia? Cioè c'è un elemento fondamentale che mi è venuto in mente che in realtà era uno di quei topic che volevo portare a Codemotion nel talk ma per il tempo non c'è stato, che sono i Dunban Numbers, Cosa dice Dunban con i Dunban Numbers? Dice che noi in qualità di esseri umani possiamo
+
+gestire un numero finito di relazioni e possiamo gestire un numero di finito di relazioni a livelli diversi. Noi sappiamo che la fiducia non è un... cioè è un elemento relazionale più che strutturale, Come facciamo a gestire...
+
+così tante relazioni per costruire quell'elemento fiducia che presuppone un effort, uno sforzo della Madonna in gestione delle relazioni.
+
+Filippo De Santis (14:49)
+Allora è una cosa che non viene dal nulla, è una cosa che costa tantissima fatica, tantissimo effort, quindi non sono quello che dice ⁓ fate questo, fate Agile che risolvete tutto, no non è così. L'Agile fatto e non parlato è quello in cui si mette veramente tanto effort nel miglioramento continuo, nel trovare i coli di bottiglia, nel...
+
+le vari sprechi è quello ok e credo che per il discorso fiducia per quando ci sono tanti team quindi noi parliamo di enterprise no quindi dentro un'azienda enorme con tanti team diversi riesci secondo me a farlo nel momento in cui comincia a dare empowerment cioè cominci a dire ok
+
+voi siete i dev, voi siete gli esperti, io vi tratto da tali, voi siete gli esperti, do io fiducia per primo e vi do l'empowerment, ovviamente vi metto dei limiti perché fino a ieri io non so cosa facevate perché avevamo un rapporto completamente diverso.
+
+se si comincia su quella strada poi secondo me le persone che vogliono farlo le persone che hanno voglia di metterle dell'effort vengono fuori cioè quelle che dicono sì dai facciamo un miglioramento qua facciamo un miglioramento là io ho bisogno di questo faccio una cosa per tutti poi quando comincia a esserci questa cosa c'è bisogno di coordinamento e quindi devi trovare una struttura che
+
+agevoli il coordinamento, quindi può essere una struttura in cui hai tech lead o tem lead, chi siano, che si coordinano, che dicono noi stiamo facendo questo, ogni settimana ci becchiamo una volta o anche una volta al mese a seconda dell'azienda dell'evoluzione, diciamo. E cerchi di gestirla così.
+
+Man mano che lo fai, secondo me, vedrai le persone che fanno embrace di queste cose, abbracciano questo nuovo modo di essere, abbracciano questa voglia di volere proprio questa autonomia, questa possibilità di fare cose.
+
+e vedrai quelli che no. Ci sono persone che non lo vogliono fare, che stavano benissimo prima loro nel loro processo, che era chiarissimo qual era loro responsabilità e che era chiarissimo dove loro non dovevano mettere mano. E lì poi sta l'azienda a decidere cosa fare, cioè se ti riguardate, se non vi spostate a fare queste cose allora non mi va bene o se cercare altri incentivi, cercare di fargli vedere che possono vivere meglio anche loro, possono lavorare meglio, eccetera.
+
+nel lungo periodo secondo me questa cosa porta a
+
+Brainrepo (17:49)
+No no vai vai vai sere
+
+Filippo De Santis (17:59)
+una pluralità di soluzioni probabilmente, quindi è un po' più caotica, ma con un engagement molto maggiore e con le persone che sono disposti a dire ⁓ non va bene come ci diamo le cose con un prodotto avviciniamo ci parliamo di più ⁓ non va bene con quel team come facciamo perché io dico una cosa loro mi rispondo tre settimane dopo cerchiamo di capire facciamo una retro e cerchiamo di capire cos'è che dobbiamo fare diversamente miglioriamo
+
+troviamo i coli di bottiglia, leviamoli, e diventa un percorso di miglioramento continuo e lì sì, lì secondo me poi viene fuori quello che può essere un bel ambiente in cui le persone si parlano, c'è trasparenza, se fai un errore non ti saltano la gola, puoi fare dei post mortem che puoi condividere con tutti, questa è una cosa che secondo
+
+Brainrepo (18:52)
+e nessuno ti dice no questo
+
+non farlo vedere
+
+Filippo De Santis (18:55)
+Esatto, nel senso che è una cosa che secondo me è bellissima, nel senso ci sono aziende in cui in alcuni riparti questo si può fare e in altri no. Cioè tu dentro il tuo reparto puoi dire questo è il post mortem, vai è stato questo, lo risolvo così. Ho capito esattamente quello del problema, la soluzione è questa ci vorranno tre settimane a farla. Finito, alla grande.
+
+Brainrepo (19:22)
+Credo che... ha premesso che sono d'accordo al 200 % con quello che hai detto e te lo firmelei col sangue. Credo che... la visione che hai dato tu è la visione più democratica del mondo. Ed è bellissimo. Il problema è che, come dici tu, richiede tempo e consapevolezza che sono due cose che spesso non ci sono. Voi perché ci sono delle deadline di grandi transformation da fare.
+
+o c'è una certa pressione anche dagli investitori in certe situazioni, quindi talvolta è molto complesso. Secondo me questo tipo di approccio va inquadrato da due prospettive diverse, dalla prospettiva top down and bottom up. Quello che hai tu funziona se tu hai un, chiamalo head-off, non lo so, una persona all'apice che decide di...
+
+decentralizzare e trattare il sistema come un sistema che cresce attraverso lo scambio, no? E questa cosa, naturalmente, toglie potere alla parte, all'ed-off, perché sta decentralizzando le decisioni. In un contesto critico o con una certa pressione dal business, questa cosa diventa molto difficile, anche in termini umani, nel senso, io ho una pressione continua
+
+non posso lasciare i miei autogestirsi perché devo sapere cosa di portare, devo sapere come agire da quel punto di vista, devo riportare per ogni potenziale problema, il sistema che si autogestisce per natura, si autogestisce per learning, cioè faccio, sbaglio, imparo, miglioro. Se tu hai abilità e la possibilità di sbagliare questa cosa è perfetta.
+
+Ci sono dei contesti dove questa cosa non funziona, quindi cosa succede? Che l'elemento centrale ha un problema, non può decentralizzare. E allora come fa? La cosa che succede normalmente è che è detta processi, perché i processi rassicurano, non correggono il problema, però rassicurano, perché almeno prima di fare qualcosa di critico l'informazione gli arriva. Ma il problema è l'autonomia?
+
+o come circola l'informazione, quello che avete è fondamentale perché costruire una rete migliore il modo come circola l'informazione e quindi la cosa fondamentale è trovare il modo migliore per fare una rete di informazioni orizzontali e per capire che la rete deve fare bubble up delle informazioni determinanti, quelle rilevanti, quelle che sono importanti per quel...
+
+ed off e questa cosa non è mai semplice perché tu devi essere nella testa dell'ed off per capire cosa è importante e cosa no ed è qua che le relazioni secondo me giocano un ruolo fondamentale la costruzione delle relazioni interpersonali e analizzare come reagisce l'ed off in una certa circostanza ti aiuta a capire quali sono le informazioni che lui prioritizza non perché è pazzo o perché
+
+e un ditatore, ma semplicemente perché deve riportare a qualcun altro che ci mette il grano, perché non stiamo giocando. In ambito enterprise quando si parla di grano si parla di tanto grano. Esatto. E chi ci mette 100 milioni, 200 milioni, i fondi che ci mettono molto di più vogliono avere certezza e contezza. Quindi questo è fondamentale, il top down. Un modo figo che secondo me può essere utilizzato in questo caso è
+
+Filippo De Santis (22:52)
+un sacco di soldi.
+
+Brainrepo (23:14)
+Quello che ha detto Filippo, e sono d'accordo può funzionare, è quello di ti lascio autonomia. L'alternativa è centralizzare tutto, l'HED-OFF ha un processo super schematico ed è molto difficile. C'è una terza via di mezzo che secondo me è molto funzionale che si chiama il C2E, Center for Empowerment. Cosa faccio io HED-OFF? Io faccio...
+
+Un mio team di senior, di senior tech lead, di architetti superschillati, è il lignetto nei team. Il compito di queste figure non è quello di controllare, ma è di fare quello che diceva Filippo, di attivare il percorso di empowerment dei tech lead. Quindi cosa fanno? Lavorano gomito a gomito per la prima parte del processo,
+
+in modo che il tech lead per osmosi capisca esattamente cosa vuole l'head off.
+
+e questa cosa è stata sperimentata in molti contesti, se non mi sbaglio anche Spotify lo utilizza e pare funzioni adesso, io non l'ho mai provato però secondo me può funzionare
+
+Filippo De Santis (24:38)
+Io hai detto una cosa che secondo me è fondamentale, cioè metti delle persone highly skilled. Non significa tecnicamente, solo tecnicamente, devono essere anche tecnicamente secondo me, però...
+
+Il punto è proprio quello, cioè tu devi dare supporto alla tua rete di tech leads, devs, per fare in modo che loro abbiano questa spinta, questo che sentano che comunque anche altri ci mettono l'effort, per fare questo miglioramento continuo, per trovare soluzioni a problemi che si presentano, che non siano soluzioni palliative.
+
+e quindi secondo me quello che stai dicendo tu ha tantissimo senso
+
+ma io lo ribalterei, cioè io ribalterei il fatto che il tuo head-off e i tuoi senior tech lead sono a supporto di tutto delivery, non sono, cioè possono tra virgolette dettare anche un processo, ma l'idea è che loro arrivano con questo processo e dicono ok da domani facciamo così, ma da dopodomani, dopo che si è fatto per un po' così,
+
+cominciano a ricevere feedback dagli altri e cambiano. E questo processo in tre anni diventa qualcos'altro. Magari più libero, magari più... Penso che stiamo dicendo la stessa cosa, che è quello che dicevo prima io quando dici levi...
+
+Brainrepo (26:10)
+Sì.
+
+Filippo De Santis (26:19)
+dai la libertà ma metti dei limiti. L'avevo detto così io pochi minuti fa. Che significa io ti do un recinto, tu dentro questo recinto devi starci, non puoi uscire. E piano piano questo recinto si allarga o si diventa diverso, ok? Di solito si allarga e tu puoi fare più cose. Quindi prima ti do un processo molto stretto, studia un processo e così si delivera una volta ogni due mesi.
+
+Big Bang releases, bla bla bla. Pò.
+
+Brainrepo (26:50)
+trottol
+
+di 1
+
+Filippo De Santis (26:53)
+discorso però e quindi il day one fai la retro e dici ⁓ non funziona niente bene perfetto cosa abbiamo fatto di male che non funziona niente questo questo e questo, come lo risolviamo perché ti chiedi cinque volte perché vai indietro fai il fishbone fai tutte le cose che devi fare per arrivare alla root cause analysis e quindi dici ok perfetto abbiamo la radice del problema è questo come lo cambiamo da domani facciamo questo e comincia a fare le relazioni verso quella cosa
+
+lì secondo me devi avere quelli che ti aiutano, che ti dicono sì vai vai così dai cambiamo tutto ci stiamo siamo dentro anche noi a questa cosa mettiamoci dentro delle effort per migliorare e cambi solo così altrimenti
+
+Brainrepo (27:43)
+Sì, la parte che volevo
+
+evidenziare... Allora, premesso che stavamo dicendo la stessa cosa nel senso che io sono l'ultimo che propone schemi piramidali dove uno sta sulla sua cattedra. Anzi, quello che volevo evidenziare è che i signori a supporto dell'EDOF se stanno nella stanzetta a decidere le architetture e a ricevere le mail dai Teclid, il meccanismo non funziona.
+
+è quello che volevo evidenziare quando ho parlato di Center for Empowerment io parlavo di embedded senior tech lead cioè dei tech lead che gli fai mettere gli scarponi gli fai mettere la mimetica e li mandi intrincià col tech lead per due mesi tre mesi di lancio e questa cosa attiva due elementi attiva il fatto che il tech lead si prende dei feedback veri e non alterati da stati emotivi e mille cazzi
+
+Filippo De Santis (28:17)
+Sì, sì,
+
+Brainrepo (28:40)
+Punto 2, il teclid sul campo riesce a far crash... il senior teclid, scusami, sul campo, ti riesce a far crash il teclid a un livello che domani non avrà bisogno di un embedded senior teclid, ma potrebbe diventarlo. Questa è la cosa fondamentale. C'è un altro elemento che quando noi parliamo di iniettare queste persone nel team, o almeno quando io parlo di iniettare queste persone nel team, non parlo solo di iniettare competenze.
+
+Perché capita, e come l'hai detto prima tu, che un tech lead o un developer abbia skill a me capita tutti i giorni che i miei developer e i miei senior engineer ne sappiano tonnellati più di me Non c'è ne uno che ne sa meno di me, sono tutti più skillati di me Cosa cambia? Cambia la visione Perché? Perché il tech lead ha
+
+Filippo De Santis (29:22)
+Come?
+
+Brainrepo (29:39)
+quella visione locale che gli permette di eccellere nel task che sta facendo, ma è una visione locale. Prendere decisioni in un contesto enterprise pretende e presuppone che si abbia una visione globale perché l'impatto di un cambiamento, è quello che hai detto prima tu no? L'impatto di un cambiamento nel locale ha un butterfly effect, della madonna in tutta l'organizzazione e quindi questi embedded expert non fanno altro che tradurre
+
+la visione locale dell'EDOF, che arriva direttamente dal CEO e dal CIO nel team locale e quindi quel tech lead che dice ma perché cazzo dobbiamo fare 70 specifiche open API che non ci servono a niente andiamo GraphQL che sto parlando di Mauro, ok? che aveva una visione locale e aveva tutte le ragioni di dire quello perché nel suo contesto
+
+GraphQL avrebbe performato 70.000 volte meglio. Peccato che quel contesto andava inquadrato in un cerchio un po' più grande, in un ambiente un po' più grande, dove l'azione locale avrebbe creato potenzialmente di danni a cascata, di inconsistenza, stack diverso, altri danni che avrebbero danneggiato tutta l'organizzazione.
+
+Filippo De Santis (31:05)
+Io credo che adesso faccio un appunto perché lavoriamo nello stesso ambiente e ti conosco da un po' e abbiamo parlato di queste cose anche prima.
+
+secondo me il lavorare anche con diverse tecnologie non è un problema
+
+a patto che ci sia una voglia di collaborare ok? cioè se noi facciamo una cosa in GraphiQL una REST una... resto un mio il nome, Removal Procedure Protocol, RPC bravissimo, quello ognuno le può fare
+
+Brainrepo (31:47)
+RPC
+
+Filippo De Santis (31:54)
+Il fondamentale è che in alcuni ambienti tu le puoi fare facilmente perché sei... c'è fiducia nel fatto che... ⁓ trovate il tool che fa più al caso suo per quello che dovete fare. Quello che si dice sempre quando si dice che noi siamo gli esperti e quindi dobbiamo decidere quello che fare.
+
+poi sono d'accordo con te che in alcuni ambiti
+
+si è molto legati ma perché? perché c'è uno storico anche magari abbastanza enorme di cose fatte in un certo modo e se tu vai a inserire quella
+
+non si sa poi chi la andrà a mantenere. E qui secondo me si torna al discorso di... Dio, secondo me qui si apre un'altra parentesi enorme su come costruisci il tuo team, ok? Quindi la parentesi enorme che non so se vogliamo aprire, perché è già mezz'ora che parliamo, quindi non so se vogliamo aprirla, io la metto lì poi magari non la andiamo a dilungare troppo.
+
+che a seconda di come tu crei il tuo team, di come fai hiring, di chi porti dentro
+
+le cose cambiano. Quindi se qualcuno ha sicurezza del proprio posto di lavoro, del fatto che può sbagliare, del fatto che può dire cose e non essere fustigato in salamenza, l'ambiente diventa diverso, molto diverso. E quindi hai anche proposte diverse da queste persone e anche un atteggiamento diverso rispetto a certe cose. Quindi anche una nuova tecnologia può essere
+
+Poi dopo magari vai a finire con Spotify che ognuno fa come gli pare, ogni team ha la sua, però Spotify guarda quanti soldi fa, quindi magari non è così male, diciamo deve arrivare a quel livello lì, ecco, e non è da tutti essere quell'azienda lì.
+
+Brainrepo (34:01)
+No, ma soprattutto dipende
+
+dalla seniority che ti puoi permettere perché è il problema di Spring Boot e di Angular. Se mi posso permettere una seniority, se mi posso permettere tanti Filippo, tanti senior developer, perché
+
+Filippo De Santis (34:05)
+va a finire a sé
+
+Brainrepo (34:30)
+macinano o almeno che sanno fare il loro lavoro e che non si spaventano se domani devono fare graph ql al posto di rest allora sono d'accordo con te il problema è che spesso siamo realistici in queste in queste in queste grandi enterprise spesso c'è un ventaglio no di competenze che va dal super schillato a a quello che non sa che cos'è jason e a quel punto ti devi devi veramente trovare
+
+la quadra e dici ma cacchio io ti inquadro ti faccio usare angular che non è necessariamente più semplice ma è più blindato e le cose si fanno in quel modo io ti faccio usare go ti faccio scrivere il codice in go e so che tanto tu quelle quattro cose usi perché la quinta non c'è no adesso non è vero go è molto più ampio però in termini proprio di linguaggi di programmazione ti
+
+Filippo De Santis (35:11)
+Ci vediamo
+
+Vissessessè.
+
+Brainrepo (35:27)
+Ti dice questa è la go way, non ci sono 70 mila procci.
+
+Filippo De Santis (35:29)
+ma tu le puoi
+
+ma anche le persone dentro, i tuoi senior dev se tu li inquadri che tu fai le cose in un certo modo e lo fai sempre in quel modo allora inquadreranno anche i junior e quindi il junior crescerà pensando che essere un senior è fare quella roba lì capito? cioè quindi diciamo che secondo me è un po' un tagliarsi le gambe da soli ma allo stesso tempo
+
+un modo per proteggere quello che hai. Quindi qui secondo me si può parlare anche ad esempio del in enterprise spesso l'obiettivo non è innovare, è proteggere. Cioè tu proteggi quello che hai perché quello è quello che ti fa far soldi. Non ti frega niente se è lento, è baggato, c'è...
+
+tu fai 300 ordini al giorno con l'affare, oppure vendi qualcosa di specie, oppure qualunque metrica tu ti faccia guadagnare, tu proteggi quello. Il problema di questo è che a un certo punto arriva qualcosa che fa disruption di quella cosa e tu sei fregato. Devi chiamare qualcuno da fuori, vedi noi, e...
+
+⁓ no mi serve devo cambiare tutto perché adesso ci sono le cose nuove, dobbiamo cambiare, nuove regolamentazioni, il governo ci ha detto che dobbiamo aderire a questa nuova direttiva, questa nuova policy e lì poi scatta la mega transformation in cui cerchi di cambiare tutto per non cambiare nulla nella fine della fiera.
+
+Brainrepo (37:13)
+Sì, fondamentalmente quello che hai detto è sostanziale ed è l'elemento che in realtà spinge a un cambio di mindset anche del tech lead, perché un tech lead come me in quel contesto, ma anche come te, io e te abbiamo la stessa filosofia, noi entriamo per deliberare, punto. In realtà...
+
+Questo è quello che dobbiamo fare anche in ambito enterprise però con la differenza che il valore che noi generiamo non è dal delivery barra tempo ma è da una serie di altri fattori per esempio quanto riusciamo a innovare blocchi di processo o stack tecnologici al di là della delivery cioè iniettiamo un service catalog diciamo abbiamo bisogno di un service catalog è bellissimo possiamo parlarlo di come
+
+portare case study a supporto di una proposta in un ambito enterprise perché anche la e-building tu devi portare dei case study che dicono guarda che stai perdendo soldi qua, hai un'emoralgia di soldi qua probabilmente questo mitiga l'emoralgia di soldi perché altrimenti gli dicono no un'altra cosa da mantenere altri costi noi dobbiamo tagliarli i costi non aumentarli quindi in realtà si credo che è proprio questo shift di mindset
+
+che almeno per un tech lead se non fatto subito, triggera frustrazione allucinante perché dice io non sto deliberando valore no il valore che tu stai deliberando è altro valore devi imparare a misurarlo
+
+Filippo De Santis (38:56)
+Il problema di misura del valore è enorme. Non è un problema solo dei tech lead, se ci pensi. È un problema anche delle aziende. Perché sennò tutti farebbero contratti che dicono, ok, mi paghi un milione di dollari e lavoro due settimane. Perché in queste settimane riesco a fixarti una cosa che ti fa guadagnare tantissimo. Nel enterprise in cui due milioni di dollari magari li fanno in tre giorni. Dico questo. Quindi...
+
+Lì secondo me il valore è proprio difficile da, nella enterprise è difficilissimo misurarlo.
+
+secondo me dobbiamo guardare a
+
+a quelli che sono i bisogni dell'azienda in cui lavoriamo. Quindi l'azienda in cui lavoriamo ha bisogno che, sì, che dobbiamo costruirgli questo e servizio quel... ma questa cosa, mentre facciamo questo, come dici tu, come posso dirti? guarda, ho visto che qua fate A, Secondo me, se fate A, B, C e D, riuscite a andare un po' meglio. E ti dimostro con un use case, con un proof of concept.
+
+qualcosa che quella cosa si può fare, che quella cosa è fattibile, che porterà un vantaggio. Ti porto anche degli esperti a volte, diciamo il tech lead è il tramite per dire guarda che qua c'è manca questo e poi magari l'azienda che sta dietro il tech lead va e dice ok guarda aspetta li faccio parlare con il nostro head of qualcosa che
+
+e dici questo puoi farlo così, puoi farlo così, guardate che noi abbiamo altri clienti che l'hanno fatto, ti porto degli use case anche di altri e li convinci così però sì nell'enterprise forse è ancora più difficile del valore che hai quando sei più piccolino perché forse quando sei più piccolino sei molto più vicino a quello che delivery ha l'impatto che hai e puoi misurare un po meglio anche a spanne
+
+anche guardando semplicemente e dicendo ma sì quello forse vale 100. Qua quando lavoriamo noi nell'enterprise in un'azienda in cui siamo magari centinaia di sviluppatori è molto più difficile. Molto molto.
+
+Brainrepo (41:19)
+faccio una domanda brutale, bruttaglientissima. Abbiamo parlato di proporre migliorie e cambiamenti. Quanto vale e come si costruisce la relazione umana per la sponsorship? Nel senso, io sono convinto che il cambiamento passa attraverso la sponsorship all'interno dell'enterprise. Quindi attraverso il collegamento che un Tecly dà
+
+Filippo De Santis (41:21)
+Bye!
+
+Brainrepo (41:49)
+con l'elemento superiore e superiore ancora con gli architetti con l'EdOf qualcosa no? Prima abbiamo parlato di fiducia ma come si costruisce la sponsorship con l'EdOf o con l'architetto in modo da avere un canale diretto che sia più efficiente soprattutto ha senso costruirla?
+
+Filippo De Santis (42:15)
+ha senso costruirla? sì no allora, partiamo dalla carta facile, ha senso costruirla? sì perché se tu hai fiducia e hai fiducia a 1 2 3 4 livelli sopra di quello in cui lavori significa che tu hai un potere enorme di
+
+Brainrepo (42:16)
+Questo è difficile, questo è difficile, quindi...
+
+Filippo De Santis (42:39)
+andare dalle persone e loro sanno che tu hai la fiducia di quella persona che sta a quattro livelli sopra di te e nei posti in cui le persone sono molto abituate a questo è il processo, questo si fa così eccetera quello che dice quella persona di vale oro ok? e questo è uno ma andiamo alla parte difficile
+
+Come la crei? La mia esperienza personale è che la crei
+
+con l'umiltà. Cioè senso, tu entri in un'azienda nella maniera più umile possibile e dici io non so assolutamente niente di questa azienda. Io sono tecnico, tutta la conoscenza del mio mondo sul tecnico, sulla parte tecnica del lavoro, ma io di business logic e di processi interni non so niente. Se tu entri così,
+
+e le persone ti vedono e poi parli solo quando sei sicuro o quando vuoi dare un'opinione e hai ben capito perché stai dando quell'opinione allora ti ascoltano
+
+piccolo caveat, una piccola nota, potreste entrare in un'azienda in cui alla persona che sta a quattro livelli sopra di te non frega assolutamente nulla di quello che tu possa dire o fare. Loro gli frega che c'è il target che tu devi deployare entro quel giorno, quelle feature, perché questa cosa deve andare online entro giugno.
+
+Basta. Quindi è sempre a due vie, non è mai a una via sola. Cioè non è mai che siccome se il TL vai dentro, umile, eccetera, allora sicuramente avrai successo. Deve avere dall'altra parte una persona che vuole stare a sentire, che vuole migliorare, che vuole avere un confronto. Fino a che punto vuole il confronto ognuno è fatto a sé. Cioè ognuno...
+
+Brainrepo (44:48)
+Sì, hai detto una cosa che mi ha acceso un campanello, E ha parlato di deadline. Questa è una cosa che ho imparato sul campo e che secondo... cioè a me torna super super utile. A me è capitato di costruire una relazione con una figura a due livelli più in alto di me e l'ho costruito una relazione proficua in realtà che funziona abbastanza bene.
+
+e che mi dà una mano nella vera delivery perché mi permette di disbloccare delle cose molto più velocemente al posto di 3 o 4 oppo naturalmente non sempre giusta non sempre piace ai livelli che stai saltando e là c'è tanta politica di mezzo quindi magari
+
+Filippo De Santis (45:25)
+Assolutamente sì.
+
+Brainrepo (45:36)
+Una delle cose che io faccio sempre è quando salto i livelli dico ho incontrato Tizio, mi ha chiamato Tizio, gli ho raccontato questo problema di cui avevamo già discusso e mi ha detto che farebbe così e fa così, però io voglio fartelo sapere perché tu sei il referente. Questa cosa mitica e la gestisce a livello politico, insomma, aiuta. Qua stiamo entrando proprio sulla politica spicciola. Però...
+
+hai parlato di deadline che sono spesso la cosa che fa sì che livello più alto si incazzi o ti stimi è quello che dicevo sempre, Cacchio, una tartaruga che si misura ai 100 metri però fondamentalmente funziona così, le deadlines sono l'elemento fondamentale che è uno degli elementi diciamo importanti una cosa che ho imparato sul campo è che ci sono due tipi di deadline
+
+le deadline finte e le deadline vere. Filippo conosce il progetto che ho fatto. Io avevo una deadline e non sapevo che deadline fosse. Questa deadline mi metteva una pressione allucinante, una pressione importante perché era insostenibile questa deadline, fondamentalmente. Ho missato la deadline, come era auspicabile, abbiamo solo fatto sei mesi di ritardo, abbiamo deliverato
+
+però, con sé mesi di ritardo, ma abbiamo deliberato. Per poi capire che in realtà le Deadlines sono uno strumento da parte, a parte delle Ed Off, che serve per due cose diverse. Una Deadline può essere una vera Deadline o una Deadline finta. La vera Deadline si riconosce da un fatto fondamentale, che se tu tiri fuori un problema, l'Ed Off o chi per lui, può anche essere prodotto, ok? Ti metti una Deadline,
+
+al primo problema che tu poni vedi la reazione di prodotto, dell'head-off che è proattiva che sta già facendo qualcosa o contattando qualcuno per toglierti il blocker e quando tu vedi questo sai che quella deadline non cambia perché è una deadline di business, perché è una deadline importante hai un'altra deadline che invece è la deadline che io chiamo la deadline di monitoring o di update cosa succede?
+
+lo faccio anch'io come tech lead se io ho bisogno di controllare il progresso di un'attività io metto una deadline in modo che sono sicuro che la macchina in ambiente enterprise con tutte le problematiche la macchina complessa si muova verso quella direzione perché c'è la pressione della deadline ok quindi se nella prima deadline io metto tutto me stesso e il mio team mette tutto se stesso per deliberare in tempo
+
+nella seconda deadline, da teclid paraculo, cosa faccio? al posto di dire io hitto la deadline, la centro, io ti faccio un update continuo. Ti faccio una riga, un giorno sì e un giorno no, ho sei parole, un giorno sì e un no, sette costano troppo, quindi non le leggerebbero, questa è una cosa che mi ha insegnato Filippo. Sei parole, un giorno sì e un giorno no, che ti rendono edotto del progresso.
+
+Quella Deadline sparisce, tu non hai più una Deadline, questa cosa mi ha cambiato la vita.
+
+Filippo De Santis (49:08)
+che dicevo prima gestione delle aspettative, è esattamente quello, non c'è nient'altro secondo me, questa è esattamente la definizione di gestione delle aspettative. Tu hai i tuoi stakeholder che ti dicono ⁓ vogliamo deliberare questo, per questa data e tu gli dici anche il primo giorno, guarda non è fattibile per questo, questo è quest'altro motivo.
+
+come dici tu se loro devono deliberare per quella data o tolgono qualcosa dallo scope o cercano di rimuoverti il blocco o ti danno più persone che di solito non funzionano ma è una soluzione che piace tantissimo in questi ambiti vai caccia dentro qualcuno non lo diciamo però li vedi che se quella è una deadland a cui loro tengono come dici tu si attivano vanno fanno
+
+Brainrepo (49:51)
+Tu sai cosa rispondo io, vero?
+
+Filippo De Santis (50:06)
+muovono mari e mondi
+
+se noi facciamo bene questa cosa della gestione delle aspettative è proprio quello che succede, cioè tu vedi dalla lezione degli altri quello che succede, quindi dici ok, qui non si sta muovendo nessuno, non gliene frega niente a nessuno quindi nessuno vuole fare questa cosa nella realtà probabilmente è una mossa politica per qualcuno che si stiamo facendo perché nell'elternprise visto che ne abbiamo accennato tante volte c'è tanta politica
+
+Tanta tanta. Tornando a noi io sono d'accordo con te, ma la direi in un altro modo, io col mio team quando metto, quando loro fanno una stima, quando bisogno che loro facciano una stima, è perché vorrei che loro si concentrassero a darmi
+
+una stima decente, non sono mai corrette le stime, ok? Quindi partiamo dall'assunto che non sono mai corrette, anche quella ci metto due giorni e ce ne vuole mette quattro, capita, doppio, hai fatto un 100 % di errore, perfetto. Però in quel caso lì è come dici tu, controllo, faccio in modo che le persone si concentrino, più che controllo.
+
+io controllo ce lo stesso perché alla fine dei due giorni vado e dico guarda ma è finita questa cosa no perfetto cosa sta succedendo che problema c'è e da lì si va
+
+e questa gestione delle aspettative per il tuo team. Cioè tu gli dici io mi aspetto che questa cosa sia fatta in due giorni. Me lo dici tu ⁓ che la fai in due giorni, quindi non te dico io. Tu Dev mi dici io la faccio in due giorni. Va benissimo. me va bene. Tra due giorni ci sentiamo e mi dici come va. Se l'hai deployata, se è finita, se ti mancano i test, se c'è un roadblock. Mi aspetto che il roadblock me lo alzi prima però. Andiamo a vedere. Dall'altra parte con gli stakeholder come dici tu.
+
+Brainrepo (51:49)
+Sì.
+
+Filippo De Santis (52:16)
+ogni due giorni ti scrivo, ti dico guarda, tutto a posto, abbiamo un roadblock con questa cosa qua e lo lasci lì. In generale buona norma, anche se sette parole sono droppe, è un riassunto piccolo e sotto se c'è un problema stiamo lavorando, lo stiamo risolvendo così. Imaia tale che non dai solo il problema ma dai anche la tua soluzione.
+
+se proprio vuoi parlare tantissimo e questa è una cosa che facciamo abbastanza negli ultimi anni è andare con delle opzioni e dire cioè sono A, B e C io preferirei B poi fai tu, vedi tu
+
+Brainrepo (53:03)
+Questa
+
+è la tecnica che uso io, che è l'opzione ottimale, cioè l'opzione ottimale che tanto so che mi dici di no perché magari ci metto troppo tempo, mille cose, un'opzione che è proprio assurda, che so che me la molli, cioè mi dici no, questo è impossibile, non dirmi stronzate, e l'opzione intermedia che in realtà è una cosa che ho imparato ultimamente, che il compromesso funziona sempre, Almeno in ambito enterprise.
+
+Filippo De Santis (53:05)
+Esatto, sì sì, ma lo so, l'ho detto apposta, te l'ho fatto un'alzata.
+
+Brainrepo (53:32)
+quando tu varchi la porta dell'enterprise tu ormai non hai opinioni, gestisci compromessi, che questo è l'elemento. Quindi il compromesso che però funziona abbastanza bene per te, lo metti in mezzo, e una cosa che ho capito è che più vai in alto nella scala, più hai casini grandi da dissolvere. Per cui se tu vai da quella persona con già tre soluzioni, gli stai limitando il carico cognitivo, quindi già
+
+ti presta più interesse che andare con un problema. 2. Stai andando con una soluzione che vuol dire che anche l'impatto empatico che hai verso quella persona è non ti sto scaricando un barilli di merda ma ti sto togliendo le castagne dal fuoco. Completamente diverso lato empatico. 3. Hai un'opportunità della Madonna che è quella di fare stealing delle decisioni ad alto livello. Perché sei tu che conosci il contesto.
+
+che sta a tre gradini o due gradini sopra di te, non lo conosce il contesto e quindi speriamo che non ci stiano sentendo, ma tu hai anche l'abilità di flettere il contesto
+
+per spingere verso una decisione che reputi più utile. Tanto se la decisione suona male in un inquadramento globale, con una visione globale, chi sta davanti a te lo sente pulsa di bruciato subito, se non un idiota. E quindi questa cosa, mio punto di vista, ha funzionato e funzionato. Cioè è una delle mie
+
+frecce nell'arco senza di quello io credo che non durerei due giorni
+
+Filippo De Santis (55:18)
+una tecnica che va benissimo, cioè nel senso è una di quelle cose che ti permettono, come dici tu, di portare idee nuove o di portare idee diverse o magari di portare esattamente le stesse idee che avevano loro, ma in un modo che toglie carico cognitivo che soprattutto ti fa
+
+viene la parola in inglese, ma perceive, ti fa sentire, sì percepire,
+
+Brainrepo (55:49)
+Per cipire.
+
+Filippo De Santis (55:55)
+percepire come la persona che li sta aiutando, come la persona che è proattiva. E' vero che lo sei, perché se vai con delle soluzioni vuol dire che ti sei studiato il problema, ti sei studiato cosa non andava e sai come risolverlo. O almeno ci provi. Ok?
+
+mette in mostro esattamente questo e il fatto di fare
+
+di gestire queste aspettative, cercando di essere pur attivo, è proprio quello che ti porta fiducia. Avendo fiducia c'è proprio più libertà. Anche se sei dentro questo recinto, tu sei la persona magari a cui vanno a chiedere. Vanno a dire, ma io devo fare questa cosa, voglio cambiare questo ma tu come la vedi? Diventi il loro signor teclite. Roba del genere. Quindi quando sei, quando fai queste cose, le fai bene,
+
+loro percepiscono in te una persona di cui si possono fidare. Poi, quanta fiducia ti danno? Ti danno 100 su 100 o ti danno 50 su 50? Se non facevi questo probabilmente ti danno 2 su 100. E la prima cosa che non andava, no? Questo teclin non va bene, mandiamolo via.
+
+Brainrepo (57:12)
+Sì, sono assolutamente d'accordo. C'è un'altra cosa che secondo me è importante con la relazione con questi livelli superiori che è quello che si dice, L'evitare, l'anodetico, Come si dice in italiano? Anodetical? Anedotical? Sì, praticamente, faccio un esempio semplice. Tu vai a una riunione con...
+
+Filippo De Santis (57:31)
+aneddotica forse.
+
+Brainrepo (57:41)
+questo ed-off, vi ci guarda in questa parte del programma di transformation, di sviluppo, di software che stiamo sviluppando, questa roba che abbiamo ereditato, c'ha un sacco di debito tecnico.
+
+Se tu vai e dici così c'hai un sacco di debito tecnico, la risposta è sì sì ok lo sistemiamo. O la domanda è ma no non ne abbiamo un sacco. Se tu vai con un backlog di debito tecnico che gli dici questo è il backlog di debito tecnico, questi sono gli elementi fattuali, non ⁓ ma è difficile integrarsi qua qua qua, vai con i
+
+i problemi di integrazione di stati uno per uno e dici questi sono i problemi di integrazione, sono gli stakeholder coinvolti, questo è quello che devo raggiungere, queste sono le opzioni, dammi una mano, non stai andando con una visione anodetica anche del problema o della soluzione, stai andando con dati fattuali, questo cambia completamente la reazione e il supporto che hai da quella persona, questa è un'altra cosa che secondo me è importante da capire anche nelle conversazioni perché spesso
+
+Cioè quella che ho appena raccontato la relazione bottom up. Ma c'è anche la parte top down. Spesso gli sviluppatori del team se ne escono con ⁓ ma no questo... io sono il primo sviluppatore che ogni volta ci dicevo no ma questa è un casino integra ma lascia stare dobbiamo parlare con... Anodetica. Anedotica. Dati fattuali. Completamente diverso.
+
+perché i dati fattuali possono essere smontati e si può agire sui dati fattuali. L'anedotica è solo dialettica.
+
+Filippo De Santis (59:29)
+Allora io ti dico una cosa, faccio un po' l'avvocato del diavolo in questo argomento qua.
+
+secondo me fare questa cosa nell'enterprise è un buco nero, cioè tu puoi farla per cose molto molto specifiche che impattano magari una feature importante il tuo progetto o bloccano il tuo progetto, cioè vai e dici guarda questa cosa qui così non si può fare, non riusciamo a fare niente, se non cambi questa non riusciamo andare avanti.
+
+non lo puoi fare per tutto secondo me a meno che non hai tutti quanti che lavorano verso quell'obiettivo cioè quindi ognuno fa un pezzettino ognuno fa un pezzettino ognuno fa un pezzettino e alla fine sei una situazione bellissima paradiso gente che balla ecco perché perché probabilmente c'è talmente tanto debito tecnico in alcuni ambienti che non ce la farai mai a toglierlo tutto quindi devi devi
+
+Scegliere le battaglie da combattere e quindi in questo caso qua io ti sono d'accordo con te ma se lo dovessimo fare veramente tutti I giorni per tutte le cose che vediamo faremo solo quello Le nostre delivery sarebbero le riunioni con le da OVNI, guarda ho trovato questo, queste cose qua, li possiamo risolvere così, le vuoi? E lui dice no veramente devo chiesto di fare l'altro progetto
+
+Brainrepo (1:01:01)
+⁓ vabbè,
+
+la escali quello che realmente conta, hai ragione, però quella cosa che volevo evidenziare è che se tu una cosa non la formalizzi, quella cosa non esiste. E quindi è proprio necessario fermarsi e dire ok, è arrivato il momento di stare il culo sulla sedia, ma appare il debito tecnico, ma appare il refactoring che c'è da fare, io questa cosa, al posto di quando vado da la led off e chiedo budget, che vuol dire
+
+Filippo De Santis (1:01:04)
+⁓ si, si si
+
+⁓ no, certo, sì sì.
+
+Brainrepo (1:01:31)
+un ingegnere in più, due ingegneri in più, deve andare con dati factuali, Abbiamo un sacco di debito tecnico.
+
+Filippo De Santis (1:01:39)
+secondo me questa cosa qui deve essere legata a quello che dicevi prima, sai use case come guadagni di più anche il debito tecnico se tu lo fai e non sposta niente in quello che loro vedono con i soldini è inutile, diranno perché devo pagare di più adesso se non c'ho niente poi dopo se è tutto uguale se tutto rimane lo stesso quindi devi trovare anche lì
+
+modo di dire dobbiamo fare questo per questo motivo.
+
+Brainrepo (1:02:13)
+Ho sentito Dora Matrix da qualche parte. Sì, abbiamo parlato di relazioni con le persone. La prima volta che sono entrato in un ambiente enterprise, sono rimasto spesato perché mi sono collegato doveva partire un progetto e c'era una riunione con, non vi dico bugie, più di 30 persone, Quindi mi sono...
+
+fatevi due calcoli di quanto sarà costata quella riunione giusta a span però c'era una riunione di 30 persone dove tutti dicevano qualcosa tutti portavano una posizione e intanto un contesto enorme quindi capire cosa prendere come prendere come archiviare queste informazioni quali informazioni sono importanti quali informazioni no
+
+diventa veramente complesso. È stato lo scoglio più grande che ha avuto, Perché se solitamente nel mondo enterprise il tuo progetto può anche essere piccolo, ma spesso è interconnesso con 70 progetti che sono anche piccoli, ma sono 70 però. Magari in quella colcia gli stakeholder dei 70 progetti che ti vomitano le cose addosso. Qui tu devi capire cosa è rilevante e cosa non lo è. E' come puoi
+
+sviluppare la comprensione del contesto, dello scope e via discorrendo. Come la si gestisce questa cosa? Perché io ho le mie tecniche, però tu da decano questa cosa l'hai fatta un gozzilione di volte, l'hai fatta in modo eccelso.
+
+Filippo De Santis (1:03:54)
+Allora io ti dico questa cosa per ridere. Io quando entro in call così ho molta paura perché non so assolutamente ricordarmi i nomi della gente. Quindi non so associare il nome di questa persona a cosa fa. Quindi il giorno dopo io non so assolutamente chi sei se mi ricordo i contatti. Ok quindi questo è fantastico. A parte quello. E' vero.
+
+Brainrepo (1:04:15)
+Teams aiuta perché ti dai il nome, il nome è l'organigrama, ho il tuo stesso problema.
+
+Filippo De Santis (1:04:21)
+io tutti i giorni così quando facciamo queste cose però sì ma anche durante la call quando quello parla vado a vedere chi che se a chi riporti vabbè tornando seri quando allora io quando mi sono trovato in situazioni del genere
+
+Ho sempre messo da parte il mio orgoglio e ho detto ok io di nuovo non so niente di questa cosa domani comincio a chiedere mi scrivo degli appunti cerco di stare attento cerco di essere molto molto focus durante quella call non capirò l'80 % di quello che dicono perché entrando in una call e essendo diciamo il nuovo
+
+in un gruppo di anche solo 10 persone, neanche 30, ci sono, come dicevi tu, momenti in cui entri in progetti con 30 persone che dicono cose che dici, mai sentito niente di questa cosa, vediamo.
+
+lì è domandare, è l'arte di domandare, l'arte di dire io non so niente ragazzi, cioè io sono arrivato oggi, mi spiace, tra quattro settimane, dopo che, diciamo, sono stato il vostro pergiuricubo, incubo per quattro settimane, allora potrò arrivare da qualche parte e dire ok sono arrivato, so la mappa su cui mi sto muovendo, la conosco, so chi devo chiedere le cose.
+
+nei punti in cui non conosco so che c'è questa persona che mi può aiutare eccetera ma all'inizio non è così, all'inizio è chiedere, quello è il segreto quello che faccio io è quello non faccio nient'altro è molto semplice
+
+Brainrepo (1:06:03)
+chiedere e chiedere a chi chiedere che è una cosa che funziona tantissimo Cioè io vado da filippo filippo non sa l'informazione sì ok filippo tu non lo sai ma chi mi può dare una mano e ti rimando una persona che poi ti rimando un'altra persona che poi ti rimando un'altra persona però ogni persona che tu incontri gli chiedi ma scusa tu esattamente qual è il pezzo di domino dopo Che hai fatto questo percorso due o tre volte C'hai uno schemino io io lo faccio e continuo a farlo qua dentro faccio tutto lo schemino
+
+Filippo De Santis (1:06:06)
+bravissimo bravissimo
+
+Brainrepo (1:06:33)
+delle persone, delle cose a chi chiedere, questo è tuo capitale, perché quello che ti salve il culo poi quando devi deliberare che bisogno di, perché poi a partire da quelle persone capisci chi più rilevante e chi è meno e costruisci magari delle relazioni umane e scherzose, gli dici quando vengo in sede ci beviamo una birra o ti devo una birra e magari gliela offri davvero, il rapporto umano mittiga e migliora questo tipo di condizioni.
+
+C'è però una cosa fighissima. vai vai scusami.
+
+Filippo De Santis (1:07:05)
+ti voglio dire una cosa, volevo fare un appunto su questa cosa che secondo me è molto disfunzionale ma nell'enterprise è pieno di questa cosa perché perché è enorme l'azienda in cui lavori cioè non stiamo parlando in azienda da 300 persone stiamo parlando in azienda da 8-9 mila persone è quello
+
+fa la differenza perché tu come dicevi tu prima quante persone poi conosce quante persone tieni le relazioni 100 150 le studies se ok e quindi quelle limite quando riesce a fare queste cose poi vai un pochino oltre quel limite perché dice sì conosco quello sì guarda l'altra volta non chiesto a lui non lo conosce direttamente però so che mauro gli ha chiesto una cosa e gliela risolta e quindi
+
+Brainrepo (1:07:57)
+E poi faccia di cartone
+
+e dici ciao, guarda sono Mauro di questo progetto, mi ha dato il tuo nome Tizio, scusa di romperti le scatole, che ti rompo le scatole, ma guarda, mi ha detto che tu sei super esperto di questa cosa o almeno che sei il king, io uso questo nome, tu sei il king di questo slice di dominio e son sicuro che mi risolverai, quindi giochi sull'orgoglio e vengono sì, io sono il king e ti rispondono sempre, sempre.
+
+Filippo De Santis (1:08:00)
+Esatto! Sono un amico di Mauro!
+
+Brainrepo (1:08:26)
+C'è qualcuno che ti gosta, però diciamo se ti gosta uno, gli dà il collega e gli dici non ho riuscito ad avere una risposta a ti, tu che dici giochi con la competizione insomma, ci sono tante cose. Però una cosa che ho trovato strana, ma che ho capito, è quella di capire quelle che sono le persone determinanti. Minchia! Ci sono...
+
+Filippo De Santis (1:08:30)
+La maggior parte delle volte.
+
+Brainrepo (1:08:54)
+Quando entri su una riunione con trenta persone e tu devi risolvere un problema è difficilissimo capire chi te lo risolve davvero. Una cosa del tutto empirica che mi porta con l'esperienza è che se tu hai un problema, dici, c'ho questo problema da risolvere, chi è il responsabile di quel problema? Se qualcuno si dice, o di quel dominio, di quella cosa, se qualcuno si alza o ti dice io, quello non è un responsabile.
+
+perché di solito il responsabile ti dice no io potrei aiutarti ma devo capire il vero responsabile dice sempre così perché vuole valutare in dettaglio quello che tu stai chiedendo e l'impatto che hai in quello che deve fare quello che ti dice io no no te lo risolverà non te lo risolverà questa è del tutto empirica possiamo chiamarla la legge di Mauro ma con me funziona
+
+Non so se hai mai esperito qualcosa del genere.
+
+Filippo De Santis (1:09:54)
+io ho
+
+un'esperienza leggermente diversa che è normalmente la persona che decide non è nella call
+
+Quindi la mia esperienza è che in queste call in cui ci sono tante persone non c'è la persona che decide. Ha mandato qualcuno che riporterà quello che è stato detto perché lui non ha tempo di fare una call con trenta persone. E questa esperienza è abbastanza... ...snervante a volte.
+
+perché? perché tu sei in una call in cui non c'è chi decide e quindi sai che dovrai fare un'altra call perché quello che non decide va da quello che decide, tornare indietro con quello che decide, con quello che ha detto quello che decide e tu parlerai di nuovo con questa cosa e via e fai il doppio delle call tutte le volte, fisso
+
+Brainrepo (1:10:57)
+tinn tinn tinn e soldi che si spendono.
+
+Filippo De Santis (1:10:59)
+bravissimo. Quindi questo in aziende tanto tanto grandi, molto strutturate, con tanti livelli, è una cosa che è abbastanza frustrante e drena tanta energia. Infatti una cosa che suggerisco a chiunque faccia questo lavoro è... cercate di avere un accordo.
+
+in un qualche modo che quelle persone non essere disponibili in un qualche modo se non direttamente con voi con qualcuno sopra di voi quindi nel caso di near form magari con il nostro technical director che può andare chiedergli cose che poi gli guarda che cosa problema qui per favore vieni una call e fai una call veramente con chi decide
+
+e quello aiuta, aiuta tanto in questi casi. Se vedi che una call non stava nessuna parte, io ho vissuto più di una volta, in più di un progetto call che non vanno nessuna parte, nel senso che si ripetono esattamente le stesse call, ma si ridicono le stesse cose, di tre giorni in tre giorni per...
+
+Brainrepo (1:11:55)
+e ne mappare le escalation ways
+
+Filippo De Santis (1:12:22)
+7-8 call che dicono le stesse cose. Io non ero direttamente coinvolto in quel progetto, cioè nel senso io era una dipendenza che avevo fatto le mie cose la prima settimana, erano pronte gli detto usatele però loro mi chiamavano perché dovevano organizzarsi loro. Era sempre uguale, alla fine sono nato io dal mio ex-elation post e ho guarda che poi non si muove niente, cosa dobbiamo fare? Cioè nel senso non ci vado più alle call perché così è inutile che io vada.
+
+però capita capita e bisogna un attimo essere se si vuole deliberare come dicevi tu noi siamo persone che ci hanno questa idea che quando vai da qualche parte il valore lo vuoi deliberare perché se no il tuo lavoro non lo fai bisogna un attimo anche muoversi per gli altri e dirgli guarda questa cosa non funziona io non ho voglia di andare a perdere il mio tempo nella call
+
+vogliamo fare qualcosa, cioè se puoi fare qualcosa vai e fai. Quindi sì, è un'esperienza un po' diversa dalla tua Mauro, senso non l'ho mai vista da questo punto di vista.
+
+Brainrepo (1:13:27)
+No, in
+
+realtà a me è capitato che qualcuno rilevante saltasse in call, speciale nelle call critiche, per quello che lo dico, però è vero, una buona parte delle call non c'è mai nessuno che decidi e si parla della stessa cosa 70 volte, infatti entro in modalità DHD e quindi praticamente io li lascio a parlare e là chiedere di registrare la call e attivare le trascrizioni di Teams sono determinanti. Perché poi...
+
+qualcuno ti dice no ma ne abbiamo parlati in quella call, tu ti salvi il file letto vai cerchi nella call vedi cosa si è detto in quello specifico spezzone dici no aspetta non me lo ricordo però ti scrivo intanto porti la conversazione offline che ed è molto più gestibile dal mio punto di vista almeno per uno con un attention span grande quanto una nocciolina e poi hai tutto il tempo di catturare l'informazione
+
+e gestirla, anche perché io ho una call che dura più di 20 minuti, io perdo l'attenzione e smetto di ascoltare. Anche perché una call di 20 minuti con persone da tutte le parti degli Stati Uniti o dell'Inghilterra, con accenti più o meno stretti da tutte le parti del mondo, diventa faticoso, Cioè, capita magari quella persona che ti parla con quell'inglese, è talmente stretta, è talmente veloce,
+
+che ha un throughput di 70 parole al secondo e tu dici aspetta aspetta che cosa ha detto? Grazie a Dio l'inglese lo capisco abbastanza bene. Hai però citato una cosa che è dipendenze e citando la cosa delle dipendenze mi hai attivato un campanello che è stato un altro life saver per me in un contesto così vasto e specie nel cercare di garantire la delivery.
+
+che è stata la mappatura delle dipendenze con le persone responsabili, con le milestone delle eventuali dipendenze se avevano delle delivery correlate, perché questo ti permette di organizzarti fondamentalmente, e insieme alle dipendenze la mappatura delle Assumption, gli assunti, come si dice in italiano, la mappatura degli Assumption è
+
+Filippo De Santis (1:15:45)
+e se non funzioni
+
+Brainrepo (1:15:50)
+la mappatura dei rischi con tre colori no? green, amber e red queste tre cose issues di solito la tecnica ride prevede anche gli issues ma non so mai cosa metterci nell'issue
+
+Filippo De Santis (1:16:04)
+anche io. Saltiamoli per adesso.
+
+Brainrepo (1:16:08)
+Però avere chiaro queste cose e riportare questi tre elementi ogni volta mi semplifica e mi toglie un sacco di grane e toglie tutte le discussioni da quello che abbiamo detto prima dell'anedotico, perché io ti sto portando questi quattro elementi sul tavolo. Questo è quello. Se non deliveriamo questi sono i motivi. E ti costringe a chiarire quali sono i problemi e questa cosa mi ha salvato la vita.
+
+Filippo De Santis (1:16:36)
+sono molto d'accordo con te, ho un nostro collega che è entrato come delivery manager, Duncan si chiama così Mauro sa di chi sto parlando, ciao Duncan non parla italiano ma va bene lo stesso e potrà vedere questo video in inglese, intanto abbiamo la traduzione al volo e quando è entrato io ho sfruttato tantissimo il suo essere un delivery manager
+
+Brainrepo (1:16:47)
+Ciao, d'anima.
+
+Filippo De Santis (1:17:05)
+quindi una persona che vive di queste cose, ride, di tracciare le cose su degli excel, fare dei gant... esatto, esatto, quindi... e ho sfruttato tantissimo quello che lui portava al tavolo, come dice Mauro, per cominciare a tracciare le cose, cominciare a dire ok questo è così, questo è fatto...
+
+Brainrepo (1:17:15)
+ganciarte
+
+Filippo De Santis (1:17:33)
+per tracciare i rischi ok facciamo quello facciamo l'altro e nell'ambiente in cui siamo attualmente questo effettivamente aiuta tanto aiuta tanto
+
+credo che aiuti tanto in generale. Io lo sto vedendo anche in progetti più piccoli in cui tu espliciti, rendi esplicito quello che non sai. ⁓ io penso che sia così. assumption, mettila lì. Oppure ⁓ io penso che ci sia questo rischio perché sto facendo questa cosa e potrei andare a finire in questo baratro molto profondo. Perfetto, mettilo lì.
+
+Quando si vuole parlare con qualcuno, se tu hai una matrice di quel genere lì, probabilmente questa persona ti prende più sul serio. Perché hai detto, ⁓ questo ha fatto i compiti a casa. Questo è andato e sa di cosa sta parlando. E nella tua testa è effettivamente così. Tu sai di quello che stai parlando, sai che cosa non sai, e ovviamente gli hanno e non hanno, non li puoi sapere, quindi quello si controlla solo quello che si può.
+
+però è molto molto utile. Io l'ho trovata molto utile quando soprattutto facevo dei report per quelli che non leggiano più di sette parole in cui dicevo guardate che la situazione questa era una pagina diciamo una tabellina con il ride due spiegazioni da quattro frasi ma neanche forse a volte anche due in cui dicevo questo è quello che abbiamo fatto questa settimana questi sono le cose
+
+rosso o verde o giallo? giallo ok perfetto grazie e giallo
+
+Brainrepo (1:19:21)
+Siamo italiani giallo.
+
+Filippo De Santis (1:19:30)
+il problema a volte è che non le cono neanche quello però e tu lo fai e dici vai
+
+Brainrepo (1:19:34)
+il colore lo vedono,
+
+il colore lo vedono fidati
+
+Filippo De Santis (1:19:38)
+il
+
+problema è aprire la legato ok? è a monte ecco però una volta che hai aperto la legato è molto chiaro quello che gli stai cercando di dire devi arrivare ad aprire la
+
+Detto questo
+
+io credo che se lo facciamo anche solo per noi è fondamentale, proprio ti porta su un altro livello, avere questo tipo di conoscenze, fare training della tua testa per pensare a queste cose ti porta proprio su un altro livello che dici ok, io non solo ho l'idea di quello che devo fare, ma ho l'idea anche di chi collabora con me, quali sono i problemi che potrei incontrare e quali sono i cose che non so.
+
+Brainrepo (1:20:26)
+Sì, e non solo nei report. Questa cosa è fondamentale nelle stime. Filippo sa bene, io sono il ragazzo dell'impact assessment, quando c'è un cazzo di initial impact assessment o impact assessment, non so perché me lo lancio raddosso, e che vuol dire dare delle stime.
+
+Filippo De Santis (1:20:44)
+hai creato fiducia
+
+Mauro, hai creato fiducia, si fidano di te. Non sto scherzando, è vero?
+
+Brainrepo (1:20:47)
+⁓ bah... semplicemente
+
+perché nessuno le vuole fare, perché cos'è fare un impact assessment? È dare delle stime. E nessuno vuole dare delle stime. E una cosa che trovato molto utile per dare delle stime è che in realtà io non do delle stime. Io faccio esattamente quello. Dico, questi sono gli unknown, queste sono le dipendenze e questi sono gli assumption. Partendo da questi assumption che potrebbero non essere verificati...
+
+Perché noi diciamo non possiamo fare le stime perché ci sono un sacco di variabili che non conosciamo. E iniziamo a prendere delle Assumption per le variabili che non conosciamo in modo da ridurre il campo. A quel punto bene o male una stima la puoi fare. Cosa succede? Che magari non tutte le Assumption vengono verificate. Il 30 % delle Assumption vengono verificate. E già sai quanto impatto ha? Vengono non verificate.
+
+e sai già quanto impatto ha il non verificare quelle Assumption? Sulla stima o i rischi, la mappatura di rischi. Sai che quella stima è sapendo che tu gestirai questi rischi, che sono dei rischi che la possono cambiare, però intanto sono espliciti e la cosa che diciamo prima sul debito tecnico, È che mettano a galla, venire a galla una cosa che implicita, ma le cose implicite non esistono, è quella la cosa.
+
+Assurda, le cose implicite, dobbiamo renderci conto che se sono implicite non esistono.
+
+Filippo De Santis (1:22:23)
+Questo è esattamente quello che... aspetta, adesso te lo descrivo in un altro modo, però è quello che io ho imparato che sia uno dei principi base del lavorare bene e lavorare in qualche tipo di forma agile, cioè tipo le retrospettive servono per fare salire i problemi. Cioè, tu devi esporre tutti i problemi che hai. Se non li esponi...
+
+Prima o poi ci vai addosso e ci sbatti la testa.
+
+questa cosa è esattamente quello cioè dici io in questo progetto che dovrò so che potrebbero esserci questi problemi so che non so queste cose e fare bubble up di queste cose qua come dici tu ti permette di arrivare a un punto in cui guarda più o meno io penso che ci vorrà così è ovvio che queste cose qui potrebbero ribaltare completamente quello che succederà
+
+potrebbero mandarlo a dieci volte tanto però quello mi stai chiedendo, mi stai chiedendo un po' di fare il mago no? che alla fine queste cose sono un po' di magia e un po' di intuito da perso... sì esatto dove tira il vento ma anche intuito da persona che è tanti anni che lavora in questo ambiente che dici guarda ne ho visti venti di questi progetti qua
+
+Brainrepo (1:23:49)
+Un
+
+backhender mi fa 12 story point a sprint, per un momento non ero mai del genere.
+
+Filippo De Santis (1:23:55)
+ma andiamo dei numeri però l'idea è
+
+cerchiamo di fare le cose in maniera tale che nel momento in cui qualcuno viene a dirci qualcosa, ma come mai hai fatto questa stima, ma che non siamo allineati alla tua prima stima, si può dire guarda, questo documento ti diceva esattamente le cose per cui io non ero in grado di stimare quello che è successo e questo qui magari, se siamo bravi, è esattamente il rischio che ti avevo detto.
+
+perché siamo rallentato guarda è qui
+
+Brainrepo (1:24:30)
+e il Periodic Report
+
+aiuta tantissimo nel senso che io generalmente lo faccio ogni sprint, ogni due sprint di dire sono passati uno o due sprint questi rischi sono ancora là, questo lo abbiamo mitigato, queste Assumption le abbiamo validate, altre ne sono arrivate e dare queste informazioni non tanto al Head-Off perché tanto non le legge però darle al
+
+Delivery Manager, in un ambiente di solito è un lavoro che fa il Delivery Manager Quest, più che no. Però siamo noi che realtà passiamo le informazioni al Delivery Manager. Quindi se noi partiamo già con questo mindset, o poi, Fili, siamo tech lead, ma mentalmente siamo ancora Delivery Architect in realtà, nel senso che è proprio questo mindset che
+
+Filippo De Santis (1:25:02)
+Bravissimo, stavo per dire quello.
+
+Brainrepo (1:25:27)
+rende che più mindset da delivery architect che da tech lead no probabilmente questo la nuance che aveva la parola delivery architect no
+
+Filippo De Santis (1:25:43)
+sì io credo che quello che... adesso non so se ce l'ha insegnato Nierform o Nierform è stata brava a beccare le persone che sono fatte in un certo modo quello non lo so quindi vedremo
+
+Quello che comunque a me è stato insegnato a me e forse non è stata neanche Nierfor, forse Nierfor è stata brava a trovarci e a poi a mettere insieme persone che sono cresciute a fare questa cosa, non lo so però quello che stato insegnato a me anche in aziende prima di Nierfor, prima di appena uscito l'università è stato sempre cercare di
+
+in un qualche modo riempire gli spazi fill the gaps ok cioè quindi nel momento in cui tu sai che serve qualcosa mettiti davanti, ok questo sì lo so che io sono un dev però scrivo anche i test per QA, sì lo so sono un dev però magari se c'è bisogno di dare a mano scrivere le user story perché vedo che il mio lead sta facendo e lo faccio pure io
+
+quel mindset che secondo me ti porta a fare queste cose qui e essere un tech lead o essere un delivery architect quello che ci chiamavamo prima noi alla fine della fiera è io questa cosa la devo deliverare se per deliberarla sì sì esatto cioè io devo levare i roadblock a chi lavora con me cioè questo è il fondamentale io sono lì
+
+Brainrepo (1:27:11)
+Sono pronto a fare le pulizie per DeliverA. C'è bisogno di pulire per terra e io pulisco per terra.
+
+Filippo De Santis (1:27:23)
+per dire io devo creare un'autostrada a chi lavora con me per fare il loro migliore lavoro possibile e tirare come le Ferrari in autostrada per arrivare dove devo arrivare con loro che si diverso non sportellarsi con le Ferrari
+
+Brainrepo (1:27:40)
+Io guardavo giusto adesso l'orologio, siamo praticamente a un'ora e mezza e quindi è il momento tipico e topico di GitBar, il momento in cui i nostri guest e i nostri host condividono con noi un libro, talk, con qualunque cosa che abbia catturato la loro attenzione e che valga la pena essere condiviso con la nostra community. Quindi...
+
+Filippo, quello che ti chiedo è hai qualcosa da portare qua a GitBar?
+
+Spetta!
+
+Non parte!
+
+Bye!
+
+Filippo De Santis (1:28:28)
+Eccoci qua, sì, ho qualcosa da portarvi in particolare, tre libri. Il primo è il secondo, cioè sono due grandi classici e uno forse meno conosciuto ma forse anche no. Il primo è The Phoenix Project, cioè quello è il libro che secondo me, ecco appunto vai Mauro, che secondo me esatto, esattamente quello.
+
+non può mancare, io ogni tanto me lo rileggo per dirvi, perché secondo me è proprio un grande trattato su che cosa succede in aziende medio grandi, che cosa dovrebbe succedere in aziende medio grandi e a volte perché non succede. L'altro che...
+
+diciamo conosco per lo conosco e penso che sia valido se applicato in un contesto che sa capire che è per lui è turn the sheep around quindi quello in cui si parla di appunto dare autonomia dare fiducia a chi lavora con noi
+
+essere di supporto più che di da capo e dirgli cosa devono fare poi è molto più complicato di così io adesso lo dico così velocemente e il terzo è qualcosa che credo che sia fondamentale per capire quanto può andare là, quanto si può andare là con la fiducia che è Extreme Contracts di Jacopo Romei
+
+Brainrepo (1:30:18)
+Venuto, è venuto qua un po' di tempo fa, Jacopo.
+
+Filippo De Santis (1:30:22)
+Io ho fatto il mio primo player programming con Iacopo Romei per dirti quando ho iniziato a lavorare e penso che quello sia un libro che parla di tutt'altro non c'entra assolutamente niente con il tech lead eccetera parla di tutt'altro ma dentro degli esempi dei principi delle delle perle secondo me che sono veramente interessanti anche proprio a livello di farti capire dove
+
+si va a trovare la fiducia, come si trova la fiducia e come si mantiene quella fiducia con gli altri.
+
+Brainrepo (1:30:59)
+Sì, sono d'accordo con te quelli bro è veramente bello tra l'altro lo stavo cercando perché Jacopo ha parlato esattamente di questi argomenti un po' di tempo fa su GitBar fatemelo trovare che vi do
+
+il numero dell'episodio, episodio numero 87 negoziazione per Devcon, Jacopo Romet e tra l'altro lo salutiamo, è sempre un tornado quell'uomo. Anche un libro Fili, è un libro che ha cambiato il mio modo di vedere le cose, è bellissimo ed è The Manager Path.
+
+Filippo De Santis (1:31:33)
+Sì.
+
+Bye.
+
+Brainrepo (1:31:48)
+Ed è il libro che mi ha convinto a non fare all in sulle developer relations. C'è stato un periodo che io praticamente stavo facendo all in sulle developer relations e riprendere in mano la career path da tech lead, la career path un po' più inclinata verso il management rispetto.
+
+Filippo De Santis (1:31:58)
+Mmh.
+
+Brainrepo (1:32:14)
+alle pubbliche relazioni o quella di staff engineer più tecnica, quindi l'interazione con le persone.
+
+Ce l'abbiamo fatta, un'ora e mezza abbiamo cercato un po' di condensare i nostri rant, le nostre decine di chiamate. Filippo era veramente il mio supporto psicologico, è stato il mio supporto psicologico per più di un anno e mezzo. Essendo mio line manager si subiva tutti i miei ore di rant.
+
+Filippo De Santis (1:33:00)
+No, sei stato bravo, sei stato bravo, non ti preoccupare. Fatto molto volentieri.
+
+Brainrepo (1:33:07)
+Infili, grazie davvero di essere venuto qua a GitBar per trattare degli argomenti che in realtà non vedo trattati approfonditamente nel web rispetto alla nostra professione. Si parla tanto di giocattoli nuovi, di AI, cose di questo tipo.
+
+invece elementi che sono fondamentali, veramente importanti e che continueranno a essere fondamentali e importanti anche dopo la rivoluzione AI, perché non credo che tutti i processi spariranno solo perché arrivata l'AI anzi probabilmente se ne aggiungeranno degli altri di compliance e quindi sono degli argomenti super rilevanti che in realtà
+
+Filippo De Santis (1:33:50)
+Probabilmente.
+
+Brainrepo (1:33:56)
+non se ne parla, è che sono verticali che toccano sì il tech lead che toccano sì l'head-off ma che toccano anche l'engineer che non capisce che cazzo sta succedendo che non capisce perché il tech lead agisce in quel modo e perché rispetto naturalmente alla visione locale del dev il tech lead ha una visione un po' più globale
+
+L'EDOF ha una visione ancora più globale, il CTO ha una visione ancora più globale, e avere chiaro di dove sei a qualunque livello della ladder è fondamentale per orientarti in quello che stai facendo per la gestione della frustrazione quando le cose non vanno come te l'aspetti. Quindi grazie davvero per aver portato questi topic a GateBAR.
+
+Filippo De Santis (1:34:46)
+Grazie mille, Mauro per l'invito.
+
+Brainrepo (1:34:51)
+Ringraziando di nuovo Filippo e ricordando che ormai Fili, tu hai l'attesa... Ti ricordi il circolo del dopolavoro postale ferrovia, lo tipico degli anni 60-70? Ecco, Gith bar è un po' il circolo del dopolavoro degli sviluppatori dove ci sono le bottiglie da 66 cL di chinusa che escono tre bicchieri che costano a un prezzo moderato perché è in tasse, perché i circoli non pagano oliva.
+
+Filippo De Santis (1:35:01)
+Sì, sì.
+
+Brainrepo (1:35:17)
+Ecco, GitBar è un po' un circolo così dove tu entravi solo, facevi la tessera solo per entrare la prima volta perché dovevi bere quella birra più economica, Ecco, tu da oggi hai la tessera di GitBar, quindi ogni qualvolta hai qualcosa di veramente interessante che ti fa piacere condividere con la nostra community. Noi siamo qua e vienici pure a trovare.
+
+Filippo De Santis (1:35:40)
+lo farò. Grazie mille Mauro.
+
+Brainrepo (1:35:43)
+Grazie Filippo! Io prima di lasciarvi voglio ricordare che se vi va di supportarci abbiamo una bellissima paginetta supportaci nel sito quindi cliccateci perché fa fa è anche simpatica e vi racconta come spendiamo i nostri soldi. Detto questo io vi ricordo un'altra cosa super cringe mi imbarazzo come un ladro a dirvelo
+
+se vi va cliccate sulla campanella e iscrivetevi al canale di youtube perché il podcast va come sempre molto molto bene il canale youtube è un po' così dobbiamo ancora crescere siamo siamo giovani là quindi se vi va di farlo fatelo pure se non vi va di farlo amici come prima ce la beviamo uguale a birra insieme e detto questo io vi do appuntamento alla prossima puntata sempre qua su git bar sapete dove trovarci ciao ciao
+
