@@ -1,0 +1,1123 @@
+Brainrepo (00:00)
+Bene e benvenuti su GitBar, nuovo episodio, nuova settimana, nuovo episodio qua nel nostro bar degli sviluppatori, oggi sono completamente asciugato, non ho più energie. Non pensavo che fare knowledge transfer fosse così così faticoso, e invece una delle cose cacchio più difficili è faticose in assoluto. Mamma! Infatti non riuscirei a tenere una puntata da solo.
+
+E per fortuna ho degli amici con cui possiamo chiacchierare stasera del più e del meno e soprattutto della pizza che Carmine sta mangiando. Ciao Carmine!
+
+Carmine (00:42)
+Ciao a tutti, madonna mia, è una sensazione bellissima. Era tantissimo tempo che mi mettevo davanti al microfono con voi. Come state? Ciao Luca, ciao Mauro.
+
+Luca (00:52)
+è con una pizza ciao ciao
+
+Brainrepo (00:52)
+C'è anche Luca, c'è anche Luca
+
+infatti, ciao Luca!
+
+Luca (00:55)
+ma sono sono senza pizza però mi ha sfidato Carmine e quindi la prossima volta ci sarà un altro git fight a suoni pizza
+
+Brainrepo (01:07)
+Facciamo la gara di cucina di Githbar
+
+Luca (01:10)
+è così un po' per variare e per spezzare un po' il ritmo.
+
+Brainrepo (01:15)
+tra
+
+i due io sono... ma fa un bene...
+
+Luca (01:20)
+e si emoziona a parlare di pizza
+
+Brainrepo (01:22)
+tra
+
+i due sono quello che cucina peggio. Credo che questa puntata non partirà oggi.
+
+un goccio d'acqua se non vuoi io
+
+Luca (01:34)
+intanto
+
+mandiamo una musichetta o la tagliamo non lo so
+
+Brainrepo (01:37)
+Il primo
+
+Carmine (01:37)
+Tuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttuttutt
+
+Brainrepo (01:38)
+conduttore di podcast morto
+
+per una nocciolina bloccata in gola. Si le ⁓ &M's me ne sono praticamente mangiato un pacchettino mentre sistemavo la camera. Beh ragazzi come va?
+
+Luca (01:46)
+⁓ vero, erano le noccioline.
+
+buoni
+
+parte agli scenari internazionali, ma dico abbastanza abbastanza bene per me
+
+Carmine (02:13)
+Sì, dai, allora alla fine, hai capito, si uscita tra la paura di essere sostituito dal calcolo matriciale a quella di essere colpito da un missile, alla fine... Vi voglio dire, la calcolo matriciale, assolutamente! È una festa.
+
+Brainrepo (02:24)
+guidato da calcolo matriciale.
+
+Sì, sì, però noi cerchiamo di portare la mente da qualche altra parte perché sennò già mi veniva una depressione guardando il telegiornale negli ultimi due giorni, cerchiamo di parlare di cose divertenti. Parliamo di EPI oggi, questo che vogliamo proprio e proprio divertirci,
+
+Luca (02:50)
+ma io ci ho provato a sviare un po' no proprio di API dobbiamo
+
+parlare oggi, vabbè.
+
+Carmine (02:54)
+proprio di API assolutamente
+
+Brainrepo (02:59)
+vi faccio una domanda, tanto non possiamo far finta di niente che futuro vedete nelle API in un mondo che sta diventando sempre più AI slash LLM driven?
+
+Luca (03:21)
+questo me lo stavo chiedendo prima quando ho scoperto il topic di questa puntata perché in realtà c'è già adesso quando uso e abuso il mio amico Claudio, Claud, nello sviluppo
+
+Comincio a vedere meno quello che fa e a vedere più se una cosa funziona oppure no, cosa pericolosissima, me ne rendo conto, infatti è per quello che dico quando abuso del mio amico e ho paura che con le P.A. si potrebbe andare allo stesso...
+
+allo stesso... nella stessa direzione anche se non saprei dire se sarà meglio o peggio di quanto noi uomini dotati di intelligenza naturale uomini e donne dotati di intelligenza naturale facciamo cosa voglio dire? che da una parte ci sarà una gente che scriverà le specifiche delle API dall'altra parte ci sarà una gente che le consumerà dall'altra parte ci sarà una gente che guarderà i log
+
+errori o di tentativi di uso dei P.I. e si costruirà tutto da solo nella nostra abbeata ignoranza. Come verrà costruito? Io ho un dubbio, non so se sarà meglio o peggio. Non so, voi come la vedete.
+
+Carmine (04:46)
+Secondo
+
+me, secondo me sarà il futuro della comunicazione anche tra i vari agenti trascendono i protocolli che già ci sono ora per i vari agenti, MCP,
+
+etc. ho detto a2a che vi ho detto una cosa bruttissima all'italiana va bene esatto no e secondo me in realtà le nuove epi che saranno più consumate diciamo da
+
+Brainrepo (05:06)
+Società d'energia
+
+Carmine (05:17)
+attori che sono macchine dovranno e saranno molto più performanti rispetto a quelle che abbiamo bravo. fare una provocazione, quante volte avete fatto il vostro diciamo end point rest in merda? Oppure ancora peggio quello GraphQL dove ormai le performance non...
+
+non sono mai state considerate tipo e diceva va bene ma mi risponde in 400 500 mille mille mille secondi magari quella chiamata deve a parte va che ci mette anche due secondi. Diceva va bene ma tanto sul frontendo mettiamo lo spinner. Ecco secondo me questo tipo di cose in un mondo di contenuti che verrà sempre più consumato da attori non umani diventerà determinante. Cioè il fatto che
+
+le performance sono più orientate all'uomo, non so se mi spiego, senso, è più importante forse in questo momento che il mio mcp server sia performante rispetto magari all'api che sto costruendo per popolare magari un add.
+
+dashboard ad esempio anche se è real time perché noi esseri umani siamo comunque abituati ad aspettare mezzo secondo un se un secondo diciamo ad avere un ciclo di vista di qualche cosa che sia comunque più lungo rispetto magari al tempo di interazione di processi che è una macchina voi che ne pensate
+
+Brainrepo (06:50)
+Il tempo è un elemento importante, termini di... la performance in termini di tempo è un elemento importante, però secondo me ce n'è un ancora più importante che è la verbosità. Domani, la sfida del domani sarà una sfida sul piano energetico di consumo di energia. Se noi facciamo tre hop e proviamo a salire alla fonte
+
+Capiamo bene che la sfida sarà ottimizzazione del consumo di talk.
+
+e questa sarà la vera sfida di domani. Quindi le API saranno utili se in grado di ottimizzare i token. Cosa vuol dire? Che per esempio io vedo un futuro dove forse il JSON non ci sarà perché sarà un po' troppo verboso.
+
+vedo un futuro dove forse CSV performerà meglio da quel punto di vista, E Carmine ride sotto i baffi, però in realtà è così, senso che più tokens si risparmiano, più si abbracerà la sfida di un domani. E in parallel, tra l'altro su questo vorrei farci un episodio, perché vorrei portarvi proprio un articolo e lo commentiamo insieme magari la prossima volta.
+
+è proprio un articolo che parla del potenziale futuro della programmazione e poi mi chiedo anche, ma domani avremo bisogno, dal momento in cui le API sono consumate dai modelli, Avremo davvero bisogno delle API.
+
+Carmine (08:39)
+Stavo dicendo, mi è tolto le parole di bocca, realtà quello che sto dicendo è una cosa simile, nel senso che ma avete visto che parabola, cioè nel senso fino a qualche anno fa, non va bene più la roba plain text perché non è efficiente, dobbiamo fare la...
+
+roba binaria e quindi protobuff e quindi drift e quindi le robe adesso si sta scavallando e il plain text, linguaggio naturale è diventata la vera merce di scambio il fatto che io possa rispondere il linguaggio naturale o comunque in plain text
+
+è diventata la nuova merce di scambio per questo tipo di interazioni. Ma quante seghe vi sei fatto? Io un sacco. Quante seghe vi hai fatto? ⁓ no, lo facciamo in binario, lo facciamo in gRPC, lo facciamo così, hai visto come è efficiente adesso? E ora siamo ritornati al plaintext, al csv, nuovi formati che nascono solo per questa cosa qui. Non vi sembra una bellissima
+
+una parabola, ed è cambiato tutto in maniera estremamente veloce.
+
+Brainrepo (09:57)
+credo di sì, credo che c'è anche un allontanamento dal dato strutturato che è stato il paradigma principale che ha guidato poi lo sviluppo di tutte le API, no? Perché l'API partiva da quel concetto, quindi l'allontanarsi dal dato strutturato forse presuppone che si ragioni più in documenti che in dati strutturati, quindi questi dati, le API che avevano come
+
+come concetto della risposta prevalentemente non dico esclusivamente ma prevalentemente un dato strutturato stiano un po' abbiano un po' una credentità oggi no questo è quello che sento perché da una parte abbiamo cose tipo gli MCP che fondamentalmente parzialmente provano a sostituire un API infatti io continuo a chiedermi ma
+
+L' MCP è un API. Un API con magari un Open API Specification scritta bene con le description e tutto il resto che bisogno c'era di un MCP. Forse il protocollo di trasferimento va bene, ok. Però, però ecco, la vedo più come una metamorfosi. E poi mi chiedo, mi chiedo...
+
+dal momento in cui noi stiamo migrando la fruizione di questi contenuti che tipo di API abbiano senso? cioè l'EPI secondo me e poi questo lo vedremo in un prossimo episodio saranno l'interfaccia di quegli elementi di calcolo e di analisi
+
+poco efficienti se svolti da un LLM.
+
+Quindi, saranno l'interfaccia di quelle di... non so come spiegarlo perché è veramente complesso però, avremo due tipi di applicazioni. Quelle che possono essere velocemente fatte da un LLM, le risposte che possono essere velocemente date da un LLM, e altre risposte dove le LLM non performano. Bene, immaginate i calcoli, no? Un API potrebbe coprire
+
+il concetto API potrebbe coprire questa parte anche perché consideriamo che oggi molti MCP consumano direttamente il database volendo e quindi bypassano un layer di API necessarie io non so se avete mai usato un MCP che si connette a Postgre io ne ho un in solo lettura per per per l'applicazione che sto sviluppando in test quindi l'ambiente di dev ce l'ho in sola lettura in modo che non faccia
+
+porcherie ed è una figata e non ho bisogno di API e quindi funziona bene, io do il comando e quella roba mi fa le query da solo senza bisogno di tanti livelli d'astrazione però è performante, quanto è performante? Beh è il database che fa le query quindi dovrebbe esserlo no? Non lo so, sto vaneggiando, sto provando a...
+
+costruire delle domande perché stiamo vivendo in un momento in un'epoca storica dove non sappiamo neanche le domande non di darci delle risposte ma stiamo appena iniziando a farci a farci delle domande però ognuno di noi nella tasca ha delle esperienze con l'api quindi proviamo a ritornare un po' al concetto di api quale sono
+
+secondo voi le sfide più grandi che si hanno quando si sviluppano delle API.
+
+Luca (13:59)
+vabbè, secondo me quelle solite, dare i nomi alle cose, quello è il nostro principale problema. Devo dire che di esperienze piccole, medie, grandi, neonio, anche abbastanza di recente, la prima sfida è la facilità d'uso.
+
+che però adesso cambia ancora con la rivoluzione a cui stiamo assistendo a facilità d'uso per chi prima la mia risposta era per lo sviluppatore, adesso per l'LLM che deve leggere la documentazione e riferire allo sviluppatore o scrivere codice direttamente domani sarà appunto l'LLM e basta e quindi a quel punto forse il problema non si potrebbe nemmeno
+
+e dicevo fare una cosa che sia abbastanza con una dexa abbastanza alta ma allo stesso tempo con un giusto layer di astrazione perché magari non vogliamo mappare uno a uno la nostra base di dati ma vogliamo dare una semantica differente
+
+però trovare una sintesi tra tutto questo per me è sempre stato un incubo non ci sono mai riuscito quindi aspetto risposte illuminanti
+
+Carmine (15:32)
+Sai,
+
+me una grande sfida software non è tanto quella di creare un API che sia diciamo efficiente, usabile con una superficie giusta, che non sia troppo grande, che non sia troppo piccola, sia utilizzabile, ma l'evoluzione dell'API stessa. alla fine...
+
+Tutti quei nostri software partiamo con le buone intenzioni. Alla fine la versione 1.0.0 è quella che si porta dietro tutte le grandi intenzioni. È una gara che si vede dopo qualche versione. Riuscire a far evolvere un API utilizzata da più consumer, se voi siete i creatori e consumi della vostra API è tutto bello e tutto giusto.
+
+ma far evolvere qualcosa che è consumata da più attori, più pro, da più pro, da più pro grammi. E' una sfida enorme. Ma se già pensate a quante bestie metri amano, quando magari hai una certa versione di una libreria che ti fornisce un API per fare qualche cosa e magari viene bampata la minor.
+
+però vi alleggi e c'è scritto breaking change e tu dici ma allora perché mai perché mai perché non è meno. Quindi tutt'quanto una serie di cose e riuscire a fare evolve in maniera coerente è una cosa estremamente estremamente complessa ed è più diciamo più un lavoro di mediazione tra le parti che veramente tecno perché poi alla fine.
+
+ogliendo quelle sfide tra le riprese tecniche che ci possono stare nell'utilizzo di alcune tecnologie in particolare è un grande lavoro di mediazione che spesso è veramente difficile fare.
+
+Brainrepo (17:27)
+Sono d'accordo con voi, credo che intanto prima di...
+
+di pensare a qualunque sfida legata all'IPI dobbiamo chiarire bene che cos'è un IPI, Perché sapete quante volte ho ricevuto messaggi del tipo perché devo fare sei meeting e passare per tre committee quando devo solo aggiungere un cazzo di endpoint e mi devono dire se...
+
+get user ID setting è ok no? Specie queste cose succedono specie in ambiente enterprise e allora per provare a dare una risposta a tutte queste frustrazioni che si hanno quando si fanno questo tipo di design di API no? E quando si va a sviluppare l'EPI specie in un ambiente un po' strutturato bisogna fare un passo indietro e provare a capire che cos'è un API.
+
+Perdonatemi la blasfemia ma credono nella trinità delle API, le API è una e trina ed è l'interfaccia, l'implementazione e l'istanza. Queste sono i tre elementi che definiscono le API e devono essere considerati dannatamente tutti e tre. L'interfaccia e lo schema che esponiamo, quindi quello che diceva Luca e che raccontava nella frustrazione, cioè
+
+come noi esponiamo le informazioni della nostra API, con quale schema, con quali proprietà, con quelli attributi è quello e uno degli elementi. L'implementazione è il codice che noi scriviamo per le API, quindi un asset, il codice, e poi c'è l'istanza che è l'API che gira su un server. Quando noi parliamo di API dobbiamo chiarire che stiamo toccando, toccando questi tre elementi.
+
+E allora quello che noi cerchiamo da sviluppatori normali è quello di andare a trovare le best practice per ognuno di questi elementi. Quindi per esempio per l'istanza pensiamo all'observability, per l'interfaccia pensiamo magari a un restful approach o un GraphQL approach, no? Oppure ci andiamo a leggere quello che mi condivise Mattia un po' tempo fa che sono
+
+le documentazioni su come scrivere delle buone API rilasciate da Google o le guidelines di Microsoft, no, le prendiamo, le sbattiamo nel nostro progetto, magari ci installiamo qualche skill che dice al nostro amico Claudio di fare le API esattamente così, e siamo felici, ma così non funziona, perché?
+
+perché in realtà le API dipendono da un elemento fondamentale e non sono altro che una, partono da una decisione io adesso vengo da un ambiente enterprise quindi porto i concetti che vengono dall'enterprise finché gestiamo un API solo per noi e questo l'avete detto voi ragazzi
+
+è facile no? 20 in point, 30 in point
+
+lavoro fatto. Ma cosa succede se ci sono 30 team, 400 microservizi e decine di migliaia di endpoint? O migliaia di endpoint? Come la gestiamo? In quel caso c'è uno shift e iniziamo a parlare di API Landscape. Ed è qua che entra in gioco il concetto di governance.
+
+Chi gestisce il processo decisionale? Chi prende le decisioni? E quali sono gli obiettivi della decisione? Tutto giro attorno a una cazzo di decisione nella gestione delle API, ma in genere anche nello sviluppo del software, no? E per prendere una decisione la prima cosa di cui abbiamo bisogno è la visibilità. Come rendiamo le API visibili? Gli faccio una domanda, vi siete mai chiesti?
+
+Quali sono le nostre API? Avete mai provato a visualizzare le API che esponenti?
+
+avere chiaro in testa l'EPI del vostro progetto.
+
+Luca (22:10)
+con un'immagine o con una... che senso?
+
+Brainrepo (22:12)
+Non lo so,
+
+che strumenti potenzialmente utilizzate.
+
+Luca (22:23)
+Oddio Carmine, passo la palla a te perché non...
+
+Carmine (22:28)
+Allora, strumenti utilizzo per dei miei progetti? In che senso? Fammi un esempio. Dai, facciamo così, facciamo una conversazione.
+
+Brainrepo (22:36)
+Per esempio tu hai una
+
+quarantina di API in microservizi diversi. Come fai a capire dove si trova quell'end point e cosa fa quell'end point?
+
+Carmine (22:41)
+Sì. ⁓ ok, sì, sì,
+
+Guarda allora ti ti ti ti dico la verità è un macello terribile nel senso che come tutte le cose ti parlo anche della situazione in cui sono ora dove ci sono veramente tante
+
+diciamo dove riesci a sé a sé parare bene in generale anche in altre esperienze ho visto questa cosa qui lo riesci a capire dal tipo se magari vogliamo parlare di un API restful dove il concetto di resource molto presente spesso lo riesce a capire dalle risorse con cui stai interagendo dove perché magari sei uscito a isolare il dominio di quella cosa e sai che quelle risorse sono la tipo ok
+
+Ovviamente questa cosa si spezza il primo momento in cui vai da un'altra parte e c'è scritta la stessa cosa però nel senso più o meno questa cosa la riesci a fare la...
+
+che riesca a fare più o meno così ovviamente sono tutte sposte con OpenAPI, Swagger, eccetera eccetera non ve lo posso far vedere ma potete immaginare una UI di Swagger dove nella drop down dove puoi uscire il servizio ce ne sono diversi e vedi diciamo diverse cose insomma
+
+Il problema è riusci a trovare anche una serie di convenzioni che riescono magari a guidarti nella scelta, almeno nelle decisioni, quando riguarda il design di un API. Se vogliamo prendere come esempio un API che mi è tanto cara, non è web, non è REST, ma è l'API di Rails, con Rails inteso come framework e come libreria, anche al passaggio da un'avvia.
+
+versione all'altra, superficie di API di RACE ma anche di Rubis stesso è molto coerente con sé sé stessa. Io mi aspetto che sull'array ci sia tipo include, sono giusto ci sia includes, o ci sia contains, insomma, nel senso ci sono tutta una serie di convenzioni che mi fanno capire più
+
+o meno dove sono anche quando leggo un pezzo di codice. Ecco quella cosa là io la sono riuscita a fare veramente di rado in un contesto come quello che mi stavi scrivendo prima con centinaia di endpoint con decine di...
+
+con CTI, con decine ci si riesce ancora però magari forse non è nemmeno il numero di endpoint ma il numero di attori coinvolti nel designing delle stesse cose non so se vi è mai capitato anche nella stessa azienda c'è il tuo team che fa le cose in un certo modo, ha le sue convinzioni, le sue robe e parliva un altro team che lavora su un'altra cosa che fa le cose in maniera totalmente diversa vi andate ad unire e dici buh
+
+che a me è successo anno fa. No, noi siamo a te o a se tu ci si perché no? tu dici allora potete mettere a favore che stavi a scorrere G qui data table. Quindi nel senso. Cioè sono la vera difficoltà è riuscire diciamo a colpere un catalogo delle API.
+
+Guarda che gancio!
+
+Brainrepo (26:27)
+Io non so,
+
+tu sai che io stavo lavorando a quello, In realtà uno dei primi problemi che si hanno, specie sull'elemento interfaccia delle API, avere un catalogo delle API. Certo, mi potete dire, estruenti come Backstage hanno un catalogo delle API, però Cribio sono tutti dannatamente rudimentali. Io negli ultimi mesi stavo lavorando a un RUG,
+
+per OpenEPI Spec proprio perché mi semplificava la vita perché in un ambiente enterprise molto grande con centinaia di team diventa un bordello trovare le informazioni, cioè sapere quale cazzo è l'EPI che ti restituisce l'indirizzo e quello che succede normalmente in queste situazioni è che si va per persona, per contatto personale, è quello più efficiente, io so che
+
+Carmino stava lavorando sulla parte del billing e Luca stava lavorando sulla vendita, perfetto. Se ho bisogno di prendere i consumi dell'ultimo mese io chiedo a Carmino. Se devo sapere dei prezzi di una certa cosa chiedo a Luca e Luca mi indirizzerà perché Luca ha un quel punto un ownership di dominio
+
+molto più limitata di tutto il dominio, però la visibilità del landscape di API è l'elemento fondamentale, soprattutto è l'elemento fondamentale che permette di prendere le decisioni, perché sennò tu non prendi una decisione informata. E se tu non conosci come si articola i tuoi domini, ok, a quel punto che decisioni prendi? E soprattutto
+
+che decisioni non prendi? Perché le decisioni che decidi di non prendere sono altrettanto importanti delle decisioni che decidi di prendere, Lo so che vi sembra strano quello che sto dicendo. E poi Carmine ha tirato fuori la questione della consistenza. Quello che dice Carmine è una cosa interessante e solleva un elemento fondamentale che si chiama l'ottimizzazione.
+
+La situazione che raccontavo dove ha due team che utilizzano convenzioni diverse, tool diversi, approcci diversi, sia quando i due team lavorano con un'ottimizzazione locale, cioè ogni team sceglie quello che è il meglio per quel team, dimenticandosi che esiste un sistema superiore, cito Luca, che si chiama organizzazione, che ha un obiettivo globale.
+
+E qua c'è la sfida, cazzo! Ottimizzazione locale o ottimizzazione globale? Quali abbracciamo? Se abbracciamo l'ottimizzazione locale i team sono presi benissimo perché possono sperimentare, possono utilizzare i tool che più gli interessano e possono andare veloci. Ma se ottimizziamo globalmente tu c'hai quel signorotto che si chiama API Architect che ti dice no, guarda tu mi fai rest ma...
+
+Non mi fai restful perché ho bisogno di questa altra cosa e mi utilizzi tutto al singolare, lo so, sto buttando cazzate sulle... o la paginazione me la fa in questo modo. E quindi dai, imbrigli molto, questo naturalmente ti fa perdere in velocità, poi ci guadagni in consistenza, quindi...
+
+a livello aziendale, a livello enterprise questa cosa funziona molto, però a quel punto si ha la frustrazione dello sviluppatore. Avete mai vissuto una situazione di frustrazione per i limiti imposti?
+
+Luca (30:34)
+Certo, siamo programmatori, ovvio. Sì, molto, infatti mentre parlavi io mi chiedevo qual è tutto sommato il problema dell'inconsistenza?
+
+perché è vero, ovviamente avere una EPI bella perfetta ben pensata molto ergonomica e che più ne ha più ne metta fa ovviamente piacere ed è bello però forse come detto anche da Carmine nel lungo termine la vera sfida è quella io adesso mi ero dimenticato ma sto proprio facendo lavoro su mappare due EPI diverse
+
+su dati sciistici, meno male che la stagione è quasi finita c'è un casino tra robe deprecate, robe mezze deprecate, robe non documentate robe che ci sono ma che non sono documentate o meno male assenti no? perché c'è tutto però magari ci sono molti campi, molti end point che stanno lì
+
+documentazione ti dice c'è questo endpoint e tu grazie molto molto molto gentile e grazie e ovviamente fa incazzare chiunque cioè farebbe incazzare chiunque però molto probabilmente le pi che mi stanno esponendo una una flessibilità o comunque se io chiedo
+
+Brainrepo (31:51)
+E a queste proprietà, sì lo vedo!
+
+Luca (32:15)
+e ho chiesto infatti una qualche modifica o una delucidazione questa viene fatta o viene data alla fine il lavoro quello è a me non mi interessa che l'EPI sia perfetta fra due anni perché ci siamo messi a parlare per sei mesi a me mi prese il dato prima che la stagione invernale finisca nel mio caso quindi
+
+mi chiedo, deleghiamo tutto a questo capo architect API supremo che poi fra tre anni farà comunque le sue cazzate e avremo comunque un API non consistente a scapito di...
+
+essere stati molto molto lenti di aver perso magari eventualmente clienti partnership o chissà che cosa adesso in questo caso era un API pubblica esterna accessibile accessibile pubblicamente a che prova sostanzialmente cioè sì per amor di architettura per amor di codice per carità tendiamo tutti alla perfezione però alla fine
+
+le cose devono essere fatte questo non voglio dire viva la merda, fatemi... io voglio tendere alla perfezione, va bene, essere perfetti fra tre anni quando mi serve fra dieci minuti non va bene lo stesso
+
+Carmine (33:35)
+Secondo me... No, no, lo dico io, viva la merda, non ti preso cuore.
+
+Secondo
+
+me io credo che là stia succedendo una cosa estremamente banale ragazzi tipo la verità sta nel mezzo nel senso che avere tutti i team devono avere diciamo una
+
+API doctrine che è una cosa che dicendo io ora, invito a non cercarla su Google, che vi posso assicurare vi esce veramente del bruttissimo PHP, se cercate questa roba qui, che vi dica, cioè che stabilisca quali sono magari dei canoni, diciamo...
+
+generale con cui strutturare la cosa e c'è sicuramente di che costruire la cosa diciamo magari che nella fase iniziale che è quella più semplice perché il prodotto non c'è non c'è non c'è le API e poi sicuramente ci vuole una una fase diciamo di committee e di steering verso l'evoluzione di un'API perché altrimenti qualcosa utilizzata da
+
+migliaia di consumere che rischia di rompersi è un problema insomma però nel senso a questo punto ve la faccio io a voi la domanda ma quindi la soluzione non è come ci hanno sempre detto che basta fare API versioning basta mettere v1 v2 e tutto funziona e tutti sono contenti
+
+Brainrepo (35:27)
+L'EPI versioning e il change management è una delle sfide più grandi dell'EPI, no? E no, non funziona così C'era un'altra famiglia che diceva no, per noi l'EPI è immutabile quindi le proprietà che prima c'erano non si tocca, non ne aggiungiamo delle nuove e deprecchiamo le vecchie e rimarranno là a interim che rimarranno là
+
+e poi ci rimangono per sempre. In realtà, quello che avete detto lo sposa appieno. Abbiamo due approcci per la gestione dell'EPI. Un approccio centralizzato, quindi con una design authority, cioè il capo architetto che diceva Luca, dove il controllo è centralizzato, un piccolo pool decide come si vuole sviluppare l'EPI e tutti le sviluppano.
+
+velocità decisionale lenta perché chi prende le decisioni sono tre persone e tutti si devono adattare. La consistenza è alta. Cosa vuol dire? Quali sono i benefici? I benefici sono che naturalmente l'IPI è omogenea, hai meno rischi di versionamento, ok? Perché hai un'integrazione più ponderata.
+
+e hai un controllo centralizzato con una consistenza molto alta. Questo succede con la Design Authority, quindi un pool di architetti. Poi c'è invece il modo completamente decentralizzato dove ogni team segue i propri interessi, quindi delivery alla velocità della luce, ma una consistenza che è variabile. Avete detto bene?
+
+La soluzione sta nel mezzo. Un modo o un modello di governance che io ho individuato essere interessante anche perché non sono io che l'ho individuato ma grandi esperti di API, management, API governance ne parlano come una soluzione e secondo me può essere, è quella degli embedded expert. Cosa vuol dire? Voi avete parlato di guidelines,
+
+Carmine lei è tutt'uno giusto definiamo le guidelines e poi bene o male ogni ogni ogni team le declina un po come gli servono immaginate che quel pool di pochi architetti uno di questi architetti entri nel vostro team all'inizio ok del team e lavori con voi i primi mesi per
+
+applicare le regole condivise, condividere una visione globale e non locale del vostro team, quindi una visione di enterprise, e comprendere con voi quelle che sono le regole globali che hanno senso in una visione globale, quelle che invece sono un limite. Quindi secondo me il vero dipende sta là, ed è tutto in funzione della decisione.
+
+Prima abbiamo parlato di frustrazione, no? Io mi sono chiesto tante volte perché siamo veramente frustrati quando in un contesto centralizzato la decisione viene dall'alto, no? E quindi ci dice dovete fare così, è solo così. E la risposta che mi sono dato è che cazzo non siamo parte della decisione, giusto?
+
+siamo completamente tagliati fuori dalla decisione pur essendo quelli che navigano nel fango e questa cosa ci fa girare dannatamente le palle. Allora da persona che gestisce la governance mi chiedo come posso coinvolgere il team nelle decisioni?
+
+e per darmi una risposta ho pensato a mia moglie, questa cosa l'ho detto anche nel talk di Code Emotion, mi sono chiesto questa cosa e ho detto ma cacchio come posso capire qual è la cosa che mi stridi più in funzione della decisione?
+
+e mia moglie mi ha detto Mauro, guarda che a casa quella che decido sono io.
+
+E nelle nostre cose, quella che decide sono io e gli detto non è vero, tu mi lasci sempre la decisione finale a me.
+
+Così lei l'ha detto scherzando, no? Provocandomi come fa sempre. E in effetti lei lascia la decisione finale a me, sempre. E allora se ci rifletto per un attimo...
+
+a quel punto comprendo che la decisione non è un elemento atomico. Quindi il modo che ho io per coinvolgere il team in un contesto dove devo applicare una visione globale, quindi imporre in un certo senso degli elementi, E avere il controllo su questi elementi, è che lo faccio attraverso la gestione della decisione. Se la decisione non è automa
+
+Quali sono le componenti della decisione?
+
+Quello che si chiama l'inception, quindi l'elemento diciamo, il momento in cui si dice ok, c'è bisogno di prendere una decisione, no? E quella di per sé è già un elemento della decisione, cioè decidere se c'è bisogno di prendere una decisione, se usare la paginazione delle API in un certo modo, è già una decisione.
+
+perché potrei dire no questa non è una decisione che devo prendere quindi lascio il team completamente autonomo di fare come vuole perché non è rilevante quindi già quella è una decisione la selezione delle scelte andiamo a cena? sì andiamo a cena fuori, sì quale ristorante andiamo tra questo e questo? è che sta scegliendo? mia moglie che dice quale ristorante andiamo tra questo e questo? chi è che sta scegliendo dove andare a cena? io o mia moglie?
+
+Lei ha già ristretto il campo e quindi ha guidato la mia decisione. Io ho la percezione di libertà, perché posso scegliere, ma sto scegliendo su un ventaglio limitato. Il terzo elemento della decisione è la selezione, quindi la scelta veri e propria. In un contest enterprise esiste anche un quarto elemento che è l'autorizzazione.
+
+quindi posso decidere nel mio modello di governance dell'EPI di dire ok i team sono liberi di scegliere io gli do un ventaglio di scelte come ristoranti di mia moglie no? quindi ti dico puoi scegliere che ne so
+
+GraphQL o RESTful? Non REST, GraphQL o RESTful? Decidi tu. Il team dice, ma cazzo stiamo dicendo noi? Bene, perfetto. Il team fa la selezione, quindi decide ok andiamo RESTful e poi io gli dico, va bene, potrei aver bisogno di un'autorizzazione. Quindi una volta che hai scelto fai il tuo bel progettino, il tuo bel documento, markdown, me lo mandi a me architetto, io lo valido. Ma se ti ho già selezionato le scelte?
+
+che bisogno di un'autorizzazione? Quindi potrei dirti ok, sei auto-autorizzato. Secondo elemento a supporto di una narrativa di indipendenza del team, Io ti dico, tu team io decido quando c'è da prendere una decisione, cioè ci sono delle pieghe da fare, sono delle pieghe da fare, vengo da te e ti dico, Inception, ci sono delle pieghe da fare. Ti do due scelte, tre scelte, ma tu sei libero di scelte?
+
+e non hai bisogno di un'autorizzazione.
+
+Poi c'è il momento di implementazione, tu puoi sempre agire nella scelta dicendo no questo non è possibile fare perché è troppo incasinato, fare un API GraphQL ci prende troppo tempo quindi aiutaci a fare altro, quello è un potere che ha il team per influire sulla decisione no? E poi c'è il challenge della decisione quindi
+
+chi è che può dire no questa decisione non va bene seguendo quale processo quindi state vedendo che la decisione non è un elemento atomico decida l'architetto decida il team la decisione sono sei elementi incezione, scelta definizione delle scelte potenziali, selezione, autorizzazione, implementazione e challenge che formano la decisione e che possono essere divisi e tra
+
+l'ambito centralizzato e l'ambito più decentralizzato, quindi delegati al team e questo va a creare il dipende, il dipende che abbiamo detto all'inizio. Vi siete mai trovati in una situazione dove c'era appunto uno split di questa decisione?
+
+Luca (45:09)
+se riesco a smutarmi. Allora, mentre parlavi pensavo più a tecniche manipolatorie che a strategie vere e proprie. Tra l'altro, piccola parente, funziona molto bene con i bambini quella di dare le scelte. Provateci tranquillamente. Vuoi andare a letto alle 9 o alle 9 e un quarto? Vedrete che alle 9 e un quarto saranno belle sotto le coperte senza colpo ferite. Funziona da Dio.
+
+penso funziona anche con gli adulti
+
+sì, funziona, il problema che ho esperientato, di cui ho avuto esperienza, è che il team non è una entità diciamo monolitica, è composta di altre a loro volta persone che hanno idee diverse, persone a volte che anche si innamorano delle loro idee, loro scelte, del loro passato
+
+per diverse ragioni quindi quello che ho vissuto io a volte è che è stata anche un'unteriore perdita di tempo quella di anche dare una scelta limitata al team comunque si si creavano enormi discussioni su non niente non voglio dire niente però su su temi importanti che però
+
+portavano alla lunga, finché a un certo punto io ho detto, ascoltate prendetene una a caso, non mi interessa quale, cominciate a svilupparci e poi vedrete che la scelta giusta era l'altra sicuro, cioè il matematico anche perché si è sempre con lo sguardo rivolto a quello che potrebbe essere quindi
+
+è stato... non lo so, delegare certe scelte completamente al team, sebbene con tutte le limitazioni, a volte potrebbe innescare anche queste nuove conseguenze.
+
+Carmine (47:32)
+Secondo me, ad esempio io sono della scuola che ha lavorato con me, sa, io ripeto sempre la stessa cosa. Se esiste uno standard o più di uno standard, due standard, usate quello. E secondo me qui si rientra più o meno nello stesso caso. Nel senso se il design comity ha deciso che ci sono
+
+so due standard scegliete da questi due standard cioè nel senso la democrazia è una cosa bellissima però ad un certo punto nel team ci vuole qualcuno che dice sì ok va bene va benissimo carmine vogliamo fare kebab case perché hai fame però basta insomma facciamo un'altra cosa ok nel senso
+
+Brainrepo (48:22)
+ahahahahhahahh
+
+Carmine (48:27)
+abbiamo da seguire questo tipo di Quindi secondo me il fatto di fornire al team una scelta, anzi un ventaglio di scelte pre-approvate standard
+
+Se non è qualche cosa che può funzionare più di fornire al team a questo punto io le fornirei magari ad una persona che rappresenta il team e si adattano insomma su quelle cose su quelle cose. Ma a questo punto vi faccio anche un'altra domanda perché secondo me è un punto in cui anche diciamo tutta. Diciamo tutta la parte di LLM attuale può essere utile.
+
+Come faccio a farsi a controllare che io ho, cioè a fare un enforcing di questi standard? Mi spiego meglio. Abbiamo deciso che le cose si fanno così, ci sono tre standard. Il team va avanti, alla fine mi fa il suo bello open API.
+
+Come faccio a controllare che quello standard sta lasciando la code review le cose il ti va bene come faccio ad avere uno strumento e con diciamo automatico per poter controllare che il team stia a seguento dei determinati determinati standard io mi sono ritrovato una volta a fare quando non c'erano gli LLM pare tipo che su 10 anni fa tipo due anni e mezzo fa insomma va bene quindi
+
+di fa tipo uno script molto banale che prendeva uno NPI e controllava che una cosa banale che certe naming convention fossero state rispettate e in sia e diceva se quella roba poteva andare o non poteva andare ma quando parliamo di standard e di scelte più complesse che sono state prese come si può se non c'è un modo un modo auto-automata prego
+
+Brainrepo (50:29)
+Allora intanto ho evidenziato un elemento fondamentale dell'EPI governance, cioè tu decidi un'EPI governance, decidi una serie di guidelines e poi le lanci a 70.000 team. Che cazzo fa l'enforcement? Come fai l'enforcement? Mandi un omino a guardare API per API? Tu puoi farlo upfront magari con una fase di authorization, no? Come abbiamo detto prima, quindi io autorizzo una certa specifica, ok? Ancora prima che il team scriva il codice e questo è quello
+
+generalmente quello che stavo che stavo facendo io negli ultimi nell'ultimo anno e mezzo cioè si preparava una specifica la si andava dalla capo architetto la si discuteva e poi si sviluppava il codice su questa specifica ma chi è che garantiva il capo architetto business architect che quella specifica era implementata per i seguimenti o che quelle regole erano implementate per i seguimenti? nessuno e se tu non fai enforcement
+
+è come che tu quelle regole, quegli standard non ce li hai. C'è un tool che si chiama Spectral che è tanto figo, e mi hai praticamente rubato il baloco del giorno, che è tanto figo e che permette un linter per specifiche.
+
+Ed è… e funziona molto bene perché tu puoi scrivere e definire il tuo set di regole e quello si occuperà in CI di validarle.
+
+E' un game changing no? ⁓ se a questo poi in CI magari ci metti un LLM con un agentino o delle skill che ti fanno il check
+
+Secondo me...
+
+Completi il puzzle perché l'enforcement senza il teaching quindi senza l'insegnamento Non ti aiuta se tu utilizzi un LLM in CI che ti permette di evidenziare l'insegnamento, di dare un insegnamento per ogni per ogni elemento rotto o per ogni variazione che non passa è il potere che hai
+
+non è solo da bastonatore, ma è anche educativo dei team. Considera che ogni team educato vuol dire problemi in meno nell'iterazione successiva. E poi ritorniamo al discorso che i team... il problema della visione globale locale non sia solo tra governance team e team di sviluppo, ma a ragione Luca quando dice io anche all'interno del team...
+
+sono il tech lead anche all'interno del team, c'ho 100 teste e 100 ingegneri che ognuno magari perché si è innamorato di TRPC vuole pushare i TRPC anche quando non serve o vuole metterci un LLM anche dove non serve. A quel punto come faccio? io devo essere sincero sono democratico col mio team fino a pagina 2 nel senso non stiamo elegendo il sindaco ma
+
+stiamo stiamo creando qualcosa quindi secondo me il il principio del disagri and commit è uno dei primi principi che prova a passare al mio team nel senso che ognuno nel team ha le proprie responsabilità ok sfortunatamente io ho le mie i miei sviluppatori hanno le loro
+
+Gli sviluppatori, tra l'altro spesso ne sanno molto di più di me Sempre, i miei ingegneri ne sanno sempre più di me Assumiamo questo, perché così Però loro mancano di un contesto globale Loro non parlano con gli stakeholder spesso Loro non si confrontano con gli altri team Quindi quel livello di complessità loro è oscuro Loro c'hanno una complessità più basso livello Per cui qua, là entra in gioco due elementi Un team maturo
+
+di senior che sanno quando possono challenge quando no, prima cosa importante. Seconda cosa importante, prima ho parlato di challenge, qualunque decisione può essere challengeata da chiunque, non esiste una decisione. Quindi se tu chiarisci con il tuo team i confini nelle quali le cose possono essere challengeate, e per me i confini sono gli IDR, dobbiamo prendere una decisione, il team si riunisce
+
+fa un ADR nell'ADR, Architectural Decision Record, tracciamo tutto, io a quel punto ti vomito in testa tutta la complessità globale che a te ti manca. quel punto leggendo l'ADR, tu hai la visione completa e questa cosa aiuta nella gestione delle derive da FOMO tecnologica.
+
+e quindi se c'hai un po' di maturità professionale, utilizzi l'approccio EDR e in più condividi e chiaro il concetto di disagree and commit io credo questi elementi sono sufficienti insieme a una trust. Ecco però riprendiamo il discorso della settimana scorsa sul ruolo del Techlead, no? Tu che stai guidando le decisioni devi
+
+devi almeno guadagnarti la fiducia del team se tu ti sei guadagnato un po' di fiducia anche se il team disagri, come che è capita che toh capita tutti i giorni a me il team a me capita tutti i giorni di sentire alcuni di miei ingegneri che dicono ma ora secondo me questa è una stronzata la decisione che stai prendendo, che stiamo prendendo è una stronzata e te lo spiego qua qua qua qua non ho profondamente capito tutto il contesto globale perché è complesso
+
+però dal mio punto di vista è una stronzata, io gli dico ok è una stronzata dal tuo punto di vista da un punto di vista globale questa cosa può funzionare fidati di me e a quel punto la fiducia della devi essere costruita ⁓ perché se no il cartellino fiducia non lo usi così facilmente fidati di me
+
+A quel punto andiamo tutti su una stessa direzione, quindi disagri e incommite, anche se sei contrario, la decisione non è la decisione di Mauro, è la decisione del team. E se qualcosa va a merda...
+
+La responsabilità è del team, poi facciamo la retrospettiva, analizziamo e capitalizziamo in retrospettiva i punti dove abbiamo fallito. Quindi tu, ingegnere, nell'IDR successiva mi puoi tirare fuori la carta, sì, ma l'altra volta abbiamo fallito per questo motivo che è assimilabile a quest'altro. Non lo so se ha senso per voi quello che sto dicendo.
+
+Carmine (57:46)
+Sì, ha molto senso e poi alla fine, guardate, eravamo cominciati a parlare di tecnologia, agenti, a esservi fiti a parlare di persone.
+
+Brainrepo (57:59)
+Penso che parleremo di persone ancora per lungo.
+
+Carmine (58:04)
+quindi nel senso cioè non è più tra virgolette un problema tecnico alla fine se ci pensate, no? Cioè è un problema veramente di interazioni tra persone non so perché la sto prendendo, la sto presentando così a lungo mi faccio una domanda che mi avevo dimenticata perché un mio collega mi ha scritto una cosa
+
+E queste API voglio ritornare al punto di prima perché sono me è importante. Io sono una persona che io sono un visual learner che ora si ora ora ora ora si dice così. Prima quando ero picco dicevo mi piace fare i disegni delle cose quindi per per capire come come come funziona qualche cosa ho spesso bisogno diciamo di di avere un supporto visivo alla cosa.
+
+sapete già dove voglio arrivare. Come faccio ad avere, diciamo, in questo catalogo, in questo libro mastro, chiamiamolo come vogliamo, una rappresentazione visuale di un API e di come i vari sistemi interagiscono tra di loro? Nel senso che, ad esempio, io...
+
+Ho sempre amato GraphQL perché è semplice farlo. Non so se voi avete mai usato il mio balocco di oggi. Un agigio che si chiama GraphQL Voyager.
+
+che è sostanzialmente un visualizzatore di uno schema GraphQL, vi faccio vedere le varie frecette, le varie cose, è navigabile, non è quella roba brutta fatta con Graphvids che fa tipo 2002, è roba bella navigabile e io l'ho utilizzata molto ultimamente per navigare l'EPI di GitHub che è molto complessa, cioè chi di voi l'ha usata
+
+io per esempio ci sono molte cose che non capisco più, cazzo
+
+Niente c'è proprio una roba che tu la usi e dici ma ma ma ma che stia di qua si chiama commit poi c'è il commit reference poi perché c'è dell'HTML qui dentro e l'ho trovata una cosa molto utile perché mi ha aiutato a visualizzare il flusso delle dipendenze di un API complessa come possiamo fare per tutti il resto c'è uno standard anche per questo e secondo voi ci ha senso perché magari vi voglio di riguarda non c'è c'è c'è non c'è c'è senso fatta legge a documentazione
+
+Read the fucking manual, basta.
+
+Brainrepo (1:00:47)
+Guarda, GraphQL ha senso avere un navigatore perché ha il concetto di nested object, Quindi devi fare drill down nei dettagli e quindi devi esplorare oggetti che hanno sotto proprietà, hanno degli altri oggetti, che hanno degli altri oggetti, e entri in un rabito. Le Open API Specification, io non ho ancora trovato un catalog fatto in grazie di Dio ultimamente.
+
+e soprattutto il vero problema delle Open API Specification è spesso quando prolificano che i domain boundaries, quindi i confini del dominio si spalmano attraverso 70 microservizi, questo è tipico del mondo microservizi fatto male però io non ho ancora visto una società che ha fatto i microservizi bene, poi se ne conoscete una ditemela però io sono 20 anni, più di 20 anni, sono dal 2010 quindi sono quanti anni?
+
+Carmine (1:01:38)
+esistono, credo che...
+
+Brainrepo (1:01:48)
+No scusa dal 2004 che scrivo codice a livello professionale e sono
+
+Luca (1:01:53)
+22 non
+
+ti voglio dare sta notizia ma sono 22
+
+Brainrepo (1:01:56)
+22 anni che scrivo codice che
+
+combattono nell'industria un sistema micro servizi che all'epoca si chiamava SOA.
+
+visto ultimamente stavo lavorando su un side project non so se lo condiviso con voi però il mio vero problema era proprio quello di visualizzare il dominio sparato in mezzo a centinaia di open API ed è partito questo side project dove non fatto altro che prendere le open API schema qualche centinaia no forse era un coso al migliaio
+
+di OpenEPI schema, estrarre endpoint per endpoint, chunkarli secondo alcuni pattern particolari di chunking coi JSON che tengono la gerarchia delle proprietà ma qua vi hanno ierei, magari possiamo fare un episodio dove vi spiego quello che ho fatto e poi ho utilizzato un algoritmo che si chiama HDB scan che non fa... ho calcolato gli embedding di questi chunkini
+
+e poi ho applicato questo algoritmo che si chiama HDB ScanSop, la sto oversimplificando, che non fa altro che creare una mappa di relazioni tra ognuno di questi chunk. Ho fatto una visualizzazione con un flatting delle dimensioni, un campionamento, lo so che per alcuni di voi può essere astratto, ma fondamentalmente ho preso questi pezzi di OpenAPI specification che sono stati appunto trasformati in
+
+in vettori messi in un vector database e poi li ho spalmati su un grafico a due dimensioni e mannaggia, sono riuscito a clusterizzare open API, endpoint open API per dominio. Quindi aveva sta cazzo di mappina dove tutto ciò che riguardava l'address del cliente stava più o meno nello stesso cluster, stessa vicinanza con i puntini nello stesso colore.
+
+tutti gli endpoints che mi tiravano giù quella roba, magari venivano da micro servizi lontani in chilometri da due persone che non si erano mai parlate in vita loro, Tra due tech lead che non si erano mai parlati, due dipartimenti lontani a niluce. Questa roba è folle. In più ci ho fatto anche un MCP giusto perché mi andava. L'ho connesso al mio generatore di codice e semplicemente gli potevo dire EI!
+
+mi serve questa proprietà dell'address quali sono le API che me le espongono? Quello facevo una ricerca nel raga in linguaggio naturale quindi io gli ho chiesto che ne so indirizzo e lui che ne so, indirizzo forse non va bene come esempio ma se io cercavo fatturazione mi cercava anche ricevuta fiscale mi tirava su anche ricevuta fiscale nei risultati facendo un re ranking veloce
+
+Cioè, raga, sta roba funziona, addio! E praticamente con una query due secondi su questa MCP collegata a cloud, mi evitava settimane di parlare con Tizio, parlare con Caio, ma dov'è quell'EPI specifico che tu hai lavorato su quello? Tata, tata, bom, bom, bom. Quindi forse questo è il futuro dell'EPI catalog.
+
+Carmine (1:05:33)
+Vi faccio una domanda che in realtà è più una curiosità, un confronto. Maggio a tutti quanti, lavoriamo con OpenAPI. Voi siete mai riusciti a fare, diciamo, un repository, un archivio, catalogo, non lo conosciamo, degli shared schema tra più progetti? In maniera sensata, è un sacco di roba artigianale che lo cloni, fai sed, lo metti dentro e ci schiaffi dentro.
+
+Brainrepo (1:06:07)
+sì però è molto è molto accoppiato allo stack tecnologico che utilizzo
+
+Carmine (1:06:07)
+Ok!
+
+io la sono uscita a fare solo con nod
+
+Brainrepo (1:06:19)
+Esatto, è solo con Fastify che schema First.
+
+Carmine (1:06:22)
+con
+
+fastify e con gli schema di type box esportati da una una da una libreria siamo tornati sempre lì e no e allora sì e lo faccio sì sì sì sì sì sì
+
+Brainrepo (1:06:32)
+io ho il pacchettino che si chiama schemas faccio npm install schemas
+
+che è versionato con semver quindi è tutto perfettamente allineato e così ho risolto il problema grazie Matteo per aver pensato a un framework schema first
+
+Carmine (1:06:48)
+Sì, sì, anche io le salto.
+
+No, no, ma è lo stesso
+
+modo con cui l'ho fatto io.
+
+Luca (1:06:54)
+infatti non
+
+capivo il problema perché io l'ho fatto direttamente con fastify quindi non sapevo di aver risolto cioè di aver io cioè di aver usato una soluzione a un problema per me era l'unico modo per andare avanti
+
+Carmine (1:06:58)
+Perfetto, ok, ma nel senso se lo vuoi...
+
+Allora, in realtà se lo vuoi fare così è semplice,
+
+ma in realtà se ci pensate alla fine non stiamo risolvendo un problema di Open API, stiamo semplicemente esportando dei pezzi di JSON schema che mettiamo insieme. Se vi spostate su un altro stack, lo dovrei anche in Go questo, io vi garantisco che è una cosa estremamente...
+
+Painful perché perché fondamental fondamentalmente un approccio diciamo all'attac box così fatto in quel modo lì è difficile replicarlo senza prendere tante strade strane cioè
+
+Brainrepo (1:07:49)
+Sì ma anche senza usare
+
+Typebox tu puoi fare il tuo repo con dei JSON e puoi importarteli no?
+
+Carmine (1:07:54)
+Sì, sì, no, no, no, sto dicendo, Tebbox
+
+che lo sia la maniera più comoda e cristiana ad iscrivere un... No? Come mai? Mi piace un sacco.
+
+Brainrepo (1:08:00)
+tra l'altro non mi piace tantissimo type me non piace tantissimo preferisco
+
+playing JavaScript Objects e poi ci sono le librerie per sportarti tipi perché...
+
+Carmine (1:08:08)
+No, ok, non meh...
+
+Io ti aiutai, io go...
+
+Brainrepo (1:08:19)
+L'ho usato
+
+a lungo Typebox, è figo perché ti esponi senza sbatti, gli dici static, no static era vero? Static e te li espone direttamente però... non so, c'era tanta magia in Typebox
+
+Carmine (1:08:37)
+Sì,
+
+sì, sì, sì, sì, sì, assolutamente. Ma in realtà dico che io in molte cose, nelle cose che non ho con TypeScript questa roba era tutta fatta ed è ancora che maggio che sia ancora lì. La roba è spottata proprio proprio base con Fluent, Jason schema.
+
+Luca (1:08:39)
+Dai dai non tanto.
+
+Carmine (1:09:00)
+finito e te ne hai niente, non c'è neanche un TabsKit e fine però sì molto
+
+buono non lo so effettivamente io ci ho provato a farlo in un altro tipo di stack che è estremamente complesso perché non tutti i framework o le librerie per fare diciamo API in generale sono schema first credo fastify sia una delle poche fatti in una maniera cristiana ad esempio se per quelli che sono all'ascolto solo potete fare in go ci sta a goa che lo fa da anni dove tu fai prima il design
+
+dello
+
+schema e ti viene generato tutta la parte di handler e di validazione ma va sicuro che non è allo stesso tipo, è un DSL magico inesportabile e qui invece si possono fare in maniera abbastanza... anche lì si può fare però non è...
+
+non è usabile come questa cosa qui. Nel mio concetto di API catalog c'è anche proprio il repository centrale con gli schema comuni.
+
+Ad esempio questa cosa fatta con un protobuf è estremamente semplice perché insomma sono soltanto oggetti che vengono importati.
+
+Brainrepo (1:10:27)
+però
+
+vedi quando dici il repository centrale con gli schema comuni a me vengono i brividi perché quando la dimensione cresce tantissimo allora intanto non è vero che dare il nome alle cose e gestire la chiesa non è tra le uniche due cose complessissime ok del nostro della nostra industria c'è anche tenere
+
+e creare un dannato modello di dominio che abbia senso e che quando la situazione scala possa essere reale. tu provi a creare... immagina un ambiente grande, basta, no? Enterprise e tu dici a un architetto, me lo mappi il dominio, per favore. Quello quando ha finito di mappare l'ultimo pezzo del dominio praticamente il dominio è già cambiato al 90%.
+
+Quindi fare una mappatura top down del dominio è praticamente impossibile. Per cui la mappatura che devi fare è bottom up e poi come dice Luca cioè intanto fai l'api e poi un po' per allinearle le troviamo. Però questo è l'unico modo sano o fattibile per fare per fare la mappatura del dominio.
+
+Adesso non so, e questo potrebbe essere un discorso interessante, se con gli LLM questa cosa può velocizzarsi in qualche modo e questa sarebbe una bella sfida, quindi tu dai un domino in pasta ad un LLM e lui ti crea i modelli. Può essere un tool molto interessante, però fino a oggi diciamo che la mappatura del domino è una cosa che è quasi fatta top down, è quasi impossibile.
+
+Per cui tu troverai 70.000 repository ognuno con la sua direzione. E poi la consistenza la devi creare exposta, Quindi hai tre team che ti hanno fatto l'EPI dell'indirizzo e poi devi trovare un modo per farle convergere. E là la sfida del change management che diceva Carmine all'inizio è fondamentale. E come lo fai se non hai visibilità?
+
+E uno dei motivi per cui io avevo fatto quella rappresentazione a schermo, no? Che vi ho detto prima, no? Quegli embedding, delle API, era perché il team di business architect o i tech leads potevano vedere dove c'era overlapping di dominio e decidere, ok, qua io ho 7 endpoint che fanno la stessa cosa con schemi leggermente diversi. So abbiamo 20 consumer.
+
+di queste API, facciamo una cosa, inglobiamo questi microservizi in uno solo, omogenizziamo le API e facciamo una transformation di questo endpoint. L'impatto è su questi consumer e questo se le API sono interne, puoi farlo bottom up e in giro di un paio d'anni tu rischi di aver fatto una transformation
+
+e di aver veramente trasformato seriamente le tue API e ottimizzato le tue API e questa è l'unica cosa che puoi fare se hai un enterprise grosso ma io non ho visto dei tool in grado di guidare in questa direzione ed è per quello che ci sia col side project a breve pubblicherò dei test che ho fatto e le board
+
+che ho realizzato proprio per risolvere questo problema.
+
+Luca (1:14:18)
+La mia paura è che questa ricerca di sintesi con l'LLM, l'intelligenza artificiale, non sia più necessaria. Ed è una paura perché è necessaria, è e lo sarà necessaria, però sarà sempre meno rilevante. Perché che ti frega che hai un...
+
+un'uplicazione di API, di dominio, codice, il codice non lo gestisci lo gestiscono le macchine. Analogamente anche chi frisce di questa API, comunque di quello che non sono persone, ma sono macchine che nel caos ci sguazzano abbastanza facilmente, perché non hanno un problema di leggersi 2 MB di documentazione in un secondo.
+
+Brainrepo (1:14:54)
+Fii
+
+Luca (1:15:14)
+magari si andrà ad ottimizzare gli swagger, la documentazione in un certo modo per esempio tu hai fatto un rag perché hai avuto, cioè il tuo set project avrà avuto ovviamente una complessità tale da renderlo necessario io invece mi sono stupito per come ho dato uno swagger abbastanza grosso
+
+a Cloud Code e se l'è smazzato lui senza caricarselo tutto perché non ce la faceva nel contesto perché era veramente grande però ha riconosciuto che era grande ha fatto varie ricerche di grep e mi ha estratto il dominio che stavo cercando che era un sotto insieme di tutta l'EPI e l'ha fatto bene, questo mi sono stupito abbastanza ed era anche una roba
+
+abbastanza complessa per un umano almeno per me
+
+Brainrepo (1:16:10)
+Intanto il rag,
+
+il rag quando le dimensioni sono grande, performa decisamente meglio. Io ho fatto dei test, no? Quello che fa con Grap è semplicemente lui prova più combinazioni sinonimi e prova a giù o tirarti fuori quello che c'è. Il rag, lo sappiamo, performa meglio, specie su grandi quantità di dati. Seconda cosa, vogliamo tenere l'uomo in the loop, human in the loop o no?
+
+Luca (1:16:23)
+certo certo
+
+Brainrepo (1:16:38)
+perché se non vogliamo ottenere il human in the loop e ragionare il codice come qualcosa di use getta hai ragione tu, prendi i butti, poi però voglio vederti al primo debugging che l'ai, si fallisce provare a capire cosa sta succedendo se non ci interessa capirlo va bene nel senso di disposable l'api fallisce il codice non so come debagarlo mentre in un loop senza fine che non lo riesci a debagare prendi i butti e gli rifai fare il codice
+
+Questo è più o meno il mondo dove dove questo tipo di approccio alla vibe coding sta andando a finire. Se tu utilizzi più un approccio ai native engineering, tu probabilmente vorrai anche essere parte del loop del codice, quindi dovrai gestire un carico cognitivo che sta diventando sempre più grande. No? Il carico cognitivo oggi sta esplodendo e questo è un modo
+
+per gestire il carico cognitivo. Ridurre la ridondanza è un modo per gestire il carico cognitivo, risparmiare un po' di token e via discorrendo. Quindi specie oggi che refactoring te lo fai alla velocità della luce, questa cosa secondo me ancora oggi ti dà dei vantaggi. Non so se avrà senso dopo domani quando i contesti saranno enormi, sempre se saranno enormi, considera che il context rot
+
+inizia dopo il 25 % di utilizzo del contesto, quindi va bene tutto ma poi inizia il decadimento, il decadimento della qualità della risposta, Quindi dopo il 50 % c'è e proprio devi suottare il contesto e buh, è fine.
+
+Luca (1:18:21)
+c'è per un'altra variabile in gioco che tu parli e io sono assolutamente d'accordo con te, tu parli da senior del 2026, senior del 2050 se ancora esisteranno senior come ragioneranno? a prescindere lasciando stare anche che nel frattempo si evolveranno ancora ierele
+
+chissà cosa riusciranno a fare ma come saranno i senior? avranno altri problemi forse uno tra questi è anche il carico cognitivo che così sposti solo un po' il problema perché quello che mi spaventa è davvero la velocità con cui stiamo
+
+Brainrepo (1:18:46)
+Secondo me...
+
+Luca (1:19:07)
+creando cose di cui ci dobbiamo far carico noi se vogliamo rimanere nel loop io voglio rimanere nel loop, certo, perché così sono cresciuto e così proviamo da vent'anni ma se io guardo e ci sto avendo a che fare con i ragazzi che hanno cominciato nemmeno troppo presto ma da uno o due anni e che questi saranno se sopravviveranno
+
+i senior di domani io non ho la minima idea di come affronteranno queste queste cose qui oppure ci sarà un attore una big, secondo google o qualcosa che si farà carico di tutti tutti i problemi che ci stiamo facendo noi adesso non lo so, non lo so, io sto dicendo semplicemente che siamo vecchi per
+
+per vedere il futuro con gli occhi
+
+Brainrepo (1:20:11)
+ma credo che neanche i giovani riescano a vedere il futuro io per non sbagliare comunque ho conto di questa estate di mettere mano a quel piccolo appezzamento di terreno che ho e piantarci carote e carciofi e probabilmente...
+
+Luca (1:20:25)
+un attimo fallback per tutti
+
+Carmine (1:20:28)
+la stessa cosa cioè siamo
+
+proprio d'accordo se finisce male
+
+Brainrepo (1:20:40)
+Bah io... se finisce male in un modo o nell'altro la sfango
+
+Non... ma ripeto, fondamentalmente quello che noi facciamo è risolvere i problemi, se siamo bravi a risolvere i problemi non pensiamo che l'AI risolverà tutti i problemi. Non credo che l'AI risolverà tutti i problemi, se dovesse risolverli bene allora io ritorno alla terra e va a culo e cerco l'equilibrio dei Sins, la pace dei Sins, mangiando carote e carciuffi e mi salvo ma...
+
+io credo che ci saranno sempre dei problemi cioè ci saranno sempre dei problemi di deliverare qualcosa anche se se te la sta facendo l'AI ci sarà sempre qualche qualche idiota qui a affibbiare la responsabilità ci sarà sempre un minimo di cioè raga le AI crediamo davvero che se la suoni e se la balli da sola che si sviluppi le cose si faccia la QA da sola va bene sì
+
+ma siamo sicuri che non ci sarà mai più un human in the loop forse generale saranno molto meno focalizzati in ambiti specifici per quello che bisogna guardare lo strumento non come un oracolo, vibe coding, ma in un modo più strutturato magari come un AI native engineer che lo utilizza come strumento per fare qualcosa
+
+Luca (1:22:03)
+secondo me saremo in un altro loop, cioè non è il loop a cui stiamo pensando esatto o chissà come, a me io ho sempre in mente due esempi che abbiamo vissuto, cioè la transazione poco tecnico però dell'internet pre e post Facebook
+
+Brainrepo (1:22:09)
+saremo molto più vicino al prodotto.
+
+Luca (1:22:27)
+pre Facebook eravamo tutti preoccupati della privacy siamo tutti sotto il nickname, nessuno faceva niente eccetera eccetera posta Facebook abbiamo cominciato a mettere le foto dei bambini dei nostri figli e di noi nudi a fare le cose più o scene online con tanto di nome e cognome e forse anche della foto della carta di identità qualcosa è cambiato
+
+Brainrepo (1:22:49)
+Sì, fin episodio vi condividiamo l'OnlyFans
+
+di Luca, tra l'altro.
+
+Luca (1:22:53)
+sì
+
+grazie, sono solo in abbonamento. Altra roba, questa un po' più tecnica, internet era più lento di adesso e stavamo lì ad ottimizzare ogni singolo byte, ogni singolo bit, ci ingegnerizzavamo all'estrema ottimizzazione di questo, poi internet è diventato molto più veloce, non solo non abbiamo mantenuto
+
+quel concept di ottimizzare, ma ci abbiamo cagato dentro questo concept. Cioè è diventato normale caricarlo, aspettare che una pagina si carichi 5 secondi ed è diventato normale per Google non per il macellaio. Perché quando sei aprito a una dashboard o qualsiasi di Google Cloud impiegate 5 secondi prima che tutti i widget sono caricati. Per carità stanno risolvendo altri problemi, però...
+
+la scala è cambiato, il punto di vista è completamente cambiato e secondo me succederà la stessa cosa, cioè noi adesso ci preoccupiamo di essere nel loop per avere un determinato tipo di controllo che fra 10 anni non è che non avremo più perché le haedie qua non lo vorremmo cioè non lo vorranno più noi ormai questo è il nostro imprinting e questo sarà
+
+Brainrepo (1:24:09)
+C'ho
+
+40 anni, mi immagino, tra 40 anni probabilmente non mi immagino, ma è un computer.
+
+Luca (1:24:16)
+No,
+
+no, c'abbiamo
+
+Brainrepo (1:24:20)
+sulla terra o in una cassa di Morgano, no?
+
+Carmine (1:24:24)
+siamo comunque nella terra lo so, proprio sotto lo
+
+Brainrepo (1:24:25)
+Capisco, capisco il punto di vista. Sì, sopra o sotto questo è un dettaglio,
+
+Luca (1:24:28)
+c'è sempre il richiamo della terra
+
+Brainrepo (1:24:35)
+in influente. No, sì, probabilmente cambierà ancora il nostro lavoro, però buh, i problemi da risolvere ci saranno sempre, quindi in un modo o nell'altro il nostro lavoro cambierà.
+
+Considerate per esempio non nella rivoluzione cloud sistemisti poi devops ci sono stati tanti cambiamenti micro rispetto a questa rivoluzione però secondo me ce ne sarà ancora per un bel po' mi chiedo mi chiedo se un mondo senza se i signori di domani saranno pronti per affrontare il futuro di domani
+
+Ego? Probabilmente sì, questa domanda è guidata dall'eco.
+
+e penso che sia la domanda che ogni padre si fa, no? mio figlio che sta vivendo e sta crescendo in un mondo completamente diverso da quello dove sono cresciuto io, sarà in grado di affrontare il futuro, più o meno, è la stessa cosa. Quindi i junior che stanno crescendo oggi con questi strumenti saranno in grado e autonomi per affrontare il futuro? Probabilmente sì. Io ho un po' di paura.
+
+Carmine (1:25:51)
+Non lo so. Non lo
+
+so. Io lo dico perché stiamo... Io personalmente, insomma, sto facendo tanti colloqui per delle figure Junior, insomma. Ed è difficile. Cioè è difficile, c'è il senso proprio con Junior che comincia tipo da qua gli scorsi quattro anni, Forse anche i 3-2, va bene. Lo Junior che ha cominciato con Ciaggpt, con Lovabollo, con Claude, con tutta questa roba qua.
+
+È estremamente difficile riuscire a trovare un approfondimento sensato. Io vedo tanti ragazzi che la documentazione non la leggono. La documentazione non la leggono solo. La documentazione è fide che va dentro.
+
+Brainrepo (1:26:35)
+Sì ma car... carmine
+
+Carmine (1:26:40)
+Cioè le persone hanno smesso di legge, non mi fate fare il luddista alle 11 di sera, però le persone hanno smesso di legge, le porcoglione.
+
+Luca (1:26:41)
+dicevano lo stesso di noi che non leggiamo i manuali e andavamo su sta cover flow
+
+Brainrepo (1:26:53)
+⁓ ma magari con gli LLM le leggono di più. Intanto una cosa che ho visto e che mi ha reso super felice è che queste skill e questi agenti che stanno venendo fuori e che stanno iniziando ad essere sempre più condivisi. Penso per esempio ai tessel di tessel, Che dove fai un Mpn install te li tiri giù. Se vuoi li aprite è bello perché c'hai documentazioni di stilla.
+
+che ti spiega come fare le cose, quindi potenzialmente quello è un posto dove imparare tantissimo, molto più facile di come era nei nostri tempi, no? Perché raramente ho trovato la documentazione ben scritta, devo essere sincero. Però nel contempo credo che questo problema possa essere la rivisitazione di un problema antico, Carmine.
+
+pensa a tutti i junior che usavano wordpress noi, noi ci lamentavamo... è più o meno la stessa cosa no?
+
+Carmine (1:27:57)
+secondo me no perché nel senso lì era utilizzare uno strumento specifico non uno strumento generalista cioè nel senso che tu chiedi 40 volte le cose a cià cià quattro volte a cià cpt che ti risponde più o meno uguale per non spendere 20 secondi al haggerti la documentazione e il lm che ti risponde con il bias ti dice sempre di sì
+
+Io ho visto cose che sono. Non sono cose. Cioè proprio al livello letterale perché perché non c'è proprio la cultura di andare a ricercare l'info l'info l'informazione non significa che non la devi chiedere alle LLM.
+
+l'approfondimento tale, magari che c'era prima che passavi 3-4 minuti e stavo dicendo io non c'ho manco, ho mai passato 6 ore su Stacco del Fuace che al concetto non dovevo bere i coglioni però nel senso quei pochi minuti che ci mettiamo ad approfondire la cosa vedevi più fonti, ti facevi un'idea eccetera eccetera cioè secondo me la documentazione leggerla non attraverso un LLM può avere ancora valore e secondo me questa cosa i junior di oggi non ce l'hanno
+
+Brainrepo (1:29:15)
+Guarda, secondo me esistono due tipi di Junior. Perché ho visto qualcuno fare in un modo molto diverso, che più o meno è il modo che sto usando io ed è quello che ho insegnato a molti dei Junior che conosco. C'è il Junior che dice ok fammi una dashboard in React, prende copy and cola, puh. Fatto. Oppure usa v0 e deploya direttamente da l'ano, puh punzante e sta già andando su Versel.
+
+C'è un altro tipo di junior che utilizza un altro approccio che un approccio di learning iterativo che secondo me è una figata totale. A me capita di stare sul letto e di iniziare a parlare con Claude e di dire hey Claude mi serve un algoritmo per gestire il riempimento di questo servizio. Che approccio posso usare?
+
+⁓ puoi usare...Greedy Ok, mi ricordo che l'ho studiato all'università, mi dai più informazioni di Greedy? Ok, blablabla Mi spiega Greedy come approcciare Mi fai anche un esempio di codice per capire blablabla blablabla Ok perfetto, e ti spiega l'esempio di codice, ma lo spieghi linea per linea? Sapete quante volte lo sto facendo io questo?
+
+e lui te lo spiega linea per linea e poi gli dico ma esistono approcci iterativi? sì, puoi pensare a una funzione obiettivo, fare programmazione lineare, bla bla bla, ok mi ricordi che cos'è la programmazione lineare? E questa è una conversazione che avuto con Claude la settimana scorsa.
+
+Carmine (1:30:50)
+Ma ma ma ma secondo me questo è
+
+modo giusto, però se se ci pensi è quello che che facci prima cercando su Inter, semplicemente con interfacce diversa, cioè tu attivamente.
+
+Brainrepo (1:31:00)
+più
+
+secondo me più quello che facevo prima parlando con altra gente o parlando col professore
+
+Carmine (1:31:04)
+Anche, anche, sì, sì.
+
+Nel senso, sei tu che ricerchi le informazioni. Io mi riferisco a quell'altra tipologia di Junior dove il soluzionista è un enorme problema perché il soluzionista non ha lo spirito critico per giudicare la soluzione.
+
+Brainrepo (1:31:15)
+il soluzionista.
+
+Carmine (1:31:25)
+nell'Epipat funziona. Allora io vorrei fare questa petizione tipo possiamo togliere LinkedIn e Medium ad una categoria di persone. Io ho avuto questo ragionamento un po' di tempo fa vedendo insomma se stai facendo un'amico che fortunatamente non lavora.
+
+insieme altrimenti ci scontriamo più spesso. Dicono io ho detto al mio junior guarda fai questa roba con Claude tu chiedi a Claude e fa e giù giallati volevo strappare i capelli e fate scrivere pure i test e fate scrivere così che ti passano.
+
+Questo diceva no io ho letto su internet che Claude è bravo a scrivere i test e comunque faceva vedi questa roba perché poi lui si è tipo la dashboard ha scritta male incomprensibile però più o meno si vedeva i test erano proprio fatti per far passare ci ho visto tipo expect true qualche cosa ed erano tutti contenti e quello che mi dà fastidio del del soluzionista cioè il soluzionista secondo me è colui che non comprende la capacità dello strumento e lo usa
+
+Brainrepo (1:32:24)
+sì
+
+Carmine (1:32:47)
+male, E quindi è come se spari al piccione con il misto e dici sì, funziona ma non ha approccio giusto. Non so come dire a me questa cosa qui che ti spiace.
+
+Brainrepo (1:32:56)
+E per quello che bisogna
+
+essere ai native engineer per esempio spec first oppure avere un agente che è specializzato solo in review e che ti fa le code review però a quel punto carmine domani potrai fare npm install o lo puoi fare già da adesso no? te se li install review agent o review skills e boh mai fatto no? c'è la review fatta da un professionista perché l'agente è un professionista c'ha quel knowledge
+
+Carmine (1:33:07)
+Sì, sì.
+
+Brainrepo (1:33:27)
+però ecco io da ragazzino ero un professionista, un soluzionista.
+
+io installavo WordPress e mi portava quasi 200 euro. O i 500 euro.
+
+Carmine (1:33:40)
+la barriera di ingresso è la barriera e la barriera di ingresso che è diversa cioè lo skillset che ti serviva per mettere su warpress una roba dove qui c'è un po' di barriera di ingresso c'era, barriera di ingresso è inesistente perché è proprio inesistente
+
+Brainrepo (1:33:42)
+Allora cos'è cambiato?
+
+Luca (1:33:42)
+vergogna non me la sarei mai aspettato da te
+
+Brainrepo (1:33:45)
+⁓ no ⁓ vai ad aderire sul dichiaro fatto così.
+
+Sì infatti c'è gente
+
+che dice ⁓ ho fatto un sito HTTP localhost 2.3mila e non però il mio vicino di casa non lo vede
+
+Carmine (1:34:11)
+Sì, sì, hai capito? sì, ti parlo. E quella è
+
+quella di la cosa, Nel senso come professionista del settore so più o meno riconoscere che cosa è marketing, che cosa è hype, che cosa eccetera eccetera. Chi non lo sa o magari chi comincia questo lavoro ora è veramente convinto che la barriata di ingresso.
+
+sia veramente così bassa. Io non credo che sia bassa l'ambere d'ingresso, credo che per saper usare gli strumenti ea in ambito coding in maniera razionale e coerente e utile.
+
+la barriera di ingresso non si è affatto bassa, cioè è altissima, la tentazione di apri codex e di mi fai tetris, ok? senso è altissima. La barriera di ingresso è molto alta, riuscire a capire dove inserire le AI, dove non inserirla.
+
+Brainrepo (1:34:55)
+è altissima.
+
+Carmine (1:35:15)
+in che parti metterla, interagirsi, di uscire a distinguere quello che dice o c'è a fare.
+
+Brainrepo (1:35:22)
+Ma là si giocherà
+
+la sfida di chi si salva nella nostra professione e chi non si salverà mai.
+
+Carmine (1:35:25)
+Esattamente sì sì cioè
+
+secondo me la barriera di ingresso è diventata più alta a tutti quelli che non l'hanno capito ora vanno benissimo perché ci vanno proprio bene fanno la dashboard fanno roba perché fanno naturalmente la qualità arrotti il cazzo a tutti appena appena appena secondo me si alzerà l'asticella non perché la qualità piacerà a tutti la qualità non piacerà mai a nessuno ma perché magari la gente te lo fa mediamente meglio
+
+Allora lì secondo me si comincerà a vedere chi sa andare oltre e chi è riuscito diciamo a comprendere la barriata di ingresso e invece il soluzionista che pensava che la barriata di ingresso era così bassa da poter fare tutto. Cioè è quella la cosa ed è difficile io dico perché mi sono trovato in difficoltà ora durante un colloquio riuscire a distinguere
+
+Luca (1:36:12)
+abbiamo perso Carmine, sa... vabbè
+
+allora mi...
+
+Brainrepo (1:36:19)
+aspetta aspetta che tanto
+
+tanto sta comunque registrando credo
+
+so
+
+Carmine (1:36:43)
+Mi sentite adesso? Meraviglioso, un applauso a Wind3 che sul FWA mi rifaccia l'IP ogni quattro ore. Comunque non mi ricordo dove ero arrivato. Nel senso il suo suo suo è che alla fine la valiera di ingresso è molto più alta. Insomma effettivamente questo secondo me sarà quella cosa che ci farà ci farà giocare tra tra tra chi va.
+
+Brainrepo (1:36:46)
+Adesso sì.
+
+Luca (1:36:46)
+Adesso sì.
+
+Carmine (1:37:13)
+avanti chi e chi non va avanti. Vi voglio fare una domanda provocatoria ma secondo voi questi tutti questi strumenti di Aima non costano troppo poco
+
+Luca (1:37:30)
+si, stanno andando in perdita
+
+Brainrepo (1:37:30)
+costano da... costano troppo.
+
+Carmine (1:37:35)
+secondo me costano... no no dico come soldi diciamo come costo per la subscription non costano troppo poco perché nel senso esattamente sì
+
+Brainrepo (1:37:36)
+costano troppe intermedie energia.
+
+Allora...
+
+costano meno del valore del costo nominale, quindi i prezzi sicuramente tenderanno a salire.
+
+Il potere centralizzato su Poche Corporation, quindi questo sarà un problema in termini di tariffe, vedete tanta gente che sta iniziando a dire ma cazzo ad AWS sta iniziando a costare un po' troppo, ci sarà un problema simile forse ancora più grande.
+
+I modelli self-hostabili non sono per niente all'altezza e non manca l'incentivo, è proprio un gioco di incentivi a chi trenare un modello costa un gozziardo, chi è che ha interesse di spendere un gozziardo per regalarlo alla comunità? Forse gli stati, ma gli stati adesso sono troppo impegnati a pensare alla guerra per fare qualcosa del genere, vogliono giocare ai soldatini.
+
+probabilmente questo questo questo questo è un problema e costa troppo in termini di energia quindi anche in termini ambientali. Quindi ci sarà ci sarà da chiedersi e soprattutto l'impatto. Noi lo stiamo ragionando come sviluppatori ma questo impatto è orizzontale è dannatamente orizzontale tocca a tutti i lavori di di di di di
+
+Come che si dice in italiano? I lavori di testa, i lavori di ingegno, di pensiero, di... sì!
+
+Carmine (1:39:11)
+sì sì sì intellettuale insomma
+
+Luca (1:39:15)
+intellettuale,
+
+intellettivi.
+
+Brainrepo (1:39:19)
+immaginate noi, produttone o chi disegna prodotto, se qualcuno ha mai provato B-Mod, cioè io ho fatto dei brainstorming con B-Mod che non li ho mai fatti, io e miei soci non li ho mai fatti così bene con nessuno, era come avere un esperto di brainstorming che ti guidava passo passo ed stavamo definendo un prodotto che non era digitale, stavamo definendo una roba fisica.
+
+E quindi c'è una rivoluzione che costerà un sacco di soldi che genererà dei valori e quei soldi devono venire da qualche parte.
+
+Carmine (1:39:58)
+sì sì sì e nel senso la mia pura più grande è quella che prevedono in tanti che tra un po' il costo per token salirà tantissimo e diventerà davvero poco sostenibile per tutta la platea che c'è ora, riuscire a mantenere una subscription attiva, cioè questa cosa per me potrà veramente crecare un forte sbilancio.
+
+Brainrepo (1:40:26)
+però
+
+diciamo diciamo c'è una cosa è che se oggi tu vuoi io io io sono un utente cloud ok devo fare degli esperimenti con altri lm però cacchio cloud performa talmente bene che che ho quasi il terrore di passare a codex o una subscription con con cursor e uso cloud e poi c'ho cloud max oggi
+
+con un abbonamento di 20 euro fai 3 passi e poi hai finito i già OG giocando tu devi fare un abbonamento a un max a un max per 2 per riuscire a tirare fuori qualcosa quindi anche per il cazzeggio i token costano cari se poi utilizzi degli approcci più strutturati tipo spec driven development dove bruci un po' di token tanti token per
+
+Carmine (1:41:02)
+Sì, sì.
+
+Brainrepo (1:41:24)
+per la definizione di alcuni elementi, a quel punto è ancora più evidente la cosa. Quindi sì, finché giochi gli dici fammi la dashboardina, lo puoi fare anche con i free tier. Ma quando i giochi si fanno duri, devi mettere il soldo sul banco e probabilmente installare un Word per sempre più economico.
+
+Luca (1:41:49)
+non so quant'è la proporzione, però i modelli che generano video non sono molto più esosi in termini di energia rispetto ai modelli normali
+
+Brainrepo (1:42:02)
+Ma
+
+penso di sì, non ho mai approfondito, forse dovremo un po' invitare qualche esperto di...
+
+Luca (1:42:12)
+perché perché se immagino un futuro immagino a tutto il business che c'è dietro quei modelli io immagino che se penso come come credo che i modelli sono molto più pesanti di quelli che generano testo codice penso che il 90 per cento sia per fare video
+
+Brainrepo (1:42:20)
+Ma come modelligli?
+
+ma conta che anche i costi però sono molto più alti, per esempio se io devo metter in conto quello che spendo in token per costruire l'immagine delle copertine di gatebar e fare l'animazione iniziale io quelle euro e mezzo con due tentativi a bassa qualità, quei due euro, me li gioco sempre per ogni copertina
+
+Luca (1:43:01)
+e consumeranno molto più energia, no no il mio discorso era semplicemente energetico considerato come si sta muovendo il disres del cinema delle pubblicità e tutto secondo me farci la dashboard è una goccia nell'oceano di quello che sarà
+
+Brainrepo (1:43:21)
+⁓ lo so ma
+
+se fai la dashboard è un conto ma se sviluppo un'applicazione con interazioni io ti parlo di... ehm... adesso non voglio esagerare ma io il brainstorm... l'ultimo brainstorming con b-mad erano più o meno sei ore di interazione con l'LM. SOMO!
+
+Luca (1:43:42)
+non
+
+ho idea dei costi reali dell'uno e dell'altro quindi non lo so
+
+Brainrepo (1:43:47)
+Poi non li percepiamo perché abbiamo subscription
+
+come quelle max che poi non ci guardi, quando ti finiscono i token. Ma io per esempio con te tra l'altro 90 % di quello che sto facendo adesso lo sto facendo con Opus. Quindi perché? Perché mille volte meglio, cioè molto più performante. Per quanto l'ultimo sonnet sia molto bello.
+
+Oppus secondo me è ancora su un altro livello
+
+Luca (1:44:20)
+comunque tornando
+
+anche un attimo al discorso che faceva Carmine sul futuro sui junior eccetera eccetera senza ritornarci troppo secondo me il futuro lo costruiranno stesso loro, cioè i junior di oggi quindi sarà completamente imprevedibile fuori nostri schemi ripeto quando parlavamo mi sentivo come
+
+di assembler che dicevano ma come faranno questi affari siti senza sapere come funziona un processore forse saremo così saremo così non so se sarà un futuro bello oppure oppure no però sarà sicuramente un futuro diverso
+
+Brainrepo (1:44:58)
+ma infatti rischio...
+
+Il rischio è quello di sembrare dei vecchi barboni egoriferiti, Ed è complicato, ed è complicato. Comunque siamo quasi a due ore se siete d'accordo io farai partire il paese dei balocchi.
+
+Carmine (1:45:21)
+Sì, assolutamente.
+
+Luca (1:45:25)
+Quello con l'intelligenza artificiale...
+
+Brainrepo (1:45:37)
+Il paese dei balocchi, il posto dove i nostri guest e i nostri host condividono con noi libro, talk, con qualunque cosa abbia catturato la loro attenzione e pensino sia interessante, rilevante condividere con la nostra community. Allora la mia domanda è avete qualcosa da condividere con noi Luca?
+
+Luca (1:45:59)
+Parto io? Beh in realtà sì, lo ho accennato poco fa, stavo lavorando a un'integrazione. Il 15 maggio ci sarà qui a Bolzano l'Open Data Hub Day, quello del Parco Tecnologico e del Pesciolo del Università di Bolzano.
+
+che è un progetto, il giorno, un evento dedicato a un progetto che porta avanti il Parco Tecnologico di Colzano dopo di tempo dove, come dice il titolo Open Data, sono tutti i atori che vogliono esporre i loro dati con licenza libera o particolare licenza, realtà il common
+
+e mettono loro a disposizione l'api per prenderselo quindi loro fanno da un collector e si riprendono in questo open data update vengono fatte ci saranno dettolche di chi ha avuto esperienza di appunto costruire API o comunque protocolli di scambio di scambio dati storia di successo storia di insuccesso esperienze di vita vissuta e cose varie quindi se siete in zona
+
+il 15 maggio, so che è molto locale però venite con me, mi fate stare da solo qui a Bolzano, fa freddo, no il 15 maggio farà anche un po' caldo, dai, il 15 maggio c'è questo evento che carino, me vale la pena
+
+Brainrepo (1:47:33)
+Termine.
+
+Carmine (1:47:34)
+Allora, allora, allora, in realtà ci ho pensato un po' a che balocco portare. In realtà diciamo il mio balocco è abbastanza diciamo ridondante, nel senso che probabilmente vi ne ho già parlato.
+
+però tanto se ormai a più di 200 puntate.
+
+figuriamoci se qualcuno si ricorda ma in realtà è uscita la seconda versione di un bellissimo libro che prima leggeva e ve lo potrei far riassumere dalla vostra DLM preferita
+
+Brainrepo (1:48:31)
+Bellissimo!
+
+Io so dove voi andare a parare! Bellissimo quel libro!
+
+Carmine (1:48:32)
+Designing ad Intensive,
+
+Appli, Appli, che sono la seconda versione. Perché devo questo? Perché io non ce l'ho ancora. Ovvia ovvia ovvia ovviamente, ma occhi aperti. Perché non so se è già in early release, non lo so. Non mi ci sono ancora messo dietro perché io lo vorrei cartaceo e ci vuole un po' di più.
+
+Ok, io c'ho il primo, cartaceo, bellissimo, letto, starletto, starletto, starletto, per chi non vuole solo letto, ci sono anche proprio... C'è la due, ci sono le lezioni di Clapman su YouTube.
+
+Brainrepo (1:49:09)
+C'è anche l'audio book.
+
+Carmine (1:49:17)
+bellissimo e quindi sì ve lo consiglio vi consiglio la seconda versione perché sicuramente sarà bella come la prima insomma e quindi sì vi consiglio di vederlo di comprarlo e di leggerlo
+
+Non so quanto potrebbe essere diverso dalla prima versione sui temi ma sicuramente ci sono cose nuove perché il libro ha già qualche annetto. Ho letto qualche opinione su LinkedIn di chi aveva avuto accesso anche come reviewer e ne sono tutti entusiasti. Quindi quello è il balocco.
+
+Io non so se voi siete mai stati chiamati luddisti nell'ultimo periodo, io più di una volta, però leggerito non ve lo fate riassume.
+
+Brainrepo (1:50:22)
+bellissimo un bellissimo libro si sono sono d'accordo con te. Anche io vengo con un libro in realtà non una ventina circa se guardate Humble Bundle troverete un set di libri sugli LLM sono circa una ventina di libri ce ne sono alcuni molto interessanti tipo LLM Engineering Engineers
+
+LLM Design Pattern Generative AI with Python and PyTorch Building Aginti AI Systems Practical Generative AI ce ne sono davvero tanti LLM in Enterprise ce ne sono tanti ce n'è qualcuno anche su Langchain
+
+A portarci un occhio, una ventina di euro per venti libri di pact. Ciao. Ci sta.
+
+Posso smadonnare?
+
+Carmine (1:51:40)
+Madonna le fortissime
+
+Luca (1:51:43)
+Madonna, io mi devo ricordare se li ho già comprati oppure no, sì, li briche...
+
+Brainrepo (1:51:51)
+Bene, Eccoci qua verso la fine dell'episodio con questa musichetta che fa quasi dormire. Io naturalmente non finisco qua perché come finiamo di registrare devo montare, generare le copertine, preparare tutto per domani mattina perché questa puntata uscirà domani mattina. È stato bello ritornare in modalità ammutinata tra di noi a farci le nostre chiacchere del più e del meno. Doviamo parlare di API ma...
+
+come sempre abbiamo diragliato verso le AI che sembra che non possiamo più fare a meno fare a meno di parlarne e credo che nei prossimi giorni diventerà, nei prossimi punti diventerà comunque una presenza sempre più fissa ne approfitto per anticiparvi un po' dei prossimi episodi parleremo di PHP e AI parleremo di database e AI
+
+e parleremo di setup su LLM e produttività, quindi questi sono un po' di episodi che abbiamo in giro. Pensavo inoltre di fare un episodio dove siete voi della community che ci raccontate come utilizzate le API e le AI.
+
+o una daily basis nel vostro lavoro di tutti i giorni utilizzate spec driven development o qualche altro approccio non lo so mi piacerebbe che condividessimo un po le nostre esperienze perché tutti parlano di AI tutti dicono che la usano ma nessuno dice come cazzo la usa e probabilmente dovremo iniziare ad aprire un po'
+
+i nostri computer e condividere le approcci. Siete d'accordo con me ragazzi?
+
+Carmine (1:53:52)
+Assolutamente,
+
+assolutamente. Io stavo guardando i primi episodi, le prime puntate, come cazzo cambia il tempo e come cambia il trend. Assurdo.
+
+Brainrepo (1:54:10)
+Se tu pensi che quando venne padre Paolo Benanti ancora non è riuscito GPT, chat GPT, scusa non GPT, GPT c'era già.
+
+Carmine (1:54:17)
+esatto
+
+Luca (1:54:23)
+stati pionieri alla fine parlavamo di AI quando ancora non perdono nella mainstream
+
+Carmine (1:54:29)
+Guarda, guarda.
+
+Brainrepo (1:54:30)
+Sì, e adesso vorremmo non parlarne, come disse qua.
+
+Carmine (1:54:32)
+Io sarei
+
+curioso di rifare la puntata quella su Calvino, scusa, sul refactoring, ok? Quella con Calvino di mezzo, ai tempi di Claude.
+
+Brainrepo (1:54:48)
+facciamo una cosa e lo diciamo durante la registrazione che ne dite se ce la riascoltiamo e la commentiamo
+
+Carmine (1:54:56)
+Si si si
+
+si si può fare esatto sono 35 minuti e piccolina
+
+Brainrepo (1:55:04)
+Dai! Allora è andata. fuori onda pianifichiamo una giornata per registrarla. Bellissima idea,
+
+Carmine (1:55:04)
+Niente.
+
+Luca (1:55:16)
+Bravo.
+
+Brainrepo (1:55:18)
+Detto questo ragazzi siamo entrati in modalità post episodio durante l'episodio però questo è appunto il bello del momento ammutinati degli episodi ammutinati dove siamo tra di noi in modalità totale barra senza... Avete presente no? Quando ci sono degli ospiti si cerca di tenere un po' la camicia bottonata proprio...
+
+quando siamo tra di noi e sbrago totale, slacciamo il bottone di pantaloni per fare in modo che la pancia strabordi senza troppe costrizioni, il bottone alto della camicia e siamo un po' in questa fase e ci piace proprio essere così. Detto questo raga io vi ringrazio prima di lasciarci prima di lasciarci una cosa importante dobbiamo ringraziare
+
+Due donatori che ci supportano! Sono ritornati i donatori! Bellissimo perché è il modo che avete appunto per condividere con noi il vostro apprezzamento. Il primo è Livio che ormai è un donatore di lungo corso, Livio Francisconi che ci supporta con tre birre.
+
+Ciao ragazzi che bello riavere il podcast, il contributo non sarà mai abbastanza, grazie mille e tantissimo, Livio, grazie davvero. E poi abbiamo un altro contributo da Filippo Frater che ci regala tre birre scrivendo siete sempre un'ispirazione, ciao a tutto il team e la community, un abbraccio. Abbiamo degli altri contributi un po' più vecchi che piano piano ripiglieremo nei prossimi episodi.
+
+qualche contributo di novembre e ottobre quindi poi ve li condivido nel prossimo episodio, grazie davvero.
+
+Noi vediamo appuntamento.
+
+Luca (1:57:22)
+grazie,
+
+Carmine (1:57:24)
+Ciao!
+
+Luca (1:57:24)
+grazie, scusate, scusa Mauro non volevo però però era un ingraziamento anche da parte nostra perché comunque da parte mia da parte nostra perché insomma come dice Mauro è il timbro no? diciamo sull'apprezzamento che ci fate per cui grazie e grandi e grazie anche da parte mia
+
+Brainrepo (1:57:27)
+No no no vai vai vai!
+
+Grazie da...
+
+Detto questo noi vi diamo appuntamento al prossimo episodio, no ragazzi? Vedo che iniziate ad essere un po' stanchi. Sarà la seniority. Che a una certa ora cala la palpebra, no?
+
+Carmine (1:57:54)
+molto
+
+Luca (1:58:00)
+è il carico
+
+cognitivo, io devo vedere se Claude ha finito di lavorare.
+
+Brainrepo (1:58:08)
+io vado a generare a generare le copertine con un un'altra un altro servizio grazie davvero ragazzi alla prossima grazie luca grazie carmine ciao ciao
+
+Carmine (1:58:17)
+Ciao!
+
+Luca (1:58:18)
+Ciao!
+
