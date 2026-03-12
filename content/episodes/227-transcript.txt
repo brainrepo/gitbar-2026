@@ -1,0 +1,859 @@
+Brainrepo (00:07)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Probabilmente mi sentirete tossire io, ormai non ho più voce, però non volevo perdere questa puntata perché sono davvero super curioso di andare a scoprire questa novità, un'altra grande libreria a Made in Italy.
+
+e per fare questa scoperta ho com'è il mio compagno di viaggio Luca. Ciao Luca com'è?
+
+Luca (00:42)
+Ciao Mauro, tutto bene, tutto bene? Io sono un po' dicevo prima un po' teso perché ho lasciato tutto quello che stavo facendo per venire qui e non so, ho lasciato una giungla di là ma va bene siamo qua. Non volevo perderla per diverse ragioni ma poi deviamo.
+
+Brainrepo (00:59)
+e
+
+Sì, sarai scusato se ti assenterai durante l'episodio giusto per fare le verifiche di routine se un problema davvero. Fatta questa introduzione, questa piccola breve introduzione, realtà anche oggi parleremo di AI, LLM, agenti e cose, però ne parleremo...
+
+Luca (01:13)
+Grazie.
+
+Brainrepo (01:33)
+in modo divertente devo dire. E infatti abbiamo un ospite qua con noi. Abbiamo con noi Valerio Barbera, CTO di Inspector e uno dei creatori o creatore di Neuro Nei. Questo non l'ho capito Valerio, se è un solo project o siete in tanti.
+
+Valerio  Barbera - Neuron AI (01:57)
+Ciao a tutti innanzitutto e grazie ragazzi per questo invighido, per questa chiacchierata. Sono contento che con canale, gruppo dall'Italia, possa anche tra di noi fare qualche chiacchierata un po' più approfondita su questi temi. Il creatore, sì, alla fine è stata una...
+
+una cosa è venuta fuori proprio da una mia iniziativa mentre lavoravo dentro Inspector insomma c'è una storia e adesso magari ne parleremo, approfondiremo, non lo so
+
+Brainrepo (02:44)
+Sì, la prima domanda infatti era cosa ti ha spinto a crea... intanto che cosa è Neuron? Giusto per... per... per...
+
+Valerio  Barbera - Neuron AI (02:52)
+Beh,
+
+allora, Neuron è un framework, io diciamo, tendo...
+
+ci tengo in un certo senso a dargli questa connotazione, non tanto di una libreria o di un package, ma proprio di un framework per delle ragioni magari centreremo nel merito, che consente agli sviluppatori software, in questo caso PHP, anche se siamo nel mondo del PHP, perché è comunque un framework scaritto in PHP, per cui è su questo verticale, su questo linguaggio di programmazione che consentiamo
+
+di lavorare consente agli sviluppatori di creare AI agent quelli insomma quegli artefatti quei software programmini e magari noi siamo adesso in questo momento è partita probabilmente abbiamo stoganato la fase di essere di adozione come utilizzatori degli AI agent, coding agent quindi so clock code
+
+cursor
+
+o cose del genere o cloud co-work questo tipo di prodotti poter creare entità simili quindi che hanno le stesse caratteristiche che al servizio però del tuo software e della tua applicazione integrando sostanzialmente l'ambiente nativo del tuo software del tuo prodotto del tuo servizio per fare in modo che le
+
+hai, sostanzialmente, crei la sua magia al servizio dei tuoi utenti. poi questa l'idea.
+
+Brainrepo (04:37)
+Cosa ti ha spinto a crearlo? è al di là proprio dell'esigenza? Perché mi immagino, sto lavorando con PHP, inglobo, mi includo le SDK di OpenAI, ma qual è stata l'esigenza che ti ha fatto fare il saltino dopo spingendoti a dire ok?
+
+un ciclo for con dentro la chiamata API perché la gente se vogliamo proprio sintetizzarlo come diceva Alfonso qualche settimana fa è un loop con una chiamata LLM più altre cosine ecco cosa ti ha spinto a dire ok e io questo loop con la chiamata LLM l'ho visto fare tantissime volte in tante applicazioni diverse no cosa ti ha spinto a dire ok
+
+Adesso ho bisogno di qualcosa di più strutturato.
+
+Valerio  Barbera - Neuron AI (05:39)
+Nominavi Alfonso Graziano è stato qui con voi, lo salutiamo dai così ci abbiamo pensato. È un grande, è un ragazzo preparatissimo. Beh allora è stato tutto iniziato credo fosse diciamo l'intorno all'inizio del 2024 è stato un po' questo il momento che per me ha segnato davvero di tuffarmi completamente
+
+Brainrepo (05:43)
+sì, Alfonso, Alfonso della nostra presenza
+
+Valerio  Barbera - Neuron AI (06:09)
+a capofitto su questo mondo perché sostanzialmente mi ero reso conto che intorno a quel periodo di inizi 2024 che ormai velocemente poi in maniera velocissima perché in il open AI è stato poi sdoganato al grande pubblico, esploso intorno alla metà del 2022 quindi fra la metà del 2022 e l'inizio del 2024 è passato un anno e
+
+cioè praticamente ci siamo andati a dormire, ci siamo svegliati, era tutto cambiato e io mi sono reso conto subito che questi strumenti, AI, tutto quello che stava succedendo stava passando molto velocemente dalla fase di usiamo questi oggetti attraverso i chatbot, attraverso le interfacce che ci stavano mettendo a disposizione i produttori
+
+utilizziamo queste tecnologie per creare una nuova classe di software e di prodotti che fino a quel momento non esisteva. Cioè questo è un nuovo paradigma, non di sviluppare software inteso, di usare i coding agent per creare le applicazioni, ma io parlo che proprio sviluppando tu la gente per il tuo prodotto,
+
+cambia completamente il prodotto in sepp- cioè il software che tu stai sviluppando cambia completamente la sua natura
+
+Questo se ne accorgono in molti che iniziano questa esperienza di provare a integrare questi agent sviluppati con Neuron, sono ovviamente in altri linguaggi di programmazione ci sono framework e librerie anche più avanti come Ecosistema, come il Python, con Lang Chain, Lama Index e altri prodotti. Io sostanzialmente mi sono reso conto che stava avvenendo
+
+questa cosa è da CTO di un'azienda SAS perché Inspector sostanzialmente è un tool SAS, abbiamo diverse centinaia di clienti sparsi in 40 paesi nel mondo quindi stiamo vivendo, siamo cresciuti vivendo proprio il mercato in questa modalità completamente distribuita, ci pensi è una cosa completamente diversa rispetto a fare un business locale in cui hai la tua, ti confronti sostanzialmente con
+
+altri competitor, altri attori che sono comunque limitati dalla tua area geografica. Per noi che facciamo questo lavoro in modalità SaaS, in cui esponiamo i nostri prodotti al mercato che è sostanzialmente globale, sarebbe potuto capitare che io vedendo anche altri ecosistemi come quello del Python andare molto più veloce e molto più avanti rispetto ad altri linguaggi di programmazione, sono stato spinto dal timone
+
+che sostanzialmente se anche io non avessi, quantomeno cominciato a entrare nel merito di questa faccenda, sviluppare, non usare, ma sviluppare proprio agenti per i miei prodotti, per le mie applicazioni,
+
+mi sarei potuto trovare anche magari da lì a breve un competitor avrebbe completamente buttato fuori dal mercato queste domande insomma nascevano nella mia mente anche perché poi è successo e nel momento in cui ho avuto questa spinta mi sono messo a cercare delle soluzioni
+
+quindi volevo sviluppare un agent dentro Inspector, c'è questo ora è piuttosto importante, c'è un sistema agentico abbastanza importante dentro Inspector, perché Inspector è un tool di monitoraggio specificamente progettato per il mondo del PHP e quindi noi avevamo i dati sostanzialmente.
+
+E allora cosa c'è di me? In quale migliore posizione ti puoi trovare per applicare le AI quando hai tutti i dati di monitoraggio, performance, tutto quello che succede dentro un'applicazione DB, API, errori, eccezioni?
+
+Brainrepo (10:39)
+Sì, per le LM
+
+sono latte miele, cascate di latte miele.
+
+Valerio  Barbera - Neuron AI (10:42)
+Cioè, biscotti nel lale.
+
+Sì, sì. E quindi l'intenzione era quella di, ok, abbiamo tutti i e proviamo ad applicare questa tecnologia a questo parco dati. E qui dice questo AI bug fix dentro Inspector, sostanzialmente Inspector nel momento in cui cattura un'eccezione dentro la tua applicazione, oltre a fornirti tutti i report fino all'esatta rica di codice che sta giù
+
+generando l'errore, eccetera, prova a risolvere proattivamente il bug nella tua applicazione, grazie a questo agent dentro al prodotto. Per poter sviluppare una cosa del genere mi servivano strumenti, questa è un po' la motivazione di base. Da sviluppatore PHP mi sono guardato, mi sono messo su Google a cercare e non ho trovato niente.
+
+Nulla!
+
+Brainrepo (11:42)
+Ma sai, il mondo PHP
+
+è pieno di makers. Pieno, pieno, pieno. Probabilmente più anche di altri mondi, forse compete un po' col mondo JavaScript, ma i makers che creano applicazioni piccole e medie comunque, generalmente lo fanno con Laravel, lo fanno con... diciamo Laravel che ormai ha preso, si è presa praticamente tutto, tutto.
+
+tutto il mercato. Silfone è un pelino più strutturata, è un po' più magari legata ai progetti un pelino più grossi, un pelino più complicati, almeno questa era la mia visione fino a 5 anni fa, poi può essere cambiata, non lo so, tu probabilmente che ci lavori tutti i giorni.
+
+Valerio  Barbera - Neuron AI (12:27)
+No no, è così, è
+
+così, è vero, il mondo pieno di Meicher.
+
+Brainrepo (12:33)
+E mi chiedo, essendo un mondo pieno di maker, nessuno ci ha pensato. Ti faccio un esempio. Il zio Taylor, Taylor O'Twelo, come si chiama? L'uomo Lambo, no? Che vede il business da ogni aperta parentesi angolare punto interrogativo. Non ci ha pensato.
+
+Valerio  Barbera - Neuron AI (12:43)
+No, ma è...
+
+se non riuscita a cosa
+
+la tua è una considerazione stupenda perché è una cosa che a me mi ha martellato veramente il cervello per quasi due anni
+
+E poi la risposta l'ho trovata dopo, poi Neuron ha iniziato il suo percorso e c'è stata questa esplosione enorme intorno a questo progetto, sono stato esposto un po' a quello che stava succedendo proprio in generale nel questo segmento di mercato, avuto un pochettino l'opportunità di vedere, quindi non solo attraverso gli occhi della lente PHP, ma un po' vedere
+
+un
+
+po' il mercato in questa sua in questa sua parte e mi sono accorto che il problema non era solo quello del PHP ci sono una marea di tecnologie dove la gente ha letteralmente dormito non c'è stato tempo e le spiegazioni possono essere diverse nella mia personale diciamo visione di questa di questo scenario è che sostanzialmente lei è stata così tanto
+
+accettata velocemente
+
+che a iniziare a sviluppare queste architetture sono state, non è stata gli sviluppatori dal basso, ma sono state direttamente le corporate dall'alto. E le corporate non ragionano in termini di, ho 10 anni che lavoro in Java, per esempio,
+
+non posso fare domani mattina svegliarmi e rifare tutto in Python. La corporate di questo ragionamento non gli interessa. La corporate va per budget. C'è il budget, ci sono 200.000 euro per mettere cinque-sei ragazzi a prendere Lang chain per dirti in Python e sviluppare tutta la parte AI con Lang chain. Sì, ci sono, vai.
+
+e quindi sostanzialmente il problema è questo invece di rimanere nella tecnologia in cui ti trovi. Quello è un problema invece della fascia di mercato più small-medium.
+
+e noi abbiamo avuto necessità di più tempo per arrivare al bisogno di sviluppare anche noi questi sistemi e nel momento in cui siamo arrivati a questa necessità hanno iniziato a nascere queste iniziative io sostanzialmente sono quello che lo ha fatto nel verticale del PHP
+
+Brainrepo (15:34)
+si perché
+
+del
+
+PHP. Eppure concordo con te sul fatto che in realtà è una tecnologia ancora nuova, noi lo usiamo tantissimo perché nel mondo dello sviluppo software ormai la gente è diventata il pane quotidiano, la gente, gli skill sono ormai il pane quotidiano. Però io sto lavorando un'applicazione AI First.
+
+e onestamente, ora agentic first chiamala un po' come ti pare no? onestamente io non ci ho visto tante applicazioni, i tool che ne so, facciamo un esempio di tool di produttività buona parte di tool di produttività hanno l'agentino integrato però molti sembra attaccato con lo scotch
+
+cioè difficilmente ho la percezione di un prodotto agentic first tanto che per esempio nel prodottino che sto sviluppando io prima penso in termini di tool poi penso in termini di UI ed interfaccia e questo approccio che è uno shift del paradigma no? questo approccio mi sta permettendo di andare velocissimo nello sviluppo delle funzionalità perché faccio tool
+
+ovvero la funzione dove c'è un'interfaccia ben definita e la spiegazione di quello che fa. Perfetto. L'end point del router, no, delle API, mi consuma il tool. La gente mi consuma il tool, ci attacco la UI e ho un prodotto... Agente Iq-First. No, questo è un esempio stupido, Perché poi lo arricchisco con l'agente vero proprio.
+
+quindi quello che gli dà quell'autonomia nel mixare i tool però a quel punto ho un tool potentissimo pensato per essere agentico quello che invece non vedo in molte applicazioni
+
+Valerio  Barbera - Neuron AI (17:56)
+Io sto dando nel momento in cui magari riesco a entrare in contatto
+
+sviluppatori, aziende che adesso entrano velocemente in questo segmento il consiglio che io do sempre perché poi è una cosa che adesso inizia a vedere costantemente e comprendo perché anche io vengo, alla fine anche io sono un maker, quindi ho gli stessi bias, conosco quei bias degli sviluppatori in generale. Allora, tendenzialmente, l'esperienza che sto avendo io, gli sviluppatori innanzitutto
+
+quando approcciano a questa cosa degli AI, gente hanno magari dei prodotti, delle applicazioni già esistenti, anche qualcosa che fanno nascere da zero. Pensano ad applicare le AI nelle parti dell'applicazione che l'utente usa meno.
+
+in modo tale da cercare di automatizzargli magari quella parte dove l'utente magari non ci mette mani spesso perché magari non gli cercando di rendere più gradevole o più automatizzata quella parte in cui l'utente magari mette meno spesso le mani o interviene meno spesso e questo secondo me è l'errore proprio che sta alla base di questo ragionamento. Le AI la devi mettere per automatizzare proprio il
+
+il core value del prodotto perché è lì che nasce sostanzialmente l'espressione del valore che può cambiare completamente, che può innovare quel task rispetto al cui il tuo prodotto cerca di lavorare, di fornire valore all'utente. Quindi realtà fare il ragionamento opposto, non andare a mettere le AI per automatizzare il task che all'utente non piace, perché tanto gli piacerà comunque.
+
+se
+
+sono delle cose, le configurazioni, delle cose... No, pensate alle AI, mettetela, ragionate per inserire l'esperienza dell'agente, agentica, nel core value direttamente e vedrete che cambierà molto velocemente la vostra prospettiva su ciò che realmente si può fare, su che strade può prendere anche questo branch di sviluppo.
+
+Brainrepo (20:32)
+Sono d'accordo con te e a questo aggiungerei solo un altro piccolo elemento è che non dimentichiamoci che per l'uomo il comando vocale è molto efficace, molto rapido e semplifica e buona parte di tu le hai integrati non le ho visti utilizzare la dettatura vocale cosa che per esempio chat gpt di per sé fa in modo eccellente perché tu puoi
+
+Valerio  Barbera - Neuron AI (20:59)
+See you!
+
+Brainrepo (21:00)
+fare delle conversazioni con ChatGPT. Quello che io per esempio nella mia applicazione Cina sto facendo è che tu praticamente puoi conversare a voce con l'applicazione e fare tutto più in più ti propone dei workflow creativi no? E quindi è incredibile perché tu stai parlando con la tua applicazione se la compariamo a
+
+Il modo che vamo per parlare con le applicazioni di Alexa o di Siri dici ma cazzo qua siamo in un altro mondo
+
+Valerio  Barbera - Neuron AI (21:33)
+Sì, infatti.
+
+Io personalmente ho riscoperto proprio l'esperienza dell'interfaccia vocale, l'ho ritirata fuori e ha cambiato proprio un attimo il mio feeling con questo tipo di interfaccia, grazie proprio a questa nuova situazione delle AI, di questi AI, gente eccetera.
+
+perché
+
+come menzionavi tu prima, anche prima c'erano queste interazioni vocali, la ricerca su Google, tu potevi schiacciare il pulsantino sullo smartphone, però l'esperienza data da queste interfacce solo passive non mi ha mai dato questo feeling di usarla poi alla fine mai.
+
+invece con questa cosa degli agenti che tu gli vuoi dire aggiungimi questo evento al calendario, fai la telefonata, chiudi la telefonata e dici aggiungi il calendario, l'evento, sto impegnato, vado a pranzo, fuori, cioè proattivo e quello ti carica l'evento e poi ti risponde pure e ti dice sì ok fatto
+
+questa cosa per me è stata un riscoprire proprio l'interfaccia vocale e fa parte di queste esperienze nuove che secondo me cambieranno proprio il modo in cui i prodotti saranno sviluppati
+
+Luca (23:03)
+ma voi ce la fate perché io non ce la faccio a dare i comandi vocali mi sembra quasi di parlare con una segreteria telefonica e poi poi comincio a balbettare dire allora fai no aspetta facciamo capisce niente lui non capisco niente io
+
+Valerio  Barbera - Neuron AI (23:08)
+Luca io ti capisco
+
+o ti senti un cretino e
+
+che stai lì a fare senti pure un mezzo cretino.
+
+Luca (23:22)
+però mi sa che bisogna abituarci, perché invece le nuove generazioni, lo posso vedere io con i miei figli che c'hanno 14 e 12 anni, che invece fanno tutto con i comandi vocali ogni tanto gli sento dire ehi google, ma come è google? che cosa? sono abituati a parlare con Alexa?
+
+Valerio  Barbera - Neuron AI (23:34)
+e gassi
+
+Luca (23:46)
+sicuramente si andrà in quella direzione io forse per qualche bias preferisco sempre scrivere anche se ho l'opzione di ho provato una volta a dialogare con cgpt mi sono sentito come appunto come parlare lo sentivo ancora che parlavo con una macchina
+
+Brainrepo (24:07)
+Io invece mi
+
+faccio certe conversazioni più con chat GPT che con Claude, onestamente parla perché
+
+Valerio  Barbera - Neuron AI (24:14)
+Mauro allora,
+
+allora Mauro è matto proprio, Mauro è sulla strada...
+
+Luca (24:17)
+è quello che lascia i messaggi nelle segrete telefoniche
+
+Brainrepo (24:19)
+Nooo ma-
+
+Allora, premesso che secondo me Luca quello che tu vivi è esattamente quello che succede la prima volta che registri un podcast o la prima volta che senti la tua voce registrata. È quello che penso, almeno dalla mia prospettiva. Ma quello è, diciamo, un limite che puoi facilmente superare. Io ce l'avevo le prime 10 puntate di GitBars, poi è sparito.
+
+Luca (24:35)
+io non mi sento mai
+
+Brainrepo (24:50)
+e non ho avuto più quel timore che mi faceva balbettare. Seconda cosa, quando noi parliamo con qualcuno, diamo un ordine al collega o al figlio di fare una spiaggia a cosa, noi gli lo diamo vocalmente, quindi per natura siamo tendenzialmente portati a dare degli ordini e a conversare vocalmente. Terza cosa, adesso scherzi a parte, mi faccio, specie quando guido, delle conversazioni super interessanti con chat GPT, perché?
+
+Valerio  Barbera - Neuron AI (25:19)
+bravo alla guida in queste situazioni anche io ho riscoperto
+
+Brainrepo (25:20)
+perché chat GPT
+
+è una cosa incredibile perché c'è o GPT ha accesso alla ricerca web quindi io l'altro giorno per esempio stavo mi è venuto in mente di capire come si potessero gestire io ho 10 gommoni di dimensioni diverse dovevo ottimizzare il riempimento dei gommoni per evitare di far partire un gommone se non c'erano persone sufficienti un'idea stupida di un nolegio o gommoni
+
+e mi dicevo come posso risolvere questo tipo di problema? Allocazione Grady è la cosa che mi è venuto in mente dell'università e gli detto guarda io sto pensando di risolverlo così ma ma sono da ragazzo con la DHD no? Sono cose che ti vengono in mente ogni due per tre e dici come lo risolverei? Inizio spesso delle conversazioni con ChatGPT dove l'interfaccia vocale funziona da Dio ragazzi e poi cioè
+
+Sono entrato nel loop e mi hanno detto no guarda se la funzione obiettivo può essere un obiettivo singolo puoi pensare di farlo con la programmazione lineare? ok dammi più informazioni ma allora se io faccio così cos'è? Ho finito un'ora di conversazione che è stato il ragionamento che avrei comunque fatto in macchina e che magari dopo i primi dieci minuti sarebbe bloccato perché stavo guidando non potevo cercare su internet
+
+ed è molto figo. Claude, ho visto che ha l'interfaccia vocale però è ancora un po' clunky ma ho notato una cosa che ho condiviso con alcuni colleghi proprio avantieri. Il mio Claude non so se è per caso o per davvero, quando parla in inglese parla con l'accento francese.
+
+e siccome il mio telefono è in francese quello che ho pensato è che tutto il mondo della UX si sta spostando e ci sono nuove frontiere di UX e per esempio il Claude che mi parla in inglese con l'accento francese sapendo che il mio telefono è in francese è UX, è quella gente che è istruito
+
+Valerio  Barbera - Neuron AI (27:49)
+hai detto una
+
+cosa...
+
+Brainrepo (27:53)
+Capito? io magari ho beccato un edge case, magari mi sto facendo le seghe mentali, ok?
+
+Valerio  Barbera - Neuron AI (27:54)
+si si si ma
+
+ti vengono questi cazzo di strumenti
+
+Brainrepo (28:01)
+Però mi ha detto zis al posto di dis e chi dice zis con la zetta può essere solo francese, ok? Quindi alla
+
+fine mi dico ecco che la tua applicazione in quel caso se tu la sai fare assume un'identità. Prima l'identità era forse data dall'identità visiva che ti faceva il grafico per l'applicazione.
+
+palette di colori, le forme, il font. Oggi l'identità dell'applicazione può essere molto di più. Altro mondo che si apre.
+
+Valerio  Barbera - Neuron AI (28:36)
+è una considerazione
+
+bellissima quella che fai perché io sono sempre una delle cose che ho iniziato ad apprezzare potendo poi avendo neuron in mano e potendo iniziare a sviluppare proprio questo tipo di esperienze che qui c'è un fattore l'esperienza in questo caso ha un fattore cognitivo chiamiamolo io gli do questi aggettivi
+
+poi non sono se sono esplicativi perché poi alla fine sono tutte cose che ci stiamo costruendo ognuno di noi nelle proprie teste non so se è il modo giusto di comunicarle però ecco questo aspetto qua dalla parte novetamente grafica estetica a questa dinamica esperienziale però un'esperienza proprio cognitiva di sensazioni che soltanto questo tipo di strumento ecco appunto cognitivo ti può consentire di esprimere
+
+verso chi usa queste applicazioni, tuoi software, io metto sempre nei panni o nello sviluppatore che deve comunque delle aziende che devono creare le loro esperienze perché poi questo secondo me è il tema oggi, a utilizzarle queste tecnologie stiamo piano piano scoprendo, ci stanno facendo anche loro scoprire questi aspetti che magari ci portano a riflettere anche nel modo in
+
+a
+
+cui poi noi stessi possiamo creativi, possiamo magari effettivamente riprodurre certe dinamiche, chi è sensibile come te, no? Perché notare questi aspetti è sicuramente anche un tema di sensibilità, di pazienza, di essere gli attenti a capire cosa sta succedendo. sì, un'altra esperienza.
+
+Brainrepo (30:35)
+C'è un altro mondo di complessità che si aggiunge, che è una cosa che ho scoperto veramente questi giorni, è che aggiungi una nota al cliente Paolo Rossi, detto alla gente è semplice, poi la gente deve essere istruito a capire qual è il nome e come tirarlo fuori dal tool. E mi capitava per esempio di...
+
+avere dei nomi, doppio nome, doppio cognome dove nome e cognome era complesso, era... che ne so... il nome si poteva confondere col cognome e là... e là anche il modo in cui ingegnerizzi l'applicazione completamente diverso. Perché per esempio io sul cliente ci ho fatto un rag in modo che tu mi dici Paolo Rossi quello di Milano che ha lavoro in banca
+
+Valerio  Barbera - Neuron AI (31:15)
+si sovrapponevano.
+
+Brainrepo (31:34)
+e che mi ha detto queste cose e lui te lo trova direttamente se hai tanti paulorossi.
+
+Valerio  Barbera - Neuron AI (31:39)
+e
+
+Sì, sì e nì, senso che in questi dettagli si entra in un meandro di possibilità quando devi essere tu ad architettare il tuo use case, che poi questo alla fine è anche la libertà che ti dà uno strumento come quello che stiamo sviluppando noi, framework, eccetera, che adesso la cosa
+
+risposta nel vedere come utilizzatori i use case generalisti di queste tecnologie e iniziare a pensare adesso devo fare proprio il mio use case, cioè io ho ciò che è un CRM dove posso incontrare questi problemi specifici che è un po' quello che è Anthropic in generale ha cercato di approcciare sul suo prodotto generalista con le skills
+
+ha cercato di entrare un pochettino su questo tema, quindi dare in qualche modo, trovare una soluzione architetturale che consentisse al suo prodotto generalista di poter essere istruito per andare un po' più in, essere un po' più cucito magari su delle esigenze specifiche. Chiaramente in tutti questi approcci
+
+Brainrepo (32:53)
+di verticalizzare.
+
+Valerio  Barbera - Neuron AI (33:06)
+tu copri il 70 % degli use case, che a un produttore generalista già va benissimo così, ha coperto il 60, 70, 80 % degli use case, e più di quanto può sperare.
+
+Tutto il resto, che comunque sono mercati giganteschi di quel 20-30 % degli use case specifici, sta proprio a noi avere queste architetture in mano e progettare questi use case. E lì può succedere di tutto, può essere il RUG, il tool, magari la capacità di dare all'agent un sistema misto fra tool, istruzioni e RUG per cercare di fare context retrival.
+
+non
+
+tanto proprio retrival inteso come tirare fuori dal vector db un po' di roba ma proprio retrival misto cercando di mixare c'è lì veramente si apre un mondo che spesso dipende non solo dal modo in cui tu hai architettato il sistema per consentire alla gente di accedere alla giusta informazione ma anche al modello stesso che tu usi sotto che magari cambiando leggermente
+
+tutto il sistema che tutti quei prompt, mesi, spesi non funziona più una mazza e quindi questo è un mix di cose
+
+Brainrepo (34:43)
+è verissimo no? io ho fatto un po' di test usando Claude usando Sonnet e IQ e GPT praticamente il behavior della gente era decisamente diverso e le Tool Invocation era completamente diverso il modo in cui utilizzavano i tool
+
+e questo apre un altro capitolo che è il capitolo degli eval come facciamo evaluation del nostro agente in realtà ci sono un po' di tecniche non abbiamo il tempo magari di fermarci però sono non sono tutte tecniche let's say
+
+molto empiriche, molto... faccio il test, vedo come si comporta, mi faccio il mio test case, vedo più o meno come si comporta se ci sto dentro, però non c'è una valutazione degli strumenti di valutazione rigidissimi. C'è qualcosa, ripeto, magari ne parleremo nelle prossime puntate, però... non... niente di state of the art, secondo me.
+
+Valerio  Barbera - Neuron AI (36:08)
+Sì,
+
+io mi sono sforzato, questo poi è arrivato nella versione 2 di Neuron, adesso siamo alla versione 3, nella versione 2 ho iniziato a lavorare su questa componente dell'evaluation set e quindi ho integrato nella versione 2, esiste sul Neuron, questo modulo dedicato proprio all'evaluation.
+
+Il mio intento è stato quello di creare un minimo di infrastruttura che consentisse agli sviluppatori di fare running di un po' di prompt, quindi test per monitorare in qualche modo, magari dei prompt specifici, per security, dei limiti etici, qualche cosa che
+
+poi tenere sotto controllo, magari non hai grandi data set perché in questo momento sai poi ognuno approccia questo problema con la speranza che poi magari cercare di vedere un po' anche la reazione dell'ecosistema per vedere se poi c'è qualche contribuzione, si inizia a vedere adoption e poi da lì si discute anche un po' insieme alla community. C'è stato veramente pochissimo veramente interloquito su questo tema, framework con 3, 4
+
+sviluppatori che magari stavano approcciando in maniera un po' più su ampia scala come sviluppo di sistemi su ampia scala con Neuron e quindi diciamo è veramente andato avanti relativamente poco questo branch del progetto a testimonianza capito che è un argomento
+
+così ancora in Discovery, probabilmente ci vuole forse più maturità, Ci bisogna che andiamo un altro po' più avanti, andiamo più in produzione, che più gente si fa male, C'è tutta una serie di ragionamenti.
+
+Brainrepo (38:12)
+ci abbiamo messo
+
+30 anni per pensare che il TDD fosse una buona idea
+
+Valerio  Barbera - Neuron AI (38:18)
+brava, fare 4 unit test, ci è voluto 50 anni di lavoro,
+
+quindi figura di moglievals, c'è tempo, l'importante è mettere a terra dei presupposti, mantenere la piattaforma è stato il mio intento, modo che se ne possa comunque parlare ci si possa lavorare su. Detto questo è ancora tutto molto giovane.
+
+Brainrepo (38:44)
+Prima hai detto che ti piace inquadrare Neuron come un framework e non una libreria. La comparazione tra framework e libreria è un po' vecchia come il mondo, nel modo dello sviluppo. Però mi interessava capire quali sono gli elementi che ti spingono a definirlo un framework.
+
+Valerio  Barbera - Neuron AI (39:07)
+più che altro nella mia testa è stato...
+
+c'è il concetto dell'orchestrazione, no? Per me il framework nasce nel momento in cui questa architettura deve essere al centro dell'orchestrazione di altre tecnologie che poi, insomma, alla fine po' la stessa cosa del classico web framework, no? L'ara degli sinfoni di turno, no? Anche intorno agli
+
+questo magari all'inizio quando sono partito io nel mondo del PHP nessuno aveva idea di niente, ora magari si inizia a parlare in maniera un po' più matura
+
+però io ho sviluppato Neuron guardando agli altri ecosistemi, Python, molto più maturi, molto più sviluppati e quindi io là mi sono reso conto immediatamente che intorno a queste entità, questi agent circolano una montagna di tecnologie a partire dagli LLM fino ai database che sono completamente diversi, non c'entrano nulla con i database
+
+relazionale a cui si chiama bisogno, tutta una classe di un parco tecnologico per una certa parte completamente nuovo oltre al tutto il parco tecnologico di altri db, tool esterni
+
+e poi ce l'ha developer experience, quindi monitoring, debugging, evals e quindi da questo punto di vista nella mia idea nata anche il mio mindset, poi non è tanto per dargli un'accezione a neuron ma è stato per me
+
+Anche più avere io un mindset guida, detto devo lavorare in questa dimensione, cioè mettere le cose in maniera tale che Neuron possa essere al centro di un'orchestrazione di tutte queste tecnologie per fare in modo che poi l'AI possa effettivamente fornire il valore che lo sviluppatore si aspetta o che vuole creare.
+
+è una carta bianca su cui tu poi effettivamente devi cucire la tua esperienza.
+
+Brainrepo (41:36)
+Chiaro, faccio una domanda, a livello di integrazione con i framework web è pensato per essere integrato o diventa poi un progetto a sé stante?
+
+Valerio  Barbera - Neuron AI (41:48)
+sì,
+
+questa è stata una sfida enorme quando sono passato dalla versione alla 3, la versione 3 di Neuron, fai conto che è stata rilasciata il giorno 10, oggi il 26 febbraio 12-13 giorni fa
+
+Sono andato a Torino insieme a tutti gli amici di Torino e li abbiamo fatto un bel evento proprio per il lancio di questa versione. il passaggio fra la 2 e la 3, uno dei pilastri sul quale io mi stavo impazzendo e volevo lavorare proprio profondamente era proprio questa interconnessione che doveva nascere fra l'entità agentica che sviluppi dentro al
+
+tuo web framework è tutto il resto che tu hai che parte dal back-end del framework dentro al quale stai sviluppando e che arriva fino al front-end, alla UI quindi l'integrazione poi effettivamente è tutto quello che serve per portare poi tutte queste interazioni, queste dinamiche direttamente all'utente, al UI front-end, eccetera
+
+dentro in Neuron 3 ci sono tutta una serie di adapter per far funzionare, che anche questo è mondo completamente nuovo. No, per esempio lato front-end, pure chi fa front-end, secondo me i primi due tre anni di tutta questa rivoluzione è stato un inferno, perché tutti questi formati dati che partivano da questi agenti e arrivavano nel front-end, nessuno aveva idea di come gestire.
+
+l'approvazione dei tool, queste dinamiche, questi pattern di human in loop e cose varie è stato un inferno anche per loro, adesso anche la tua ed è ancora immatura esatto, esatto
+
+Brainrepo (43:41)
+ed è ancora immaturo si inizia a parlare di AGUI, di protocolli ma se ne inizia
+
+a parlare io ho applicazioni che usano in modo efficiente AGUI o protocolli sieni non ne ho visto cioè io per ora vedo ancora risposte testuali in buona parte delle applicazioni
+
+Valerio  Barbera - Neuron AI (43:54)
+E tos! Sì, assolutamente!
+
+Però il tema è quello, adesso finalmente è arrivata e quindi l'integrazione poi con tutta la tua architettura di questa entità agentica o più entità agentica che costruisci deve fare un po' il pario anche con l'environment che adesso anche lì si sta un po' muovendo e Neuron è già integrato, c'ha degli adapter che ti consentono già scritti dentro a frame o built-in, tu devi solo buttarlo dentro la
+
+e ti converte praticamente lo streaming in formato AGUI, Bersel, SDK, per esempio, che ci hanno un altro protocollo sviluppato e poi tu puoi anche sviluppare il tuo adapter custom, implementi le interfacce, ti fai l'adapter per il front-end che magari te lo sei scritto tu, ti fai anche l'adapter per spedire i dati, insomma, e quindi è tutto molto flessibile. È stato un elemento che per me
+
+importante perché con la versione 2 quando ho visto che Neuron iniziava ad andare in produzione la gente si impazziva con tutti questi meccanismi per far arrivare poi effettivamente all'utente queste esperienze ho capito che c'era bisogno di affrontare un po' maniera un po' più strutturata questa parte, questo problema.
+
+Brainrepo (45:24)
+Dobbiamo entrare un po' più sui dettagli delle componenti di Neuron. Quali sono le componenti di un sistema di questo tipo? O almeno? Ce ne sono 7 milioni. Almeno partiamo da quelle core.
+
+Valerio  Barbera - Neuron AI (45:36)
+e allora
+
+sì allora
+
+guarda al di là delle componenti ci sono delle scelte che chi realizza queste infrastrutture dovrà necessariamente fare
+
+e quindi queste scelte poi alla fine caratterizzano l'architettura a cui tu ti affidi quindi Neuron piuttosto che Symphony e I che poi vedendo quello che stava succedendo con Neuron poi a un certo punto sono partiti tutti quanti Symphony e I, Lara Bell e I, sono partiti un po' tutti quindi con le loro interpretazioni di questo scenario e quindi in realtà le componenti diciamo
+
+non sono molte ma sono estremamente caratterizzanti per esempio il Neuron con l'arrivo della versione 3 io ho fatto all in totale su questa infrastruttura su questa architettura che ho sviluppato nella versione 2 che è il Workflow
+
+e sostanzialmente in Neuron agenti, rag, tutte le entità che crei sono sostanzialmente dei workflow. Workflow che è un'entità che tu puoi comporre con nodi, eventi, che può avere dei branch, dei loop all'interno e soprattutto è persistente, è durable, come si direbbe in linguaggio tecnico. Cioè tu il workflow
+
+mentre lo esegue può essere direttamente un agent che il neuron stesso è un workflow può essere stoppato
+
+ininterrotta l'esecuzione del workflow. Il workflow si congela lo stato in dei layer di persistenza che tu gli puoi dare al workflow che può essere il database, piuttosto che sul file system, piuttosto che sulla cache, non so dove vuoi. Il workflow si congela, conserva il suo stato e tu poi lo puoi riesumare una settimana dopo, due giorni dopo con un feedback dato dall'esterno e il
+
+flow
+
+riparte esattamente dal punto in cui si è interrotto con tutti i dati che aveva già dentro e ricomincia la sua esecuzione partendo esattamente dal momento in cui si è interrotto questa architettura è quella che sostanzialmente ha abilitato Neuron
+
+a poter implementare tutti quei pattern di human in the loop, tool approval, in neuron c'è nativamente integrata questa funzionalità del tool approval che nel momento tu puoi dargli, puoi dirgli in base ai tool che ci attacchi alla gente, puoi dire per quali tool vuoi che la gente interrompa la sua esecuzione e aspetti il feedback dell'umano per poter proseguire oppure no.
+
+in PHP è l'unico tool in questo momento, proprio in tutto il PHP a supportare questo tipo di interazioni che sono già più raffinate, ok? Cose che servono a creare esperienze. So se posso condividerti un link?
+
+Brainrepo (49:05)
+Si lo mettiamo nelle note dell'episodio
+
+Valerio  Barbera - Neuron AI (49:07)
+condivido una cosa in totale anteprima perché l'ho terminato ieri questo questo tool, ho sviluppato un coding agent di un cloud code con Neuron, un'esperienza da Clih open source ovviamente, l'abbiamo rilasciato, sono partito proprio con l'idea di dimostrare, di creare qualcosa che potesse dimostrare questo tipo di capabiliti del framework e sono finito praticamente per creare un coding
+
+full feature
+
+che fa di tutto insomma ci puoi attaccare MCP Server, proprio un coding agent a tutti gli effetti e quindi è poco essa no l'architettura innanzitutto qui fa proprio da padrona cioè tu una libreria, passiamo al discorso no framework librerie avere una classe agent no che dentro gli dai un prompt, ti chiama l'LLM magari dentro c'è il suo for loop
+
+il suo for each dentro per annare l'agent con i tool è un conto avere un'infrastruttura, un'architettura software progettata per poter essere modulare, interrompibile, riesumabile, sono tutti i ragionamenti che cambiano completamente le carte in tavola.
+
+E poi un altro dei componenti che ha secondo me decretato il successo soprattutto dall'inizio di Neuron è stato la Chat History. Il componente della Chat History di Neuron è una delle cose meglio riuscite, Che mi sono forse anche meglio riuscite in questa architettura che è capace di gestire...
+
+non solo ovviamente lo storico della conversazione che sta avvenendo fra te, gente e tutti i tull che chiama
+
+ma noi l'abbiamo sviluppato con questa dinamica che tu gli puoi dare proprio il context window, c'è la dimensione, 100.000 token, che molto spesso il problema è questo, cioè il problema di avere la chat history, chiamiamola così, che è il contesto di tutto quello che sta avvenendo nella conversazione. A parte per avere memoria della conversazione che sta avvenendo, tutte le informazioni che ti sei scambiato, in realtà il problema vero stava, io non
+
+l'ho
+
+voluto ignorare, stava proprio nel limite di questa finestra di contesto ogni modello ha le sue, ogni fornitore ha la sua, in un'esotica antropiq 200.000 dogen
+
+Gemini un milione, cambia tutto. E quindi tu proprio nel componente della Chat History di Neuron, che è tutto automatizzato e gestito da questo componente, gli dai dentro lo istanzi, dandogli proprio la dimensione del Context Window, e automaticamente la Chat History viene poi quella automaticamente taglia i messaggi più vecchi della History che c'ha in corpo in base alla dimensione del Context
+
+Brainrepo (52:27)
+Ti faccio una domanda, ti faccio una domanda. Intanto sappiamo un po' tutti che la finestra di contesto, generalmente offerta dai provider, è molto marketing e poi il contesto va a donne di facili costumi dopo il 30%, 25-30 % inizia il contest rot. Questo ormai lo sappiamo e lo sappiamo bene. Ma devo chiederti, la parte della chat history...
+
+Valerio  Barbera - Neuron AI (52:43)
+Sì.
+
+Brainrepo (52:56)
+e... come la gestisci? fai un crop dei messaggi o fai anche una compaction? quindi compatizione
+
+Valerio  Barbera - Neuron AI (53:07)
+Allora,
+
+qui si combinano le cose, senso che una volta che noi abbiamo sviluppato la Chat History che semplicemente conserva tutta la lista dei messaggi così, per com'è e taglia i più vecchi mano a mano che si esce fuori dalla dimensione del contesto, quindi molto banalmente così. Poi con l'architettura.
+
+del workflow, gli agenti dentro Neuron sono costruiti con questi workflow, quindi sono dei workflow che composti, creano l'esperienza dell'agente che chiama i tool, torna dal provider, fa tutti questi giochetti, tu con il workflow puoi inserire dei middleware all'interno, puoi agganciare dei middleware sui nodi del workflow.
+
+e in questa maniera puoi wrappare sostanzialmente il nodo dove avviene l'inferenza nell'agent e nel momento in cui o all'output dell'LLM oppure nel momento in cui prima che diciamo la gente entra nel nodo dell'inferenza puoi eseguire un check sulla Chat History
+
+ed eventualmente fare partire una summary, fai l'autosummaryzation e questo middleware, noi lo abbiamo anche sviluppato built-in dentro al framework per cui tu semplicemente lo attacchi alla gente, dici, gli dai delle condizioni, so quanto entro, quanto contesto vuoi, diciamo da quale threshold, no? Gli dai la threshold della soglia oltre il quale parte automaticamente
+
+Sammari del contesto e anche lì siccome la chat history ti consente di fare tutti questi conteggi sul contesto tu gli puoi dire prendi solo gli ultimi 10 messaggi come numero di messaggi oppure glielo puoi dare come quantità di contesto prendimi gli ultimi 50 mila token
+
+che adesso summarizzali in un messaggio unico da mille token. Poi tutte queste cose vengono spedite al modello, partono degli automatismi e viene eseguita questa truncate che sono più componenti che in realtà cooperano fra di loro per farti vivere questa esperienza sostanzialmente.
+
+Luca (55:45)
+fatto tutto questo in PHP, scusa forse l'hai già detto io non c'ero come dicevo prima, hai trovato qualche cosa che mancava che ti ha costretto a fare qualche giro oppure insomma qualche cosa per evitare di tirarti qualche framework che hai dovuto ricostruire per esempio immagino qualcosa di async
+
+ci dovrà essere, avrai dovuto fare. perché oggettivamente la cosa che più mi manca quando torno al PHP, se ci sono framework che immagino, spawnano processi o cose varie per farlo adesso, e da un po' che non li programmo, non ci programmo. Però appunto, due domande antitetiche. Se ti è mancato qualcosa che dici ⁓
+
+Valerio  Barbera - Neuron AI (56:15)
+Lo sapevo che girava intorno a questa cosa.
+
+Luca (56:42)
+Ecco perché nessuno finora l'ha fatto in PHP. Di contro invece qualcosa dove... ⁓ questa cosa in PHP scivola che un amore, se avessi fatto in Python o JavaScript, sarebbe stato...diverso.
+
+Valerio  Barbera - Neuron AI (56:46)
+Sì.
+
+sì allora
+
+ti dico ti dico la verità uno dei feedback che mi sono dato da solo è stato quello che sinceramente anche io questa cosa di neuron no quando poi
+
+ho pubblicato la prima versione che era sostanzialmente sai tu sei uno sviluppatore sei speranzoso che il tuo progettino possa avere un po' di visibilità possa riuscire a girare fra le mani degli altri sviluppatori non è stato subito un caos
+
+e quindi lì ho subito subito il timore che adesso con PHP quanto riesco ad andare avanti ed effettivamente questa è stata la prima sorpresa, sono andato avanti tantissimo a dimostrazione del fatto che secondo me dormivamo tutti veramente perché il limite tecnico
+
+è subentrato, ma proprio avanti avanti avanti avanti, dei dettagli profondissimi che ti dico la verità non cambia poi alla fine sono ecco delle cose che magari posso vivere uno come me
+
+che sviluppa proprio l'architettura e quindi se potesse fare determinate cose si potrebbero sbloccare in maniera diversa certi automatismi e la SYNC è sicuramente uno di questi. Però ecco, per chi invece è stato all'altro lato, per gli sviluppatori, le aziende che stanno adesso ottando queste tecnologie, ma allo status quo...
+
+c'è nessuna differenza nell'esperienza che ne fanno loro. In PHP sono dovuto scendere a compromessi con questa cosa della sync effettivamente. Infatti la sync in Neuron è supportato
+
+ma tu siccome su PHP non c'è un async loop nativo del linguaggio ci sono delle implementazioni che ti offrono altri framework come React, PHP, AMP, PHP quindi tu devi utilizzare, tu questo utilizzo sviluppatore che stai facendo la tua applicazione devi innanzitutto scegliere quale di questi framework utilizzare poi adottare dei tool che possano girare
+
+dentro a questi framework async che però sono fatti custom perché PHP nativamente non ha una sync loop e quindi nasce anche un problema di compatibilità che in altre tecnologie non c'è perché la sync loop è nativo del linguaggio e quindi in Neuron ci sono
+
+degli adapter sostanzialmente che ti consentono di poter iniettare dentro al framework per esempio la cosa il limite più grande nel contesto degli AI agent sono le chiamate HTTP perché le chiamate HTTP verso gli LLM spennono 2, 3, 4 secondi allora lì avere concurrenzi fa tutta la differenza di questo mondo e quindi gli HTTP client
+
+Neuron ha un paio di interfacce che servono a fare da adapter e tu puoi iniettare dentro a tutti i componenti di Neuron il normale HTTP client fatto con Gazol che è quello built-in del framework che è quello sync sostanzialmente oppure c'è built-in sempre dentro al framework c'è un amp
+
+HttpClient che se tu usi un'applicazione o un wrapper del tuo script fatto con la sync loop di AMP puoi utilizzare l'amp HttpClient e sostanzialmente runnare 4-5 agent in contemporanea perché supporta lo stesso framework. usi React, per esempio, React PHP
+
+non ho ancora sviluppato un client per Rekers PHP o magari arriverà una contribuzione da qualche anima via però ecco quello il tema quindi su questo c'è non solo una difficoltà tecnica ma anche un po' un caos perché non c'è una struttura del linguaggio ma ognuno si fa la sua e quindi da lì parte un mal di testa è complicata
+
+Luca (1:01:46)
+però a parte questo insomma tanti cuoricini per PHP come come sempre
+
+Valerio  Barbera - Neuron AI (1:01:52)
+sì, devo dire che io fino
+
+a qua ci sono arrivato quindi adesso non lo so, fino a qui siamo arrivati ancora sto vedendo, man o mano che sperimento rilascio la nuova versione del frame che sono sulla 3 ho iniziato a sperimentare con questa nuova architettura che ho creato nella 3 e ancora mi vengono idee, possibilità di sviluppo ho creato il coding agent e ancora sto immaginando cose
+
+per i quali ecco non vedo ancora problemi tecnici, limitazioni proprio tecnologiche.
+
+Brainrepo (1:02:32)
+Domanda che esola dai dei moduli e da Neuron
+
+da neurons e che tocca un po' più Valerio come professionista. Immagino che tu per lo sviluppo di neuron passi tantissimo tempo a consumare informazioni, a guardare come si muovono gli altri, a provare a capire quali sono i gap che puoi fillare, quelli invece che non ti interessa abbracciare. Come gestisci questo perico cognitivo?
+
+Valerio  Barbera - Neuron AI (1:03:05)
+questa è stata ed è un po' la parte più complicata di questa attività. problema nel mio caso io l'ho sempre associato al fatto che PHAP, cioè io come sviluppatore PHAP
+
+non ho mai potuto guardare, trovare ispirazione o comunque scoprire qualcosa magari guardando a un artefatto o un prodotto sviluppato da qualcun altro in PHP questo è il vero problema, diciamo che io purtroppo mi devo accollare in un modo o nell'altro io devo andare a studiare tutto questo lavoro che tu menzioni
+
+io lo faccio e lo devo fare pure andando a consultare materiale, codice, progetti eccetera in linguaggi di programmazione che non sono i miei e questa cosa è un impegno che probabilmente senza l'aiuto dei coding agent
+
+Non lo so quanto sarei durato, o quantomeno non sarei potuto andare così spedito come è stato lo sviluppo di Neuron che magari dall'esterno è sembrato una bella evoluzione organica, solida, se non fossimo nel momento delle AI io non avrei mai potuto...
+
+far evolvere il progetto così. Lavoro tanto, lavoro tanto, la gente spesso me lo chiede perché effettivamente poi a un certo punto magari ne rendi anche conto. Quindi si è fatto di tanto lavoro cognitivo nel cercare di andare a studiare e capire cosa sta succedendo in ecosistemi che si muovono in maniera diversa da quello in cui sei tu.
+
+e da un certo punto di vista Mauro devo dire la verità probabilmente però questa questo lavoro questo questa fatica è anche quella che sta dando a Neuron secondo me
+
+l'opportunità di offrire proprio anche una prospettiva su come affrontare questo problema dello sviluppo degli IA, gente di questi framework, eccetera abbastanza nuova, particolare proprio perché c'è questo mix di esperienze tipo il workflow di Neuron è ispirato da Lama Index ma il processo di Human in the Loop è invece ispirato da
+
+chain
+
+e allora tutti questi mix e poi applicati invece a una tecnologia PHP
+
+che ha oggetti, che ha un'organizzazione completamente di e sta creando secondo me effettivamente qualcosa di interessante che vedo anche su repository di Neuron negli ultimi mesi sto vedendo anche molti sviluppatori provenire anche da altre estrazioni tecnologiche contribuire, aprire issue, discussion vedo questi profili di sviluppatori che non hanno niente di PHP nei loro profili github
+
+Brainrepo (1:06:47)
+Sì, considerando che PHP a livello di segmento, almeno fino al medio, penso sia il linguaggio predominante ancora.
+
+E... sì, sì, sì, non possiamo nasconderlo. Ti faccio un'altra domanda.
+
+Neuron nasce da un'esigenza che avevi tu nel tuo prodotto, tuo servizio, no? C'è stato un momento in cui Neuron ha preso vita propria. Quindi si è un po' staccato dai bisogni che tu avevi nell'applicazione, ma iniziato a ricevere gli issue, a soddisfare i bisogni che venivano da altre direzioni.
+
+Come hai gestito in quel caso? Da una parte il tuo effort, Perché sai finché Neuron è utilizzato nel tuo progetto di punta tu dici vabbè è un progetto open source però lo sto facendo per me mi sta generando del valore e quindi continuo a farlo. Nel momento in cui c'è una feature che tu devi sviluppare che non ti serve nel tuo prodotto ma che pensi sia necessario e debba essere là, tu dici questa è
+
+pro bono per ora. Come la giustisco questo balance tra
+
+Valerio  Barbera - Neuron AI (1:08:20)
+Sì, allora io ho deciso di affrontare questa esperienza del rilascio di Neuron come progetto open source
+
+integrando fin da subito questa mossa da parte mia personale e poi anche comunque da parte dell'azienda direttamente la scelta di uscire open source è stata dettata dal fatto che noi abbiamo progettato un business case intorno a questa operazione di rilasciare Neuron come progetto open source perché abbiamo capito fin da subito
+
+tutto sommato che è vista la situazione che c'era nel PHP e l'esperienza che stavo facendo io per sviluppare questa cosa dentro Inspector che c'era un'alta probabilità che qualche cosa di buono potesse poi tirare fuori e quindi esatto, esatto, stato proprio poi avendo fatto questo lavoro già no dal
+
+Brainrepo (1:09:22)
+voi avevate già un tool di observability quindi il gioco era...
+
+Valerio  Barbera - Neuron AI (1:09:32)
+di Python, di andare a studiare dagli altri ecosistemi, ci siamo resi conto subito che noi stavamo facendo un po' un'esperienza all'inverso, senso che prendi la chain, ovviamente è l'attore di riferimento in generale, noi siamo fatti due anni di progetto open source e poi alla fine, dopo due anni in cui hanno consolidato il posizionamento anche del progetto open source in questo mercato, hanno poi avuto
+
+Brainrepo (1:09:47)
+smith
+
+Valerio  Barbera - Neuron AI (1:10:02)
+avuto
+
+spazio per sviluppare dei prodotti professionali, servizi professionali a corredo, per consentire poi, ovviamente, ad aziende e sviluppatori di portare il lavoro di sviluppo che tu fai con quel framework a un livello, ovviamente, successivo di garanzie e professionalità che servono quando poi vai in produzione, mentre invece noi ci siamo re...
+
+Brainrepo (1:10:23)
+senza osservabilità o
+
+te la fai o...
+
+Valerio  Barbera - Neuron AI (1:10:28)
+poi con gli AI agent io non so a gente che esperienza sta facendo ma è un incubo cioè lavorare senza
+
+questa visibilità io non pensavo, sai voi, tu inizi a sviluppare magari la pensi un po' alla classica maniera no? Vieni dalla tua espana, accoglie AI agent proprio non esiste la possibilità di portare avanti un lavoro senza avere supporto di queste piattaforme, questi prodotti eccetera quindi...
+
+Brainrepo (1:11:00)
+Parli con uno che ha i Jäger installati in locale, quindi... per l'ambiente
+
+di dev.
+
+Valerio  Barbera - Neuron AI (1:11:09)
+Sì.
+
+Brainrepo (1:11:13)
+Sono d'accordo con te.
+
+Valerio  Barbera - Neuron AI (1:11:14)
+Quindi
+
+per noi, che vi è stato un po', noi eravamo già Inspector, e quindi Neuron viene rilasciato a marzo del 2025 con Inspector già integrato nativamente dentro al framework, quindi il pacchetto di Neuron.
+
+contiene al suo interno una sola dipendenza, Neuron è completamente sviluppato proprio da zero in ogni sua componente, tranne per una cosa, come dipendenza esterna c'ha la libreria PHP di Inspector, che quindi, diciamo, viene rilasciata con Inspector direttamente già integrato, in modo tale che nel momento in cui tu inizi a sviluppare il tuo agent, quando poi
+
+se ovviamente lo ritieni opportuno, lo sviluppatore, l'azienda, ovviamente tutta la parte di observabilità di Neuron è completamente customizzabile, plug and play, tu puoi iniettare i tuoi observer per integrarci qualunque altro sistema vuoi, sempre il progetto è completamente open da tutti questi punti di vista. Però chiaramente Inspector è già integrato nativamente, ti basta mettere l'API Kid Inspector dentro
+
+al tuo file di variabili d'ambiente, il monitoraggio parte in automatico. Quindi il mio balance nel dare a questo progetto un anno di full time sopra il full time di lavoro in Inspector, che già ovviamente era quello che era,
+
+è dovuto al fatto che dietro c'è un progetto di larga scala, effettivamente, quindi questa è stata la motivazione che mi porta ancora adesso a dare il 100 % su tutta questa attività.
+
+Brainrepo (1:13:23)
+Luca, hai delettomante? Prima che io muoia.
+
+Luca (1:13:32)
+No, le ho già fatte. Poi mi hai visto che sono sparito venti minuti.
+
+Valerio  Barbera - Neuron AI (1:13:37)
+Tu Luca, tu Luca, su che... Su
+
+che linguaggio di programmazione sei tu Luca? Principalmente come...
+
+Luca (1:13:46)
+io sono
+
+stato tanti tanti tanti anni in PHP e adesso sono 3-4 anni che sono in Node.js
+
+è il mondo nod ehm mi sposto dove si spostano le masse cioè prima era tutto php sono js e poi ⁓ sì era un altro modo carino
+
+Brainrepo (1:14:04)
+dove si sposta nei soldi, no?
+
+Valerio  Barbera - Neuron AI (1:14:06)
+le masse le masse monetarie le
+
+masse monetarie ci sta ci sta
+
+Brainrepo (1:14:14)
+E beh, ma credo che...
+
+Luca (1:14:14)
+No, è per quello anche
+
+che avevo chiesto della sync, Perché quello è proprio la cosa che Node.js con l'event loop risolve in modo molto elegante, soprattutto molto ergonomico, molto facile da usare.
+
+Valerio  Barbera - Neuron AI (1:14:19)
+Si è un temo
+
+si nativo più che altro nel tema poi
+
+perché per esempio anche su python c'è no un però esatto
+
+Brainrepo (1:14:42)
+Sì c'è la sync però è un po' sì non ha
+
+lo stesso flavor che in JavaScript
+
+Valerio  Barbera - Neuron AI (1:14:48)
+No, anche perché
+
+è una specie di componente del linguaggio, non è proprio il linguaggio che se tu lo puoi usare on demand sto a sync e quindi si crea un casino. Sì, JavaScript, il mondo nod su questo tema è a sync by design. Esatto, ti arrivano proprio.
+
+Brainrepo (1:15:05)
+⁓ beh, è a sync by design, c'è l'event loop. Non puoi far finta che non ci sia perché ti prende a schiacco nella nuca. In
+
+JavaScript, se non l'event loop è quel bullo di quartiere che appena dici una parola di troppo, noi ragazzi ne chiamavamo il colletto.
+
+Valerio  Barbera - Neuron AI (1:15:25)
+Sì, sì.
+
+Luca (1:15:33)
+Green Tuss, questa puntata è sponsorizzata. No, non possiamo sponsorizzare, però sarebbe chiaro.
+
+Brainrepo (1:15:41)
+Siamo
+
+a un'ora e dieci, io direi che a questo punto possiamo far partire il momento del paese dei...
+
+Il Paese dei Balocchi è il momento in cui i nostri guest e i nostri host condividono con noi qualcosa che abbia catturato la loro attenzione e che pensino sia interessante da condividere con...
+
+Valerio lascio direttamente la palla a te hai qualcosa da condividere con la nostra community?
+
+Valerio  Barbera - Neuron AI (1:16:30)
+ma allora cosa posso condire qualcosa che mi ha che ha avuto su di me un impatto un impatto significativo professionale come come
+
+come mindset che ha cambiato un po' il mio approccio anche proprio al lavoro che faccio, ingegneri dello sviluppo dei prodotti è stato un libro che ho letto, lo menziono perché questo libro l'ho letto tipo una roba come dieci anni fa
+
+e poi lo riletto sei mesi fa quando poi è esploso tutto questo casino di Neuron proprio perché mi ritornava in testa quel tipo di informazione, quel tipo di esperienza e l'ho riletto, stato probabilmente l'unico libro che ho letto due volte e che mi ha davvero la seconda volta forse anche più colpito della prima proprio nel ripercorrere quell'esperienza che è
+
+Fettiera del Masochista.
+
+Brainrepo (1:17:37)
+Il libro di Luca.
+
+Luca (1:17:38)
+Ne ho un paio di
+
+versioni qui dietro.
+
+Valerio  Barbera - Neuron AI (1:17:44)
+Quello di Norman è
+
+un libro per me veramente stupendo, non si può, se sei appassionato di prodotti, se sei uno sviluppatore creativo che...
+
+ha la tendenza, il desiderio di creare comunque qualcosa di tuo, capire e studiare quel libro lì ti cambia proprio la prospettiva su tutte queste attività. Può anche, potrebbe risultare...
+
+Luca (1:18:14)
+a me ha rovinato la vita quel libro, no, non la vita, i primi
+
+tre mesi sono stato a litigare con tutta la gente.
+
+Valerio  Barbera - Neuron AI (1:18:26)
+No, hai capito? Esatto, esatto,
+
+può essere... ha degli effetti collaterali, effettivamente. Sì, questo lo menziono perché per me è stato un super libro, proprio, super.
+
+Luca (1:18:32)
+è vero è vero
+
+Brainrepo (1:18:42)
+Fantastico Luca!
+
+Luca (1:18:44)
+lo baloco anch'io già che ci sono, per forse la terza o quarta volta ma ripetita Juvent allora io in realtà ho un piccolo tool che non ho ancora visto ma mi prometto di vedere ma che il mio amico Daniele che è stato ospite qui qualche puntata fa continua a dirmi te lo devo far vedere te lo devo far vedere te lo devo far vedere perché gli ha risolto un po' di problemi comunque il tool si chiama
+
+Types, Types, che è un... se avete familiarità con Ascii Doctor, Ascii Doc, cose di questo tipo, un tool che trasforma plain text in vari formati, supporta anche l'atex eventualmente, utile per convertire documenti in PDF o generare comunque...
+
+documentazione ovviamente ci ho dato un'occhiata l'ho visto ma non l'ho ancora provato sul campo però è promettente me doppi promettere di utilizzarlo ma ancora prima lo consiglio e lo balocco qui types
+
+Valerio  Barbera - Neuron AI (1:20:04)
+lo ho aperto ora su google credo di averlo trovato ora che parla video wow è che è cosa veramente baloccata proprio
+
+Luca (1:20:16)
+è una baloccata. Niente, non so se devo prendere un altro balocco per darsi tempo di trovare un balocco, ma ora l'hai trovato, ok.
+
+Brainrepo (1:20:23)
+No no no, stavo cercando l'app perché
+
+non trovavo il nome Ecco, vi rubo due secondi per fare un ragionamento Io uso un'app tutti i giorni intensivamente ci pago una subscription e non mi ricordo il nome però la uso tutti i giorni a tutte le ore
+
+Secondo me questo è il classico esempio dell'applicazione che fa la differenza che è completamente invisibile diventa solo funzionalità. Scusate la piccola digressione ma l'applicazione si chiama Super Whisper come ho detto prima io sono uno molto vocale per me tutto è vocale dovrebbe funzionare il computer dovrebbe funzionare solo con un'interfaccia vocale.
+
+io scrivo ormai l'email con dettatura vocale scrivo i messaggi su Teams con dettatura vocale dico a Cloud Code cosa deve fare con dettatura vocale che la dettatura di Mac funziona, funziona bene ma non tantissimo quando si fanno i salti di lingua si dette in italiano, si scrive in inglese insomma cose di questo tipo
+
+Scusate, l'applicazione che sto usando questo periodo si chiama Super Whisper semplicemente combinazioni tasti, voi parlate lasciate i tasti e il testo è trascritto. Cosa interessante, alle volte devo scrivere al commercialista in francese, io calco due tasti, dico la mail in italiano o in inglese, alla fine della frase gli dico traduce in francese, lascio i due tasti
+
+la maila è scritta in francese è una magia specie per uno che il francese lo zappa e il commercialista ti corre ogni due per tre anche la grammatica e sta roba funziona da dio quindi buttateci un occhio perché è veramente game changer e poi altro suggerimento al balocco fattevi quando vi viene in mente un'idea fate una
+
+Bella sessione di brainstorming con ChatGPT Un test che sto provando a fare in realtà non sono ancora riuscito a finirlo ma ditemi se ci riuscite siccome l'interfaccia vocale di Cloud barra Cloud Code non è bellissima non funziona benissimo so che Cloud Code Klee avrà un'interfaccia vocale presto
+
+o almeno l'hanno già rilasciata ma io non la vedo devo capire bene se non faccio parte del tier ma voglio provare a prendere dei pezzi di B-Med della roba di B-Med tipo i brainstorming workflow e i brainstorming method di B-Med buttarli dentro c'è il GPT quindi craftare un po' il contesto
+
+e puoi iniziare una conversazione vocale con ChatGPT in modo da fare il brainstorming vocale con ChatGPT magari dal telefono ma lo so, è un test che può essere interessante perché il brainstorming di Mimed è una potenza e ne abbiamo parlato qualche settimana fa con Davide e Luca e l'interfaccia vocale di ChatGPT è magica funziona veramente
+
+Luca (1:24:28)
+se non hai un account pro se lo s...
+
+Brainrepo (1:24:33)
+Dicevi scusa
+
+Luca (1:24:34)
+No, dicevo, se non hai un account pro mi sembra abbastanza limitata, perché una volta ci ho provato a litigare, ma durata poco.
+
+Brainrepo (1:24:45)
+io ho la subscription quindi ormai ormai veramente si ci pago un secondo affitto secondo tutte le subscription
+
+Luca (1:24:57)
+Ciao!
+
+Poi devo dire la verità, ci ho provato a la conversazione con CppT in macchina, poi gli ho chiuso e ho chiamato mia madre.
+
+Valerio  Barbera - Neuron AI (1:25:08)
+Molto meglio la mamma va!
+
+Brainrepo (1:25:09)
+Ma
+
+Luca (1:25:11)
+No, è
+
+vero, detto, ma Caspito, a questo tempo potevo sfruttarlo per sentire mia madre.
+
+Brainrepo (1:25:13)
+è
+
+Valerio  Barbera - Neuron AI (1:25:16)
+Anche perché ha già GPT, se gli dici fammi una matriciana, la mamma poi
+
+agisce.
+
+Brainrepo (1:25:26)
+Valerio, grazie davvero di esserci venuto a trovare, è stato un super piacere chiacchierare con te. Noi solitamente diciamo che GitBar è un po' come il circolo del dopolavoro postale degli anni 80. Quindi ti ricordi i circoli a Arcio del dopolavoro degli anni 80?
+
+Valerio  Barbera - Neuron AI (1:25:44)
+grandissimo
+
+Sì infatti sto a mio agio, proprio sono proprio nel mio.
+
+Brainrepo (1:25:55)
+Sì, dove andavi a bere la birra a sottocosto perché erano i ZenTas, l'importante era farti la tessera. Ecco, tu adesso hai la tessera di GitBar, quindi tutte le volte che tu hai una nuvità o qualcosa di nuovo, la birra fresca anche se virtuale c'è sempre per te, quindi ti aspettiamo con delle nuvità presto.
+
+Valerio  Barbera - Neuron AI (1:25:57)
+Bellissimo!
+
+Grazie ragazzi sono stato benissimo, sì non perderò occasione ovviamente di magari raccontarvi se qualcosa ne varrà davvero la pena. Grazie ancora.
+
+Brainrepo (1:26:27)
+Grazie di cuore.
+
+Grazie anche a te Luca che mi hai supportato in questo episodio da ospedale, quasi ospedaliero.
+
+Luca (1:26:30)
+Grazie a te
+
+Ricordiamo che questo episodio è sponsorizzato. No, grazie a te, grazie a voi, sempre un piacere, ma noi non ricordiamo più il gruppo Telegram perché... o forse sì, o forse no. Infatti, ragazzi, noi abbiamo un gruppo Telegram, ma venite pure.
+
+Brainrepo (1:26:47)
+è stato finanziato dalle pompe funebri
+
+Valerio  Barbera - Neuron AI (1:26:52)
+daffo daffo
+
+Brainrepo (1:27:06)
+l'hai appena fatto, fantastico
+
+Luca (1:27:13)
+a sentirci, a vederci, a leggerci, in realtà è più della community che nostro basta cercare gitbar podcast e ci trovate, era un po' che non lo facevo dai
+
+Brainrepo (1:27:24)
+No, in realtà
+
+non ci trovate più così perché ho rimosso l'handle per i bot, non so se avete notato i bot sono spariti. Per accedere al gruppo Telegram entrate nel sito, c'è un link e vi porta direttamente al
+
+Luca (1:27:27)
+No.
+
+quando ce lo volevi dire?
+
+Brainrepo (1:27:44)
+2 episodi fa no sì l'ho tolto perché quel bot stava diventando insostenibile avete visto Luca non faceva altro che eliminare messaggi di spam
+
+Luca (1:27:46)
+e quando me lo dovrei dire? No, va bene.
+
+era una messaggio
+
+di spam. No, io l'eliminavo perché volevo tutto per me quei lavori da 200.000 euro all'ora. Infatti, c'era la Lamborghini adesso.
+
+Brainrepo (1:28:05)
+⁓ si? Guarda ce l'ha... Ok Taylor...
+
+No, un'altra cosa che voglio ricordare è che se vi fa piacere supportarci c'è l'aria supportaci nel sito, buttateci un occhio. Un abbraccio a tutti, alla prossima settimana, ciao ciao!
+
+Valerio  Barbera - Neuron AI (1:28:28)
+Ciao
+
+Luca (1:28:29)
+Ciao
+
+Valerio  Barbera - Neuron AI (1:28:29)
+a tutti!
+
