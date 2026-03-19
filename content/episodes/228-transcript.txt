@@ -1,0 +1,740 @@
+Brainrepo (00:01)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua sul nostro bar degli sviluppatori. La mia voce scende sempre più otave sotto e questo è dovuto al raffreddore e non pago del raffreddore ma sì, e della stanchezza settimanale visto che stiamo registrando i venerdì e ho detto ma sì apriamo il bar anche questo venerdì e chiacchieriamo di cose interessanti. In realtà
+
+Ho uno spite d'eccezione che vi presento tra qualche minuto ma lo farò subito dopo avervi dato due piccole informazioni. Gitbar ha un nuovo sito web, nel sito web ci sono le trascrizioni, c'è il link al video, c'è un piccolo riassunto di quello che si dice nell'episodio, naturalmente iDriven, ovviamente non mi metto a riassumere.
+
+l'episodio però ecco se vi fa piacere o c'è qualcosa insomma che vi siete persi, buttateci un occhio. Siamo anche nel canale youtube che è il nostro piccolino piccolino canale youtube se non vi siete ancora iscritti iscrivetevi se non avete ancora cliccato sulla campanella fatelo anche se è cringissimo dirlo in questo modo ma insomma siccome siamo su youtube questa cosa
+
+è un po' classica, ci ascoltate col podcast vecchio stile, siete old school come me, quindi tanti abbracci. Detto questo io direi che possiamo partire con le presentazioni del nostro ospite. Abbiamo con noi Andrea Verlichi, Andrea Verlichi che è un performance engineer, in realtà
+
+sono figure che non si sentono spesso quelle dei performance engineer ma che in realtà sono quelle figure che scamminano molto vicino a chi genera tanto valore dall'web e fanno in modo che quel valore non sia intaccato da
+
+da povere decisioni in termini di performance. Come vi dicevo è un performance engineering speed kit. E' anche un amico comune del nostro Davide che avete sentito qualche episodio fa. E anche lui... Posso darti del vecchietto Andrea? Perché anche tu hai iniziato a lavorare quando ho iniziato io, prima del nuovo millennio, quando...
+
+Andrea Verlicchi (02:34)
+⁓ sì,
+
+esplodeva il web, C'era prima la bolla del 2000, no?
+
+Brainrepo (02:42)
+Assolutamente sì, e cos'eri? Eri uno della scuola di Dreamweaver o di Frontpage? Di quale scuola eri?
+
+Andrea Verlicchi (02:50)
+ho ho ho ho ho
+
+allora io ho iniziato nel 97 a fare le prime pagine con front page perché Dreamweaver non c'era ancora e parlo di HTML3 credo andavo ancora alle superiori all'ITIS e lì si scopriva all'inizio no? l'HTML come
+
+come linguaggio discrittivo per fare una pagina di internet. Ancora c'erano i tag font color, non c'era ancora il CSS e poi si poteva salvare un Word in un formato web con queste magie di front page che poi creava dell'HTML mostruoso. Poi è uscito Dreamweaver e lì mi ricordo che andava il roadshow di Macromedia, facevano proprio in tutte le città, presentavano il loro software.
+
+Brainrepo (03:24)
+Marchi
+
+Andrea Verlicchi (03:47)
+io andavo lì in prima fila, guardavo imparavo tutto, c'era Dreamweaver, c'era Flash ovviamente che poi è diventato il mio e bravo, Fireworks, non mi veniva il nome Fireworks che aveva questo modo di stagliuzzare l'immagine che ti generava le tabelle per impaginarle, era bellissimo mi ricordo, purtroppo sì siamo invecchiati erano bei tempi
+
+Brainrepo (03:54)
+Fireworks, Flash
+
+Sì, io proprio l'altro
+
+giorno parlando con un amico ci siamo ricordati di una funzionalità che aveva Dreamweaver che ti generava e fa il PHP per fare il crude che era una cosa mostruosa all'epoca perché ancora non si parlava di tanto di framework o almeno... Noi eravamo... io almeno ero un amatore, non ero un professionista
+
+Andrea Verlicchi (04:27)
+ai venerlo
+
+è vero, è vero
+
+Brainrepo (04:40)
+non si parlava di framework ma c'era la generazione del codice di Dreamweaver che era... era... tanta roba e poi c'era.
+
+Andrea Verlicchi (04:46)
+è vero, è vero. Che generava,
+
+dove c'erano i valori PHP c'era una specie di scudetto dorato, mi ricordo.
+
+Brainrepo (04:55)
+Adesso mi ricordo che c'era un'area in basso a destra dove si poteva fare e si ventevano i placeholder nella pagina dei dati, tanta roba, sono passati 25 anni!
+
+Andrea Verlicchi (05:00)
+E ZAP!
+
+e vero
+
+Ho rimosso, però bello, però è stato bello. Poi mi sono specializzato
+
+con Flash, facevo delle grandi animazioni, siti web interattivi. Adesso è bello che siamo arrivati ad avere una standardizzazione nel web dove hai sempre il menu hamburger in alto a sinistra o in alto a destra e è tutto molto uguale, ma prima dovevi scoprire il sito web andando col mouse sopra
+
+vedevi cosa si muoveva, c'erano delle introduzioni di 30 secondi o un minuto, c'era il sito skip intro che le raccoglieva tutte, skipintro.com era bellissimo. Erano tempi molto creativi, no?
+
+Brainrepo (05:49)
+Io ho
+
+verissimo tempi molto creativi e soprattutto c'era questo fermento allucinante attorno a Flash che era una cosa bellissima perché Flash era l'SWF che era bello chiuso. mi ricordo ero probabilmente il primo anno d'università a qualcosa del genere quindi stavo parlando di 2006 forse 2005 no 2004. Comunque siamo siamo in quel periodo.
+
+e ricordo adesso tanto il reato è passato, è passato insomma, prescritto quindi, quindi posso anche dirlo. All'epoca in Italia c'era un'agenzia che si occupava di fare i city flash per tutti gli artisti più importanti e anche i DJ più importanti che era Stefano Scozzese, non so se fa ancora qualcosa, mi piacerebbe intervistarlo uno di questi giorni, giusto per raccontare come funzionava all'epoca.
+
+Stefano Scozzese aveva un'agenzia che faceva i siti web bellissimi delle opere d'arte per Laura Pausini, tutti i grandi DJ e io cosa facevo? Io decompilavo il sito che c'era l'SWF2Flaq The Compiler e mi guardavo l'action script che ne veniva fuori dove i nomi delle variabili naturalmente erano tutti cambiati ma da là ci ci ci
+
+Andrea Verlicchi (07:03)
+Sì.
+
+mmm
+
+Brainrepo (07:14)
+Ci... per esempio ho visto le prime funzioni di easing per le animazioni là, Quindi quadratico e tutte quelle cose, è stato un... mind blowing! a quel punto allora si era aperto il mercato di MySpace. Che mondo! MySpace aveva una caratteristica che oggi...
+
+Andrea Verlicchi (07:20)
+⁓
+
+⁓ è vero!
+
+Brainrepo (07:42)
+diremo grande vulnerabilità di sicurezza, è che potevi iniettare praticamente tutto su una pagina MySpace e quindi io facevo questi questi sitini per i miei colleghi DJ, le band, le cose che non erano altro che un file flash che veniva montato dentro MySpace e che si andava a coprire tutta la pagina di MySpace lasciando solo la pagina dei messaggi sotto dei commenti, La parte dei commenti, degli amicizzi e via discorrendo.
+
+e quindi praticamente cavamo! MySpace per i nient'altro... ⁓ che mondo, hai aperto...
+
+Andrea Verlicchi (08:18)
+Un
+
+bel hacking, fatto bene.
+
+Brainrepo (08:22)
+Che bello,
+
+hai aperto il cassetto dei ricordi. E all'epoca non si parlava tanto di performance.
+
+Andrea Verlicchi (08:30)
+Le performance è un tema che io ho iniziato a chiaramente ottimizzare le immagini così perché caricassero più velocemente quello lo si poteva già pensare prima eccetera ma arrivare proprio al concetto di avere delle metriche anzi prima che google introducesse nel 2020 i Core Web Vitals
+
+che sono LLCP, Largest Contentful Paint, che misura il tempo di caricamento dell'elemento più grande. Il CLS è il Cumulative Loudshift che misura quanto si muove la pagina e le aree della pagina mentre l'utente ci sta interagendo, quindi tu puoi cliccare col bottone e poi appare sopra un'HUD che te lo sposta e clicchi nell'HUD, quelle robe lì. Horribili.
+
+e ANP che l'hanno introdotto a marzo dell'anno scorso o due anni fa, se non ricordo esattamente, perché ho confuso gli anni, però secondo me di due anni fa. E quello che misura invece è il tempo di reattività, del quanto tempo rimane bloccato il main thread del browser quando l'utente interagisce con la pagina web. Prima che Google introducesse il Core Web Vitals c'erano altre metriche, mi ricordo uno speed index.
+
+che si basava su di quanto cambiava la pagina nel tempo di caricamento. Quindi ti dava una curva che ti faceva vedere quanto era caricata la pagina nel tempo e poi se alla fine, verso la fine del caricamento, cambiava, perdevi punti eccetera. Quello lì era la metrica più in voga prima dei Core e Vitas e prima ancora c'erano
+
+Time to Interactive, ne sono state messe tantissime in ballo finché Google hanno deciso di standardizzare, di proporre uno standard che funzionasse per Google, perché poi loro fanno così, questo è il nostro standard, chi vuole ci viene dietro. Quindi loro li hanno, prima di tutto li hanno spinti tantissimo e poi ti racconto anche come sono diventato performance engineer da front-end di velo per chi ero.
+
+tramite una partnership con Google. Quindi loro hanno detto, questo è il nuovo standard, questo è lo standard, queste sono le metriche, adesso noi le raccogliamo attraverso Chrome, le mettiamo in un database che si chiama CrUX, Chrome User Experience per gli amici, e da lì capiamo se il vostro sito ha una performance buona o non buona e forse questo influirà sulla search engine optimization, detta anche SEO.
+
+e tutti quelli che si occupavano di sé o si sono un po'...
+
+Brainrepo (11:26)
+però non siamo chiari in quello no? esatto però non
+
+siamo chiari in quello potrebbe influire e la vedevi tutta la gente impanicata cercando di adeguarsi perché quando quando si parlava di queste cose si parla ancora probabilmente stara cambiando qua sta cambiando qualcosa Ugiene parleremo però quando si parlava di queste cose il panico era totale perché il rischio era quello di andare sotto la m***a
+
+Andrea Verlicchi (11:33)
+potrebbe chissà.
+
+Sì.
+
+Brainrepo (11:54)
+lista o andare in pagina 2 che voleva meno soldi incassati o sparire dal mercato... mi è incuriosito come sei passato da frontender a performance engineer e soprattutto quali sono gli elementi che hai lasciato a casa vestendo questo nuovo vestito?
+
+Andrea Verlicchi (11:57)
+e sperire del tutto.
+
+Uhhh, allora intanto come sono diventato? Il tema delle performance è stato portato, io lavoravo all'epoca in Yuke's Net-a-Porter, che è la fusione di Yuke's.com e l'azienda inglese Net-a-Porter e lì l'azienda aveva fatto una partnership sia strategica che tecnica con Google e tramite Google abbiamo iniziato a
+
+frequentare e conoscere veniva in azienda da noi, e Gilberto Cocchi che saluto, che lavora per Google come appunto nell'ambito mobile optimization performance eccetera e lui si faceva ambasciatore di queste nuove web vitals che appunto venivano spinti dal 2020
+
+molti degli sviluppatori della nostra azienda erano interessati però c'è sempre da combattere tra le ottimizzazioni e come sai nelle aziende c'è sempre da combattere tra le ottimizzazioni e a rilasciare nuove feature che il business ti richiede. Il business o stakeholder varia, lì il lux si chiamava il business tutto quello che era il stakeholder.
+
+E quindi cosa succedeva? Che dovevamo in qualche modo spingere le performance da un lato, perché aveva molto senso, e dall'altro lato volevamo anche ingogliare gli sviluppatori a impegnarsi in qualcosa, far parte di qualcosa che uscisse un po' fuori dal loro team, in Yuke's avevamo
+
+Noi lavoravamo, io ed Alberto sopra citato, nella area online flagship stores. in questa azienda ci occupavamo di sviluppare i siti per Armani, Dolce & Gabbana, Romene Gildo Zegna, poi tutti quelli Kering, quindi Balenciaga, Yves Saint Laurent, alla fine anche quelli di Richemont, Cartier, Montblanc. Insomma, ne facevamo nel momento d'oro.
+
+della massima espansione di quell'area gestivamo 34-35 siti monomarca. E avevamo fatto una struttura a team che chiamavamo service team dove ogni team gestiva 2, 3 o 4 a seconda di quanto erano demanding questi clienti. E ogni team era fatto da 5 eseropatori, un project manager, un...
+
+un tech leader e tutte le varie figure, store manager, tutto quanto, cioè quindi ogni service team era diciamo funzionale per gestire 1, 2 3 con Netflix e Stores. Il problema è che si erano creati dei silos, Quindi ogni team poi faceva la sua cosa a modo suo e gli altri non sapevano niente di quello che faceva quel team lì. Noi come front-end architect abbiamo anche dicevo prima per invogliare gli sviluppatori a
+
+a crescere, imparare qualcosa di nuovo insieme, abbiamo creato un organismo trasversale che unisse uno o due, all'inizio uno poi due, membri di ciascun team che fossero i performance champion e avevamo creato questo organismo orizzontale che si chiamava la Guild delle Performance o Performance Guild. E tramite questa organizzazione orizzontale avevamo un canale Slack per comunicare
+
+tutte le novità e gli sviluppi. Avevamo una riunione settimanale, obisettimanale, settimanale sulle performance per aggiornarsi su quello che era stato fatto per far vedere agli altri cosa si era fatto sui propri store. Poi veniva ogni due settimane Gilberto Cocchi di Google che anche lui ci portava il suo punto di vista, ci analizzava i siti, insomma c'era questa collaborazione. Era un momento molto bello in cui tutti crescevano, imparavano qualcosa.
+
+e si condividevano le conoscenze e i miglioramenti fatti su un sito si portavano poi sull'altro, ci si parlavano, quindi abbiamo rotto i silos e attraverso questo organismo abbiamo anche convinto i project manager a dedicare mezza giornata di uno sviluppatore alla settimana a fare miglioramenti di Vue Performance sul codice di quel sito lì.
+
+Brainrepo (16:50)
+Infatti voleva arrivare
+
+là. Come la performance ha degli effetti effetti chiari sul business, no? Però mi rendo conto che nel 2020 probabilmente questo livello di consapevolezza non era così alto in generale. Come approcciavate il business prodotto in generale, no?
+
+per vendergli la necessità delle performance. Perché il debito tecnico è, se non lo smesciamo qua ci crolla tutto addosso, ma le performance come le giustificavi a livello dialettico e di narrativa?
+
+Andrea Verlicchi (17:31)
+ok
+
+E lì c'è stato tutto un lavoro di, come dire, portare in giro la cultura delle performance.
+
+che era una cosa che coinvolgeva il business per appunto convincerli a dedicare del tempo a sviluppare queste... più che che il business, il project management, Dedicare del tempo a queste cose, a queste attività di miglioramento. I grafici, c'è tutta la parte sui grafici, art direction, chiamali come vuoi, comunque i visual designers, Perché anche alcune scelte di visual design alla fine avevano un impatto
+
+sia su Large Sconte Full Paint sia sul CLS, cioè quindi se tu mi aggiungi un banner che appare da sopra e spinge giù tutto, l'utente si trova a doverlo rincorre col mouse e quello genera CLS. Quindi abbiamo dovuto fare
+
+Io e Alberto abbiamo fatto anche diverse riunioni con tutte queste figure, con tutti i project manager, con tutti i grafici che erano a Milano, andavamo Milano a parlare con loro e abbiamo portato in giro la bandierina delle performance con appunto il supporto di Google e lo spauracchio della SEO.
+
+Brainrepo (18:52)
+⁓ avete giocato sulla SEO allora, avete usato il Jolly
+
+Andrea Verlicchi (18:55)
+Sì sì no però per il business,
+
+bravo bravo non è solo quello, per il business abbiamo anche obbligato diciamo gli sviluppatori a rilasciare sempre i miglioramenti di performance inizialmente in A-B test, avevamo la possibilità di lasciare le cose in A-B test perché lo supportava la nostra piattaforma e quindi rilasciavamo il miglioramento in A e il non miglioramento in B.
+
+Intanto vedavamo come cambiava la metrica LCP, CLS, eccetera, ma parallelamente monitoravamo anche come cambiavano la Ducat, la session length, quindi metriche behavioral di comportamentali di business che poi aiutano a convincere il business. Guarda che con questa feature, con questo miglioramento
+
+Brainrepo (19:38)
+di business.
+
+Andrea Verlicchi (19:46)
+l'utente ha cliccato di più, aumentata la conversion rate di 0,03 non lo so adesso dico dei numeri a caso e adesso in questa azienda in cui lavora adesso lavoriamo solo così perché noi vendiamo un prodotto che costa dei soldi e che migliora le performance e per convincere i clienti che i soldi che loro ci danno gli torneranno indietro facciamo così, cioè facciamo dei proof of concept apriamo a prima il 10 % poi al 50 %
+
+raccogliamo i dati da entrambe le versioni poi insomma i correlation charts tra le performance e le metriche di business. La chiave è quella.
+
+Brainrepo (20:25)
+Beh sì, alla fine le data driven decisions sono l'elemento più importante per capire, anche se le correlazioni spesso hanno una serie di sfumature che non riesci a ben comprendere e correlarle, non nel senso che possano esserci 70.000 variabili che non stai prendendo in considerazione, cui c'è anche quel problema, però almeno hai più dati di non averne e quindi ti aiutano le decisioni.
+
+Andrea Verlicchi (20:31)
+Mh.
+
+E'
+
+proprio per quello che facevamo la B-test, perché l'unica differenza tra la versione A e la versione B era il miglioramento di web performance. Quindi se la versione A convertiva di più era proprio per quel motivo lì. Se tu lanciavi una campagna sul sito inter, veniva lanciata sia su la che sul B. Se tu avevi in aumento un picco di visite perché un influencer aveva menzionato il tuo marchio, gli utenti arrivavano sia su A che su B.
+
+Quindi da lì vedevi la differenza in termini di business. Poi dipende sempre dal marchio, se era Gucci non era un nostro cliente, ma faccio un nome a caso, se il sito di Gucci non ha le massime performance del mondo l'utente è anche disposto a sopportare un po' di più perché sei sul suo Gucci.
+
+Brainrepo (21:24)
+Sì.
+
+Ma infatti è quello che dicevo.
+
+E poi c'è anche una questione di campione, di massa critica, nel senso che su un numero molto alto quel dato ti diventa significativo o comunque ti passa un'informazione, ma se il numero è basso l'insieme delle potenziali variabili che non controlli tipo il Czarna perché quello è andato a fare i pipì e non ha finalizzato l'ordine.
+
+Andrea Verlicchi (21:52)
+A presto!
+
+Sì.
+
+Brainrepo (22:11)
+ha un'incidenza che non riesce a controllare. io sono uno dei promotori della b-testing in qualunque cosa, anche negli improvement di natura tecnica, perché fondamentalmente, e questo lo ripetiamo sempre, noi generiamo valore per il business, non facciamo di giocatoli per giocarci da soli. Quindi con questa consapevolezza abbiamo bisogno di capire se stiamo veramente tirando la freccia nel bersaglio giusto.
+
+Andrea Verlicchi (22:32)
+assi
+
+Brainrepo (22:41)
+hai detto che con gli art director con i creativi e comunque bene o male un canale di comunicazione lo si trovava e con marketing i cuginetti che vogliono mettere 70 tag dappertutto
+
+Andrea Verlicchi (22:51)
+Sì.
+
+Il marketing è l'altro nemico dello sviluppatore di front-end, il sviluppatore di front-end magari è anche di back-end. Se mettono lì a fare tutte le cosine, fate bene, ottimizziamo, facciamo, gestiamo, ottimizziamo di qua, mettiamo la cache, poi ottimizziamo l'immagine al micro pixel per avere tutto perfetto e il tuo sito va che è una bomba in locale, poi lo metti in produzione, va che è una bomba il primo giorno.
+
+secondo giorno va piano. Perché? Perché arriva il marketing e magari non consapevole, anche questo è un processo che si può risolvere se tu li informi, ma sono gli informi non consapevole degli effetti negativi sulle performance di tutti i vari tag, pixel, chiamali come vuoi, che aggiungono tramite tag manager, tag commander, eccetera, al sito web.
+
+vanno a creare un danno sulla performance, sul tempo di caricamento oppure su magari c'è del flicker, Ci sono dei sistemi di Avidest che girano in locale con JavaScript senza fare nomi che magari o ti generano un flicker, ti cambia la pagina sotto il naso oppure per non farlo succedere bloccano il render per un po' e quindi
+
+l'utente percepisce il tempo di caricamento rallentato quindi tutti questi tag e poi adesso ultimamente che mi occupo moltissimo di analizzare i np cioè l'interaction to next paint che è una metrica che soffre moltissimo quando il main thread del browser è occupato da altre cose da fare che possono essere javascript o rendering e ti rendi conto che
+
+maggior parte delle volte è Google Tag Manager che sta facendo tramite tutta la roba che c'è dentro sta facendo danni.
+
+No, ha risposto alla tua domanda?
+
+Brainrepo (25:05)
+Sì sì sì sì ero mutato, detto al Google tal manager che stava facendo cose, vedendo gente, mandando dati soprattutto, mandando dati. Esistono delle considerazioni da fare che sono specifiche su aree ad alto traffico o siti ad altissimo traffico.
+
+Andrea Verlicchi (25:11)
+Esatto, esatto.
+
+Allora, sì, in Nuxt avevamo il privilegio di poter vedere a 360 gradi tutto quello che succedeva nel sito. Uno dei miei migliori amici era il team che si occupava della gestione della CDN che noi utilizzavamo a Kamae, una CDN.
+
+non solo come cdn anche a mai adentro un sacco di roba comunque eravamo spesso a parlare con mi ricordo il signor Turetta che saluto se ci ascolta che era il nostro miglior amico che ci aveva arrivato e già sbuffavano e arrivati questi e poi dopo alla fine faceva quello che volevamo noi
+
+Il problema qual è? Quando hai alto traffico devi cercare di rendere il sito statico. Non lo puoi generare staticamente perché non hai una piattaforma che lo supporta, che lo può fare. Allora devi cercare di creare un modo per farlo. Noi abbiamo riscritto tutta la piattaforma di front-end nel tempo in cui eravamo lì e abbiamo fatto in modo che le pagine fossero
+
+create e salvate come HTML e statico. E poi con JavaScript avevamo una framework JavaScript sviluppato da noi che si chiamava... vabbè è un nome un po' strano... si chiamava WhiteOS perché l'idea era facciamo un sito white label bianco e poi lo lo lo customizziamo per i vari clienti in modo da riutilizzare la maggior parte
+
+della piattaforma e poi da lì costruire sopra, una... senza che fossero dei temi, del... era proprio una piattaforma da cui potevi costruire un sito. Quindi quando abbiamo riscrito questa piattaforma l'abbiamo fatta in modo che potesse essere... potesse generare delle pagine statiche, quindi la pagina della risultato ricerca, la pagina anche da home page, pagina di risultato ricerca o delle categorie, la pagina del prodotto...
+
+erano tutte statiche. E poi, come ti dicevo prima, con il framework JavaScript che avevamo costruito, andavamo a fare delle chiamate al server che ritornava, avevamo fatto anche lì due prove, ritornasse del JSON o ritornasse dell'HTML e avevamo visto che il JSON diventava molto grande, se dovevi portare giù tutto il modello, quindi facevamo generare l'HTML sul server e poi lo mergiavamo, lo univamo, come si dice in italiano.
+
+alle porzioni di HTML che dovevano essere dinamiche nel nostro sito. E questo ha funzionato. Perché tu vedevi il sito, lo vedevi subito, e poi piano piano si rendevano attive le varie parti. Era una bella piattaforma.
+
+Brainrepo (28:41)
+Oggi si parla tanto di
+
+Astro, Next.js che in qualche modo si spingono verso quella direzione. Pensi che... Ricordo dei talk fatti dal team di Zalando che raccontavano un approccio praticamente identico. Pensi che sia ancora necessario realizzare dei sistemi ad hoc per realtà...
+
+complesse come quella di Yuke's o quella di Zalando o pensi che Next.js, Astro, queste tecnologie che hanno preso questi elementi e fatto par embedded, inglobati, possano essere un sostituto e qua credo che la community si accende.
+
+Andrea Verlicchi (29:31)
+Prima mi hai chiesto,
+
+e non ho risposto perché mi sono dimenticato, come sei diventato un front-end developer, scusa un performance expert, e che cosa hai perso? Ecco, cosa ho perso è rimanere al passo con gli sviluppi degli ultimi framework front-end, facendo parte della community di Vologna.js che saluto, sono aggiornato.
+
+su tutto quello che sanno loro e che dicono e che comunicano e che presentano e di cui parliamo alle cene dopo i talk. Però io le mani sopra non glielo ho più messe perché adesso purtroppo sto facendo più Python che front-end per motivi lavorativi. quindi devo dire che però posso comunque rispondere alla tua domanda in modo superficiale.
+
+Credo che i sistemi di generazione di sito statico come Faastro siano vincenti perché quando sei un sito che deve rispondere a centinaia o adesso vado al mese, milioni di page views al mese, sei un e-commerce grosso, devi per forza avere qualcosa che ti risponde in modo statico perché altrimenti distruggi il server o ti servono milioni di server in parallelo.
+
+Un sito statico puoi mettere anche sull'Edge Server di una CDN, quindi invece che la chiamata di rete attraversare tutto il mondo se sei in Giappone, può risponderti dal Edge Server vicino a te. A Kamae hai fatto anche così, Tutte le reti delle CDN sono fatte così. Una CDN è una rete di computer distribuita, ciascuna con una copia o preriscaldata o creata on demand della pagina che hai richiesto. Quindi io chiedo...
+
+prodotto blu di Zalando o di Valentino, o dovrei dire prodotto rosso di Valentino. La pagina internet, la prima volta magari viene pescata dagli origin server che possono essere in Europa o se è un deploy multi region anche magari in una regione in Asia, la prima volta arriva l'origin server
+
+dove puoi avere un time to first byte alto. La seconda volta viene copiata la pagina statica sull'Ed server vicino all'utente in Giappone e quindi il secondo utente che chiede lo stesso URL dice ⁓ io ce l'ho qui, ok quindi se la pagina è statica puoi fare così. Quando invece hai bisogno di personalizzazione, di sessioni, sono logato o non sono logato, etc. devi sempre andare su un server di applicazione.
+
+e quindi devi attraversare il mondo o comunque arrivare fino all'origin server che può essere come dicevo multi region o mono region e a punto ti servono dati freschi ma a quel punto lì ha molto senso rinfrescare e aggiornare solo la parte dinamica sono logato o non sono logato il prezzo del prodotto che può essere cambiato negli ultimi 15 minuti la disponibilità può essere andato a sold out e basta non devi
+
+ricreare tutto la HTML da capo. Quindi come funziona Astro e come funzionano anche Next.js, adesso fa così, ci sono dei nuovi pattern che fanno streaming di cose, cioè io credo che sia quello alla strada ecco. Next mi fa un po' paura il fatto che è sotto il dominio, mi dicono anche di un'azienda che lo ha un po' reso suo, non è più...
+
+un open standard. Ci ho dito, lei ha un open standard, però diciamo che se non usi le loro cose non funziona bene, Ma ha detto così, confermi?
+
+Brainrepo (33:23)
+...anch'io ho sentito... ...voci dicono che è l'Observability Connect.
+
+qualche volta è un po' impegnativa se non usi la... però è comunque una rivoluzione. Abbiamo parlato di alto traffico, ma come si fa a non fondere tutto quando ci sono picchi di traffico?
+
+Andrea Verlicchi (33:33)
+mmm
+
+⁓
+
+ehm, li...
+
+Brainrepo (33:53)
+in termini di performance,
+
+perché come la gestisci la performance con l'alto carico, col picco?
+
+Andrea Verlicchi (34:01)
+be' quella parte lì è più una parte di sistemista diciamo server e di cdn allora il primo stratto è la cdn che ti può rispondere con la pagina in cache oppure no la cache la puoi preriscaldare puoi fare dei bot che girano e preriscaldano la cache e quindi se la pagina te la dà già la cdn sei a posto. Si può fare anche del computing su led server puoi mettere delle lambda functions
+
+che girano direttamente su led server e rispondono da vicino all'utente senza attraversare... ci sono diversi network ops di solito per arrivare all'origin server, quindi se li risparmi, risparmi tempo. E risparmi anche sui server, perché appunto i server della CDN sono gestiti dall'azienda che ti dà la CDN a KAMAI o quella che è e non da te. Poi il secondo strato...
+
+⁓ quindi la CDN può essere anche multistrato, può avere anche dei mid server che sono più grossi e sono per ragione, per regione e poi c'è l'origin server che può essere uno o multi region. Allora già se fai multi region deploy hai distribuito il tuo traffico in tre regioni. Quando è un mono region devi gestirti tutto il traffico a livello di una server farm e lì
+
+Puoi avere più server, più application server, puoi avere un load balancer che ti manda le richieste in uno, due, tre o quattro server in parallelo, quando è il Black Friday magari è giù il G2 e poi le chiamate vengono vengono distribuite ai vari server che fanno capo a uno stesso diciamo... Sotto non so, più sotto di così non ci sono mai andato.
+
+so che c'è load balancer e c'erano diversi application server
+
+Brainrepo (35:55)
+Sì sì sì
+
+sì. No, mi interessava la parte riguardante la performance e pensavo una cosa. Gli asset. Qual è il ruolo degli asset nella performance? E qual è il processo di ottimizzazione degli asset? Perché
+
+Cioè buona parte di noi, l'unica cosa che pensa è installiamo, come si chiama Sharp, comprimiamo le immagini e bom, siamo felici e abbiamo risolto il problema. In realtà, il problema è un più complesso,
+
+Andrea Verlicchi (36:41)
+Ok, partiamo dalle immagini perché le hai menzionate e perché io sono uno dei nerd delle immagini più più almeno o almeno lo ero quando lavoravo a iucs90portet ero il go to guy per parlare di immagini e le immagini intanto e ma non lo so partiamo dall'utilizzo delle immagini se intanto ci sono diversi formati no png jpeg avif webp
+
+adesso jpeg xr sta arrivando, intanto con quei formati li puoi andare a comprimere già molto. Poi un'altra cosa che puoi fare è che devi fare, è mettere il lazy load delle immagini, quindi se sei in una situazione in cui hai tante immagini, mettere il lazy load, che cosa vuol dire per chi non lo sa, che sono le immagini che sono all'interno del viewport, che è la porzione visibile
+
+della pagina, uno scrolla su e giù, solo le immagini che sono all'interno vengono caricate con priorità più alta e le altre o vengono caricate con priorità più bassa o non vengono proprio caricate. Il lazy load può essere nativo o in javascript, io ho creato una libreria javascript che si chiama vanilla lazy load ormai 11 anni fa, molto popolare su github e però adesso diciamo che non serve più, non serve più perché lo puoi fare
+
+nativamente con il tag loading, scusa con l'attributo loading del tag mg. Quindi questa è un'altra cosa. E poi per esempio molti siti e-commerce hanno o uno slider o una doppia immagine che magari a mouse over ti fa vedere il retro o ti fa vedere un'altra view dello stesso prodotto.
+
+le immagini secondarie, quelle non le devi caricare al loading della pagina, caricare quando vedi che l'utente c'è andato sopra o al massimo carichi non so, la seconda in bassa risoluzione e poi carichi in alta risoluzione quando l'utente ci interagisce. Insomma c'erano tutte queste accortezze, poi la dimensione, non solo il formato ma anche la dimensione, se l'immagine è grande 300 pixel in css, vuoi ottimizzare per un retina display la fai 600
+
+pixel ma non più grande di così e questo ha due tipi di implicazioni uno il trasferimento dell'immagine sulla rete e poi anche il resize dell'immagine fatto dal browser che può a andare a occupare un po di tempo nella cpu e b rovinare l'immagine se tu la renderizzi esattamente la dimensione che è quindi in trinseq la si chiama intrinsic size l'immagine vera dei pixel
+
+la mostra di un pixel, un pixel, riesci a avere la massima qualità e non vengono generati nessun artefatto, non cambia magari la luminosità, eccetera. nostri fotografi si lamentavano sempre molto quando venivano riscalate le immagini perché diventavano un po' sfocate, Ma non era così, loro si impegnavano tantissimo a scattare la foto perfetta e poi dopo magari riscalandogli le allarie rovinarie. E questo solo per parare delle immagini.
+
+Brainrepo (40:03)
+No no stiamo un attimino stiamo un attimino alle immagini perché è un argomento molto molto caldo per quanto riguarda oggi quasi tutti i siti anzi direi tutti i siti sono responsive e questo è un problema in termini di performance no perché sì tu dici io mi carico l'immagine di una certa dimensione però se riscalo
+
+e riduco... Sì, stiamo andando a parlare di source. Ho un problema, però mi interessava sapere, dal punto di vista tecnico l'abbiamo già accennato, insomma come si risolve, ma anche dal punto di vista del processo, avete mai pensato a modo per semplificare il processo nella realizzazione di più versioni della stessa immagine?
+
+Andrea Verlicchi (41:03)
+Allora sì, per generare più versioni delle stesse immagini intanto deve avere quella originale in altissima qualità preferibilmente PNG o WebP, lossless, ok? Quella originale scattata dal fotografo lì è la bibbia da cui si parte e poi le riscalature, in Ux abbiamo passato diversi stadi
+
+Prima c'era un tool che le riscalava offline e poi le caricava su A.S3, su A.V.S. era il nostro bucket delle immagini e lì avevi un nome file per ogni dimensione.
+
+Però erano tutte le stesse dimensioni pre-generali, potevi configurare realtà sito per sito, ma se poi cambiavi la dimensione, perché cambiava il layout dovevi rigenerare tutte le immagini. Dopo siamo passati ad avere una roba più dinamica, cioè un SAS, un riscallatore delle immagini on-demand, software as a service, e lì ne puoi usare uno di terze parti, tipo Cloudinary.
+
+o ce ne sono tantissimi, adesso non li sto a menzionare tutti, a me piaceva Claudineri al tempo, oppure te lo puoi fare in casa, fare in casa ok, devi avere il team per farlo, devi avere il tempo, però non è poi così infattibile. Quando io avevo preso interesse e contatti con Claudineri,
+
+C'era una sezione dell'azienda di ricerca e sviluppo che ne aveva fatto uno in casa. Ma solo per un certo uso non si sentivano di scalarlo per tutti i siti come la suyux, che era grandissimo. E in quel momento ci fu anche la fusione con l'azienda di Londra che ne aveva sviluppato uno in casa. Adesso non mi ricordo neanche come si chiamava più.
+
+Brainrepo (43:08)
+Quindi avete
+
+praticamente due più un sass.
+
+Andrea Verlicchi (43:11)
+alla fine ne avevamo due sass, no sì, sass, un soft, sì erano tutti i sass però due fatti in casa e uno esterno. Quindi alla fine abbiamo deciso di usare quello che avevano fatto a Londra e anche lì con diverse interazioni perché c'erano poi dei problemi eccetera, lì dopo la difficoltà qual è? Dal momento che tu puoi generare tutte le possibili dimensioni delle immagini che vuoi
+
+La difficoltà è non frammentare la cache perché se tu fai 10-20 versioni della stessa immagine, una per la thumbnail del carrello, una per la thumbnail della product listing page, una per la thumbnail della selezione color, sono tutte diverse. Alla fine frammenti la cache, non riutilizzi la cache della cdn, la cache della cdn è vuota, devono andare a bombardarti poi i SAS eccetera. Che anche lui ha una sua cache eccetera, però sai...
+
+è meglio avere la cache sulla cdn, no? Più riesci a spingere verso l'utente le immagini, meglio è. Quindi a un certo punto abbiamo iniziato a ragionare di come potevamo riutilizzare le stesse dimensioni delle immagini nei vari punti del sito. A quel punto lì poteva anche valer la pena dire, ho un'immagine 300 pixel, se la devo renderizzare a 100 pixel non ne faccio una da 100 pixel, la riutilizzo con la da 300, La scala faccio scalare il browser, tanto è piccolina che se ne frega. E tutti questi ragionamenti qua
+
+Alla fine li facevamo prima con dei file Excel, guardando i layout, misurando, con il righello di Photoshop, i pixel, eccetera. Poi alla fine, negli ultimi giorni che lavorava YuX, utilizzando Puppeteer, avevamo fatto anche un sistema che si chiamava Responsive Image Automator, che gli dicevi, guarda, i miei utenti navigano con queste risoluzioni qua.
+
+Lo so perché lo prendo da Google Analytics, il dato. Il mio sito è fatto così, dammi tu le risoluzioni delle immagini. Lui navigava il sito, lo riscalava alle varie risoluzioni più comuni che gli avevi detto che erano, guardava le varie dimensioni delle immagini eccetera, e alla fine diceva ok, ti servono questa, questa, questa, questa, questa risoluzione delle immagini, cercando di tenerne 7, 8, non 200.
+
+perché poi è successo anche che c'erano dei siti che avevano generato 200 versioni della stessa immagine. Quando dai uno strumento molto potente ai diluppatori dei grandi poteri, deriva una grande responsabilità.
+
+Brainrepo (45:43)
+Sì, mentre parlavi pensavo che in realtà questo di per sé può anche essere automatizzato, cioè non dato agli sviluppatori può essere un background job che fa tutto da solo fondamentalmente, Perché gli dici ridimensiona questo, questo, questo e questo, tienimi la distanza tra le dimensioni di una certa dimensione, magari usi che ne sono una scala di Fibonacci per distribuire le dimensioni.
+
+Andrea Verlicchi (46:05)
+Sì.
+
+sì
+
+Brainrepo (46:12)
+e questa roba può essere una roba completamente automatizzata che ti genera la cache e ti genera i source e tu praticamente devi fare praticamente niente perché se cambi layout alla prima interazione quello ti ha già generato le nuove immagini che funzionano e invece hai mai avuto esperienze col video che di solito è una di quelle cose che si dà più
+
+Andrea Verlicchi (46:32)
+Sì, sì, sì, allora non è vero.
+
+Brainrepo (46:41)
+in outsourcing, perché il video progressivo è un grand pain in the ass.
+
+Andrea Verlicchi (46:47)
+Sì, adesso negli ultimi anni, non so come sia avvoluta la situazione, tempo utilizzavamo Brightcove, era un fornitore esterno dove tu caricavi i video. C'era il nostro team di content che aveva in gestione i video e le immagini diciamo promozionali, tutta quella parte dell'home page, delle pagine di contenuto che non erano propriamente e-commerce.
+
+e utilizzavamo BriteCov, in BriteCov anche lì gli potevi dire quali erano le varie renditions quindi quindi erano... che alla fine erano poi le risoluzioni e lui ci pensava a lui aveva uno script, JavaScript che in base alla risoluzione dello schermo ti caricava la rendition giusta
+
+ma ti parlo dell'epoca in cui ancora il tag video era una cosa... cioè mettevano l'eye frame, cioè proprio una roba... poi pian piano si è...
+
+si è aggiornata la situazione, hanno cominciato a uscire il tag video nativo eccetera e dopo alla fine eravamo arrivati che nei siti in cui non avevamo il mercato cinese utilizzavamo direttamente il player di youtube e poi col tag video puoi skinnare tutto adesso insomma lì sinceramente non so come si sia voluta adesso la situazione ma e poi scusami adesso Claudineri si è specializzato sui video anche loro
+
+quindi fanno più o meno la stessa cosa che fa Brightcove.
+
+Brainrepo (48:18)
+perché
+
+è un mondo complesso quello di video, sembra così ma tutto il mondo di video progressivi è tecnicamente complicato prima hai parlato più volte di Interaction to Next Paint possiamo fare un piccolo focus perché è una roba abbastanza calda ultimamente
+
+Andrea Verlicchi (48:26)
+Sì.
+
+Si, diciamo dei tre core web vitals, è quello più difficile da ottimizzare. Difficile da ottimizzare perché lui misura il tempo che ci mette il browser a avere la possibilità di fare, di renderizzare un... allora scusami faccio un passo indietro, nell'event loop del browser ci sono diversi stadi
+
+quello dei task che vengono processati in JavaScript, c'è uno stato idle quando non succede niente, task che vengono processati in JavaScript quando ci sono dei task da eseguire, e poi c'è tutta la parte di rendering che si suddivide in calcolo del layout, cioè dove devo posizionare i vari elementi.
+
+Poi c'è styling, che colore metto ai vari punti, ai vari elementi, dove metto i colori, dove metto i bordi arrotondati, dove metto il font, eccetera. E poi c'è il paint, che vuol dire adesso che so tutto questo disegno i pixel sullo schermo. Ecco il paint è proprio l'evento che viene considerato come ultimo momento dell'interazione utente.
+
+Se io clicco un bottone grigio di quelli vecchi della HTML3 con scritto dentro click me, lo clicco lo mollo non c'è nessun JavaScript attaccato, il browser fa diventare il bottone un po più grigio scuro e poi torna grigio chiaro, anche quello è un paint. Se non ci attacchi JavaScript hai un interaction to next paint velocissimo. Ci attacchi un wait 5000
+
+o un infinite loop, un javascript che ti fa aspettare cinque secondi e il main thread è occupato a gestire questo infinite loop e solo dopo cinque secondi il browser potrà far diventare il bottone di nuovo grigio chiaro perché prima l'ho cliccato in stato di grigio oscuro è andato in infinite loop poi finisce l'infinite loop e il bottone tornerà grigio chiaro perché il browser è monotread, ha un solo thread
+
+quindi tutto quello che succede nel browser, anche il Paint e il JavaScript vengono eseguiti nello stesso thread se io faccio andare adesso qui, nello strumento online che stiamo utilizzando per registrare se ci metto un infinite loop o un wait di 10 secondi io mi blocco per 10 secondi non può succedere nient'altro il web, tutto quello che gira nel browser funziona così per cui interaction2nextPaint misura il momento
+
+dall'interazione dell'utente, che può essere un click, una pressione di un tasto sulla tastiera fino al momento in cui avviene il evento paint. E questa è una metrica che comprende al suo interno tante cose. Uno se c'era già JavaScript che stava già venendo eseguito al momento in cui l'utente ha iniziato a cliccare, ha eseguito il click per dire o ha premuto un tasto sulla tastiera. Due se ci sono degli eventi
+
+collegati al click quindi on click che Vengono eseguiti per molto tempo e 3 se dopo che sono stati eseguiti questi eventi ho un CSS così complesso o del javasco così complesso comunque del CSS così complesso che mi costa moltissimo puoi fare il rendering path che quello che ti dicevo prima
+
+Layout, Style e Paint. Quelle tre cose lì che deve fare il browser per renderizzare. Potrebbe essere che con JavaScript ho aggiunto una CSS custom property nel body. A me è capitato di vedere un sito che metteva una CSS custom property nel body che si chiamava header height 2200 pixel e essendo che
+
+il browser era obbligato a riconsiderare tutti gli elementi del DOM a cascata, perché lo mette sul body, tutto può essere cambiato. Quindi tutto il CSS deve essere ricalcolato per ogni nodo del DOM. Se il DOM è di molti nodi e il device su cui viene eseguito questa operazione non ha una CPU potente, perché se sei nel computer dello sviluppatore che è un MacBook Pro M4 non lo noti, ma se sei su un Android di media
+
+generazione di medio prezzo diciamo magari va più piano no e quindi ciao si blocca tutto capito quindi in quel caso di togliendo la variabile CSX custom property dal body mettendola magari più in basso nel DOM o sostituendola con una classe o mettendo direttamente gli style dove ti servivano succede che si migliora la performance poi anche del rendering path
+
+della parte di rendering. Ma la tua domanda era in generale sull'INP, vabbè si più o meno è questo, lui misura tutto il tempo che passa là in mezzo ed è una delle metri più difficili da ottimizzare perché tutti i tag che vengono inseriti sul Tag Manager poi hanno un impatto. La cosa più comune
+
+che trovo quando c'è da ottimizzare un AMP bastardo molto molto messo male è che l'utente magari ha cliccato su la selezione di un colore, selezione di una taglia o ha cliccato su un determinato prodotto nella category page e in quel momento partono 8 tag inseriti tramite il tag manager che vanno a fare delle cose quindi tu vai a fare il performance trace e vedi
+
+un flame chart, si chiama così il grafico che viene generato quando fa il trace di tutte le funzioni che vengono chiamate. Vedi un flame chart che sembra l'inferno, cioè andantesco con miliardo di chiamate dentro e delle volte ho visto dei delay di un secondo, un secondo e mezzo perché c'erano dei tag. Poi dipende anche quali tag sono stati messi. Quindi qual è il trucco per ottimizzare?
+
+se si puoi togli dei tag che non servono più. Mi è successo anche quando lavoravo a Iucs e Net-a-Port-et che c'erano dei tag che erano lì e dici chi l'ha messo questo? Boh, l'ha messo un tizio che lavorava qui ma adesso se è andato. Non so se serve ancora. Provi chiedere in giro ti serve questo tag? ⁓ no, non lo so, ma, ok, facciamo così, lo cancello, vediamo cosa succede se non si lamenta nessuno. Vabbè, quella è una cosa. 2 se ti serve solo
+
+Brainrepo (55:48)
+Sì, ⁓
+
+sai,
+
+fammi aprire un apprendizio che secondo me questa tecnica va... hai detto una perla e la stavi lasciando scorrere via nell'acqua, nel senso... il lotoigo è un elemento fondamentale io lavoro ultimamente in un enterprise, faccio un progetto grosso in un enterprise e la spesso non è tutto documentato, per cui...
+
+Andrea Verlicchi (55:54)
+Bye bye!
+
+lo tolgo.
+
+Brainrepo (56:21)
+Capita spesso di entrare in quel... che faccio? Nessuno mi dà l'informazione, quella roba là la lascio o la tolgo? Ehm... una cosa che ho imparato, molto simpatica, è questo approccio. La tolgo... faccio, che ne so, due release, ok? In due giorni, il lunedì e il martedì. Io la tolgo il lunedì per rimetterla il martedì e conto le email che mi sono arrivate.
+
+se non mi è arrivata nessun email io la tolgo alla release successiva e la lascio tolta per più giorni e vi conto le email che mi arrivano questa cosa fino ad arrivare ad un punto dove ho la consapevolezza che questa roba in realtà non impatava nessuno e ho fatto clean up dopo due tre iterazioni che fai così l'ultima volta grattogli la tolta appunto e hai più o meno la certezza se nessuno sbraita urla o piange
+
+Andrea Verlicchi (57:00)
+⁓ ok.
+
+Sì.
+
+lo potremmo definire cdd no? cdd e complain driven development se non si lamenta nessuno
+
+Brainrepo (57:20)
+la certezza empirica.
+
+Esatto,
+
+esatto, scusa se ti ho interrotto ma secondo me hai evidenzato un elemento importante no? Perché il tag sembra una cosa gratis, prendi la vomitiamo là, lo buttiamo là e poi ce lo dimentichiamo e questa cosa ha potenzialmente impatto nella conversione e nel chart.
+
+Andrea Verlicchi (57:49)
+Sì,
+
+come sviluppatori non ci chiediamo abbastanza questa cosa. Questa cosa serve davvero, la posso togliere. Cioè, mi è successo anche nel caso che ti dicevo prima in cui veniva aggiunto quella CSS custom property al body, la soluzione è stata toglierla.
+
+perché la mettevano, generava un ANP di 300-400 milisecondi al 75° percentile che vuol dire sul device medio-basso e non serviva. Cioè l'avevano messa forse per sicurezza, sa, magari, oppure o lo usavano prima e poi non lo usavano più, oppure l'avevano messa va la metto anche nella CSS custom property che magari mi serve.
+
+e non l'hanno mai usata. io ho provato a dire, se io tolgo, ho fatto un local override con Chrome, detto ma se io tolgo sta riga di codici che aggiunge la CSS custom property, cosa si rompe? Non si rompeva niente. Allora io detto al cliente, senti, toglielo, non l'hanno tolto. Hanno migliorato i NPI. Sai, nei grafici si vede, pum, è l'NPI che si è abbassato. Magia. Un'altra tecnica riguardo sempre ai tag, che ti dicevo prima di fare l'indagine serve veramente, lo sape veramente, è
+
+Quando hai un sito che copre diverse country diversi market di controllare se serve in tutti i market. Magari è una cosa che è aggiunto nel mercato russo cinese quindi lo metti solo lì non lo metti in tutti i mercati. È una cosa che ti serve per fare un test due settimane e poi non ti serve più. Dopo due settimane la togli no? Non la lasci lì per sempre. Sono piccole cose che
+
+Poi alla fine lo usurpatore poi non se ne accorre neanche poverino perché glielo mettono sopra. Cioè il tag manager, tag manager, tutto il lavoro bello artigianale che hai fatto di ottimizzazione, poi arrivano questi ci mettono sopra. E' quello che gli pare. Molto spesso codice che è scritto molto male. Adesso speriamo che l'AI risolva questo problema dei designer che scrivono codice JavaScript male.
+
+Brainrepo (59:48)
+Sì, maledetto Tag Manager!
+
+Collo peggiori!
+
+Pensavo una cosa in realtà, perché è una cosa che mi è incuriosito quando sono andato a vedere...
+
+Speedkit che è il prodotto dove lavori, no? Speedkit parla di Performance as a Service che suona stranissimo, ho detto, allora io nella mia, col mio basso qui posso immaginare un servizio di consulenza dove vai là, sei un esperto di performance, ti siedi col cliente
+
+è migliori la performance però un prodotto, SAS che si occupa di performance è controintuitivo o almeno per il mio cui basso è controintuitivo come può un prodotto migliorare la performance?
+
+Andrea Verlicchi (1:01:14)
+guarda
+
+Guarda è una cosa che anche io quando sono arrivato lì avevo la mentalità da consulente perché l'ho fatto in ux, l'ho fatto in Netcentric dove ho lavorato per due anni e quando sono arrivato in Speedkit ho detto ma le performance si migliorano dicendo al cliente fai questo fai questo cioè facendogli da consulente non si migliorano con un prodotto in realtà
+
+C'è tutta una fetta di mercato per cui ci sono degli e-commerce anche notevoli che non hanno nessun team di sviluppo, si appoggiano delle agency esterne e quindi per far andare il sito più veloce, no, mamma, le agency magari manco lo sanno come si fa, eccetera. E quindi in quel mercato lì ha molto più senso, invece che...
+
+andare a dire al cliente fai questa cosa, poi la fai dopo sei mesi, sei il project manager, non gliela fa fare. Delle stesse cose ha molto più senso comprare un prodotto che fa andare in situ più veloce. E il modo in cui lo fa il nostro prodotto è pazzesco perché funziona con qualunque piattaforma tu abbia sotto, fa sempre la stessa cosa e cioè crea, noi dobbiamo ovviamente quando lo installiamo dobbiamo configurarlo eccetera, secondo
+
+del cliente, è che è una cosa che tu lo metti e va configurato e ci vuole non so 2-3 giorni di configurazione poi quando lo apriamo cosa fa? fa due cose la cosa fondamentale che fa è crea una versione statica della pagina come ti dicevo prima tu non hai un buon time to first byte perché non hai le pagine statiche hai una cosa che ci vuole un secondo un secondo e mezzo per rispondere
+
+alla chiamata server side e quindi noi facciamo una copia statica della pagina e la mettiamo nella nostra infrastruttura ogni volta che l'utente naviga e non ti spiego i dettagli perché è complicato se vuoi poi fammi delle domande, però ogni volta che l'utente naviga verso la pagina successiva il nostro prodotto che si installa nel sito tramite service worker quindi hai il controllo sulle chiamate di rete
+
+fa due chiamate direte, una all'origin server dove c'è la pagina personalizzata con i dati reali, se è logato o non se logato, disponibilità aggiornata del prodotto e un'altra chiamata alla pagina statica delle nostre infrastrutture, la stessa pagina. Quale sarà la più veloce delle due? La più veloce è quella statica, quindi viene renderizzata prima quella.
+
+Può essere anche il contrario, può essere anche più veloce quella dell'Origin perché nella nostra versione statica non c'è ancora. In quel caso serviamo l'altra. Ma ne salviamo poi una copia anche statica nella nostra infrastruttura a quel punto. E diamo subito la versione statica al sito, all'utente che ha navigato con alcune aree che sono dinamiche che sono diciamo
+
+opacizzate, nascoste, erano le immagini di loading, eccetera. Però l'immagine principale del prodotto, tutte le descrizioni, le caratteristiche, tutto quanto sono già lì. Quindi percezione di performance massima. Poi dopo un po' risponde anche alla pagina dall'Origin Server, facciamo il merge delle aree dinamiche, dopo ti vedi la disponibilità aggiornata, utente logato o non logato e tutte le parti dinamiche aggiornate. Questa è una cosa che fa.
+
+Un'altra cosa che fa è fare il prerender della pagina successiva. Cioè tu mentre navighi in base a se sei sul mobile, dove ti sei supermato a guardare, in base a dove stai muovendo il mouse, ma anche in base a tutti i dati che raccogliamo tramite il sistema del real user monitoring. Sappiamo dove l'utente andrà dopo e quindi prerenderizziamo, c'è una cosa che si chiama, che hanno rilasciato l'anno scorso, che si chiama prerender, si chiamano speculation rules.
+
+se cerchi sulla documentazione, puoi fare il prerender di uno specifico URL. Quindi quando l'utente poi va a cliccare, se tu hai già fatto il prerender, è come se avessi la pagina già aperta in un altro tab del browser, invisibile. Quando l'utente clicca, boom, è già lì. E poi il JavaScript si attiva solo dopo, solo quando l'hai effettivamente attivata la pagina. Quindi non partono tracciamenti...
+
+Brainrepo (1:05:59)
+Ma quando fa il prerender,
+
+piccola domanda di curiosità, quando fa il prerender fa anche comunque le chiamate, le chiamate a server e eventuali contenuti dinamici da renderizzare no?
+
+Andrea Verlicchi (1:06:08)
+si si c'è prefetch
+
+che ti dà solo la html quindi hai la chiamata a tutto a tutto diciamo a tutt'al server eccetera ti dà la html generato quindi tutte le parte le chiamate server partono però non parte il javascript non vengono scaricate le immagini non viene analizzato il css invece nel prerender viene proprio
+
+generato tutto, viene realizzato il CSS, vengono scaricate le immagini e se non sei attento viene anche eseguito il JavaScript. Noi nel nostro sistema abbiamo un blocco del JavaScript per delle pagine prerenderizzate per cui solo quando l'utiliente le ha effettivamente attivate parte tutto il JavaScript e così i tracciamenti Google Analytics, i tag, etc. partono solo in un secondo momento che è una cosa molto buona.
+
+E poi tracciamo tutto, Abbiamo tutto il sistema Room, e l'user monitoring, che ti dice che cosa è stato prerenderizzato e non utilizzato, che cosa è stato prerenderizzato e utilizzato, e questi dati vengono rifiddati nel sistema per poi ottimizzarlo ancora di più. Molto figo. Molto figo.
+
+Brainrepo (1:07:19)
+Observability è la parola
+
+chiave, abbiamo iniziato parlando di data driven decisions e adesso ci ritorniamo e ritorniamo anche al fatto che tu stai stai scrivendo più python che altro questo periodo. Quali sono le peculiarità, gli elementi da considerare in un sistema di observability a questi livelli e secondo te?
+
+Andrea Verlicchi (1:07:29)
+⁓
+
+Brainrepo (1:07:45)
+C'è qualcosa che le aziende... perché io capisco un tool di observability che fa questo tipo di lavoro ma c'è una due diligence intermedi di osservability che il frontender dovrebbe avere per fare nel senso
+
+Andrea Verlicchi (1:08:02)
+Per farmi meglio la domanda non ho capito due diligence.
+
+Brainrepo (1:08:12)
+Oggi l'osservability è un elemento fondamentale. L'osservability nel front-end è un elemento altrettanto fondamentale. Quali sono le...
+
+Come ti posso dire?
+
+Poi la domanda ce l'ho nella mia testa e non riesce a scendere, questo pezzettino lo tagliavo. Al di là dei tool, quali sono gli elementi da considerare quando si deve fare observability nel front-end legato alla performance?
+
+Andrea Verlicchi (1:08:56)
+Allora noi raccogliamo una miriade di metriche e di eventi della pagina, è tutto un sistema che abbiamo fatto noi per cui hai diverse difficoltà. Uno è come scalare il sistema che ti raccoglie i dati poi il lato server e lì non ti posso rispondere più di tanto se non che ti serve sai qualcosa un sistema di code
+
+e poi fai l'ingestione dei dati solo quando hai abbastanza server liberi però questa cosa qui è una cosa che non ho fatto io ovviamente. La parte invece lato client è molto interessante perché tu non sai quando l'utente lascerà la pagina
+
+e quando l'utente lascia la pagina non puoi più mandare dati perché il tuo JavaScript è stato scaricato quindi devi cercare di mandarli in più chunks e poi unirli dopo per cui il primo, si chiamano beacon, quelli che mandi per raccogliere dati mentre l'utente naviga mandi dei beacon di analytics di room a un qualcosa che poi li unisce
+
+li raggruppa per un UUID o per una page ID che è generato. Il primo che mandi è ok, ho caricato la pagina. Questo è una page impression. L'utente ha queste caratteristiche, il browser ha queste caratteristiche, sono su mobile, sono su desktop, tutte le informazioni che hai all'inizio le mandi. Poi se l'utente interagisce con la pagina
+
+Succedono delle cose dopo, succede l'LCP, succede l'LCLS che può cambiare durante il corso della pagina, succede IMP, IMP viene misurato durante tutta la interazione dell'utente con la pagina e quindi anche lì succedono tante cose. Quindi tu intanto questi beacon li mandi e li raggruppi e alla fine ne fai uno grosso che poi registri.
+
+E poi provi a mandare l'ultimo quando l'utente va via dalla pagina, perché c'è un evento che si chiama Page Hide, o perché hai cambiato il tab o perché hai cliccato su un altro link, e li mandi l'ultimo beacon, sperando che arrivi, perché potrebbe anche essere che la pagina si scarica prima che il tuo beacon sia partito. Però intanto gli altri le raccolti. Quindi questa cosa qui è una cosa fondamentale. Però capito, questo è un sistema...
+
+che abbiamo fatto noi in casa? Non so se ho risposto alla tua domanda.
+
+Brainrepo (1:11:42)
+Sì,
+
+sì, sì. Una delle cose che volevo capire era per esempio l'impatto della performance.
+
+cogliene azioni stai facendo girare javascript potenzialmente e lo stai facendo girare in modo massivo perché stai tracciando tutto esiste delle accortezze
+
+Andrea Verlicchi (1:11:54)
+mmm
+
+Brainrepo (1:12:10)
+è un galateo dell'uso del JavaScript in modo così massivo per il tracciamento e l'Osservability e la telemetria.
+
+Andrea Verlicchi (1:12:23)
+Il galatteo è non fare tutto al click, ma spezzettare il tuo task in più task. Questo è anche uno dei mantra dell'utimizzazione di INP. Cioè, tu quando l'utente fa click, di solito metti uno click e gli fai fare delle cose in una funzione che è l'event handler. Se tu glielo fai fare lì,
+
+finché la funzione non ha finito di eseguirsi e poi è una funzione pesante che fa tante cose il controllo non torna al main thread, non torna al browser se invece lo spezzetti in più task, come si fa a spezzettarlo in più task? usando un sistema per cui tu la tua funzione la chiami in modo asincrono e la cosa più semplice è un setTimeout
+
+0, set timeout 3 milisecondi vuol dire ok ho cliccato questa cosa qui la fai dopo torna pure al tuo main thread con il controllo io ho finito e poi dopo 3 secondi 3 milisecondi fai il tracciamento questa è la cosa principale se tu il tuo &Handler lo gestisci in modo asincrono fai eseguire dopo l'utente sta già ha già cliccato già già avuto la sua risposta
+
+il main thread non è bloccato almeno che non gli stai mettendo un infinite loop lui ha la potenza di fuoco per eseguire del javascript è importante non bloccare mai l'utente questo è un po il galateo no? Poi ovviamente le funzioni che scrivi devono essere pensate e analizzate per cui non è che tu puoi fare il parsing, il traversing di tutto il DOM e devi fare delle funzioni che misurino delle cose
+
+molto piccole. Poi ci sono delle API di Observability, c'è proprio un evento performance, c'è un evento, un oggetto performance nel browser che ti permette di avere un sacco di informazioni sulle performance già dal browser, quindi non hai bisogno di andare a fare chissà quali operazioni complicate.
+
+Brainrepo (1:14:41)
+chiaro, chiarissimo. Guardavo l'orologio, abbiamo passato l'ora, però io ho una domanda volevo fartela. Non abbiamo parlato di AI oggi, Non ne abbiamo parlato, no, non ne abbiamo parlato fondamentalmente. Al di là, al di là di tutto, cosa sta cambiando?
+
+Andrea Verlicchi (1:14:47)
+Hmph!
+
+in una battuta.
+
+Brainrepo (1:15:09)
+nel mondo della performance la stuvià.
+
+Andrea Verlicchi (1:15:15)
+L'unica cosa che ti posso dire con certezza è che puoi con un MCP server di Chrome DevTools andare, sai MCP server per chi non lo sapesse sono delle estensioni dei motori AI, dei modelli AI per cui tu puoi dire a Claude, a Gemini, quello che vuoi, copilot di
+
+Brainrepo (1:15:39)
+provate a prendere le informazioni.
+
+Andrea Verlicchi (1:15:42)
+di utilizzare Chrome DevTools, di utilizzare un MCP server che dà accesso a Chrome DevTools di Chrome. Quindi tu puoi dirgli apri questa pagina e guarda quali sono i problemi di performance. Lui fa, magari con un prompt un po' più specifico, lui analizza la pagina, guarda i problemi di performance e poi ti, usando proprio i DevTools di Chrome, il pannello performance e poi ti restituisce
+
+il mcp server restituisce i dati al tuo agente, il tuo agente se è intelligente o non è uno dei modelli insomma più scarsi, ti riesce a dire quali sono i coli di bottiglia del sito internet quindi puoi con l'ai già fare una prima analisi di web performance
+
+Brainrepo (1:16:32)
+Io pensavo una cosa mentre ero sotto la doccia prima di questo episodio e pensavo alla percezione della performance. Prima hai detto una cosa che mi ha acceso una lampadina, no? Il fatto che la performance reale e la performance percepita potrebbero non essere la stessa cosa. E mi chiedo, oggi siamo sempre più
+
+abituati a utilizzare LLM come possono essere il Chat GPT il Perplexity che prima di darti una risposta fanno delle iterazioni di pensiero e quindi rallentano il tempo di me all'informazione danno un'informazione probabilmente già macinate più fruibile potenzialmente però rallentano questo tempo
+
+Andrea Verlicchi (1:17:19)
+⁓
+
+⁓
+
+Brainrepo (1:17:32)
+pensi che questa cosa altererà il nostro meccanismo di percezione della velocità e ci spingerà verso in alto la soglia di sopportazione, di sopportabilità di siti più lenti, di performance più basse?
+
+Andrea Verlicchi (1:17:56)
+mi ha fatto venire in mente almeno tre cose. La prima è quella dell'aeroporto, non so se la sai. C'era un aeroporto in cui i passageri si lamentavano che dovevano aspettare molto i loro bagagli. Arrivavano giù dall'aereo, andavano al pannello, al nastro per il tiro dei bagagli e dovevano aspettare dieci minuti che portassero
+
+fuori i bagagli e li mettesero sul nastro eccetera. Quindi clienti dell'aeroporto insoddisfatti. cosa hanno fatto? Hanno fatto fare agli utenti un giro più lungo. Scendevano dall'aereo, li facevano fare un giro, non so nei negozi, non so in pulma, non mi ricordo come l'hanno allungato, però sai nei aeroporti si può fare questa cosa. Quando arrivavano al nastro dei bagagli, i loro bagagliero erano già lì pronti.
+
+ad aspettarli e dopo erano tutti felici. Per cui le performance reali e le performance percepite sono delle cose veramente fa parte proprio tutto molto della percezione umana. Se tu hai camminato per dieci minuti non è un'attesa passiva. E quindi il modello AI che quando gli fai la domanda gli dice ti uuh Andrea ottima domanda essere preoccupato per le performance è proprio bla bla bla bla e intanto ti ti ti
+
+ci pensa, quello che devi dire dopo. Oppure i modelli come Cloud, Code o in Antigravity, che hai questi agenti AI che ti aiutano a scrivere codice, fanno dei piccolissimi step per cui partono dicendo adesso faccio la ricerca, sì ecco, poi loro ti dicono anche sto pensando a questo, tu ti diverti a leggere quello che loro stanno pensando, dici che figo questo modello, guarda come pensa bene, è proprio quello che avrei fatto io.
+
+Intanto lui ci sta arrivando la risposta, ma tra quello e vedere uno spinner di 20 secondi che dice sto pensando, sto pensando, sto pensando non ti fa vedere niente, quello cambia tutto. Quindi la tua domanda era se questo cambierà la nostra percezione, il nostro livello di sopportazione, in che modo? In modo migliorativo o peggiorativo?
+
+perché ti danno già un feedback.
+
+Brainrepo (1:20:19)
+aumenterà il nostro...
+
+no, aumenterà il nostro livello di sopportazione alla lentezza nel senso che domani mattina non ci scazzeremo meno se il sito sarà più lento
+
+Andrea Verlicchi (1:20:31)
+Secondo me no, perché comunque ti danno già una risposta subito, non ti lasciano lì ad aspettare in vano, alla fine l'LCP che misura il tempo di caricamento del sito misura il momento in cui la cosa più grande appare, che può essere un'immagine, può essere un titolo, un heading, uno, eccetera. Per cui è quello che gli utenti aspettano. Ci sono tutti dei modi per farlo parire prima.
+
+eccetera come dicevamo prima ma se la pagina resta bianca per due secondi poi appare qualcosa anche se appare tutti in una volta comunque insopportabile quindi alla fine si tratta sempre di un'attesa attiva no aspetto ma intanto vedo qualcosa faccio qualcosa
+
+Brainrepo (1:21:10)
+è sempre insopportabile, sì sì.
+
+sempre sopportabile.
+
+Sì.
+
+Io guardavo l'orologio e, insomma, visto che abbiamo superato, quasi all'ora e mezza e quindi arrivato il momento tipico e topico di Githubar, il momento del paese dei balocchi.
+
+Il paese dei balocchi è quel momento dove i nostri host e i nostri guest condividono con noi un libro, un talk, un video.
+
+di non qualunque cosa abbia catturato la tensione e reputino utile da essere condiviso appunto con la community. Quindi la mia domanda è Andrea, hai qualcosa da condividere con noi?
+
+Andrea Verlicchi (1:22:32)
+Allora,
+
+per quanto riguarda un talk, ho il talk più bello, proprio a livello sia istruttivo che visivo, che io abbia mai visto, riguarda JavaScript, riguarda come funziona l'event loop. Ti ricordo di prima quando tu dicevo style, layout, paint, e facevo anche così con la mano. Stavo proprio pensando alle immagini che aveva generato Jake Archibald nel suo talk in the loop.
+
+Brainrepo (1:22:58)
+È storico quel talk.
+
+Andrea Verlicchi (1:23:00)
+storico
+
+io ho fatto ancora trascrizione sul mio blog con le immagini e tutto perché non c'era in formato testuale e quindi sul mio blog trovi la trascrizione e le immagini e la spiegazione di quello che ha spiegato lui e quello era anche se in realtà lui andava da un'altra parte lui diceva utilizzate era questa animation frame
+
+per distribuire il JavaScript in più punti era tutta una cosa un po' sbagliata perché non dovresti usare questa animation frame per eseguire del JavaScript che non è specifico per l'animazione ma è fatto talmente bene che spiega visivamente con delle SVG animate che sarà creato lui visivamente come funziona l'event loop del browser e quello è diventato storico e lo guarda
+
+tutti quando stanno imparando a ottimizzare iNPI e quella roba lì.
+
+Brainrepo (1:23:55)
+sì, assolutamente una delle cose da guardare. Il event loop è spesso uno degli elementi forse più meno conosciuti di JavaScript, sia lato server, no, famoso, che è lato client. Allora, a questo punto porto anch'io un talk su event loop.
+
+che è quello di Snell e di Matteo Collina, The Broken Promise, un po' vecchio ma sempre importante e quindi insomma buttateci un occhio.
+
+Andrea Verlicchi (1:24:31)
+Ok.
+
+Brainrepo (1:24:48)
+Andrea mi ha super super super fatto piacere, fatto piacere averti qua al Git bar. È stato molto bello parlare di un argomento che in realtà non è un argomento che si snocciola o di cui ci si parla spesso,
+
+Andrea Verlicchi (1:24:57)
+Grazie per l'invito.
+
+vero ed è un aspetto fondamentale dell'esperienza utente alla fine si parla tanto di UX bottone blu verso bottone rosso però non si parla mai di ottimizzare performance
+
+Brainrepo (1:25:18)
+⁓ assoluto
+
+domanda prima di lasciarti andare noi ingegneri abbiamo spesso la tendenza all'ottimizzazione prematura è una cosa che vedi anche nelle performance
+
+Andrea Verlicchi (1:25:49)
+Ottimitazione prematura? Scusa, io sto sentendo una musica, l'hai messa tu? Ok, la sento molto forte. Allora, l'ottimitazione prematura?
+
+Brainrepo (1:25:54)
+Sono io, sono io, sì, sì.
+
+Andrea Verlicchi (1:26:04)
+Ok, ottimizzazione prematura dicevi a livello di performance. E' un problema sempre... Allora, forse ci sono due lati del problema. Over ingegnerizzazione, cioè ci penso troppo e alla fine cerco di arrivare alla perfezione, ma poi ci metto una vita ad arrivare ad avere qualcosa in produzione.
+
+e l'altra è ci do a caso, come diceva mi viene in mente Boris, non voglio citare Boris che poi diventò Volgare, ma insomma hai capito, a caso e poi dopo, giusto dopo, poi non a giusti, come accumulare debito tecnico. Quindi io consiglio sempre di fare le cose pensate ma non over ingegnerizzate e fare baby steps, fare piccoli per
+
+passettini, oggi ottimizzano una cosa, oggi ottimizzano un'altra per non avere delle feature di ottimizzazione lunghissime che poi non vanno mai in produzione.
+
+Brainrepo (1:27:16)
+sono sono d'accordo d'accordo con te Andrea mi ha super fatto piacere averti qua a Git bar come dico sempre Git bar è il nostro bar degli sviluppatori un po come il circolo del dopolavoro postale degli anni 80 70 no del dopolavoro ferroviario dove i ferrovieri e i postali si incontravano a bere birra
+
+Andrea Verlicchi (1:27:45)
+Hm.
+
+Brainrepo (1:27:45)
+esentasse
+
+perché era un circolo privato. Ecco da oggi tu hai la tessera di GitBar per cui puoi venire a trovarci tutte le volte che vuoi. C'è sempre una birra virtuale in questo caso fresca fresca per te e quindi appena hai qualcosa di interessante insomma ti capita in mano qualche topic che ti fa piacere condividere con la nostra community. Sai dove trovarci quindi c'è sempre una birra fresca per te.
+
+Andrea Verlicchi (1:28:12)
+Benissimo, prossima volta la offro io allora.
+
+Brainrepo (1:28:14)
+Grazie
+
+di nuovo ad Andrea, è stato super piacevole esplorare questo mondo della performance. Io prendo due minuti per ricordarvi che abbiamo chiuso l'accesso pubblico al gruppo Telegram, ma potete mandarci una mail info che io ho la github.it e vi inviamo il link per registrarvi. Era un'azione dovuta per limitare l'assalto dei bot stupidi.
+
+su Telegram, probabilmente appena sarà calmato lo riapriremo. Vi ricordo anche che potete supportarci, basta che buttiate un occhio nella pagina supportaci del nuovo sito. Nuovo sito dove appunto trovate tutti gli episodi con le trascrizioni, le note e tutto quello che serve. Vi ricordo anche
+
+di se non l'avete ancora fatto di iscrivervi nel canale YouTube e cliccare sulla campanella io vi ho vi ho dato 70 call to action questo dimostra che sono una capra in marketing ma noi siamo un podcast per sviluppatori e quindi ce ne frega anche niente del marketing se vi fa piacere cliccate sulla campanella e iscrivetevi detto questo io vi do appuntamento ringraziando ancora Andrea vi do appuntamento alla prossima settimana ciao ciao
+
+Andrea Verlicchi (1:29:37)
+Grazie
+
+a dell'invito, ciao!
+
