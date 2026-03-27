@@ -1,0 +1,1314 @@
+Brainrepo (00:26)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel bar degli sviluppatori. Questa settimana è stata monstruosa in termini di fatica. La cosa veramente figa però è che queste notti mi sono ridedicato a studiare approfonditamente Lung Chain e sto facendo...
+
+passi da gigante col mio piccolo side project che prima o poi vi racconterò. Anzi, approfitto per anticiparvi questa cosa che ci veniva in mente qualche giorno fa nella chat di telegramma degli amutinati. L'idea potrebbe essere quella di fare un episodio al mese dove voi ci raccontate i vostri side project, come li state sviluppando, come state utilizzando le AI, perché tanto lo so che lo state facendo.
+
+per svilupparli e quali sono le challenge e quali sono i burro, le cose che scivolano con scioltezza. Quindi mi raccomando scrivete a info.gitbar.it per raccontarci a grandi linee, a somme linee che state combinando perché poi pianificheremo questi episodi. Però detto questo e ricordato appunto del gruppo Telegram, che abbiamo un gruppo Telegram.
+
+potete raggiungerci direttamente dal sito web. Io direi che possiamo presentare l'ospite di oggi.
+
+L'ospite è da me più invidiato degli ultimi due anni perché è esattamente dove io vorrei essere ma non posso è il nostro amico Yaga freelance oserei dire influencer nel mondo di LinkedIn dove per tanto tempo insomma si stato super attivo io ogni due per tre vedevo che raccontavi quello che facevi ed era una cosa bellissima
+
+Benvenuto qua su su su github sto dimenticando che sei anche host di spaghetti prompt giusto?
+
+Jaga Santagostino (02:53)
+Sì, su YouTube.
+
+Brainrepo (02:56)
+Allora, la prima domanda che ti faccio, Yaga, è intanto grazie per aver accettato il nostro invito, detto un po' alla Maria dei Filippi che suona tantissimo old school. Ma come bilanci tutte queste attività? per noi, se ti dovesse rappresentare, mio immaginario tu sei un po' Taz, te lo ricordi il cartone animato anni 90? Ecco, io ti immagino così, io ti immagino così.
+
+Jaga Santagostino (03:27)
+Ma guarda, faccio tante cose ma in periodi diversi, per esempio, dici, mi puoi influencing su LinkedIn, ecc. In realtà faccio momenti di poco flusco di coscienza in cui racconto ogni cosa interessante che sto provando, sperimentando, ecc. Altri momenti in cui basta, cioè ho bisogno di staccare completamente da questa cosa e sparisco da ogni piattaforma.
+
+ogni cosa, quindi ho tanto questi periodi molto da solo, sperimentare un po' modalità laboratoria diciamo e poi ritorno un po' con tutte le cose che ho scoperto di cui voglio discutere, voglio confrontarmi con altre persone eccetera. Questa è un momento di... sto risalendo la china dopo un momento di... non vorrei dire burnout perché
+
+Brainrepo (04:21)
+deep dive,
+
+Jaga Santagostino (04:24)
+perché non è una roba di arriva, una certa burnout che devo riprendere. Diciamo che è una roba, ho visto come mi piace vivere queste cose, sono tante cose tecnologiche o meno in base ai periodi che mi appassionano, in qualche modo, quando succede mi ci butto veramente di testa e...
+
+non ci butto a studiare tantissimo, cerco di lavorare su quella roba direttamente poi sono altri momenti in cui ci sono proprio... ristaccare, andare a fare grandi passeggiate, ritornare a leggere, veramente compensare in modo molto molto strong. Ovviamente con la libera professione questo diventa molto più semplice, perché cosa permette a me di fare veramente mesi hardcore, periodi hardcore e altri...
+
+praticamente avevo puro studio sì sì e se io sono tre anni che vivo in Sardegna quindi è facile stare a pensare chill sulla spiaggia tutto il tempo però chi mi conosce sa che anche sulla spiaggia sono lì mi sto ascoltando un po' sto leggendo un libro, faccio i diagrammi sulla sabbia
+
+Brainrepo (05:23)
+no
+
+⁓ sì, il... il... il... la cosiddetta sandbox, no? No, come ti rendi conto che in realtà stai scollinando per cui devi per forza fare questa disconnection?
+
+Jaga Santagostino (06:02)
+Guarda, ti dico cosa come mi è successo ultimamente nell'ultima cosa. Era un momento in cui ovviamente stavo facendo tanta, tanta roba legato a AI o per questo tipo, anche su Spaghetti Pronti, il canale YouTube insieme a Giuseppe, mio amico. Avevamo appena fatto un corso, che abbiamo fatto a gennaio, una trentina di persone, Target Developer, è stato molto bene, se li siamo divertiti un sacco.
+
+e finito quello mi sono veramente accorto che stavo passando settimane a tutto quello che leggevo e fecevo entrava nel filtro di... ⁓ questo dovrei raccontarlo su spaghetti, questo dovrei farci un video, questo dovrei farci un postico e mi sono veramente reso conto che stavo consumando una quantità di roba che in quel momento non mi interessava personalmente ma lo stavo facendo perché ormai ero entrato in quel mode di... stavo prendendo cose per poterle...
+
+ripensarvi, distribuire cose. Di sotto questa è una roba che è un grande campanello d'allarme. Non sto facendo cose seguendo una passione, un interesse specifico o comunque non sto rispondendo a mie domande ma mi sento bombardato da quello che succede. E di solito questo è un grandissimo scompenso tra quello che entra e quello che esce.
+
+che non vuol dire necessariamente che devo scrivere i blog post, fare i video, ma anche banalmente vanettare. Per me è un grandissimo modo di controbilanciare quello che vedo, quello che faccio, perché è poi anche l'unica cosa che veramente...
+
+trasforma opinioni in esperienza personale e specialmente quando si parla di tecnologia eccetera, tutte le opinioni, le cose sono molto legate al contesto in cui vengono espresse. È proprio la differenza che poi solidifica veramente concetti, uide e cose. Infatti, in quei momenti che banalmente
+
+sono un po' overwhelmed eccetera che sembrerebbe che dico ok basta buttare il computer nel mare in realtà è quasi sempre il contrario è sempre un momento in cui arrivo tantissimo programmo tantissimo ma lo faccio con
+
+un obiettivo diverso che è seguire il bianconiglio in quello che è interessante in quel momento in queste settimane sono ritornato a farlo sapere legate a automation, home assistant o robe completamente inutili del tipo ma facciamoci qualche DNS server custom in casa, why not?
+
+Brainrepo (08:59)
+e tra l'altro molto impavide come come cosa fare però pensavo pensavo una cosa sono d'accordo con te in realtà ne ho già parlato no che si arriva a un certo punto dove si entra in questo loop no inizialmente leggo o mi informo o vedo penso e dico quando il penso inizia a fare un po fade out ed è leggo
+
+edico, leggo edico e questa è la trappola del divulgatore, O di chi ha una presenza, io per esempio c'è stato un periodo che l'ho subita e anche io ho fatto quasi un annetto di latitanza anche dal podcast, entrando in quel loop dici ma io non voglio ripetere a pappagallo quello che si dice, Espece in un'epoca dove
+
+almeno con le AI la fatigue come ti dicevo in fuori onda diventa tantissima nel senso che io veramente sono arrivato a dire ma come cavolo gestisco tutta questa mole di informazione ma basta non voglio più parlare di AI i miei colleghi ammultinati lo sanno benissimo io detto io non voglio più parlare di allora ho ribilanciato abbassato e il piacere è rivenuto ma perché mi sono preso il tempo di pensare
+
+Jaga Santagostino (10:01)
+mmmh
+
+Brainrepo (10:23)
+di rianalizzare, di riordinare le idee e allora è così. Un altro problema che ha avuto è stato quello di distinguere segnale e rumore e oggi, almeno per quanto riguarda l'LM, tutta sta roba, il rumore è altissimo, qualunque cagata che esce poi diventa Game changer, stravolgerà tutto. Probabilmente sì, ma anche, cioè anche meno nel senso. Come gestisci segnale e rumore?
+
+Jaga Santagostino (10:55)
+Sono dei topic veramente difficili intanto è facile per chi è perennemente online, passione, per interesse, la mia droga da quel punto di vista è sempre stata Twitter perché lì è l'underground della tecnologia, c'è lì veramente gente che si iscrive in pubblico e vengono fuori
+
+protocolli nuovi dal nulla o veramente connessioni collaborazioni in modo veramente allucinante e purtroppo c'è talmente tanti soldi anche legati a sponsorship, robe così, influencer, monday high eccetera, che anche fa ancora più fatica a vedere le opinioni che sono molto non bias specialmente da
+
+grandi canali o grandi personaggi eccetera e poi che tu lo dicevi prima anche con spaghetti eccetera non abbiamo mai voluto stare lì a raccontare l'ultima news, l'ultimo changelog delle robe non perché non sia interessante perché io sono uno che si sempre stato a leggere di changelog delle liberie, cioè io mi leggo gli API reference
+
+come fosse un romanzo però banalmente ho sempre sentito che se ti vieni a fare quel tipo di contenuti, quelle cose attiri il tipo di utenza con cui non voglio avere a che fare, ci voglio avere a che fare con altre persone prese bene delle cose con cui raccontarmi, con cui raccontare esperienze eccetera non circontarmi di un'orda di minions che non hanno voglia di andarsi a leggere i group blog post
+
+E per quanto riguarda la questione Signal vs Noise, allora io adesso sono proprio in un momento in cui l'ultimo mese scorso ho fatto tabula rasa. Ho proprio detto che cosa, stacco un attimo, ho sloggato sul titolo, ho scolto tutte le app social dal telefono, mi sono disescritto da tutto, tutte le newsletter, tutte le cose. Mi sono proprio detto ok,
+
+al posto di controbilanciare poco uccidiamo completamente e vediamo pian piano cos'è che mi manca e mi sono accorto veramente di un sacco di belle cose è una roba che ciclicamente ogni tot mesi anni mi capita di fare sto proprio cancella tutto specialmente prendi la lista degli articoli delle robe read later che salvi e poi sai già che non andrai a cancellare tutto, cancella list, cancella ito do
+
+e molto liberante a quel punto di vista e veramente mi rendo conto di quante cose che mi interessavano che volevo andare io a vedere la curiosità che magari dei prioritizi perché è più difficile parlarne con altre persone perché è una roba che magari interessa meno persone con roba di questo tipo e quando fai roba così? non lo fai neanche con l'idea devo fare la roba perché devo fare il contenuto? Che me ne ho mai fregato un cazzo! Cioè, la tutta la...
+
+quello che condivido è veramente un flusso di coscienza di quello che è su questo smanettando. E mi sono veramente reso conto che staccare, cioè chiudere un po' i rubinetti di tutti gli input che mi arrivavano
+
+mi ha fatto rendere conto che avevo già un sacco di interessi che erano lì che volevano solo uscire era come se non riusciva a sentire la mia musica perché ero sovrastato dalle altre, quindi in non dovevo però è facile pensare che in realtà se non senti la musica devi cercarne un'altra in realtà dovevo solamente abbassare un sacco di altri volumi e quindi adesso c'è rapporto molto diverso con l'informazione eccetera
+
+Brainrepo (14:52)
+che la radio era troppo alta,
+
+Jaga Santagostino (15:09)
+Da so proprio vado io chirurgicamente a cercarmi le poche persone che voglio seguire, che mi interessa l'opinione.
+
+Brainrepo (15:15)
+Ecco, come fai content curation?
+
+Come fai il network curation, content curation? Quindi come selezioni le fonti?
+
+Jaga Santagostino (15:26)
+sono cose che cambiano spesso, nei mesi, negli anni, adesso sono in una fase in cui le cose che sono così così taglio via, proprio non voglio solamente tenere robe che hanno un forte segnale e è una cosa la cosa più importante secondo me, dai periodi in cui smette di
+
+di usare social, è che smetto di consumare tante cose piccole però io ho voglia di imparare, ho voglia di capire, voglia di... cioè quella roba lì non è che si spegne, sicuramente c'è un craving di voler studiare, vedere, fare cose e non avendo più quel quick win, diciamo lì, di cosa che mi dà la soddisfazione, ritorno a leggermi i blog post da diecimila parole
+
+e a leggermi il paper, a rileggermi altre robe che sono sempre robe più interessanti, più profonde, che poi danno 10.000 collegamenti di altre cose che si basano su altre robe che ti fanno conoscere l'altra persona che non conoscevi o che poi sono sempre tutti quegli articoli, quelle robe che te risalti dicendo, stanco, lo guardo sto weekend, lo guardo domani però poi il default del apri e
+
+ti guardi le ultime 200 discussioni della gente che litiga su che modello più performante eccetera eccetera e finisce che non mi guardo con le cose di vero. Per esempio, delle delle poche persone che considero che vado sul suo blog a mano a vedere è tipo Simon, non mi ricordo mai, Willinson.
+
+il test del tucano sulla bicicletta come benchmark... un attimo e vedre... Willison perché lui anche ha un super pezzo su tutte queste cose qui però si vede che il suo blog è un laboratorio, proprio è una finestra nei suoi esperimenti e roba di questo tipo
+
+Brainrepo (17:51)
+E non hai paura di perdere degli elementi che poi sono determinanti per il tuo lavoro come freelance, che comunque deve essere sempre un passo più avanti specie, in una situazione dove la barriera d'ingresso si sta abbassando drasticamente.
+
+Jaga Santagostino (18:10)
+direi da una parte sì era anche una cosa su cui ho fatto negli anni un po' fatica a fare perché io sono sempre stata una persona molto knowledgeable che conosco tante cose che vedo tante cose perché ho molti interessi, molte amicizie che molto orizzontali quindi veramente mi sono trovato... il mio feed è sempre stato estremamente eterogeno
+
+che parla di serverless, ai, di kubernetes, di home automation, un sacco di cose poi per fortuna è sempre stato un tipo di passione di cosa, cioè io preferisco leggermi un API reference che andare a giocare a calcetto quindi diciamo che è sempre stata una cosa che indirettamente mi ha sempre portato a riuscire ad avere un sacco di
+
+conoscenza, esperimenti, cose, ma proprio perché mi ci trovavo lì. Quindi in realtà è sempre stato molto parte della mia identità. Sono sempre un po' stato la go to person per andare a chiedere un'opinione, le tecnologie, qualcosa. Quindi staccarmi un po' da questa cosa più è stato doloroso emotivamente da un certo punto di vista, perché è quasi lasciare un pezzo mio forte di identità da un punto di vista.
+
+però devo dire che...
+
+mi sento proprio che al posto di essere guidato da tutte le cose che mi vengono lanciate addosso continuamente mi sento più guidato dalle mie domande, delle mie necessità perché riesco un pochino più concentrato su quello quindi comunque io continuamente vado però lo vado a fare magari con un percorso un pochino più dritto più legato anche a quello che mi interessa a me e quindi
+
+Questo contro bilancia tantissimo la sensazione di fomo perché mi costringe anche a decidere cosa fare, però anche sempre è una cosa molto guidata dalla curiosità, dall'interesse, dallo smanettamento. Oltre al fatto che fortunatamente, in tutta mia carriera, sono circondato da altre persone interessanti che hanno certi tipi di competenze, di interessi e fortunatamente magari i periodi di...
+
+Up and down sono invertiti magari e quindi si usa vicenda come filtro di tutto quanto rumore. Banalmente nell'ultimo mese ho letto pochissime robe, riguardo robe AI, senso come news. Ho fatto molto più robe legate a...
+
+Altre cose che sono senza tempo da quel punto di vista. Non è che mi sono... Cioè, adesso se ieri sera era riuscito a GPT 5.5 avrei visto la prossima volta che è ProCodex. Non sarebbe stato quello il problema. Non mi sento neanche che rimango fuori perché...
+
+Brainrepo (21:28)
+Sì.
+
+Jaga Santagostino (21:34)
+Comunque metto sempre comunque le mani.
+
+Brainrepo (21:36)
+Tu dici per lavoro comunque lo
+
+uso, cui diciamo che chiudo un po' più sulle news perché tanto so che bene o male se c'è un problema so come andarmi a ripiegli l'informazione. Questa è più o meno la sintesi che mi viene da dire da quello che detto ed è un po' quello che ho fatto io. Sai quando superi i 40 anni, voglio evitare di il paternalismo.
+
+ma quando superi i 40 non c'hai un cazzo di voglia di spendere 70.000 ore a leggere news che dicono tutto e dicono niente, Quindi ti monta quel pragmatismo che dici, preferisco portare mia figlia a fare una passeggiata o preferisco farmi una passeggiata al mare.
+
+Jaga Santagostino (22:17)
+a periodi io ho
+
+ancora i periodi di hardcore che voglio stare lì a seguire discussioni su twitter e c'è da...
+
+Brainrepo (22:26)
+Ma sì, ma
+
+solo se mi entusiasmano particolarmente, quindi se hanno una certa profondità, questo almeno sono io in questa fase storica, perché tanto so che se ne ho bisogno e sento la necessità e devo stare sul pezzo, io ci metto tre ore a stare sul pezzo. Perché? Perché da una parte bene o male ho le mie fonti curate. E qua si entra nel mondo del cosa seguo, il contenuto o le persone che generano...
+
+che generano il contenuto questa è sempre la domanda che si fa quando bisogna seguire i contenuti però intanto se tu hai quelle 5-6 persone che bene o male ripostano le robe già ti fanno da filtro, che le segui ti fanno già da filtro
+
+Jaga Santagostino (22:57)
+Certo.
+
+se vedi che queste persone di cui hai incerto fiducia sono eccitate per qualcosa lì è anche un segnale molto molto forte andiamo a controllare e vedere che poi anche lì nella peggiore delle ipotesi ma non è anche tanto influencer, più amici, più amici e colleghi
+
+Brainrepo (23:23)
+⁓ esatto.
+
+E questi sono influencer che segui, Però fammi aggiungere questa cosa che segui. Esatto, esatto.
+
+C'è l'altro lato che da una parte tu magari segui quelle poche persone che sono influencer e che bene o male ti danno una direzione. Io per esempio il più noto è Eddie Osmani, ma anche lui fa molto rumore.
+
+anche di questo, pensando di rimuoverlo dal feed perché sta iniziando a un po' a cagare fuori dal vasino secondo me però ce ne sono uno sì 5 o 6 persone insomma che vale la pena seguire e poi ci sono magari i colleghi o gli amici che sono a palla e consumano una quantità di contenuti fuori di testa uno di questi
+
+e Alfonso che cito tantissimo in questo periodo perché io quando c'è qualcosa che mi perdo e che mi serve, pingo Alfonso e gli dico ok Alfonso, tu hai già smazzato il 90 % della noise, dov'è il segnale? Perché così io mi dedico su questo? E questo è il bello di avere il
+
+Jaga Santagostino (24:29)
+Diciamo che io
+
+di solito sono ponso di altre persone, in questo periodo al contrario.
+
+Brainrepo (24:39)
+Sì, è un balance anche perché per esempio per quanto mi riguarda personalmente il vero valore che io riesco a generare, e questo mi succede già da un po', è quello di trovare collegamenti con altre discipline.
+
+volevo per un attimo parlare di produttività tu sei almeno nei social sei stato uno dei punti di riferimento delle persone che vedevo parlare di produttività più spesso no? To do list, calendari, cose
+
+hai postato tantissimo su questo topic. La mia domanda è siccome tutti, credo veramente tutti, abbiamo provato a usare dei processi di produttività per aumentarla appunto, quindi abbiamo provato to-do list, abbiamo provato note management, queste robe, no?
+
+e penso che tu sei una delle poche persone che continua o l'ha fatto e continua a in modo sistematico. La mia domanda è come funzionava prima dell'avvento degli AI e come funziona oggi con Cloud Code, Codex e tutte queste storie.
+
+Jaga Santagostino (25:53)
+allora diciamo che in modo sistematico viene e va via questa cosa qui nel senso che adesso sono diventato molto appassionato di sistemi a vedere, capire e sono momenti in cui... a roba sono molto rigide ok? faccio un planning settimanale, review settimanale, un planning del mese e altri momenti in cui questo diventa quasi una prigione
+
+Poi lo sento, Staccare da tutto e ritorno magari anche a prendere il post-it, mi attacco il post-it dietro il telefono e quello diventa la mia to-do list per settimana. Quindi è una cosa che va molto talentante tra molto marine e molto freeform. Diciamo che si ricollega anche molto con i periodi che ho che sono magari molto...
+
+concentrazione di cose o molto liberi e cambia anche tantissimo da come sto lavorando in quel momento perché momenti in cui magari sto lavorando su più clienti assieme e magari sto preparando delle cose che sono più a lungo termine, dei talk, dei corsi, delle cose che hanno bisogno di tanta struttura, tante cose magari per i periodi nella mia vita in cui ho degli obiettivi particolari delle cose particolari
+
+e ci sono altri momenti in cui...
+
+Dopo anni anni anni mi sono reso conto che costringermi ad avere della struttura non mi aiutava, ma anzi mi faceva solo stare male e direi, ma perché non ho obiettivi in questo periodo che sento mio, perché era per questo tipo, li ho ancora accettati. Sono momenti in cui va bene non rincorrere niente e rendere vivere la vita per come è in quel momento.
+
+e a rigorderti un po' la situazione che ti sei creato. po' a roba di questo tipo. Con la IAIA, allora, è molto interessante questa cosa qui, perché io sempre ho scritto tantissimo. Proprio, per me scrivere, proprio fare journaling è una cosa che mi sempre aiutato tantissimo a pensare. Infatti, ho, non so, roba di Evernote, pre-Evernote, sono vecchi di vent'anni.
+
+una di quelle cose che ho sempre fatto e generalmente quando sento che c'è qualcosa che nella mia vita che non va bene, proprio che mi sento un pochino fuori bussola, di solito ho smesso di scrivere, andare a fare le passeggiate o cucinare. Sono tre cose che ho imparato ad essere estremamente importanti per me e se ne manca una di queste ha una certa sbrocco e bisogna di rimplementarla.
+
+perché mi ha iniziato tantissimo a pensare, a ragionare e legato al mondo delle AI io sono ormai, non so, da agosto-settembre che diciamo che c'ho, che ho tutto un sistema
+
+di sparring partner, diciamo, interessante, a cui l'ho ficcato dentro. Io l'ho ficcato dentro 15 anni, 20 anni di note, di pensieri, di riflessioni e cosa. Ed è una cosa che...
+
+Brainrepo (29:22)
+Ti va di raccontarcelo?
+
+Jaga Santagostino (29:36)
+che è super interessante perché proprio è nato come una roba super becera anzi è nato ancora prima, mi ricordo che c'era sto tool forse 2024, si chiamava MindSera ed è il primo strumento creato, cacchio, hanno usato le AI in interessante qua era proprio uno strumento di journaling
+
+scrittura note eccetera per cui ti andava fare un pochino di analisi del di quello che scrive ti faceva challenge e ti faceva domande rispetto a quello che scrive era molto interessante però beh, manettone, se smanettone sentivo che mi stava un po' stretto, stravo, ma allora un giorno ho detto va vasti che se me lo faccio da solo e io ho detto quello deve essere una roba che uso, una roba più semplice possibile
+
+e quindi ho iniziato con un upload MD e Cloud Code con un bellissimo protel tipo, guarda salva tutto, salva tutto quello che ci diciamo dentro file di testo e tu diventi owner di aggiornare questa memoria, questa cosa c'era anche una parte esperimento degli strumenti eccetera, volevo anche vedere
+
+fin quando si rompevano certe e quindi ho iniziato a buttare un sacco di cose che dalle minotte, il mio storico di giornale, gli ho dato dopo tanti mesi, però ho iniziato a usarlo veramente come sistema di brainstorming in cui, ma pian piano lo adattavo un pochino a come mi interessa a me.
+
+Brainrepo (31:34)
+Quindi tui cavi il prompt, cosa facevi? Sistema il prompt, gli davi più tool...
+
+Jaga Santagostino (31:34)
+e si può non girare
+
+Ciao!
+
+All'altro livello di tool e etc. serviva veramente poca roba perché una volta che si riusciva a leggere e scrivere da solo i file markdown che come memoria bastava molto quello. gli ho detto aggiornati da solo il CloudMD. Quindi ogni volta che magari c'era qualche tipo di roba che gli dicevo guarda preferire che mi rispondi così o cosa comunque diventava una memoria persistente perché andava direttamente.
+
+a modificarsi il system prompt che poi avrebbe usato in altre sessioni eccetera e man mano che iniziavo a veramente a buttarci dentro più roba del tipo cosa funziona per me cosa non funziona per me banalmente io in qualunque momento mi metti della musica sono contento ok
+
+o stringermi a fare certi ripi di attività in certi momenti del giorno non va bene, ok? O che ne so, ma volte mi va benissimo andarmi a fare la passeggiata al posto di fare anche qualunque altra labo urgente che devo finire in quel momento. Ci sono momenti in cui ho bisogno di staccare, di pensare, eccetera. Ed è super interessante magari quando...
+
+facevo delle discussioni con la mia gente eccetera e alla certa diceva guarda
+
+vatti a fare una passeggiata perché si rendeva conto di certi trigger, certe robe, magari di come io rispondevo, come vedevo la cosa ed è stato sempre più interessante e divertente questa cosa qui perché poi iniziato a dargli più capacità, cose, al tipo di scrivermi
+
+Brainrepo (33:11)
+Non è vero!
+
+Ma tu questa cosa la facevi
+
+direttamente dal computer o anche dal telefonino usando qualche trick?
+
+Jaga Santagostino (33:38)
+Guarda, fino a questo momento io pensavo che la gente che usava SSH dal telefono fossero dei disadattati finché ho iniziato a farlo anch'io. Finché ho iniziato a farlo anch'io alla grande e ho iniziato a in realtà a fargli fare direttamente a lui vari tool per scrivermi su Telegram o farsi dei cron job per cui ogni tanto mi ricordava delle cose.
+
+Brainrepo (33:47)
+presente.
+
+Jaga Santagostino (34:07)
+Valormente, sono tante cose che negli anni ho provato a fare esperimenti del tipo... ci sono certe persone che per mille motivi non vedo spesso o non sento spesso. per anni magari facevo così, non so, mi mettevo del calendario ricorrente ogni quattro mesi, giorno random, tipo scrivi a questa persona. Perché sono quelle persone che ti perdi per mille motivi, però poi ogni volta che le senti sono super contento, proprio, di questa tipica.
+
+Allora ho iniziato a... un po' tutte queste cose che già facevo in qualche modo... ho iniziato a...
+
+a farle tramite questa mia gente che proprio aveva un altro file che era una coda di ogni tot, ma anche gli dicevo guarda ogni tot ricorda questa cosa ci sono cose che vorrei fare quest'anno voglio riprendere ad arrampicare voglio andare a trovare un mio amico a Stacolma voglio andare voglio fare viaggi e sa quanto io odio prenotare le cose
+
+Guarda, guardi questo tipo. Sì, è un totalenquitch. Vai,
+
+Brainrepo (35:16)
+Guarda, so,
+
+ti sembrerà strano ma siamo perfettamente allineati sai quello che stai vedendo è il mio site project che ti ho aggiornato che è un relation manager, una sorta di CRM senza si che serve per gestire i contatti. Se tu guardi qua sotto c'è un'area che mi dice ok ricorda di pingare queste persone in questo periodo
+
+e mi tira dentro le informazioni rilevanti di questo contatto.
+
+Questo un po' si avvicina a
+
+Jaga Santagostino (35:52)
+⁓ che cosa ne è roba
+
+sì sì sì sì, è una parte di una roba che manco che già facevo prima delle Iai, una roba di questo tipo, però il fatto di avere una roba così colloquiale veramente mi viene molta più voglia di averci a che fare, di manettarci eccetera, il fatto che per dire io sono negli ultimi vent'anni ogni
+
+ciclicamente dicevo adesso devo fare tutti i miei strumenti di pubblicità, adesso mi rifaccio il mio tings, rifaccio il mio calendario, mi rifaccio... ciclicamente un fallimento totale di cose che venivano subito abbandonate perché? perché sono quelle robe che sono super belle, averle super costumizzabili eccetera ma sono talmente simili a mettersi a lavorare nei weekend che poi le avvenivano sempre abbandonate
+
+che è con le IAISTRO, qua! Per me mi si è riaccesa una veramente una passione di andare a ritoccare tutte queste cose qui, poter farmi veramente mi serve un tool, mi serve un'interfaccia nuova per vedere un tipo di dato, il fatto di poter prendere fare roba ma poi io ho sempre avuto server in casa, il fatto di... io adesso devo tirare su una cosa
+
+Brainrepo (36:50)
+ehehehe
+
+Sì te la fai.
+
+Jaga Santagostino (37:18)
+non devono anche stare a pensare a cosa faccio dove lo deployo, database che uso, l'autenticazione faccio un prompt che mi tira su una roba con react, ban, SQLite o un file json come database me lo spone direttamente nella rete locale e con tailscale ci accedo dal remoto ovunque. Tant'altro 15 seconda, ma in 5 minuti c'ho un prototipo di qualunque porcata. In un me ne frega niente che una porcata
+
+perché va benissimo
+
+Brainrepo (37:49)
+Si,
+
+domanda, domanda, tu hai parlato di avere SSH nel telefono, tu sei una di quelle persone che ama dialogare con le AI scrivendo del testo o dando comandi vocali?
+
+Jaga Santagostino (38:07)
+ma perché... perché in realtà è quello che sono sempre fatto, cioè proprio per me lo scrivere è sempre stato una forma di pensiero per me prima di tutto. La differenza di questa cosa qui è che
+
+Adesso mi arrivano certe domande, certe cose che poi mi aiutano di più ad andare più a fondo dei miei pensieri, certe cose. Ma specialmente è interessante come va a fare da solo certi tipi di collegamenti e certe cose del tipo frequentemente, adesso mi sta venendo fuori, discussione del tipo...
+
+Saranno 10 anni che scrivi la stessa cosa ciclicamente, come se ogni volta che la riscopri, come se hai scoperto una roba importantissima e poi te ne dimentichi il nuovo. E lì dici, cazzo, è vero, cioè è proprio vero. E mi rendo conto che sono diverse cose che... Arrivano un momento, ci penso tantissimo, ragiono, arriva una roba di cazzo, ho trovato la soluzione con la cosa lì, ma poi non faccio niente al riguardo.
+
+è fatica, è come se non l'hessi risolta però mentalmente ti sembra così che hai fatto un passo avanti che sembra che l'hai veramente... hai fatto qualcosa di concreto e... è roba stranissima infatti a me mi sta aiutando tantissimo a rendermi conto di un po' di blind spot di cose che... di cui magari ho fatto fatica anche in decenni di accorgermi
+
+nonostante io sono sempre stata una persona molto introspettiva, che mi piace farmi grandi seghe mentali sui massimi sistemi, ma anche poi andare a cercare la semplicità di queste cose.
+
+Brainrepo (40:10)
+Io ti dirò, non ho una knowledge base così profonda di 10-15 anni, ma una knowledge base di 2 anni e soprattutto non legata al journaling, ma più legata alle cose che scopro. Io ogni cosa che scopro me l'annoto nella knowledge base. Ogni passo importante, per esempio, di un libro che leggo, io lo evidenzio, poi rielaboro quel pezzo con parole mie.
+
+e lo butto dentro obsidian e sta là impacchettato in un bel file markdown a utilizzo futuro no? ed è incredibile quanto questo poi diventi proficuo faccio un esempio stupido lo porterò in un episodio c'è stato un po' di tempo fa dove proprio per colpa della fatigue
+
+dell'AI ho detto va proviamo a pensare di altro, pensare ad altro, proviamo a pensare interazioni tra umani, cioè proprio andiamo dall'altra parte e mi sono messo a studiare negoziazione tipo la tecnica del black swan, tutte queste cose carine e intanto leggevo, prendevo
+
+Jaga Santagostino (41:28)
+Non c'è una
+
+differenza.
+
+Brainrepo (41:31)
+hai tato il punto, no? E intanto ho preso note. Qualche settimana fa mi è capitato di gestire una criticità, quindi una situazione dove la negoziazione era necessaria. Io di solito, non essendo un active speaker, specie quando ci sono questi momenti critici, io mi scrivo magari il messaggio, lo butto su ne hai e dico rendilo un po' più morbido perché tendo a essere molto sharp io quando parlo in inglese.
+
+senza virgola e senza senza senza addolcimenti o come li vuoi chiamare no io ti dico la cosa e così però certe volte la politica un po' serve no quindi l'ho buttato sulle a e mi sono completamente dimenticato che il mio cloud c'ha l'mcp di obsidian cosa è successo che cloud si è andato a prendere tutte quelle note sulla negoziazione quindi ha fatto l'analisi del tono del messaggio precedente che era assertivo
+
+ha utilizzato tutta una serie di tecniche che poi vi racconterò in un e messaggio di risposta aveva i contenuti che io avevo scritto nel mio messaggio tagliente che avrebbe attivato una bomba nucleare in quella situazione e l'ha creato talmente perfetto che il destinatore mi ha risposto con un grazie al posto di attaccare e questa era parte di knowledge che io avevo messo da parte che
+
+conoscevo, perché io le conosco quelle tecniche di linguaziazione, ma in quella situazione di crisi, perché stavo gestendo una situazione di crisi, non avendo un'esperienza continua su quella cosa, era passata da parte dietro il cervello, cioè in quel cassettino chiuso a chiave che non è sempre che porti. Quindi avere un assistente che ti aiuta anche in quello è spaventoso, senso che dici sì vabbè, ma poi se continuo così prendo la via del decerebrato.
+
+Ma però è di una potenza inaudita, io mi immagino cosa può diventare se tu gli dai parte della tua knowledge base degli ultimi 10 anni, 5 anni o quello che è.
+
+Jaga Santagostino (43:41)
+Allora è un po' strano perché...
+
+La tua è anche una situazione molto interessante perché magari ti tira fuori delle cose in modo molto più oggettivo, specialmente se tu sei una situazione che è in qualche modo emotiva, destabilizzante, eccetera. Infatti la cosa che dico più spesso quando racconto altre cose, questo servizio eccetera, è che mi sembra di parlare con me senza bias.
+
+Come se parlavi di una persona e di me che è... Io non è in qualche modo condizionata da la situazione che sto vivendo, qualunque tipo che sia. È roba molto molto interessante. fatto di avere un mese, due settimane o quattardici anni di... Non è così diverso secondo me, io ero un'altra persona tre anni fa, dove ero una...
+
+sono ancora 5 anni fa, 20 anni fa, eccetera. Cioè, è capitato proprio alcuni mesi fa di andare a ripescare uno dei vecchissimi... quindi di Evernote, cui mi ero segnato un po' di obiettivi che avevo, proprio moltissimo, ad alto livello di vita, eccetera, in chialolette...
+
+Ma come sognavo in piccolo! sono proprio detto! Andiamo a ficarci dentro la tifomazione, anche io attaccandoci Ridwise o altre tool in cui salvo note, eccetera. E' molto interessante. Trattato, ultimamente ho anche iniziato a salvare
+
+proprio a mandare a mia gente le cose che sto consumando e che mi interessano. Fortunatamente adesso sono in un momento in cui sto consumando poco bene quindi c'è signal poco noise da quel punto di vista e se tipo l'incollo un pezzo di articolo un'articolo un podcast eccetera gli dico cosa mi ha colpito
+
+in qualche modo e lì parte comunque una discussione che è super interessante. Ma c'è anche tutto un aspetto tecnico di questa cosa qui che io praticamente sono mesi che pian piano sto uccidendo con quel tipo di applicazione che scomoda andare a prendere i dati o scriverli.
+
+e sto praticamente ritornando alle basi di avere solo file di testo e file JSON e db a sqlite in locale perché è talmente più comodo fare parlare sistemi tra di loro quando si tratta di roba di questo tipo. Io ho smesso di usare Notion, ho usato per tanti anni, ho smesso di usare un sacco di code.
+
+Sto vivendo con una user experience orribile rispetto a le belle applicazioni che utilizzavo però la bellezza è avere robe su file di testo che puoi grepparli, puoi embeddare tutto, puoi cercarli facilmente... Bellissimo! Non potrei più tornare indietro.
+
+Brainrepo (47:23)
+ma è il motivo per cui io continuo ad usare Obsidian anzi ti dirò di più, prima usavo Excalidro dentro Obsidian Excalidro... Claude lo vede e non lo vede Excalidro a volte lo vede bene, a volte scazza con Excalidro quindi sono prossimo a completamente rimuovere il plugin di Excalidro e trovarmi un plugin di Mermaid o cose di questo tipo che sono molto più leggibili
+
+e si possono usare anche per rappresentare concetti. Ti faccio una domanda, tu hai parlato di una knowledge base abbastanza grande no? Allora sei della famiglia file di testo o rag?
+
+Jaga Santagostino (48:09)
+Allora, un mix e due perché alla fine della fiera diciamo che stiamo risolvendo lo stesso problema che è andare a cercare referenze e cose. Ovviamente se inizi a fare robe più simili al comunque, più robe embedding fai ricerca semantica e quello è super importante perché io sto utilizzando un tool che si chiama QMD
+
+che praticamente serve per embeddare, fare ricerca con modelli locali su Pali di testo e funziona da Dio. Quindi praticamente avendo esportato tutta quanta le mie cose su Pali di testo mi fa veramente ricerche su 15 anni di cose in 20.000 secondi.
+
+in modo semantico, sento utilizzare le parole corrette ma semplicemente cose che hanno senso da quel punto di vista. Ed è una cosa che proprio nei prompt dei miei agenti, guarda quando faccio una discussione, vai a vedere anche come è voluta questa cosa, mio pensiero, questa... Alla certa le proprio detto, tratta le mie discussioni come fossero delle ADR.
+
+Per andare a vedere come sono evolute nel tempo. A me piace molto che mi faccia challenge, perché mi aiuta tantissimo a rendermi conto di dove sta puntando la mia bussola. In realtà è una cosa che anche lì ho sempre fatto nella vita. A me piace molto avere che fare con persone che hanno dei punti diversi dei miei e anche molto forti.
+
+Brainrepo (49:45)
+facendo Red
+
+Jaga Santagostino (50:08)
+che penso imparo qualcosa di importante che non avevo dato attenzione a qualche sfumatura eccetera, oppure qui mi sento più sicuro di mie scelte o opinioni eccetera.
+
+E' un'altra roba è molto interessante, di tutto un sistema che è così basato su dati e non su un flusso specifico di interfaccia, una cosa rigida, mi permette di rimodellarlo totalmente in base a come mi sento e quanto ci voglio di avere ciò che fare. Sono periodi in cui c'ho veramente magari voglia di passarci delle ore a discutere.
+
+Brainrepo (50:26)
+Sì, che...
+
+Jaga Santagostino (50:55)
+durante la settimana, altri in cui non me ne frega niente, voglio solamente buttare roba e non perderla eccetera e ho provato tanti esperimenti specialmente tutte quelle cose che faccio fatica a portare avanti in lunghi periodi per esempio io non m'annoio mai, ho una quantità talmente grande di curiosità e interesse
+
+che a me mi chiudi in una stanza e mi metto a pensare come è fatto l'intonaco. Cioè, proprio è veramente difficile che non trovo qualcosa che in qualche modo mi interessa.
+
+Questa cosa qua purtroppo c'è da un site che è proprio uno stack di cose che per me sono importanti, interessante, che specialmente robe che magari richiedono lunghi investimenti per lungo tempo perdono in purità. È una cosa che stata sempre costante nella mia vita. Infatti ho dovuto sempre un po' combattere con questo, mettendomi reminder, varie cose, andare a capire cosa che mi può riaccendere la voglia di certe cose.
+
+interessante come passare da mettermi vari reminder a casa semplicemente mettere a disposizione di un agente varie io ho messo varie cose fisiche in casa del tipo io ho vari display attaccati la gente può mandarmi roba, ho un display sul prigo in cui scendo e... vuoi ascoltare battiato? dico... sì che voglio ascoltare battiato!
+
+Brainrepo (52:38)
+Ma cosa stai usando per la gente? Cioè è proprio un... che ne so un cloud code che gira su un loop da qualche parte o hai qualcosa di più custom?
+
+Jaga Santagostino (52:50)
+E allora diciamo che questo è anche un po' un workbench di smanettamente cose. Il core è nato a aprire direttamente Cloud Code. Opus, sempre Opus, Thinking, Xtri, pare che quando parliamo di testo stiamo parlando veramente di probabilmente chatarci un mese intero è l'equivalente di programmarci dieci minuti dal punto di vista di token.
+
+e pian piano quando ho voluto fare roba molto più custom ho iniziato a spostare tutto sul clou di SDK oppure altri esperimenti con lsdk di open code, altri esperimenti con modelli locali eccetera, fatto tanti tipi di esperimenti
+
+Brainrepo (53:40)
+e ci comunichi via
+
+SSH dal telefonino, praticamente.
+
+Jaga Santagostino (53:45)
+Guarda, è la cosa che è po' stupida per dire. Sembra la roba più scomoda di tutte, però in realtà mi dà talmente tanto il tipo di informazione che mi interessa avere, vedere che file vengono aggiornati, cosa viene preso in considerazione, eccetera. E alla fine, per me è comodissimo. Mi sono comunque fatto tutte le interfacce UI più comode ad utilizzare da mobile, perché a me piace avere tante discussioni aperte in generale.
+
+quindi mi serviva un modo che era più comodo che aprire venti sessioni di T-Max sul telefono che diciamo non è esattamente ergonomico
+
+Brainrepo (54:29)
+anche perchè il control B
+
+non lo puoi fare facile
+
+Jaga Santagostino (54:33)
+Ma guarda, sto utilizzando
+
+su iOS questa applicazione chiamata Thermius? Da quel punto di vista, cazzo? Combinazioni, freccette, cosa che... C'è una UX veramente comoda che mi ha portato a usare tantissimo... Anche io mi sono detto, vado avanti finché non è scomodo. Allora, c'è andata così scomodo, ero lì sul divano, mi sono Vibe quadrato interamente tutta l'applicazione. Si, potete anche guardarla, perché girava tutto sul mio server.
+
+Brainrepo (54:39)
+⁓ si la conosco.
+
+Jaga Santagostino (55:03)
+Allora, certo, che sponi sulla tail net. Vado a vedere, cacchio, funziona bene.
+
+Brainrepo (55:09)
+e l'app di cloud
+
+code l'hai provata perché adesso cloud code ti permette di crasha come poche almeno come quella desktop
+
+Jaga Santagostino (55:13)
+Favomitara
+
+Ma non
+
+ti fa vedere le cose, ti richiede il login, veramente siamo in una situazione in cui è veramente così costo zero far partire una roba e pian piano che ti serve di cambiarla e metterci in mano, che non ha senso.
+
+Brainrepo (55:34)
+Io sai,
+
+prima hai detto che tu scrivi tanto, io invece sono completamente l'opposto. Io parlo tanto, io sono l'uno dei messaggi vocali e vuole sentire messaggi vocali. E devo dire che c'è ancora un gap tra cloud e chat GPT su questo topic, tanto che per esempio per il mio tool mi sono fatto un'interfaccia vocale che interroga opus, mouse, whisper e il
+
+il text to speech di OpenAI, scusa, perché riesco di più davvero a vomitare parole su parole quando racconto le cose via e mi viene più veloce oltre che il throughput è sicuramente più alto. Quello che ho però è un promptino che poi mi riorganizza le frasi e le strizza un po' perché tendiamo a essere molto prolissi quando parliamo.
+
+quindi ho bisogno che venga strizzata. L'unico problema è che adesso sto nel desktop sto usando come si chiama? Danazione! Whisperflow e quindi io parlo parlo parlo però sul telefonino ancora non c'è una UI utile per poter utilizzare quest'approccio o almeno decente per avere almeno domande e risposte.
+
+che
+
+Jaga Santagostino (57:02)
+Ma guarda,
+
+avevo preso la scuola principale.
+
+Brainrepo (57:06)
+No no vai vai.
+
+Jaga Santagostino (57:09)
+No, proprio di Whisper Flow. L'anno scorso un bundle di vari colori, tra cui c'era un anno di Whisper Flow che ho utilizzato pochissimo. E specialmente su mobile fab senza vomitare.
+
+Brainrepo (57:22)
+Non
+
+lo uso su mobile quindi no.
+
+Jaga Santagostino (57:24)
+infatti non funziona bene, spreciamente se spaglio certe parole c'è solo che cambia completamente la discussione eccetera
+
+Stranamente io mi sono sempre trovato molto male sia con CQBTS che con Claude Mobile, eccetera, a le discussioni vocali. L'unico con cui mi sono sempre trovato bene è per Flexity, che tutti mi sfrattano, prendono in giro, ma dal punto di vista proprio discussione vocale è l'unico che veramente mi sono trovato bene, mi sono sempre fatto delle...
+
+super passeggiate con discussioni veramente deep. Non lo so, proprio come risponde probabilmente che è più inclina a fare certi dipi di ricerca eccetera. Anche lì, anche lì, come dire, è lo stesso motivo per cui si preferisce codex o cloud code, per cui preferisci Go, Rust. È sempre una questione molto di pancia.
+
+Brainrepo (58:12)
+Perché?
+
+Jaga Santagostino (58:36)
+Pica una cosa pureamente tecnica.
+
+Brainrepo (58:40)
+Il mio problema di queste discussioni è che per esempio ho provato, diventa molto difficile di salva la nota nella mia knowledge base, ho salvato la discussione nella mia knowledge base, aggiornami il file, lo puoi fare con un cloud code in modo praticamente istantaneo, è semplicissimo però questo diventa... Io in macchina tendo a fare tante conversazioni con Claude o GPChat, GPT
+
+ma anche del tipo, l'ho detto qualche puntata fa, anche del tipo l'altro giorno stavo pensando a come organizzare i gommoni che ti sembra una cosa stupida, Ma tipo io ho 10 gommoni, uno da sette posti, uno da quattordici, ho x passeggeri, come li distribuisco per ottimizzare il riempimento? Io son partito, Ricordandomi gli esami all'università, Grady, ok, facciamolo con Grady.
+
+e ho detto ma esistono altri modi e l'ho finita a... questa cosa mi ha riapperto un cassetto della memoria della programmazione lineare e ho detto sì ma dimmi di più perché mi ricordo di averlo studiato ma un po' alla cazzo di cane no? quando ero all'università e sono quelle conversazioni che secondo me sono molto fighe no? che poi dici ok buttalo in un cassettino perché tanto mi servirà questa cosa
+
+e deve ritornare. Invece per quanto riguarda il brainstorming, ne parlavi prima, io faccio dei brainstorming allucinanti con Bmed, ecco il modulo del brainstorming di Bmed, infatti la tentazione è quella di tirare via Bmed da un bellissimo archivio di tecniche di brainstorming
+
+e di estrarre quel csv da dentro b-med, metterlo da qualche parte dentro cloud code e dire ok quando sto ragionando su qualcosa tu prendi da queste tecniche perché cioè alla fine cloud ha bisogno solo di un trigger che gli attivi gli sblochi con la parte del modello no?
+
+Jaga Santagostino (1:00:47)
+sono pronte
+
+skill che fanno partire cose
+
+Brainrepo (1:00:53)
+Sì, più che altro se tu guardi il CSV gli triggera e gli dà informazioni ad alto livello di tecniche di brainstorming. Poi il modello già di per sé le conosce perché vuole che non si sia scrappato 50 libri sul topic, no? Quindi si attivano parti del modello per cui quell'interazione di...
+
+e quella gente tipo React, Che tu gli dai una cosa e poi ti risponde, con un magari ti fa un'altra domanda e tu gli dai un'altra cosa, diventa diventa veramente figo e soprattutto stai utilizzando delle tecniche che sbloccano dei percorsi fuori di test, io ci ho fatto un PRD che mi ha aiutato a collegare, la cosa figa è che i collegamenti li facevo io e poi lui apriva scenari e in quegli scenari
+
+tutti i butti, quindi sei completamente in the loop nel ragionamento, però è come parlare con quella persona che magari non conosce l'argomento ma riesce a fare dei collegamenti della madonna e quindi tu sviluppi con quell'amico che non sa niente del tuo dominio però ti tira fuori delle robe di altri domini che ci stanno. E' bello no? E' questa cosa magari.
+
+Jaga Santagostino (1:02:08)
+ma è
+
+quello che dicevamo prima, la mancanza di UI e quindi di rigidità del sistema, di come fai le cose, ti permette di cambiare completamente la direzione a costo zero e poi per me è una delle cose più divertenti e interessanti di questi strumenti. Perché io stesso cambio, cambio
+
+Cdimonaco (1:02:35)
+Sto stupendo.
+
+Jaga Santagostino (1:02:38)
+come le stagioni, cambio come voglio comunicare, cosa mi interessa, quanto fondo voglio andare sulle Ciao!
+
+Brainrepo (1:02:46)
+Intanto sei unito anche
+
+a Carmine, ciao Carmine!
+
+Cdimonaco (1:02:48)
+Ciao,
+
+scusate per il ritardo, come diceva il mio ex capo, io non faccio gli straordinari, sono straordinario, sono stato anche questa sera, scusate.
+
+Jaga Santagostino (1:03:06)
+a livello di brainstorming è cosa a caso? Sto vedendo il condizionatore, ma è vero che mi ha ricordato uno delle prime deep dive AI che fatto proprio all'inizio in cui ero lì e dico, vorrei capire come funziona la pompa di calore. Sono finito a farmi tre ore di
+
+termodinamica, cose che non sapevo neanche che potevano interessarmi.
+
+Brainrepo (1:03:42)
+altra domanda, altra domanda, in realtà l'abbiamo già visto con internet no? la facilità con cui si repriscono le informazioni spesso porta a non sviluppare un'esperienza attorno a quelle informazioni e quindi a perdere le informazioni questa è una cosa che insomma è disaputa
+
+pensi che la facilità di avere informazioni attraverso questo tipo di interfacce possa avere un effetto anche sul modo in cui noi trattiamo quell'informazione?
+
+Jaga Santagostino (1:04:20)
+Ti direi sì ma non in modo diverso da come è stato fino adesso. Cioè, è come dire, se tu ti sei sempre fidato di cliccare i primi due link su Google, farti stare bene quello che ti diceva, non ti cambia niente. Se ti sei sempre fatto problemi di andare a vedere perché viene suggerito quello.
+
+o altri tipi di domande che poi... stanno un po' al mio modo di default di operare.
+
+trovare cose che mi portano a fare altre domande, che mi portano a andare a cercare altre cose eccetera. Quindi lo vedo come un problema non problema. Una cosa che mi... senza entrare nel complottismo delle robe, una roba che invece mi spaventa è che diventa tutto privato, quel punto di vista. Quindi ogni suggerimento, ogni idea, ogni cosa...
+
+non è più pubblica oggettiva quindi senso che poi hai tante altre persone che fanno challenge di qualcosa è molto più facile in una discussione
+
+creare i bias, spingerti da una parte all'altra. Io sono sicuro che se...
+
+Se avessi accesso a una nota tua potrei farti pronto injection a farti lavaggio il cervello praticamente.
+
+Brainrepo (1:06:04)
+Sono sono sono d'accordo con te. Tra l'altro mi hai fatto proprio in questo momento riflettere su una cosa no che spesso non lo so magari sto per dire una stronzata correggetemi se percepite che stava per dire una stronzata ma spesso nel mondo di internet come lo conoscevamo il consumare le informazioni specie nel web 2.0 adesso dico una cosa da boomerissimo nel web 2.0
+
+era consumare l'informazione ma anche generare l'informazione no? il mio terrore più grande è che arriveremo a consumare l'informazione senza generare un'informazione da parte dell'uomo perché per ora questi modelli consumano informazioni, ti danno informazioni ma tutta l'interazione rimane in quella sandbox che muore quando tu killi il contesto no?
+
+o almeno così dovrebbe poi io non ci credo ma non voglio essere quello con il cappello di stagnole
+
+Jaga Santagostino (1:07:10)
+Allora, qua si entra in una roba che a me spaventa tanto è che...
+
+Chi ha comunque un tipo di sano scetticismo di certe cose...
+
+ha sempre avuto si va a rivedere le fonti eccetera ovviamente adesso lo facciamo molto meno di due anni fa cioè due anni fa non potevi fare un discorso senza dire hallucination tipo nella prima frase adesso tra il fatto che molti vi faccia fare ricerca real time per mille motivi per come sono venuti i modelli è una cosa che non si ne parla neanche più è proprio un'eccezione
+
+fatto che si parla di allucinazione eccetera. Però noi parliamo dall'alto del nostro Opus 4.6, la persona... cioè se io scendo per strada incrocio 20 persone
+
+10 di queste poi in mente se gli dico AI mi risponde a io. E gli altri usano tipo il piano di fri, di gemini che praticamente è l'equivalente di parlare con un bambino briaco e non se ne rendono conto di questa cosa. Poi potremmo anche parlare di... Mamma mia! Cioè ma ho fatto vari esperimenti su queste cose qua...
+
+Brainrepo (1:08:35)
+e lo trattano come braccolo.
+
+Jaga Santagostino (1:08:45)
+la qualità dell'informazione che tira fuori a vomitare. L'esperimento che fatto recentemente, mi serviva, sto facendo una roba legata alle patenti, E allora che noi mi sono ritrovati in mano una roba molto interessante, un data set estremamente oggettivo di domanda e risposta dei quiz delle patenti e del tutto il codice della strada. Allora, facciamo qualche esperimento con...
+
+Opus vs Sonnet vs IQ vs Minimax Chimi K2 ⁓ ma sai che i sistemi, ma anche un Sonnet col thinking disattivato, le canne a tutte. Ma la quantità di quiz e la patente, come le canne? E io penso, quel poveraccio del 18enne che è lì col Gemini Free che lo usa per imparare a fare le robe ed il...
+
+e con la confidenza più grande del mondo li spiega in modo sbagliato come funzionano le cose.
+
+Va beh, io penso le prossime elezioni americane vedremo delle robe veramente da tragi comiche proprio.
+
+Brainrepo (1:09:58)
+sperano un peggio de... No,
+
+ti faccio una domanda invece legata appunto...
+
+Jaga Santagostino (1:10:04)
+Tu pensi che le persone
+
+non andranno su Google? Bannamente, andare su Google a cercare ma chi devo votare? Perché figurati quanta gente non scrive questa cosa qui. La differenza di quello che puoi vedere tra una risposta di un risultato di ricerca su Google rispetto a una risposta
+
+di un LLM proprietario pazzesco. Di queste robe qua faremo case study per centinaia di anni.
+
+Brainrepo (1:10:39)
+Guarda io ti dico solo una cosa ho ancora dei contatti con spin doctors e uffici di comunicazione politici uno degli investimenti più grandi oggi dei politici è sulla AEO e sulla GEO quindi sulla answer engine optimization e sulla generative engine optimization perché proprio con l'approccio no di
+
+delle hai in stile oracolo si gioca si gioca tantissimo no? perché ti ti toglie quel filtro e soprattutto rischia di rimuovere completamente il pensiero critico perché ti dà una risposta secca e l'argomenta profondamente tale per cui tu sei convinto quindi secondo me si giocherà si giocherà una battaglia e io so già che in Italia c'è
+
+qualcuno che ci sta lavorando.
+
+Jaga Santagostino (1:11:39)
+se
+
+sappiamo come sapere argomentare qualcosa poi veramente per pulare chiunque con la giusta con la giusta nonchalance per raccontare qualunque cosa e quando penso...
+
+Cdimonaco (1:11:52)
+Ma secondo loro è questa roba?
+
+Brainrepo (1:11:57)
+Scusa, Carmi,
+
+Jaga Santagostino (1:11:58)
+Bye bye!
+
+Cdimonaco (1:11:58)
+⁓
+
+scusa ragazzi forse no no in realtà nel senso non se ne avete già parlato io entro così a gamba gamba gamba tesa secondo me questa cosa come si sposa sugli annunci che metteranno proprio su chat gpt a gratis io mi immagino questa questa cosa elevata all'ennesima potenza quando io ho la possibilità di pagare per far uscire qualche cosa quando si cerca qualcosa cioè se già pensiamo alla quantità di
+
+disinformazione e manipolazione sulla pubblicità diciamo tradizionale ma anche sui social cioè immaginatevi come fa una persona media a distinguere che la risposta che dato chat gpt non è una pubblicità sponsorizzata cioè lì siamo proprio nel nel cioè io mi sono immaginato quando ho detto questa cosa mi sono immaginato lo diciamo
+
+l'utente medio italiano che chiedeva a chat GPT Free non so che votare al referendum a marzo e usciva la pubblicità sponsorizzata di Fratelli d'Italia del Partito Demoravosi e lui in base a cosa cliccava diceva una cosa diversa. Nel senso questa roba mi pare veramente distopica a bestia.
+
+non so, tre
+
+Jaga Santagostino (1:13:28)
+in realtà l'abbiamo vissuta fino ad adesso, la quantità di discussioni che poteste fare con un sacco di persone alla fine ne viene fare un... ma come mai la pensi così? a bo l'ho visto su facebook, è lì cosa devi fare, quindi penso che sia solo un'evoluzione di quella cosa lì per cui c'è poco da fare
+
+Cdimonaco (1:13:42)
+⁓ sì, sì, sì,
+
+S-S-Seguendo
+
+Jaga Santagostino (1:13:56)
+C'è tutta una
+
+Cdimonaco (1:13:56)
+me o...?
+
+Jaga Santagostino (1:13:57)
+parte del mondo che si emmanua al corritmo.
+
+Cdimonaco (1:13:59)
+Secondo me una grande evoluzione sta nel copy, senso, se vuoi fare una sponsorizzata ora oppure diciamo ora no, facciamo così, tre anni fa volevi fare una sponsorizzata di un certo tipo, un discorso di un certo tipo, avevi bisogno di persone che scrivesero il copy giusto, accattivante, furbiante, invece ora è
+
+mentre ti genero cose, ti genera anche il copy per quella sponsorizzata, quindi magari il copy che si adatta anche al tenore della discussione, con il contesto di ciò che avete già discusso, con questa roba non voglio fare quella con il cappello in testa, però farò quello con il cappello in testa, cioè è una roba di una distopia in
+
+incredibile, il fatto che io possa parlare dei macro della mia dieta, però magari due giorni fa ti ho detto che non mi piacciono i broccoli e mi esce questa pubblicità che guarda caso dice che invece di mangiarti broccoli fatti a mangiare, non so, le patate, cioè nel senso il fatto che possa essere così personalizzata è quello che in assomma fa la differenza, no?
+
+Ci siamo scandalizzati per Cambridge Analytica, il profiling delle...
+
+Jaga Santagostino (1:15:33)
+che mi fa
+
+ridere sentire sto nome perché è una roba che doveva cambiare il mondo.
+
+Cdimonaco (1:15:41)
+il rimosso tipo... così però
+
+se ci pensi con quella roba tipo Dio il profiling delle persone in un certo modo questa cosa è ancora più intima perché io conosco persone che in una sola chat di chat GPT fanno tutto discutono dal mal di testa alla scheda per la palestra al fatto che si sono litigati col proprio fidanzato quindi
+
+nel senso hai un contesto molto più intimo e molto più vicino anche nel nel tempo che veramente ti può aiutare nel proporre qualche qualcosa che vada veramente sul target insomma quindi non so questa cosa qui mi fa un po paura perché effettivamente credo che l'utente medio non abbia proprio la capacità di poter di poter discernere insomma questo roba qua scusa stai sto facendo questo rant
+
+Jaga Santagostino (1:16:37)
+Io sono
+
+abbastanza convinto che in un modo o nell'altro finiremo in una roba tipo Fallout post-apocalittica e poi avremo il rinascimento nuovo in altro modo. Non so se lo vivremo noi o i nostri figli, non so se mio figlio farà l'elettricista o il cacciatore di androidi, boh vedremo.
+
+C'è un discorso infinito in questa roba. Tornando un pochino a voi, cambierò un attimo discorso, però legandoci sempre a queste modelli, cose eccetera. veramente per chi è tanto nel mondo AI etc. sembra che questa è la normalità veramente per tutti. Ma io la vedo solo anche nel tech. Cioè io che faccio anche formazione su questa cosa qui.
+
+Cdimonaco (1:17:09)
+No,
+
+Jaga Santagostino (1:17:35)
+quindi andare a parlare con persone che al loro lavoro, utilizzare strumenti eccetera, trova una quantità di persone che sono totalmente senza nessun tipo di esperienza a questo punto di vista poi c'è anche un sacco di persone che hanno un sacco di opinioni e senza esperienza e quello è la wombo combo delle problematiche
+
+Brainrepo (1:17:59)
+il male.
+
+Jaga Santagostino (1:18:04)
+fa schifo, cosa hai provato? Ho usato Gemini Free Flash 2.1 per un quarto d'ora e non ho fatto il refactoring di tutte quante le cose. Però vabbè, mi sento che non ce l'ho anche più voglia di fare quel tv di discussione con certi tipi di persone. penso che la... io arrivavo da un periodo in cui me lo...
+
+Brainrepo (1:18:24)
+⁓ sì.
+
+Sono d'accordo con te.
+
+Cdimonaco (1:18:32)
+...
+
+Jaga Santagostino (1:18:33)
+Mi stavo veramente riannoiando dalla tecnologia, ogni tanto mi richiedevo... Io ho ancora voglia di stare in solo settore, ogni tanto mi chiedevo, mi metto a fare altro, mollo tutto. A me mi era acceso veramente una carica, una voglia, una curiosità, sono troppo divertito di tutte le possibilità delle cose che si può fare.
+
+Brainrepo (1:18:57)
+ti faccio una domanda modelli locali o modelli
+
+delete il popupamento,
+
+Jaga Santagostino (1:19:08)
+frontier cloud.
+
+Allora, modelli locali non prendiamoci in giro, se non spendi 60k hai il bambino stupido con cui discuti. Non ci siamo.
+
+Cdimonaco (1:19:25)
+e
+
+hai anticipato la mia domanda, realtà, quello che ve lo dico. Ma perché questa cosa? Perché io vengo da hipoprima quello che stavo facendo prima, Sì, ad esempio questa cosa mi ha fatto riflettere su quanto, insomma, cosa che sai, poi ogni volta che esce una feature nuova nel mondo tech, c'è sempre la grande azienda che te la vuole far passare come, diciamo,
+
+come la democratizzazione di qualche cosa, hai i leai locali sul tuo telefono, hai i leai locali sul tuo computer ed effettivamente non è così, nel senso io sono riuscito ad usare un mcp che sto scrivendo, l'ho provato questa sera per la prima volta con un mod
+
+locale con mcp host con hollam etc etc e prima di ricevere il computer di lavoro nuovo m4 max 548 g gg di ram etc etc non avrei mai voluto farlo le performance sono abbastanza paragonabili utilizzato g
+
+GPT OSS mi pare da 20 miliardi di parametri non mi ricordo però nel senso per fare questa cosa c'è un investimento di più di 3000 euro che fortunatamente non ho fatto io ma che probabilmente tra otto nove mesi non basterà nemmeno più cioè nel senso ciò che mi dà veramente fastidio e che stiamo facendo abbiamo fatto passare questa cosa come
+
+l'ennesima democratizzazione della tecnologia, quando poi non è così. E comunque io sono una persona che ha molto hardware. Prima sul mio M3 Pro, che quello che io utilizzavo prima, questa cosa non la potevo fare. Ho dovuto attendere un investimento di altre migliaia di euro per poter fare qualche cosa che con 17...
+
+e ho fatto anche prima. Cioè secondo voi a futuro questa cosa magari su modelli più piccoli, cioè nessuno di voi facciamo una domanda. Avete il Mac o avete l'iPhone? Avete mai usato Apple Intelligence?
+
+Bye!
+
+Jaga Santagostino (1:22:06)
+No,
+
+perché non anche attiva in America e in Europa. Io uso modelli locali, ma per cose che sono estremamente circoscritte, quindi modelli per fare tagging, per analgi di testo, fare roba di questo tipo. c'è tipo un, ma pure un GPT USS 120 Billion, ma proprio non lo tocco neanche con un bastone per lavorare, perché...
+
+cioè proprio lo considero completamente inutile e non è proprio... chi continua a dire ⁓ ma guarda che...
+
+non so, minimax in locale funziona come opus, intanto rido perché non è così e poi ti risponde con 10 token al secondo se ti va bene e comunque deve avere tipo 2 max studio da 512 gb di ram in cluster, cioè bellissimo, bellissimo pensare che sia così, sicuramente cambierà ma cambierà in un modo totalmente
+
+legato a coperte tecnologiche, se domani mattina si scopra che lo stesso roba che adesso si fa per calcolare tensori eccetera si fa, non lo so, a testa in giù e funziona sulla cpu uguale veloce o
+
+che bello c'è quanto un computer gratis per tutti o succederanno questi avanzamenti tecnologici ma così come fa ridere pensare adesso che quando giocavo a Diablo pagavo un euro anzi mille lire all'ora per giocare online e adesso ho 4000 milioni di giga infiniti di bandwidth
+
+Brainrepo (1:24:08)
+lo so
+
+Però secondo me c'è una sommatura che dobbiamo considerare, specie quando facciamo così tipo quella di cui abbiamo parlato prima, di offloadare parte del nostro processo cognitivo, sant'iddio, adesso paghiamo 70 euro al mese e abbiamo Oppo Super Ninja che è più intelligente probabilmente del nostro vicino di casa, anzi sicuro, e anche di noi.
+
+Però stiamo afflodando qualcosa tipo carico, nostro capacità cognitiva a un tool che non possediamo e che non controlliamo. Ecco questa è la cosa che più mi spaventa veramente nel senso che finché molti mi fanno l'esempio no, dei libri o della scrittura, dell'evoluzione della nascita della scrittura. Sì, ma la scrittura tu la controlli, la possiedi, ok?
+
+la capacità di scrittura la possiedi questa cosa è in outsourcing questo è pensiero in outsourcing ed è spaventoso pensare che domani mattina i prezzi visto che oggi abbiamo la percezione che stiamo utilizzando qualcosa sotto costo che questo è chiaro che siamo sotto costo perché gli investimenti sono altissimi siamo in piena bolla quindi quello che oggi è 70 dollari o
+
+Jaga Santagostino (1:25:29)
+valida.
+
+Brainrepo (1:25:37)
+100 100 dollari domani sarà anche potenzialmente 300 ok
+
+sarà potenzialmente 300 però il ragionamento è cosa poi sarà quando questi prezzi saliranno? come poi gestiremo questo offload di carico cognitivo?
+
+Jaga Santagostino (1:26:05)
+Non può succedere, io penso che non può succedere.
+
+Cdimonaco (1:26:19)
+ma non può succedere perché se no te non alzano i prezzi o non può succedere perché non può succedere? Nel senso io oggi dicevo...
+
+Jaga Santagostino (1:26:28)
+Ci sono
+
+troppi soldi in mezzo, nel momento in cui succede una roba del genere è un'esplosione talmente evidente di una bolla che non può succedere.
+
+Brainrepo (1:26:41)
+Non pensi che gli investitori vorranno rientrare nell'investimento prima o poi.
+
+Jaga Santagostino (1:26:41)
+casca tutto
+
+ma possiamo dirlo di qualunque wave tecnologica di qualunque tipo. Anche lì sono dei giochi strani. Probabilmente l'Oggi ha fatto più soldi in chi produce RAM di chi è investito in startup AI. La gente che si occupa di quelle robe lì, che è smart veramente.
+
+Brainrepo (1:27:14)
+Mannaggia loro mille euro di cos...
+
+Jaga Santagostino (1:27:20)
+probabilmente si è fatto quei giri lì, probabilmente chi si è fatto...
+
+Brainrepo (1:27:24)
+⁓ ci sono anche sfumature geopolitiche.
+
+Jaga Santagostino (1:27:29)
+Sicuramente, anche lì tra le altre parte di utilizzare l'intelligenza artificiale per questioni belliche eccetera, cose infinite che...
+
+Brainrepo (1:27:39)
+No no ma,
+
+non parlo di guerra e di cose di questo tipo, ma anche solo di... io sono uno stato, io centralizzo quello flood cognitivo di persone di altri stati, A qualunque livello sociale. Cioè, è un impatto allucinante.
+
+E onestamente detto tra di noi io non so se domani potrei tornare in un mondo senza AI o potrei vivere in un mondo senza AI perché in così poco tempo sono talmente tanto addicted
+
+Jaga Santagostino (1:28:17)
+Dipende a far cosa.
+
+Io scherzo sempre con un amico e dico se se devo usare opus, scusa se devo usare IQ per lavorare vado a lavorare in miniera.
+
+Cdimonaco (1:28:33)
+è vero questa cosa io dicevo oggi a Mauro su Telegram ho paura di diventare stupido cioè perché poi è quella cosa io mi rendo conto che se domani non esiste più copalot non esiste più codex non esiste più clod diciamo per come li uso io probabilmente mi cambia ma non tantissimo però mi rendo conto che ci sono molte cose che
+
+in questi mesi ho dato per scontato e ho delegato che dovrei necessariamente recuperare, per il semplice fatto che non avendo le fatti, dalla rigoletta, di prima mano non le ho, insomma da ricordare come se l'avessi fatta io. E questo è effettivamente un problema. Cioè, io è per questo motivo che prendo gli appunti a mano.
+
+prendere appunti a mano sul taccuino è una delle poche cose che mi sono rimaste analogiche perché sono sicuro che mi entrano in testa sono sicuro che li ho scritti poi le riporto digitalmente sì è un lavoro inutile ma lo faccio semplicemente per poterle cercare però ad esempio prendere note ad un meeting ad un incontro è una di quelle cose che faccio ancora a mano cioè io mi impongo di fare delle cose quanto più diciamo analogiche possibile proprio per non entrare diciamo in questa
+
+in questa cosa qui. Poi nel senso se tu mi dici domani non ti funziona più il tuo server Joplin sai che fa quella lambda su AWS? No, perché ce l'ho scritto solo là, perché ce l'ho fatto scrivere eccetera eccetera. nel senso secondo me bisogna anche fare un gioco di non creare troppa dipendenza da questo tipo di strumi,
+
+trumenti. Io cerco di non farlo fuori dalla vita lavorativa. Nel senso, come ti posso dire? Io non mi sono mai fatto la pianificazione di un viaggio con chat GPT tipo. Ho sempre avuto quella cosa, io ho le lolly planet fisiche. Nel senso, fuori dal contesto lavorativo cerco di essere nemmeno dipendente di vedere possibile. Poi, adesso da me per questa cosa,
+
+chiamato l'uddista qualche settimana fa però nel senso probabilmente è vero però non c'è cerco di non esserne dipendente almeno al di fuori del contesto lavorativo credo poi mi rendo conto che sto diventando c'era una pagina facebook ora faccio una piccola direzione
+
+Jaga Santagostino (1:31:13)
+mhm
+
+Cdimonaco (1:31:22)
+che si chiamava le ricerche di mio nonno, non so se lo avete... era ricordate? Che tipo era questa pagina Facebook in cui c'era questo fittizio nonno, fittizio vero, non l'ho mai capito, il cui nipote gli aveva detto che il box dello stato di Facebook era Google. E quindi c'erano questi post tipo...
+
+prezzo pere monte cateniterme ok nel senso le persone giù che rispondono nei nei commenti ecco io io credo che stiamo arrivando verso quella cosa lì cioè nel nel senso conosco molte persone ma faccio anche io spesso che non va più su google non va più su motori io ho ciò per per per per plexi lo sto utilizzando sempre meno
+
+Se sto lavorando il computer aperto, probabilmente lo chiedo a NLM. Ed è un altro problema. Alla fine, insomma, è quella cosa di ciò che a me fa paura e che stiamo centralizzando tutto in un unico strumento. Nel senso, come...
+
+Brainrepo (1:32:27)
+Il mio ultimo prompt era come si stirano le camicie infatti.
+
+Cdimonaco (1:32:44)
+WeChat in Cina però più più. Nel senso io faccio tutto con questo strumento qui. Invio il messaggio, cerco su internet, compro, viaggio. Non saprei, a me questa cosa mi inquieta abbastanza.
+
+Jaga Santagostino (1:33:09)
+Non lo so, devo dire che non mi tocca tantissimo, perché c'è quella sensazione di smettere di pensare, smettere di ragionare eccetera, non l'avevo per niente, anzi, perché io utilizzo tanto questi strumenti come amplificatore per il ragionamento che faccio, per farmi challenge, per capire e andare più a fondo delle cose, quindi in realtà da quel punto di vista non ne vedo un problema.
+
+Anche la parte della centralizzazione, ad oggi, sì, questa roba qui da una parte spaventosa perché tutta una quantità di dati, informazioni che da tutto, dalle mail, chat, le robe private eccetera che... sono 30 anni che cercano in ogni modo di avere queste informazioni, ma siamo lì... Cloud Cowork! Ma vai a succhiarmi tutte quante robe sul desktop con la scusa che me le metti in ordine alfabetico!
+
+Brainrepo (1:33:58)
+rendile
+
+Jaga Santagostino (1:34:07)
+E io, non lo so, però c'è anche da dire che io uso giornalmente provider diversi, anche tutte le mie informazioni sono scattered, tra tanti provider e cose. Poi anche lì non prendiamoci in giro di far finta che Meta non si vada a leggere tutte le conversazioni di WhatsApp da quando esiste WhatsApp per fare la stessa cosa.
+
+ci piacerebbe... lo sappiamo che i backup non erano in cripto e delle mille casse cose... c'è poco che non plattirlo a cosa fare lì anzi, figurati sarebbero folli a non farlo probabilmente
+
+Brainrepo (1:34:53)
+Stavo guardando l'orologio siamo tipo a un'ora e trentotto. Mamma mia come vuole il tempo quando ci si diverte diceva il vecchio saggio. Ti faccio una domanda velocissima abbiamo parlato di produttività abbiamo parlato di AI in tutti i giorni ma a livello lavorativo quindi per quanto riguarda la programmazione come usi l'AI e che modelli usi secondo quali processi
+
+Jaga Santagostino (1:35:21)
+diciamo che c'è stato un grandissimo cambiamento verso novembre dicembre d'anno scorso in cui nella mia quotidianità era un
+
+utilizzare sonnet, in quel periodo usavo tantissimo sonnet e andare di refolto su quello diciamo che fa ridere vedere il il mio chart di cursor di utilizzo del tab che proprio nei mesi proprio praticamente passava da 10.000 tab completion a quasi zero che ha salato molto molto di più a agent
+
+engineering praticamente, quindi fare Pair con agenti. Ovviamente scrivo molto meno codice ma quello alla fine è sempre stato un tipo di artefatto che non è importante. Cioè, scrivere fisicamente sulla tastiera o meno non è tanto diverso da faccio il driver e il navigator con un'altra persona mentre facciamo il programming. Quindi non l'ho mai visto veramente come una grande problematica.
+
+e... qui ne utilizzo avuto tantissimo Sonnet e andavo a bussare a Opus GPT 5.1 eccetera solamente quando non si riusciva a... c'era bisogno del Big Boss per far andare a risolvere i problemi è molto cambiato fino all'anno scorso in cui sono talmente migliorati i modelli per cui di default fado sempre di il modello più recente, più potente
+
+con il thinking proprio a cannone e mi rendo conto che tutto viene fatto in una frazione di quello che faccio col modello uChip le domande stesse che mi fa il modello per tirare fuori a me requisiti, proposte eccetera che poi mi aiutano a me
+
+la roba meglio alla fine della fiera finisce che anche spendi meno, spendi meno perché hai subito un risultato fatto meglio prima ma anche solo la bellezza che hai adesso di poter non spendere tre settimane per fare un esperimento una più assina roba faccio cinque esperimenti completamente paralleli con le implementazioni completamente diverse
+
+di cose poi vado a studiarmene a vedere cosa ha senso prendere da uno a due all'altro. Quindi diciamo che la praticità del ⁓ scrivo così faccio il plan uso quello quello è una roba che dipende tantissimo da quello che sto facendo. è molto difficile che ti dico guarda questo è mio workflow a bcd e che è quello che secondo il mio quotidiano.
+
+Se domande più dritte andiamo anche più nello specifico di quello.
+
+Io proprio vedo, mi rendo conto, che qualunque tipo di software engineering best practice o qualunque cosa che negli ultimi vent'anni è emersa per fare bon corice o per avere a che fare con altri esseri umani funziona benissimo quando lavori con dei modelli. proprio vedo continuamente questo ciclo di cose per cui
+
+se riesci a comunicar bene con un collega, riesci a fare un prompting di un certo tipo, riesci a tirare fuori domande di un certo tipo, se fai test, se hai una CI che funziona, sai tutte cose che sono sempre state, cose molto importanti, da live ingegneristico, che risolvevano certi tipi di problemi, quelli si riportano quasi tutti nell'utilizzo di questi strumenti.
+
+C'è anche bisogno di lasciarsi un po' andare su certe cose. Ho letto questa frase un po' di mesi fa che mi ha veramente colpito, perché è proprio vero, che qualunque tipo di utilizzo che stai facendo con Coding Agent, probabilmente sei almeno un livello d'astrazione sotto di quello che dovresti essere. E ogni volta che mi chiedo, sono sotto di quello che dovrei essere?
+
+Provo e generalmente i modelli sono avanzati e talmente tanto da permetterlo. In realtà mi ricordo come è stato strano la prima volta che Cloud Code riusciva a rispondere meglio di se stesso rispetto a quello che trovavo in documentazione. E quindi anche solo lo shift del mio default è vado io a cercarti esattamente quello che voglio che tu sappia per tirare fuori un'informazione perché magari c'è
+
+Ho tante informazioni, voglio che me ne tiri fuori un pezzo. Al... non si parla più di hallucination, ci sono un sacco di tool e strumenti che permettono di andare a extrapolare bene questo tipo di informazione. Vai, dammi, e piuttosto dammi tu la referenza a cui andare a fare la source a cui posso andare e poi awardare qualcosa. E mi sono accorto che anche il modo in cui tante persone utilizzano lm per coordinate fanno micromanagement.
+
+degli agenti. E' veramente dannoso secondo me, perché ti ritrovi esattamente i stessi problemi che hai a fare micromanagement di altri esseri umani.
+
+Brainrepo (1:41:14)
+Ti faccio una domanda proprio su questo, quanto grande solitamente definisce un task da dare ad un agente?
+
+Jaga Santagostino (1:41:25)
+a me piace
+
+dipende che tipo di task è nel senso che se è una roba che ha parte esplorativa o meno perché do una forte distinzione tra quello che può essere fatto in asincrono e in modo sincrono quindi è molto chiaro cosa c'è da fare è molto chiaro la boundary per cui valutiamo se sta roba qua è giusta o non giusta eccetera l'implementazione
+
+magari non ce ne frega neanche, Che lo fai roba in tre file, in due file, ecc. Basta che risolve il problema, il test è verde, vai con Dio, perché tanto magari lo posso rigenerare 60 volte, il risultato. Altre cose che sono più sincrone, a me piace andare molto esplorativo da quel punto di vista. Tipo odio fare, lavoro tre ore a fare il plan, io non lavoro così. Parto da proprio un prompt di tre righe.
+
+e dico fammi domande e diventa una grande discussione che va molto più a fondo della roba specifica che poi quello diventa un PRT magari.
+
+Brainrepo (1:42:43)
+Quindi poi lo salvi come fa
+
+il PRD modi
+
+Jaga Santagostino (1:42:47)
+praticamente sì, che da lì poi ritorna ad avere tutti quei problemi che abbiamo da sempre nei soft-engineerini, tipo ok come tagliamo l'elefante, quanto larghe facciamo le strisce verticali, anche lì ritorna tutto quello che è sensibilità di esperienza, eccetera però è anche una roba che mi piace molto di tutti stessi strumenti che sono super
+
+malleabili rispetto al tuo modo di lavorare. Ed è anche una cosa che mi fa strano quando vedo magari aziende che cercano di impostare tanto il workflow di questo tipo su team, singole persone eccetera, perché non lo vedo funzionale, lo vedo come l'enforcing di utilizzare tutti quanti lo stesso editor con lo stesso layout di tastiera e gli stessi plugin.
+
+Ad oggi lo vedo in aromai, è ancora estremamente personale l'utilizzo delle agenti, eccetera. Ma così come poi utilizzando tanto questi strumenti mi rendo conto di tutte delle cose che pensavo avessero senso, poi ho cambiato idea riguardo del tipo. Per un grande periodo ho pensato che il prompt e le discussioni erano un artefatto che aveva senso salvare assieme al codice. Adesso sono completamente...
+
+opposta a questa cosa perché non dovrebbe perché sono convinto che se diventa una cosa così ci si approccia in modo diverso il modello come li si parla, cosa si parla perché c'è quella sensazione di sto facendo una roba che viene registrata che che viene preso in considerazione da altri
+
+Brainrepo (1:44:19)
+C'è una foto che mi cambia l'idea.
+
+Jaga Santagostino (1:44:46)
+eccetera e quindi è quasi l'equivalente del
+
+mentre scrivo il codice tutto quello che penso lo scrivo in un commento. La quantità di cose che facciamo è solamente per rendersi conto ma no sai era meglio l'altro modo o esperimenti che facciamo per provare qualcosa. Prima di tutto abbiamo già un artefatto che è completamente oggettivo che è il codice.
+
+ci se ne frega il ragionamento che ha portato a quelli.
+
+Brainrepo (1:45:27)
+però quello
+
+che il codice nasconde è l'intento perché dice cosa e come ma non perché
+
+Jaga Santagostino (1:45:32)
+Ma quello è comunque un pro- no.
+
+è un problema di business da quel punto di vista. Cioè, per esempio, ci sono certe cose che ha totalmente senso da ritenere, per dire, ha senso che ti tieni una DR, assolutamente, ma aveva senso anche senza l'AI. Però, ha senso avere le trascrizioni di tutte quante le discussioni che hanno fatto le persone per arrivare a quella DR. Però in mente vuol dire che non l'è scritta bene.
+
+Brainrepo (1:46:07)
+si si
+
+Cdimonaco (1:46:09)
+Posso dire così giusto? Perché ABR e PRD sono le uniche cose che non dovrebbe scrivere AI. E' un fetmi taccio.
+
+Jaga Santagostino (1:46:19)
+Sono d'accordo che
+
+non dovrebbe scriverli in autonomia, il fatto che lo faccia in Spare Impactor
+
+Cdimonaco (1:46:26)
+Non, non dovrebbe scrivere in autonomia che rifinisce,
+
+sì sì, che rifinisce quello che penso e quello che scrivo, sì, ma secondo me è uno step creativo da una parte e diciamo anche ingegneristico dall'altra che deve essere profondamente umano. Io ho ricevuto PRD che tu li guardi e sai che le ha scritti i chat GPT e vorresti morire.
+
+Jaga Santagostino (1:46:48)
+assolutamente d'accordo
+
+Cdimonaco (1:46:56)
+Addicendo, nemmeno quella dignità, quell'amore di scriverlo tutti.
+
+Jaga Santagostino (1:46:58)
+Guarda, a senso...
+
+A senso si arrivano da persone non tecniche, perché su quelle è roba estremamente interessante il fatto che quando persone non tecniche utilizzano anche solo chassi bt per riuscire a tirare fuori dei requisiti tra virgolette sono costretti a farsi domande che normalmente finirebbero degli unknown unknown verso altre persone quindi quando quando mi arrivano robe di questo tipo tipo
+
+persone che proprio non sa niente delle cose tecnologiche che arriva con certe richieste magari tecnologiche, in realtà fa anche da... tartar di discussioni molto importanti, il tipo... perché è importante per te questa cosa? e velocizza, ho visto che velocizza quel tipo di discussione intendo tra tecnici, se ti fai generare PRD dal coso... sei stronto
+
+Cioè, diciamocelo, perché stai veramente...
+
+Ti stai veramente facendo del male da solo a te, tuoi colleghi, a chiunque ci deve mettere mano perché lì deve essere una delle cose più oggettive del mondo.
+
+a livello anche lì, a lunghissime discussioni sugli impatti tecnici di robe eccetera
+
+anche li tutti quanti sono a dire ⁓ diventeremo tutti project manager eccetera, poi non lo so non è che la vedo esattamente così sicuramente scriviamo meno codice a a questo oggettivo però non è diverso da quello che succede quando deleghi di scrivere codice a un collega o roba di questo tipo a punto di vista, cioè quando la esigenza di business è chiara eccetera così cioè se devo fare una review di un AI
+
+Cdimonaco (1:48:58)
+Scusi.
+
+Jaga Santagostino (1:49:00)
+o di un'altra persona in realtà non mi cambia proprio niente.
+
+Cdimonaco (1:49:04)
+secondo me scriviamo meno codice noi ma scriviamo più codice nel senso quando io mi trovo a dover fare un review di ciò che mi ha scritto nell'emme spesso con i cambiamenti che faccio fare scrivo molto più codice cioè secondo me in maniera assoluta ne scriviamo molto di più in maniera relativa meno perché in maniera relativa diciamo a noi ne scriviamo molto meno noi ma secondo me si scrive molto più codice nel senso molte
+
+più versioni della stessa cosa. Cioè, secondo me il codice rimane qualcosa di importante. senso, se io dovessi rispondere a quella domanda che ha fatto Mauro prima, qual è la dimensione della tasca che gli affida un agente, probabilmente in questo momento storico risponderei non più di quanto io posso capire.
+
+e posso revisionare, perché almeno io se se ne perde il controllo...
+
+Jaga Santagostino (1:49:58)
+Sì, ma è la stessa cosa che avreste detto cinque anni
+
+fa.
+
+e siamo a c'era un po' di lag, abbiamo fatto un overlap però sì, però è la stessa cosa che avresti detto 5 anni fa, 10 anni fa di una qualunque PR di un altro collega un lato molto positivo vedo che
+
+mi ritrovo molto di più a scrivere test e tooling rispetto a concentrarmi sull'implementazione stessa perché oggi oggettivamente l'implementazione è diventata super cheap il fatto che c'è il modulo diviso in 5 file, 10 file, come stai facendo dependence injection eccetera ci sono fatti le seghe per 40 anni su queste cose qui, sono fatte anch'io bellissimo ma
+
+Ad oggi se ho i test che passano e faccio completamente rigenerare un'implementazione diversa, perché? Perché se ho deciso di usare protobuf al posto di NPI REST e i test sono verdi. Sotto, per me può anche esserci tutte le variabili che si chiamano PIPO e CAIO. Perché non è più un livello di astrazione sul cui mi interessa avere controllo. Mi interessa sapere che quella roba li continua a funzionare. Come lo stavo facendo? Tooling, analisi statica.
+
+che però è esattamente quello che abbiamo fatto sempre per riuscire a mantenere e controllare la complessità soltanto che prima il costo di modifica, il costo di evoluzione delle cose che poi c'è la grandissima totalità delle pratiche che sono venute fuori nei software engineering proprio per riuscire a contenere quel tipo di complessità per fare in modo che all'inizio del progetto una roba ci metti uno
+
+dopo due anni non ci devi mettere 40 a fare la stessa cosa.
+
+Brainrepo (1:51:59)
+Sì, sì.
+
+No, sai una cosa che sto vivendo adesso? Io sono uno che almeno quando lavora sui suoi project itera tantissimo, fa pivoting ogni quarto d'ora, perché fa un pezzo del software, poi lo prova e dice ma cacchio, questo avrei potuto farlo diverso, questo avrei potuto cambiarlo, quindi sono la massima espressione dell'iterazione. E lei hai questa cosa che dà una mano?
+
+tantissimo perché la velocità ti permette davvero di iterare cosa che prima non potevi fare perché sarebbe stato troppo costoso in termini di tempo ed ecco perché per esempio i miei set project non raramente hanno visto la luce il problema è che quando tu utilizzi un approccio tddi di quel tipo devi sapere come misurare i test adesso se tu hai una suite di test end to end
+
+Jaga Santagostino (1:52:39)
+mhmhmhmhm
+
+Brainrepo (1:53:01)
+ancora ancora ti salvi, nel senso che hai quei 20 test playwright, 50 test playwright che prendi girano verificano che tutto sia a posto e va bene ma quando tu ci inizi ad aggiungere unit test test di integrazione, tu test robe anche se iteri veloce
+
+rischi di perdere meno presa sui test perché il codice che tu stai andando a riscrivere talmente tanto e test son talmente tanti che quel controllo sui test almeno questa è la mia esperienza no? Lo perdi e per cui dici ok ma non ho più quella quella confidenza di dire tutti i layers sotto stanno si stanno comportando correttamente per cui
+
+leggo il codice con un pelino meno di attenzione perché mi interessa meno l'artefatto di codice e più il behavior no? e questa è un'esperienza che sto vivendo adesso tanto che sono arrivato a un certo punto che i test unitari e in integrazione erano un problema a questo tipo di interazione ho ottenuto 30 test playwright 50 test playwright
+
+e poi li svilupperò una volta che ho finito il processo di interazione e ho raggiunto il livello MVP. Capisci che perdere questi test, poi questi test che cambiano troppo rapidamente, ti fanno perdere quella confidenza e onestamente non ho trovato una soluzione a questo.
+
+Jaga Santagostino (1:54:37)
+Beh diciamo che ovviamente
+
+Cdimonaco (1:54:37)
+Nel stesso test sono una delle poche
+
+cose che forse scrivono.
+
+Jaga Santagostino (1:54:46)
+ma a maggior ragione i test end to end e i test di interfacce pubbliche alla fine sono quelli dove la ciccia c'è veramente ma se ci pensiamo anche al... cioè gli unit test e i grand pattern integration test per cui finivano comunque a moccare all'universo il valore di quella roba lì non è mai stato e così non si spacca produzione ma mentre ci sto lavorando
+
+non continuo a lavorare su una roba che è rotta, che non mi ci sto accorgendo e su sta roba qua i modelli fanno paura. L'Unitest adesso almeno non mi dà vero sicurezza il fatto che quella roba lì funzioni in produzione ma non penso neanche che sia al suo utilizzo. Cosa lì è una roba che ad oggi lo Unitest è talmente semplice da girare e funzionare che è la stregua di un linter un pochino più
+
+o chi non più è voluto. Serve veramente solo per dare feedback e velocemente al modello da quel punto di vista. fatto che se la cante, se la suona, amen. Che tanto se c'ho mille o uni test verdi e non c'ho test end to end, comunque con la roba Liyo non la considero una roba testata. Perché a livello di business non lo è. Quanta applicazione hai visto che hanno il widget
+
+di U-Band sopra il pulsante compra e la gente non può comprare, però c'è tutto quanto verde.
+
+Brainrepo (1:56:17)
+Sì, ho il pulsante hidden che però era chiamato con il test ID e quindi lo vedeva, sì sì.
+
+Cdimonaco (1:56:26)
+mi faccio io una considerazione qualche anno fa dicevo che il lavoro di merda quello che fa le spec gherkin per cucumber 2026 le faccio io e non fa il markdown cioè nel senso come cambia il mondo? nel senso prima io dicevo
+
+ammazza no questo guarda questo ne scrive in linguaggio dove test che coglione invece probabilmente il mio produttore dell'epoca aveva visto giusto siamo tornati a scrivere le spec di cucumber in file in file markdown non lo so questa mi è pure in mente questa cosa oggi perché
+
+Brainrepo (1:57:16)
+Sei caustico
+
+Jaga Santagostino (1:57:17)
+ma diciamo
+
+Brainrepo (1:57:18)
+oggi, ⁓
+
+Jaga Santagostino (1:57:21)
+che noi nerd abbiamo avuto la grandissima fortuna che per gli ultimi decenni la nostra professione è stata abbastanza esoterica da permetterci di essere ben pagati, riconosciuti in pochi o quello che vuoi con molta richiesta ed è effettivamente un parco giochi per
+
+merda questa professione ok però il valore stesso cioè il valore intrinseco del codice è sempre stato poco
+
+se non è applicato a una roba che serve per fare soldi in qualche modo. poi tutto quello ovviamente, roba fatta bene, eccetera, evolve, mantenibile, si può mettere mano, eccetera. quello alla fine della fiera è sempre una questione di si fa sta roba qui perché si possa continuare ad andare avanti a generare valore, produrre valore.
+
+Adesso mi vengono da ridere dicendo ma se potessimo dire magicamente che la roba funziona senza il codice potesse funzionare quasi stiamo andando lì, fa ridere.
+
+Però è così, ci piace pensare che il codice sia più importante di quello che è, perché ci identifichiamo con la qualità dell'output di questa roba qui, però valore non mai stato lì.
+
+Lo è solo in modo indiretto perché altrimenti c'è la quantità di aziende che hanno dei merdoni fotonici e pure cagano billions, non so se ne sono quant'ovagano, e di aziende che avevano le codebase più fighe del mondo che sono andati a gamballare e non riuscivano a fare una vendita, ma ce ne sono tretti anni.
+
+Brainrepo (1:59:30)
+Sì, Cambiamo per un attimo, perché ho visto l'orologio sono terrorizzato, cambiamo per un attimo argomento al volo e ti chiedo open clue.
+
+Jaga Santagostino (1:59:46)
+Allora io ho iniziato a smettarci all'inizio quando si chiamava Claudist. Prima che diventava Claudist, aveva fatto 4-5 cambi all'inizio. Anzi, ancora prima, quando era Huawei Gateway, perché all'inizio era proprio un gateway per Whatsapp, fatto da 6pite. Allora, l'ho seguito fin da subito, non mi è mai piaciuto.
+
+perché veramente grosso fa troppe cose bloated però è un progetto estremamente interessante per quello che ha sbloccato, almeno ha sbloccato ha fatto vedere da quelli persone quanto molto più
+
+potenti la gente sono in generale perché ha proprio fatto vedere guarda se se
+
+Dà gli accesso a cose e vengono fuori cose interessanti. Poi da lì ovviamente nasce un progetto personale che per mille motivi è diventato super famoso per finire sui giornali italiani. Quindi tutte le robe legate alla sicurezza, io penso che sono delle minchiate tutte quelle robe lì. Cioè, se non sai cosa stai facendo non devi toccare niente di quello che non sai che stai facendo.
+
+ma è vero questo come è vero qualunque altra in qualunque altro tipo di settore, eccetera.
+
+È un discorso molto ampio, qualche domanda più in particolare? Io sono finito per farmi una versione custom piuttosto che usarla.
+
+Brainrepo (2:01:38)
+No, volevo solo s...
+
+Sì e pensavo di fare esattamente la stessa cosa quindi... ...sfondi una porta aperta. No, in realtà non avevo una domanda specifica, mi interessava più testare l'umore e il feeling, Perché se ne parlato anche fin troppo fondamentalmente di Open Clue e volevo capire se secondo te era più una questione di hype edicoso o...
+
+o aveva davvero rivoluzionato qualcosa e in realtà me l'hai appena detto che secondo te il vero potere che ha creato quel ponte ha fatto capire alla gente che si potevano fare delle cose oltre che a domanda e risposta
+
+Jaga Santagostino (2:02:28)
+sì, banalmente... secondo me ha fatto rendere conto a un sacco di persone quanto è facile fare automazione o comunque tool personali senza neanche aprire un editor la quantità di cose che veramente nel momento in cui la gente ha accesso a bash e
+
+a un'altra distanza di cloud code o di codex può cagar fuori qualunque cosa ma veramente robe che funzionano, cioè si insegna anche a entrare nelle robe di open cloud, io mi ricordo l'anno scorso ad agosto ero a e stavo facendo sta mostra
+
+era la guida audio che era terrificante, cioè proprio inascoltabile. Allora, in che ho tirato fuori i replit praticamente mentre Alessandra era in bagno mi sono vipecodato una roba che leggeva...
+
+dalla brochure della mostra mi ha fatto una roba... veramente nel tempo in cui ero in bagno mi sono fatto una roba che mi sono fatto tutta la mostra con una roba come volevo che mi spiegava io e che andava in più profondità di roba che interessava a me e schippava roba di cui non mi interessava e sto genio di cose, cioè con un open claw e poi alla fine della fiera
+
+è una gente che gira, sotto gira pi, quindi considerato come un cloud code con la modalità no permission e non ti chiede i permessi
+
+Ma la facilità è solo con cui puoi fare l'automazione di un browser o robe di questo tipo. Secondo me c'è ancora tanta ignoranza da quel punto di vista di quanto è veramente facile avere una versione funzionante di qualcosa. Ci sono altre robe che sono totalmente vendute meglio di quello che sono. Ad OpenClone le chiedi di prenotarti il viaggio per andare al matrimonio del tuo amico.
+
+ci mette sei ore a non trovare niente
+
+Brainrepo (2:05:08)
+Però a leggerti il calendario e a dirti al volo quando quando quando si libera cosa e fa
+
+Jaga Santagostino (2:05:14)
+Allora...
+
+Allora, non lo so, quel tipo di utilizzo io non lo capisco. No, mi sembra... openclaw e quel genere di cose attira un determinato tipo di utenza che gli piace automatizzare le cose for the sake of it. Automatizzare queste cose con l'AI è veramente una slot machine che ti sputa fuori...
+
+Brainrepo (2:05:18)
+So che sei opinionato.
+
+Jaga Santagostino (2:05:46)
+eeeh... fa star bene sta roba qua, e che figataaaa! veramente diventa un martello in cui tu guardi il mondo ogni problema e cerchi di risolverlo utilizzando openclaw ma la roba è che tu le guardi e dici ma sta roba non andava neanche senso pensare di automatizzarla figurati e farla fare openclaw eeeh...
+
+Però è anche divertente, a una parte, dal smanettone. E quello rimane, cioè... è sicuramente un giocattolo da smanettone, però sicuramente, se invece lo vedo dal punto di vista del... Però il mio agente è quello con cui ci faccio le grandi discussioni, che accesso il mio giornale, eccetera. Io oggettivamente dico, qual è un impatto veramente positivo di me, sulle mie giornate?
+
+perché è strutturato per essere una cosa di questo tipo
+
+Come tanto è un strumento che in base a lo tieni in può essere una cosa che ti veramente utile o che ti crea tanti problemi.
+
+Brainrepo (2:07:07)
+chiaro chiarissimo. Raga abbiamo superato le due ore e dieci allora a questo punto io lancerai il momento tipico e topico di git bar anche perché qua potrevo rimanere altre tre ore a parlare di queste cose quindi via col paese dei balocchi
+
+Jaga Santagostino (2:07:23)
+senza dire niente.
+
+Brainrepo (2:07:25)
+Si
+
+il paese dei balocchi, il luogo dove noi possiamo condividere qualunque cosa abbia catturato la nostra attenzione e reputiamo utile da condividere appunto alla nostra community quindi... iaga hai qualcosa da condividere con noi?
+
+Jaga Santagostino (2:07:59)
+assolutamente sì, niente tecnologia ho ripreso ad utilizzare recentemente le coperte pesanti o meglio le coperte pesate appesantite, le weighted blanket proprio sono coperte dentro sfere di acciaio o di vetro e tipo io non ho una che pesa tipo 7 chili e ti gioco, io me la metto addosso
+
+è tipo relax così istantanea e mi sono comprato recentemente un'altra che pesa due chili me la metto sul divano poi me la appoggio qua non è che mi addormento però mi dà una una senso di quasi è quasi come la sensazione di un abbraccio è fighissimo una roba che consiglierete a chiunque
+
+Brainrepo (2:08:56)
+Mi ricorda le coperte di casa di mia nonna, hai presente le case delle nonne fredde, un po' fredde coi muri di pietra che c'erano 16 strati di coperta e tu ti coprivi ed eri un po' tutta un camon che difficilmente ti muovevi là, no?
+
+Jaga Santagostino (2:09:12)
+Non potevi più muoverte. La sensazione è molto simile.
+
+Sono sottili, ma pesano un bordo.
+
+Cdimonaco (2:09:20)
+si, ce l'ho anche io, l'ho provata poi l'ho fatta di mezzo in realtà una volta le vendiva anche IKEA insomma diciamo la keyword di italiano dev'essere coperta ponderata insomma anche per stradare su Amazon così io la... è orribile, ponderata di cosa
+
+Jaga Santagostino (2:09:42)
+Horribile!
+
+Cdimonaco (2:09:47)
+non l'ho mai capito però però sì c'è effettivamente fa tanto cioè la sensazione belle come effettivamente di di un abbraccio è una cosa almeno nel mio caso molto invernale cioè nel senso se estate stanno 40 gradi una cosa del già addosso che do sia tipo violenza
+
+ai massimi livelli però l'inverno è bello, si, si, si bel balocco
+
+Jaga Santagostino (2:10:22)
+per esempio una
+
+più leggera proprio per potermi mettere adesso che fa più caldino perché... ma proprio vero che magari... la uso anche alla scrivania, metto scrivania, me la metto, mi passa la voglia di alzarmi, di andare al frigo e fa qualunque roba cioè diventa quella sensazione di Tutankamon della nonna che dice vabbè, sono qua, andiamo avanti e quindi in un certo modo diventa pure uno strumento di focus senza volerlo
+
+Cdimonaco (2:10:26)
+⁓ ok.
+
+...
+
+Sì.
+
+Brainrepo (2:10:52)
+Sono d'accordo. Carmine, hai qualcosa da condividere con noi?
+
+Cdimonaco (2:10:55)
+Sì? Allora...
+
+non c'è le AI, non c'è niente questo è un Sanscap T1000 card, aspetta come si chiama, ce l'avevo qui sì, è un card tracker T1000 ed è un device che può essere utilizzato su rete meshtastic che cos'è meshtastic? è una rete mesh off
+
+off grid che è bassata sulle reti l'ora banda libera dove praticamente potete comunicare con altri device di questo tipo in maniera off grid la particolarità di questo tipo di device e che non sono dei device come potete vedere questo che ha una tastiera ma si collega via bluetooth con un app sul telefono e vi potete
+
+a cambiare messaggi. è la parte che dà? E' che è una mesh, quindi se raggiungete un nodo vicino a casa vostra, che raggiunge altri nodi vicino a casa vostra eccetera eccetera, ognuno di questi cosi è come se facesse da ripetitore. E' bello, bello a me questa roba, mi piace molto, ma è anche molto molto molto molto utile, perché al FOSDEM
+
+quest'anno la linea Wi-Fi ha dato alcuni problemi e io e i miei amici siamo andati al FOSDEM, abbiamo quasi tutti un device del genere e ci siamo parlati all'interno di fili eccetera, perché il tipo di frequenza su cui opera questo coso permette anche questo tipo di comunicazione così ci siamo parlati su questa
+
+chat tra noi. Ci sono dei canali pubblici, dei canali cifrati, i canali sono cifrati, potete avere dei canali pubblici, dei canali privati, voi potete inviare messaggi di una singola persona. Ci sono anche dei nodi che sono connessi a internet che parlano via MQTT con altri nodi, quindi potenzialmente se incontrate un nodo, se siete a portata di un
+
+di un nodo che connesso alla Mesh anche tramite MQTT potrebbe veramente raggiungere persone dall'altra parte d'Italia. C'è anche un sito italiano di riferimento che è Lora Italia. C'è anche una mappa di noti, almeno quelli più importanti, che riescono ad essere visti dalla Rete. E' un bel giocattolo, non costa niente, costa circa 40 euro.
+
+è interessante e non c'è l'MCP vi prego non lo fate, lasciamo un po' di dignità anche a questa cosa, l'abbiamo tolta a troppe cose.
+
+Jaga Santagostino (2:14:05)
+un'one ipote per l'archetipo del partecipante al forum.
+
+Brainrepo (2:14:12)
+si esatto si fitta a quella persona assolutamente io invece ho un'altra cosa che anche la mia un po' si allontana da quello che è il nostro mondo sto diventando un po' il mago panzone dopo i 40 sto mettendo pancia e mia moglie me lo ricordo ogni quarto d'ora
+
+e quindi questa settimana ho acquistato un treadmill, un tapiroulan come lo chiamano i francesi no? da scrivania che con lo standing desk funziona da Dio ragazzi io che ultimamente faccio più meeting che respiri oggi ho fatto 10 km quindi tanta roba
+
+Jaga Santagostino (2:15:09)
+Devo dire una roba riguardo. Vai vai, finisci, finisci.
+
+Brainrepo (2:15:10)
+Vai vai!
+
+No no, vi metto il link nelle note dell'episodio perché spero che migliori il mio rapporto con mia moglie e mi limiti le prese per il culo che lei mi fa, in merito alla mia fantastica pancia.
+
+Cdimonaco (2:15:28)
+ma l'esperienza per
+
+chi ti vede perché io insomma li ho provati non ci escono il suo coordinato, cado perfetto ma l'esperienza per chi ti vede da l'altateuto alcuni miei colleghi io li vedevo in vero cantevole così
+
+Era tipo questo nano da giardino in baria del vento. Cioè questo ci diceva, no sto camminando, però lo vedi comunque firmi.
+
+Brainrepo (2:15:56)
+Ma
+
+guarda, ho una risposta Carmine, considera che io ho la DHD e quindi la mia sedia, non so se avete visto in episodio, la mia sedia non si è fermata un attimo, Anche la scrivania...
+
+Cdimonaco (2:16:08)
+Nemmeno la mia, io faccio
+
+così anche a me, capisco.
+
+Jaga Santagostino (2:16:13)
+perché non hai la coperta pesante.
+
+Brainrepo (2:16:17)
+La mia scrivania balla perché io ballo con le gambe e colpisco la scrivania quindi per loro non c'è una grossa differenza e anche se ci fosse... frega a cazzi!
+
+Cdimonaco (2:16:27)
+No no, io diciamo
+
+la noto è questa cosa perché spesso nei nemici quando mi muovo con la sedia insomma me lo fanno non voltare più l'altro io ho una standing desk veramente di fattura pessima quindi tipo se faccio così è una cosa terribile ma funziona davvero cioè nel senso cioè bruci grass cioè come funziona nel senso
+
+Brainrepo (2:16:56)
+Per
+
+ora, per ora, sto provando, ho fatto 10 km e credo siano, non so, non siano pochi. Se riesco a tenere questo standard.
+
+Cdimonaco (2:17:05)
+Ok
+
+Brainrepo (2:17:10)
+per... anche se sono 5-6 km al giorno io perché io li faccio a 6-7 orari più o meno 6-7 km orari, quindi è anche veloce sì sono una bella camminata esatto quindi ci sta secondo me un effetto un effetto ce l'ha o almeno spero visto che ci ho investito tutte le mie speranze nella relazione di coppia
+
+Jaga Santagostino (2:17:23)
+una bella camminata così corsa
+
+Cdimonaco (2:17:33)
+se la fenomite è tipo lo
+
+smartwatch come attività fisica ok perfetto
+
+Brainrepo (2:17:40)
+Si, le Apple Watch lo vede.
+
+Jaga Santagostino (2:17:45)
+Allora adesso, senza volerlo sto tipo per collegare 10 toys assieme. Allora io ho sempre trovato affascinante e non ho mai capito il utilizzare il treadmill su TAS. L'ho sempre trovato una minchiata. Ma io sono sempre anche stato uno che a una certa si è attaccato i rulli della bicicletta e ci avevo la bicicletta attaccata su TAS per andare. Quindi non so, no, sono...
+
+Brainrepo (2:17:46)
+Dicevi, jaja.
+
+Jaga Santagostino (2:18:15)
+Sono l'ultima persona che può giudicare. Quindi, in una certa, mi sono comprato anch'io uno di questi treadmill. E intanto vi faccio vedere una che potrebbe essere una chicca dell'accontata, che è avere le rotelle sotto la scrivania, è una delle cose più fighe. Però lì si vede quel treadmill che ho appena portato su, dopo che stato abbandonato in salotto e non utilizzato per mesi. Perché quella è la fine che ha fatto.
+
+Molte velocemente mi sono rirese conto che me camminare piace tantissimo, referisco piuttosto a staccare, ne escono orette me ne vado a camminare rispetto a farlo così. E praticamente quasi tutti quei Red Mill in generale usano uno standard basato su Bluetooth Low Energy che broadcasta tutto quello che sta succedendo. È una roba fatta apposta per
+
+dispositivi fitnet adesso andiamo a vedere come si chiama quel maledetto protocollo internet che mi valenta prova c'è sta roba qua che non serve autenticazione non serve niente tu puoi leggere sta roba qui e che faccio non lo attacco ad home assistant per vedere tutto quanto che
+
+Vete tutto? La velocità, l'inclinazione, la roba, così. E allora, questo è nato come uno scherzo con l'amico con cui dico piuttosto che usare Aiku a dimminiera. Ho fatto una roba attaccata a un assistant che praticamente se cammini sotto una certa soglia ti mette il modello Aiku finché non inizia a camminare di più.
+
+Cdimonaco (2:20:03)
+Posso dire una cosa?
+
+Home Assistant è l'open-claw di chi dice scrive iamolo. Io conosco gente che in Home Assistant ha tutto, ha tutto quello che non ci deve avere. Io sono rimasto appare...
+
+Jaga Santagostino (2:20:23)
+E' Kubernetes, è Kubernetes praticamente.
+
+Cdimonaco (2:20:26)
+Io ho anche un home assistant, ho le luci, ho il conizionatore, ma mi sono fermato lì. senso, invece, ho amici che su home assistant hanno le previsioni del tempo, il calendario, il sensore di pressione sul divano per vedere se si sono seduti, il sonno della notte. A me mette un'angoscia terribile.
+
+Jaga Santagostino (2:20:48)
+Io sono
+
+uno di quelli che fatto purtroppo ha fatto quella fine lì che è passato dal è partito dal boh proviamo a imitare saldarsi i componenti da solo ordinato le robe cinesi da adesso c'è solo questa roba qui dal che prende in real time i dati della formula 1 e mentre c'è la gara di tipo mi accende le cose colorate in base a quello che sta succedendo
+
+Brainrepo (2:21:14)
+la telemistria
+
+Jaga Santagostino (2:21:18)
+e... sì, tipo se c'è un incidente, una roba così, tipo, mettono una bandiera gialla, una bandiera rossa e c'è la luce che diventa colorata, realtà, in base a queste cose qui. No, è veramente il peggio bondo di chi si diverta a fare queste cose qui, perché è veramente infinito. Poi, per dire, adesso... c'è un pulsante sotto la schivania, che vedete, che mi cambia la luce, dai, non vuoi avere il pulsante sotto la schivania che ti aggia...
+
+che ti accende le luci per fare i video. Questa roba qua è fantastica. Forse è uno dei software più figli che esistono perché ti permette di far parlare veramente le peggio cose che non dovrebbero mai parlare tra di loro. Tra cui il treadmill di Amazon e Cloud Code.
+
+Brainrepo (2:22:09)
+Ma sì,
+
+no, ti dirò, ti dirò in realtà io non riesco a essere così costante a configurare tutte queste robe che poi si scazzano dopo due settimane, quindi alla fine vado con l'applicazione stock delle luci, Philips, O l'applicazione standard del video citofono, quindi ho 70.000 applicazioni, una cartella dell'iPhone. Però
+
+Jaga Santagostino (2:22:37)
+ma fortunatamente c'è
+
+una alta resistenza a questo. Cioè se una roba è venita a non funzionare, se non è importante la lascio anche se non funziona. Alessandra, fortunatamente, se lascio i cavi in mezzo alla stanza non è una casa in casa. quindi è una roba che va molto... C'ho i periodi in cui non tocco niente, altri periodi in cui mi rimetti in fissa e alla fine è un hobby.
+
+è una cosa divertente non mi importa se si spacca diciamo che è diventato il sostituto di quando passavo le giornate a flashare custom rom sul telefono ora sono troppo vecchio per farlo e metto i sensori sullo scaldabagno
+
+Brainrepo (2:23:30)
+No, c'hai più soldi per comprare giocattoli forse.
+
+Jaga Santagostino (2:23:36)
+Ma guarda in realtà non è una roba che diventa tanto dispendiosa se inizi a farti tu la roba custom, perché si inizia a ordinare la roba su AliExpress, tu non vuoi capire, ogni volta che iniziavo ordinare roba all'inizio si spendeva un po', e ogni volta che facevo il carrello alla fine si diceva ciao, vuoi aggiungere un SP32 a 1,25 euro nel carrello? Ma si aggiunge.
+
+finché non sono arrivato ad avere le buste di SP32 di Core, poi ti rendi conto di cosa ci puoi fare, cacchio, cioè posso farci roba che è molto più figa e super personalizzabile adesso non c'è neanche più bisogno di fare un sacco di roba così e Claude girami lo YEML perché fare sta roba super strana che nelle notti di luna piena la luce diventa rossa
+
+e se ha vinto il parma diventa verde. Quindi ha tolto pure quella barriera. No, no, rimane divertente. Però è un giocato.
+
+Brainrepo (2:24:37)
+Sì.
+
+quel divertimento.
+
+Ragazzi!
+
+Ragazzi è arrivato il momento di fare la nanna due ore e venti secondo me abbiamo sfondato l'ultimo record dell'episodio è stato un super piacere averti qua a GitBar tu lo sai no? appena farei qualche esperimento nuovo se hai qualcosa da condividere GitBar è un po' anche casa tua quindi vienici a trovare quando vuoi
+
+Jaga Santagostino (2:25:04)
+mi la mia
+
+Brainrepo (2:25:17)
+la porta aperta, l'ignusa virtuale fresca c'è sempre
+
+Jaga Santagostino (2:25:25)
+e raffreddere il thread menu del coding.
+
+Brainrepo (2:25:30)
+⁓ no vogliamo vogliamo un video mandaci un video ti supplico vogliamo un video che mette aiku quando cammini lento perché è tanto distopico quanto figo tu immagina che sei tu che stai alimentando col tuo camminare l'energia fa molto matrix
+
+Grazie, grazie davvero Yaga, grazie per essere venuto
+
+Jaga Santagostino (2:25:53)
+Cioè, se ti metta a fallo,
+
+perdi 60 kg. Se ti costringono a lavorare con Aiko, perdi 60 kg. Vedi come corri.
+
+Brainrepo (2:26:05)
+Forrest! Un abbraccio, prossima! Ciao ciao!
+
+Jaga Santagostino (2:26:07)
+è stato un super piacere! a voi, grazie
+
+Cdimonaco (2:26:10)
+Ciao, grazie. Ciao
+
+ciao.
+
+Jaga Santagostino (2:26:12)
+mille!
+
