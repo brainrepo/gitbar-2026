@@ -1,0 +1,1077 @@
+Brainrepo (00:14)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Il tempo passa e siamo già praticamente ai primi di aprile, fine marzo, primi di aprile, quando voi ci state sentendo, anche se questo episodio è registrato un po' prima, è la primavera e non ha cenna a venire, ieri nevicava qua, quindi insomma, il freddo ancora ci attanaglia, ma non ci spaventa in realtà.
+
+Voi ormai lo sapete io non sono bravo con gli smalltalk quindi tagliamo la breve e vi ricordo rapidamente i contatti. Info che sono la gitbar.it, at brain repo su twitter sono i modi canonici per contattarci il nostro sito www.gitbar.it, la trascrizione dell'episodio, le note dell'episodio, il video embeddato e anche l'audio insomma potete consumarci come volete. Suona malissimo.
+
+lo stesso. In realtà prima di iniziare con l'episodio vi propongo questa cosa. Allora stiamo pensando a una cosina da fare. Intanto prossima settimana probabilmente arriveremo con una puntata in formato pillola perché io sono in vacanza quindi devo riuscire a trovare un posto dove si possa registrare agevolmente anche se
+
+la connessione, sarò in tunisia, la connessione di solito quando vado giù non è una delle migliori per cui l'episodio magari sarà breve o in un format diverso. E poi un'altra cosa che vi chiedo è se avete un progetto tipo un side project interessante, ciccioso che riguarda lo sviluppo software fatti in un certo modo che vi fa piacere raccontare specialmente le sfide nel realizzarlo.
+
+Potete iscriverci a info.chiusciolagitbar.it perché pensiamo di fare la, una, non dico una review di Side Project, ma un episodio dove parliamo dei challenge, dei progetti che ognuno di noi tira. Insomma, è come quando ci si incontra al bar e si dice, guarda sto lavorando a questa cosa nel mio tempo libero, ormai mia moglie non mi parla più perché la sera al posto di stare con lei sul divano sono magari sulla scrivania al computer, ecco.
+
+avete un amico, anzi un audience, l'audience della community di Gitbar per raccontare queste cose però, ban dalle ciance vi... presento subito l'ospitte è venuto qua Gitbar qualche anno fa abbiamo con noi un amico di Gitbar Davide Mauri che come sapete è il Product Manager di SQL Server ciao Davide!
+
+Davide (03:14)
+Ciao a tutti e grazie ancora per ritrovarci qua dopo due anni credo. Grazie per l'invito di nuovo.
+
+Brainrepo (03:20)
+sì, sono...
+
+sono un paio' d'anni e tra l'altro tu stai oltre'oceano, giusto?
+
+Davide (03:26)
+io sto a redmond esatto sì sì adesso sono nella fresca redmond visto che tu parlavi di neve prima settimana scorsa nevicata anche qua quindi sì
+
+Brainrepo (03:36)
+Come i nostri ascoltatori sanno e se non lo sapete riprendetevi l'episodio anzi lo aggiungo qua nelle note dell'episodio perché abbiamo parlato di cose interessanti tu per diversi anni sei stato e sei il Product Manager di SQL Server giusto?
+
+Davide (03:41)
+mmh
+
+Sì,
+
+sì, corretto. Sono PM di SQL e in particolare mi occupo di tutto ciò che riguarda il linguaggio, adesso chiaramente la parte di AI e la, diciamo, l'esperienza degli sviluppatori. fondamentalmente far contente gli sviluppatori che usano database.
+
+Brainrepo (04:12)
+cosa fa un product manager? e soprattutto cosa fa il product manager di un database? ognuno di noi magari ha un product manager nel team ma ci sono delle nuance delle caratteristiche del product manager di un database
+
+Davide (04:16)
+mhm
+
+Certo.
+
+⁓ questa è una bella domanda. Allora, prima di tutto una piccola diciamo spiegazione del ruolo del Product Manager è fondamentalmente quello di mettere insieme tre cose. Mettere insieme la necessità del mercato, le necessità nel mio caso degli sviluppatori attuali, le necessità attuali e cercare appunto di capire dove andranno in futuro e ovviamente fare in modo che tutto sia possibile e fattibile in una
+
+a certa quantità di tempo tale per cui possiamo poi mettere queste feature nel prodotto. E l'altra cosa da fare è chiaramente una volta che ci sono queste feature andare a assicurarsi che siano utilizzate da sviluppatori, clienti e quant'altro. Quindi sono diciamo una terna di cose, se vuoi un po' di evangelismo, ovviamente un po' anche di conoscenza tecnica e ovviamente tanta anche esperienza di capire cosa vogliono i clienti, cosa vuole il mercato.
+
+il PM è un po' al centro di questa triade di cose. Dal punto di vista del database, secondo me la caratteristica principale è che il database, soprattutto adesso per gli sviluppatori, tende ad essere qualcosa che deve funzionare senza certi dintralcio e quindi la cosa principale è fare modo che tutto funzioni sempre
+
+senza che tu te ne accorga un po come un esempio che faccio io un po come l'arbitro dei partiti di calcio quando fa bene il suo lavoro è perché non ti accorgi che c'è stato e il database è esattamente la stessa cosa quindi supportare fondamentalmente qualsiasi carico di lavoro che tu voglia o gli sviluppatori vogliano caricarle e fondamentalmente fare in modo che tutto funzioni e lo sviluppatore possa
+
+Brainrepo (06:02)
+Non lo vedi, sì.
+
+Davide (06:20)
+preoccuparsi di user experience, scalabilità della business logic e quant'altro, ma il database deve fare il suo lavoro senza interferire.
+
+Brainrepo (06:31)
+Dagli anni 90 in poi fino a un po' anni fa, un po' decina di anni fa, il nome del DBA si sentiva nominato tantissimo,
+
+Davide (06:40)
+Mmh.
+
+Sì,
+
+con certo timore a volte anche.
+
+Brainrepo (06:47)
+Esatto,
+
+c'era quella figura che aligeva sulla testa degli ziluv... Come andare dall'urologo una volta superato in 40? No, la domanda è, è cambiato qualcosa? Abbiamo ancora bisogno del DBA e soprattutto se sì, quali sono i contesti che hanno bisogno di una figura così verticale?
+
+Davide (06:51)
+devo andare dal dba sì esatto
+
+preside pure peggio sì esatto
+
+Sì, allora soprattutto anche adesso, la cosa potrebbe cambiare un pochettino con le AI ma alla fine non tantissimo, senso che in molti casi non hai più bisogno di un in senso stretto del termine. Penso che per applicazioni diciamo medie, medio piccole ovviamente il database, soprattutto se sei nel cloud, fai da solo il suo lavoro senza che tu non te ne debba preoccupare troppo. Ci sono magari certi casi in cui
+
+le cose scrichrono e lì dove secondo me adesso magari le hai può più aiutare però generalmente tu metti sul tuo sito la tua applicazione se non ha decine di centinaia di migliaia o comunque un carico di lavoro alto di richieste a secondo probabilmente qualsiasi database oggi fa il suo lavoro e non te ne accorgi neanche senza doverci neanche pensare troppo alla monotenzione è chiaro che se hai un'applicazione critica se è una banca
+
+un istituto di ricerca che fa molte transazioni per le simulazioni, una città che fa betting o online gaming, il numero di transazioni diventa alto, i dati sono particolarmente sensibili nella sanità per esempio e dicendo e quindi devi assicurarti che ci sia una persona che abbia la responsabilità, perché di questo si parla il cuore della discussione,
+
+di far sì che tutto funzioni e che sia in grado quindi, avendo quella responsabilità di avere la conoscenza e le capacità di fare in modo che tutti alzi la mattina e tutto continua a funzionare anche se hai uno specchio di lavoro, anche se hai un workload critico che non può mai essere interrotto e quindi hai bisogno di uno specialista, cioè il DBA diventa secondo me veramente uno specialista.
+
+l'esempio che mi piace fare, soprattutto visto che adesso molti pensano di poter sostituire i dba con le I, che in parte potrebbe essere vero, che se tu ti compri una macchina per farti l'erografia a casa, comunque vai dal dottore per poi chiedere ok ma questa roba che io sto vedendo è una cosa buona o cattiva? perché tu puoi magari arrivare a fare l'80-90 %
+
+del lavoro da te, fai una radiografia se c'hai questa macchina a casa, magari usi internet per capire che cosa devi fare o che cosa sta succedendo, ma poi se la cosa è particolarmente delicata vuoi avere l'opinione di un esperto almeno ancora oggi e qualcuno che possa magari fare le domande giuste e fare le ipotesi giuste e quindi secondo me il lavoro del DBA sta andando in quella quella direzione.
+
+Brainrepo (09:55)
+Quindi è la direzione legata alla responsabilità. È sempre legata a questo concetto del passato. Ho iniziato a sviluppare negli anni 90, quindi me le ricordo le applicazioni degli anni 90 e mi ricordo anche l'approccio che si aveva al database negli anni 90. Io mi ricordo
+
+Davide (10:01)
+Sì.
+
+Sì, sì, sì, sì.
+
+Sì.
+
+Brainrepo (10:22)
+situazioni con centinaia o diverse centinaia di store procedure, tanta logica applicativa all'interno del database, è cambiato qualcosa in quella direzione?
+
+Davide (10:28)
+Sì, sì, sì, sì, sì, sì, sì.
+
+Sì e no, senso che chiaramente adesso ho un desiderio molto più forte di spostare la Business Logic fuori da database sperando in qualche modo che questo automaticamente risolva alcuni problemi di scalabilità e quant'altro non è necessariamente vero nel senso che come tutti i ogni tool deve essere usato nel modo corretto e sto dicendo chiaramente un'ovvietà, usarli in modo dogmatico del tipo tutto
+
+al di fuori in un service layer o tutto all'interno tutto in storia e procedure secondo me è chiaramente il miglior modo per sbagliare la propria architettura nel senso che ci sono pro e contro in ogni cosa chiaramente soprattutto poi adesso che database sono diventati veramente facili da scalare soprattutto nel cloud ad esempio utilizzo massivo di storia e procedure semplifica molto nel deployment semplifica molto
+
+la scalabilità ottimizza molto i costi e i meno dati da spostare in giro la sicurezza diventa notevole in termini di garanzie perché se i dati non escono da database perché hai già una tua logica all'interno della database che fai modo che escano solo i dati che devono uscire chiaramente è molto meglio che spostare tutti i dati al di fuori e poi magari fare lì delle logiche di business scartando magari il 30-40 % dei dati perché non ti servivano sin dall'inizio quindi
+
+dal punto di vista proprio architetturale secondo me non c'è un giusto sbagliato nel senso che l'idea è usa la cosa che ti serve per arrivare al tuo obiettivo nel modo più sicuro, scalabile ed efficiente Ovviamente entrambe le cose hanno pro e contro e quindi sinceramente non ha il discorso del fare sempre così o fare sempre in un altro modo non è una cosa che mi sembra logica. Chiaramente
+
+in passato la tecnologia era diversa e quindi alcune cose che si potevano fare nel database si potevano fare solo nel database quindi c'era un certo tipo di approccio oggi abbiamo molta più possibilità e direi che la figura dell'architetto è ancora di più adesso con l'arrivo delle AI diventa quello di fare le scelte giuste più che fare la scelta diciamo più che preoccuparsi della tecnologia e del come faccio le cose perché
+
+in molti casi probabilmente il codice verrà generato in automatico però il punto è come decido di struttura alla mia architettura, come decido di risolvere questo problema secondo me è la parte interessante su cosa e se ci pensi un attimo diciamo sin dalla storia della informatica è stato così all'inizio c'erano i sviluppatori erano in camice bianco con le schede perforate poi è diventata una cosa massiva chiunque può sviluppare o
+
+con Visual Basic, ricordi quasi tutti potevano sviluppare, Adesso con le AI è letteralmente tutti possono sviluppare e quindi si è andati da una situazione molto molto specialistica a una situazione in cui tutti possono fare quello che vogliono ma se tu devi scrivere il codice per gestire la transazione di una banca non lo fai fare a chiunque, lo fai fare a una persona di cui ti fidi perché ha esperienza, la visione, la capacità di decisione corretta, quindi è ancora una questione di irresponsabilità.
+
+Ovviamente deve avere anche delle capacità tecniche per capire qual è la decisione corretta da prendere in un certo momento, però diventa veramente una questione di responsabilità e di definizione del processo dell'archiviatura. Il database sta subendo la stessa evoluzione. Adesso chiunque con le AI potrà amministrare il database e se devo amministrare il database per la internet magari della mia azienda, 10 persone, va benissimo farlo così.
+
+se devo farlo per un istituto di ricerca e sviluppo nella sanità, faccio qualcosa un po' specifico e ho bisogno di competenze che non è tutti possono avere. Quindi anche lì si sta andando da una possibilità dove chiunque può fare tutto, la responsabilità, la capacità di decidere la cosa giusta, l'avvento giusto,
+
+Brainrepo (14:28)
+applicazione critica.
+
+Davide (14:52)
+e quella che fa la differenza.
+
+Brainrepo (14:55)
+Sì sì è chiarissimo è la differenza tra fare un'applicazione che si connette con una sola credenziale database, leggi tutto e gestisci una logica applicativa a fare un sistema con ACL, ACE e quant'altro.
+
+Davide (15:03)
+bravissimo, bravissimo, bravissimo.
+
+bravissimo, esatto,
+
+come avrai probabilmente già provato anche tu col vibe coding, tutto è molto facile fare cose che si rompono facilmente o che sono poco sicure, perché fare le cose invece sicure e scalabili lì richiede un altro livello di competenza alla fine, arriva dall'esperienza, dalla capacità tecnica, però non è una cosa che fai solo perché sai fare coding, solo perché sai scrivere codice.
+
+Brainrepo (15:40)
+Io seguo un po' il mondo postgres perché vengo da quel filone. E c'è una cosa che ha catturato la mia attenzione specie nell'ultimo periodo, che è stata la mossa e l'azione che i ragazzi di Super Base stanno mettendo in piedi. Perché secondo me è stata una mossa che ha un po' cambiato la direzione.
+
+Davide (15:45)
+Sì sì, certo.
+
+Sì.
+
+Brainrepo (16:08)
+essere discutibile il fatto che siano andati all in sul database e quindi il database fa il 90 % delle cose e possiamo anche discuterne su questo però il fatto di ritornare a per esempio spostare il ragionamento sulla sicurezza e sulle access le raw access policy o con raw level security quindi il fatto
+
+Davide (16:13)
+Sì. Sì.
+
+Sì.
+
+Rowe Level Security
+
+Brainrepo (16:32)
+di dire il database di per se gestisse la sicurezza e gli accessi sulla righe sulla dupla sulla sulla sulla ro è secondo me una cosa molto interessante oggi che sta
+
+Davide (16:36)
+Certo.
+
+Certo. Certo.
+
+non
+
+solo interessante, è fondamentale soprattutto grazie perché ti uscito un you know e io sto facendo molta fatica a non tirare parole in inglese a random perché ormai vengono in automatico quindi grazie la seconda cosa no, tu nomini SuperBasic di cui sono un fan
+
+e noi in Microsoft abbiamo fatto un prodotto che chiama DTPI Builder che è ispirato se vuoi a SuperBase, è molto diverso ma il concetto è quello, il concetto che il database viene esposto come servizio, GraphQL o REST nel nostro caso o MCP adesso e lo sviluppatore non ha più bisogno di crearsi un backend as a service o un servizio crude per accedere al database ogni volta che deve accedere a una tabella.
+
+o in futuro per far sì che una gente AI possa accedere a una tabella. Quindi, la API Builder, per chi non lo conosce, è fondamentamente un'alternativa super base open source stateless, scala come volete. La cosa che abbiamo deciso di fare è di non richiedere alcun tipo di modifica al tuo database in termini di naming convention o di creare oggetti nel tuo database. C'è un file di configurazione JSON che...
+
+che dice che cosa vuoi esporre con che sicurezza e via dicendo e e secondo noi questo è il futuro secondo me in particolare visto che è stato il PM che ha iniziato questo progetto adesso c'è Jerry Nixon che è un PM bravissimo molto conosciuto al lato del mondo Microsoft che sta portando avanti la cosa e poi magari ti do il link e lo condividi perché assomigliano se qualcuno lo conosce ormai da due anni e mezzo che è disponibile è usato
+
+Brainrepo (18:28)
+Sì, con piacere.
+
+Davide (18:35)
+da tantissime società ed è appunto free open source quindi ho combattuto per quello parecchio e il punto che hai dici tu sulla sicurezza secondo me è il punto fondamentale nel senso che soprattutto oggi se pensiamo e per chi l'ha già fatto probabilmente l'ha già verificato se tu puoi chiedere ad un agente di eseguire del codice SQL per te sul tuo database questo vuol dire che tu come sviluppatore non hai più controllo sulla query che generi
+
+Questo vuol dire che non è detto che la query abbia la wear close o i predicati che servono per fare in modo che io posso vedere solo il mio carrello della spesa, non il tuo. Perché se la gente lo gira dal volo, cosa, sì, tu puoi chiedere alle AI, per favore, aggiungi questo predicato, questa wear close, per far sì che io possa vedere solo le cose marcate con la mia ownership. Il problema è che io posso, se sono un bravo hacker o qualcuno che cerca di essere un po' malicious, come si dice qui,
+
+chiaramente posso cercare di fare prompt injection o bypassare la tua... quindi il punto focale è fare in modo che i dati non escono da database anche se la query che tu mi stai mandando è sbagliata e non dice cavoli come faccio a fare sta roba? perché se tu mi sbagli la WARE close e mi lasci un filtro troppo ampio io ti do tutto quello che c'è in database quello che tu hai chiamato Row Level Security è il meccanismo definitivo per me è unico
+
+risolvere questo problema alla radice perché significa che database che offrono questa possibilità in cui tu fondamentamente specifichi una una policy una logica mettiamola così in cui definisci chi può vedere cosa non solo da punto di vista quale tabella cedo quale colonna posso selezionare ma quale riga mi viene lasciata libera per l'accesso quindi io posso dire tu vedi tutte le cose in cui la colonna
+
+owner è brain repo e io vedo tutte le cose la cui colonna owner, sto semplificando molto, chiaramente è davide. Questa logica viene messa nel database e il database si occupa di far sì che qualsiasi query venga eseguita sia aderente a questa logica. Il fatto è che, questo vuol dire che nel ambito di SQL ad esempio, SQL Server, se tu fai una bella select star from la tabella, quella
+
+il risultato che tu vedi è comunque filtrato secondo queste logiche e tu queste logiche non le vedi neanche nella tua execution plan o nella tua explain perché chiaramente il database le protegge se no altrimenti sarebbe un modo per farti sapere che c'è qualcosa che tu puoi cercare di violare e questo secondo me è la cosa fondamentale perché sposta la sicurezza il più vicino possibile ai dati e quindi non è più possibile a quel punto intercettare una chiamata
+
+cambiare una query perché anche se metti il classico WHERE, one equal one per cercare di girare qualche WHERE clause magari quello che si faceva con la vecchia prompt SQL injection dove mettevi or, one equal one e questa roba comunque non funziona e quindi questo diventa la garanzia per far sì che indipendentemente da quello che viene inviato al database il database
+
+rilascia l'accesso solo ai dati ai cui ha la possibilità di accedere per definizione di business logic che sono nel database stesso. E questo cambia parecchio perché altrimenti usare gli agenti sui tuoi dati sarebbe estremamente pericoloso perché tu non sai veramente che query ti arriva. E SuperBase, Asura, the TAPI Builder rendono questo ancora più semplice perché dicono ok, tu fai quello che devi su database.
+
+A questo punto non ti preoccupi neanche più di esporre database come REST, GraphQL o MCP Server, perché lo facciamo noi. E quindi lo sviluppatore deve solo preoccuparsi fondamentamente di interagire con un servizio che è sicuro per definizione. Questo secondo me è un bel futuro per gli sviluppatori, perché a quel punto dicevo all'inizio che uno degli obiettivi degli sviluppatori è quello di non avere interferenze da parte dei database.
+
+con un tool come SuperBase, tu il database quasi neanche lo vedi dal punto di vista del front-end se vuoi o dello sviluppatore che non vuole vedere il database. Poi il mio consiglio è il database contiene una cosa più preziosa che avete, vostri dati, se... posso spentere la luce? Se siete bravi sviluppatori dovreste interessarvi di capire come funziona database e...
+
+e capire quindi come utilizzare al meglio, perché a quel punto diventa un asset, un tool che usate, non qualcosa che subite, però non è estrettamente necessario. E questo secondo me è una bella scelta che possiamo lasciare agli esiluppatori e decidere che grado di approfondimento vogliono avere rispetto al database o altre soluzioni che preferisco.
+
+Brainrepo (23:35)
+Sì, modo con cui... nel quale cerco sempre di vederlo io è dipendere dal... il livello dell'applicazione che stai facendo. Se hai bisogno di un data storage dove butti la roba, prendi la roba, un po' di boundaries attorno ai dati, un approccio alla super base o... un... un ORM, perché...
+
+Davide (23:52)
+Mmh.
+
+Brainrepo (23:58)
+Genera anche se sono molto diversi più o meno risolvono il problema che creano un layer d'astrazione per l'accesso ai dati no se la possiamo vedere in questo modo è ok quando però poi almeno dalla mia esperienza i giochi si fanno un po più difficili Le query sono un po più complesse io
+
+Davide (24:03)
+Sì, sì, corretto.
+
+Sì.
+
+Brainrepo (24:18)
+Sono ritornato a scrivere SQL a mano nel mio file. È la vai di magari query SQL da 30, 40 righe strutturate che fanno cose, settano boundaries. Per esempio, stavo lavorando a un booking engine. Io non volevo che la logica applicativa si prendesse tutto. Quindi parte dei calcoli, no? Le ho spostati nel database proprio con quel ragionamento.
+
+Davide (24:21)
+Assolutamente.
+
+Sì.
+
+Sì, sì, sì.
+
+Mmh, certo.
+
+Mmh.
+
+Certo.
+
+Brainrepo (24:47)
+Ho creato delle viste materializzate, ho fatto delle azioni, però questo presuppone anche uno skill set un po' diverso di quello che fa il crudino della chiesa come dire me.
+
+Davide (24:49)
+esatto
+
+Certo. Sì.
+
+No no, assolutamente.
+
+Però quello secondo me è... Voglio dire, l'AI è qua e non la voglio tutti questi mettere nella nostra discussione, però la realtà è che... Ecco, no, però la realtà è che quello rende il tutto semplice. Cioè, fondamentalmente oggi chiunque può scrivere, come dicevo prima, qualsiasi codice, qualsiasi tipo di codice, io non conosco bene Rust, sono sicuro che potrei scrivere qualcosa in qualche ora con l'aiuto dell'AI tirando qualche martellata.
+
+Brainrepo (25:08)
+No, tanto ci arriviamo!
+
+Davide (25:27)
+Il punto è, come dici tu, fare la scelta giusta, l'esempio che fatto adesso. Devo capire fin dove posso usare una certa tecnologia e fin dove non ha più senso usarla, perché a quel punto sto semplicemente cercando di evitare di dover utilizzare qualcosa altro che mi piace di meno. E secondo me questo non ha più senso. Soprattutto quando le soluzioni sono critiche, non come dici tu, il cordione della chiesa.
+
+Qualsiasi altra scelta diventa controproducente a lungo termine, nel senso che poi uno può dire no come standard usiamo solo uno RM o solo SuperBase o DTP Builder per fare tutto, però anche lì ti stai chiudendo delle porte. E oggi come oggi non ha più senso, per me uno sviluppatore completo è uno sviluppatore che probabilmente spenderà il 70 % del tempo su C Sharp, Node, quello che vuoi, Python, ma deve sapere
+
+soprattutto se stiamo parlando di un esecutatore full stacco o back-end sapere molto bene qual è il limite di quella scelta e quando il momento è giusto dire ok devo fare devo spostare questa cosa sul database perché meno problemi di concorrenza nelle transazioni meno dati spostati in giro per il per il network più sicurezza più scalabilità più controllo più performance ovviamente scalabilità quindi secondo me l'opportunità che c'è adesso è quello di dire ok posso finalmente concentrarmi più su
+
+Qual è l'architettura migliore, quali sono le tecnologie migliori piuttosto che spendere magari otto ore a fare coding che è sempre divertente per l'amore di Dio però se mi metto il cappello del professionista certo mi piace fare quello che è divertente ma se potevo fare quello che è giusto e molte volte come dici tu la spostare la logica nel database se è la cosa corretta banalmente rende la gestione transazioni centomila volte più semplice momento in cui
+
+puoi fare tutto questo sul database al posto che farlo su un layer esterno
+
+Brainrepo (27:33)
+Raggiano a voce alta. Abbiamo introdotto le AI e tra un po' entriamo in profondità sulle cose anche dal punto di vista un attimo pellino più tecnico. Però mi chiedevo in termini di sviluppo oggi praticamente tutti stanno sviluppando con le AI. C'è chi fa molto più vibe. Quindi prendo e faccio fare al mio al mio
+
+Davide (27:36)
+Mmh.
+
+Certo.
+
+Brainrepo (28:03)
+no, codex o copilot della situazione e c'è chi magari utilizza un approccio più ingegneristico, magari fa spec driven development, usa interazioni un pochino più strutturate, un approccio meno vibe, più noioso, ma anche più ingegneristico. E questo...
+
+Davide (28:03)
+Creo un e-commerce. Sì, sì. Fammi il sito.
+
+Sì, esatto.
+
+sì, sì definitivamente, sì
+
+Brainrepo (28:28)
+Queste AI, le AI ti porta a scrivere del codice e ti porta a scrivere anche del codice SQL. Uno delle safeguard che noi abbiamo quando sviluppiamo del codice con le AI sono le suite di test che per definizione dovrebbero essere quegli strumenti che ci mettono la rete sotto e in qualche modo mitigano le nostre stronzate.
+
+Davide (28:35)
+Mmh.
+
+Certo.
+
+Tecnicamente
+
+parlando sì.
+
+Brainrepo (28:59)
+Sì, a livello di query sequel...
+
+Davide (29:05)
+Mmh.
+
+Brainrepo (29:08)
+pensi sia
+
+Adesso ti faccio una domanda che può essere complicata. Pensi sia una responsabilità del database offrire il tooling per il testing di queste cose e se sì qual è la maturità di questa cosa? Per gli database esistono 40 anni, qual è la maturità di questa cosa?
+
+Davide (29:16)
+beh vediamo
+
+Mmh.
+
+sì sì sì sì sì no questa è
+
+una domanda fantastica c'è un mio collega a drew che si occupa proprio di questo perché se vuoi secondo me questo rientra un po nel discorso CI-CD e DevOps per database, perché fondamentamente l'idea è che tu hai una query può essere in una storia e procedura, vista o anche una query ad hoc che tu vuoi eseguire come faccio a essere sicuro che questa query A è corretta ora B rimanga corretta nel tempo
+
+perché magari devo fare qualche modifica, la complessità dei database è che magari cambiano i dati e quindi una query che magari era corretta ieri se il database non è stato disegnato particolarmente bene o i dati sono diciamo particolari potrebbe essere che all'improvviso tu smetti di avere quello che ti aspetti di avere come risultato
+
+o anche dal punto di vista delle performance, perché magari un altro test che tipicamente dovessi dovrebbe fare è io ho questa query, questa query deve essere eseguita in 50 millisecondi no matter what se ho 10 righe o 10 milioni. Quindi ci sono diversi aspetti di questo. Sicuramente il tema è più complesso secondo me che nel campo dello sviluppo, perché appunto c'è differenza che i dati potenzialmente possono cambiare e a quel punto cambiano anche i risultati dei test.
+
+e quindi ci sono delle suite non sono particolarmente esperto per quanto riguarda postgres e database non max ma ad esempio per SQL ci sono alcune suite fatte apposta ad esempio T-SQLT in generale non mi fanno impazzire perché secondo me io quello che faccio
+
+è semplicemente usare suite usate per il mondo del codice tipo AnyUnit, XUnit, via dicendo e fondamentamente mi costruisco i test in maniera tale che eseguono a query e testo risultato o le performance sono quelle che mi aspetto e introducendo nei test se vuoi un po' di noise perché devo prima collegarmi al database quindi devo scrivere il codice che si collega al database poi consuma il risultato quindi non è un unit test puro
+
+però la cosa che più si avvicina e per me è più semplice testarlo usando strumenti come XUnit e NuNit e via dicendo che strumenti che sono puramente scritti in T-SQL perché quello secondo me lo trovo un po' limitante ma detto questo diciamo la desiderio c'è noi ad esempio abbiamo dei tool che ti permettono di prendere il database, metterlo in un progetto quindi estrarre tutte le informazioni database, le schema, le tabelle, tutto
+
+Averli in un progetto che è il nostro, lo chiamo, DACFX, la liberia che fa questa cosa, e che tu puoi fare il deploy in un container e far andare lì tutti i test, magari anche generando dati sintetici per verificare che la tua query faccia esattamente quello che tu ti aspetti che faccia. E' una disciplina che, siccome tutti dovrebbero seguire, soprattutto su un database complesso,
+
+secondo me pochissimi fanno, purtroppo, perché? Perché è complesso. È molto complesso testare il database perché ad esempio, banalmente, magari puoi testarlo solo su dati sintetici e quindi devi installarti database, popolarlo, fare il deploy dello schema, popolarlo, eseguire i test.
+
+è una parte un po' noiosa che non molti fanno, purtroppo, ma sarebbe da fare e gli strumenti ci sono. Non sono così sofisticati come appunto quelli dello sviluppo dove puoi fare addirittura code coverage, testing e via dicendo, ci sono e secondo me sono, ad oggi sono anche abbastanza facili da usare, sicuramente più facili che in passato perché ho degli esempi in cui io posso lavorare completamente offline, quindi diciamo che lavoro sul mio container offline, faccio le mie modifiche
+
+faccio lo snapshot di questo database usando DuckFX Library, faccio il deploy su Git, a questo punto una GitHub Action che prende il mio package di cui ho fatto il deploy, istanzia un database SQL, fa il deploy del database, popola con dati di test, fa l'execution dei test e se tutto va bene allora fa il merge della query o del modifichio ho fatto col database finale. Ora qua è esattamente dove nasce il problema.
+
+è molto difficile fare l'emerge di una PR in un database vero, perché ci sono i dati dentro. Quindi se io voglio cambiare una colonna, voglio aggiungere una tabella e magari metterci dei dati, voglio cambiare la struttura database, ecco lì è dove c'è veramente la... Esatto, esatto, esatto. Perché finché si tratta di cambiare una speed instance, riprosiglio probabilmente...
+
+Brainrepo (34:16)
+il terrore delle emigrazioni,
+
+Davide (34:24)
+te la cavi con poco però momento in cui tu devi andare a dire ⁓ guarda devo modificare il modello dei miei dati perché perché è voluto nel tempo adesso diverse esigenze quindi devo fare questa cosa e in test va tutto bene hai 100 righe di test va benissimo neanche 10.000 va benissimo se lo poi lo fai in produzione su 10 milioni di righe chiaramente le performance possono impattare lock clienti che magari si lamentano vi dicendo
+
+il micro stiamo lavorando delle soluzioni di questo tipo, come alcuni concorrenti, alcuni opzioni ce l'hanno, Planets Cache, non ricordo male, basato su SQL, permetteva di fare, permette tuttora di fare una sorta di controllo del codice sorgente al database, esatto, esatto, esatto, e noi stiamo lavorando su una cosa che si chiama, una cosa che permette di fare questa cosa
+
+Brainrepo (35:09)
+snapshotting e branching del database
+
+Davide (35:18)
+per cui è possibile fare le modifiche allo schema senza bloccare le query che è una operazione piuttosto complessa perché il mercato, gli sviluppatori stanno andando in questa direzione più dati nel database, più valore al nostro database però ancora se voglio fare un'operazione che ne modifiche la struttura questa blocca tutto per motivi tecnici abbastanza importanti e quindi
+
+Brainrepo (35:45)
+anche per come funziona
+
+il database fondamentalmente proprio per la natura del database stesso
+
+Davide (35:49)
+Per come funziona database fino adesso, corretto.
+
+Ci sono delle tecniche che sono simili a come fare se tu hai familiarità con quella che si chiama snapshot isolation level o recommit snapshot in cui fondamentalmente, chi magari non è spartissimo nel settore, ci sono due modi per ottenerli, per assicurare che i dati su cui sto lavorando non vengano modificati mentre li sto lavorando. Uno è locking e l'altro si chiama roversioning. Locking significa quello che dice la parola, cioè io...
+
+lavoro un po' all'occhio esclusivo che c'era i primi tempi su Visuals for Safe, non so se qualcuno se lo ricorda, in cui io lavoro su un file, in questo caso sarebbe su una riga, e ci posso accedere in maniera esclusiva solo io. Questo è fantastico dal punto di vista della sicurezza e della consistenza dei dati, ovviamente è pessimo dal punto di vista della concorrenza. Quindi l'altra soluzione è quella di dire io lavoro su una riga, ma faccio lo snapshot di questa riga e se tu devi leggere, ti faccio leggere da questo snapshot. Quando io finisco di lavorare sulla mia riga,
+
+Cambio lo snapshot e tu leggi il valore nuovo. Chiaro questo è un costo più alto. Devo fare una copia. Se ci sono tante transazioni e tante stanno modificando i dati, magari devo fare più copie. Devo ottenere le copie per un periodo di tempo che è lungo tanto quanto è più lunga la più lunga transazione. Ci sono quindi un po' di complicazioni tecniche che rendono il tutto con un overhead non trascurabile. Però...
+
+il principio funziona molto bene e visto che oggi le macchine sono più che carrozzate praticamente tutti usano questa tecnica oggi la stessa tecnica si potrebbe applicare allo schema quindi io ti posso dire che una colonna l'ho rimossa in realtà faccio uno snapshot dell'intera tabella tutti accedono a quella colonna fino a quando io non ho finito di effettivamente rimuovere i dati e poi faccio lo switch con lo snapshot dell'intera tabella
+
+a quel punto non hai più la colonna e non hai dovuto aspettare che l'operazione finisca. Poi, devi sempre comunque gestire il fatto che magari se la tua vista, storia, procedura o codice usava questa colonna adesso non c'è più e quindi dovrai modificare il tuo codice in maniera adeguata. Però hai una dinamica molto più elevata in termini di concorrenza e di accesso ai dati che non sono bloccati. Quindi questa è un po' la direzione in cui si sta andando ancora una volta per far sì che
+
+la modifica del database sia il meno intrusiva possibile ancora ricorreggandoci all'esigenza iniziale e questa è un po' la situazione per poter sostenere nuovi care che vi lavoro un approccio molto più dinamico al codice nel senso che ancora una volta se il codice diventa molto facile da scrivere perché non lo faccio io ma lo fa un AI per me oggi faccio una cosa, domani la voglio modificare e quindi dovrà essere agile e dinamico nel poter
+
+gestire questa cosa. Ovviamente in questo nuovo mondo per me i test diventano l'unico modo per assicurare la qualità del codice e la qualità del risultato. È una disciplina che secondo me deve evolvere ancora di più. senso che il test secondo me se ne parla tanto, vi piacerebbe sapere in quanti lo fanno veramente al 100 % e con le ISE come questa diventa una roba ancora più importante.
+
+so se d'accordo.
+
+Brainrepo (39:08)
+io sono d'accordissimo
+
+con te sul test, ho anche un'abol d'opinion che pochissimi testano il data layer o almeno testano direttamente il data layer e pochissimi utilizzano un approccio di unit testing verso il data layer e più un test d'integrazione quello che solitamente si fa perché
+
+Davide (39:17)
+Certo.
+
+Sì, è importantissimo.
+
+Sì, sì.
+
+Brainrepo (39:31)
+nello
+
+sviluppo di un'applicazione standard tu ti fai lo unit testing dove mochi stabbi quello che è la dipendenza esterna, ti testi il pezzettino di codice magari lo testi con once diverse, worst case, tutto quello che ti pare e ti sei fatto il tuo unit test rosso, sviluppi, il test diventa verde, bom, passiamo allo step successivo poi quando si tira in ballo il database solitamente sono dei test integrazione dove tu provi che
+
+Davide (39:37)
+Sì.
+
+Sì, sì, sì. Sì.
+
+Brainrepo (39:59)
+tutto fililiscio però non stai testando le nuances a livello di come le testeresti con uno unit test. Quindi vuol dire che se tu hai della logica applicativa nel database la tua test coverage verso il database è limitata e cosa che in realtà per esempio ultimamente quello che stavo facendo è prendo una serie di scenari, le hai, mi genera
+
+Davide (40:06)
+Sì.
+
+Assolutamente.
+
+Brainrepo (40:28)
+lo scenario e l'expectation all'interno del database e io ho le mie query che si sono testate in modo unitario lo so può sembrare troppo però io sto testando quelle query in modo unitario su un database che evolve quindi fondamentalmente sto testando l'impatto delle migration sul database ed è una cosa che
+
+Davide (40:30)
+si
+
+Sì, esatto.
+
+mmm
+
+Certo.
+
+Sì, No, no, 100 % d'accordo.
+
+Brainrepo (40:58)
+Ho visto fare pochissimo, anch'io è una roba che sto facendo da relativamente poco, perché questa maturità, questo livello di ragionamento l'ho fatto da poco specie per quel motore di booking che aveva delle cose particolari, no? Lock, un po' di cose, un po' di calcoli dentro, perché non ti posso far tirare giù i dati, fare il calcolo e poi fermare la prenotazione.
+
+Davide (41:00)
+Sì.
+
+sì chiaro chiaro
+
+Certo.
+
+Bravissimo, ora che li rimetto il calcolo è diverso, esatto.
+
+Brainrepo (41:24)
+Anche
+
+se te lo locco a quel punto faccio fare direttamente tutto a livello database e sono sicuro che
+
+Davide (41:27)
+Non solo,
+
+poi, lock significa meno scalabilità per definizione. ma mi fa molto piacere sentirtelo dire, ma seconda cosa è una disciplina che in effetti secondo i problemi del database, che molti sviluppatori non lo sentono proprio, pensano che sia una cosa che non fa parte del loro dominio, secondo me, se sei un backend developer o un full stack developer...
+
+è una sensazione non corretta, nel senso che i dati che la tua applicazione genera che usa sono assolutamente parte del tuo dominio, è una roba che qualcun altro se ne occupa indipendentemente da te. Quindi fare i test, assicurarsi che se faccio nel tuo caso un booking o qualcos'altro si effettivamente produca il risultato voluto anche all'interno del database
+
+è fondamentale soprattutto se siete in un gruppo grande per chi lavora in un gruppo grande non detto che le modifiche fai tu al database che tu pensi non impattino a nessun altro alla fine non impatti nessun altro veramente perché quando un database magari con mille, duemila tabelle o entità e io faccio una modifica sono sicuro che è una cosa che uso solo io e non è vero magari quindi esattamente
+
+Brainrepo (42:43)
+Butterfly F che si
+
+rompe tutto.
+
+Davide (42:46)
+bravissimo e quindi e quindi soprattutto chiaramente stiamo parlando di progetti non banali dove sono l'unico sviluppatore ma soprattutto quando stiamo lavorando in ambienti complessi con decine di sviluppatori sul database sul codice che interagisce con il database il test del database secondo me forse una delle cose più importanti perché probabilmente una volta che poi dati rovinati non è che puoi dire faccio undo
+
+ormai quelli sì hai il backup e se sei fortunato recuperi tutto ma è comunque un lavoro importante che ti occupa giornate magari per niente quindi
+
+Brainrepo (43:19)
+e diglielo
+
+agli amici di GitLab qualche anno fa, so se ricordi, è perso il database.
+
+Davide (43:28)
+⁓ no, questo non me lo ricordavo. E' una cosa che ti segna. Poi quando volta che lo fai una volta, capisci, dici osti, adesso capisco molte cose.
+
+Brainrepo (43:31)
+Non lo sbagli più.
+
+Qualche anno fa quando quando quando parlavamo in un episodio di Git Bar ci fermavamo a ragionare su un concetto fondamentale Schema on Read e Schema on Write stavamo parlando di quello che volgarmente definivamo lo sequel no?
+
+Davide (43:51)
+Sì, ci vediamo presto!
+
+No sequel.
+
+Brainrepo (43:59)
+La cosa interessante è che oggi a questo Schema on Read e Schema on Write stiamo iniziando a sentire la pressione del No Schema
+
+Davide (44:02)
+Mmh.
+
+addirittura completamente
+
+Brainrepo (44:14)
+Nel senso che, la sto prendendo alla larga, no? Sto facendo il classico girallamauro Però con l'avvento degli LLM Un sacco di informazioni no schema Stanno arrivando nel database, no? E quindi c'è la pressione delle vector search e tutta sta roba Come i database tradizionali
+
+Davide (44:17)
+Mmh?
+
+Sì.
+
+Mm-hm.
+
+Sì, sì, sì, sì, sì.
+
+Brainrepo (44:42)
+come SQL Server, come Postgre stanno affrontando questa sfida
+
+Davide (44:44)
+Sì, sì, sì, sì.
+
+Come al solito c'è stato il momento in cui database più specializzati sono nati come funghi, Pincon Quadrant vi dicendo, per risolvere il problema del memorizzare vettori, particolare poi embeddings e far la ricerca su quelli. Il problema, come ormai credo che tutti abbiano chiaro, ti ricordi quando si parlava di polyglot e persistence,
+
+che se tu hai un database per i documenti, database per i dati strutturati, database per full-text search, un database per il column store, un database per i vettori, un database per il geospatial, io mi ricordo che tu, quando parlavamo, dicevamo che questa era mort 4000 cut, perché praticamente muori dissanguato
+
+cercando di mantenere l'equilibrio dei dati in tutte queste database, dovendo imparare cinque sistemi diversi, dovendo mantenere cinque sistemi diversi, creando chiaramente anche dei punti connetterli, ma tenerli in piedi, se uno salta, salta tutto. Cioè, sulla carta è molto bello e molto elegante. Ogni cosa prendi, diciamo, l'oggetto più specializzato e usi quello. Sulla carta è fantastico.
+
+Brainrepo (45:50)
+Dovete connettere a 5 sistemi diversi al runtime
+
+Davide (46:06)
+In pratica abbiamo visto che questa roba ha un costo in termini di manutenzione, di overhead, di movimentazione dei dati che raramente è sostenibile. Quindi quello che sta succedendo, Postgres in Primis che essendo Community Driven è quello più veloce a intercettare questo tipo di cosa, l'ha fatto con JSONB e adesso l'ha fatto con PG Vector con l'estensione per memorizzare vettori, ha capito che è fondamentalmente molto più facile
+
+per il 90 % use case dire ok io ho un database dove c'è tutto e quindi il vettore non è neanche alla fine che una sequenza dei numeri quindi posso tranquillamente memorizzare il database faccio qualche modifica per calcolare cosa in distance piuttosto che Euclidean e via dicendo ma alla fine poi di numeri si tratta di stati ben strutturati si tratta e quindi sì il testo potrebbe non essere strutturato ma il vettore che lo rappresenta è ben definito al suo numero di dimensioni al suo
+
+base type e quindi lo posso mettere in un database posso utilizzare i query optimizer di un database per capire in una query complessa dove cerco per vettore, geospatial, structure data, json data, ma dove ha senso iniziare? scansiono i miei vettori o scansiono prima il documento json o magari stai cercando l'esempio che faccio io quando vado a spiegare queste cose e suppone che devi trovare la miglior focaccia a Seattle
+
+Non esiste il ristorante focaccia o una descrizione nel negozio che dice che facciamo la più buona focaccia di Seattle. No, troverai nella descrizione, nella recensione che qualcuno ha fatto che ha mangiato una buonissima focaccia. Però poi tu la vuoi trovare che sia a Seattle, che sia una walking distance, che il ristorante abbia 5 stelle, che abbia avuto almeno 30 recensioni. Quindi tu metti insieme tutte queste cose.
+
+e fai una sola query dove dici tutto quello che vuoi, incluso anche la similitudine del fatto che tu cerchi focaccia e quindi flatbread va benissimo qua in America come alternativa, no? Il problema è che ti serve una ricerca semantica per fare questa cosa e quindi vettori. Ora, tu fai tutto questo in un database, però metti che hai un database con 10 milioni di recensioni. Non ha senso fare la scansione di 10 milioni di vettori che diventa estremamente costosa.
+
+per cercare una roba Seattle, parti limitando la ricerca sul ristorante Seattle vicino a te e quindi a quel punto magari la ricerca sui vettori non ti serve su 10 milioni, ti serve su 3.000. Ora questa capacità di scegliere qual è il punto di partenza migliore è la caratteristica tipica dei database relazionali che hanno un query optimizer all'interno. Il fatto di mettere i vettori all'interno di questa capacità semplicemente potenzia la capacità di un database per cui a quel punto non mi devo preoccupare di...
+
+faccio la ricerca sul database vettoriale, poi devo pensare pre filtering o post filtering, perché c'è anche quello sul database vettoriale, poi sposto i dati, 100.000 righe nel mio database geospatial e quel punto tolgo tutto quello che non è di sia. Cioè, capisci che se devo fare questa roba a mano su database diversi, diventa un lavoro enorme senza mettere in conto la sicurezza, perché tutta volta che le dati si spostano, io posso intercettarli e posso fare qualcosa che non avrei dovuto fare fin dal principio.
+
+Quindi, sicuramente avere la cosa che stiamo notando è che si sta concentrando e si ritornando al polyglot database, se vuoi, dove il database engine è capace di fare molte cose, non solo filtrare dati strutturati e tabelle, ma lavorare su JSON, lavorare su vettori, lavorare su dati geospaziali e Postgres come è stato il primo, sicuramente quello di di successo a fare questa cosa tutto insieme. E infatti non è un caso che adesso...
+
+anni fa si parlava molto di NoSQL, andava di modo e tutto, adesso se io parlo con un sviluppatore medio qualsiasi e gli chiedo che data base usi, bravissimo, la risposta è Postgres. Non penso più a NoSQL, esatto, non pensa neanche, la risposta è Postgres e questo come è un grande merito di Postgres, dalla community che è maturata e ha visto che sì, sulla carta è tutto bello, in pratica c'è un problema di mettere insieme i dati e spostarli.
+
+Brainrepo (50:02)
+POSGRESS GINI INDEX... e non faccio vero
+
+Davide (50:19)
+e ovviamente noi stiamo facendo la stessa cosa. In particolare è stato il PM di tutto ciò dopo The Type A Builder. Ho lavorato su tutto ciò che riguarda i vettori in SQL Server 2025 Azure SQL e quindi il supporto vettoriale è una cosa che ci hanno chiesto fondamentalmente tutti perché il momento in cui tu lo realizzi immagina di avere un database gestionale dove hai già tutte le descrizioni dei tuoi prodotti, tutte le recensioni, tutte...
+
+le informazioni che hai ricevuto ai clienti che magari hanno restituto un prodotto, ti hanno detto non mi piaceva per questo e questo motivo. Bravissimo, le converti in vettori, fai semantic search e in 30 secondi veramente costruisci una pipeline rug, retrivolve log-ment generation, dove tu puoi chiedere, chiedere la tua AI, aiutami a identificare, diciamo, quali sono i punti di miglioramento del mio prodotto. Hai una risposta in qualche secondo e hai finito.
+
+E' una roba che puoi fare in minuti, onestamente, senza dover mettere in piedi 10 servizi, sincronizzazione di qua, sincronizzazione di là e via. Quindi sta diventando molto molto interessante. Io mi sono divertito moltissimo a fare questa cosa. C'era gente veramente che brillevano gli occhi quando vedevano...
+
+Brainrepo (51:31)
+Si, ho fatto!
+
+Sì,
+
+ma la potenza è incredibile. Ne parliamo tra un attimo su quella che è stata la mia esperienza giocando con queste cose. Però ti chiedo, qualche anno fa si parlava tantissimo di full text search come tallone da kill dei database, la elastic search divenne prese piede proprio per questo, risolveva quel tipo di...
+
+Davide (51:59)
+Sì, sì, sì, sì.
+
+Brainrepo (52:01)
+di problema con interessanti fatture, come tendo a ricordarlo, perché chiunque abbia avuto un server elasticsearch managed sa quanto costa. Però la domanda è non si parla più di full-text search, non...dificilmente...
+
+Davide (52:22)
+Mh-hm.
+
+Brainrepo (52:25)
+ne ho distinto a parlare da quando c'è la vector, vector search, ti puoi fare l'embedding velocemente e anche in modo molto cheap.
+
+Davide (52:34)
+Sì, no no, assolutamente, soprattutto se hai magari una scheda GPU in casa e ho l'AMA e voglio dire te lo fai veramente in 4 e 4.8. Adesso si parla molto di hybrid search, magari hai sentito questo termine, dove metti insieme vector search e full-text search per migliorare ancora di più la ricerca semantica. Perché la ricerca semantica è ottima, però suppone che tu hai un documento dove...
+
+ci sono alcune keyword che sopporto magari in contratti o in ambiti legali, dove tra due documenti che parlano della stessa cosa in linea di principio, real estate ad esempio o qualcosa del genere, tu vuoi premiare come ricerca quel documento che ha all'interno alcune particolari keyword che sono determinanti, allora ecco che diventa comodo avere
+
+Semantic Search come veicolo principale per la ricerca e poi il Full-Tech Search come modo per dire che tra questi 50 risultati quali vado a mettere in cima la lista? Quelli che magari usano esattamente gli stessi termini di ricerca. Quindi Full-Tech Search adesso è diventato un po' meno di moda ma si sta fondendo con l'idea in generale di ricerca semantica perché alla fine poi quello che cercava di fare è la Full-Tech Search.
+
+se ti ricordi, elasticsearch ti coniugava i verbi, ti cercava di plurare singolari, quindi cercava di fare questa cosa già di suo. Chiaramente senza i vettori, senza le high tempi era difficile. Adesso secondo me si completa molto bene, però sicuramente il vectorsearch è diventato lo standard alla quale poi ci si aggiunge qualcosa per poter
+
+avere una sorta di motore di ricerca comparabile a quelli di Google, Bing, via dicendo, sui propri dati. Però sì, è interessante vedere come queste cose poi, come dire, cambiano molto anche velocemente, perché VectorSearch due anni fa, quando ne abbiamo parlato, non esisteva. In un anno è stato proprio, giriamo pagina e... là, eccola qua.
+
+Brainrepo (54:48)
+Esatto!
+
+Davide (54:50)
+veramente interessante
+
+questa cosa da vedere, cioè da vivere addirittura io l'ho vissuta poi in prima persona quindi una rivoluzione
+
+Brainrepo (54:55)
+⁓ immagino come vi
+
+abbia travolto no? La onda
+
+Davide (54:59)
+⁓ sì, sì, da
+
+un giorno all'altro, non da un giorno all'altro, ma diciamo veramente molto breve, abbiamo realizzato, ⁓ questa roba non possiamo non farla, PG per Postgres chiaramente era già in vantaggio con PG Vector, e poi questa cosa qua diventa Table Stakes, cioè è una roba che qualsiasi database deve avere, perché sennò non sei, non fai neanche parte del gioco, nel senso che Semantic Source oggi è una cosa che penso che tutti, ormai danno per scontato, ormai già si parla di RUG,
+
+e altre cose, la Trilogmented Generation che è basato sul semantic source fondamentalmente.
+
+Brainrepo (55:34)
+Sì, in realtà
+
+quello che è successo è stato che naturalmente tutti questi topic stavano nei laboratori di ricerca, anche interni, Microsoft era pane quotidiano per i laboratori di ricerca. Quello che è cambiato è la rapidità con cui il mercato è diventato demanding, quindi è arrivato a dire ⁓ io lo voglio, caccia la mosca perché mi serve, ne avete parlato, ormai è pubblica la cosa, si sa che c'è questa tecnologia, quando me la metti a disposizione per la mia enterprise? Perché poi questo è il ragionamento.
+
+Davide (55:41)
+Certo. Sì, sì.
+
+Sì,
+
+Sì, ma anche perché secondo me questa
+
+è una di quelle poche tecnologie, le hai in generale, ma parlando proprio nel settore specifico, vector search, che proprio fa cadere la macella alle persone, senso che quando la vedi dici, ⁓ questo è come essere in Star Trek, dove parlo col mio computer, questo mi risponde con i miei dati, era una cosa che in pochissimo tempo la gente detto, la voglio, non c'era neanche di, non mi fami pensare, devo capire se è, no, cioè quella roba lì...
+
+Brainrepo (56:27)
+Si poi te da product manager dici
+
+come la metto in back log? No esatto no poi c'è un altro aggioramento che facevo ti ho detto che ne avrei parlato al volo qualche tempo fa ottobre stavo lavorando su una cosa mi trovavo a lavorare in una grande enterprise no e tu sai nel grande enterprise spesso
+
+Davide (56:31)
+Non metterla, è la prima cosa che devi fare. Ok, questo è facile allora. La priorità è molto chiara.
+
+Mmh.
+
+Brainrepo (56:56)
+non è che sono super organizzate e io mi ritrovavo a lavorare con nel mondo dell'API c'era un API Landscape enorme e quello che dovevo fare era insomma fare discovery di un API Landscape con migliaia di microservices ogni microservice esponeva che ne sommetti 30, 40 endpoint quindi stiamo parlando di un numero esagerato di API
+
+Davide (57:08)
+Mmh.
+
+Orca! Dippia! Uff, pamma mia!
+
+Sì, è notevole.
+
+Brainrepo (57:26)
+e tu dovevi scoprire il dominio e quindi là il rag è stato... io cosa ho fatto? c'è uno dei peperi interessanti io ho preso gli schemas ok ho chankato gli schemas usando delle tecniche particolari che vengono utilizzate per chankare i jason in un certo modo in modo da preservare esatto il significato semantico quindi ci sono tutta una serie di tecniche di flatting
+
+Davide (57:29)
+mamma mia
+
+⁓ beh certo!
+
+Sì?
+
+sì? chunking certo perché sennò perdono significato
+
+Brainrepo (57:54)
+e ci ho fatto il mio rag ed è stato fantastico però là mi son detto occhio che se io sono il data architect dell'enterprise io ho anche bisogno di capire il dominio perché se un enterprise io centinaia di domini o di sottodomini come si overlapano dove c'è della sovrapposizione semantica nel dominio
+
+Davide (57:57)
+Interessante.
+
+Mmh
+
+certo.
+
+Sì.
+
+Sì.
+
+Brainrepo (58:21)
+e a quel punto sono entrato nel buco nero di dbscan, hdbscan e tutta quella serie di tecniche di clustering semantico che fanno la differenza. Adesso, tutti abbiamo usato il database e tutti abbiamo usato il group by, no? Fondamentalmente queste tecniche di clustering semantico sono il group by dei vettori, ok?
+
+Davide (58:31)
+Mmh.
+
+Sì.
+
+Group si? Assolutamente. Assolutamente.
+
+Brainrepo (58:48)
+e
+
+io magari per mia ignoranza non ho ancora visto database che sono arrivati a questo punto nel senso di darti uno strumento semplice che ti faccia un'indicizzazione del dbscan o di hdbscan cosa fa dbscan? fondamentalmente compara vettore per vettore e clusterizza secondo delle threshold hdbscan cosa fa?
+
+Davide (58:57)
+Mmh... Mmh...
+
+Mmh.
+
+a
+
+Sì.
+
+Brainrepo (59:17)
+fa questo ad altezze diverse quindi guarda da lontano e vede dei cluster di un certo tipo poi piano piano si avvicina e vede che i cluster si dividono in sotto cluster e quindi tu hai una visione, adesso lo sto raccontando con la zappa però c'è una visione in profondità ecco secondo me
+
+Davide (59:33)
+No no è chiaro, chiaro.
+
+Brainrepo (59:40)
+se qualcuno non lo sta già facendo questa è l'evoluzione naturale che io ancora non ho visto quindi questo ce lo segniamo nella...
+
+Davide (59:47)
+Mmh.
+
+No, molto
+
+interessante. Per adesso, l'ho visto fare, tipicamente questa cosa viene venuta fatta nel tuo campo, interessante, non l'avevo mai sentito fare, quindi molto interessante, ma per fare anomaly detection, perché fondamentale quello che tu fai è quello di fare cluster o gruppi di oggetti che sono semanticamente simili e chiaramente se c'è uno che non entra in nessun gruppo c'è qualche cosa...
+
+di diverso, non necessariamente sbagliato, però sicuramente qualcosa che magari non riesce a classificare perché non è simile a nulla e quindi può andarlo a guardare. Questo vale nella identificazione delle frodi, ha anche classificazione diciamo di classificazione automatica per quanto riguarda categorizzazioni di ads, via dicendo. Quindi è un campo molto ampio. Secondo me oggi sono tutti
+
+ubriachi dall'idea della rag o quindi la trema del commento generation e semantic source che è la cosa più facile più veloce e che porta più valore. Quando questa cosa qua sarà ormai considerata da tutti globalmente diciamo ok e questo problema è risolto e quindi possiamo incominciare ad andare a vedere qualcosa di più complesso allora secondo me si incomincerà ad andare ad avere queste group by semantic group by fondamentalmente o clustering
+
+dove soprattutto dal lato analitico, direi, può diventare interessante perché oggi tutte queste cose tu le devi fare con programmi specializzati. Adesso io non sono nel campo analytics, non conosco benissimo le ultime trend e tutto però mi ricordo che una volta si facevano con SAS o Matlab queste cose che tu tiravi fuori, giusto no? Adesso magari ci sono tool diversi e tutto però l'idea è se devo fare un'analisi, una ricerca analitica, questa cosa
+
+Ad oggi come oggi sono degli strumenti è probabile che se ad un certo punto questa cosa diventa di norma cioè dice a tutti lo fanno come un po come semantic search ha senso spostare nei database La vedo bene magari in data warehouse o database più votati alla parte analitica perché questa cosa qua come avrei notato consumo un sacco di risorse in termini di computing perché fondamentamente non c'è un modo semplice per aggruppare dei vettori che tra l'altro sono multidimensionali quindi
+
+hanno una quanta di calcoli o scena da fare velocemente e tipicamente consumano veramente tanta CPU e tanta memoria e quindi la vedo bene più magari nel mondo dei database OLAP o dataware house però sicuramente interessante questa cosa mi è capitato di farla un paio di volte e funziona bene in realtà è lenta però perché devi fare un confronto
+
+Brainrepo (1:02:34)
+Sì, sono dei caveat... Esatto, ci sono dei caveat, fare un po' di flattening,
+
+di sampling, nel senso che non puoi farlo per avere dei dati significativi.
+
+Davide (1:02:41)
+Sì. E no, se lo fai su tutto diventa fondamentalmente...
+
+sì, diventa, diciamo, competizionalmente diventa molto presto infattibile quando già hai un milione di vettori e se devi esplorarli tutti uno per uno in confronto agli altri hai già un carico di lavoro che diventa esponenziale, quindi non funziona.
+
+Brainrepo (1:03:04)
+secondo me insomma c'è del margine di ricerca io ci vedo del margine di ricerca e soprattutto se la performance perché tanto lo sappiamo come vanno i gradini di performance quindi se troviamo il modo per aumentare la performance così come abbiamo fatto per la vector search e l'estrazione dei vettori secondo me questo è uno di quegli strumenti che
+
+Davide (1:03:08)
+⁓ senza dubbio!
+
+Sì.
+
+sì, sì, esatto
+
+Brainrepo (1:03:31)
+domani può sostituire la Group By in un modo così trasparente, così... non lo so.
+
+Davide (1:03:31)
+si, si
+
+Sì sì. Ad
+
+esempio clusterizzare dei clienti per per interesse diventa diventerebbe semplicissimo. Puoi fare semantic group by. Dicci tutti quelli che interessano clienti magari di Netflix immagina. Tutti quelli a cui hanno visto questo tipo di serie quali altre serie possono essere interessate a guardare perché semanticamente hanno
+
+Brainrepo (1:03:57)
+Quello...
+
+Allora, ricerca così specifica in realtà già lo puoi fare con la ricerca semantica, no? Quindi bene o male già quello ti aiuta. Però dire, ok, dimmi quali sono i gruppi utilizzando questo... Esatto, questo livello di sampling di... di quello che ti pare, identificami cluster, dammi gruppi...
+
+Davide (1:04:14)
+⁓ addirittura identificare i gruppi, sì sì
+
+Sì, sì, sì, sì, sì, sì, sì, sì.
+
+Brainrepo (1:04:25)
+che sarebbe un group by, non so, e lui ti dà...
+
+Davide (1:04:29)
+Quello che
+
+oggi fai, se qualcuno esperienza di scikit-learn con Python, questo è came-ins clustering, Quindi identifichi i gruppi, e in quel caso il cluster, siccome sarebbe legato a un vettore semantico, diventa di fatto un topic, tutti quelli che sono interessati ai cani, ai gatti, ai... sì, sì.
+
+Brainrepo (1:04:50)
+E in realtà è incredibile, ho dei Python Notebook dove facevo dei test con un sample di queste API Landscape, quindi mi sono scaricato, mi sa che erano mille o duemila Open API Specification, li ho buttati dentro, ho fatto gli embeddings di tutto con la mia...
+
+Davide (1:04:58)
+Sì.
+
+Mmh.
+
+e ti sei calcolato
+
+i tuoi cluster forte
+
+Brainrepo (1:05:15)
+con la mia...
+
+sì con il mio LME studio con l'esso che sfondeva la macchina e dopo un po' di ore, un po' di ore, c'avevo il mio database prima a ChromaDB poi ho cancellato tutto perché il problema di ChromaDB è che se poi volevo fare delle query che non erano sugli embedding ma erano un pochino più strutturate non arrivava a pagina 2 quindi insomma l'ho tolto via e alla fine
+
+Davide (1:05:28)
+Mmh.
+
+esatto, non potevi, diventava complichetto. Sì, esatto.
+
+Brainrepo (1:05:44)
+La cosa incredibile è che riusciva a trovare dei cluster che avevano senso, se c'era qualcosa che riguardava i dati bancari, lui mi ha trovato tutti i modelli che toccavano dati bancari.
+
+Davide (1:05:50)
+Mmh.
+
+Sì, quando quando
+
+lo vedi funzionare impressiona l'effetto che dicevo prima è una roba che vedi e dici cavoli questo sembra il futuro invece lo sto usando adesso sembra di essere un film di fantascienza dove c'è la macchina che ti dice guarda ho trovato sta roba che io non ho mai mai trovato da solo e quindi questo come è stato un po
+
+Brainrepo (1:06:11)
+E la cosa bella era che
+
+avevo il cluster di dati bancari, avendolo fatto con Http Scan, avevo il cluster di dati bancari, rifinevo la ricerca, lui ci metteva qualche minuto, una decina di minuti, e poi mi dava, che ne so, dati bancari bonifici, direct debit, piuttosto che credit card, e io dicevo, ma aspetta, a questo, a questo modello non ci avevo pensato, guarda, là!
+
+Davide (1:06:17)
+Sì?
+
+Certo.
+
+i sotto cluster. Sì. Sì, sì, sì, sì, sì, sì.
+
+No no, è fantastico, concordo.
+
+Brainrepo (1:06:39)
+veramente veramente veramente incredibile e i puntini di tutti i servizi che stavano dentro e quindi ho detto ma caspita il team xy z sta lavorando su questo su queste entità che la sto facendo io in un altro progetto dall'altra parte dell'enterprise e sto duplicando il microservizio occhio fammeli chiamare fammi chiamare il data architect convergiamo bottom up e facciamo un solo servizio
+
+Davide (1:06:58)
+certo praticamente esatto esatto si esatto esatto
+
+esatto
+
+chi ha senso? no no assolutamente no no questo quindi questo è po' motivo siccome per cui in due anni siamo passati dal non parlare di vettori adesso se non li hai non sei nessuno e sì vettori in particolare embeddings però è veramente un improvement notevole
+
+Brainrepo (1:07:08)
+che fa questa roba ed è stato incredibile.
+
+Abbiamo parlato di motori di ottimizzazione all'interno dei database query optimizer e così questo tipo. Adesso sono molto algoritmici da quello che so, giusto? Ma pensi che un domani anche questi motori possano essere guidati da
+
+Davide (1:07:37)
+Mmh.
+
+Beh no, lo sono sempre stati
+
+Brainrepo (1:07:54)
+da modelli
+
+Davide (1:07:58)
+Ho perso un attimino ma immagino di aver capito la domanda perché è una cosa che sta uscendo molto ultimamente e ti riassumo, al posto di avere degli algoritmi che se vuoi sono statici all'interno del motore, perché non usiamo le AI per decidere qual è il modo migliore per risolvere una query, se ho capito bene. Ho perso un attimo la connessione. guarda ne parlavamo giusto ieri con alcune persone che sono venute a trovarci qua.
+
+Brainrepo (1:08:20)
+sì sì era esattamente questo
+
+Davide (1:08:28)
+La mia risposta è che, anche se magari ti stupirà, che no. Nel senso che... Gli algoritmi di ottimizzazione delle query sono molto ben conosciuti e soprattutto le query sono molto ben strutturate. Oggi sono basate tipicamente sui pesi, su quanto costa fare una certa operazione e quante righe stimi che una certa operazione porti come risultato.
+
+e il problema grosso oggi di questo algorithmi è che ad esempio se tu fai alcune operazioni di join dove magari non vai a ridurre ma va a ampliare lo spazio di ricerca immagina un join al posto che una hand close o una or close e l'EDI praticamente la la steam che viene fatta all'engine dice ok io se ho 10.000 righe nella mia tabella e metti questo filtro ne tiro fuori 10 però se metti questo filtro o questo o questo o questo è chiaro che la steam diventa meno fine no perché devo andare un
+
+di più a ipotizzare. Quindi questo introduce un errore che se amplificato in query grosse, immagina che hai 10 tabelle nella tua query, questo si moltiplica ogni volta che passi una tabella all'altra e quindi alla fine ha un piano esecuzione non ottimale. Chiaramente c'è un mille tecniche per poter limitare questa questa amplificazione dell'errore e su tutte cose ben note, la cosa bella dei metrabesi relazionali è che tutto basato su matematica non c'è niente a inventare.
+
+e soprattutto quello che tutti operano in database è che la risposta è deterministica cioè se 2 più 2 fa 4, 4 rimane quello anche se lo chiedi a un cinese, a un indiano o un italiano come noi con l'LLM, benché sia possibile fare questo e anche se fosse possibile il prezzo sarebbe enormemente più alto perché invocare un LLM oggi costa tantissimo rispetto a semplicemente fare un'operazione che usa la tua CPU normale
+
+ma facciamo anche finta che l'LLM diventi gratis o allo stesso costo della nostra CPU, non è più il problema del consumo dell'energia o del fatto che costa veramente tanto in termini proprio monetari fare un query che envolva un LLM. Facciamo anche finta, altra seconda ipotesi, che invocare l'LLM sia veloce tanto quanto invocare una operazione sulla tua CPU, ok? Quindi diciamo che dal punto di vista tecnico non c'è distinzione, e dal punto di vista economico anche. Il problema è che perché tu devi
+
+chiedono all'LM tutte le volte di valutare una nuova situazione quando tu sai benissimo che la situazione deve essere risolta in un modo ben preciso. A meno che non ci sia qualche cosa imponderabile che tu devi decidere in un momento in cui tu vedi quella situazione, dici ok pensavo fosse x e invece faccio y e non hai nessuna possibilità di identificare questa imponderabilità a priori
+
+un LLM non ti aiuta molto nel senso che l'LM è ottima quando tu come devi prendere una decisione in cui dici vedo questo risultato e posso decidere A, B, O, C, O, D e la decisione di quale soluzione prendo non è basata sullo solusato che ho visto ma ci sono altri fattori esterni che non posso intercettare direttamente e quindi devo fare una valutazione un po' più ampia basata sulla mia conoscenza passata alle cose basata su altri fattori
+
+che sono in questo contesto. Allora l'inquale il caso secondo me l'LLM è diventato interessante, quindi più che per avere l'LLM nel motore database, almeno per come esiste adesso, io la vedo come un aiuto notevole per dire ok, una query molto complessa. Come la posso riscrivere per andare a utilizzare ad esempio le ultime funzioni che sono uscite di T-SQL o di SQL come linguaggio? Come posso semplificarla
+
+andando a fare in modo che una query che involve 20 tabelle, magari la spezzo di una query più piccola e ottimizzo la singola esecuzione, dicendo, questo potrebbe essere fatto anche nell'engine, volendo. Il problema è che rifarlo tutte le volte, rifare, rinvocare le lemmi tutte le volte, secondo me è un effort che attualmente non giustifica il risultato, nel senso che ottimizzare le query è una scienza ben conosciuta.
+
+Brainrepo (1:12:45)
+Sì, io non
+
+mi riferivo all'LLM in quel caso, ma pensavo proprio a più machine learning duro e puro per capire magari su più iterazioni qual è l'approccio, il modello di ottimizzazione che performa meglio per le query di quell'applicazione specifica con quei pattern specifici di Behaviour.
+
+Davide (1:12:50)
+⁓ ok, scusa, allora, sono divagato per niente.
+
+E puro.
+
+Mmh.
+
+migliore.
+
+Se
+
+parliamo di Machine Learning, assolutamente sì. Che però è una branca ben specifica e ben... Sì, sì, no, quello può essere. Quello può essere. Quello può essere, nel senso che quel punto l'idea è che tu puoi esplorare lo spazio delle possibili risoluzioni di una query in maniera molto più veloce e possibilmente efficiente. Oggi fondamentamente basiamo questa esplorazione... immagina che...
+
+Brainrepo (1:13:18)
+Sì sì sì no io io intendevo quello perché un modello linguistico sembra un po un po insomma
+
+Davide (1:13:40)
+ogni volta che viene eseguita una query noi dobbiamo ipotizzare tutti i possibili modi in cui possibili a risolverla e che tendono a diventare esponenzialmente di più, più aggiungi query o indici vedicendo, no? Ad un certo punto noi dobbiamo dire ok basta io ho un secondo per fare questa cosa in quel secondo devo esplorare più modi possibili per trovarne il migliore ma magari se avessi tutto il tempo che posso avere magari ci dovrei mettere 10 secondi per trovare il piano di esecuzione più efficiente
+
+ma non posso perché sono time boxed, perché non ha senso spendere 10 secondi per capire quali sono migliori quando in 3 secondi leggo tutta la tabella, c'è questo problema da risolvere. Quindi in quel caso l'LM potrebbe essere, non scusa, il machine learning potrebbe essere interessante perché potrebbe essere interessante capire, dato un punto di partenza, data le statistiche di distribuzione, tutta una tassiera di dati,
+
+in maniera heuristica, vuoi capire qual è il modo migliore di risolverla query senza dover, a prescindere fare quello che chiama tree branching per cui noi diciamo, ci sono tutte queste possibilità io a destra non ci vado neanche perché ipotizzo, ipotizzo che sia la stata sbagliata però magari in fondo c'è la stata giusta e allora invece con un po' di machine learning questa cosa potrebbe essere fatta in maniera più efficiente e poi portata all'interno dell'engine in maniera tale che
+
+abbandoni un po' questi set di threshold predefiniti, vuoi, che sono oggi all'interno di tutti i motori per cui riesci ad essere un più dinamico. sono molti studi in questo campo. Non credo che ci sia arrivato ancora a un punto in cui uno dei più grossi benefici dei database razionali è quello che portano predictability e determinismo. Io so che se ho questi dati, ho stuto in questo tempo.
+
+Per molti use case il fatto di avere il tempo costante è più importante che avere la query più veloce ma very spiky. Quindi ad esempio io voglio avere una costante transazione che viene costantemente eseguita in 30 millisecondi. Preferisco quello al posto che averla ogni tanto 10 ogni tanto 60. E quindi il determinismo in molti casi è quello che vince ed è per quello che ad oggi funziona ancora tutto basato su algoritmi ben noti adesso perché si sa
+
+risultato portano. Vedremo nel senso che non so sinceramente per adesso non mi spingo a dire che le cose cambieranno perché secondo me si è trovato un buon equilibrio però sai come con i vettori da un giorno dall'altro è cambiato tutto quindi
+
+Brainrepo (1:16:15)
+Sì, no,
+
+io lo dicevo dalla mia prospettiva di user del database, E guardando in modo abbastanza orizzontale i miei colleghi o i mid che solitamente fanno i database che 90 % dei casi si dimenticano di mai fare gli indici. Perché l'indice è tipo lo smalto che la signora mette solo in casi speciali.
+
+Davide (1:16:21)
+Mmh.
+
+Sì.
+
+⁓ certo.
+
+Brainrepo (1:16:44)
+e quindi mi dico ma cacchio io ho uno storico di transazioni che comunque posso in qualche modo con dei banderi sdefiniti, posso salvare da qualche parte io potrei fare un modello, uccato al database che guarda le transazioni cerca di capire i pattern magari clusterizza e dice io ho questo pattern ricorrente anche se
+
+Davide (1:16:50)
+Sì.
+
+Sì.
+
+Brainrepo (1:17:13)
+l'utente non mi ha detto niente io gli butto un indice e dopo magari la terza quinta decima etterazione vedi che stranamente il database è autoapprendente è una roba che lato marketing
+
+Davide (1:17:26)
+e sì,
+
+forse 30 anni che ci stiamo provando e funziona tutto in casi molto semplici in situazioni complesse questa cosa purtroppo non funziona perché momento in cui, prima di tutto, creare un indice ha un impatto sulla CPU e AIO quindi se io ti creo un indice mentre tu stai avendo un carico di lavoro che non vuoi che venga affetto da nessun altro tipo di attività
+
+Già questa cosa non si può fare perché creare un indice, ripeto, un impatto veramente massivo. Creare un indice bisogna leggere tutta la tabella, per essere chiari. Se la tabella ha un miliardo di righe, tu questa cosa non la puoi fare. Almeno non senza conoscere quale sarà il carico di lavoro immediatamente futuro, perché ovviamente cosa succede? Per una settimana analizziamo il carico di lavoro ed è piatto. Fantastico, è un ottimo momento. Adesso è percare l'indice.
+
+dopo due minuti arriva la partita del sabato in cui tutti iniziano a cliccare e tu stai creando l'indice in quel momento quindi il problema è che a meno che non siamo in presenza di un carico di lavoro che è totalmente predicibile è quasi impossibile creare un indice senza avere alcun tipo di impatto sul workload ed essere sicuri che non vada a capitare al momento sbagliato ora ci sono molti modi per
+
+contingentare questo problema. Uno può dire, io so a priori che durante il weekend succederà questa cosa quindi non crea l'indice. Oppure crea l'indice solo in questi orari e dicendo. Nel momento in cui ti però hai un database molto complesso e molti di questi casi limite scopri che quello che puoi fare è veramente molto poco. Noi abbiamo ad esempio questo servizio, si chiama Intelligent Query Tuning, che crea gli indici o ti suggerisci di creare gli indici automatico, dropparli. Io ti direi che nell'80 % dei casi fa un ottimo lavoro. Nel senso che
+
+come DBA, anzi come sviluppatore lo attivi, non ti ne accorgi neanche. Hai 10 indici dopo due settimane, sei contento. Se facciamo questa cosa su database di un certo tipo, quindi diciamo il top 10-15 % e no, riceviamo una chiamata subito e che ci dicono esatto, esatto, perché stai facendo questa cosa adesso, la CPU sta andando oltre il 75%, sappiamo che questa cosa dà problemi a quella... e quindi...
+
+è un diciamo sulla carta sembra molto semplice da risolvere perché dice cavolo io so tutto ho tutte le transazioni tutto il problema è che è un po come predire la borsa è esattamente lo stesso cioè in teoria lo fai perfettamente tu sei lo storico dell'andamento di uno stock giusto? e lo puoi predire funziona? no perché perché nel a meno che non sai che non ci sono fattori esterni di cui tu non sei a conoscenza che possono influire quel carico di lavoro
+
+o nel altro caso la borsa, è difficilissimo predire un andamento anche se sulla carta è chiaro dove sta andando. questo è il grosso problema. risolverà, guarda ti assicuro che ci sono una quantità notevole di scienziati, abbiamo un intimso solo per quello, che si cercano di capire come fare questa cosa perché è un po' il... come dire, la gallina delle uova d'oro. Però è...
+
+Brainrepo (1:20:43)
+Sì, perché lo puoi usare
+
+per quello, lo puoi usare per il cost modeling, quello che dicevi prima, lo puoi usare per la stimazione... stimazione? No, non so se dice stimazione... la stima delle cardinalità, sì, insomma, secondo me anche là c'è della ciccia, bisogna vedere quando la raggiungeremo.
+
+Davide (1:20:49)
+Certo, certo.
+
+estimation sì stima esatto
+
+Ci stiamo provando. Per adesso non c'è nulla diciamo di nuovo all'orizzonte. Ripeto però questa è una roba che come per i vettori non c'era e poi c'è e poi diventa esatto. Anche io avevo avuto sempre questa situazione quando sono andato a parlare con i data scientists qua, ma non ho spiegato bene il problema e più me lo spiegavano più capivo questa roba qua. Esattamente come per dire lo stock market. Sulla carta assolutamente fattibile, in pratica impossibile.
+
+Brainrepo (1:21:35)
+molto difficile sì.
+
+Davide (1:21:35)
+C'è un certo grado di
+
+aleatorietà che non puoi togliere. E quello è quello che ti frega. E' quello che... sì. Sì, sì, sì. Poi, in alcuni casi, realtà, si può fare. Sia un database molto predicibile. Il tuo database di WordPress è il tuo blog. Fantastico. Però, diciamo, in cariche di lavoro più complessi, che è dove servirebbe di più e anche dove hai meno confidenza nel farlo.
+
+Brainrepo (1:21:41)
+Quello dell'indeterminismo che si si si
+
+sì sì chiaro guardavo l'orologio siamo già un'ora e mezza io ti ti ti ti faccio tornare a lavorare perché la tua giornata sta immagino stia partendo la mia sta ormai finendo l'ultima domanda però prima di chiudere l'episodio è su sequel che è uno dei linguaggi meno amati dagli sviluppatori pensi che...
+
+Davide (1:22:05)
+Sì, sì.
+
+Sì.
+
+Bye!
+
+Ai me!
+
+Brainrepo (1:22:28)
+Oggi da quello che vedo io si fanno scrivere il sequel dagli LLM e testatelo amici miei, testatelo vi prego.
+
+Davide (1:22:33)
+LLM, la reale, sì.
+
+Bravo, bravo,
+
+grazie, supportami in questo.
+
+Brainrepo (1:22:40)
+pensi
+
+che ci sarà qualcosa a runtime che convertirà a linguaggio naturale 2 sequel
+
+Davide (1:22:46)
+perché no? sì sì
+
+già adesso è molto semplice creare un Nelt, noi lo chiamiamo Nelt SQL Engine io stesso ho fatto 3-4 esempi e funzionano in maniera impressionante nel senso che veramente anche con poca diciamo veramente ci ho messo un paio di giorni a crearli quindi con poco effort se vuoi crei qualcosa che dicevo cavolo questa cosa qua è
+
+Cioè, ho fatto un esempio dove tu prendi un database, anche relativamente complesso, diciamo, per essere un esempio, il nostro database di test, ci sono una settantina di tabelle, e tu puoi chiedere una cosa del tipo, dimmi quali sono i prodotti che posso vendere insieme per incrementare le revenues nel mercato del Nord America. Cioè, tu puoi chiedere questa cosa, a questa LLM, questo esempio che ho fatto.
+
+e lui comincia a dirti ok io devo quindi mi chiedi questa cosa vado a estrarre le informazioni dallo schema database per queste tabelle a questo punto capisco lo schema e a questo punto capisco devo seguire questi step prima fare questa query per restare i prodotti più venduti poi quelli e via dicendo lo vedi e lo fa e lo fa ed è impressionante nel senso che dici a. magari io non ci avrei pensato b.
+
+magari scrive del codice sbagliato e a questo punto legge l'errore che arriva e riscrive il codice giusto come farebbe un umano e poi alla fine ti dà il risultato. Quindi è sicuramente possibile, quello che ho notato però è che se la query è complessa tipo quello che ho fatto un esempio, no? Estraimi tutti i prodotti tali per cui possiamo fare del cross selling via dicendo allora senso e nel tu sequel.
+
+Per altre cose, se sai già quello che vuoi, fai prima scriverla query tu. È un po' come con la chat, con gli esempi della chat. I molti dicono, la chat diventerà la nuova interfaccia. Nì, se io devo cliccare una spunta su una checkbox, faccio ancora prima fare la spunta sulla checkbox, al posto che scrivere, ciao, sono Davide, per favore mi fai questa cosa qua, no? Oppure se invece la cosa è più complessa, immagini dire, ok, creami una nuova fattura con questi prodotti, probabilmente faccio prima a chiederlo alla chat bot, no?
+
+Quindi la risposta è sì, ma non andrà a sostituire SQL, andrà ad accompagnarlo e comunque poi alla fine, come dicevi tu, responsabile, e ritorniamo alla prima cosa, sei tu di quello che viene eseguito. Quindi devi capirlo, prima di tutto, ma non tanto per capire se è giusto, in termini sintatici, per capire se fa quello che gli hai chiesto di fare o...
+
+se quello che tu chiesti di fare è ovviamente quello che serve. Quindi a me quello che piace dell'AI adesso è che forza gli sviluppatori a chiarire in maniera molto molto esplicita quello che vogliono. E quello secondo me è valore più alto in assoluto. Perché molte volte io a me piace sviluppare come te probabilmente ogni tanto parto, mi piace scrivere codice, parto il codice e mentre lo scrivo mi chiarisco, se avessi spettato un attimo e avessi chiarito bene nella mia testa quello che voglio fare probabilmente...
+
+Brainrepo (1:25:41)
+i requisiti.
+
+Davide (1:26:01)
+avrei scritto meno codici e cancellato meno codici.
+
+Brainrepo (1:26:04)
+Io su questo tutti
+
+gli ascoltatori sanno che è mia battaglia, no? Una volta raggiunti i 40 anni la mia battaglia è cazzo ferma, ti pensa e poi fai Però con le AI in realtà il feedback loop... sto andando contro il mio principio che è principio fondante, no? Con le AI il feedback loop è veramente velocissimo tale per cui fare gli spike li fai in un battito di ciglia e quindi là sono un po' combattuto su continuare a tenere sta posizione
+
+Davide (1:26:09)
+Vai!
+
+bravissimo, bravissimo
+
+No, è vero.
+
+è vero
+
+allora è vero quello che noto io perché capisco perfettamente quello che dici tu è che però mi aiuta più velocemente ad arrivare ad avere una clear picture di quello che voglio e quindi la uso quasi come sparring partner, dici ok fai questo e poi dico no guarda è una stupidata allora fammi migliorare il prompt e quindi divento via via sempre più preciso fino a quando il prompt è esattamente l'idea che ho in testa e quindi so che è come dire
+
+come se fosse codice, vuoi, scritto in natural language, ma so che è esattamente quello che volevo esprimere, che in molti molte volte ci sono degli implicit requirement, dei requisiti implicit che noi abbiamo in testa ma non chiediamo. Invece quello ti forza a esplicitarli, in quello a me piace molto come approccio. Però sì, arriverà, sicuramente, soprattutto per gli utenti finali, secondo me.
+
+Brainrepo (1:27:08)
+Sì.
+
+Sì, son...
+
+credo... credo proprio di sì. Guardando l'orologio è arrivato il momento tipico e topico di githbar, quello esattamente prima di salutarci è il momento del paese dei balocchi. Il momento in cui
+
+il momento in cui i nostri guest e i nostri host condividono con noi un libro, talk, un qualunque cosa abbia catturato la loro attenzione e pensino sia interessante da condividere all'interno del nostro episodio. Quindi la mia domanda, Davide, hai un libro, un talk, qualcosa che ti piacerebbe condividere con la nostra community?
+
+Davide (1:28:14)
+Sì, molto volentieri. Guarda, sto guardando proprio... Non me l'aspettavo questa, ma voglio darti i dettagli precisi. Ho appena finito di leggere, siccome mio figlio è un appassionato di Formula 1 e lo sono inventato anch'io, il libro del team principal de E.O. e CEO della McLaren, quindi Zac Brown. E' un libro da leggere per tutti, perché, per chi non lo sa, McLaren è stata una famosissima squadriere di Formula 1.
+
+caduta in completa disgrazia, punto in cui nessuno sponsor voleva sponsorizzarla, quindi era una macchina quasi senza sponsor. Ultimissima, nel giro di sei o sette anni, ha vinto due campionati in dei costruttori. E leggere come Zac Brown ha ricostruito completamente la cultura e come l'ha fatto con una leadership molto positiva, quindi il creare il team non...
+
+finger pointing in maniera molto chiara anche dicendo il libro ho preferito perdere alcune volte che vincere in maniera sleale secondo me è veramente una un libro che mi ha colpito molto ho anche scritto a Zach Brown che mi anche risposto e ho detto siccome questo libro dovrebbe essere fatto leggere a tutti perché insegna come una leadership con dei valori fondanti non sia necessariamente una perdente
+
+e che vincere tutti i costi non ha sempre senso ma anzi se vuoi vincere a lungo termine creare i ponti è molto più difficile molto più a lungo termine premiante che distruggerli e quindi Zac Brown il libro si chiama ce l'ho qua sotto mano 7th sense of a second e secondo me è un veramente notevole
+
+Brainrepo (1:30:05)
+Sì, sono d'accordo con te e con lui, nel senso se vuoi creare un endoskeletro devi per forza decidere di prenderti anche gli schiaffi, se no...
+
+Davide (1:30:13)
+forte, sì.
+
+Sì, sì,
+
+sì, sì. Ma farlo sempre con la dignità e anche dicendo, ok, ho preso lo schiaffo, non lo nascondo e anzi lo uso come modo migliore per migliorarmi di fronte a tutti, mi prendo la responsabilità, ma vado avanti, vado avanti imparando e un libro che mi ha veramente colpito.
+
+Brainrepo (1:30:40)
+Tra l'altro io sto andando in vacanza, mi sono fatto un ebook reader, mi sono sviluppato un ebook reader, quindi lo provo col mio nuovo ebook. Sdd, spec driven development. Però sì, lo provo col mio nuovo, la nuova mia app di ebook. Anche io ho un baloco, probabilmente l'ho già condiviso.
+
+Davide (1:30:44)
+vi faccio un'altra
+
+si? garantisco, viab coding
+
+Some. meglio, SpecsDVn Developments, meglio.
+
+Brainrepo (1:31:10)
+Ed è la ripositore di skill che i ragazzi di Super Base hanno fatto. Io suggerisco di aggiungerla a qualunque progetto voi facciate dove dovete scrivere delle sequelle per Postgre. Questo è il primo suggerimento. Il secondo suggerimento è scaricatevela.
+
+o installatevi l'app di github se già non ce l'avete nel telefonino e la sera o quando siete seduti sul cesso leggetevi quelle skill perché intanto credo che finalmente lo sviluppatore abbia imparato a scrivere documentazione tecnica e questa è la rivoluzione più grande perché le skills sono scritte dun bene voi perché l'out come immediato e chi scrive con la documentazione tecnica se la prova subito
+
+gli sviluppatori preferiscono scrivere per le macchine che per gli umani e le skills sono linguaggio umano per le macchine quindi dovrebbe essere il top della documentazione tecnica ma quelle skill entrano in profondità toccando indici, locks, tutte cose che lo sviluppatore medio non sa neanche esistano in un database e che ti cambiano la vita quando le leggi a quel punto da quella skill c'è il link
+
+nella documentazione tecnica, vai nella documentazione tecnica e ti approfondisci il topic. Quindi è veramente veramente bello, buttateci un occhio.
+
+Davide (1:32:44)
+VUILDO
+
+Brainrepo (1:32:45)
+Davide, è stato un super piacere avverti qua, io immagino che avrai 70 mila messaggi su Teams, quindi ti lascio andare. Ti lascio andare, ti avevo chiesto un'ora, siamo a un'ora e quaranta. Io, come dico sempre a tutti i nostri ospiti, con te l'ho già fatto e lo rifarò.
+
+Davide (1:32:48)
+altrettanto
+
+esatto
+
+No, ma è stato molto molto piacevole assolutamente.
+
+Brainrepo (1:33:07)
+Guitbarr è un po' il circolo del dopolavoro, non so se ti ricordi gli anni 70, 60 c'era il dopolavoro postale, quello ferroviaro dove si ritrovava a bere la birra, potenzialmente esentasse la 66 di Moretti o di Knusa. Ecco, Guitbarr è così una volta che un ospite viene da Guitbarr alla sua tessera, quindi quando...
+
+Davide (1:33:07)
+Si, volentieri.
+
+Sì. Sì, per roviario.
+
+e amortona si si si si
+
+fantastico.
+
+Brainrepo (1:33:34)
+tocchi
+
+qualcosa di interessante o una nuova challenge che ti fa piacere condividere con la nostra community sai dove trovarci? Questo è un po' anche casa tua.
+
+Davide (1:33:42)
+Assolutamente.
+
+Grazie mille, è stato un piacere come al solito.
+
+Brainrepo (1:33:46)
+Grazie e grazie di cuore. Grazie a Davide per esserci venuto a trovare, noi vi diamo appuntamento alla prossima settimana, sempre qua su Github. Ciao ciao!
+
