@@ -1,0 +1,538 @@
+Brainrepo (01:11)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Abbiamo organizzato questa puntata proprio last minute, ho contattato Luca credo un'ora fa, o qualcosa di simile, perché in realtà ero in vacanza e credevo di avere un episodio in backlog, invece no, e quindi abbiamo subito acceso le camere.
+
+Luca (01:27)
+forse anche meno
+
+Brainrepo (01:41)
+e ci siamo ci siamo trovati qua nel git bar. Quello che intanto quello che volevo fare è salutare Luca. Ciao Luca come va?
+
+Luca (01:54)
+ero
+
+entrato già a gamba tesa prima ciao ciao Mauro ciao a tutti infatti adesso per chi ci vede in youtube sono quasi in desabili e perché proprio stavo a letto esatto dal bar alla nightclub è un attimo
+
+Brainrepo (02:06)
+Questo è Git Bar... Git Night Club, potremmo chiamarlo.
+
+Come la settimana, come procede?
+
+Luca (02:21)
+⁓ io bene, benissimo c'è Lea che sta lavorando al posto mio in questo momento, va tutto bene, va tutto benissimo. tanto tempo libero, bugia. Bugia.
+
+Brainrepo (02:34)
+Io non so cosa stia succedendo ma quello che ci aspettavamo era quello di lavorare meno. Onestamente secondo me stiamo lavorando di più però questa è la mia sensazione.
+
+Luca (02:49)
+corse e ricorsi storici, qualcuno diceva con l'euro si lavorerà un giorno di meno e si guadagnerà come se si lavorasse un giorno di più probabilmente con le AI è stato anche solo pensato più o meno la stessa cosa ma in realtà come tu hai anche sperimentato anch'io io non sto lavorando come un matto anche perché
+
+ne parleremo forse aumenta parecchio il carico cognitivo più cose puoi fare e più cose fai
+
+Brainrepo (03:18)
+Assolutamente! E siccome i modelli sono dannatamente
+
+lenti più cosa fai in parallelo e noi siamo rinomati per essere coloro che non riescono a gestire un multi trading fatto fatto bene no?
+
+Luca (03:28)
+assi
+
+Sì, tanti terminali aperti e poi sai tipo quelli che giocano scacchi dieci partite contemporaneamente? Poi le perdono tutte però per l'intanto le giocano dai!
+
+Brainrepo (03:47)
+Sì io devo dirti la verità ho... ho ripreso a usare pesantemente TMUX quest'ultimo periodo per saltare da un terminale all'altro che trovo molto figo tra l'altro siccome mi dimenticavo sempre le combinazioni della tastiera, le combinazioni di tasti TMUX qualche tempo fa avevo fatto ho fatto un'applicazione Cina che trovate nel mio github che... che...
+
+per me di cercare all'interno dei cheat e devo dire che riprendere in mano tmux mi ha risvegliato un po' quella voglia, quell'amore per il terminale che dopo un paio di iterazioni con cloud code stavo perdendo perché ogni tanto scazza
+
+Luca (04:38)
+No, non è perfetto così.
+
+Brainrepo (04:38)
+⁓ Sì, sì, ⁓
+
+Sì, è come tutte le moglie, perfette. Anche nella loro imperfezione, no? ⁓ ok, di cosa parliamo oggi? Oggi in realtà qualcuno nel... nella città degli ammutinati io ormai, con l'età che avanza mi dimentico praticamente tutto, aveva proposto di rivedere, riascoltare e fare una rea...
+
+Luca (04:44)
+è perfetto così
+
+Brainrepo (05:08)
+di un episodio di 5 anni fa, cazzo come vuole il tempo, dicembre 2020, era la fine del primo anno di GitBar, quando facemmo un episodio su Città Invisibili di Italo Calvino, in realtà era un episodio che parlava di refactoring principalmente, te lo ricordi Luca?
+
+Luca (05:36)
+me lo ricordo non ricordavo tutto questo tempo passato infatti hai detto 5 anni fa ma mamma che cosa stai dicendo 5 anni fa ma l'avrei fatto 6-8 mesi fa e sono andato a vedere sul sito e effettivamente episodio 52 dicembre 2020 ok questo spiega un po' le mie occhiaie oggi e la mia stanchezza cronica
+
+sì me lo ricordo me lo ricordo bel bellissimo bellissimo episodio tra l'altro consiglio di risentirlo prima di sentire questa pompata a questo punto se
+
+Brainrepo (06:06)
+sì
+
+No vabbè ma ce
+
+lo sentiamo in episodio quindi non dovrebbe essere necessario
+
+Luca (06:17)
+sì
+
+sì sì beh vedremo vedremo perché a volte forse si può può godere tutto senza interruzioni e senza rumore o forse no beh decidete voi 1 2 3 continuiamo
+
+Brainrepo (06:32)
+Oppure potete chiedere al vostro
+
+LLM di turno cosa è meglio fare.
+
+Luca (06:36)
+Esatto, ormai chi legge chi ascolta più niente.
+
+Brainrepo (06:40)
+Quindi se si è d'accordo Luca mettiamo play e vediamo un po' cosa cosa dicemmo cinque anni fa.
+
+Luca (06:47)
+body.
+
+Brainrepo (14:21)
+Ancora prima di passare alla seconda parte, quello che mi salta alle orecchie da questa sezione è che in questa parte feci un, evidenziai una distinzione tra due approcci, quella legata al micro, quindi il cappello del muratore così l'ho chiamato, e il cappello dell'ingegnere.
+
+e
+
+è cambiato tanto nel senso che su questo blocco c'era una critica avvelata al fatto che spesso mettevamo e mettiamo il cappello del muratore rispetto al cappello dell'architetto, dell'ingegnere che supervisiona l'ecosistema. Lei percepite anche tu questa critica avvelata?
+
+Luca (15:16)
+questa critica cioè tu intendi che noi indossiamo più facilmente e più volentieri il cappello del muratore invece del cappello dell'ingegnere
+
+Brainrepo (15:34)
+Sì, quello
+
+che io ho percepito da questo pezzo di episodio è che 5 anni fa criticavo il fatto che in modo quasi automatico ci concentravamo sui micro dettagli, i dettagli implementativi rispetto a quello di analizzare il sistema, analizzare in prospettiva e poi prendere le decisioni per il micro. E c'è una cosa che è cambiata profondamente. E che...
+
+Ormai tutto il lavoro sul micro sta andando a sparire. Cioè il cappello dal muratore, no? Scusa Lu?
+
+Luca (16:08)
+non è più compito nostro non è più
+
+compito nostro adesso il il micro andare a vedere i dettagli questa è cambiata tanto come come cosa o almeno per chi sta evolvendo il suo modo di di programmare e forse più che il cappello del muratore adesso ci dobbiamo mettere il cappello dell'addestratore per addestrare questa questa terza questo terzo
+
+Brainrepo (16:38)
+Assolutamente sì su questo c'ho una bold opinion ma che poi svelo tra un po' nel senso che c'è il cappello dello steward che entra in gioco qua però è il fatto proprio che ci stiamo allontanando tantissimo dai dettagli implementativi e hai voglia tu a dire faccio le code review
+
+e mi leggo attentamente il micro. Tutti dicono, no ma, human in the loop, noi dobbiamo fare le code review approfondite, è nostra responsabilità, blablabla, aggiungi, riempi gli spazi a piacere con le parole che preferisci, però fondamentalmente in realtà le code review stanno diventando di una complessità allucinante.
+
+e il carico cognitivo sta secondo me iniziando a non essere più sostenibile. Proprio oggi ho provato dopo un po' di tempo Caveman, non so se l'avete sentito, ne avete sentito Caveman è una skill per il vostro modello LLM che addestra il vostro il modello a parlare come un cavernicolo.
+
+e noi lo sappiamo no?
+
+I nostri modelli ci spiegano le robe degni del più bravo e più loquace seminarista durante un'omelia che tutti si addormentano e non ascoltano Caveman comprime queste informazioni per dirtarle come un caverniccolo Ho fatto A B C Questo frecetto a quest'altro Tre elenchi puntati e ti ha dato tutte le informazioni Quindi
+
+Luca (18:36)
+che poi è
+
+una via di mezzo tra l'essere un grande oratore a una rappresentazione Jason di quello che devi dire. Stiamo ritornando un po'.
+
+Brainrepo (18:47)
+Sì...esatto,
+
+cioè nel senso che quando io devo guidare lavoro, frega cazzi di avere un barbero che mi spiega la barbero style, così successo, cioè ho bisogno di un elenco puntato senza... fatto questo, questo, quello, questi sono gli effetti, queste sono le motivazioni di queste azioni, bim bubba, fin. Se poi mi dici anche
+
+Luca (19:06)
+tutto bene grazie
+
+Brainrepo (19:17)
+togli anche ho fatto e gli aggettivi ancora meglio no quindi secondo me secondo me questa parte sta cambiando di brutto quindi meno concentrazione sulla sulla sulla singola implementazione però a quel punto come facciamo noi a guidare il nostro codice se la nostra attenzione verso i dettagli implementativi sta andando via via scemando
+
+Luca (19:51)
+Allora io ero un pioniere nel senso sempre detto alla codere sempre forse no all'inizio inizio quando ancora non avevo scoperto la magia dei moderni LLM forse era ancora un inguari bile romantico
+
+però sì, fare code review della quantità di codice che ti genera non è proprio affattibile è un po' come avere una macchina da corsa e dover girare in paese non c'ha senso, se lo vuoi fare lo fai
+
+sicuramente cambia tanto la prospettiva secondo me ok i dettagli implementativi non li guardiamo ma la domanda è ma li dovremmo guardare a questo punto? è il nostro compito? ha senso guardarli ormai? o forse ha più senso quello che prima scoraggiamo tipo una coverage del 100 % dei test? forse ha più senso
+
+io ho cambiato molto il modo in cui programmo su vecchie e su nuove anche codebase e la prima cosa che faccio è mettere test proprio per evitare regressioni o comunque per controllare un po' l'andamento perché alla fine è l'unica vera cosa che conta che l'applicazione funzioni e funzioni in modo efficientemente poi magari il test sulle efficienze lo
+
+potresti anche mettere però il dettaglio che questo pezzo sia stata fatta con la giusta strazione con le giuste classi oggetti funzioni che non sono ripetute che sono dettagli non tanto dettagli però comunque si definiamo nel momento come dettagli implementativi che però non ci riguardano più
+
+perché abbiamo un altro strumento che le gestisce e questo strumento non è sotto il nostro controllo nel senso che noi abbiamo bisogno di giuste estrazioni per evitare di perderci ma magari un LLM no? e se adesso riesco a fare una coverage del 95 % con tre prompt e qualche iterazione quindi in 12 minuti la faccio
+
+forse è il caso di farlo in questo caso non aveva senso farlo tre, quattro, cinque anni fa il mese scorso per me quattro, cinque anni fa perché c'era una coverage del novanta cinque per cento e tanto lavoro e soprattutto tanto lavoro di manutenzione e poi viene giustamente caldino però adesso non è più un caso, non è più un topic questo del tempo per fare questo tipo di lavoro
+
+e forse, dico forse, oggi ha senso fare, cioè si stanno stravolgendo un po' alcuni concetti che abbiamo dato per tanto tempo, forse troppo tempo per assodato, che servivano a noi, adesso non ci servono più
+
+Brainrepo (23:04)
+e questo... no no no ma questo... io... sfondi una porta aperta considera che più il tempo sta passando e più ho paura che lo human in the loop così come lo conosciamo... e questa cosa mi spaventa ⁓ non lo nascondo lo human in the loop così come lo conosciamo delle code review no? del famoso Aine e tutte queste robe
+
+Luca (23:04)
+sono partito proprio in quarto
+
+Brainrepo (23:34)
+quindi parlo delle code review post nella scrittura delle specifiche e sono ancora completamente d'accordo ma sul fatto di avere un uomo che faccia delle code review ho paura che via via che il tempo passa questa cosa un po' sparirà e mi spaventa tantissimo e sono curioso di capire profondamente cosa succederà io ho un'idea di quello che succederà
+
+però fremo sulla sedia per vedere se l'evoluzione punterà a quello che mi aspetto che vi racconterò tra qualche minuto ma è chiaro che il codice come artefatto oggi non è una cosa che ormai
+
+è di pieno dominio dell'uomo, ecco. A questo punto si aprono mille, mille, mille capitoli e il codice, il linguaggio adatto per scrivere applicazioni in un mondo dove sono gli LLM a scriverli e dove ormai gettiamo la spugna sul carico cognitivo legato alla quantità di codice scritto dai modelli linguistici.
+
+Questo è comunque un argomento interessante. Io direi se sei d'accordo di calcare Play e di sentirci un altro pezzetto.
+
+...consistente vuol dire memorizzare le strutture e i punti di riferimento di ogni angolo...
+
+Beh, sembra no, il concetto della consistenza, del carico cognitivo sulla consistenza sembra calza a pennello con le code review del codice scritto dagli agenti, no? Il fatto che l'agente scriva del codice non necessariamente consistente con il resto della code base per quanto comunque abbiamo degli strumenti per gestire la consistenza che sono...
+
+agent.md e vari file di documentazione che possiamo attaccare a repository però parte del carico cognitivo legato al problema della consistenza è sempre più attuale non pensi Luca?
+
+Luca (33:13)
+però appunto di nuovo la consistenza a chi serviva
+
+serviva a noi a noi quando all'inizio ha detto una cosa bellissima quando guardiamo il nostro codice ed è un alieno è una cosa che non ci rappresenta più non la guardiamo più questo accadeva prima
+
+insomma non siamo tanto così tanto in avanti comunque accadeva prima dopo tante iterazioni dopo tanti anni dove il codice evolve il dominio evolve tu ti evolvi e quindi cambi modo e man mano che iteri sulla sulla code base la code base cambia e tu non la riconosci più o cambi tu più della code base non vi riconosce più a vicenda
+
+ma in tutto questo adesso di nuovo la guarderemo più questa code base e quindi tutta la consistenza che noi siamo abituati giustamente a cercare sarà effettivamente utile sarà un esercizio forse una visione romantica una cosa fine a se stessa oppure avrà ancora la sua importanza
+
+Brainrepo (34:38)
+Guarda all'inizio di questo blocco si parlava di qualità del software e tra gli elementi della qualità si evidenziavano il basso accoppiamento e forte consistenza. L'ho proprio detto chiaramente all'inizio del blocco. Credo che qualcosa sia cambiato nel senso che sull'accoppiamento ancora
+
+o dei dubbi. L'accoppiamento, il basso accoppiamento riduce semplicemente il carico cognitivo e la consistenza riduce il carico cognitivo, che sono due problemi che ha l'uomo il codice e non la macchina. Quindi probabilmente quello che sta cambiando è o che cambierà sarà il modo in cui vedremo la qualità del software.
+
+dovremmo saremo davanti a un cambiamento importante della definizione di qualità del software, non ancora, non domani mattina, perché siamo ancora molto legati all'artefatto però ci sarà un momento dove ci sarà un allontanamento verso l'artefatto e dove la qualità non si misurerà più
+
+in i due parametri che noi usavamo per valutare o i due dei parametri che usavamo per valutare la qualità del software, che è vero? La facilità di lettura e la facilità di cambiamento. Cioè con quanta facilità comprendiamo il codice potrebbe non essere necessario domani, perché il nostro LLM potrebbe spiegarcelo. E con quanta facilità cambiamo il codice
+
+senza generare un butterfly effect dal momento in cui gli LLM possono fare grandi carichi di lavoro nel cambiare i nomi della variabile in 70 mila posti o non hanno bisogno che la variabile carrello si chiami carrello per essere un carrello probabilmente questi parametri di valutazione della qualità cambieranno
+
+Luca (37:04)
+tu hai parlato però qualità del software ma intendevi forse qualità del codice non sono due cose coincidenti infatti stavo dicendo ok qualità del software, qualità del software però poi stavi spiegando la qualità del codice adesso non sono... in realtà sono sempre stati due cose diverse
+
+forse noi quando indossiamo il nostro cappello da ingegnere o da muratore guardiamo sempre molto più spesso e volentieri la qualità del codice ma la qualità del software è sempre stata distinta la qualità del software è ovviamente ergonomia, efficienza, velocità che faccia quello che deve senza bug possibilmente
+
+ma questo non è strettamente legato alla qualità del software adesso prima era un forse... facciamo fitta che stiamo parlando nel 2040 quindi con vent'anni siamo arrivati
+
+Brainrepo (38:13)
+O nel 2027,
+
+vista questa velocità!
+
+Luca (38:15)
+quindi
+
+oggi siamo a clod ciccioriccio 19.5 quindi stiamo ragionando così quindi un tempo tanto tempo fa nel ottano 2026 gennaio 2026 la qualità del software forse era imprescindibile dalla qualità del codice
+
+e se non era così era soltanto una questione di culo oggi nel 2045 forse no forse non è più così che dici
+
+Brainrepo (38:59)
+sono d'accordo con te, io sto cercando di tenermela per la fine dell'episodio però continuo a servirmela su un piatto d'argento e da un po' sì, sì sì sì e da un po' che Seguo Stewart Brand è tutto quello che lui spiega della Phoenix Architecture cioè il concetto della Phoenix, no?
+
+Luca (39:04)
+e vabbè dai, tirala fuori adesso alla fine dell'episodio facciamo qualcosa altro uscirà fuori qualcosa altro dai
+
+Brainrepo (39:27)
+La fenice è quell'animale che rinasce dalle proprie ceneri, quindi che fa del bruciare e poi rinascere un elemento fondante del suo essere. Credo che quello che sta cambiando è proprio questo, cioè il codice, la qualità del software in quanto prodotto che funziona, quindi dell'istanza software, ok?
+
+è una delle qualità, no? Poi c'è la qualità del software in quanto codice che era fortemente accoppiata alla qualità dell'outcam finale ieri. Oggi potrebbe non esserlo o almeno i parametri che utilizzavamo per valutare la qualità del codice non potrebbero avere un riferimento diretto, un impatto diretto verso la qualità del prodotto software che gira.
+
+Ma soprattutto quello che sta cambiando e che cambierà più avanti sarà il modo con cui noi vediamo il codice. Credo che quello che sta succedendo è che noi guardavamo il codice come un elemento di proprietà. Noi eravamo i possessori del codice, Oggi...
+
+con il fatto che scrivere codice diventa sempre più economico, questo codice può tranquillamente morire e rinascere come una finice, a patto che noi creiamo le condizioni, l'ambiente protetto, perché questo avvenga. Per cui il fatto di dover, e lo dirà poi l'episodio di Calvino, dover
+
+evidenziare quello che è bello del codice, quello che è funzionale, quello che ha senso preservare sti cassi del codice potenzialmente potremmo non voler preservare niente perché il codice scrivere il codice ormai è gratis, scrivere il codice è 20 euro al mese o 100 euro al mese su cloud no capire il codice diventa costoso allora il nostro focus
+
+potrebbe spostarsi dalle code review al giardinaggio dei moduli software. Quindi a capire come dei moduli isolati con il comportamento prevedibile, deterministico, si comportano orchestrati. Secondo me si andrà più in questa direzione, non da... io pianto il mio albero, il codice,
+
+e mi occupo di tenere il mio albero e raccogliere i frutti ok, ha il guardiano di una foresta che sti cazzi se un albero si secca, ne pianta un altro, l'importante è che la foresta, ok, continui a esistere, a produrre, per cui l'attaccamento stretto al codice si andrà via via
+
+di dissolvendo, anche perché non saremo più in grado di gestirlo come unità sestante, no? E dovremo però in qualche modo creare un sistema protetto per poterci staccare dal codice, cosa che oggi non possiamo fare perché non siamo ancora maturi da dire io rilascio codici in produzione senza che ho letto riga per riga cosa fa. Questo livello di maturità ancora non ce l'abbiamo.
+
+ma ce lo dovremo avere e cosa dovremo fare per raggiungere questo livello di maturità? Creare un ambiente protetto, intanto capire che quello che noi possediamo è l'intento e non il codice. Se prima il codice era il nostro asset, il nostro tesoro, oggi l'intento, quindi la funzionalità che vogliamo creare o l'intento che vogliamo raggiungere è l'elemento da preservare.
+
+a fianco all'intento che ne riassume il comportamento del nostro codice quindi dobbiamo fare in modo che quel comportamento non vari nel tempo in modo da garantire qualità e quindi test evals se non possiamo testare in modo deterministi in alcune parti quindi fare delle valutazioni anche con altri modelli linguistici che ci aiutano
+
+a testare le parti non testabili in modo deterministico.
+
+ma dobbiamo anche essere in grado, siccome il codice spesso rischia di diventare una cosa enorme, dovremmo essere in grado di dividere la nostra foresta in solle, in albili, e isolare le parti della foresta in modo che se il codice è vero che diventerà un elemento disposable, quindi prendo, uso e butto.
+
+il codice è fatto per essere buttato, no? Prende, una semplice funzionalità, posso in modo chiaro testare se si comporta in quel modo e buttarlo, ok? A questo punto io posso dire che rigenerare il codice non vuol dire rigenerare tutto il software, ma piccole porzioni che hanno un ciclo di vita veloce per cui io posso generare quel pezzo di codice.
+
+siccome i test ce li ho già, gli evals ce li ho già domani ho bisogno di aggiungere un'altra funzione posso tranquillamente permettermi di buttare il vecchio pezzo di codice crearne uno che potrebbe essere...avrei dettagli implementativi differenti ma che ancora rispetta gli evals, rispetta le specifiche e rispetta i test e sostituirlo in modo completamente trasparente perché
+
+Se prima quel pezzo di codice mi costava 100, oggi mi costa 0.1 e quindi è una cosa affattibilissima. Però a questo punto emerge un'altra cosa interessante. Dovremmo essere in grado di dividere il nostro codice in sottodomini, isolarli, definirne interfacce e confini in modo da poter
+
+cambiare le gomme così come fa in formula 1 non devono rifare la macchina per cambiare le gomme e la gomma potrebbe avere una mescola completamente diversa e si può quasi cambiare in corsa in termini di velocità di cambiamento come vedi questa questa questa previsione futura che è quella di steve brandy o steward brandy io non ho inventato nulla
+
+Luca (46:31)
+Allora, bisogna stare attenti a costruire una foresta di alberi, di cactus, innanzitutto, questo come... come... come... come visiore. Sostanzialmente sì, è abbastanza ragionevole, anche se mi chiedevo se anche questa parte ingegneristica, quindi questa parte del cappello da ingegnere o architetto, non possa essere delegata...
+
+non è che non possa essere delegata, certo che può essere delegata non sarà delegata per pigrizia o per altro a sua volta a un altro agente e quindi alla fine noi che ci stiamo a fare vediamo l'intento, cerchiamo di capire le specifiche cerchiamo di osservare il mondo e appunto preservare l'intento e fare in modo e controllare
+
+l'IntentReview facciamo, invece che la CodReview
+
+Brainrepo (47:27)
+Secondo me sì,
+
+secondo me domani, che non è domani mattina, saremo i guardiani dell'intento, i guardiani della foresta.
+
+Luca (47:36)
+questo sì sicuramente è ancora l'unica cosa, cioè l'unica cosa è ancora la cosa di cui noi possiamo che noi possiamo fare meglio di una macchina ma forse semplicemente perché siamo attaccati all'ambiente H24 con più sensi di loro ancora per poco ancora almeno per qualche secolo
+
+Brainrepo (48:03)
+Però sai, le decisioni legate all'intento sono decisioni di natura umana, nel senso che io decido che prodotto voglio fare, io decido che l'intento è quello. Due, io dovrò essere il guardiano di questo ciclo, cioè io dovrò capire e definire il context.
+
+con la mia sensibilità. Secondo me non sarà facile delegare questa parte alla macchina. Io dovrò avere la sensibilità per definire l'evaluation, quindi come valutare il sistema, perché il sistema ha degli effetti diretti sull'uomo che lo utilizza e quindi sono io che decido e prioritizzo gli effetti, perché sono io che me ne prendo le responsabilità degli effetti.
+
+Quindi secondo me ancora ci sarà l'uomo ma con una veste diversa, da guardiano appunto, guardiano delle specifiche, guardiano delle evaluation, guardiano dei confini, dei contesti.
+
+Luca (49:19)
+però oggi sono l'omode però perché c'è tanti dubbi quindi andiamo di domande quando noi sviluppiamo un prodotto o decidiamo che prodotto fare lo facciamo o lo dovremmo fare idealmente o buone pratiche secolari ci hanno detto di usare il data driven development di essere guidati dai dati ovvero dai numeri
+
+e questo però ancora lo fanno meglio le macchine piuttosto che noi quello che noi forse ancora possiamo fare è quello di pensare fuori da quei numeri quindi, oddio, in un certo senso forse a volte manipolarli anche o
+
+pensare soluzioni che rompono totalmente il passato per cui gli LLM ancora non sono allenati sì, può indurre allucinazioni ma almeno io ho provato non sono così tanto efficaci cioè fanno finta di inventarsi robe fuori dagli schemi ma in sono robe effettivamente o che non hanno senso o che sono state già pensate quindi forse
+
+e forse c'è ancora più di uno spiraglio per noi in carne dosta
+
+Brainrepo (50:43)
+Io non
+
+so cosa ne sarà di noi dopo questo step, senso che quello che mentalmente come esercizio riesco a vedere è ok, domani il codice non sarà più il nostro tesoro, l'asset che tenderemo a proteggere, ma probabilmente proteggeremo più i contract, quindi che ne sono le specifiche, l'api specification o il domain model o queste cose qua.
+
+proteggeremi i test e gli eval che sono le cose cose le cose principali e poi il resto il codice sarà una roba veramente disposable che possiamo possiamo possiamo gestire credo che oltre questo e Xunt Leonis nel senso che mette paura e non riesco a vedere oltre
+
+per cui boh, onestamente non lo so, ma già arrivare pronti al fatto di dire dovremmo in qualche modo staccarci dal codice, arriverà il momento in cui ci staccheremo dal codice e neanche più lo leggeremo già questo è un passaggio che secondo me è reputo interessante, perché intanto fa disruption
+
+di tutto quello che abbiamo detto nell'episodio di calvino, il fatto di cercare di preservare il codice che ha un valore, una sua bellezza, la sua funzionalità, blablabla, tutti questi cazzi... No, anche no! Domani mattina il codice sarà a disposito, se l'abbiamo fatto in un certo modo il codice è nato con l'idea che deve morire in un certo modo. Il ciclo di vita e della morte del software è velocissimo perché scrivere del nuovo software
+
+costa meno. Cazzo, arriveremo a un momento dove il codice diventerà immuttabile. Cioè, riesci a immaginarla, Il fatto che già adesso ci rompiamo le palle a pensare alle variabili immuttabili, Dico, ok, va bene, creo un'altra. Quando... Pensa... Pensa... Domani che proprio il codice sarà immuttabile, quindi devo aggiungere una funzionalità, faccio prima riscrivere tutto il modulo, perché...
+
+c'ho una serie di guard rails che me lo permettono che è andare a capire come modificare 70.000 pezzi.
+
+Ed è, dal mio punto di vista, incredibile. C'è ancora un elemento secondo me che evidenzia un'immaturità allucinante nel modo in cui scriviamo il codice. Adesso io sono e sono stato un grande difensore dello spec driven development, Quindi focus sulla specifica che puzza di waterfall, che la metà basta. Quindi focus sulla specifica...
+
+e poi andiamo a scrivere il codice. Però manca un elemento importante, che manca la traciabilità tra la specifica e l'elemento che ha prodotto quell'implementazione e l'implementazione sestante. Cioè quello che noi ci perdiamo in realtà, e ci...
+
+ci pensavo proprio oggi mentre leggevo un articolo che ha condiviso qualcuno nello Slack aziendale vediamo se lo trovo così ve lo condivido penso fosse proprio vediamo un attimo
+
+un articolo sul harness engineering dove si evidenziava il fatto che in qualche modo c'era un passaggio che diceva che la documentazione, le skill, tutto ciò che Martin Fulver... Anzi, Brigitta Bockler descrive come harness l'imbrigliamento dell'LM
+
+tutti i documenti che servono per guidare l'emene, la scrittura sono quasi sempre scritti ma mancano di un feedback loop. Ecco, il fatto di capire che quell'outcam o quel comportamento specifico viene da una specifica skill o spec o da qualcosa legato a quello che noi stiamo dando come
+
+Arnes in impasto all'LLM è una cosa che ancora mangia cioè la provenance del comando che ha guidato quella scelta specifica nell'LLM questa cosa io non l'ho ancora vista non so se tu l'hai vista da qualche parte
+
+Luca (55:42)
+io avevo fatto una cosa simile, cioè a fare, cioè a tenere traccia e comitare anche i vari prompt che dai in passo l'LM per generare quel codice lì, però non ha tanto funzionato perché a volte bisogna di così tante interazioni che non ha...
+
+Brainrepo (56:06)
+che
+
+si perde traccia,
+
+Luca (56:07)
+che
+
+si perde non la puoi fare però in il buon Claude alla fine si salva tutto nelle tutte le conversazioni nella sua memoria interna forse gli puoi chiedere di metterne traccia lasciare traccia e committarlo insieme al commit e tutti fai il modificato in un file
+
+Brainrepo (56:30)
+Sì, in
+
+realtà secondo me appunto la tracciabilità casuale prima o poi arriveremo a farla. Prima o poi arriveremo a farla, cioè a dire questa implementazione è così perché tu mi hai scritto da questa parte questo pezzo, oppure perché in questo pezzo di codice ci si è comportato in questo modo. E come tracciabilità per me si avrà un modo per tracciare, in questa può essere l'idea per la prossima startup, no?
+
+quindi end to end observability dell'agente driven coding cioè il fatto di dire ok c'è questo pezzo di codice in output che è stato guidato da questi specifici punti di questi specifici documenti ed è stato validato e accettato da questi specifici test o specifici evals
+
+Luca (57:27)
+a doparli
+
+specifico codice o specifica feature specifica intenzione
+
+Brainrepo (57:31)
+Allora, abbiamo detto che il codice
+
+diventerà disposable, Quindi una roba che tu prendi, gira finché gira, poi devi cambiare un pezzo, si fa quasi prima di scrivere il codice che...
+
+estenderlo implementarlo Prendiamo questo per assunto immaginiamo che domani il comportamento sia questo quello che noi dobbiamo avere sono delle specifiche chiare dobbiamo avere degli eval chiari in modo da eval e test chiari in modo da essere sicuri che quel modulo che io posso buttare al cestino si comporti in modo deterministico sempre in quel modo no in modo che la rigenerazione
+
+e poi trustable. Abbiamo bisogno delle interfacce che ne stabiliscono il perimetro, che deve essere più o meno grande a seconda appunto della complessità, però quello che manca oggi è che noi abbiamo delle specifiche e delle evaluation, ok? E questo ce li abbiamo già nel modo in cui sviluppiamo oggi, magari con lo spec driven development. Non abbiamo ancora delle evaluation fortissime
+
+non deterministiche, quindi delle evaluation che utilizzano lllm però ho già visto codice che viene poi evaluato in questo modo quello che però manca dal mio punto di vista è che dalle specifiche alle evaluation per un determinato blocco di codice o modulo
+
+Quello che manca è la tracciabilità di questo pezzo di codice. Immaginalo come, adesso sto forzando un po' il concetto, lo sbomb del pezzo di codice dove dice questo pezzo di codice è scritto così perché questa decisione è stata guidata da questa specifica, che è scritta qua in questo documento Markdown qua, e confermo che
+
+il codice prodotto ha passato questa evaluation che mi aspettavo passasse perché legata alla specifica quindi un qualcosa che unisca questi due pezzetti secondo me ci sarà ci sarà da lavorare in questa direzione non so se sono riuscito a creare l'immagine che ho nella mia testa di questo
+
+Luca (1:00:10)
+sì, è l'immagine che mi è venuto in mente quella di Leonia che piano piano comincia ad accumulare informazioni e strutture e sovrastrutture su qualcosa che sto pensando se continua ad aver senso oppure no
+
+Brainrepo (1:00:40)
+Guarda!
+
+Luca (1:00:41)
+io io sto sto distruggendo sono sono nella fase distruzione totale di tutto quello che abbiamo imparato negli ultimi vent'anni quindi sto mettendo in discussione qualsiasi sì è utile tant'è che ripeto l'ho provato a farlo in qualche modo non è un problema semplice e panale da
+
+risolvere e anche una volta risolto non è un problema cioè è un bel problema quello di riuscire a estrapolare l'informazione che ti serve dal software
+
+Brainrepo (1:01:18)
+Guarda, giusto
+
+per darti un'immagine, quello che usiamo oggi quando leggiamo il codice spesso è il git blame prendo una certa riga, un gruppo di ricco io ho bisogno di sapere un po' di più, faccio git blame e c'ho il commit message e le informazioni riguardanti la pull request, chi l'ha fatto, ecco io un domani in un...
+
+è una situazione dove il focus si perde sempre di più verso il codice io mi immagino di passare sopra un blocco un blocco applicativo, no? e mi dice ok, questo blocco applicativo viene da questa spec specifica o da questa lista di spec è stato valutato con questa eval suite o test suite o eval più test suite e l'ultimo cambiamento è stato qua
+
+ed è stato triggerato da whatever action. Secondo me domani il modo in cui andremo a leggere il codice sarà quasi per blocchetti. Mi proprio immagino io passando col mouse sopra e vedendo queste tre informazioni del blocco.
+
+Luca (1:02:31)
+ma questo sì quello che mi chiedo è cosa accade dopo tante tante tante direzioni quando quel blocco
+
+come il git blame c'ha su dodici righe 10 autori diversi, 10 tempi diversi, con 10 commit diversi, con specifiche cambiate nel tempo, quindi deve avere traccia anche delle specifiche quali erano le specifiche in quel momento e se sono state cambiate nei momenti successivi e come sono state cambiate nei momenti successivi.
+
+Brainrepo (1:02:51)
+non accade, cioè accade in modo diverso.
+
+Ma infatti se siamo i guardiani dell'intento,
+
+la storia delle specifiche, cosa che ancora io non ho visto, la storia delle specifiche, di come le specifiche cambiano, sarà un elemento fondamentale. Cioè io mi aspetto un domani che le specifiche non sono tracciate in modo cronologico con delle storie, non saranno tracciate in modo cronologico con delle stories, ma potenzialmente avranno più senso
+
+essere tracciate per sottodominio, per dominio. Per cui io cosa, cosa avrò? Avrò l'evoluzione verticale delle specifiche di questo modulo specifico, insomma, stiamo un po' che ha un bounded context molto chiaro e quindi lo vedo in linea, vedo tutte le cose che hanno triggerato la rigenerazione, che sono prevalentemente il cambiamento delle specifiche, dei requisiti di business, no? I requisiti funzionali.
+
+e secondo me sarà proprio questo quello che dovremo osservare monitorare e fare review. Behavor e specifiche. Behavor e specifiche. Ma cosa ci garantirà che non stiamo introducendo problemi di sicurezza? Beh, nuovo modello di antropi che potrebbe aiutare.
+
+Luca (1:04:28)
+sì, adesso lo stanno testando, il nostro caro mito sì, ma anche prima ci sarà un agente, un altro modello che fa... che fa tutto, no lo so, andiamo a zappare la terra, dai, facciamo così
+
+stiamo stiamo cercando un angolino ancora un angolino di terra virtuale che possiamo ancora coltivare con il con il nostro piccolo con nostra piccola zappetta quando attorno abbiamo escavatori e abbiamo camion di letame che concimano terra per far creare quella
+
+quel bosco fertile che dicevamo prima però sì c'è tanta tanta cosa ma poi effettivamente al netto di tutto ogni cosa può essere vera nel tempo giusto ovviamente non è che domani si arriverà
+
+a uno scenario ideale, avremo sempre bisogno, abbiamo ancora forse bisogno per esempio della code review per per portare avanti, per mettere in produzione qualcosa, fra sei mesi non avremo più bisogno di questo e avremo bisogno di quello che tu dici adesso per quanto riguarda il latte nel traccio, le specifiche, i cambiamenti e fra da dieci mesi non avremo più non avremo più bisogno di far questo ma avremo bisogno di qualcos'altro
+
+e sicuramente la storia ci insegna che un posto lo troviamo perché noi alla fine lavoriamo per noi stessi per la razza umana, noi serviamo la razza umana in ogni lavoro anche quelli che fanno macchine fanno macchine per servire l'uomo quindi alla fine mi spaventa meno
+
+Brainrepo (1:06:21)
+Domanda. Il nostro lavoro è dannatamente mutabile, E sarà dannatamente mutabile nei prossimi tempi. Ma allora quali pensi siano le skill
+
+solide che noi possiamo portare con noi nel nostro futuro. Quegli elementi, quelle colonne che in qualche modo ci aiuteranno.
+
+Luca (1:06:55)
+io so dove vuoi arrivare in realtà ho litigato furiosamente con un insegnante con la mia conoscente insegnante che sosteneva che alcune alcune professioni e quindi alcune skill legate a quelle professioni erano insostituibili da una macchina citava lo psicologo o comunque lo stesso insegnante che ehm scusate è porto casino stesso insegnante che percepisce
+
+il disagio dello studente in un determinato contesto e allora agisce per blablabla mentre in realtà un LLM fa questo lavoro molto meglio mettiamo così io vedo adesso mi tirerò dietro l'ira di tantissimi soprattutto psicologi uno psicologo
+
+faccio l'esempio lo psicologo in quanto, diciamo, emblema della skill delle relazioni umane immagino che era quello che era lì dove volevi arrivare, ma forse no lo psicologo cosa fa? lui lavora 8, 9, 10 ore al giorno sente problemi o condizioni di 7, 8 persone tutte le volte lo fa per lavoro
+
+se mostra empatia magari, dico magari, non dico tutti, non dico sempre, la simula l'empatia o usa delle tecniche per non darti l'impressione che vorrebbe soltanto andare a cena perché c'ha ma un LLM tutto questo lo fa meglio
+
+lo fa molto meglio. Sempre discutendo con questa persona che mi diceva che io avevo fatto l'esempio perché parlava anche di medici e dottori e io proprio il giorno primo ho avuto una brutta esperienza in ospedale, brutta esperienza proprio a livello umano di dottori e infermieri, dice guarda lasciamo stare il discorso degli infermieri e dottori eccetera eccetera perché oggi non è proprio
+
+proprio il giorno, poi magari tra un mese mi passerà e potrò fare un ragionamento più lucido ma oggi proprio no. E questa persona mi fa ⁓ no sì mi dispiace per quello che fatto credimi davvero punto e continuava con la sua tesi. Per curiosità sono andato e ovviamente era palese questa sua... ed era insegnante ed era palese questa sua...
+
+Brainrepo (1:09:23)
+lucido.
+
+Luca (1:09:43)
+mi dispiace, ok faccio finta di essere umana, faccio finta di dispiacermi andiamo avanti. Per curiosità poi ho incollato, ho trascritto e incollato la stessa cosa che ho detto io a ciagpt e io chiesto di essere empatico e l'ho fatto molto meglio, l'ho fatto molto meglio di un insegnante che mi stava tra virgolette
+
+quindi io non sono nemmeno più tanto sicuro che le relazioni umane diventeranno o rimarranno o quantomeno in gran parte nostra esclusiva. Fermo restando che se dovessi puntare 50 centesimi da qualche parte punterei su quello piuttosto che sulla programmazione.
+
+Brainrepo (1:10:32)
+Secondo me ci sono al posto che per quanto riguarda il nostro lavoro onestamente non lo so quello che vedo a brevi termini e a brevi termini vedo che il nostro lavoro spostandosi più sull'intento tocherà più land e i mondi di prodotto ed ecco perché per esempio ultimamente io mi sto concentrando molto su capire come si gestisce prodotto, tutta la parte di prodotto.
+
+e quindi questo senza dubbio sarà una prospettiva. L'altra prospettiva, ahimè, ritorna il legamento con la fisicità, con il mondo fisico, quello toccabile, non digitale, analogico. Ho paura che buona parte delle potenzialità ritorneranno al mondo fisico.
+
+Ho questa sensazione, però è una sensazione, se mi chiedi di argomentartela non riuscirei. E' più intuito, ecco. Se io dovessi trovare un lavoro oggi o ripensare una carriera oggi avendo che ne sono 19 anni farei mechatronica, troverei un ponte, mi concentrerei sul ponte tra il digital e l'analogico.
+
+o è il mondo fisico, questa è una cosa. E l'altra è la comprensione della realtà e della verità. probabilmente quell'elemento difficilmente entrerà nel mondo dei large language models. Sempre aperto e felice di essere contraddetto.
+
+mai persona è più felice di me, nessuna persona è più felice di me di sentirmi dire che quello che appena detto sono stronzata perché mi rassicurerebbe. Però ecco, preferisco avere torto. Assolutamente sì. Anche se nell'episodio precedente ho detto che prendersi il torto, sentirsi dire sbagliato non è una cosa piacevo.
+
+Luca (1:12:43)
+preferisci anche questo, preferisci avere torto.
+
+Brainrepo (1:13:01)
+ma va bene. Quindi secondo me non lo so. Quello che però è quasi certo è che secondo me andremo verso una Phoenix Architecture e verso un focus di più sul prodotto. Questa è l'unica cosa che riesco a vedere oltre il mio naso.
+
+Luca (1:13:23)
+noi come sviluppatori oggi dici? quello che stavo dicendo, se ogni tanto sento, parlo con amici programmatori che dicono o che fanno fatica o che non vedono appunto il futuro rosaio per
+
+programmazione però sì appunto anch'io vedo come soluzione il fatto alla fine di essere imprenditori perché gli imprenditori questi fanno, questo fanno, creano, ascoltano le esigenze di mercato, le esigenze dell'uomo sostanzialmente o della donna, e creano un prodotto che soddisfa
+
+queste esigenze. Adesso gli imprenditori veri hanno l'opportunità di fare anche la nostra parte. Siamo noi adesso che dobbiamo imparare a fare la loro parte.
+
+Brainrepo (1:14:24)
+E chi so provvivere alle due?
+
+Luca (1:14:27)
+sicuramente loro perché fare l'imprenditore è una roba che è sicuramente più difficile di fare quattro 4 righe di codice. ognuno c'è il suo sicuramente e il fatto è che noi abbiamo lavorato così tanto bene per permettere loro di farli di rubarci il lavoro che alla fine qualcosa qualcosa succederà.
+
+Brainrepo (1:14:38)
+Guarda
+
+io credo che noi ce la stiamo
+
+facendo addosso perché siamo pagati tanto per quello che facciamo e abbiamo paura di perdere i nostri, come si dicono, nostri privilegi. Questa è la paura più grande.
+
+Quando li perderemo? Perché non è questa domanda di se li perderemo, quando li perderemo a quel punto perderemo anche la paura e saremo in grado di giocare una skill che fa parte del nostro modo di essere, di molti di noi, e che è quella l'unica cosa che in realtà ci salverà il culo, che è
+
+la capacità di adattamento e la capacità di apprendere, di comprendere domini differenti. Se noi abbiamo allenato questa capacità, che vuol dire la capacità di uscire dalla comfort zone, la capacità di ieri lavoravo nel food and beverage, perché lavoravo per Uber o per l'applicazione che mi fa le consegne a domicilio e domani lavoro per un atelco.
+
+Questo succede già, almeno io che son consulente lo faccio tutti i giorni che salto da un dominio all'altro, Non tutti i giorni, diciamo ogni paio d'anni. Però se noi abbiamo allenato questa capacità, unita alla capacità di uscire dalla zona di comfort, queste sono le skill che ci possiamo portare e che sicuramente ci faranno uscire vittoriosi.
+
+Luca (1:16:32)
+su questo sono d'accordo io sono sopravvissuto alla morta di flash e ci siamo riadattati e sopravviveremo anche alla sofferenza della programmazione
+
+Brainrepo (1:16:46)
+Ragazzi, sei anni
+
+fa io mi occupavo di destinazioni turistiche e di uffici turistici. Di dirgli alla gente va in questa spiaggia, va in quella nel senso facevo modelli per ottimizzare questa parte. se ci sono riuscito io potenzialmente chiunque e considero e credo che queste schile orizzontali sono quelle davvero che ci salveranno.
+
+Luca (1:17:22)
+per dire che l'appoggio...ma data l'autore ultima parola... ma questa la tagliamo... e... suona d'accordo
+
+Brainrepo (1:17:39)
+Volevamo commentare l'episodio di Calvino e ne abbiamo commentato solo i primi 14 minuti ce ne sarebbero altri tipo 18 ma vediamo un po' se possiamo commentarlo a prossima interazione, un episodio prossimo. Io...
+
+Sono felice di aver ripreso in mano un vecchio episodio e di aver detto... è invecchiato male.
+
+Luca (1:18:10)
+bastanza.
+
+Brainrepo (1:18:12)
+E adesso non so se è invecchiato male solo l'episodio o io pure e questo lo lascerò dire a voi. Però detto questo io direi di passare al Paese di Balukhi che me lo stavo completamente dimenticando.
+
+Il Paese dei Balocchi è il luogo protetto sicuro dove possiamo condividere con la nostra community un libro, talk, o qualunque cosa abbia catturato la nostra attenzione e pensiamo, insomma, abbia senso essere condiviso con la nostra community. La mia domanda è quella che va direttamente a Luca per chiederti se hai qualcosa da...
+
+condividere con noi.
+
+Luca (1:19:11)
+Ho qualcosa da condividere con tutti ed effettivamente è una cosa anche in tema, vabbè ormai è tutto tema... è tutto tema, non refactoring, ma tema AI. Condivido repository che si chiama CLI Anything
+
+io non l'ho ancora provato a la verità però dai c'ha 31 mila stelline, qualcosa di buono c'è anzi forse sarà anche fin troppo conosciuto è praticamente una collezione anzi è una CLI con disponibile una collezione di altrettante CLI per interagire con programmi
+
+quindi si l'AI che interagisce con Gimp, con LibreOffice, con An8n, con OBS Studio, con Zoom, con DrawIO e tutto quanto tramite appunto linea di comando cosa che con il moderno sviluppo, non sviluppo però le moderne applicazioni può tornare abbastanza comodo
+
+un'altra cosa ma questo visto che abbiamo tirato fuori un episodio di 5 anni fa, io anche io riciclo un balocco, in realtà il balocco che voglio riciclare, che ho già baloccato, era un romanzo, anzi una storia di un mio amico scrittore, si chiamava proprio L'Ultimo Programmatore, che fa parte di una raccolta
+
+di romanzi chiamata utopia versus distopia dove si parlava appunto era precursore ai tempi era prima della 2020 credo dove appunto le aia è centrale e c'era un diverso modo di programmare
+
+si programava un po' come avevamo detto noi adesso, cioè senza guardare il codice si vedono soltanto le specifiche e i test e senò che succede qualcosa per cui alla fine c'è bisogno di un povero stronzo che doveva guardarlo sto codice peccato che non c'era più nessuno che sapesse leggere il codice tranne uno, appunto, l'ultimo programmatore che vabbè non posso spoilerare
+
+non se la passava molto bene essendo l'ultimo dell'ultima nostra specie quindi mi è venuto in mente durante tutta la puntata e ho ma sì lo rimpalocco l'autore è Angelo Frascella
+
+Brainrepo (1:21:57)
+Bellissimo!
+
+Come sempre la sci-fi ci becca benissimo! Ci becca benissimo! Ho un baloco anch'io ed è un articolo.
+
+Luca (1:22:04)
+⁓ sì.
+
+Brainrepo (1:22:18)
+Scusate, sto sbalzigando. E' un articolo che chiama Regenerative Software dal blog di The Phoenix Architecture. Se dovessi riassumerlo, direi, lo riassumerei con questa citazione. In un mondo dove la generazione è abbondante, la cosa più costosa che puoi fare, che puoi pensare, è quella di
+
+possedere del codice di cui hai paura, che hai paura a cambiare.
+
+è un articolo su cui si basa buona parte di quello che abbiamo detto nella seconda parte dell'episodio, Quindi regenerative software, disposable code, immutabilità del codice e queste cose qua. Quindi buttateci un occhio perché secondo me, secondo me appunto sarà quello che Stewart Brand ha detto sarà
+
+potenzialmente l'immagine di un futuro non così tanto lontano.
+
+Detto questo, io ringrazio Luca, grazie per avermi fatto compagnia questa sera.
+
+Luca (1:23:36)
+grazie a te per avermi invitato
+
+Brainrepo (1:23:41)
+Noi ci diamo appuntamento la prossima settimana e stiamo preparando degli ospiti interessanti. Credetemi. Alla prossima! Ciao ciao!
+
+Luca (1:23:52)
+Ciao!
+
