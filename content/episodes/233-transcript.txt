@@ -1,0 +1,281 @@
+Brainrepo (00:00)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. L'ultimo episodio che abbiamo fatto ha un po' riscaldato gli animi e sono da un certo punto di vista sono molto felice che abbia suscitato insomma questo confronto, abbia triggerato, attivato questo confronto perché in realtà questo è il vero scopo di GitBar, quello di insomma...
+
+creare situazioni per cui noi ci possiamo confrontare. Adesso, come ho già spiegato sul gruppo Telegram, quello che in realtà la conversazione voleva portare era una visione prospettica sul lungo periodo, che non vuol dire che molte delle cose di cui abbiamo parlato possano essere, insomma, possano verificarsi dopo domani o domani, anche se
+
+con questa velocità con la quale tutto si muove boh nel senso chi lo sa ma l'idea era appunto quella di immaginare un futuro prospettico da qui a 5 anni onestamente le incognite sono tante però per esempio quella della Phoenix Development il fatto di sviluppare degli elementi dei
+
+dei moduli con l'unico scopo di essere sostituiti da un LLM che li rifattorializza e quindi isolandone L'ambito, ok, mi pareva un'idea abbastanza interessante. Detto questo, naturalmente sulla sostenibilità di questi approcci ci si potrebbe parlare ancora per
+
+Detto questo voglio fermarmi un secondo a pensare o a parlare di quello che mi sta succedendo questo ultimo periodo. Quest'ultimo periodo appena iniziato un nuovo progetto. Ciao Luca, mio technical director. So che ci stai ascoltando. Il progetto esce un po' fuori dalla mia zona di comfort perché è un progetto in Python e C Sharp e io che vengo dal mondo JavaScript.
+
+insomma è una bella sfida, non lo nascondo non che siano linguaggi impossibili ho già speso un po' di tempo a guardare il C-Sharp e devo dire che non è poi così brutto come immaginamo devo ancora verificare l'ecosistema invece sembra un linguaggio bello è molto vicino al TypeScript e poi insomma tutto questo da verificare tra qualche settimana, un o qualche mese
+
+per vedere come sto reagendo al linguaggio. Vabbè, detto questo, però il vero significato o il vero target del nuovo progetto è quello di prendere dei pezzi di codice che già esistono, rendirli production ready e deployarli in un processo particolare, insomma, triggerati da Airflow con un po' di cose.
+
+Quindi un elemento principale del progetto è quello di rifattorializzare il codice. Adesso, la tentazione è stata quella che viviamo in un'epoca di LLM, di intelligence artificiale, perché devo farlo io, provo a chiederlo al mio cloud o codex della situazione e il codex rifattorializza questo metodo.
+
+Cosa però succede quando io chiedo a Codex o a Cloud di rifatto realizzare il metodo? Beh, sicuramente non cose belle, anzi, ne succedono tre e sono quasi... sono praticamente tutte tre brutte. In primis è che in buona parte dei casi Cloud non riesce a distillare tutte le convenzioni del progetto. E quindi si entra in una condizione dove il LLM Cloud o...
+
+codex inizi a inventare nuovi stili e cose di questo tipo il secondo elemento è che in realtà la re me genera del codice ma io non so almeno finché non vada a creare un loop che rende più solido il mio approccio di refactoring rendendolo appunto un refactoring agentico se il codice compila o se passa ai test e su refactoring un pelino più complessi
+
+per esempio quello di spostare un metodo da una classe all'altra a volte sbaglia fagli destinazione. Questo è un po' quello che ho visto. Partendo da questo presupposto, mi sono detto, qual è lo stato dell'arte? Quali sono gli approcci suggeriti per un refactoring utilizzando gli LLM? Beh, mi aspettavo, devo dire, una valanga di articoli visto che
+
+è un topic abbastanza base questo periodo insomma mi aspettavo parecchi articoli e in realtà non è stato così in realtà ho trovato sì degli articoli ma la qualità e la ricchezza di contenuto è la chiarezza dell'approccio esposto
+
+non era poi così alta. Allora ho fatto quello che faccio spesso questo periodo, mi sono detto, se gli articoli non mi stanno dando le risposte forse ci so, c'è qualche ricercatore che sta approfondendo e analizzando il problema in modo sistematico, modo un pelino più strutturato e quindi sono andato a vedere
+
+se ero in grado di trovare qualche paper che potesse aiutarmi.
+
+Di paper ne ho trovato alcuni in realtà. Uno dell'ottobre 2022 sulle strategie di istruzione degli LLM per il refactoring e poi un altro un po' più datato del 2018 su come si approcce in modo sistematico al refactoring. Adesso ci sono paper molto più recenti ma...
+
+A parte uno specifico su mantra, un approccio che vedremo tra un po', quasi tutti si concentrano sul misurare l'impatto del refactoring guidato dalle LLM. E onestamente, sì, per quanto importante, non era il mio focus point, perché il mio focus point era quello di trovare un approccio.
+
+al refactoring che potesse aiutarmi nel mio progetto, una cosa molto più pragmatica. Quindi quello che io stavo cercando era una serie di approcci con magari delle valutazioni, delle misurazioni che dicono in questo caso questo approccio funziona meglio, in questo caso questo approccio funziona meno bene. Quindi questo era più o meno quello che cercavo.
+
+Allora insomma mi sono letto questi paper e in realtà mi sono fatto un po' un'idea. Ma ancora prima di farmi un'idea, voi lo sapete, io quando mi trovo davanti a queste situazioni, provo a fare sempre uno step back, provo a guardare la radice di quello che sto facendo. Io sto andando a fare il refactoring.
+
+A quel punto mi sono chiesto ma che cos'è il refactoring? Il refactoring l'ha definito Fuller in modo molto chiaro in alcuni suoi articoli e nel suo libro sul refactoring che tra l'altro c'ho qua nella Libri Re che ho ripreso in mano e riguardato rapidamente questi giorni.
+
+La definizione che Fowler dà del refactoring è quella di modificare la struttura interna del codice senza cambiarne il modo in cui il codice a livello esterno viene consumato, modificare la struttura del codice senza cambiare il comportamento esterno, l'interface e quant'altro. ok, questa definizione ahimè non mi ha convinto.
+
+Perché? Adesso lo vediamo il perché, perché mi ha aperto più domande che risposte. Intanto quando noi facciamo un refactoring, quello che noi andiamo a fare sono quattro cose principali. In primis, come umano dico, andiamo a identificare quali sono i segmenti di codice che sono quelli problematici, quelli che vogliamo rifattorializzare. E quindi qua emerge l'intento.
+
+stiamo identificando i segmenti di codice che vogliamo rifattorializzare, perché vogliamo rifattorializzarlo? Su questo perché ci torniamo tra qualche minuto, La seconda azione è quella di selezionare il tipo di refactoring appropriato. Fowler, nel suo libro sul refactoring, cita più di 60, credo fossero 63, tipologie diverse di refactoring, in quel caso molto legate alla programmazione oggetti, però...
+
+si prestano anche in altri contesti. Ecco...
+
+ogni problema che noi identifichiamo o almeno ogni situazione che noi identifichiamo e che può essere coperta da refactoring, oggetto di refactoring si sposa con specifiche tipologie di refactoring quindi la seconda azione è quella proprio di selezionare il tipo di refactoring appropriato il terzo, la terza step, la terza azione quella un po' più pratica cioè vado a applicare refactoring
+
+e il quarto step che è fondamentale è quello di applicare la validazione del refactoring che in breve non è altro che verificare che il codice funzioni e quindi che ci sia questa equivalenza comportamentale tra il codice che prima c'era e il codice che ora c'è molti idee già possiedono funzioni di refactoring più o meno avanzato devo dire
+
+mi viene in mente Visual Studio Code perché ho cursor, ho tutti i derivati di questo periodo perché sono quelli che uso più spesso e per esempio il sposta su, sposta giù, sposta il metodo, estrai, rinomina variabile, queste sono funzioni che ormai fanno parte degli IDE e grazie al language server sono anche abbastanza semplici da eseguire e da verificare. Bene
+
+Al di là di questo però l'IDE spesso non ci aiuta molto di più e questo potrebbe essere potrebbe essere problematico intanto mi arrivano i vostri messaggi dal canale telegram e mi vibrava la coscia dicevo e questo potrebbe essere problematico nel senso oggi abbiamo abbiamo strumenti più promettenti perché l'IDE cosa fa? Intanto a
+
+un catalogo di metodologie di refactoring molto limitata non va oltre all'estrai metodo rinomina variabile e poco altro tutti i meccanismi di riconoscimento dei pattern che identificano ok qui potrebbe esserci un refactoring necessario sono molto limitati perché appunto
+
+struttura dell'idea ci permette di avere molto di più e non esiste nessuna comprensione semantica del contesto per cui buona parte dei refactoring proposti quando proposti sono basati su un contesto locale di potenzialmente poche righe o su una coltri ma senza troppa intelligenza
+
+ma oggi cazzo abbiamo gli LLM e in questo gli LLM sono molto forti nel senso che sono abbastanza potenti nella comprensione del codice e nella capacità di eseguire istruzioni che sono i due elementi in realtà che sono pillar centrali pillar centrali delle azioni di refactoring tra l'altro c'è anche una nuance interessante che sono in grado di applicare refactoring
+
+anche quando non andiamo a istruzioni specifiche di come farlo no? Quante volte ci siamo trovati a dire migliora il codice al nostro LLM? Eppure per quanto la qualità dell'output non sia eccelsa comunque hanno delle capacità in quella direzione Qual è il vero problema o limite degli LLM? è che quando si va oltre ai semplici refactoring
+
+gli LLM iniziano a faticare e a sbarellare e quindi quello che serve è appunto cercare un meccanismo per imbrigliare gli LLM in qualche modo e permettere a questi di fare un refactoring in modo efficace
+
+Prima vi ho detto che uno degli approcci che ho io nell'affrontare un problema è quello di provare a andare alla radice e a definire cosa voglio. E cosa voglio quando faccio un refactoring? La risposta più semplice che mi è venuta in mente è quella di voglio semplicemente migliorare il codice. Ma qui... quello che emerge è che...
+
+sia la base di un problema epistemologico, nel senso, cosa vuol dire meglio? C'è un paper molto interessante, dall'Al Abwin, che identifica il refactoring come un'azione che punta al miglioramento di alcune tra dieci qualità.
+
+coesione, accoppiamento, complessità, ereditarietà se siamo nel mondo del programmazione oggetti, dimensione, mantenibilità, riusabilità, testabilità, comprensibilità, non so se si possa dire così, e resistenza al fallimento, quindi all'errore. Noi abbiamo tutti questi 10 attributi.
+
+Il refactoring è l'azione che porta a migliorare questi attributi. Però attenzione, qua c'è un problema di fondo. questi attributi sono come i veri... gli angoli di una coperta, E non è detto che se io miglioro un attributo, sto migliorando anche gli altri, o ancora meglio, non è detto che se miglioro uno di questi attributi, a quel punto...
+
+non sto peggiorando gli altri perché essendo una coperta corta no? se io tiro da una parte dall'altra parte si scopre quindi la definizione che Fowler ne dà in termini di miglioramento quasi universale ecco in questo caso potrebbe non dico essere errata ma quantomeno messa in discussione da una complessità di valutazione
+
+l'azione del refactor in sé è complessa tale per cui dire che stiamo migliorando la codebase non vuol dire niente proviamo a a fare un esempio no proviamo a estra... a pensare no in merito all'estrazione di un metodo io la mia classe estraggono il metodo perché? perché voglio... c'ho un blocchetto di codice che è coerente con se stesso voglio semplificare la lettura del codice magari dando
+
+un'astrazione dando un nome a questa azione che è circoscritta a questo blocchetto di codice per cui cosa faccio? Prendo e strago questo blocchetto di codice in un metodo, è una stessa classe, gli do un nome che fa questo questo quest'altro ok e ho ridotto la complessità quindi sto facendo refactoring, sto migliorando la code base però attenzione!
+
+non è detto che io stia migliorando la codebase perché c'è un altro elemento che entra in gioco che è la coesione un'altra attributo del refactoring spesso quando noi estraiamo questi metodi molti di questi metodi non hanno una correlazione con le proprietà della classe e se questo è il caso
+
+Non è detto che estrare quel metodo migliora a prescindere l'azione o almeno migliora la gestione della complessità ma potrebbe ridurne la coesione cioè quel metodo non è che è estratto non avendo legami stretti con le proprietà della classe e potrebbe essere non coerente con la classe stessa e quindi magari essere candidato a essere spostato da qualche altra parte
+
+Questo è un piccolo esempio che dimostra che due attributi diversi del refactoring, che non è un elemento atomico, la stessa azione possa inficiare in modo positivo e negativo su due attributi che definiscono quello che è il refactoring. Per cui...
+
+L'idea di chiamare refactoring come miglioramento generale potrebbe non essere poi così... si sposi così... non potrebbe non sposarsi così bene. Ecco, questo a questo punto presuppone che l'approccio che noi dobbiamo avere verso il refactoring deve essere un po' più strutturato.
+
+Quindi non possiamo definire una qualità del codice in modo astratto, dobbiamo misurarla, abbiamo 10 attributi più o meno che ci aiutano a misurare la qualità del codice, dobbiamo fare dei test di qualità prima e dopo, delle analisi di qualità prima e dopo e dobbiamo essere consapevoli che la... come posso dirlo?
+
+che il refactoring e la scelta delle azioni del refactoring è sempre una questione di trade-off, di pro e contro. Non esiste un'azione che punta alla qualità in quanto tale come elemento astratto, ma esistono delle azioni che tirano la coperta verso una direzione o verso l'altra, per cui un codice di qualità vuol dire proprio un cazzo di niente, detto tra di noi.
+
+così in modo brutale, brutalissimo.
+
+C'è un altro elemento importante che quando noi stiamo facendo il refactoring dobbiamo essere in grado di comprenderne e di averne una contezza visiva ecco perché nelle azioni di refactoring una cosa interessante che mi è venuta in mente è quella di rendere atomiche le azioni di refactoring
+
+in dei commit. Un commit deve corrispondere ad un'azione specifica di refactoring. Che ne so, muovi il metodo. Questo mi permette di fare delle analisi e dei calcoli, ci sono dei parametri, se volete possiamo parlarne in un altro episodio, per calcolare la qualità del refactoring.
+
+nel senso di qualità per azione di refactoring, quindi l'obiettivo dell'azione di refactoring, sposta al metodo, è la qualità del risultato. Su questa magari posso linkarvi qualche paper, se volete approfondire, o possiamo parlarne magari in un altro episodio. Quello che adesso vi mostro, e vi sto mostrando, è un chart
+
+che fa parte di uno studio che ho trovato molto interessante che ha preso modalità differenti di refactoring o almeno azioni diverse di refactoring e ne ha valutato l'impatto verso gli attributi del refactoring quindi coerenza facilità di modifica bla bla bla e quindi come potete vedere per ogni azione di refactoring noi possiamo avere un più
+
+che vuol dire che migliora questo attributo, un meno che lo peggiora, un più meno che in realtà non è chiaro insomma cosa cosa fa, cioè è contraddittorio, è un punto interrogativo dove non è misurabile l'impatto in questa voce. Ecco, questo visivamente ci aiuta a capire e a vedere che il refactor in quanto azione singola
+
+e questa coperta insomma che si tira da una parte o dall'altra è dannatamente eloquente questo grafico. Quindi quando noi pensiamo a refactoring come elemento atomico stiamo ignorando questo tipo di complessità ed è stato proprio è stato proprio questo il l'elemento che mi volevo portare a casa
+
+quando mi trovo nella condizione, nel momento in cui mi trovo nella condizione, devo fare un refactoring. E' l'elemento che mi costringe a dire, refactoring non è solo dire a cloud o codex, migliora sto codice, ma è intanto fare un'analisi, capire quali sono gli obiettivi che voglio raggiungere, voglio rendere il codice più leggibile, voglio rendere il codice più testabile, ok.
+
+i due elementi potrebbero non essere convergenti, uno potrebbe peggiorare l'altro, ma definendo l'obiettivo chiaro, specifico ed escritto, a quel punto posso guidare la mia azione di refactory, anche se eseguita dall'LM, verso una direzione più specifica. Ma a questo punto però è necessario pensare
+
+almeno mi sono trovato a ragionare su come istruire il mio agente per fare il refactoring. Bene, questo è interessante perché in realtà chi ha letto un po' su come si scrivono i prompt
+
+è incappato nel concetto di zero shot, one shot, two shot e via discorrendo. Quindi la prima cosa che mi è venuta in mente è stata quella di andare a preparare dei prompt con un approccio all'inizio zero shot, poi one shot e two shot per ogni tipologia di refactoring o almeno quelle che più
+
+si sposavano con la codebase che ho ereditato dal libro di Martin Fowle.
+
+Quindi mi sono messo, ok, e ho iniziato a scrivere i miei promptini zero shot, non è vero che li ho scritti io, ho dato i book in pasto a Claude e me li sono fatti scrivere. Però in realtà poi ho visto, e è là che sono arrivato al paper, ho visto che qualcuno aveva già fatto questo esperimento e qualcuno aveva già fatto delle analisi su questi prompt zero shot e two shot.
+
+Ma facciamo un passo indietro, che cos'è un prompt zero shot nel contesto del refactoring? Io dico al modello cosa applicare, ma non gli do nessun esempio e ne guida. Per esempio gli dico estrai il metodo blablabla estrai quando il testo è lungo estrai il metodo, bom. Pum, fine. Oppure gli do il nome.
+
+Fowler ha dato un nome per ogni meta, è molto figo quel libro, prendetelo in mano, dateci un'occhiata perché spiega il metodo di refactoring visto in modi diversi, gli dà un nome, dà una descrizione, fa un grafico e allega gli snippet di codice. Con l'approccio to shot, in realtà oltre al nome del refactoring ci sono due esempi. Quindi gli dico, ehi...
+
+applica ovver necessario questa metodologia di refactor che si chiama pipo pallo questo è un esempio e questo è il secondo esempio
+
+e questo era l'approccio che io stavo strutturando per fare il refactoring. Leggendo poi il paper in quello che ho visto è che questo approccio non sempre genera i risultati migliori ma spesso
+
+seconda del modello più o meno potente i risultati potrebbero essere variabili. Nello studio si utilizzavano due modelli c'era un GPT e un Deep Seek credo se mi ricordo bene e la qualità delle risposte nel modello era molto variabile però lo studio proponeva anche altre approcce ed è stato questo l'elemento Molte
+
+che mi ha aperto un mondo e mi ha fatto pensare ⁓ what the fuck c'è anche tutto questo l'altra approccio al refactoring era quello di creare dei prompt per refactoring method che fossero step by step in linguaggio naturale per esempio nel caso dell'estrazione di una variabile io gli dico assicurati che non ci siano side effects
+
+dichiara una nuova variabile immutabile e sostituisci l'espressione precedente con la nuova variabile. Questo è un approccio step by step dove io dico alle LM fai questo, poi fai questo, poi fai quello come insomma si fa solitamente i bambini.
+
+ai colleghi come me un po' tonti quando non conoscono il dominio. Quindi questo era un altro approccio interessante, lo vedremo dopo perché. Il terzo, sì, il quarto, scusate, è quello di che in realtà viene da un approccio interessante che ho beccato in un repository.
+
+questo repository era un plugin di Eclipse, non so se ve lo ricordate, e la cosa interessante è che questo repository funzionava nel contesto e utilizza, è ancora utilizzato per fare automation in ambito refactoring, utilizzava delle regole che dicevano che servivano ad identificare i casi in cui
+
+il refactoring, uno specifico tipo di refactoring andava applicato, e va applicato. Qui c'è la regola formale che dice in quel caso erano se non mi sbaglio delle funzioni che facevano girare, immagino, su un language server di Eclipse o qualcosa di simile, credo Eclipse avesse un language server così come lo intendiamo noi, facevano del parsing del codice e se
+
+il codice rispettava queste regole, immaginatele come delle regex, anche se non sono delle regex, quindi rispettava queste regole, eee... allora, a quel punto c'era l'applicazione, l'applicazione del refactoring, perché c'era un matching con questo pattern di cui vi parlavo. La cosa interessante da capire è che c'era il concetto di logic, di regola e di...
+
+Refactoring quando questo succede applica quest'azione Interessante perché da una parte questo già lo facevano dei tool automatici posso condividervi con voi il repository si chiamava ref qualcosa e se non ricordo ma dall'altra se noi sostituiamo quelle regole quel parsing che in quel caso era dato da queste robe tipo tipo regex con una regola in linguaggio naturale
+
+è la descrizione appunto della refactoring che deve essere fatto, a quel punto abbiamo un altro approccio al prompting. Dov'è la regola? Dico cosa deve essere fatto.
+
+Il quinto approccio è quello di lavorare per obiettivi. Dire per esempio voglio migliorare la leggibilità del codice e lasciare l'LLM guidare la trasformazione. In realtà...
+
+alcuni di questi approcci sono stati valutati dal paper e la cosa che ne emerge nel paper è che l'approccio alle regole o l'approccio dei prompt step by step vincono sempre su tutti i modelli testati hanno fatto degli esperimenti su DeepSeak e GPT-40 mini
+
+quattro omini, scusa, scusate, e questi due approcci vincono sempre, è chiaro, sono degli approcci, almeno quello step by step, sono degli approcci che già si uniscono alla cantena di pensiero, alla cantena procedurale di pensiero dell'LLM, quindi si sposano, si uniscono con questo pensiero stimolandolo in qualche modo, E tra l'altro
+
+mi immagino che l'approccio step by step funzioni molto bene per modelli un po' più piccoli quindi posso, che ne so, decidere di triggerare il refactoring usando Sonnet al posto di Opus o IQ se proprio avete il coraggio. Con un approccio step by step questi modellini piccoli sono stimolati ad agire meglio.
+
+Devo dire che in realtà i modelli un po' più grandi funzionano molto bene con entrambi, ma credo che il rule based, quindi quello di dire quando c'è questo criterio, quando questo criterio viene soddisfatto, applica questo refactoring, dia un pelino più controllo.
+
+un po' più controllo e quindi permetta all'LLM di essere guidato meglio da quello che l'uomo vuole in questo caso di refactoring. Abbiamo parlato anche dell'objective based, cioè io gli do un obiettivo.
+
+e lascio l'LLM prendere le decisioni. Quello che l'LLM solitamente farà è quello di andare verso una convergenza statistica di quello che è il raggiungimento dell'obiettivo. Spesso i modelli faticano a dedurre la trasformazione, quindi faticano a...
+
+convergere verso quello che potrebbe essere per noi l'obiettivo. è una cosa che è emersa dallo studio. Però c'è anche un interessante
+
+interessante dato è che in realtà se noi gli diamo solo l'obiettivo per esempio
+
+L'LLM rischia di missare completamente l'obiettivo. Questo è uno degli elementi che emergono dal paper. Per cui quello che io mi sono portato a casa dalla lettura di questo paper e dall'approccio è che se io voglio un refactoring specifico mi devo fermare.
+
+pensare al refactoring non come a un incremento di qualità generico così astratto ma identificare degli step precisi o almeno degli elementi precisi, famosi attributi del refactoring legibilità, mantenibilità, testabilità, tutte queste robe, identificare quelli che sono prioritari per me e tarare le azioni e quindi tarare le LLM per raggiungere quegli obiettivi
+
+Dandone istruzioni o scrivendo regole ed descrivendo le azioni. Questo è l'approccio che insomma mi sono portato a casa e che mi porto a casa per in in questo contesto però oggi Viviamo in un contesto dove il prompt singolo è il limitante Oggi parliamo di un sistema
+
+...multiagente. Quindi io finora sono arrivato a dire ok so come devo scrivere il mio prompt, so come devo strutturare i miei prompt, a quel punto utilizzo i miei prompt per il refactoring. Ma il prompt da solo fallisce in alcuni elementi. Spesso a difficoltà
+
+ossia è visto che ha difficoltà nella comprensione profonda del contesto del progetto. Questo è un primo elemento. Vero è che strumenti come Cloud di per sé, essendo agenti C, sono più strutturati che un prompt singolo.
+
+ma quello che può migliorare il nostro output è quello di strutturarlo in un sistema per esempio aggiungendo step di verifica di compilazione o di analisi del feedback dei testi in realtà alcune di queste azioni vengono fatte già da strumenti come cloud quello che noi dobbiamo fare è fare in modo che
+
+Claude lo faccia sempre, quindi dobbiamo istruire il nostro LLM per fare queste azioni sempre. In questo caso sono incapato in un caso studio molto recente, se non sbagliare, era di febbraio, in un paper chiamato Mantra Multi Agent Code Refactoring che approccia a refactoring in un modo molto molto curioso devo dire la verità e si basa su tre pilastri principali.
+
+Il primo è che ogni refactoring deve essere guidato da esempi storici. La code base non è un punto fermo nell'asse del tempo, ok? Ma è un elemento in evoluzione. E questa evoluzione viene tracciata in qualche modo, salvata in qualche modo all'interno della storia di Git.
+
+Noi quello che dovremmo essere in grado di fare è quello di leggere la storia di Git e capire quando sono stati applicati dei refactoring.
+
+che vuol dire che sono singoli refactoring dove non ci sono magari nei miglioramenti strutturali, bug fix o feature mescolati in mezzo, Quindi i refactoring puri, azioni di refactoring come tali, ok? Non mischiate ad altre robe, tipo una fice. Se noi siamo in grado di estrarre i refactoring puri
+
+dalla storia dell'evoluzione del nostro codebase, della nostra codebase, noi siamo in grado di utilizzare, o potremmo essere in grado di utilizzare, questa è cosa molto molto interessante di questo studio, possiamo essere in grado di utilizzare questi refactoring per istruire, guidare l'emme nei refactoring successivi.
+
+un approccio che quello che il paper di mantra propone è quello di utilizzare strumenti in questo caso sono per Java perché io non ho capito ma quando si parla di refactoring si parla di Java nei paper scientifici, va be' facciamoci una domanda e diamoci una risposta ci sono degli strumenti come refactoring miner e impurity checker che sono per Java e anche qua si apre
+
+un ventaglio di possibilità nel mondo JavaScript che estraggono quelli che sono i refactoring puri. Se a quel punto noi salviamo questi refactoring puri su un rag indicizzando quello che era il codice prima del refactoring la descrizione in linguaggio naturale di quella che è stata l'azione del refactoring magari anche generata via LLM se vogliamo automatizzare
+
+la color and color e quindi tutta la coltree del del metodo della funzione del blocco di codice e i metadata di classe package noi siamo in grado di avere un database che possa guidare il refactoring e immaginiamoli come il miglior training set contestuale in termini di refactoring adesso questa roba non è free nel senso che
+
+presuppone un impatto, almeno finché qualcuno non sviluppera un tool che lo farà da solo. Però questa cosa è molto interessante perché a quel punto, una volta che abbiamo il training set per il nostra gente, che quindi capisce come noi operiamo il refactoring all'interno di quella code base,
+
+o posso sviluppare un'agente che applica il refactoring, un developer agent. On top of, o sopra il developer agent o dopo il developer agent in realtà, quello che devo fare è un'azione di review dell'azione di refactoring ed ecco dove diverge l'approccio prompt one shot. Da una parte io gli sto dando un contesto
+
+molto più vicino all'intento di quella codebase specifica, all'approccio verso quella codebase specifica dall'altra sto aggiungendo un agent reviewer che non fa altro che verificare che l'intento dell'azione specifica di refactoring verso uno degli attributi che può essere legibilità come abbiamo detto prima sia raggiunto
+
+anche là si aprono dei capitoli enormi di LLM come valutatore LLM as a judge che potremmo rimanere altre 16 ore a parlarne se tutto questo sta in un loop dove alla fine della valutazione o una valutazione con un LLM o la compilazione o magari la valutazione dei test o
+
+a quel punto io costruisco un feedback loop per il refactoring che è molto più strutturato, quindi come input gli do il metodo di refactoring e il tipo di refactoring che voglio fare. Il developer agent, quindi quello che dovrà applicare, applicare il refactoring, cosa si fa? Si fa un'analisi statica veloce del codice, magari con uno strumento di analisi statica.
+
+va a interrogare il rag per vedere se c'è un refactoring simile nella storia un'azione di refactoring simile nella storia per capirne come quel team in quella codebase approccia quel tipo di refactoring a quel punto genera il codice poi c'è un review agent che verifica il refactoring verifica lo stile trigger a compilazione test e se fallisce c'è il repair agent che fa
+
+ci ripensa e fa un loop per ritriggere il loop o altrimenti io cioe refactoring finito e faccio un commit atomico dove dico io ho fatto questo refactoring specifico in questo blocco specifico per con questo intento che poi servirà per alimentare quello che il rag
+
+viene utilizzato dopo per il prossimo refactoring.
+
+super super super interessante no? Cavolo pensavo di fare un episodio di 10 minuti già già oltre oltre i 40 minuti quindi morale della favola quello che devo fare è creare un sistema di refactoring
+
+non solo un'azione specifica, un prompt a freddo devo dare al mio LLM più contesto possibile magari evidenziando il caller, ecco lì in questo caso credo che Cloud abbia integrazione con language server almeno su TypeScript dovrebbe averci l'out of the box
+
+che gli permette di andare a vedere questo se non mi sbaglio in altri linguaggi bisogna installare un mpc, ncp, etha e essere un pelino più chiari. Sono incapato anche in un altro paper che proponeva un approccio un pelo diverso
+
+Quello che questo paper proponeva era quello di dire all'LLM, proponimi un subset di candidati a refactoring, quindi di azioni potenziali candidate a refactoring, e fai guidare dall'uomo la scelta dell'azione specifica. Quindi human in the loop, e questo si è visto che aumenta la correttezza e la qualità dell'auto.
+
+io non l'ho provato ancora.
+
+sicuramente è una cosa che farò... che farò prestissimo. ⁓ Sono già stanco!
+
+Nella fase di refactoring alcuni studi hanno anche identificato situazioni dove gli LLM provavano a fare overfitting del codice, no? Del refactoring. Quindi andavano a cambiare del codice che già supportava, supportava, supportava quel refactoring.
+
+e questo overfitting appunto viene solitamente mitigato dall'approccio proponipo implementa quindi dire all'agent identifica me le azioni di refactoring questo blocco di codice tenendo presente queste regole e questo outcome oppure questa lista di step e a quel punto è l'uomo, è l'agente umano che
+
+che guida il refactoring e si è visto che il miglior output lo si raggiunge ancora per fortuna o ahimè con lo human in the loop
+
+e questo è interessante perché in un futuro prossimo
+
+Quello dei Human in the Loop è secondo me il miglior modo per fare il refactoring continuo. Quindi l'LLM è come strumento che amplifica le capacità dello sviluppatore. Ma siccome fare refactoring con...
+
+LLM diventa una cosa abbastanza semplice. Quello che mi è venuto in mente è che se io devo utilizzare un approccio human in the loop per ottenere il massimo della qualità, allora perché non mettere il refactoring o almeno l'azione di refactoring come hook
+
+alla fine di ogni azione di implementazione di codice. Questa cosa mi è venuta in mente guardando le skill che Osmani ha pubblicato credo settimana scorso, due settimane fa dove c'è una skill specifica che io sto usando tantissimo quando faccio vibe coding che è quella di Simplifica. Implementa poi Simplifica.
+
+Quello che mi viene in mente è, o noi abbiamo la lista dei potenziali refactoring approach di Martin Fowler. Abbiamo capito che refactoring non è una cosa atomica ma ci sono diversi obiettivi, quindi posso identificare il mio obiettivo. Perché non mettere lo step di refactoring all'interno dello step di sviluppo?
+
+come elemento di verificare il codice. Quindi fare in modo che il refactoring sia fluido all'interno e continuo all'interno del...
+
+del processo sviluppo.
+
+⁓ Sono morto! Però voglio lasciarvi con una domanda, perché come sapete, Gitbar ha più domande che risposte. E la mia domanda è... nell'ultima parte di questo episodio, lo Human in the Loop ritorna pesantemente. E allora, la domanda che io mi faccio e che vi faccio è... quale parte del refactoring volete delegare?
+
+la proposta, quindi l'identificazione dei blocchi di refactoring, l'esecuzione, la scrittura del codice, la verifica o la ricerca dei candidati. Quale di questi secondo voi ha senso, se non tutti, ha senso delegare e quali di questi step ha senso tenere come elemento umano?
+
+Ok siamo arrivati alla fine dell'episodio, fortunatamente per voi. Cosa ci portiamo a casa? Ci portiamo a casa che migliorare il codice non è né un prompt né un'azione, può solamente essere un augurio. La cosa che dobbiamo fare è appunto scegliere gli attributi che ci interessano. Se vogliamo utilizzare dei prompt per aiutarci nel refactoring
+
+L'approccio a regole, identificare regole o situazioni è nome de refactoring o step by step sono i modi migliori per istruire i nostri LLM.
+
+eeeh... è che probabilmente i nostri LLM hanno bisogno di un... quando si parla di refactoring un contesto che va oltre la codebase adesso quindi qualcosa di più strutturato che sia in grado di andare oltre oltre le
+
+Oltre il presente, ma possa leggere nella storia. Ragazzi, il tempo è volato, io pensavo di essere 15 minuti, ne ho consumato quattro volte tanto, però spero che questo episodio vi piaccia e soprattutto spero che questo episodio aggiunga una parte un po' più pratica, un po' più tecnica all'episodio precedente.
+
+sul refactoring dove siamo stati un pochino più ad alto livello, insomma abbiamo abbiamo parlato più delle implicazioni. Vi metto nelle note dell'episodio i due paper interessanti e il link al libro di Martin Fuller se non l'avete ancora letto leggetelo e vi lascio con il balocco
+
+il balocco naturalmente solo se... aia... questo è stretching avanzato ⁓ solo se trovo la sigla.
+
+se la trovo parte!
+
+Il Paese dei Balocchi è super shameless oggi è un mio side project ve ne ho già parlato all'interno del podcast. questo periodo sto seguendo diversi side project. Piano piano ve li racconterò e vi racconterò anche i dettagli di almeno quello che mi sono trovato davanti quando l'ho sviluppato.
+
+Il baloco di oggi è un baloco che io ho chiamato, me lo sono dimenticato, ho chiamato Git Notes. Cosa fa Git Notes? Git Notes è un'applicazione per iOS che sarà pubblicata brevissimo appena aggiornano la privacy policy e quelli delle Apple Store me la provano perché mi hanno appena bollinato perché la privacy policy non dice un dettaglio specifico.
+
+andiamo ad aggiornare, ma non fa altro che permetterli di registrare una nota, trascriverla e caricarla su github in un repository che voi date, in una cartella che voi date come Markdown. La cosa figa è in realtà che la trascrizione sui device iOS più avanzati, quelli credo sia da iPhone 15 in su credo,
+
+che supportano appunto l'integrazione coi modelli on device di Apple. Questa integrazione avanzata permette la trascrizione senza consumare nessun provider terzo. Io questa applicazione la uso e l'ho usata abbondantemente in questo episodio per prendere le note perché quando sono in giro mi vengono in mente idee, cose, robe...
+
+ho il pulsante da avvio rapido qua, collegato con l'applicazione, anzi posso farvelo vedere per chi ci sta guardando su youtube ho questo pulsante da avvio rapido che apre l'applicazione non si vede una cippa, calco sul pulsante in or, record a note, dico la mia nota e automaticamente la mia nota mi viene salvata su github che è lo stesso repository
+
+che utilizzo per leggerlo con Obsidian o che ho collegato a Cloud Code, al quale poi posso fare domande e interrogare, insomma, è la mia personal knowledge base che utilizzo quando devo preparare un episodio, pensare a un episodio, sostenere una tesi o fare qualunque cosa che il mio piccolo cervello dalla memoria limitata non è in grado di fare. Quindi questa è un'applicazione.
+
+vi interessa utilizzarla potete mandarmi un messaggio e io vi aggiungo aggiungo il vostro account su test flight e potete fare da beta tester tra l'altro questa applicazione verrà rilasciata anche su android su android si comporteremo modo leggermente diverso
+
+nel senso che non avendo le AI inutilizzabile in modo così facile si appoggerà dei modelli che già lo fa per i modelli di iPhone più vecchi del 15 cioè si appoggia a due provider volendo che potete configurare si appoggia a OpenAI utilizzando Whisper e l'altro GPT o Mini credo o a Mistral
+
+per la trascrizione e il modellino che poi ne deduce i titoli. Cosa figa è che ogni modifica è un commit all'interno del branch che decidete di utilizzare. Magari in futuro svilupperò, che ne so, l'integrazione con GitLab o Bitbucket. Ba, ma per ora GitLab sembra sufficiente. So, se volete darci uno sguardo, ecco, buttateci uno sguardo perché...
+
+Io la sto trovando utile del motivo per cui l'ho fatta. Ditemi voi.
+
+Detto questo, abbiamo superato l'ora e io vi do appuntamento alla prossima settimana, anticipandovi che per maggio stiamo preparando degli episodi interessanti con degli ospiti di peso e niente, alla prossima. Ciao ciao!
+
+Prima di lasciarvi devo ringraziare rapidamente Livio, stavo guardando, che ha lasciato un messaggio, ciao Mauro, ciao Mettinati, visto che state continuando a suonare episodi io continuo a sostenervi, grazie ragazzi, grazie a te Livio, il tuo supporto è super apprezzatissimo, grazie di cuore, sei sempre presente e sei uno dei motivi per cui...
+
+andiamo Grazie di cuore.
+
