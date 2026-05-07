@@ -1,0 +1,263 @@
+Brainrepo (00:00)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Intanto ne approfitto per chiedervi scusa per la settimana scorsa, non sono potuto essere qua e lo sentite anche un po' dalla mia voce che è molto calante perché sono stato poco bene questo periodo e contavo di registrare un episodio.
+
+e ci speravo fino all'ultimo minuto, in realtà non ci sono riuscito e... e magicamente si è fatto mercoledì della settimana dopo e quindi mi sono detto ok questa settimana l'episodio deve uscire anche perché ho qualcosa di veramente interessante da raccontarvi. Intanto, come molti di voi sanno io sono...
+
+lavoro per una società di consulenza, NIRFOR, molti di voi la conoscono. E da consulenti noi andiamo nelle aziende per risolvere i problemi del cliente, fundamentalmente. Una delle cose veramente belle del consulente ma potenzialmente problematiche è che si salta da un contesto all'altro, da una dinamica all'altra, da un'azienda all'altra.
+
+e ogni volta che si salta su un'azienda nuova, un progetto nuovo e via discorrendo, i punti di riferimento o molti punti di riferimento che si erano costruiti nella precedente esperienza col precedente cliente e si perdono e quindi è tutto da ricostruire. Questa cosa può essere motivante per alcuni, per esempio per me, ma può essere terrorizzante.
+
+per altri, perché in realtà il lavoro in termini di carico cognitivo, termini di effort, in termini di attenzione e anche in termini di gestione delle sensazioni, per esempio spasamento e sentirsi persi è importante, l'effort in questa direzione è veramente, veramente importante. Ogni volta che si entra in un contesto nuovo, noi stiamo affrontando un dominio nuovo, stiamo conoscendo persone nuove.
+
+potenzialmente o almeno quello che capita spesso a me è quello di trovarsi davanti a un'infinita lista di acronimi incomprensibili, tutti che parlano di sistemi che non abbiamo mai visto o di decisioni che sono state prese magari mesi prima e potenzialmente non documentate. E questo è più o meno quello che mi sono trovato ad affrontare
+
+qualche qualche settimana fa appunto saltando su un nuovo progetto. Tanta documentazione. Documentazione fatta magari con un livello di dettaglio troppo profondo che non permette di far comprendere quello che invece è una visione più prospettica alto livello.
+
+contesto nuovo in termini di comunicazione quindi persone che parlano magari con dinamiche comunicative completamente diverse da quelle che magari abbiamo utilizzato fino al giorno prima e questo insomma è un po il contesto se questo ci aggiungiamo il fatto che magari non siamo native speaker per cui quando alcuni parlano con con degli accenti stretti o con lingue mischiate o con acronimi
+
+o con dialetti come mi è capitato a volte diventa... dialetti o slang diventa molto molto molto difficile quindi cosa facciamo in modo molto smart? Iniziamo a, perlomeno da Techlyd inizio a pianificare un filotto di call con praticamente qualunque persona del mondo e in queste call back to back io ho la possibilità di catturare informazioni qual è il problema?
+
+e che il throughput informativo che ne viene fuori è troppo alto per spesso troppo alto rispetto a quello che io realtà posso gestire voi perché magari il dettaglio informativo è di un certo livello quindi molto profondo molto sul dettaglio appunto o perché
+
+si danno per scontato delle cose o una serie di altri problematiche, molte informazioni viaggiano troppo velocemente, volano alla velocità della conversazione e non siamo in grado di catturarle. C'è un'altra cosa importante quando si entra come consulente, è che in realtà giustamente, perché il cliente paga e quindi giustamente lo pretende,
+
+il cliente
+
+molto più profonda nel dominio che lavorano da anni nell'azienda, cioè se chiamano a te che sei un consulente che performa in un certo modo, quindi a un certo livello, ok e giustamente tu di sei venduto come un consulente che performa un certo livello, entri in un contesto nuovo, l'effort per apprendere e comprendere il contesto è molto alto, nel frattempo tu comunque devi deliberare, mostrare che stai generando valore
+
+è il metro di tempo barra valore spesso è tarato considerando il tempo barra valore dei team che già stanno lavorando i quali non hanno quel carico cognitivo, quel carico cognitivo che invece hai tu, hai il tuo team quando sta arrivando e a questo punto, in realtà
+
+mi sono chiesto, mi sono chiesto un po' come poteva affrontare questa sfida, Quindi come poteva approcciare a questa nuova discovery per un cliente nuovo in un contesto generale dove le hai c'è, funziona. Partivo da un concetto importante e questo, e questo sta diventando, più il tempo passa e più sta diventando
+
+un pillar fondamentale del mio approccio con l'utilizzo delle AI. Io ero alla ricerca di un esoscheletro. Conoscete la differenza tra endoscheletro ed esoscheletro?
+
+Io rispetto a un endoskeletro...
+
+cercavo un esoscheletro che amplificasse quelle che erano le mie capacità e minimizzasse quelle che erano i miei limiti, Quindi mi aiutasse a combattere, a superare quelli che erano i miei limiti, per esempio alle 10 di intermini di... per quanto riguarda per esempio l'attenzione durante le call. Quindi cercavo proprio qualcosa che si comportasse in questo modo.
+
+e inizio a vedere l'AI proprio come un esoscheletro e non come un endoscheletro e su questo ci ritorno alla fine perché proprio ieri Eddie Osmani ha pubblicato un interessante articolo su cui ci fermeremo verso la fine dell'episodio credo se l'esoscheletro è quello che riguarda la protezione, l'amplificazione di quello che ancora sotto sta molle quindi
+
+io come teclida all'interno del nuovo team sono ancora molle ancora da formare mi doto di un esoscheletro che fa sì che il mio io interiore le mie capacità più profonde si sviluppino nel contempo questo si contrappone ad un approccio in modalità endoscheletro dove il tool si va a sostituire al mio giudizio tecnico alla mia expertise di dominio
+
+e questo mi spaventa quindi il mio taraggio in questo caso era quello di andarmi a costruire, approcciare, trovare un modo per utilizzare le AI in modo che questa funzionasse da...
+
+da esoskeletro.
+
+È difficile spiegare il concetto di... di... di esoskeletro ed endoskeletro, però la mia idea è appunto che non volevo una cosa che sostituisse a me, che sostituisse il mio giudizio critico, che sostituisse la mia capacità cognitiva, ma qualcosa che si affiancasse e mi desse quei superpoteri di cui avevo bisogno proprio per affrontare una condizione, una condizione complessa.
+
+e allora sono andato a crearmi questo tool e l'ho creato basandomi su una conversazione che avuto col mio amico Yaga, ciao Yaga se ci stai ascoltando, ciao dove Yaga qualche tempo fa mi aveva condiviso il suo approccio per la personal knowledge base e per l'approccio che lui utilizza appunto con l'AI per la crescita personale dove traccia un
+
+scritto una serie di cose e poi ha un companion, un agente che in qualche modo lo affianca, dà delle dritte, gli dà dei suggerimenti e lo aiuta a crescere in modo... modalità... esoskele, esoskele, oggi, oggi continuo a essere un po' bollito, quindi probabilmente se mi sentite un po' vaneggiare...
+
+è colpa della febbre. Come ho creato questo sistema? non so se l'ho detto qualche volta, io tendo a trascrivere alcuni meeting usando o Crisp nelle call, quindi in qualche modo o Crisp o Teams mi dà la possibilità di, quando registro le call, di catturare le transcriptions. Queste transcriptions
+
+in realtà se uso Crisp è molto figo perché Cloud Code come sapete io uso Cloud o almeno usavano il progetto Cloud Cloud Code si connette via MCP a Crisp e fa il fetching appunto delle trascrizioni questa cosa è molto figa perché in realtà nel mio ecosistema posso dire a Cloud ok fetchati tutte le call che parlano di un certo topic
+
+e me li scarichi. Per farlo ho creato un semplice comando, una skill con un comando di Cloud che dice ok, crisp sync e lui si scarica le trascrizioni. La cosa interessante è che a Cloud ho anche detto ehi scaricati le trascrizioni che parlano di
+
+questo topic specifico o di questo cliente specifico. Questo è molto figo perché durante i meeting volano un botto di informazioni troppe per essere catturate da una persona che sta entrando in un dominio e spesso queste informazioni vengono usate tipo le trascrizioni, molti tool le usano per tirare fuori action item, fare
+
+di assunta appunti e però finisce là. L'approccio che ho utilizzato è diverso, è differente. Ho utilizzato queste trascrizioni per estrarre una serie di informazioni molto più strutturate sulla struttura che seguono la struttura che solitamente faccio io quando ottengo io quando faccio una discovery. Per esempio io mi
+
+mi tengo una facca delle domande aperte alle quali devo dare risposta, crea una lista di acronomi e quant'altro. Quindi cosa ho fatto? Ho creato un comando che si chiama process docs che non fa altro che processare queste trascrizioni.
+
+in qualche modo analizzarle, trascrizioni che sono grezze, e tirare fuori quattro output fondamentali. La prima sono le FAQ, quindi ogni domanda che è emersa. Ogni domanda ha un suo stato, quindi aperta, parziale o risposta, la domanda stessa, e in questo caso io mi traccio, traccio in qualche modo
+
+Il progresso della discovery. Queste domande sono estratte dai meeting, i meeting che possono essere col mio team o con gli stakeholder, queste domande si vanno a creare, a compilare, attingendo da fonti diverse, da situazioni diverse, ma è un file markdown, quindi posso implementarlo io se mi viene un dubbio nella fase di analisi, che è una cosa molto importante, no?
+
+che ho trovato molto importante la rilettura dei contenuti, dei documenti e l'analisi, rilettura periodica, mi permette di aggiungere una nuova domanda e tracciare questa nuova domanda. In questo caso piano piano che le domande si rispondono io, il sistema assorbe conoscenza, perché solitamente le domande si rispondono via chat o via call. Quindi il sistema assorbe conoscenza e poi vi spiego come faccio per le chat.
+
+e nel contempo io assorbo conoscenza. Quindi, questa è una cosa che avrei voluto dire alla fine dell'episodio ma è importante, questo esoscheletro che sono andato a creare mi aspetto che a un certo punto della discovery non mi serva più e possa liberarmene perché io e il mio team abbiamo assorbito talmente tanta conoscenza del dominio, del contesto, dell'infrastruttura, dei team e quant'altro che poi tutta questa nuovologia automatica
+
+e potrò usarla per fare altre cose, esempio potrò usarla per generare documentazione potrò usarla per fare l'ombording di nuovi membri del team quindi in questo caso io piano piano sto facendo una progressive disclosure il sistema davanti a me sta facendo una progressive disclosure e io la traccio con le FAQ un'altra cosa che mi ha fatto impazzire
+
+sempre in tutte le discovery specie nel mondo anglofono sono gli acronimi ogni enterprise a centinaia alcune anche migliaia di acronimi e non tutti sono sono Sono tracciati sono documentati e piano piano che gli acronimi vengono citati all'interno dei meeting quello che fa il mio sistema quando gli dico
+
+Process Docs, lui processa le transcription, fa aggiungere nuovi acronimi. La cosa figa è che aggiunge degli acronimi anche se non hanno il corrispettivo nome, Ttd o SLL, sono delle robe che tu ti trovi, magari che te le dicono nel meeting, tu non sai di cosa si tratta, magari ti sfugono perché...
+
+il flow del meeting è molto veloce e tu non fai a tempo a fermare il flusso, a fermare il tuo interlocutore e dire che cosa vuol dire anche perché spesso non puoi farlo e allora a questo punto il sistema cosa fa? Attiva le antenne, si li cattura e tu ce li hai nella lista degli acronimi come acronimi che devono essere dei mistificati quindi si va a creare un altro elemento da chiarire nelle fa, che domanda da? Domanda aperta risponde, e dice
+
+che cos'è questa cronica? Questo è importante e lo vedremo dopo perché a partire da questi documenti poi partono le azioni. Il terzo documento in realtà che si va a creare è il documento task.md che invece traccia action item, owner, fonte e data action item, cosa c'è da fare, il focus principale di questo documento è su di me, qui c'è proprio tutta una sezione
+
+i miei action item e poi c'è una sezione action item degli altri. Questo mi serve perché se non teclid io devo anche coordinare il processo di lavoro del mio team. Si gira ma quando entri a un cliente problem spesso gira non è configurato da day one e tutte queste cose quindi avere una roba rapida mi è parso utile naturalmente.
+
+questa roba volendo si può sincronizzare con Gira che ti crea i tickets e fa... sì ma non è il mio caso per ora. La cosa interessante degli Action Item è che dei task del Faltask.md è che in realtà questa cosa è un tool, cioè è una funzionalità che molti tool già esportano e già espongono quindi in realtà non mi sono inventato niente ma ritorna molto utile nella fase successiva di cui poi vi parlo.
+
+L'ultimo elemento in realtà che ho trovato molto molto interessante è il file changelog. Cosa fa il file changelog? Mi piacerebbe mostrarvelo ma ci sono dati che non posso fare disclosure quindi mi viene difficile mostrarvi un changelog di esempio ma il changelog traccia praticamente tutte le azioni all'interno del sistema quando processo i documenti lui mi dice guarda ho processato
+
+questo documento, ho aggiunto questi acronimi, aggiunto queste domande aperte alle quali devi rispondere, ci sono stati questi tre task a questo giorno, in questa ora. Questo fa sì che in qualche modo si catturi la storia del progresso.
+
+La cosa interessante che questo sistema sta facendo è che questa cattura così strutturata mi sta aiutando a fare emergere quello che spesso chiamiamo la nona nonno, ciò che non sappiamo di non sapere e questo è uno dei problemi più grandi, chiamiamo come Teclid, perché? Perché quella attenzione al dettaglio
+
+Il fatto che io sto tracciando quelle domande aperte, quegli acronimi, mi aiuta ad attivare quell'attenzione al dettaglio che in realtà altrimenti mi perderei.
+
+Cosa fa il process docs? In realtà il modo che ho trovato per fare questa cosa è che è quello di evitare l'azione manuale. Quindi cosa fa lui? Ho creato una piccola cron che gira periodicamente e gli dice ogni x ore, che dice lo adesso non mi ricordo come l'ho configurata, però ogni tot di tempo lui gira e
+
+controlla le trascrizioni e aggiorna questi documenti In più e lo vedremo dopo aggiornà anche quella che è la missione del mondo quindi crea un modello che rappresenta questa knowledge ed è molto interessante il modo con cui lo fa e lo vedremo tra qualche qualche qualche minuto però la seconda parte
+
+in realtà del processo riguarda il workflow giornaliero. Quindi cosa succede? Io ho questo sistema che si carica le traduzioni, mi crea questi documenti che in qualche modo tracciano la conoscenza o almeno una parte della conoscenza, e a quest'azione che gira appunto in modo silenzioso
+
+si attiva un workflow manuale. Questo workflow manuale è fatto di generalmente due tre comandi. Il primo è lo EXO, perché il framework l'ho chiamato EXO Skeleton, si chiama EXO Stand Up. Cosa fa EXO Stand Up? La mattina, quando io accendo il mio computer alle otte e mezzo, no, alle un quarto, lancio il comando, tra l'altro ho dovuto convertire
+
+tutta la struttura per Kiro perché con questo cliente usiamo Kiro però insomma lancio questo comando slash standup che cosa fa? Questo comando legge i task, le facca aperte e poi l'ultimo journal poi vi spiegherò che cos'è l'ultimo journal ok? e mi crea
+
+direttamente a linea di comando senza tanti fronzoli una piccola dashboard che in realtà mi fa vedere appunto i taschi aperti le domande senza risposte legate al giorno prima e poi mi fa vedere altre informazioni di cui vi parlerò tra qualche momento quindi la mattina quando io non sono al massimo mia moglie dice che sono un diesel proprio per il proprio lento in partenza questa cosa mi riconnette col flow
+
+mi riconnete con quello che ho fatto la sera prima. Perché mi riconnete con quello che fatto la sera prima? Perché la sera prima io ho fatto il tear down e questo è il secondo comando che mi sono andato a fare. Cosa fa il tear down? Il tear down raccoglie tutte le attività
+
+generalmente git per alcuni repository che faccio che tengo mi nel tear down posso aggiornare i task come funziona fondamentalmente io lancio il comando tear down e automaticamente la gente mi dice e raccontami cos'è fatto oggi considerate che lui ha già tutte le trascrizioni delle delle delle delle call quello di cui ha bisogno è un report
+
+un report un pochino più strutturato. E qua diventa, l'ho provato un paio di volte, diventa veramente problematico, problematico, come posso dire, ricordarsi di tutto quello che si è stato fatto e tutte le cose rilevanti della giornata. Quindi questo teardown è iniziato, è iniziato per essere
+
+L'ho iniziato per essere il teardown a fine giornata poi è diventato un brain dump. Quindi tutte le volte che faccio qualcosa che è rilevante vado là comando teardown scrivo ho detto altra cosa importante è il quello che ho fatto la cosa rilevante lui la tiene traccia nel change lo aggiornano i documenti si sono da aggiornare fa tutto quello che deve fare quindi molto molto interessante. Morale della favola cosa fa il teardown?
+
+io gli dico cosa è successo, cose importanti, faccio copia in colla di pezzi di documenti, gli li bambo dentro o gli passo dei documenti, dei file, tutti gli effetti e lui cosa fa? Intanto mi salva un report della giornata in una cartella specifica dove è journal con la data del giorno. Poi mi aggiornano i blocker e mi prepara il piano per il giorno dopo.
+
+E questo è fondamentale, perché? Perché il giorno dopo il famoso stand up di cui vi parlavo prima si basa sui tear down dei giorni precedenti più sulle fax, sulle domande, sugli acronimi, tutto questo resto. Per cui io praticamente ho un loop che mi aiuta a tirarmi dietro giorno dopo giorno. Prima lo facevo coi foglietti, Adesso questa cosa è molto più strutturata, mi rendo conto che mi dimentico meno.
+
+Una cosa figa che in realtà ho fatto nella gente è che spesso mi capita in una giornata un po' più light o in una giornata troppo convulsa di dimenticarmi di fare qualche teardown. Mi è capitato per esempio un giorno che fatto solo meeting tutto il giorno e praticamente non ho fatto teardown. Il giorno dopo allo stand up lui mi ha detto sì vabbè tu mi stai chiedendo lo stand up però non ho fatto, non hai fatto il teardown.
+
+del giorno prima e di questi altri tre giorni. Vuoi farlo e a quel punto tu puoi dirgli no, salta il tear down, non serve. Non serve, vai avanti insomma, c'è nessuna informazione, lui automaticamente se lo segna come chiuso e lui procede. Tra l'altro piccola chicca, chicca interessante.
+
+che interessante non salta il sabato e la domenica, resta una cosina molto cool, quindi se il sabato e la domenica non fai tear down perché in realtà non lavori grazie a Dio o se lui li salta. Vorrei implementare anche la questione dei festivi però vedremo insomma, forse un po' too much, sprecare token per questa cosa.
+
+Un'altra cosa importante in realtà è, come vedete questo è un flusso no? è un flusso che che che mi aiuta a chiudere il cerchio tra lo stand up e la chiusura della giornata. Come molti di voi sanno io cerco il più possibile di evitare evitare
+
+di scrivere Io sono uno molto verbale quindi parlo tantissimo non so non so se si dice verbale per parlare però uso tantissimo la voce e quindi per per gestire appunto questo questo questo tool questo piccolo ecosistema io buona parte dei comandi li do direttamente con un sistema di direttatura
+
+Questo sistema l'ho iniziato.
+
+prima di che Cloud introducesse la dettatura nella Klee e quindi alla fine è la dettatura di Keeley insomma non è una cosa più bella e più funzionale del mondo quindi come alcuni di voi sanno ho fatto o non sanno probabilmente lo condividerò mi sono fatto un piccolo tool che permette la dettatura direttamente dalla con non so se conoscete Whisperflow
+
+o cose del genere, semplicemente con una combinazione di tasti si apre l'app, io ho detto e lui automaticamente trascrive credo di averlo condiviso nella community, l'altro è molto figo perché volendo ti fa la traduzione quindi con una combinazione di tasti tipo faccio control command V per attivare l'applicazione e l'applicazione è già in registrazione quindi io parlo, detto quello che devo dettare
+
+lascio i tasti lui mi apre una finestra che mi dice ok questa è la trascrizione e hai una serie di pulsanti rapidi con azioni che si attivano dall'1 al 7 l'1 per esempio è traduci in italiano l'altro è traduci in inglese l'altro è traduci in francese utilissimo traduci dal francese all'italiano e poi insomma ci sono un'altra...
+
+serie di utility tipo rendi più conciso, migliorano come comunicazione professionale, bla bla bla e altre cose che non sono utili per quello che vi sto andando a raccontare adesso, però fondamentalmente cosa succede? Che la dettatura funziona da Dio. E in più su Mac ho fatto una cosa figa che ho detto alla gente di utilizzare SEI, il comando di Apple
+
+per la lettura delle cose. Quindi quando io faccio lo stand up, quindi lancio il comando stand up, ok, voglio prendermi le informazioni, le informazioni di stand up, direttamente gli dico rispondimi con 6, lui automaticamente mi risponde con 6 e questo mi permette, cosa molto figa, quei 15 minuti, 20 minuti prima dello stand up, di prendermi le informazioni e ragionare su
+
+come approcciare la giornata, perché una cosa sono le informazioni che mi arrivano dal sistema, un'altra cosa è crearmi lo schema mentale della giornata, altra cosa importante per chi ha una piccola neurodivergenza dicevo crearsi lo schema della giornata, io questa cosa la faccio nel mio standing desk col mio tapirulan e quindi
+
+l'utilizzo di sé mi permette di liberare gli occhi e le mani e semplicemente ascoltare come vi ho detto sono molto... audio diciamolo così quindi sia nel parlare che nell'ascoltare riesco a concentrarmi meglio. Tra l'altro prima vi ho parlato di due fasi no? Lo stand up e il tear down ce n'è una terza in realtà che è molto figa e che assolve a due funzioni principali.
+
+Si chiama callprep ed è un comando che io lancio appena prima di fare una call. Cosa succede? Lancio questo comando e gli dico, callprep, hey devo fare una call con il product manager o il product owner o il team oppure questo stakeholder specifico di questo team specifico.
+
+Mi aiuti a prepararmi la call io ho già un'idea in mente no? Ho già un'idea in mente quindi magari gli do anche qualche dritta copri quest'argomento con quest'argomento e dimmi magari cos'altro sto dimenticando lui automaticamente Automaticamente mi genera un file markdown che si chiama call prep
+
+dove analizzando le FAQ, gli acronimi, la visione del mondo che vennevo parlato molto rapidamente è quel file Markdown che si genera ogni qualvolta io faccio un process docs o un teardown e che riassume tutto quello che sappiamo del dominio per esempio diagrammi di flusso
+
+eventi del sistema, mi traccia insomma tante cose, quindi si prende tutta questa conoscenza e mi aiuta a preparare il meeting. a fianco a questo, cosa molto molto figa, c'è un tool di coaching comunicativo. Io non sono un native speaker, no?
+
+e parto dalla conoscenza che qualunque consulente venga
+
+valutato già dal giorno 1, cioè non stiamola a nascondereci dietro un dito. Se io assumo un consulente e mi aspetto che lui performa in un certo modo, io dal primo giorno attivo un meccanismo di valutazione, come parla, come si pone, che ruolo personas sta interpretando e quindi
+
+Questo è uno dei problemi. Il secondo è che tu come consulente entri all'interno di un team che ha ruoli e posizioni diverse. Per esempio nel mio caso io sono in un team di consulenza. ho i miei sviluppatori, il mio QA, mio DevOps change, ma ho anche un technical director
+
+che sarebbe praticamente il mio capo, tra l'altro avete conosciuto Luca che è venuto qualche episodio fa, è che nelle conversazioni assume un ruolo completamente diverso, Quindi io devo in qualche modo bilanciare la comunicazione seguendo un set di responsabilità che sono le mie.
+
+Il coach in comunicativo rimane in ascolto avendo le trascrizioni dei meeting rimane in ascolto e bilancia queste cose e dice ehi Mauro guarda che...che ne so hai fatto troppa echo a passiva a Luca avresti dovuto essere magari un po' proattivo scendere su questo dettaglio oppure probabilmente sei sceso troppo su un dettaglio tecnico dovevi essere un po' più ad alto livello
+
+Queste cose insomma sono guidate da un coach comunicativo che mi sono scritto quindi con le mie aspettative. Ho dato le istruzioni per creare un coach comunicativo che in qualche modo raccontasse e mi guidasse nell'essere il Mauro migliore che vorrei essere in questa condizione, Con delle dritte. Questo è molto mutuato dalle dritte che mi ha dato Iaga.
+
+e quindi mi aiuta a gestire la comunicazione, quindi prima mi dice ehi ricordati di non fare eco passiva ehi ricordati che non lo so dire forse è un po' naiv sta penalizzando quello che stai andando a proporre
+
+e quindi questa cosa si attiva all'interno della call prep, quindi del comando di preparazione della call e mi crea una card sotto che mi dà una serie di informazioni, io l'ho chiamato il prep sheet, mi dà cinque domande specifiche che riguardano dei gap reali della knowledge base che ho, mi
+
+ricorda dei pattern tatici di comunicazione da usare, di questi pattern tatici li affianca una serie di avvertimenti che non sono avvertimenti generici dal libro di comunicazione PINCO PALLO, ma sono avvertimenti ancorati sui meeting precedenti. Quindi mi dice, che ne so,
+
+non scrivere forse non dire forse ti può sembrare naïve questo bla bla bla perché l'hai detto tre giorni fa in questo meeting e la reazione è stata questa. Fighissimo! In questo caso io non ho una roba nozionista ma ho qualcuno, un occhio sempre pronto che mi sta a guardare. Questa cosa è importante perché una delle tecniche di automiglioramento più più
+
+più funzionanti per me è appunto quello di osservarmi in terza persona. Questa è una cosa che tutti i libri di automiglioramento, hyper performance, blablabla raccontano. Tu prima di prepararti per una call esci dal tuo corpo, attivati, fai replay di quello che immagini possa succedere e immedesimati. Ma questo tipo di
+
+preparazione in realtà non copre o copre marginalmente l'esperienza delle preparazioni precedenti, delle call precedenti. Quella, tipo di conoscenza, quel tipo di esperienza è data per assodata, è data per assorbita. Di solito si fanno delle retrospettive, E quindi questa dovrebbe facilitare l'assorbimento. Ma avere uno strumento che è questa roba, te la ricordi?
+
+sia prima quando fai una call prep, sia a te l'evidenza nel tear down a fine giornata e ti dici guarda che oggi hai migliorato un po' la comunicazione perché hai fatto questo questo questo buono, questo questo questo cattivo, siamo nella strada giusta. Questa cosa è la svolta in realtà.
+
+che ho trovato importante nel tool che mi sono realizzato, no? Perché? Perché mi aiuta proprio a tracciare, a monitorare il progresso e il miglioramento, specie in una condizione dove la concentrazione su quello che diciamo è bassa. Ragà, noi fatto cento delle nostre capacità cognitive, se siamo in una fase di discovery, generalmente il 90 è dato da
+
+quelle informazioni che noi riusciamo a catturare. Quel 10 % è solitamente libero per gestire l'interazione, la tensione sui toni, su chi parla e queste cose, Quindi avere qualcosa che traccia queste cose, televidenzia, su come parli specialmente, quindi la proiezione di te all'interno di quel sistema.
+
+Questa cosa in realtà è dal mio punto di vista, poi probabilmente voi mi direte ti fai segamentali e stai esagerando, Però dal mio punto di vista questa cosa funziona veramente veramente bene.
+
+Un'altra cosa importante è che appunto questo meccanismo funziona riguardandosi i meeting, le trascrizioni, E ho inserito una roba un po' in gamification style. Per ogni meeting lui traccia in generalmente la mia preparazione, la mia profondità tecnica, quindi a...
+
+quanto scendo sul dettaglio tecnico, la mia presenza, quanto emergo all'interno del meeting, la mia complementarità nel caso per esempio, mio superiore come può essere Luca sta nel meeting, quindi quanto io sono complementare al mio superiore, se è il caso, è la ownership dell'argomento. E traccia
+
+alcuni pattern specifici come l'amplificazione, la confermattiva e la chiusura con ownership sono tre tecniche non so se abbiamo il tempo in realtà guardavo l'orogio siamo già a 42 minuti cima l'esempio di amplificazione hai toccato un punto importante lasciami approfondire quando quando quando generalmente ci viene da dire
+
+o sono d'accordo con te, punto. In questo caso noi siamo passivi e la persona non emerge. Invece con l'amplificazione o la conferma attiva tu puoi dire che con l'amplificazione hai toccato un punto importante, lasciami approfondire e tu inizi a scendere finché vedi che sia opportuno farlo all'interno del discorso, magari su una profondità un pochino più tecnica. Lasciamo approfondire, Airflow.
+
+Airflow potremo decidere se utilizzare la versione managed o che ne so self hosted? Tu capisci che beh, però in questo caso non stai dicendo sì bello usiamo Airflow hai ragione mi sembra un'ottima idea è un qualcosa di più profondo che ti fa percepire all'interlocutore come il teclid fondamentalmente quindi stai costruendo la tua identità all'interno del cliente che comunque ti sta valutando dal giorno zero
+
+E poi c'è un'altra tecnica che si chiama la conferma attiva dove dove generalmente si fa parafrasi più una domanda. Questo aiuta a far sedimentare le informazioni che tu stai prendendo e tra l'altro anche le M-point trascrizioni. Cioè qualcuno mi dice il sistema x y z si occupa di trattare i dati di non lo so dei pazienti W.
+
+e quindi tu gli dici il sistema xyz si si occupa di trattare i dati dei pazienti in w ma che tipo di dati o ci sono dei vincoli specifici rispetto a questi dati in questo caso tu stai confermando che quel sistema sta toccando xyz o il sistema w no? o whatever
+
+Oppure il sistema WS si occupa di cosa? E a quel punto tu stai aprendo e stai catturando più informazioni, che è il tuo obiettivo in una fase di discovery. Quindi questo coaching embeddato nel sistema di discovery aiuta anche in questa direzione. In più il terzo punto, in realtà pattern utile, che il sistema traccia e ti suggerisce quella della chiusura con ownership, per esempio...
+
+quando chiudo il meeting come lo stai chiudendo? Stai mostrando ownership in quello che stai facendo? esempio nel mio caso chiudo il meeting sempre prendendo un action item. Questo dimostra che io sono proattivo e sto guidando l'azione. esempio molto spesso c'è ok nel frattempo mi preparo un dependency diagram. Questo generalmente lo uso quando sono col cliente con le mie one to one col team interno tendo a
+
+Non ho mai fatto una call prep, questo perché in realtà il mio indice di attenzione o di preparazione, di strutturazione necessario è molto più basso rispetto a quando sono col cliente. Cioè se io sono in una call con Luca, sono in una call con Luca. Lavoro con lui e nel mio team se sono in una call con uno degli ingegneri o il QA o il DevOps.
+
+mi interfaccio con lui in modo molto libero e non guidato da queste cose. Ecco perché, ritorno al punto di prima, questo è un esoscheletro. Io posso decidere di liberarmi dall'esoscheletro quando voglio e indossarlo quando mi è più opportuno. E quindi questo è. Tra l'altro vi dicevo questa cosa.
+
+in realtà del tracking non volevo affermarmi molto ma mi sta preso un sacco di tempo a parlare del coaching di comunicazione non vorrei passare il messaggio che è la parte centrale è una feature che mi sta aiutando a crescere in quella direzione speciale perché non sono un active speaker ma non è l'elemento centrale comunque morale della favola questa cosa ha un
+
+crea un modo, un tracking del mio progresso e con un altro comando che si chiama MyCommunicationSkillProgress mi mostra un piccolo chart e mi dice dove sto migliorando, dove non sto migliorando, questo perché appunto tutto è tracciato nel sistema, quindi alla fine si va a creare sto feedback loop che prepara, prepara il meeting, fa il meeting
+
+alla fine del meeting c'è la valutazione c'è appunto come vi dicevo prima la fase di my progress che è una fase di crescita quindi migliora e poi posso preparare il meeting successivo con call prep e quindi proprio un loop
+
+Questo è come mi sono organizzato per far funzionare il mio sistema. Questo, questo episodio voleva essere un episodio dove in qualche modo raccontavo un po' come, come faccio le cose proprio per aprire un nuovo, un nuovo, un nuovo capitolo di GitBAR.
+
+dove mi piacerebbe coinvolgere alcuni di voi per raccontare come si sta usando l'AI in questi contesti. Credo che oggi sempre di più si ha bisogno di condividere l'expertise nell'approccio verso uno strumento o uno set di strumenti che in realtà ha ancora tantissimo di empirico, di apprendimento empirico, fai l'esperienza.
+
+e questo un po' voleva in qualche modo posizionarsi là. Io in realtà mi sarebbe piaciuto tantissimo parlarvi dell'articolo sulla resa cognitiva che Eddie Osmani ha pubblicato oggi che è molto figo e tra l'altro ci ho fatto un po' di ragionamenti.
+
+ma probabilmente sarà per un altro episodio perché sono già praticamente a 50 minuti se apriamo quel capitolo ci vogliono altre due ore quindi noi ci aggiorniamo alla prossima settimana tra l'altro vi anticipo che la prossima settimana e tra due settimane potremo avere degli ospiti molto interessanti, nel senso che prossima settimana io registrerò
+
+registreremo due episodi con due ospiti molto interessanti e quindi probabilmente uno se riesco a fare l'editing verrà pubblicato settimana prossima se no settimana prossima ci leggiamo insieme l'articolo di osmani e lo commentiamo e poi avremo appunto due ospiti dove parleremo
+
+Uno tratterà ancora in qualche modo contenuti riguardo alla Discovery, l'altro invece sarà un pochino più legato ad altri topi.
+
+Prima di lasciarmi in realtà però volevo dedicare due minuti su una cosa che vi ho anticipato, cioè che vi ho anticipato, che vi ho raccontato e in realtà non ho approfondito, che riguarda la parte di visione del mondo. Vi ho detto che il sistema automaticamente si crea un file chiamato... o... in realtà me lo sto provando ad aprire...
+
+chiamato world view. Questo file in realtà non è altro che tutte le informazioni che noi gli diamo attraverso
+
+il tool di analisi delle trascrizioni dei meeting e i tear down e mi genera questo report che si basa su generalmente tre metodi principali.
+
+si basa su tre metodi principali, che... tre, forse anche qualcuno in più. Il primo metodo, o almeno il primo elemento, è quello di comprendere il dominio e il problema. Quindi cosa ho fatto? Un po' come ha fatto l'autore di B-Mod, non ho fatto altro che dire ok, devi comprendere il dominio e il problema dalle trascrizioni e da quello che io ti dico da...
+
+dal teardown più i documenti che io ti aggiungo volendo ok? e per farlo tu basati su una serie di cose per esempio utilizza il domain driven design Eric Evans e le tecniche di domain driven design affianca le A, event storming e al context mapping prenditi la letteratura e quali ho dato tu una serie di guida
+
+su come si applicano questi metodi, estraiti l'ubiquitous language, insomma, e generami il dominio, un output che mi aiuti e mi guidi nella comprensione del dominio. Per quanto riguarda per esempio i vincoli
+
+e rischi architetturali io gli ho detto basati su una serie di testi sacri e di approcci sacri tipo le architectural fitness function per capire se le decisioni architetturali sono reversibili quindi mappa esplicitamente il trade off più tutta un'altra serie di riferimenti in letteratura
+
+che in qualche modo mi aiutano a far emergere l'architettura mapping degli stakeholder, registrino degli stakeholder ok fammi l'impact mapping, lose story mapping so ho utilizzato che poi è la cosa la cosa più più più interessante ho utilizzato tutta una serie di riferimenti in letteratura per istruire il modello
+
+estrarre informazioni in modo strutturato quindi fargli fare babbo l'app a queste informazioni e andare a costituire quel documento Markdown che io chiamo Worldview che poi io ho letto in realtà dopo una decina di meeting ho letto e a parte un
+
+di discrepanze che poi ho aggiustato appunto con qualche teardown, fondamentalmente questa cosa faceva il fit di quello che avevo compreso, avevo realmente compreso dell'ecosistema della parte di discovery, E lo faceva utilizzando delle tecniche che sono usate in letteratura. Adesso, la qualità
+
+di...che ne so, del dominio di quello che ha sputtato fuori quando ha provato a fare appunto le chart che descrivevano dominio, sottodominio, bounded context e ha provato anche a fare gli aggregati, no? La qualità era media però quel livello di qualità mi faceva capire dove dovevo scendere nel dettaglio.
+
+Quindi che tipo di documenti condividergli per andare a scendere i dettagli e poi sono io che guido il dettaglio, no? Quindi sì, non perfetto devo dire però ha dato quel boost in più da una parte per avere una lettura più profonda dell'ambiente dove stava entrando dall'altra anche mi ha aiutato a
+
+assorbire perché ho utilizzato in modo più proattivo assorbire concetti nuovi come per esempio le continue discovery a habits nella gestione degli stakeholders e dei requisiti di Teresa Torres concetti nuovi che non conoscevo e che mi hanno aperto a parte il mondo come
+
+l'Opportunity Solution 3. Quindi molto figo devo dire, sono molto entusiasta, ma sempre con la consapevolezza che questo si tratta di un esoscheletro. E quindi che nel momento in cui esoscheletro non mi dà un beneficio ma diventa una zavorra, posso tranquillamente liberarmene. E cosa ne avrò in cambio? Ne avrò in cambio potenzialmente una knowledge base strutturata
+
+che posso condividere col mio team per aiutare chi entra a fare le nuove discovery con un contenuto che in realtà è basato sul mio processo d'apprendimento e sull'espertis che ho maturato in mesi, settimane, mesi insomma. Questo è secondo me il pillar centrale.
+
+E siamo praticamente arrivati a quasi un'ora. Io credevo insomma di essere molto più rapido, realtà ahimè non sono stato in grado di essere l'abbiate pazienza. Io faccio direttamente da qua al letto prendendomi le mie pastigliette, pastigliette della situazione. Prima di lasciarvi volevo però chiedervi...
+
+Avete mai fatto una discovery?
+
+Come vi siete trovati col carico cognitivo legato a una discovery, un onboarding su un progetto nuovo? Avete utilizzato delle tecniche, degli approcci un po' più pensati rispetto al classico salto e provo a risolvere e provo a capire il più possibile? Se sì, ragazzi, pingatemi perché sono super interessato a sapere di più e poi lo condivideremo insomma con tutto il team.
+
+tutta la community di Gimpar.
+
+Si, detto questo io vi do appuntamente la prossima settimana sempre qua su GitBar e nola, alla prossima. Ciao ciao!
+
