@@ -1,0 +1,526 @@
+Brainrepo (00:00)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Risenire la sigla a diversi anni di distanza sembra che insomma sia un po' invecchiata male, la parte dei gattini funamboli, onestamente adesso con i nuovi modelli forse riusciamo a generare qualcosa in più dei gattini funamboli. Una cosa che non è invecchiata
+
+male in realtà sono le specifiche che cambiano costantemente, C'è proprio un pezzo della sigla che affronta questo punto. E in modo diretto, o almeno così mi sembra di fare, affrontiamo parte dell'argomento oggi e lo affrontiamo con una figura di spicco del mondo del...
+
+domain modeling, del event storming, il padre del event storming, sono quasi emozionato Alberto, l'onore di averti qua con noi Alberto Brandolini conosciuto anche come zio Brando, sei una delle pietre miliari dell'argomento no?
+
+Alberto Brandolini (01:02)
+No, va bene.
+
+per l'EBI.
+
+Brainrepo (01:22)
+A quante persone o con quante persone ti sei scontrato o barra incontrato nel parlare di contest mapping, domain modeling e tutte queste belle...
+
+Alberto Brandolini (01:35)
+diciamo che dal punto di vista dei... intanto ciao a tutti, piacere di essere qua e dal punto di vista del... sono almeno 15 anni che parlo di queste cose in Italia e all'estero forse un po' di più all'estero nel senso che poi ho insistito in varie conferenze quindi sì numero di persone qualche migliaio ci arriviamo abbastanza tranquillamente
+
+Brainrepo (01:35)
+bell'eco.
+
+Alberto Brandolini (02:04)
+Poi dipende chi è d'accordo con quello che dico e chi invece scappa dicendo questo è pazzo. Qualche collega mi ha detto, con cui poi siamo diventati amici, abbiamo fatto anche progetti assieme, ha detto che la prima volta che mi ha sentito il commento è stato questo è fuori di testa, questo è un pazzo furioso.
+
+e poi due anni dopo invece si sono trovati a lavorare sull'architettura di cui si stava discutendo eccetera e cose che avevano un senso. La cosa interessante per me è che tutti questi pezzettini presi da soli sembrano strani e poi invece uno abilita l'altro e abilita un certo modo di lavorare e anche di tranquillità nel farlo, quindi certe cose non sono più impossibili.
+
+Brainrepo (02:58)
+Ancora prima di parlare di questi argomenti però voglio fare, provare a fare, usare un approccio di zoom in. Tu sei anche famoso, hai più per la famosa legge di Brandolini, Che dal mio punto di vista oggi è più attuale che mai. L'hai fatta, torna al 2003, 2015, adesso non ricordo quando ne parlasti, no?
+
+Alberto Brandolini (03:20)
+Sì, più o meno, più o meno,
+
+più o meno è successo circa negli stessi anni, cioè poi la legge, allora io non l'ho mai chiamata la legge di liberazione, cioè proprio, non ci riesco neanche adesso, no, era, il momento chiave è stato una cena,
+
+Brainrepo (03:33)
+Prendite nei meriti almeno, dai!
+
+Alberto Brandolini (03:42)
+di vari speaker legati all'XP Gruppo di Bologna organizzata dal Nusco che era l'uomo dietro queste cose e parte della cena il discorso era ok, mangiamo tutti assieme però facciamo anche una mini gara di micro presentazioni
+
+e io in quell'occasione mi sono presentato con questa cosa qua, con un titolo completamente diverso che in questo momento è irripetibile e poi arrivavo a definire quello che era il principio di assimmetria delle stronzate. Quindi se questa è la parte ripetibile il titolo originale era molto peggio, però era una cena tra amici.
+
+Ho vinto quella quella serata, il premio era una confezione di spam, la carne in scatola, per celebrare la cosa della serata e poi lo stesso formato, qualcosa di simile, in quel caso c'erano riferimenti precisi alla politica italiana, è stato ripresentato
+
+anche in un'altra situazione, conferenza alla XP Conference a Roma nel 2014. Lì è stato il momento in cui è diventato assolutamente virale perché era su schermo l'immagine, qualcuno l'ha ripetita, il telefono ha cominciato a scottare e questa cosa sta continuando. Vengo rituitato ancora da uno dei tweet originali a distanza ormai di 12 anni, è anche forse il motivo per cui
+
+Brainrepo (05:22)
+Guarda, l'ho sentita
+
+anche al telegiornale. L'ho sentita anche al telegiornale, tra l'altro.
+
+Alberto Brandolini (05:28)
+No, ma c'è stato di tutto, però
+
+dietro non è che ci sia questa gran cosa. Io avevo appena finito di leggere il libro di Kahneman, Pensieri Lenti e Veloci, e diciamo era tutto parte di un...
+
+una curiosità su come funziona la mente umana e determinate dinamiche. Vista in azione il modello di Kahneman di sistema 1, sistema 2, uno che ragiona pattern, ragionamenti rapidi, uno che invece ha ragionamenti più profondi ma ha bisogno di concentrazione, tempo, energia, applicato al mondo normale.
+
+rendeva questa cosa assolutamente ovvio. Poi tutto quel ragionamento vero è di Kahneman, io sono riuscito a prenderlo in un pezzo, schiacciarlo dentro un tweet e tutti hanno detto carino, bello, così. Quindi non ho grosso merito se non una buona capacità di sintesi rispetto alle 300-400 pagine del libro originale.
+
+Brainrepo (06:28)
+io ragionavo, ho riletto la frase nella sua interezza qualche giorno fa, prima di questa intervista. La frase dice che l'insieme di energia, la quantità di energia necessaria per confutare una stronzata è di un ordine di grandezza completamente sproporzionato rispetto all'energia che serve per creare una stronzata stessa.
+
+Alberto Brandolini (06:53)
+Sì!
+
+Brainrepo (06:57)
+Visto che noi stiamo vivendo questo cambiamento, il cambiamento dell'AI, del codice generato dagli LLM, esiste una declinazione della tua legge nel mondo dei developers legata al codice generato degli LLM? O può esistere, non so.
+
+Alberto Brandolini (07:17)
+probabilmente si, non è che poi mi sono messo a ricamare a fare tutte le altre variazioni anche perché periodicamente mi arrivano, c'è sempre qualcuno che su twitter ehi hai mai pensato a questa, hai mai pensato a questa? eccetera però diciamo che prima che arrivasse l'ondata vera degli LLM
+
+avevo riposto qualche speranza nella capacità delle macchine di poterci aiutare in questa battaglia, nel senso che il limite, proprio leggendo Kahneman, è fisiologico, è nel nostro cervello e quindi è molto più facile dire un qualche cosa di plausibile che passi attraverso il ragionamento critico e venga percepito come è vero, è vero, eccetera, mentre è molto più complicato dimostrare che questa cosa invece non è vera.
+
+non funziona, senza contare il fatto che più ti sei dimostrato convinto, più abbracci questo modo di fare, più il costo dell'ammettere di essersi sbagliato cresce ulteriormente. Quindi ci sono veramente mille meccanismi per cui in qualche maniera l'uomo è progettato male, essere senziente a questo piccolo bug che non sarà curato. Quindi l'idea di poter sfruttare
+
+prima di conoscerla era un modo per dire la fisiologia umana è contro di noi da questo punto di vista l'AI non ha questi limiti. Quello che abbiamo visto adesso è esattamente il contrario nel senso che la simetria di partenza adesso è sfruttata dall'AI in maniera esagerata quindi il quantitativo di messaggi fuffa di notizie fasulle
+
+ti permette di scalare con una capacità che prima non era assolutamente possibile. L'unico piccolo barlume di speranza è legato al fatto che le nuove generazioni sono un po' più bravi di noi a riconoscere i contenuti fuffa e progressivamente a distanziarci. questo problema c'è. Sul codice abbiamo però, torno alla domanda che avevi fatto,
+
+abbiamo qualcosa di molto simile, sono delle asimmetrie che sono assolutamente vere e vitali per il nostro modo di lavorare ovvero il costo di aggiungere una riga di codice rispetto al costo di toglierla è una delle più grosse asimmetrie o una nuova tabella sul database eccetera, chiaro che tu puoi guardare nella storia e avere delle mosse che sono piccole e reversibili.
+
+però dove la storia non ce l'hai, l'esempio che faccio spesso è quella prendi la tabella clienti, fai una copia e la chiama clienti nuovo o clienti buono e poi a una persona che non sa che l'hai appena fatto gli chiedi di cancellarla, in teoria
+
+è un'operazione da due secondi. In pratica la persona vuole essere sicura che nessuno la stia usando. Il costo di essere sicuri e che nessuno la stia usando in un'organizzazione che magari comincia a essere grande è appunto proporzionale alla dimensione dell'organizzazione ma ci fa vedere che su determinate mosse, refactoring e cose simili
+
+Non si tratta di velocità delle operazioni, il vero blocker, la paura, la confidenza, la sicurezza, il voglio essere sicuro che... e più cresce l'organizzazione, più crescono i soldi che l'organizzazione sta facendo e quindi il rischio economico di un errore, più entrano in gioco determinati blocchi. I sistemi tipo il software sono sistemi molto più facili ad aggiungere che a togliere. Anche i sistemi poco rischiosi, questa è stata una cosa scoperta
+
+grazie a un articolo che mi aveva linkato Joseph Pellerin, ci sono ricerche, esperimento fatto con piccoli Lego in qualche maniera, dove
+
+ti viene dato un artefatto, ti viene dato un nuovo requisito, il 95 % delle persone aggiunge dei pezzi. Quando la soluzione è elegante ne tolgo uno e ho soddisfatto perfettamente i requisiti. Però, come su tutti i sistemi complessi, è molto più semplice aggiungere, più naturale, perché non ho bisogno di capire tutto che togliere.
+
+in questo caso però stavamo parlando di un Lego, quindi non era neanche una questione solo di paura, cioè non è che magari al massimo fai la figura del cretino, però il cervello di default ha detto ma forse questo pesto qua per qualche motivo.
+
+Il motivo non c'era, era un Lego, nessuno muore e se togli un pezzo, 95 % che aggiungono, rendendo il brutto, tra l'altro, goffo, sbilanciato, invece che togliere, che lo lasciava pulito delle gatti. Questo è quello che facciamo con il software, questo quello che facciamo con le leggi. La nostra Costituzione è fatta di pezzi, pezze, aggiunti di volta in volta, con un po' di compatibilità all'indietro, ma non del tutto, e con una gran
+
+paura a sfilare dei pezzi perché non sai cosa succede.
+
+Brainrepo (12:41)
+Guarda, sono... sento molto vicino quello che hai detto, perché qualche tempo fa ho provato a fare un ragionamento con una mia amica che fa l'artista in genere, quindi crea opere visive, pitture, sculture, E una delle cose che mi ha creato più problemi era comprendere il mindset della scultura su legno, che sembra una banalità, ma il concetto dell'azione sottrativa della materia...
+
+Alberto Brandolini (13:10)
+Esatto.
+
+Brainrepo (13:11)
+in quel caso la percepivo come un qualcosa di naturale quindi confermo proprio a livello a livello di feeling e di sensazioni lo trovo lo trovo molto vicino a questo ragionamento chiunque credo che ci sia davvero una tendenza insità nella natura dell'uomo ad aggiungere a creare piuttosto che a sottrarne
+
+In funzione di questo mi interessava proprio capire, ed è un periodo che sto osservando questa cosa, il movimento del Phoenix Development. Cioè c'è un approccio adesso con il fatto che scrivere codice costa sempre meno rispetto a prima. Tu in diverse situazioni hai detto sì ma lo scrivere il codice non è il vero costo o non è il costo più importante.
+
+Alberto Brandolini (13:56)
+mhm
+
+Brainrepo (14:06)
+Però in un contesto dove scrivere ancora meno, la cosa che potrebbe avere valore è usare un approccio che mi disse una volta, vent'anni fa, un mio vecchio tech lead che disse quando tu scrivi un qualunque modulo, fai il design affinché questo possa essere eliminato e distrutto facilmente. Che è una cosa altrettanto difficile, Che si sposa perché presuppone disaccopiamento, presuppone uno sforzo di design maggiore.
+
+Il movimento del Phoenix Development estremizza questo. Dal momento in cui possiamo generare del codice in modo praticamente rapido e con una frazione del costo, perché non creare dei moduli e qua là si apre tantissimo la conversazione dei bounded context, di come splittare il dominio e di tutto questo discorso, dei moduli completamente disaccoppiati.
+
+che noi possiamo eliminare volendo nella sua interezza e riscrivere visto che le interfacce di interconnessione tra i moduli sono chiare, belle, definite e formali, ok? Abbiamo in questo caso la possibilità di far evolvere la nostra code base e soprattutto abbiamo questa situazione dove sfruttiamo il vantaggio della velocità dello scrivere il codice
+
+a nostro vantaggio piuttosto che sentirne il peso in una condizione di codice che deve essere trasformato e modificato. Come vedi quest'approccio?
+
+Alberto Brandolini (15:44)
+Allora Phoenix abbiamo guardato ma non tanto in profondità, cioè ci sono degli aspetti che tornano ovvero questa possibilità, adesso c'è prima semplicemente non c'erano, non è che ogni volta buttavi via e ricominciavi, ma c'era anche in qualche maniera legata al codice sorgente
+
+un certo tipo di ownership, di esperienza da parte dell'autore che l'aveva scritto e sapeva anche dirti perché. Lavorare con AI in modalità da Phoenix non è esattamente vibe coding, è qualcosa di po' più sofisticato con delle specifiche dove le specifiche diventano un artefatto principale, non sono completamente deterministiche, però lavori perché più o meno lo diventino e il codice diventi meno rilevante.
+
+aspetto. Allora ci sono un po' di cose. Uno, il fatto che questa cosa sia economicamente sostenibile forse è vero adesso, non è detto che sia vero fra un po' perché adesso la AI è...
+
+a prezzi da discount perché dobbiamo fare in modo che si allarghi la base di adozione, vogliamo fare in modo di poter creare dipendenza da parte degli utenti e quindi c'è un gancio chiaramente in cui possiamo decidere di abboccare o meno. Però sono due aspetti in cui la velocità di riproduzione del codice è sicuramente molto diversa e
+
+stiamo uccidendo di fatto la competenza specifica delle linee di codice del perché questa cosa è fatta così chiedo aiuto a Giorgio perché era scritto lui queste righe, adesso questa cosa è diventa completamente irrilevante perché aggiungo un nuovo requisito, rendo coerenti le specifiche, rigenero un modulo che possa fare queste cose. Questa possibilità di fatto c'è e in parte la stiamo utilizzando anche noi.
+
+L'altra
+
+cosa che torna è quello che avevi detto prima, cioè la dimensione di questo modulo, di questa unità di potenziale riscrittura, c'è una dimensione naturale, non è che ho una nuova idea, rigenerami tutto SAP, economicamente non è sostenibile e basta quello 0,0 qualche cosa di indeterminatessa nei risultati.
+
+e tutti gli utenti poi si imbufoliscono. Tra l'altro uno degli aspetti chiave di Phoenix è attenzione che questa roba riesco a farla sotto ma continuamente ricreare la parte di interfaccia utente sopra no, questa non è una buona cosa, bisogno di garantire che il comportamento percepito dagli utenti sia coerente nel tempo perché le evoluzioni le posso fare piccoline come fa ad esempio Facebook con quei tanti piccoli aggiustamenti continui
+
+e quindi mi ci trovo ancora ma se invece faccio un cambio se ne sposto i pulsanti da sinistra a destra cambio colori perché rigenero tutto l'utente si ribella perché gli sto spostando il formaggio o comunque non facendo trovare le cose dove si aspettava che fossero
+
+però quindi c'è un'unità dove questa cosa può essere più plausibile e questa unità nei nostri esperimenti è andata a sovrapporsi abbastanza bene con quelli che sono i bounded context, ovvero modelli che nascono da una decomposizione
+
+tipica di Domain Driven Design, modelli ottimizzati e come dimensione legati ad un obiettivo ben preciso. Quindi se provo a dare una dimensione di alcune cose, in questo momento stiamo lavorando su due o tre modelli interni alla nostra attività.
+
+mi serve semplicemente come interazione con la parte di billing, quindi con le varie piattaforme esterne che utilizziamo per l'emissione delle fatture. Abbiamo bisogno di qualcosa interno che abbia una parte di statistiche, metriche, visualizzazione un po' più sofisticata di quello che ci dà lo strumento di billing. Non faccio nomi ma non sono contento di nessuno. E a valle di questo abbiamo costruito due modelli
+
+di forecast invece
+
+che sono orientati, il primo è la semplicità interna, cioè c'è poco da sapere, devo sapere quanti soldi ci sono magari unendo i vari conti su cui sono localizzati, nel mezzo c'è anche una componente di treasury che serve semplicemente a mappare dove sono, dove è allocata la liquidità a conti logici, conti fisici, la parte di forecast semplicemente piazza su un asse temporale, le entrate, le uscite attese,
+
+a un determinato momento di tempo. Ovviamente le due cose sono in relazione, al momento in cui emette una fattura a livello di billing questa deve tradursi in un'aspettativa di incasso intorno alla data di scadenza della fattura. Questo in un mondo antico, allora quindi il forecast deve conoscere il billing.
+
+in driven design voglio ottenere la conoscenza reciproca minima avrò in mezzo un qualcosa che noi chiamiamo una policy, qualcosa che mi vada a fare il mapping da ogni volta che viene emessa una fattura allora genero un'aspettativa questa funzione di mapping può anche avere delle caratteristiche un pochettino più smart cioè se un cliente di solito mi paga a ricezione
+
+della
+
+fattura allora posso anche mettere l'aspettativa al giorno in cui mi aspetto che mi paghi che è prima della data di scadenza. Allo stesso modo se è un cliente che normalmente si fa aspettare, si fa desiderare, è inutile che metta l'aspettativa alla data di scadenza della fattura, so che con questo c'ho un più 45 da aggiungerci, il coefficiente di saggessa mi disse guarda che questa fattura sarà pagata intorno a questa data quindi non mi faccio sorprendere queste cose.
+
+però il gioco è tenere questi due modelli internamente molto semplici e a questo punto questo ti può permettere effettivamente di reimplementarlo con un'architettura diversa con delle primitive diverse, passo da...
+
+da value object di un certo tipo ad alcuni più sofisticati, eccetera. Il costo di sperimentazione dentro una bolla che ha, sostanzialmente è un livello superiore di encapsulamento, questo diventa molto molto facile. In qualche caso questo ci ha permesso di dire ok ho fatto tutto questo giro sperimentato mi piace il risultato, no buttavi e ricominciamo.
+
+In altri casi, semplicemente hai fatto gli affinamenti ma non hai mai buttato il pattume nel giardino del vicino. Questo è un modo elegante, non troppo elegante per descrivere le dipendenze.
+
+Brainrepo (23:17)
+a questo punto mi chiedo così ragionando liberamente Nella mia esperienza ho notato che Il libro rosso del ddd è una cosa che io ho amato tantissimo in una certa parte della mia vita e per esperienza ho visto almeno per quanto mi riguarda che c'è un certo break even, un certo momento in cui ha senso andare
+
+con il ddd in un certo livello di complessità, esempio se l'applicazione è un semplice crudino della chiesa o è molto legata all'infrastruttura. Ci sono una serie di elementi che mi dicono ok sotto questa azzuglia forse è meglio che fai una roba molto semplice che te ne freghi di che ne so usare l'esagonal architect e che
+
+non c'è problema se non dividi in bounded context. Sopra questa soglia, in realtà, il beneficio supera di gran lungo il costo, quindi forse è meglio che ti crei dei bounded context, ti crei degli aggregati che hanno senso, formalizzi value object e quant'altro. La prima domanda che volevo farti è, tu percepisci questa sorta di punto
+
+oltre il quale l'approccio è o per te è indistintamente proprio come formamentis come approccio mentale andiamo di di di di e il secondo punto è questa valutazione è cambiata con il il development lo sviluppo legato guidato dalle dalle dai o dagli lm lo spec driven development o e la facilità
+
+di lettura e di comprensione del codice quando supportati da LLM.
+
+Alberto Brandolini (25:18)
+Allora, la cosa non è cambiata, è cambiata l'accelerazione con cui ci muoviamo. Allora, parlo di me. Io ho letto la prima volta il libro blu di Eric Evans nel 2005. Fresco, fresco, appena uscito. Cioè, l'ho visto su Amazon, ho visto per fazione di Martin Fowler, l'ho comprato e poi l'ho letto.
+
+non velocemente, ovviamente come nessuno, perché era una camminata sui gomiti, però il punto per me è stato... credevo di avere capito in quel momento...
+
+già mi occupavo di architettura, insegnavo design pattern e cose di questo genere quindi alcune cose erano il mio pane quotidiano. Quello che non avevo capito è che avevo messo da parte dicendo mentalmente questo non è ancora un mio problema, sono ancora troppo piccolo per occuparmi di queste cose, era proprio la parte di bounded contest.
+
+Quando poi ho avuto l'occasione di sentire dal vivo nel 2006 e poi nel 2007 se non sbaglio, Eric Evans in una conferenza, ho capito che non avevo assolutamente colto il problema, ovvero anche nelle realizzazioni che credevo fossero...
+
+relativamente semplice, la soglia in cui avrei dovuto gestire i bounded context e probabilmente mi inserirono due o tre modelli diversi, l'avevo già abbondantemente superata. E alcuni degli effetti di questa mancata gestione ci stavano colpendo. Solo che non ero assolutamente in grado di capire che fossero già quei problemi.
+
+perché non avevo visto un'applicazione in cui determinati principi fossero rispettati dall'inizio. Torno ancora indietro, all'università noi riceviamo, spero che la cosa sia cambiata ma ho l'impressione che non lo sia, riceviamo un buon set di illusioni. La prima illusione è che
+
+Possiamo ricevere delle specifiche deterministiche sulla base di queste e possiamo costruire il software. E già questo nasce dagli esami quando lo studente si incacchia perché è ma l'esercizio, l'assegnamento non è chiaro.
+
+e alla luce del mondo del lavoro non è chiaro e la vita, cioè non ce l'avrai mai chiaro e quando ti capita che è chiaro forse adesso l'ha scritto lei e non te l'ha dato una persona, le persone non si sanno esprimere e aspettarsi che quello che ti viene detto di fare sia preciso e deterministico, no in realtà se uno è così bravo a dirte cosa fare lo fa lui e oppure per te è una gabbia dove va via il divertimento. Ma la seconda cosa era
+
+ci vengono insegnate come fare determinate cose, programmazione di oggetti, modellazione del database, architettura, ma in nessuno di questi costrutti, quindi anche diagrammi R, diagrammi di classi, ci viene detto quando smettere, quando è il momento in cui devi smettere di aggiungere dei pezzi a un modello e ricrearne uno nuovo. Questa cosa non è mai venuta fuori.
+
+E poi ho pensato ma non sono solo io, siamo tutti. Cioè, lo sviluppatore Junior entra in un'azienda dove c'è un legacy che è stato iniziato da uno Junior come lui vent'anni prima, che aveva i principi per costruire un piccolo software e poi pian piano ha aggiunto tante cose e ha fatto un grosso software. Ma il momento in cui spezzarlo era vent'anni fa.
+
+e poi invece abbiamo sviluppato tutta una serie di cautele, rituali, protezioni, sacrifici umani per evitare di toccare il legacy, aggiungendo anche tutto uno strato di paura e deferenza, no? Devi stare attento a questo, devi stare attento a questo.
+
+Per poi ad un certo punto mi sono reso conto che forse lo stato naturale del software non era quello associato alla paura e ai rituali della protezione del cambiamento ma era quello in cui ero da solo, ho scritto le prime 30, 40, 100, 500 righe di codice per risolvere un problema, funzionavano e poi ho chiesto, ok qual è la prossima cosa che vogliamo?
+
+in realtà questa cosa si può replicare, cioè hai trovato un problema, hai capito qual era, hai iscritto una buona soluzione, perché aggiungerci cose? Funziona!
+
+hai la possibilità ogni tanto di dire mi stai chiedendo un'altra cosa forse ti serve un altro modello magari ti interessano gli stessi dati magari ti interessano un sacco delle stesse informazioni ho già il database degli utenti perché rifarlo da zero non lo rifaccio da zero però mi stai chiedendo una cosa diversa forse c'è un modello diverso che non si porta dietro tutto il carico delle scelte fatte per risolvere un altro problema
+
+che ci riporta a questo stadio di innocenza primordiale del codice. A volte questa è una soluzione, il punto è non lo facciamo mai. Quando siamo riusciti a separare, ma questo codice deve fare solo questa, deve fare solo questa cosa, da un lato puoi cominciare a farla molto bene, perché non ti devi più preoccupare di quello che ci sta attorno, di se lo stai spaccando. Dall'altro...
+
+diventa quasi banale, cioè paradossalmente il fatto che risolvere un solo problema sia alla fine anche facile ci porta perché siamo abituati a giudicare la complessità del coding sulla base del nostro livello di engagement o preoccupazione
+
+Ci aggiungo cose perché te metti è troppo semplice e magari invece devi fare solo una cosa, la fa bene, chiudi e magari non lo cambi più per vent'anni e poi quando lo riguardi perché ti ha cambiato una libreria sotto, sono cambiate le condizioni al contorno, ⁓ cavolo però non che sia da vent'anni che lo sto usando, me l'ero anche dimenticato, cavolo funzionava. Cioè abbiamo sempre questa tendenza a riaprirle, le cose che funzionano, infilarci dentro un'altra cosa.
+
+che come facevo lo zaino quando ero alle superiori però software è un'altra roba non è lo zaino che poi esplode e lo svuoti solo quando superi 20 kg
+
+Brainrepo (31:58)
+Sì, questa cosa mi ricorda molto l'approccio Linux o Unix. Mi è venuto in mente mentre parlavi FZF, con la pipe che ti diventa qualunque cosa fa una sola cosa lui. Il fuzzy find e poi tu lo componi con qualunque altra cosa e lui però fa solo quella cosa e bene. Qualche tempo fa, in realtà, mi sono ritrovato a lavorare per una grande...
+
+che ha in qualche modo utilizzato l'approccio di cui tu mi parlavi, no? Tanti piccoli modelli che mapano ambiti specifici. La cosa però si sposava in qualche modo con l'approccio ai microservizi, quindi dei microservizi con un dominio molto separato. Il vero problema in realtà è poi avere una visione di insieme di quello che tutto l'ecosistema fa.
+
+Alberto Brandolini (32:55)
+Sì.
+
+Brainrepo (32:56)
+almeno il problema che ho vissuto io qualche tempo fa mi sono occupato di API governance che è un argomento molto molto interessante talvolta ci ritroviamo ad avere 300 micro servizi con 300 open API specification con magari degli overlap di dominio
+
+per cui diventa quasi impossibile la duplicazione stesso nome che in servizi diversi assume significati completamente diversi mappare e rendere omogeneo tutto un ecosistema così grande che si è sviluppato nel tempo magari vent'anni, quindici anni di sviluppo diventa quasi impossibile una cosa che mi è venuta naturale da pensare è
+
+esiste o qual è il modo migliore che si può adottare per avere uno sviluppo organico del domain model, uno sviluppo che prende in considerazione ciò che è stato mappato e aggiunga o permetta da una parte magari la creazione di nuovi bounded context.
+
+dall'altra mi guidi a dire ok questo è un altro contesto lo isoliamo lo facciamo ben fatto però occhio che probabilmente quest'altra feature ricade su quest'altro bounded contest quali sono gli strumenti che ho nella mia cassetta degli attrezzi per gestire questa decisione?
+
+Alberto Brandolini (34:33)
+Allora cambia molto per la dimensione dell'azienda
+
+e per il livello di stratificazione storica che c'è stato, senza contare poi il numero di team che stanno operando sul codice. Se sei una piccola azienda dove il team di sviluppo è stato lo stesso, normalmente non fai la separazione perché non ritieni di averne bisogno. Inizia a pensare alle separazioni dopo quando devi splittare il team. È già troppo tardi perché magari lo stesso team ha lavorato...
+
+Teoricamente su 15 differenti context, li ha schiacciati dentro l'attesa applicazione monolitica e poi andava bene così. Se invece l'azienda è grande, puoi avere delle storie diverse. Hai dovuto separare responsabilità dei team prima, quindi c'è stata un'idea di separazione dei confini. Non è detto che i confini fossero giusti perché molti separano sulla base dei dati e non sulla base delle funzionalità del comportamento. Quindi si ritrovano ad avere delle dipendenze che prima erano
+
+annegate
+
+del monolite adesso diventa dipendenza remota con micro servizi e un sacco di dipendenze in pianificazione che diventa un inferno di nuova generazione e poi hai le grandi aziende cioè entri a livello multinazionale o risultato di merger acquisition dove in teoria fai la stessa cosa però hai tre prodotti fatti in tre momenti storici diversi che fanno più o meno la stessa cosa e cerchi
+
+di fare delle iniziative di consolidamento eccetera. Quello che cerchiamo di fare noi, ha comunque dei vincoli legati alla dimensione gestibile, è costruire una mappa delle funzionalità tese legate alla
+
+al business model, all'intero flusso business di una linea di business in effetti e in questo caso event storming diventa lo strumento di esplorazione principale.
+
+diventa molto importante perché ci permette di avere nella stessa esplorazione una narrativa che è puramente data dal business che si esprime normalmente in termini di necessità, bisogni, esigenze dell'utente o esigenze loro di reportistica, strategia eccetera operatività e quant'altro e si lega anche però con una narrativa che viene dal basso, dall'infrastruttura specialmente il momento dove ti accorgi
+
+il business compie delle operazioni che non sarebbero funzionali alla costruzione di un risultato utile per loro o per l'utente finale, ma è sostanzialmente un'imposizione data dalla struttura del codice legacy. Mi ricordo una volta a pranzo sentivo al tavolo di fianco che raccontavano, no ma quando devi fare un ordine di questo tipo devi prima aprire la finestra, poi inserirci il codice 27, mettere questo e solo dopo
+
+devi
+
+dare a questo altrimenti ti va in stato in quello che è e poi invece da correggere devi annullarlo ripartire da zero e io ascoltavo questa cosa e mi rendevo conto che
+
+il software aveva introdotto miti, leggende e superstizioni all'interno di un'azienda che non ne aveva assolutamente bisogno. C'erano delle operazioni di dominio che il software non catturava e che diventavano acrobazia alla tastiera e tramandate di generazione in generazione.
+
+Brainrepo (38:13)
+e potenzialmente inconsistenza
+
+dei dati, Perché poi...
+
+Alberto Brandolini (38:17)
+anche tutto, dopo poi sotto
+
+puoi trovare puoi trovare ogni cosa. In altre aziende abbiamo trovato anche interi dipartimenti il cui compito era
+
+quello di restituire una leggibilità al dato proprio per la mancanza di determinate operazioni di semantica avanzata sul codice, l'upgrade di una prenotazione non era previsto, quindi c'era cancellazione di una prenotazione e creazione di una prenotazione successiva, ma veniva perso il legame tra la prima e la seconda, salvo poi venire ricostruita in qualche reportistica con delle heuristiche che volte funzionavano, volte no.
+
+Brainrepo (38:59)
+il
+
+cognome
+
+Alberto Brandolini (39:02)
+l'intervallo tra la cancellazione e la creazione è minore di 25 minuti, cose di questo genere.
+
+Ci sono aziende che girano su queste superstizioni, quindi il livello di sicurezza rispetto all'affidabilità del software, assolutamente no, siamo in un ambiente fortunato in cui speriamo che domani continui a funzionare. Però tornando all'esplorazione, quello che è interessante è il poter vedere in uno stesso momento
+
+anche
+
+in uno stesso luogo, i conflitti tra la percezione del software raccontata dal business e il...
+
+per un secondo, e invece la narrativa legata al software che viene dall'IT. A volte i linguaggi sono completamente diversi, proprio perché viene esposta la complessità di quanto impone il legacy rispetto a quello che vorrebbe il cliente.
+
+Brainrepo (40:17)
+Hai introdotto il concetto di event storming. Puoi a grandi linee descrivereci di cosa si tratta per meglio comprendere poi come si può sposare nella comprensione di quello che è il dominio e il contesto.
+
+Alberto Brandolini (40:43)
+Ok, event storming in realtà non è una sola cosa, adesso sono tre formati diversi con dinamiche diverse a seconda della situazione. Il più pittoresco è quello che si chiama Big Picture, che è un formato di discovery pura in cui andiamo
+
+abbiamo come argomento un'intera linea di business, quindi dalla definizione prodotto, dalle strategie di posizionamento fino alla creazione o selezione dei prodotti, del loro confessionamento, della parte marketing, vendita, delivery, billing e quant'altro. Quindi tutte le persone coinvolte in una intera filiera. In qualche caso, se ci sono due prodotti interallacciati, l'abbiamo anche fatto con due filieri di prodotto con parti comuni o un
+
+prodotto sopra una piattaforma. Però il succo è in questo tipo di esplorazione andiamo a vedere tutti, andiamo a coinvolgere tutti gli esperti di business contemporaneamente.
+
+Riusciamo a fare questa cosa in maniera veloce perché il setup è sostanzialmente un grande rotolo di carta da plotter, parliamo di 12-15 metri su un muro, qualche caso anche di più, quindi abbiamo bisogno di una parete lunga e dritta, aiuta molto. I mattoncini della nostra modellazione sono dei classici post-it, traduzionalmente arancioni per gli eventi, e un evento rappresenta qualcosa che succede
+
+nel nostro dominio in un determinato momento. Il punto è che tutti gli esperti coinvolti, ognuno di questi esperti ha una versione diversa della storia, è un po' come interrogare i soliti sospetti tutti assieme e vedere dove le versioni non combaciano.
+
+All'inizio tutta questa esplorazione avviene in parallelo e quello che teniamo è semplicemente un po' di casino e rancione sul muro. Lo step successivo è quello del riusciamo a metterli in ordine, riusciamo a capire quali eventi avvengono prima degli altri, ci sono degli eventi chiave che spezzano il flusso, eccetera. Questa cosa diventa un puzzle.
+
+assegnato al gruppo e in qualche maniera troviamo quali sono gli eventi più importanti, iniziamo a muovere e a spostare, nel farlo iniziano a venire fuori conversazioni, ma tu lo chiami così questo? ma in realtà questo lo facciamo adesso, sarebbe meglio che venisse dopo, forziamo le persone a parlarsi. Il più delle volte già in questa fase
+
+specialmente nelle aziende più grandi e sparpagliate, scopriamo delle piccole inconsistenze che poi sono chiave per l'operazione di sviluppo successivamente. Poi la qualità della nostra esplorazione migliora, aggiungiamo persone chiave, sistemi, rendiamo evidenti i momenti, le transizioni di fasi, passaggi di responsabilità tra un team e un altro e cose di questo genere e poi andiamo a fare altre attività.
+
+prima andiamo a validare la narrativa, quindi facciamo in modo che questo modello sul muro sia effettivamente condiviso e approvato da tutti i partecipanti, quindi abbiamo un narratore che sposta, aggiusta, fa le cose finché non sono tutti soddisfatti, a questo punto abbiamo un artefatto di 12-15 metri
+
+che è approvato da tutti e che descrive tutto quello che succede all'interno dell'azienda. Ora questo artefatto è estremamente versatile perché può essere la base per andare a vedere
+
+quali parti del sistema hanno più urgentemente bisogno di un nuovo sviluppo o molto molto spesso di un refactory, cui puoi avere un luogo in cui la qualità del software esistente e le esigenze del business di adesso sono in forte contrasto, quindi più che dire il legacy è brutto e tutto da riscrivere, cosa che il business non ti approverà mai, puoi dire guardate
+
+questa parte qua la dobbiamo riscrivere perché qui come implementato ci sta precludendo delle opportunità di business quindi qui qualcosa lo dobbiamo fare. C'è anche un grosso lavoro di esplorazione di problemi durante la narrativa ma anche di opportunità per cambiare e più altre viste sono possibili ad esempio una cosa che facciamo spesso è anche quella di tirare fuori un nuovo colore che non è stato utilizzato per vedere
+
+quali team si occupano di cosa? In un'azienda dove il team è uno solo, poco interessante. In un'azienda dove i team cominciano ad essere 5, 6, 7, scopri che magari i confini non sono stati definiti correttamente e c'è un unico team che si trova ad essere colo di bottiglia per tutte le cose o che ha responsabilità sparpagliate e via dicendo. Comunque la cosa forse più interessante di questa esplorazione è la versatilità.
+
+tutti riescono a capire cosa stiamo facendo adesso, c'è un livello di awareness che effettivamente migliora e fare la cosa più giusta, più utile, diventa abbastanza ovvio. C'è forse una frase che la più interessante dal punto di vista di chi sviluppa software che è il
+
+Nel momento in cui stai raccogliendo requisiti per un'implementazione business all'interno di un'organizzazione complessa, tu puoi fare delle interviste separate e a un certo punto scoprire che ci sono delle voci in contraddizione.
+
+però tu politicamente ti trovi solo con un problema, non è che puoi andare a dire a due capi di partimento secondo me le vostre versioni non collimano, secondo me mi state dicendo qualcosa di inconsistente, cioè sei entrato in azienda tre giorni prima, chi sei per andare a dire secondo me avete un problema?
+
+se invece costruisci un ambiente in cui queste inconsistenze vengono esplose, saltono davanti senza che nessuno ne sia esplicitamente responsabile, e guardate c'è una narrativa che dice così, una narrativa che dice che invece si fa così, qual è che vince, quali sono le circostanze per andare a fare questa cosa? Stai solo chiedendo chiarezza e non sei il portatore di sventura o l'ultimo arrivato che vuol fare il fenomeno.
+
+Però poi la frase a volevo arrivare è non puoi allineare la IT al business se il business non è allineato col business però dal punto di vista dell'IT non hai le leve per poterlo dire. Andare a fare un'esplorazione di questo genere riesce a linearizzare molto bene le esigenze e i bisogni e tante scelte sia di prioritizzazione che di ok allora facciamo questo diventano quasi ovvi.
+
+a valle vediamo anche i comportamenti dove finisce la responsabilità di una persona e quindi bisogno di una persona dove iniziano i bisogni di un'altra persona quindi quello che può essere una separazione dei bounded context a valle quello che può essere un'ideale creazione di relazioni fra team, persone, dipartimenti eccetera la cosa più naturale da fare e anche in qualche maniera qual è
+
+l'architettura più ovvia dati i bisogni di questa organizzazione in un determinato momento storico. Da veramente un sacco di informazioni, poiché sono tutte oracolato, tutte eternamente valide, assolutamente no, vedi a una vista che è politica, strategica, business e anche architetturale nello stesso workshop.
+
+Brainrepo (48:33)
+Nello stesso workshop assolutamente. Tra l'altro mentre parlavi mi è venuta una domanda in mente e hai dato subito la risposta. L'episodio precedente ho parlato del. Probabilmente non lo sai ma io sono un consulente quindi vado nelle aziende col team e potenzialmente risolvo problemi. Uno dei problemi che noi abbiamo è molto simile a quello di
+
+cambiamo il sistema e più devo comprendere il dominio, l'ecosistema dell'azienda e ho un, due settimane per farlo, una settimana per farlo prima di sentire l'esigenza di deliberare del valore. Chiunque ha lavorato in azienda di consulenza sa che questa è generalmente la situazione. Comprendere il dominio è come dicevi tu una cosa molto complessa. Quindi uno degli esperimenti che ho fatto recentemente
+
+è stato quello di tracciare praticamente qualunque informazione mi arrivasse, quindi dai transcript delle call a qualunque tipo di documento e cercare di creare una visione del mondo a partire da questi documenti. Lei è stata assolutamente utile, però un problema che non ha risolto è quello che hai evidenziato
+
+pochi minuti fa che era appunto del conflitto io mi sono ritrovato davanti a decine di conflitti dove io l'ultimo pinco pallo è entrato nell'accordo dove va a dire ⁓ mettetevi d'accordo figli miei perché tu mi dici A lui mi dice B lui mi dice C che cosa devo fare che cos'è questo no quindi questo era era era un problema e sulla base di questa volevo farti una domanda c'è una tendenza che sto vedendo ultimamente anche un po' su LinkedIn così
+
+Alberto Brandolini (50:17)
+Sì.
+
+Brainrepo (50:28)
+a vantare e ne ho visto anch'io dei benefici, B-Mod come strumento, non so se conosci, di sì, il framework che hai, come strumento di brainstorming, perché di per sé c'ha tutta una serie di metodologie prese in letteratura per sviluppare appunto la parte di brainstorming.
+
+Come vedi questi strumenti? Li vedi complementari, antagonisti o problematici?
+
+Alberto Brandolini (51:03)
+li vedo abbastanza come una scorciatoia
+
+dietro a event storming, dietro a domain driven design c'è un aspetto legato all'apprendimento noi teoricamente conosciamo bene la programmazione sappiamo costruire architetture software eccetera, quello che non sappiamo è la complessità del dominio applicativo in cui dobbiamo andare a lavorare se domani da consulenti dobbiamo scrivere software per una banca
+
+non è che so tutto, anzi non so niente, da un lato sono anche curioso, devo scoprire cosa succede realmente dietro le quinte, però come sviluppatore devo aprire tutte le porte della curiosità, devo imparare più cose possibili nel meno tempo possibile. Ora, Event Storming è comunque strumento di indagine, di coinvolgimento personale
+
+hanno il vantaggio di portarti in una zona che anche degli aspetti tattili, multisensoriali eccetera, c'ha il colore e entri in contatto con le persone, capisci anche chi è...
+
+stressato, chi è rilassato, chi ha potere, chi no, vedi un sacco di meta informazioni che sono estremamente utili. Vedi anche i conflitti dietro le quinta, perché uno degli aspetti dello sviluppo software corporate è i progetti non falliscono mai per la tecnologia, falliscono per la politica. Fare un brainstorming principalmente testuale, magari mi può portare a capire certe cose, ma non mi dà nessuna copertura strategica per capire che
+
+uno
+
+dei partecipanti al workshop in realtà ha un interesse a far fallire la nostra iniziativa perché ha un progetto concorrente perché ha mille altre cose mentre invece un workshop di una giornata in cui coinvolge tutti ⁓
+
+Una giornata è troppo lunga per avere la pokerface, a un certo punto qualcuno che sbuffa e infastidito ti dà dei segnali di body language interessanti e utili, tante volte vedi anche troppo, però ci facciamo un'idea molto molto chi ci supportirà, chi può diventare uno sponsor perché forse possiamo aiutarlo e chi invece ha già deciso che il nostro progetto deve morire e quindi alla prima occasione buona ci farà penare per
+
+delle password, per avere le specifiche, le integrazioni, per dare disponibilità per un ambiente di test, eccetera. Quindi tutti questi aspetti. Da consulente sei potenzialmente un agnello sacrificale dentro un'azienda, cioè tutti hanno le armi per fermarti e tu ne hai poche per percorrere. Poi magari ce n'è qualcuna di più, ma insomma non vorrei aprire questo scenario.
+
+però si si perde l'apprendimento funziona meglio se in relazione alle persone sei facendo cose se invece semplicemente leggendo ok allora stanno diventando quasi degli appunti di seconda mano e questa illusione che noi possiamo capire le cose semplicemente leggendo ma non è vera
+
+le specifiche, il documento di specifiche, anch'io li scrivevo però metà erano copie in colla e poi a pagina 25 ci scrivevano la citazione di un film per vedere se qualcuno era arrivato a leggere fino a pagina 25. I formati proprio sono nati, specialmente se ci appoggiamo ai template, sono nati per essere simili tra loro ma questo genera noia e disinteresse, cioè non è che
+
+riguardando sempre le stesse cose. Sei costretto a tenervi attivo per capire, lo fai abbastanza bene se sono l'afficcio che devi fare, ma imparare la complessità di un dominio da un grande documento di specifiche, no, lo leggi, ma non lo capisci, hai qualche annotazione che puoi fare. C'è un aspetto sia di apprendimento, sia di lettura del contesto politico che non delle greia.
+
+e AI diventa molto utile dal livello successivo andando a validare quelle che sono le nostre assunzioni, documentazioni eccetera rafforzando, andando in parallelo con determinate azioni però quello che è apprendimento ho visto principalmente delle scorciatoie che nel mio caso non portano vantaggi. Ti faccio un esempio specifico
+
+il brainstorming ha un sacco di roba sul muro, sono foglietti e li vogliamo riportare in digitale. Ora, generare software a partire da un event storming in digitale è tecnicamente effettivale, anzi ci vuole anche relativamente poco, però la qualità che è stato il risultato degli esperimenti
+
+era sostanzialmente inferiore a quella che potevi ottenere da un riassunto testuale scritto con un pochettino di attenzione. Anche tutta la parte di riassunto, quindi ho registrato una sessione di brainstorming e ho condensato le informazioni in un testo, però l'hai fatto tu, mentre invece...
+
+La capacità di riassumere è proprio una delle parti più interessanti dell'apprendimento. Se sono responsabile di un progetto, se sono dentro una nuova organizzazione e se sto cercando di capire come funziona, non è che deleggo la scrittura degli appunti all'AI, passo un po' di tempo io a collegare i puntini, a vedere cosa è successo, a rendermi conto che dei 200 segnali
+
+che sono venuti fuori durante un workshop ne ho contati 100-150 ma c'è qualcuno che ancora non ho visto però questa azione di riassunto è un atto deliberato di apprendimento e che quindi voglio fare io perché mi è utile.
+
+Brainrepo (57:21)
+Io ho anche notato una cosa sempre con questo framework che in qualche modo mi ha aiutato nella discovery, che in realtà diventa difficile, le informazioni che ci arrivano ci arrivano da fonti diverse, come tu mi insegni, con credibilità diverse, come hai detto prima, intenti diversi, obiettivi diversi. E oggi le hai non riesce a dedurre.
+
+o l'LLM non riesce a dedurre tutte queste meta informazioni che però tu vuoi per istinto, vuoi per sensibilità, vuoi per dote innata, vedi quello che vuoi in qualche modo te ne rendi conto se uno sta perculando durante il workshop, no, cioè e questo è un altro livello un altro livello di informazione che secondo me si perde o almeno io a livello a livello di esperienza poi quando ho dovuto ho dovuto gestire
+
+l'output di sintesi di tutte queste informazioni ho dovuto dire sì ma questo veniva da una cazzata che ha detto l'ultimo sviluppatore della situazione te lo sei perso forse dall'organigramma vatela a guardare ma guarda che questa cosa non è rilevante ed è un elemento che invece l'uomo di per sé ha un'informazione che riesce a leggere ce l'ha quasi innata e diventa quasi istintiva
+
+Alberto Brandolini (58:37)
+Sì.
+
+Adesso
+
+in nata ci sono forse due livelli, riusciamo a leggere abbastanza bene le gerarchie nella stanza, cioè l'anziano e il giovane li leggiamo e poi ci sono atti e gestualità che ti...
+
+connotano il livello di autorità interiore dell'organizzazione, in qualche caso in maniera anche disfunzionale, però in qualche maniera li vedi. Però c'è anche un aspetto molto molto legato a AI, che è il partitionamento delle informazioni
+
+in contesti e quindi anche in linguaggi differenti, in questo momento l'AI di base non lo fa. Da un lato, perché è cresciuta leggendo un training set code base fatte a monolitone o comunque si impara dal codice più diffuso e il codice più diffuso non è fatto come vorremmo.
+
+Brainrepo (59:57)
+Big ball
+
+of mud,
+
+Alberto Brandolini (59:59)
+Esattamente.
+
+E ti basta veramente poco...
+
+basta introdurre due tre termini oppure lasciata da solo alle AI senza del framing che dica guarda che in questa scatola ci deve stare questo in questa scatola ci deve stare questo le AI aggiunge un termine ti toglie le parole di bocca quindi qua dobbiamo gestire anche i rimborsi e ti porta dentro un caso che dentro quel bounded context non avresti mai voluto o addirittura in un altro caso se un partito di un diagramma di bounded context e tu guarda a fronte di questo flusso ti ho generato anche il diagramma R che però me ne hai fatto
+
+unico
+
+dentro con un unico database e teoricamente tra i bounded context sopra è una base dati condivisa che è esattamente il contrario di quello che dovrebbe essere il bounded context e quindi hai un collega che dietro le quinte ti sta introducendo accoppiamento proprio dove avevi cercato di non fare quindi proprio dal punto di vista dell'operatività
+
+rimarcare i confini e rendere la descrizione del bounded context un artefatto primario nello sviluppo assistito da AI e forse la singola azione più efficace tra quelle che abbiamo sperimentato. Proprio perché lasciato da solo, AI ti ricrea la Big Ball of Mad più in fretta.
+
+Quindi, tanta gioia nella prima settimana, poi improvvisamente il codice non è mantenibile e non hai neanche più l'esperto a cui chiedere, perché l'ha fatto lui. Quindi, o ricominci alla Phoenix, però diventa anche complicato ricominciare se hai iniziato a farci girare sopra del business. E lì...
+
+il livello di confidenza con gli strumenti AI cambia perché mentre abbiamo tante storie di successo di gente che fatto nuovi servizi, nuove applicazioni partendo da zero rapidamente e spesso da soli, bellissimo!
+
+Tutto quello che è gestione dell'egasy, porting, etc. si muove molto molto più lentamente sia perché i rischi sono più grossi sia perché obiettivamente AI dà un contributo un po' limitato, anche la fase iniziale di dimensione delle context windows non era sufficiente per le code base molto grandi.
+
+Ci sono delle possibilità che sono interessanti, determinate azioni di porting possono essere fatte molto più agevolmente che in passato, però hai sempre un'applicazione che in produzione, su cui gira un business e hai un AI che ti dice guarda ho fatto tutto, però se non hai test, se non hai una una garanzia binaria che il nuovo sia compatibile con il vecchio, forse aspetti, anche perché
+
+Le IAE non è responsabile legalmente e forse il penultimo nella catena sei ancora tu e quindi vorresti essere un po' sicuro prima di fare del vostro ventaggio. ⁓ sì, esatto, esatto.
+
+Brainrepo (1:03:01)
+avere una garanzia deterministica non fa male no?
+
+guardavo l'orologio abbiamo già superato l'ora quindi ti voglio fare ti vorrei fare quest'ultima domanda
+
+in vent'anni da questa parte, vent'anni sono tantissimi diciamo dieci anni, che sono altrettanto tanti, ma come vedi evolversi o vedi dei potenziali elementi che si possano evolvere nella parte di di context mapping, di fare emergere il dominio e così questo tipo.
+
+Alberto Brandolini (1:03:53)
+Allora, nei dieci anni con il livello di instabilità che abbiamo adesso, può esserci di tutto. Potremmo avere i data center che hanno consumato tutta l'acqua disponibile sul pianeta terra per raffreddare una generazione di token che non servono.
+
+ci sono molti regi dipendenti, quindi vi può succedere di tutto. Limitandoci alla parte di dominio io onestamente vedo poca differenza, vedo un miglioramento della comprensione di determinate dinamiche ma vedo anche quella come risultato di forze e tensioni che erano vere
+
+tanti anni fa, ma magari non completamente comprese e sono tuttora vere adesso. I business saranno sempre di linguaggi più o meno specialistici. Il linguaggio dell'ufficio legale non è lo stesso linguaggio del marketing, non è lo stesso linguaggio di amministrazione HR. Quindi avremo dei gerghi locali e una inaffidiabilità del linguaggio conversazionale.
+
+come strumento di raccolta dei requisiti, abbiamo bisogno di qualcosa di più specifico. Però il linguaggio non viene dal software, il linguaggio viene dagli uomini, dagli esseri umani che parlano, si esprimono e descrivono i loro problemi.
+
+le aziende possono diventare più internazionali, quindi a questo si aggiunge la connotazione del linguaggio da utilizzare per l'implementazione o del mercato verso cui ti rivolge. Quindi hai modellato un servizio con un team di sviluppatori italiani per l'Italia, vai in Spagna, cosa fai? Forchi, ne fai uno nuovo, lo tieni comune, lo migri all'inglese, mille storie. Però questi problemi vedo...
+
+vedo un po' di aiuto possibile dalla parte AI ma vedo anche una...
+
+poca variazione delle condizioni di base, siamo sempre esseri umani su più mercati, con più lingue eccetera. Quello che potrà succedere è un
+
+magari un'ondata di aspetti linguistici che non stiamo considerando, cioè tutto il mondo dello sviluppo software ruota attorno all'inglese, l'Europa anche se non è la nostra lingua madre, è principalmente in ragione inglese, i linguaggi di programmazione sono tutti a base inglese tranne qualche eccezione in Francia, però può arrivare il momento in cui il
+
+cinese possa cambiare questa serie di prospettivi. Il numero di sviluppatori che stanno lavorando su una base cinese adesso non è completamente autonoma perché tanti degli strumenti hanno origine ancora in ambito anglosassone.
+
+Però il cambio del paradigma linguistico di riferimento può avere un effetto grosso, perché cambia anche il tipo di ragionamento. Un esempio è quando ho fatto un workshop in Cina, il mio prerequisito degli eventi sono arancione con un verbo al passato e loro mi hanno detto noi non ce l'abbiamo il verbo al passato.
+
+Ok, quindi c'è un meccanismo di costruzione di frase e anche di pensiero che non è necessariamente quello occidentale e può cambiare un pochettino di cose.
+
+sulla parte tecnologia invece adesso può succedere veramente di tutto, a poedà se che andremo a costruire, rigenerare, eccetera, ma la parte in cui dobbiamo capire qual è la cosa più importante, quello non vedo tanti cambiamenti o cambiamenti estremamente rapidi. C'è anche un aspetto che porta, non so come dire, a rallentare, che è la velocità dei cicli di feedback del mercato, cioè se fai vino
+
+Puoi avere mille idee e automatizzare certe cose e usare AI, però di vendemine fai una all'anno e quindi i tuoi esperimenti e come reagisce il mercato alle tue idee avrà un andopo. Se fai whisky aspetti ancora di più, quindi per certi mercati queste cose cambieranno però le tipologie di business e la distribuzione dei problemi è molto diversa a seconda della realtà in cui ci troviamo.
+
+Brainrepo (1:08:45)
+Sono sì, sono d'accordo al 100 % su tutto quello che hai detto. Tra l'altro magari una cosa abbastanza banale, ma già vediamo il mandarino e il cinese utilizzato in alcuni casi con le AI perché è lingua molto più compatta che consuma molto meno token. Penso a caveman, no? Caveman che è
+
+Alberto Brandolini (1:08:45)
+L'uomo cambierà poco, l'essere umano.
+
+Brainrepo (1:09:14)
+che quella skill che permette di fare delle risposte molto più sintetiche, ha una versione super extra compatta che utilizza proprio il mandarino per ottimizzare da quel punto di vista. questa è una natura prettamente tecnica. Poi c'è tutto il discorso di cui facevi di struttura del pensiero e di quant'altro che sarà sicuramente interessante. E anche perché, vista la tendenza dei cinesi,
+
+Alberto Brandolini (1:09:37)
+Ma anche lui... ...scusa,
+
+Brainrepo (1:09:42)
+a rilasciare robe in open source molto più di altre nazionalità specie in questo dominio.
+
+Alberto Brandolini (1:09:49)
+C'è una simmetria che il mercato cinese sta in para inglese per tenersi aggiornato, noi non lo stiamo facendo dall'altra parte. A un certo punto questa simmetria ci arriverà addosso, perché il quantitativo di tecnologia prodotta in cinese a un certo punto diventerà molto molto interessante e inevitabile forse.
+
+Brainrepo (1:10:16)
+Sì, è arrivato il momento tipico e topico di GitBar, il momento in cui i nostri guest e i nostri host condividono con noi un libro, talk, qualunque cosa abbiano reputato importante e vogliono condividere con la nostra community. Alberto, ti chiedo se hai qualcosa da condividere con noi.
+
+Alberto Brandolini (1:10:36)
+Allora forse la cosa più importante utile adesso, visto che un libro c'è ma è stato incompiuto da molto tempo ormai, però il sito www.investorming.com abbiamo recentemente aggiunto una sezione di patterns che vanno ad escrivere
+
+tante piccole scelte, decisioni, possibilità interpretative sia di facilitazione sia di modellazione è una sezione che sta crescendo quindi tante piccole cose che stanno intorno alla una o due pagine ma è molto molto utile per poter avere delle
+
+competenza di quali sono le possibilità in quale momento. Più una parte di risorse scaricabili, modelli per chi vuole farlo da remoto o tool per chi vuole fare esperienze di facilitazione in presenza sia con Big Picture che con Process Modelling, Software Design, invece abbiamo pensato di no perché non si riesce a fare una facilitazione di prova in 90 minuti.
+
+quello resta fuori però il nuovo versione del sito ha molti contenuti in più
+
+Brainrepo (1:11:49)
+che lo mettiamo nelle note dell'episodio. Anche io un baloco oggi ed è basato su un easter egg che Alberto ha, non so se consapevolmente o inconsapevolmente, lasciato all'interno dell'episodio all'inizio che mi ha riportato a 15 anni fa, 20 anni fa quando l'essi quel libro ed è chi ha spostato il mio formaggio che per quanto compatto, brevissimo,
+
+Alberto Brandolini (1:12:17)
+Sì.
+
+Brainrepo (1:12:19)
+assolutamente fantastico quindi vi metto il link nelle note dell'episodio e fa parte di una catena di libri altrettanto belli tra cui c'è il One Minute Manager che consiglio a tutti i tech lead non c'entra niente con la tecnologia ma leggere il One Minute Manager è chi ha spostato il mio... non mi ricordo se il titolo è veramente chi ha spostato il mio formaggio simile ma ve lo metto sulla notte
+
+Alberto Brandolini (1:12:42)
+io ce l'ho in inglese,
+
+c'era who moved my cheese e non so la traduzione in italiano
+
+Brainrepo (1:12:48)
+Esatto, quindi vi condivido i link nelle note dell'episodio. Alberto, io ti ringrazio tantissimo per esserci venuto a trovare.
+
+Alberto Brandolini (1:12:58)
+Grazie a te, grazie a voi.
+
+Brainrepo (1:13:00)
+Come diciamo sempre, Git Bar è un po' come... Non so se ti ricordi, negli anni 70 andavano così di moda i circoli del dopo lavoro ferroviario postale, dove dopo il lavoro ci si rincontrava a bere due birre e a scambiare due parole. Git Bar vuole in qualche modo, per quanto da remoto, riprodurre un po' quella situazione da barretto dove si beve... Io sono d'origine sarda, quindi una 66L di Knusa e tre bicchieri.
+
+Alberto Brandolini (1:13:26)
+esatto
+
+Brainrepo (1:13:28)
+o di Moretti, metti la birra che meglio preferisci. quando hai il piacere e voglia di condividere qualcosa di nuovo con la nostra community, sei parte del... è la tessera del circolo, quindi sei automaticamente invitato a condividere qualcosa con noi se ne hai il piacere. Detto questo, ti ringrazio nuovamente.
+
+Alberto Brandolini (1:13:42)
+Bene, stiamo.
+
+Brainrepo (1:13:54)
+e vi diamo appuntamento alla prossima settimana, alla prossima, ciao ciao!
+
+Alberto Brandolini (1:14:05)
+Ciao!
+
