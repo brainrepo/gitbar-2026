@@ -1,0 +1,512 @@
+Brainrepo (00:00)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Avremo potuto parlarvi di Eurovision Contest visto che questi sono i giorni caldi e tra l'altro c'è una delle interpreti che io adoro più in assoluto, Monroe che si esibisce con la Francia
+
+è veramente potentissima. Comunque non siamo qua a parlare di Eurovision Contest, ma siamo qua a parlare delle cose che ci piacciono davvero, che ci appassionano e spesso che ci fanno riscaldare e ribollire il sangue in senso positivo e talvolta anche negativo. Tra l'altro, ditemi se vi piace, sto pensando di preparare una
+
+episodio che potrebbe diventare un talk sulle fallace logiche su tech lead e fallace logiche non so non so se vi può piacere lasciatemi un un un messaggino o in dm o direttamente nel gruppo telegram però secondo me è una roba molto figa che che che può aver senso comunque cappello introduttivo fatto sto fremendo perché voglio
+
+presentarvi l'ospite di oggi abbiamo con noi e probabilmente l'avrete anche già visto Matteo Vacari, Technical Principal a Thothworks, ciao Matteo!
+
+Matteo (01:26)
+Ciao Mauro!
+
+Brainrepo (01:27)
+Tu, tra l'altro, sei una delle persone che sta parlando abbastanza forte di Ernest Engineering,
+
+Matteo (01:34)
+⁓ sì, è uno dei miei temi, è una delle cose che penso sta cambiando la nostra professione e voglio capirla il meglio possibile.
+
+Brainrepo (01:45)
+e ti faccio una domanda per iniziare che una domanda che mi sto ponendo sempre più spesso oggi e viene appunto da quello che ho anticipato del ragionamento sulle fallaci logiche. Oggi la trasformazione del nostro mondo è una roba super interessante che però
+
+abbiamo difficoltà a capire profondamente o comunque il comprenderla è una cosa che si sviluppa gradualmente non è un one shot vedo capisco e assimilo è un qualcosa che stiamo costruendo anche la comprensione di questo mondo perché tutto si basa appunto su un processo prettamente empirico no? la mia domanda è credo che
+
+in questo processo di apprendimento o almeno che questo processo di apprendimento sia in parte condizionato barra viziato da un approccio che ridittiamo dal mondo moderno della comunicazione che è la polarizzazione. Una cosa che ultimamente sto vedendo è che e ne parlavo con un amico qualche giorno fa e che talvolta
+
+il mondo delle fazioni si sta strutturando sempre più forte e diventa quasi difficile fare emergere quelli che potenzialmente sono i rischi barolati negativi in modo razionale perché si rischia di essere etichettati come... come... anti-vaccinisti barra terrapiattisti della situazione per fare un parallelo.
+
+Tu stai notando questa cosa e secondo te cosa possiamo fare per, sì, per rompere questo meccanismo?
+
+Matteo (03:44)
+Dunque io da un anno e mezzo mi sto occupando di AI seriamente, cioè ho cercato fortemente di capire come lavorare con le AI e ho anche guardato come lavorano i colleghi, le persone che incontro e sì c'è una polarizzazione nel senso che ci sono una maggioranza di persone che la usano in maniera senza pensarci troppo, quindi
+
+poco più che un autocomplete, ci sono quelli che sono super appassionati come me che ci danno dentro e cercano di imparare il più possibile, ci sono quelli che sono contrari per motivi ideologici e qui ci sono due parti, la parte, come si dice, etica e ecologista che io rispetto.
+
+perché effettivamente dal punto di vista ecologico l'avvento di queste modelli di AI è una catastrofe dal punto di vista pratico io non posso non usare queste cose per cui sto cercando di usarle al meglio che posso nella maniera più consapevole c'è una parte di sviluppatori che questa cosa la detestano perché gli porta via la parte che gli piaceva di più dello sviluppo mi ricordo
+
+una delle prime sessioni che ho fatto con un collega, abbiamo lavorato con le AI per fare un lavoretto e lui ha detto sì vabbè lui, le AI, ha fatto il lavoro interessante, noi siamo i suoi segretari, copiamo e incolleghiamo la roba per darla alle AI e ci ho pensato tanto secondo me c'è una grossa differenza del come tu usi lo strumento, C'è la maniera di usarlo in cui lo uso come un servo
+
+stupido gli dico devi fare questo e mi arrabbio se poi non lo fanno nella maniera che voglio io c'è invece l'inversione di dipendenza che è molto più interessante in cui lo uso per stimolarmi per farmi le domande per darmi delle opzioni per esempio io raramente uso l'ai per scrivere un draft delle cose che devo scrivere io ma sempre ormai la uso per criticare le cose che ho scritto ed è molto più
+
+intanto più faticoso perché effettivamente poi va a cercare il pelo nell'uovo, mi fa una serie di appunti scomodi e io poi mi tocca andare ad aggiustare. Cioè questa inversione della dipendenza è molto stimolante perché ti... è come avere un collega scomodo che ti fa le domande scomode. Chiaramente non è una persona, però fa un buon lavoro di tirar fuori le cose.
+
+e quindi anche nello sviluppo, quando invece di dire fai questa cosa inizio sempre con ok questo è il problema, che opzioni ci sono e cominci un dialogo perché in parte è molto più interessante poi anche molto più efficace perché una volta che ho esplorato, c'è l'allineamento no, fra il programmatore e il modello AI su quello che stiamo facendo io quando spiego le cose inevitabilmente ho i miei gap, le mie
+
+fallace ai miei punti ciechi, l'AI li tira fuori. Quindi è una maniera molto più coinvolgente e interessante di lavorare. Credo che molti di quelli che trovano a lavorare con l'AI deprimente non hanno innescato questo meccanismo di l'AI mi fa lavorare a un livello superiore di consapevolezza, non mi spegne il cervello. Questa è la differenza che vedo.
+
+Brainrepo (07:22)
+Sì, sono d'accordo con te ed è un po' il modo con cui cerco il più possibile di usarlo. E tra l'altro è interessante anche il fatto che per esempio dall'LLM di turno accettiamo essere contraddetti perché si va a perdere tutto quel meccanismo. Lo scriveva Osmani la settimana scorsa in un bellissimo articolo che poi commenteremo uno di questi giorni sul podcast. Perdiamo quella...
+
+quel bias umano di repulsione basica della critica e delle evidenziazioni dell'errore. Quindi è una cosa molto importante. Però c'è sempre il problema di avere il controllo della cosa. Cacchio, utilizzare l'AI in un certo modo dove tu diventi l'elemento del pillar centrale presuppone una
+
+come posso dirlo una fermezza di obiettivi di posizioni che con un tool che riesce a fare tante cose più o meno bene e diventa difficile da attenere perché ti viene la colina cioè il cadere nella tentazione di dire faccio fare tutto a lui perché bene o male me lo fa e non lo leggo o non sono io che guido ma è lui che guida me è facilissimo
+
+Quali sono gli elementi di questa, magari impropriamente da definire, disciplina nell'uso dello strumento?
+
+Matteo (08:59)
+...
+
+Beh, secondo me il mio amico Uberto Barbini che ha scritto un libro su come lavorare con l'AI, il suo punto centrale è quello che mi è rimasto di più, quello di non perdere il controllo, perché quando ti ritrovi che la terza volta che dici ok a quello che propone l'AI è un segnale allarme vuol dire che sono stanco, non sto più partecipando in maniera attiva, è forse il momento di fare una pausa.
+
+di cominciare domani. Quindi numero uno è questo, numero due fare piccoli passi perché alla fine questo l'ho imparato, lo si impara con l'esperienza, C'è sempre... non sai mai qual è il passo giusto, quindi ci sta che fai esperimenti, gli chiedi delle cose troppo grosse. Poi fa dei pacciughi perché alla fine quando tu gli fai fare troppe cose alla fine la qualità è sbagliata, ti ritrovi...
+
+a fare un lavoro sbagliato. anche qui un consiglio di Uberto è sempre torna indietro, butta via tutto e dì alle AI di ricominciare con passi più piccoli. Questo, siccome poi generare mille righe di codice per le AI costa poco, anche buttarle via è più economico che non insistere ad aggiustare una situazione che non è ottimale.
+
+Brainrepo (10:21)
+sono accordissimo con te, potrei non esserlo perché in dal mio punto di vista questo è il modo migliore ultimamente tra l'altro giusto per un po' shiftare stavo guardando le evoluzioni di copilot, di github copilot no? il fatto dei cambi di pricing
+
+E di tutti i post ce n'è uno che è un meme nei social che è la sviluppatrice che si mette a piangere perché ha finito i token della giornata, no? Quindi c'è un concetto di costi, di throughput di lavoro da considerare. Come vedi? O vedi un futuro un po' meglio organizzato quando si parla di token driven development?
+
+Matteo (11:17)
+⁓ sì, è un... nessuno lo sa. Allora, premesso che questa cosa di usare l'AI per sviluppare, nessuno sa bene come si fa, stiamo tutti imparando. Una cosa che sembra stia emergendo è che una volta che tu hai fatto un lavoro di pianificazione usando un modello di frontiera, di quelli migliori tipo Opus, tipo GPT 5.5, gli fai fare un piano dettagliato, dopo puoi usare un modello molto più debole per eseguirlo.
+
+tipo Sonnet anche IQ funziona bene o addirittura chi ha abbastanza memoria usa il modello locale io ho un MacBook con 16 Gb AID che una volta era un lusso adesso sono pochissimi per cui non posso però diciamo una tendenza è questa cioè di essere strategici in come usi lo strumento poi c'è anche il discorso che allora c'è un po questa mistica di quelli che fanno a o
+
+lavorato per un'ora e poi lo lascio lavorare per tutta la notte e domani mattina è tutto fatto. Io questa cosa non l'apprezzo tantissimo di fare questi processi tipo Ralph Viggum in cui il sistema va avanti per ore e ore senza senza supervisione perché è molto costoso e poi non lo so
+
+probabilmente non ho l'esperienza giusta. Io penso che sia produttivo, più produttivo lavorare per piccoli passi. Che ci sono alcuni task, tipo, per esempio, è molto bello quel... C'è questo tizio, Alerandro Balderas, che ha preso la code base di Crowdcode, che è stata per errore pubblicata recentemente, e l'ha analizzata con un prompt che è molto dettagliato, che ha lavorato per sei ore.
+
+e ha generato un libro stile O'Reilly che descrive come funziona questo programma ed è molto interessante perché pensavo sarebbe stata una lettura noiosa, invece è una lettura interessante. L'ho provato, lo stesso prompt, su codebase mia sia di lavoro che non e produce dei risultati interessanti. Alcune cose funzionano bene sul lavoro batch. Sul sviluppo...
+
+Penso che sia ancora molto importante lavorare, di fino, piccoli passi, tenere il controllo, anche perché poi è un lavoro che tu devi consegnare per un cliente o comunque mettere online, consegnare degli utenti, non puoi permetterti di avere una code review di 2.000 righe e poi vai a capire se queste 2.000 righe sono corrette o meno, quindi lavorare per passi più piccoli.
+
+Brainrepo (14:06)
+pensi che da questo punto di vista io non ho ancora una risposta su questo perché non sono ancora convinto al 100 % però pensi che lo spec driven development possa aiutarci ad automatizzare tutto il processo è solo una cosa che ottimizza ma con lo human in the loop e tutto il resto è fumo negli occhi
+
+Matteo (14:31)
+Allora, lo Spectrum Development, anche qui ci sono due tipi di tool, ne ho visti diversi in questo spazio, ci sono quelli che dici, ma vorrei una app che fa questo e pam, ho appena finito di dire questo che già inizia a produrre tonnellate di markdown. E l'altro modello invece è quello che ti comincia a fare domande, ⁓ vuoi fare questa app? Allora, rispondi a questa domanda e poi a questa e poi a questa e a questa e cominci il dialogo per disambiguare. Chiaramente...
+
+a me interessa soltanto questo secondo modello, in cui in maniera iterativa si sviluppa un piano migliore utilizzando l'AI come metodo socratico. E questa cosa secondo me è molto utile perché ti permette di allinearti con quello che l'AI farà e quindi la code review diventa una cosa molto più tranquilla perché non ci sono sorprese.
+
+L'altro modello è quello in cui tu produci un documento, dai in pasto macchinario che in maniera infallibile si suppone produce il tuo risultato. Il problema è che poi hai una tonnellata di codice di specifiche da leggere che è noioso leggerle. Una tonnellata di codice generato che pure è noioso leggerlo. Quindi è un modo di lavorare che io trovo
+
+poco efficace e anche poco divertente.
+
+Brainrepo (15:59)
+Pensavo pensavo una cosa mentre parlavi di specifiche mi è venuta in mente mi è venuta in mentre parlavi di B-Mod e tutti i suoi fratelli no? Speckit, fratelli minori perché B-Mod è il grande, dal mio punto di vista adesso mi prenderò gli strali di tutti i miei colleghi che lo amano a B-Mod io lo vedo con un grande elefante un po' troppo pesante.
+
+che secondo me andrà morire, ha schiacciato sotto sua pensa però questa è la mia e solo mia personale opinione. No, pensavo in questi approcci spec driven development riesci a vedere un confine chiaro di tutto ciò che più legato al prodotto e tutto ciò che più dettagli implementativo perché io
+
+questa distinzione, questa separazione... faccio difficoltà a vederla chiara e soprattutto ha senso questa separazione oggi.
+
+Matteo (17:05)
+Non penso che abbia mai avuto senso, nel senso che le aziende che hanno una girarchia di persone che lavorano sul prodotto, una girarchia di persone che lavorano sulla tecnologia del prodotto, questi due alberi paralleli secondo me non hanno senso, dovrebbe essere un singolo albero che fa la tecnologia e il senso del prodotto per il cliente. Mi sono perso cosa... ⁓ sì, giusto, ecco, secondo me...
+
+Questo discorso iniziale del brainstorm con il modello è dove devi invitare la persona di business, la persona di prodotto, perché lì ha senso che insieme si ragiona le risposte, perché il modello mi fa le domande scomode su come deve essere la cosa che sviluppiamo e io da sviluppatore ci metto dentro la mia comprensione. Il present alberto brandolini dice non è
+
+Brainrepo (17:55)
+guarda,
+
+Avantieri, ieri era registrato con noi Alberto
+
+Matteo (18:00)
+Non
+
+so se ti ha detto questa cosa che alla fine non è la comprensione dell'esperto di dominio che va nel codice ma quello che ha capito il programmatore di quello che detto l'esperto di dominio che va nel codice. Quindi la grande potenzialità è di cambiare come sviluppiamo il software. Invece di fare tutto questo passaggio di consegne da c'è un tizio che ha parlato con un analista, l'analista ha scritto 25 task su gira
+
+Brainrepo (18:11)
+Esatto,
+
+Matteo (18:28)
+io prendo un tasco gira e con gli altri eselupatori ci ragiono, il potenziale è di tornare a tutti in una stanza per decidere cosa bisogna fare e la persona di dominio, la persona di business, il business analyst insieme lavoriamo sincronamente per definire la descrizione di quello che dobbiamo fare il prossimo tasco di programmazione. Questo
+
+quello che veramente ti dà il salto di velocità perché tutto questo discorso di che le ii ti fa diventare il doppio più veloce, 10 volte più veloce, vale soltanto in un certo contesto perché se tu sei programmatore obbista, ok, ti ha velocità di 10 volte perché tu da obbista non devi rendere conto a nessuno, non hai riunioni per capire cosa bisogna fare.
+
+Se tu invece lavori in azienda e in un prodotto, tutti i prodotti significativi sono un gioco di squadra, quindi nessuno in azienda lavora da solo, si lavora sempre in un team e siccome ormai è in balsa questa cosa di lavorare in maniera sincrona passandosi la palla attraverso strumenti a sincroni, il tempo di attesa fra un passaggio di palle e l'altro sono quello che determina quanto tempo ci metti a consegnare.
+
+non il tempo di programmazione. Se tu hai ridotto il tempo di programmazione da tre giorni a un giorno, ma ci sono sempre sette giorni fra quando è stata creata la storia, sette giorni fra quando l'hai consegnata e quando è stata testata, sette giorni... Ho anche il discorso del Experience Designer che lavora su un ciclo suo e ogni tanto lancia colparacadute delle schermate che noi dobbiamo implementare. Cioè, se tu, queste persone, le metti tutte e quante insieme in una stanza, e in un giorno...
+
+si produce la spec da implementare, questo ti dà veramente il 10 per. È un cambiamento organizzativo che viene abilitato dalle AI.
+
+Brainrepo (20:34)
+Sì, come noi utilizziamo e noi cerchiamo la nostra posizione di human in the loop nel processo di sviluppo del codice con le AI? Immagino che una situazione simile sia vissuta o sarà vissuta dal prodotto owner o dal UX e UI designer dove anche loro cercheranno la loro posizione nel loop di utilizzo
+
+dello strumento. Quello che non riesco ancora a vedere però ho una percezione che forse può essere un po' condizionata ma ho la percezione che lo strumento arricchisca il tool set di informazioni di conoscenze dell'individuo e lo renda un po' più multidisciplinare nel senso io ho fatto diversi side project
+
+e l'approccio che utilizzo è quello di faccio uno spike vibe coding pure vibe coding zero spec vado proprio scrivimi il codice fammine una volta che valido l'idea a quel punto dall'idea ci tiro fuori la spec bella strutturata perché tanto quel codice è mondezza e non si potrà salvare e ci vado dritto però nel contempo io mi tiro dentro skill di UI e UX designer skill di prodotto potenzialmente no?
+
+e quindi divento un super uomo nello sviluppo, un super sviluppatore che prende un po competenze orizzontali. Adesso questo per un side project ha senso, ma se ragioniamo seriamente in termini di industri, quindi di prodotto che ha un certo, un altro livello, Pensi che noi ci sarà una tendenza ad avere questi super uomini o super team con competenze orizzontali?
+
+o le competenze rimarranno a pannaggio di figure diverse con verticalità differenti.
+
+Matteo (22:36)
+⁓ è bellissima domanda, chiaramente dipende da quanto l'azienda vuole cambiare, quanto le persone vogliono cambiare perché se l'azienda vuole continuare a mantenere la struttura esistente non ce n'è, anche se magari un'altra struttura potrebbe essere più efficiente. C'è questo blogger che io seguo che si chiama Srivushankar che ha fatto proprio questa osservazione, detto ma l'organizzazione adesso dovrebbe...
+
+cambiare la direzione della matrice, cioè invece di essere che per fare una cosa prodotto c'è parli con il business designer, con il business analyst, con lo sviluppatore, con il tester, con il personaggio di infrastruttura, farlo al contrario. Facciamo che il programmatore fa un pochino di progetto di prodotto, un pochino di sviluppo, un pochino di QA, un pochino di mandata in produzione, perché
+
+con l'AI anche le skill che non sono le sue principali riesce a fare un lavoro passabile e di converso anche la persona di prodotto può sviluppare un pezzetto di prodotto da sé. Ora, questa è un'ipotesi lanciata da questo blogger però nessuno, come dicevamo prima, nessuno lo sa esattamente qual è la maniera migliore di sviluppare con questi strumenti, quindi bisogna capire come
+
+riorganizzarsi, certo che io vedo un ritorno del team che sta in una stanza, reale o virtuale, e lavora in maniera sincrona, come si faceva ai tempi e vecchi tempi con Xtreme Programming. E anche il ritorno di importanza della persona che ha molteplici skill, perché nell'agilità, quando una persona ha più di una skill, questo moltiplica l'agilità.
+
+della situazione. C'è Craig Larmann che è un grandissimo agilista, quello che ha inventato il sistema LESS, è un po' un controltare a safe. Lui fa sempre questo esempio, che almeno gli sempre sentito fare questo esempio, del calciatore di football americano che è il corridore più veloce di tutti, quindi alla palla arriva, dribla tutti, arriva di fronte alla porta e poi...
+
+guarda il suo obiettivo da vista dice ma io sono il corridore non sono il calciatore quindi aspetto che arrivi quello bravo a calciare per calciare e più o meno quello che facciamo no se tu sei nella posizione giusta per fare un lavoro anche se non sei la persona più qualificata per farlo la persona più qualificata sta facendo altro lo fai tu e quindi una persona che ha più di una skill migliora l'agilità perché
+
+moltiplica la quantità di tempo in cui si fa la cosa più importante in quel momento viene fatta e non viene messa in attesa.
+
+Brainrepo (25:32)
+Sì, molti parlano delle AI e degli LLM in un senso più specifico come uno strumento di comunicazione, l'ho letto in diverse parti come uno strumento appunto di interconnessione tra professionalità diverse e persone diverse. Io però devo essere sincero
+
+lo continuo o almeno ho questo terrore magari, ripeto, condizionato perché adesso sono nella fase che sto provando a get read, a liberarmi di molti bias e credo che sia una cosa, una fase che prima o poi tutti passiamo dove metto in discussione praticamente tutti i miei assunti però molti ne parlano come uno strumento di comunicazione, io ancora
+
+Lo vedo come uno strumento che isola tantissimo o che in questa fase storica sta isolando tanto le persone.
+
+Matteo (26:32)
+Ha ragione, è uno strumento single player. Kent Beck faceva questo esempio, Chi risolve il problema di farlo diventare multiplayer ha vinto, perché lo sviluppo software è multigiocatore per definizione, nessuno da solo è in grado di definire il prodotto nella maniera migliore. Sì, per esempio nel mio piccolo, l'ultimo progetto che abbiamo fatto, lavoravamo in pair con l'AI, quindi uno dei due.
+
+teneva lo schermo condiviso con il Gemini, questo caso, e insieme decidevamo cosa dire alla gente.
+
+Brainrepo (27:13)
+Ok, quindi una sorta di mobo programming perché c'era anche il cuginetto, il cuginetto AI. Questo è interessante anche perché stiamo sviluppando un modo completamente diverso di scrivere il codice, anche in termini di assetto mentale. siamo ritornati a dominare il linguaggio, a pensare in linguaggio naturale. Questo per me è stata una fatica. Non puoi capire quanto perché...
+
+Cioè se io ti devo spiegare di iterare qualcosa la mia mente parte in automatico con un foro, un whatever ciclo e sto banalizzando lo so però questo è un elemento principale e poi perché in realtà nell'uso del team emergono degli elementi di coordinamento?
+
+che in realtà i cui approcci e schemi non sono ancora abbastanza maturi dal mio punto di vista, cioè io ho un team, quali sono le metode? Devo, ho x developers, Devo introdurre l'ai, posso fare che il mio developer si fa il suo tool set oppure posso a livello team
+
+Matteo (28:27)
+mhm
+
+Brainrepo (28:38)
+costruire il mio tool set con le AI oppure la tua organizzazione posso fare alla Spotify, Ti do una serie di skeleton che tu puoi usare di tool set e tutti gli enrich. Come vedi la governance di team e di organization e poi tu vieni anche, vieni soprattutto al mondo della consulenza, quindi come si declina questa cosa anche nel mondo della consulenza?
+
+Matteo (29:05)
+Tutte tre le cose devono succedere. C'è il livello in cui tu fai la tua esperienza e sviluppi le tue cose. C'è il livello di team, c'è il livello di organizzazione. Per esempio, se tu vuoi allineare quello che viene prodotto dall'AI con i tuoi requisiti di security compliance, GDPR, eccetera, è meglio che tu produci un documento che descrivi esattamente come devono essere fatte queste cose a livello aziendale.
+
+non fisso chiaramente iterato e modificato. A livello di team è pure importante definire un processo di lavoro. Nel ultimo progetto abbiamo fatto una cosa simile, abbiamo preso un plugin esistente, abbiamo adattato le esigenze del cliente, abbiamo aggiunto dei passi che non c'erano, abbiamo tolto dei passi che non ci servivano, però l'abbiamo fatto a livello di team, lavoro condiviso. Sì, è assolutamente importante che ci sia
+
+questa raffinamento perché poi alcuni prompt sono più efficaci di altri purtroppo ma ci sono dei prompt che sono veramente più efficaci e quindi conviene condividerli anche perché se un prompt contiene una cosa inutile, una cosa sbagliata inquina tutto quello che tutto il lavoro viene fatto dopo. Devono essere fatti con una certa skill.
+
+Brainrepo (30:33)
+Sono d'accordo con te e proprio per questo facevo un ragionamento. Sai, l'anno scorso mi sono dedicato tantissimo o mi sono concentrato tantissimo sul concetto di API governance, E quando tu fai un governance framework ci sono modi diversi di fare un governance framework. Tu puoi centralizzare, puoi decentralizzare, puoi trovare un balance tra centralizzazione.
+
+Matteo (30:48)
+mmm
+
+Brainrepo (31:01)
+e decentralizzazione, puoi utilizzare un approccio a...
+
+team di esperti che definisce le linee guida o oggi li chiameremo prompt o harness setup se proprio vogliamo stretchare, harness template se proprio vogliamo stretchare il concetto no? Oppure puoi utilizzare un esperto e darlo nel team nello startup proprio per fare questo tipo di setup in modo da
+
+trasferire l'informazione e formare il team, farlo crescere in modo che poi l'esperto te lo tiri via, che è uno molto verticale su quello, te lo tiri via e hai quella knowledge nel team. Ci sono diversi modi, quello che però non riesco a vedere è un feedback di questi approcciamenti, cioè pochissimi ne parlano e non riesco a capire se siamo ancora in una fase di maturità o...
+
+chi lo fa lo tiene per sé come a volte succede nel mondo industriale,
+
+Matteo (32:11)
+sì penso che ci sono tanti esperimenti, non tutti stanno dando risultati sperati e quindi secondo me nel corso dell'anno vedremo delle pubblicazioni interessanti che spiegano esperienze che sono avvenute in questo campo, penso che ci sia ogni sorta di situazione in questo momento.
+
+Brainrepo (32:32)
+Adesso bold opinion e mi tirerò le strali di tutti i sostenitori. Sono curioso di vedere quanti esperimenti falliti verranno pubblicati, perché secondo me sono quelli più rilevanti. In questa fase di super hype la gente ha paura di parlare degli esperimenti falliti perché viene eticheta. Però chiudiamo il capitolo perché sono... ce l'ho qua.
+
+Matteo (32:46)
+Sì.
+
+Brainrepo (33:01)
+questo periodo.
+
+Matteo (33:03)
+Guarda che ci sono,
+
+sono riusciti nel primo trimestre di quest'anno diversi report che dicono, tipo quello di CircleCI, quello di GetDX, che dicono sì sì bello bello, throughput aumentato ma aumentati anche i difetti in maniera drammatica. CircleCI misurano il numero di volte che una branch viene pushata e poi fallisce la build o in qualche maniera e hanno visto un incremento pazzesco dei fallimenti.
+
+e questo può essere dovuto soltanto a una cosa.
+
+Brainrepo (33:34)
+Sì, è chiaro. assolutamente chiaro. Parliamo un po' di Arnes, di cosa si tratta.
+
+Matteo (33:46)
+Allora questo è un termine che ha già cominciato a perdere una connotazione precisa, significa un po' tutto. Fondamentalmente un'accezione significa tutto quello che sta intorno al modello linguistico. Quindi Cloud Code potrebbe essere una harness. La mia collega Birgitta Böckler che molto brava a dare una terminologia
+
+ha scritto che, ok, Cloud Code, Codex sono l'Harness interna. Sono quella parte dell'Harness che tu, sviluppatore, non puoi cambiare. Poi, sopra questo Cloud Code c'è una serie di cose che tu aggiungi che sono le cose che tu puoi cambiare. E, ad esempio, sono il file cloud.md, agents.md, che definisce regole di base per il tuo agente e tutto il resto che tu aggiungi.
+
+e tutto questo è Arnes che ha due parti. C'è l'Arnes che ti dà un feed forward, quindi ti dico devi fare così, segui queste regole, fai attenzione a questo e a quello e c'è il feedback, cioè tutto quello che reagisce a qualcosa che lei hai fa e gli dà un feedback, che possono essere cose anche molto...
+
+come si dice, deterministiche tipo regole di l'INT. Una volta si diceva che una buona regola era, metti il tuo compilatore con i warning al massimo e tratta ogni warning come un errore. È un buon consiglio, pochi team lo fanno. Adesso è diventato importante, ti consenti di fare in modo che lei ascriva del codice migliore, non perché tu gli hai messo 20.000 regole di cui chiaramente non ti racconto.
+
+di tutte le regole se ne ne metti troppe, ma quando una regola viene violata dall'inter che viene eseguita in automatico, gli dà il messaggio di errore e il modello reagisce. Quindi, harness in questo senso è un insieme di controlli deterministici che tu metti per controllare che lei ha il segolo e tue regole. Un esempio è, se tu non vuoi che, per esempio, lavori in python, non vuoi che venga usato il tipo eni, che significa
+
+va bene tutto, ma vuoi che vengono usati dei tipi specifici. Io ho messo una regola specifica che diceva non puoi avere una funzione che restituisce un dizionario o che restituisce Annie, devi definire una struct ben definita con dei campi precisi perché io voglio capire questa funzione che cosa restituisce e poi tu modello, nella prossima sessione avrai utilità di capire in maniera esplicita che cosa restituisce questa funzione e non doverti andare a leggere come funziona la funzione per capirlo.
+
+Quindi, harness, in questo senso, è un insieme di regole deterministiche e non deterministiche che tu dai al modello per fare in modo che con maggiore probabilità ti dia la cosa che tu desideri. Poi c'è un terzo tipo di harness che è quella di comportamento del codice. Cioè, l'harness è sotto forma di test. E questo è un tasto dolente, perché anche qui i test sono sempre stati una buona idea.
+
+Non tutti i team li hanno sempre fatti molto bene, adesso sono diventati veramente vitali perché con il volume di codice che viene prodotto non avere dei test che con precisione definiscono che perlomeno la funzionalità del tuo sistema sia corretta, perché poi il tuo sistema può avere la funzionalità corretta ed essere rotto per tantissime altre maniere, ma la funzionalità è il grado zero, il sine qua non e salta fuori che non è facilissimo farlo in maniera efficace.
+
+Ora io sono fan del test Riven Development Dal 2002-2003 e quindi mi costa tantissimo dirlo, ma i test che scrivevamo a mano col TDD non sono più quelli che servono adesso. Adesso serve molto di più l'acceptance test, il test a livello di descrivi l'input è questo, l'output deve essere questo, fai una tabella di tutti gli input e tutti gli output, questo è quello che ti dà
+
+una buona confidenza, perché i test unitari a livello di funzione lasciano il tempo che trova, perché cosa succede? Che poi l'AI lo fa molto volentieri di farti dei test unitari che fissano il comportamento dei tuoi metodi, ma poi cosa succede? Che devi cambiare una virgola, cambia il test, cambia anche la funzione, cioè cambia l'implementazione e cambia il test.
+
+E a questo punto hai il dubbio, sì, ma il test mi protegge ancora, cosa sta testando? Questo è un test che mi protegge da errore in produzione o è una cosa che facciamo perché dobbiamo, ma non una specie di cargo cult. Se tu torni invece al concetto di testa-accettazione, il testa-accettazione è scritto in termini di cose che hanno importanza per il business. Uso lo stesso linguaggio in cui tu descrivi i criteri d'accettazione delle user story, quindi sono...
+
+molto più veritieri, molto più facili da controllare, e questo significa che il TDD come lo facevamo prima è un po'... non si fa più in quella maniera lì, insomma, diciamo.
+
+Brainrepo (39:11)
+scriveremo le spec in gherkin in un futuro proz
+
+Matteo (39:16)
+Non in Gherkin, perché Gherkin non è l'astrumento giusto. Sai perché? Perché la cosa che ti importa di più con l'AI che fa tutte queste cose in automatico, la cosa che ti importa di più è essere sicuro che quello che leggi fa quello che pensi che faccia. Quindi se il mio test è un file YAML che dice input, output, input, output, input, output, questo lo posso verificare abbastanza facilmente. Ma se...
+
+Il test è una serie di when, then, etc. etc. Given, when, then, con un sacco di frasette. Queste frasette sono implementate, i funzioni che ha scritto l'AI. Perdi, uno strato di traduzione che ti toglie confidenza che quello che tu vedi sia effettivamente quello che viene testato.
+
+Brainrepo (40:04)
+Per cui tu
+
+dici tutto il processo di test di per sé estrettamente deterministico con una quantità di codice ridotta al minimo. E ha senso perché in realtà una delle delle delle dei problemi che mi spaventano e che sto vedendo sempre di più è una quantità smisurata di perché
+
+il problema dei test diciamoci la verità è che una volta che scalano se non sono fatte in un certo modo diventa una roba più mostruosa da mantenere del codice stesso se poi ci mettiamo mox, tab e compagnia varia diventa ancora peggio io ho visto dei file di fixtures che erano praticamente illegibili e impossibili da mantenere e questo è esattamente quello che gli LLM stanno replicando quando gli dici fame il test
+
+Matteo (41:02)
+Sì, esatto.
+
+Brainrepo (41:04)
+Quindi quindi quindi sì, assolutamente.
+
+Matteo (41:06)
+Ma non è una novità
+
+questa cosa qua. Se tu pensi, c'era Fitt di Ward Cunningham nel 2002, si inventato, siccome i suoi clienti erano finanziari, gli davano un Excel, lui detto ok, eseguiamo l'Excel. Ha fatto una roba che leggeva le righe, le colonne della tabella Excel e li faceva diventare dei test automatici.
+
+poi Kojko Hacik con Specification by Example ha portato avanti questa cosa ancora quindi non è una cosa nuova, è una cosa che sta diventando sempre più importante e poi c'è un'altra cosa interessante che invece di scrivere degli fixture di mock molto complicati tu puoi in questo mondo puoi creare un simulatore
+
+Cioè c'è StrongDM, è un'azienda che ha pubblicato un articolo molto interessante adesso, io non è che lo condivido perché loro sono quelli che dicono no, darkfactory, non leggiamo il codice, non lo scriviamo, è tutta una roba che funziona ma non ci vogliamo neanche, io non lo approvo. Però una cosa interessante che loro fanno è che siccome loro lavorano, è un strumento che si interfaccia a Gmail, a Gira, a Google Sheet, Google Doc eccetera, li hanno simulati sulla base delle API pubblica.
+
+Se tu dici a un modello, questa è l'API pubblica, fammi un'implementazione che rispetta queste API, modello te lo fa. Ci mette un'ora magari, ma poi hai un clone di Gmail, un clone della API di Gira, che tu puoi usare per fare i test senza preoccuparti di costi o di rate limiting quando tu lavori con il Gira, vero?
+
+Brainrepo (42:48)
+e ci puoi embeddare dei behavior specifici
+
+Matteo (42:52)
+Esatto,
+
+per esempio, payment processor tu puoi dire che se il nome di battesimo del pagante è Mauro, ok, se è Matteo, K.O. Se è Gino, restituisci un errore di rete. Quindi puoi inventare dei comportamenti arbitrari in questa payment processor fasullo e lo puoi usare per fare test interattivi, non interattivi, dopo usare in parecchie maniere diverse.
+
+Brainrepo (43:22)
+Abbiamo parlato di quelli che la tua collega Brigitta chiama sensori, la parte di feedback, tu hai parlato della parte deterministica. La mia domanda riguarda la parte indeterministica, che utilizza il concetto di LLM as a judge. In questo caso...
+
+Matteo (43:27)
+Sì.
+
+Sì.
+
+Brainrepo (43:48)
+Come possiamo embeddarli nel nostro harness? Come possiamo utilizzarlo, questo approccio?
+
+Matteo (43:55)
+Intanto la cosa più semplice che ho visto funzionare è fare una domanda alla fine di una sessione di lavoro, dire qual è la cosa di cui ti senti meno tranquillo? Chiedi alle AI, what do you feel less confident about? Voglio anche dirgli qual è stata la decisione più difficile che hai preso?
+
+di solito dà delle informazioni interessanti perché da un lato ti dice ho fatto questo, ho questo, fatto quello, successo, viva! Se poi gli dici qual'è stata la decisione più difficile fa ⁓ questa! Potevo fare così o potevo fare cosa ho deciso di fare così quindi è una maniera molto mirata di fare review del lavoro che fatto la gente questo è il livello base, no? Un prompt di una frase poi ci sono alcuni prompt molto interessanti come quello di Vlad Kononov
+
+Lui ha scritto questo libro, non ce l'ho qua in giro, è nell'altra stanza, comunque ha scritto un libro su una teoria della modularità e ha fatto una skill che usa questa teoria per giudicare il tuo sistema, dà dei risultati molto interessanti. è molto interessante utilizzare l'LMS Judge, non l'ho mai usato.
+
+ancora come gate di qualità nella pipeline. Però lo uso per avere delle osservazioni interessanti su quello che sta facendo il mio codice e spesso ti dà delle informazioni sorprendenti. il prompt giusto, voglio dire, è una cosa a migliorami la mia code base, critica la mia code base. Però se tu fai una domanda così generica...
+
+Quello che ottieni è abbastanza random, perché se tu pensi che il modello ha letto tutti i libri sulla programmazione che sono mai stati scritti, chissà quale di questi mille libri ti sta rispondendo in quel momento lì. Se tu gli dici no, considera questo libro e usa questa teoria per applicarla a questa code base. Hai dei risultati molto più precisi.
+
+Brainrepo (46:05)
+una cosa che mi incuriosisce e che vorrei provare e non ho ancora provato è quello di utilizzare la parte di LLM as a judge per fare un test di valutazione e di validazione sulla parte di requisiti funzionali che spesso sono un
+
+un po' più opacchi, un po' meno deterministici da verificare se non con appunto i test d'accedizione o un test UI sopra che che che che che che sarei proprio curioso tu hai letto o avuto esperienza in merito?
+
+Matteo (46:53)
+Siamo parlando di test funzionali.
+
+Brainrepo (46:56)
+funzionale sì.
+
+Matteo (46:57)
+sì
+
+Brainrepo (46:59)
+Cioè tu sei in un loop che stai sviluppando con le AI. Uno dei concetti è appunto lo steering loop quindi io faccio qualcosa, modifico, modifico le mie guide, ciò che in qualche modo fa steering del ciclo e poi riparto con un processo iterativo di sviluppo. Quello che io mi immagino è una fase di validazione funzionale. Nella validazione funzionale mi immagino che ne sono un test playwrights.
+
+Matteo (47:19)
+mmh
+
+Brainrepo (47:29)
+che si va a provare le funzioni però provava a fare un esercizio appunto mentale di dire ok ma posso utilizzare le massages là su quel punto specifico?
+
+Matteo (47:43)
+Sì, una cosa che funziona abbastanza bene è di dire all'AI di testare manualmente una cosa che ha appena costruito. Sai che c'è un strumento che si chiama Agent Browser, che è un affare che usa un API dentro Chrome per praticamente una CLI che consente alla gente di interrogare un browser e lo fa in maniera ottimizzata per l'utilizzo del browser. Puoi dirgli
+
+Ok adesso testa la mano, ed è molto interessante perché la gente magari trova dei difetti nella cosa che appena fatto.
+
+la programmazione esplorativa fatta da una macchina.
+
+Brainrepo (48:27)
+La cosa interessante è che potenzialmente questo tipo di validazione della parte funzionale, adesso sto ragionando senza limiti con te, può anche essere declinata o spinta anche oltre, dando alle agent delle user persona specifiche, E quindi si aprono dei mondi, stiamo facendo dei...
+
+delle validazioni che vengono dal mondo della UX magari ed è assolutamente mind blowing. Perché? La domanda è questi test costano un botto in termini token e cose? Io ho visto i consumi, Pensi che
+
+Matteo (49:09)
+Veramente, molto interessante.
+
+Brainrepo (49:25)
+il costo del software cambierà a livello prospettico in un futuro.
+
+Matteo (49:32)
+nessuno lo sa però anche qui alcuni task li puoi fare con modelli più deboli cioè sonnet anzi haiku in grado di fare delle cose molto sofisticate non c'è sempre bisogno di andare con opus o sonnet quindi se tu vai con modelli più deboli riesci a restare nei costi diciamo adesso che sembra che a un certo punto non
+
+Adesso c'è questo modello che io pago 20 euro al mese e ho, non dico accesso tutti i giorni, ma ho una grandissima quantità di token che se dovessi pagarli token per token mi costerebbero molto di più. Questa cosa non durerà all'infinito, però c'è un sacco di cose che puoi fare con modelli economici.
+
+io credo che ci sposteremo verso modelli in cui sotto si fa con team più piccoli perché ha sempre avuto senso, no? Il modello di... in cui si lanciano delle ondate di martiri al problema che devono in qualche maniera in decine, centinaia di persone per fare una cosa bruttissima aziendale e invece se tu usi un...
+
+più ridotto, togli tutti i problemi di coordinazione e risparmi con l'AI che amplifica la capacità del singolo, questa cosa permette a un team piccolo di fare quello che prima si faceva con un team di molte più persone. Poi quanto costerà l'AI l'anno prossimo non lo so.
+
+Brainrepo (51:16)
+Parlando con Alberto, ieri ci veniva da ragionare sulla dimensione dell'unità del software. L'unità di sviluppo software, noi abbiamo sempre a spada tratta difesa della modularità, se non poteva proprio essere un microservizio, almeno un composable monolith da poterne tirar fuori.
+
+i blocchi. Mi chiedo se con questo cambio di velociti e di approccio dovremo anche andare a rivedere quelle che sono le unità naturali di modularizzazione, il classico bounded context che per noi era una roba magari da dimensione e separata da dominio ma probabilmente in qualche modo condizionata da un bias del modello di sviluppo.
+
+della velocità di sviluppo. Pensi che la dimensione del bounded context o del modulo software in modo più generale possa cambiare.
+
+Matteo (52:23)
+io penso che lei stia mettendo a nudo tutte le cose che non funzionano in come lavoriamo con il software. Noi parliamo di moduli, Tu hai la classe Java, package, poi se vai a vedere tutte le nostre belle classi Java impacchettate nel loro package, poi vanno a parlare con tutte le tabelle e tutte le classi parlano con tutte le tabelle. Alla fine ti rendi conto che
+
+i programmi per lo più non sono modulari, fanno finta di esserlo, ma alla fine il database che sta dietro è una gigantesca variabile globale, è un'orrenda variabile globale, diceva Musco per Rota, quindi alla fine le applicazioni sono per lo più monoliti. Poi non parliamo dei loop per micro servizi con tutti i micro servizi che pescano allo stesso database, quello è il peggio del peggio.
+
+Ma la modalità è diventata ancora più importante perché ti permette di validare che l'AI abbia toccato solo quello che doveva toccare. La review è difficile se tu non sai alle confidenze che tocco qua e poi rompo qualcosa da un'altra parte. Se il modulo è veramente encapsulato, la tua code review è più economica, più efficace.
+
+Quindi sì, no, i moduli restano secondo me, diventano più importanti e l'AI mette a nudo il fatto che quello che ne chiamiamo modulare per lo più non lo è.
+
+Brainrepo (53:58)
+Sì c'è una cosa che sta ritornando costantemente questi giorni nella mia testa come un martello che continua a picchiare che la parte di Phoenix Development, il concetto di io sviluppo un modulo e data la velocità di sviluppo di oggi posso domani permettermi di fare devo aggiungere una funzionalità a quel modulo specifico di fare il complete replace del modulo con un altro e dove in realtà
+
+la parte vera di valore sono le detailed specification o i requisiti dettagliati l'agent.md più tutti i requisiti che insomma mi permettono di riprodurlo non in modo deterministico ma good enough per isolarlo e quindi quell'unità di software
+
+quel disaccoppiamento, quella modularizzazione diventa elemento fondamentale proprio per ridurre l'impatto e permettermi di cambiare magari le gomme in corsa durante una gara di formula 1. Adesso io non so quanto questa roba è quella della riscrittura ha senso ma credo che la cautela di modularizzare in modo molto acculato e con delle interfacce ben definite
+
+tra un modulo e l'altro e dal mio punto di vista, posso sbagliarmi, ma dal mio punto di vista è una salvaguardia alla propagazione di slop qua e là, non lo so, la vedo un po' così.
+
+Matteo (55:43)
+Sono d'accordo con te,
+
+Brainrepo (55:49)
+E allora la domanda è, tu sei un ingegnere, uno sviluppatore di lunga esperienza, hai guidato diversi team, come ti proteggi dallo slop e dalla tendenza a scagazzare qua e là dei develop?
+
+Matteo (56:11)
+e... vigilando.
+
+Brainrepo (56:15)
+Quindi code review fondamentalmente.
+
+Matteo (56:17)
+Sì, code review, spesso, cioè nella mia esperienza in Totorx, spesso visto il tech lead che faceva la code review a posteriori, cioè non come cancello che impedisce di di pushare, magari alle 5 del pomeriggio andava a vedere tutti i comiti della giornata per vedere se c'era qualcosa che non gli tornava. E più o meno la stessa cosa che si fa adesso. Poi c'è questo discorso che è del garbage collection.
+
+C'è questa idea che tu puoi usare il modello per andare a trovare le magagne nel tuo sistema e dedicare una percentuale significativa del tempo a rimuovere le magagne da un punto di vista architetturale del tuo sistema, codice duplicato, codice non chiaro, codice non sicuro. Quindi scatenare i modelli e dargli varie parti della code base da esaminare e vedere cosa trovano.
+
+Brainrepo (57:12)
+cosa sta cambiando e come vedi la consulenza nel futuro più prossimo.
+
+Matteo (57:19)
+ma difficile dirlo perché in questo momento il settore della consulenza è in una crisi profonda, non so se dipende da una crisi economica generale o da che altro, io penso che...
+
+C'è sempre... il fatto della consulenza, nel senso vero della consulenza, resta, nel senso che le aziende avranno sempre bisogno di qualcuno che è uno specialista, che ne ha viste tante e che ti dà un punto di vista esterno alla tua situazione. Quindi questo tipo di consulenza resta di sicuro. La consulenza nel senso di mandiamo 10... mi servono 10 FTI, quello...
+
+probabilmente anche quello resta, ma non è una situazione particolarmente interessante dal punto di vista del consulente stesso. Come ThoughtWorks per noi la parte più interessante è quando veniamo come team e partecipiamo alla co-creazione del prodotto di cui il cliente ha bisogno. Quindi questa è la parte più interessante in cui tu porti una capacità di sviluppo ma anche una capacità di ideazione, una capacità di...
+
+fornire un punto di vista esterno rispetto alle idee, magari, preconcette che ci sono in azienda. cui io penso che ci sono degli alti e bassi, ci sono sempre alti e bassi nel mercato della consulenza. In questo momento siamo in un basso, ma ci sarà di nuovo un alto. Quello che cambia è che è molto facile produrre slope.
+
+e cercare di spacciare, slop al nostro cliente e questa cosa ha le gambe molto corte per cui bisogna
+
+Brainrepo (59:12)
+Stai dicendo
+
+che in tre anni verranno a bussarci a dire salvateci perché stiamo annegando in un mare di slope e abbiamo bisogno di qualcosa di più strutturato
+
+Matteo (59:23)
+Io penso che molte aziende si stanno scavando una buca profonda con le loro mani, producendo codice molto velocemente di qualità molto incerta. cui ci sarà sicuramente un... dall'altro, già adesso, c'è chi ci chiede aiutateci a mettere in piedi un processo che abbia senso. Dall'altro ci sarà chi ci chiede, questo legacy che una volta avremmo fatto in vent'anni, l'abbiamo fatto in un anno solo.
+
+e ci chiedono di modernizzarlo, modernizzare magari una cosa che è stata fatta l'anno scorso, quindi queste cose secondo me resteranno. Poi chissà, mi avvio verso un certo punto un finale di carriera, no? Per cui sarete voi giovani a proseguire questa strada.
+
+Brainrepo (1:00:11)
+Scapi
+
+quando... No, pensavo a una cosa, pensavo al fatto che... ne parlavo con degli amici C-Level di aziende di prodotto, quindi che esulano dallo sviluppo software. E quello che loro mi
+
+è che sta succedendo qualcosa nel loro mondo...
+
+che sta in qualche mondo condizionando o cambiando l'approccio del Create VS Buy, Cioè me lo faccio da solo piuttosto che compro il servizio. Perché? Perché i costi percepiti nel farselo da solo sono molto inferiori. Quindi credo che nel futuro prossimo, perché tanto i primi danni si vedranno molto presto,
+
+Matteo (1:00:50)
+Sì.
+
+e ci vediamo
+
+Brainrepo (1:01:13)
+inizieremo a vedere appunto catastrofi di questo tipo e io ho una strana sensazione ma posso sbagliarmi che la qualità del software che noi utilizziamo sia già degradata tantissimo non lo so se è un bias ma io sto vedendo tanti outage in quest'ultimo periodo e non solo legati a piccoli player ma anche a grandi player e siccome è tutto molto opaco
+
+e non riusciamo a vedere dentro io comunque la domanda me la faccio perché i grandi player che hanno avuto la possibilità di adottare queste tecnologie potenzialmente prima di altri stiamo vedendo forse gli effetti di un'adozione immatura però
+
+ai posteri l'ardo e la sentenza come dice quella io guardavo l'orologio siamo già a un'ora e cinque, un'ora e sei quindi io direi che possiamo... perdonami possiamo saltare al paese dei balocchi il momento tipico e topico dove condividiamo con voi
+
+Matteo (1:02:08)
+esatto, esatto
+
+Brainrepo (1:02:32)
+un libro, qualunque cosa abbia catturato la vostra attenzione e pensiate sia interessante da condividere con la nostra community. Pensiamo sia interessante condividere con la nostra community. Allora, sigletta e poi...
+
+Matteo, hai qualcosa per... per noi?
+
+Matteo (1:03:06)
+Questo è un vecchio classico, questo mi ha cambiato la carriera e penso che sia ancora un libro importante.
+
+Brainrepo (1:03:15)
+extreme programme bellissimo
+
+Matteo (1:03:17)
+meno di 100 pagine, no sì, sono 180 pagine ed è molto... guarda ci sono tutti i segnalibri, l'ho letto non so quante volte, è un libro piccolo ma potente, soprattutto perché, punto di vista etico, no? Perché dice io voglio rendere il mondo un posto migliore per le persone che fanno il mio mestiere.
+
+Brainrepo (1:03:35)
+sono os...
+
+Matteo (1:03:45)
+e anche per le persone che lavorano con le persone che fanno il mio mestiere.
+
+Brainrepo (1:03:49)
+Cosa è che secondo te quali sono le parti di extreme programming che in un futuro così adesso stiamo ritornando alla fase chiacchierata però Non posso non chiederti questa questa domanda in chiusura pensi che cambierà qualcosa dell'approccio dell'extreme programming
+
+Matteo (1:04:07)
+bisogna cominciare a prenderlo sul serio.
+
+Brainrepo (1:04:11)
+Io direi che con questa abbiamo un mic drop. Io non posso aggiungere più nient'altro perché perché proprio da mic drop. Matteo io ti ringrazio tantissimo per esserci venuto a trovare è stata una chiacchierata super super interessante. Tu hai un blog giusto?
+
+Matteo (1:04:14)
+ahahahahhahahh
+
+Sì, non è molto trafficato, ma si trova su matteo.vacari.name, un dominio che andava di moda trent'anni fa.
+
+Brainrepo (1:04:48)
+Buttateci un occhio e seguite Matteo perché guardavo anche su LinkedIn hai fatto un paio di post interessanti che ha senso leggere con attenzione.
+
+Matteo (1:05:03)
+Grazie mille Mauro, è stata una chiacchierata molto piacevole e grazie per avermi invitato.
+
+Brainrepo (1:05:09)
+il piacere è tutto nostro. Noi solitamente diciamo che Git Bar è un po' riprende le orme del circolo del dopolavoro. so se ti ricordi che gli anni settanta andavano molto di modo il dopolavoro ferroviario, il dopolavoro postale, quel posto dove i professionisti di un certo settore si incontrano magari con una bottiglia da 66 di Knusas o di Moretti.
+
+e tre bicchieri iniziano a chiacchierare delle cose che amano di più quindi Gitbar è il circolo del dopo lavoro degli sviluppatori è come tutti i circoli che in realtà avevano un sotto obiettivo che era quello di essere sentasse quando ti scrivevi ti facevano la tessera no? la tessera quella quale poi potevi andare a comprare le birre a un
+
+metà del costo rispetto ai bar. Ecco tu da oggi hai la nostra tessera per cui quando ti viene per mano un concetto o qualcosa di di interessante che ti fa piacere condividere con la nostra community vienici a trovare ormai git bar e anche casa tua e una birra per quanto virtuali hai me fresca per te c'è sempre.
+
+Matteo (1:06:20)
+Grazie mille, sei gentilissimo.
+
+Brainrepo (1:06:23)
+Ringraziando di nuovo Matteo, vi do appuntamento alla settimana prossima ma non prima di aver ringraziato Livio che ancora una volta ci sostiene e ci supporta e che ha lasciato un messaggio dove in qualche modo diceva agli ascoltatori di GitBar se vi fa piacere supportate GitBar con le birre quindi siamo golosi di birra fatecelo fatelo sapere. Detto questo io ho
+
+vi do appuntamento alla settimana prossima con un altro episodio ringraziando di nuovo Matteo, presto ciao ciao
+
+Matteo (1:06:56)
+Ciao,
+
+grazie.
+
