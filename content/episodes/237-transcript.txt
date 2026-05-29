@@ -1,0 +1,540 @@
+Brainrepo (00:00)
+bene e benvenuti su git bar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori sono appena tornato da un infinito road trip che è durata veramente troppe ore per essere lucido ma la nostra camera è sempre sempre pronta perché il giovedì è dietro l'angolo e vogliamo uscire con un nuovo episodio interessante qua appunto sul nostro bar degli sviluppatori con
+
+un ospite super interessante ma prima di presentarvelo il mio ruolo insomma come sempre è quello di ricordarvi i nostri contatti. Info che ho sulla GitBar.it, il gruppo Telegram at GitBar e poi il nostro podcast su tutti i canali di podcasting da Spotify a Apple Podcast, a Spreaker, a tutti gli angoli dove potete consumare il podcast.
+
+abbiamo anche un canale youtube che però, facciamo una considerazione l'altro giorno forse per il tipo di format in realtà non attira molta molta molta audience comparata ai numeri che facciamo col podcast siamo veramente a un infinitesimo e quindi mi chiedevo se alla fine so, esiste un modo per rendere il canale youtube un po' più interessante però questo
+
+probabilmente faremo una chat con la community e con tutti voi per vedere insomma cosa possiamo cambiare perché i nostri sono contenuti long form e insomma non essendo io, io ho Fedez e tanto Venomarra probabilmente i contenuti long form di questa tipologia sono più facili da sentire in palestra che guardando youtube quindi
+
+se avete delle idee mi raccomando sapete dove condividerle. Tra l'altro voglio salutare Sirio che ho incontrato due giorni fa nella bellissima panorama di Rio Maggiore vicina a Spezia, nelle Cinque Terre, con il quale ho avuto il piacere di bere una birra. Ciao Sirio e grazie davvero della chiacchierata.
+
+A parte questo momento da tipo saluti di famiglia, ciao mamma e cose di questo tipo, io direi che possiamo andare alla Cicia e subito a presentare il nostro ospite. Abbiamo oggi uno sviluppatore, un matematico, uno sviluppatore e anche un maintainer di una robetta interessante che son sicuro è capitata nei vostri computer.
+
+e spesso più che è capitata sta là e aiuta tutti noi nei momenti per smadonnamento. O con noi Carlo Salagaucio che è venuto a trovarci. Ciao Carlo.
+
+Carlo (03:13)
+piacere e c'è l'amore. Come stai?
+
+Brainrepo (03:16)
+Io direi,
+
+ho avuto modo di scambiare delle chiacchere via LinkedIn con Carlo, lui ha detto, no, non parlo benissimo l'italiano, non è vero perché in questa pre-trasmissione sentivo già che è un italiano perfetto, perché tu saranno tutti super soddisfatti, te lo garantisco, perché tu Carlo sei italiano ma non...
+
+Carlo (03:32)
+Vedremo vedremo cosa dice la gente
+
+Brainrepo (03:44)
+Non completamente, non abiti in Italia, giusto?
+
+Carlo (03:47)
+infatti io sono cadavano, sono di Barcellona ma con un nonno italiano che è arrivato a Barcellona forse 60 anni fa o 70 anni fa e quindi due generazioni dopo sono io che sono italiano ma in forma diciamo soltanto e ho imparato l'italiano da lui e sì, sono vissuto soltanto un anno in Italia quindi non sono 100 % italiano diciamo.
+
+Brainrepo (04:16)
+però però sai io io sono un padre di una bimba che inizia essere bilingue sai tuo nonno ha fatto un lavoro eccezionale posso posso garantirlo? te lo posso... ti voglio fare una domanda perché in realtà nel tuo curriculum emerge questa cosa che tu hai studiato matematica e sai c'è sempre
+
+Carlo (04:28)
+Il live è esatto.
+
+Brainrepo (04:41)
+il classico discorso università sì, università no, cosa ci portiamo nella professione, di quello che impariamo all'università io per esempio penso sempre che per me l'università è stato un bootcamp più che un terreno d'apprendimento nozionistico però tu in realtà cosa porti del tuo essere matematico e dei tuoi studi di matematica?
+
+nella vita di tutti i giorni e poi nello scrivere il codice.
+
+Carlo (05:16)
+Forse se pensi in un modo superficiale soltanto, non tanto, non è che porti tanto nella matematica, ma su questo argomento di università sì, università no, sempre forse posso imparare...
+
+oggi ci sono tante maniere di imparare sempre bootcamp, non so se c'è qualcosa simile in Italia ma qua c'è tipo dopo liceo puoi fare tipo due anni di programmazione e vai indirettamente a lavorare quindi su questo argomento io penso che l'università ti dà altre cose per esempio nella mia esperienza almeno
+
+e la matematica è sempre lì nel codice, la trovi sempre, in particolare i fatti della logica, diciamo, i fanti, tutte queste idee sono idee matematiche che poi noi mettiamo in codice sempre, noi le abbiamo all'interno ma a qualche punto devi impararle e quindi la matematica per il ruolo di sviluppatore, quello che ti dà quello.
+
+ma poi dopo ogni giorno non è che pensi sempre a matematica quindi non sono 100 %... non è necessario diciamo non sapere tanto matematica per sviluppare ma è una bella cosa di sapersi. Io su questo argomento penso università sempre sì perché ti dà altre cose che...
+
+diciamo puoi fare entrambe le cose, puoi imparare a programmare su un bootcamp forse più full stack diciamo web e tutte queste cose ma poi dopo l'università forse impari di compilatori di strutture di data e tutte queste cose che forse in un bootcamp non impari se un per cento per cento
+
+Brainrepo (07:14)
+Sì, sono d'accordo con te. Io anche se talvolta sono molto critico col mondo universitario, credo che in qualche modo ti imbacchi, ti dia tante potenziali direzioni, ti fa capire che il mondo non è solo il problema. Perché diciamocelo chiaro, adesso probabilmente molto sta cambiando col modo, con l'AI insomma, tutta la rivoluzione nella nostra industria.
+
+però fino a qualche anno fa se tu entravai nel mercato buona parte del mercato che incontravi e non avevi fatto l'università era generalmente il mercato web che è un sottosistema, una parte del mondo poi ti si apre per esempio il mercato dei sistemi operativi, si apre il mercato del system programming, si apre il mercato dell'embedding development
+
+e via discorrendo, che sono tutti i mercati che per uno che non li ha vissuti, non ha, non ha, non perlomeno io quando fatto sistema microprocessore, ecco, ho detto esiste anche questo. Non avendoli vissuti poi te li perdi e rischi di perderti questo tipo di strade. Potrebbe essere limitante? Non lo so, però credo che in realtà l'università ancora da quel punto di vista.
+
+possa essere utile. In più la parte di matematica spesso sblocca quel tipo di wow effect secondo me nel senso che io a parte la sfida dello studiare matematica, Analisi 1 per me è stato probabilmente uno degli Everest più importanti da scalare, è stato proprio un modo di mettere alla prova me stesso con qualcosa che all'epoca riputavo complicato e poi invece
+
+Carlo (08:48)
+Sì.
+
+Brainrepo (09:08)
+C'è un'altra considerazione che faccio rispetto alla matematica è che certe volte mi viene leggendo le robe o facendo delle prove, mi viene da dire ⁓ ecco per esempio qualche mese fa ne ho parlato qua nel podcast, mi era capitato di risolvere un problema di ottimizzazione con la programmazione lineare, E in realtà
+
+da un silo del mio cervello e me ne so cosa ho detto, no ma io questa l'ho studiata!
+
+Carlo (09:42)
+quello lo sapevo o almeno l'ho
+
+saputo qualche volta.
+
+Brainrepo (09:47)
+e questa cosa almeno a me ha dato degli strumenti per dire ⁓ aspetta però quindi quelle basi, quegli elementi che io ho imparato tanti anni fa probabilmente ritornano a essere utili ti faccio una domanda in una delle tante cose che fai oltre a lavorare su polkadot
+
+per la quale avrei un milione di altre domande che probabilmente terremo per un prossimo episodio è quello di Mantener di Omai ZSH.
+
+Carlo (10:29)
+Noi diciamo Z Shell
+
+ma Z6 è assolutamente perfetto.
+
+Brainrepo (10:34)
+Sì, sì, si, un po' meglio con il mio accento sardofono, che un po' tutti abbiamo utilizzato o usiamo, e la domanda è come ci sei arrivato da sviluppatore a diventare poi, a mantenere di un tool utilizzato così in modo così wide?
+
+Carlo (11:04)
+Sì infatti al momento che ho cominciato ad essere contributor prima ad HomeoEasyShare io ero studente, non ero sviluppatore in modo diciamo professionale lavorativo. Quindi ho cominciato come cominciamo tutti su open source, mandando idee, issues, pull requests, cose che penso che si possono fare di un modo in un modo in un altro.
+
+Home Is Shell è stato sempre un progetto che si è sviluppato nel free time di quelle che abbiamo fatto, che siamo tre. Robbie è un ragazzo degli Stati Uniti e poi Mark, anche un ragazzo qua vicino a Barcellona, ed io. È stato sempre nel nostro tempo libero, quindi c'era sempre una necessità di trovare più persone e di trovare gente che ci aiuti infatti.
+
+e quindi è stata così, ho cominciato a mandare pull request poi ho visto un commentario un issue di Mark che diciamo a quel momento era il maintainer che ci metteva più tempo e dicendo c'è abbiamo bisogno di qualche persona in più perché non ce la facciamo, tutta la roba quindi ho mandato un mail su... penso che è stata un mail
+
+diciamo siamo entrambi siamo catalani quindi ci abbiamo visto presenzialmente e ho cominciato ad avere un ruolo più di triage maintainer che si chiama nel mondo open source diciamo che è quello di quella persona che può chiudere le issues mettere tags essere più un tester ma non ha il diritto di fare perci e quindi forse un anno dopo ho avuto diciamo
+
+un upgrade nel mio Maintainer, nella mia carriera di Maintainer e sono passato ad avere Merch Privilege e siamo qua. Quindi è stata così, è stata più una carriera organica nel mondo open source, non è un progetto che ho inventato io, che ho creato io infatti io avevo forse 7-8 anni quando è stato creato quindi...
+
+mi sa che è un sacco di anni forse almeno 20, 20 anni o qualcosa del genere quindi è stata diciamo una carriera organica dentro
+
+Brainrepo (13:38)
+Dicevi che hai preso circa un'annetta prima di assumere privilegi di merge. Come hai gestito la pazienza e l'entusiasmo e la costanza di contribuire a un progetto per un anno che non è poco, diciamolo, in termini di tempo?
+
+senza perdere l'entusiasmo, la voglia di fare, senza sentirti frustrato o limitato. Come è gestito questa parte di emozioni?
+
+Carlo (14:15)
+Per essere sincero non lo so perché ho dimenticato tante cose di quel tempo ma non lo so è stato naturale io ero un user di Omazishel quindi quello che facevo per la comunità anche lo facevo per me perché il mio terminal...
+
+fosse un po' più meglio, fosse un po' più veloce, un po' più bello, qualsiasi cosa. E quindi è stata organica. Penso che se tu contribuisce a un progetto che usi, che pensi che è importante, che vedi nella gente che è usato, un medicino che usato da tantissima gente, a volte mi capitava di andare a una conference o a qualsiasi cosa del genere, ricordo una volta a Milano.
+
+sono andato a una conference e portavo una maglietta di un masichiale, un paio di ragazzi mi dicevano dove è questa maglietta, dove è che la posso prendere? Non lo so perché io sono un antenna e quindi ce l'ho, grazie grazie e quindi vedere nella gente che usa quello che tu...
+
+quello che tu stai facendo che lo fai perché vuoi, non perché hai il tuo tempo libero, è che ci sono soldi in mezzo e tutto, vedere nella gente che è passionata da quello che fai, secondo me quello è il driver principale.
+
+Brainrepo (15:47)
+Cosa è cambiato? sai, parlavo con molti maintainero open source che adesso stanno vivendo la fatigue delle poor request, merge request, insomma guidate dall'AI. Come vivete questa cosa? Voi è una cosa che sentite, avete messo in piedi degli strumenti o degli approcci per limitare la parte overwhelming di fatigue.
+
+Carlo (16:17)
+Ti posso dire che negli ultimi tempi, da un anno fa...
+
+è assolutamente pazzo quindi davanti il numero di pull requests che sono sempre AI generated che forse il testo di github, diciamo il body per la pull request sono, non lo so, milla caratteri forse o due milla caratteri e poi dopo c'è tutto il codice sempre generato da AI con 200 test per una cosa che non
+
+non c'è bisogno da fare i test, è ovvio che quando così, quindi la fatica di ricevere pure request, non lo so, 3-4 a giorno, qualcosa del genere, prima dell'AI e adesso ancora di più a volte è difficile perché io provo di fare un inbox zero con le notificazioni di github
+
+è abbastanza difficile quando arrivi al weekend e vedi, non lo so, c'è una centinaia di notificazioni da leggere e sabato mattina pensi pof, a volte tanto quindi a certo punto devi accettare che non ce la fai, non arrivi a tutto quindi
+
+provi di mettere tempo e facciamo farlo per benino, forse se puoi fare 10 pull request, 10 issues, qualsiasi provi di farlo bene, quei 10. Ci sono altri 90 che non ci arrivi, quello che c'è, se c'è qualcuno che ci vuole aiutare per piacere.
+
+ma ⁓ sì e con l'AI è diventata peggio non abbiamo la tua seconda domanda se abbiamo qualche sistema automatico di filtering no a questo punto non ce l'abbiamo e l'abbiamo pensato di metterlo forse perché è quello che ti dico, adesso con l'AI è sempre peggio quindi secondo me a certo punto è una cosa che è inevitabile per progetti grandi
+
+mettere qualche filter in tipo... non so se hai visto quello che fatto Ghosty? è un terminal che è creato da Hashimoto, quello che... non so se conosci... ⁓ questo lo conosci, ok... quello che fatto lui è un contributo random non può aprire una pull request
+
+Brainrepo (18:48)
+No?
+
+Sì, Ghosty lo conosco, sì sì.
+
+Carlo (19:08)
+deve andare sempre su issues anche mi sa che non puoi mica aprire un issue se sei un ignoto diciamo e quindi quello che devi fare è prendere come punti dentro il rap non so come la fanno con un botto
+
+del genere con la vote e tutta questa roba e a certo punto puoi aprire una pull request. Quindi qualche approccio di questo tipo prima vedere se c'è un interesse nella gente che usa il progetto, che contribuisce nel progetto è un modo interessante ma è sempre difficile di trovare il tempo per creare tutti questi sistemi.
+
+Brainrepo (19:53)
+⁓ certo, ovvio, e tra l'altro ogni pull request barra merge request può avere le sue caratteristiche peculiari per esempio tu puoi creare degli elementi limitanti o degli elementi che creano attrito per frenare un po' magari per ciò che riguarda le feature quindi fai tipo un sistema upvote, downvote all'are edit per dare
+
+far fare bubble up delle cose interessanti però per esempio se hai un bug fix o una security issue quelle magari vorresti che ti arrivassero dritte e dritte perché sono importanti e credo che oggi in realtà strumenti come GitHub ma questo io non gestisco grossi progetti open source quindi non ne ho esperienze in prima persona
+
+Carlo (20:35)
+Sì, sì, Certo.
+
+Brainrepo (20:49)
+però credo che strumenti come github ancora non siano troppo maturi per gestire questo tipo di di di di di di di di di di di di di di di di di di di di di di di della community e delle contribuzioni della community. Questa è quello che mi viene in mente, tra l'altro metterci un high-slope detector in the middle credo che non sia l'unica soluzione.
+
+Carlo (21:06)
+Sono d'accordo,
+
+Brainrepo (21:19)
+perché in realtà le sfumature sono veramente tante, non ultima appunto quella di distinguere richiesta di feature da richiesta di bug fix e di cose di questo tipo.
+
+Carlo (21:35)
+è difficile sì, sì è quello che dici è assolutamente certo tipo gita non so se giddelab non sono mai stato lì ma non so se...
+
+a questo punto quello che sta succedendo è che tutti i maintainer chiediamo queste cose nei maintainer summit che Guitar organizza ma secondo me è difficile, non è facile Guitar sta avendo tantissimi problemi di scarabilità
+
+se vedi il numero di commenti, bullet quest, issue che si mallano, gli eventi in generale che Gita riceve è tipo 15 volte quelli che riceveva tre anni fa quindi è tantissima roba che forse problemi che non aveva prima
+
+e mi sa che i suoi sviluppatori sono lavorando su quello e non tanto su nuovi feature per renderci la vita più facile. Assolutamente capisco perché ci hanno cose da fare con Copilot, hanno cose da fare di questo diciamo SDI, scanabilità e tutta questa roba quindi capisco che non è la priorità a questo punto ma secondo me a qualche momento
+
+Questo deve arrivare perché...
+
+Brainrepo (23:10)
+Sì, probabilmente
+
+da sviluppatori di terze parti che faranno un layer on top perché io non mi aspetterei questa parte di creatività. Magari un layer on top che poi può essere acquistato. È detto tra di noi e a questo punto Carlo mi metto anche il dubbio se sarà nel lungo periodo sostenibile quello di dare una casa all'open source per Microsoft perché noi sappiamo che
+
+Carlo (23:14)
+Sì.
+
+Brainrepo (23:40)
+che microsoft oggi ospita praticamente quasi tutti i progetti open source gratuitamente se non tutti i progetti open source praticamente gratuitamente ma questa roba sta per diventare insostenibile immagino no e quindi anche dal punto di vista economico dovremmo iniziare a ragionarci perché se continua così prima o poi mi aspettano
+
+ma Microsoft faccia qualcosa tipo non voglio dire copilot perché accendere il flame no? di license di copilot perché accendere un flame che è ancora un po caldo però insomma io ho visto qualcuno che iniziato a riceverle le bollette le bollette decuplicate
+
+Carlo (24:24)
+Abbiamo ancora un paio di giorni di cheap prices.
+
+Brainrepo (24:38)
+e quindi insomma... ciao Paolo! e quindi insomma il problema si pone, il problema si pone. Spostiamoci però a guardare e a osservare con attenzione o maezishel, ci puoi raccontare un po' come l'architettura? perché sono super curioso di capire insomma come funziona, perché io li immagino come questo...
+
+Carlo (24:38)
+ci siamo
+
+Brainrepo (25:06)
+zishel script, bass script gigante che fa un pacco di roba, quanto è lontano dalla realtà l'idea che mi sono fatto?
+
+Carlo (25:19)
+era così come tu dici fino forse a 10 anni fa o qualcosa del genere era uno script forse milla righe o più non lo so era così che faceva tutto diciamo dimenteva il completion, dimenteva il tema diciamo come è che si vede il prompt
+
+ti metteva anche degli alias funzionalità tutto insieme ma a certo punto c'è stata una divisione perché ci deve essere quindi adesso di architettura abbiamo quattro parti principali uno c'è lo script che è l'ingresso diciamo che sviluppatore che installa
+
+quello che deve fare è fare source di questo script e questo script gestisce tutto per mettere poi tutte le altre parti che basicamente non scafoldi ma è soltanto codice per mettere a posto tutte le altre parti poi c'è un common library, possiamo dire standard library
+
+sarebbe su Python o su Rust o qualsiasi cosa del genere, che mette delle cose generali, esempio cose interne di Omaisy Shell per rendere le cose più veloci, cose di Git che a questo punto prendiamo come common, diciamo che tutti lo usano e qualche cosa in più e poi tutto il resto si struttura in modo di plugin.
+
+sono parti del codice che tu scegli di usare. questo punto abbiamo un tipo 350 plugin o qualcosa del genere e un plugin potrebbe essere per esempio plugin di Python per gli sviluppatori Python, diciamo che ti mette il virtual environment quando vai dentro un
+
+vai dentro un folder che c'è un virtual environment messo lì, mette a funzionare e quando vai via lo spegne. cose di questo tipo. Quello che ti dico, abbiamo tipo 350, 400 plugin in modo ufficiale, diciamo dentro il repo, poi abbiamo un altro repo di external plugin che qualsiasi contributor che voglia può mettere lì suo link a un repo.
+
+del contributor con quell'extrana plugin che non c'è una garantia su quei plugins sono esterno e poi il quarto pezzo sono i themes, i temi che è l'aspetto visuale di Omazishare, quello tipico che lo vedi e dici questo è un tema in particolare che si chiama Role Russell
+
+è il nome del creatore del Dio Maisichel quindi l'architettura è questa poi dopo ti vai trovando dei problemi questo non so se è common o è un plugin che non bisogna essere obbligatorio per tutti ma l'idea è questa su queste quattro parti funziona tutto
+
+mi sa che sia andato un minuto
+
+Brainrepo (28:52)
+sì sì sì sì esatto mi ero dimenticato di smuttare ok ti volevo chiedere immagino che sia lo scegliere tra un plugin incluso nel pacchetto e uno della community come funziona avete delle linee guida che vi aiutano a dire questo sta qua questo lo mettiamo questo no come fare perché è una grossa responsabilità e soprattutto a
+
+Carlo (28:55)
+Adesso disegno così.
+
+Sì.
+
+Brainrepo (29:21)
+un valore anche in termini di relazioni con la community.
+
+Carlo (29:26)
+Sì, abbiamo delle guide ma non sono street diciamo, noi possiamo fare delle eccezioni con tutto questo dell'AI per esempio, ci sono arrivati tanti, io voglio il mio plugin di Claude, voglio che sia First Class Citizen diciamo di Home Edition, il mio plugin di Codex, il mio plugin di...
+
+GitHub Copilot e quindi per esempio a questo punto questi avevano tantissimi request ma l'abbiamo messo on hold e abbiamo detto ok aspettiamo vediamo dove va tutto e poi scegliamo se questo è importante per andare a
+
+essere un first class citizen, ma l'idea è sempre su come vediamo quello che la comunità vuole, se per esempio non lo so, PMPM che sta diventando un package manager per JavaScript che è usato sempre in più, a certo punto vediamo che ci siano tanti request su PMPM quindi forse se c'è un pacchetto third library lo mettiamo
+
+dentro al repo sempre che le license siano compatibili e tutta la roba, è sempre quello, quello che vediamo che la comunità vuole è che ha una certa base, per esempio c'è un package manager di non so, Haskell, che non ha un commit da cinque anni, sembra che ha dei problemi, ci sono cose migliori
+
+mica se ci sono 10 persone o 20 persone che lo vogliono non lo mettiamo perché quello
+
+non fa senso, può essere perfettamente third party e le persone che vogliono la possono installare. l'idea è rendere la vita più facile e installare un pacchetto che è first class, nostro, ha il seal, il warranty seal che noi ci guardiamo che non ci siano problemi di sicurezza, non vengano problemi dopo.
+
+Questo
+
+Brainrepo (31:45)
+il fatto che comunque lo mantenete o comunque ci avete un occhio addosso su questi su plug-in che vengono distribuiti insieme poi alla distribuzione di Omae Zishel esistono ulteriori benefici nell'essere first class citizen nella release o fondamentalmente da punto di vista tecnico
+
+Cioè immagino per esempio nel loader dei plugin ci sono dei benefici maggiori per i plugin di first class rispetto a quelli community o funziona tutto uguale?
+
+Carlo (32:28)
+No, è sempre tutto uguale ma è questo, diciamo è più... viene installato quindi puoi dire voglio questo plugin non devi andare a GitHub questo è il link del plugin, fare clone o qualsiasi cosa quindi nel senso tecnico è sempre lo stesso quindi infatti noi se c'è un plugin che è custom
+
+e anche la versione first class, noi prendiamo il custom perché pensiamo che il user ha deciso di prendere quel codice e forse fare qualche modificazione di qualsiasi cosa quindi no, non ha una differenza ma secondo me è più reputazionale di sicurezza la differenza.
+
+Brainrepo (33:16)
+Prima hai fatto una differenza tra i temi e i plugin. La prima cosa che mi è venuta in mente è livello architetturale i temi non possono essere dei plugin stessi o almeno trattare i temi con l'architettura e il plugin loader che avete per i plugin.
+
+Carlo (33:40)
+sì
+
+sono plugin ma l'idea è che i plugin non siano... i plugin in teoria non modificano l'aspetto visuale di Omazishare quindi va del terminal che ha Omazishare quindi l'idea è che tu puoi avere N plugin
+
+10, 20, 30, qualsiasi cosa, ma soltanto un tema, questa è l'idea, ma sì, in un modo architetturale potrebbe essere assolutamente che i temi fossero plugin e quindi un plugin in più se vuoi un tema in particolare, quindi soltanto...
+
+metti quel plugin nella tua lista e si potrebbe essere ma probabilmente è stata una decisione che si è presa 5-10 anni fa e è diventata così come tante cose ma si potrebbero essere diverse
+
+Brainrepo (34:42)
+C'è una domanda, perché abbiamo parlato di plugin? Il concetto di plugin mi ha sempre interessato, Anche perché qualche tempo fa io sviluppai un mio plugin system per un'applicazione che stavo facendo e possiamo anche dircelo, cioè il plugin system spesso è una grande ruptura di balle.
+
+e spesso la parte dell'ottimizzazione delle performance sono dopiamente ruotura di scatole nel plugin system. Avete mai avuto delle challenge da quel punto di vista? Perché io mi immagino, sai, io butto dentro l'utente medio prende e installa 70.000 plugin perché tanto, prima o poi gli tornerà utile, poi magari non li userà mai, no? Si installa, lo dicevi prima, nel plugin di Haskell.
+
+e ha provato a fare un Hello World una volta con Askel e non ci riuscito e quindi l'ha messo dappare però c'ha il plugin, la... come gestite questa cosa delle performance quando l'installazione compulsiva è dietro l'angolo?
+
+Carlo (35:36)
+Sì,
+
+sì questo è un problema assolutamente reale l'idea è fare che il load del plugin sia
+
+istantaneo, diciamo, che non faccia delle cose, che metta cose a posto ma che poi che siano le easy. questo abbiamo avuto tanti problemi con diversi plugin che sono super utilizzati, per esempio LVM che è un package manager di Node per versioni di Node.js. Prima, nel momento del source del plugin, in momento in cui
+
+tutto si inizializzava, si inizializzava anche MVM e forse prendeva mezzo secondo o un secondo qualsiasi cosa e quindi l'idea sempre è farlo tutto lazy, se per esempio a questo punto usi il plugin di MVM quello che succederà è che la prima volta che tu usi Node, tu usi MVM stesso, che tu usi PMPM, cose del genere
+
+a quel punto c'è una inizializzazione perché forse prenderti mezzo secondo la prima volta che apri non è un problema perché probabilmente apri note devi pensare qualcosa a fare se lo usi come un termina quindi è più interessante lasciarlo là che metterlo tutto nel momento dell'initerterme
+
+Quindi l'idea è sempre questa, è rendere i plugin immediati nel momento del source e lasciarlo tutto per dopo. Ma sì, abbiamo avuto tanti problemi in particolare con NPM e Python, il il il coso di virtual environment e tutta la roba a volte super super super lento.
+
+Quindi quello e poi cosa ti volevo dire? ⁓ sì, anche abbiamo avuto tanti problemi con Git, il tipico cosa di Home Is The Shell che vedi lì, sono nel Branch Master, ho tre file che ho modificato, ho sette file che ho aggiunto. Quindi questo è in un modo semplice un Git status, Git status lo mettiamo lì.
+
+questo è super, può diventare lunghissimo perché immagino un git status con un repo di 300.000 commit, 1 milione di file, non lo so, il Linux kernel per esempio.
+
+Cosa abbiamo fatto? Anche l'abbiamo fatto che sia e sempre Async, quindi nella prima volta che tu vedi il prompt non c'è quel Master sono il Master bla bla bla, ma a quel punto che c'è il prompt noi cominciamo a calcolare tutto il Gitstatus, tutta la roba e in ulteriori prompt tu c'è l'aria. Quindi l'idea è sempre questo, di passare la maggior parte dei calcoli più avanti.
+
+Brainrepo (39:04)
+Sì, anche perché tu non vuoi il tuo termine del laggoso quando ci stai interagendo, preferisci magari non avere quella informazione che avere il lag nel typing o cose di questo tipo. Pensavo una cosa, solitamente i plugin system hanno tutto un meccanismo di o di callbacking o di hooks per fare le cose, per montare le cose nel lifecycle dell'applicazione.
+
+dell'applicazione generale come funziona da voi
+
+Carlo (39:38)
+è un po' diverso di un plugin system che forse puoi trovare in un'applicazione di desktop o...
+
+perché per come è Shell o con qualsiasi altra forse Fish o Bash, tutto è sempre una riga che viene dopo l'altra, non c'è un event loop per esempio.
+
+JavaScript quindi è un po' diverso. Cioè i plugin soltanto sono esecutati una volta nel momento dell'inizializzazione e tutto quello che vogliono fare lo devono lasciare messi e poi torna all'execute principale
+
+e quello tutto deve essere fatto. Ci sono qualche guide perché non si perde il plugin ma è diverso a questo punto di altri plugin ma non ci sono callback, ci sono hooks per questo perché Shell non puoi lasciare cose al event loop o forse fare una way non ci sono cose di queste.
+
+Quindi l'idea questa. Puoi immaginare che se tu hai per esempio un...
+
+lista di 10 plugin quello che succede è che lo puoi mettere tutto in un solo script, cominci a Omizee Shell poi un plugin, altro plugin, altro plugin, altro plugin, finisce Omizee Shell questa questa l'ejecuzione di Omizee Shell è così quindi è po' diverso di altri plugin manager per esempio sto pensando a Calibre che è un'applicazione di ebook che ha un sistema di plugin assolutamente complesso con tante
+
+un'ultima,
+
+un'ultima, standard praticamente con tantissime funzioni noi non abbiamo questo soltanto un paio di cose che sono della libreria standard quello che ti ho detto la seconda parte di Omasishan ma non tanto è aperto infatti
+
+Brainrepo (42:00)
+corregimi se sbaglio immaginiamo il plugin di git no? tu hai detto io devo prendere un comando, eseguire plugin, eseguire eventualmente il comando e l'output magari parsarlo con il tema questa è la mia interpretazione di quello che stavi che stavi spiegando dimmi quanto è lontana dalla verità
+
+Carlo (42:20)
+2
+
+è
+
+vicino, vicino, abbastanza vicino, sì.
+
+Brainrepo (42:26)
+Ok
+
+perfetto immagina immagino immagina immagino perché tu lo conosci profondamente immagina il plugin Git no il famoso Git status di cui tu parlavi e mi immagino che io devo renderizzare la prima parte della linea io cosa faccio chiamo Git status mi prendo le informazioni parso e straggono quello che mi serve e renderizzo
+
+ma questa renderizzazione è immediatamente consecutiva quindi non ho bisogno di uno state manager o salvare lo stato da qualche parte, giusto?
+
+Carlo (43:05)
+Giusto, se devi salvare qualche stato o qualche cosa puoi farlo perché alla fine siamo in cielo, quindi puoi salvare una variabile che sarà sempre globale, tutti possono vederla, ma è così, se vuoi puoi avere uno.
+
+state per il tuo plugin. Ma questo che dici di Git è una cosa particolare di Zshell che ha una maniera di mettere computazione nella renderizzazione. È un po' strano ma l'idea è la renderizzazione della linea, quello che vedi, diciamo il tuo prompt, ha un piccolo posto dove puoi mettere computazione che comincia
+
+assolutamente dopo della renderizzazione e quando finisce rierenderizza tutta la linea. Questo è il modo che noi abbiamo per mettere il git status perché se tu puoi usare il tuo prompt ma quello sta lavorando o quel git status e a certo punto rierenderizza la linea, non perdi quello che hai scritto o qualsiasi cosa ma quello
+
+Brainrepo (44:06)
+⁓
+
+Carlo (44:20)
+diciamo diventa visibile la parte di kit.
+
+Brainrepo (44:24)
+immagino che questo sistema aiuti e venga utilizzato anche nel meccanismo dell'autocompletamento mi sbaglio
+
+Carlo (44:30)
+L'autocompletamento è una funzione di Shell che prende quello che hai scritto fino a questo punto, diciamo una funzione con l'unico argomento che è quello che hai scritto fino a questo punto, quindi sì, sì, esattamente.
+
+Brainrepo (44:50)
+Ci sono... avete mai... Allora, faccio uno step back perché in realtà c'ho tante domande che stanno provando a scendere tutte nella parte bassa della mia bocca e stanno incastrando. Abbiamo parlato di tanti plugin che vengono caricati e mi immagino che ogni plugin faccia delle cose. Prima hai usato una frase che è significativa, metta a posto delle cose, organizzi le cose.
+
+Ehm...esiste un sistema di gestione dei conflitti o dei side-effects, perché un plugin può cambiare il path, può fare cose...eh...
+
+Carlo (45:27)
+Questo è problema.
+
+Questo è un problema, l'ordine dei plugin è importante perché per esempio immagina che ci sia un plugin di FZF, il Fasi Finding del Terminal e quindi questo plugin quando viene in esecuzione, FZF deve essere lì, deve essere nel par per trovarsi per per qualsiasi cosa deve essere fatto.
+
+ma per esempio se usi Brue, il package manager di Mac, quello ha un plugin se stesso che mette a posto i pad, che trova dove è Brue, che ha degli autocomplete, tutta questa cosa, quindi se quel plugin non viene messo prima di quello di FZF, il secondo non ha senso, non fa senso, quindi...
+
+Brainrepo (46:07)
+meccan.
+
+Carlo (46:29)
+Ci sono tanti side effects. Con il terminal è questo anche un problema per riprodurre i back perché ti viene una persona che dice che a certo punto faccio qualcosa e implosiona, muore il terminal e tu ci provi, non ce la fai a riprodurlo.
+
+Cosa è che sta succedendo? Perché non è soltanto il init script, il .z shellrc, non è soltanto quello, perché anche il sistema operativo ha dei script di initializzazione che vengono messi prima di tuoi e non sai quali sono, quindi è anche difficile di trovare queste cose, quindi side effects sono solo un problema grandissimo nella...
+
+e noi proviamo di avere un sistema... e Zschell ha uno state management più o meno... è tutto molto... diciamo difficile di usare ma c'è qualche cosa tipo uno state management e noi proviamo di mettere le cose e usare questo state management nel plugin in modo sistematico
+
+per evitare al massimo dei side effects, è molto costoso, è assolutamente difficile.
+
+Brainrepo (48:05)
+Avete della telemetria per capire cosa sta facendo schiattare?
+
+Carlo (48:11)
+No, se diciamo noi abbiamo un modo in cui ti possiamo dire metti questo nel tuo shell, fai quello che ti fa scattare e mandami il log. Noi abbiamo questo ma noi non abbiamo telemetria, noi non sappiamo quanti usuari abbiamo, possiamo avere un'idea per i clone, in monthly clone e tutte queste cose ma...
+
+Noi non sappiamo quante persone usano i plugin, noi non sappiamo se un plugin è mica utilizzato per qualsiasi persona, noi non siamo, noi non sappiamo se qualcosa scatta, è tutto, se tu apri un issue io ti posso chiedere, mandami il log se vuoi e io ci guardo, forse non ci guardo mai ma provo a mandarlo, ma su questo punto stiamo facendo dei...
+
+l'improvement perché mio collega Mark sta lavorando in un trace più bello diciamo tipo flame graph non so se se conosci è tipico di web per vedere come si carica
+
+Brainrepo (49:16)
+Vengo dal mondo node senza flame graph
+
+è una delle prime cose che ho dovuto imparare
+
+Carlo (49:24)
+Sì, sì, quindi diciamo ha messo un tipo di trace per poi vedere cose che sta succedendo non soltanto cosa è che ha schiattato, era lo stato a quel punto, ma a osse vedere il tempo che prendono le cose ad essere esecutate che questo è un problema anche l'exec di Zschel è difficile misurare il tempo.
+
+Quindi stiamo provando di fare passi avanti a questo punto ma è sempre difficile perché Z-Shall l'ultima release forse è stata... 6 anni. L'ultima release che non si chiama di backfix e queste cose forse è stata 7 anni fa. E' un progetto che si muove molto molto piano piano piano e non va lontano quindi...
+
+Questo è anche un problema perché forse vedi che c'è un bug a ZCM che noi non ci avevamo trovati tanti, lo mandi lì, fanno il fix ma non c'è mai una release quindi il bug si apre lì. queste cose di log, trace sono molto difficili.
+
+Brainrepo (50:41)
+Avete un rapporto con il team di Zschel privilegiato di comunicazione?
+
+Carlo (50:52)
+No, il team di Zishan c'è un core team ma è sempre nel free time di quella gente e non è costante diciamo. Quindi c'è una mailing list di Zishan Workers che forse ha, non lo so, una mail al giorno, un paio di mail al giorno, forse ci sono settimane che non c'è nulla.
+
+quindi non è che sia tanto veloce quello che ti dicevo, Zschel si sviluppa su una mailing list ha lo stile Linux, Git e queste cose quindi non è che sia facile andare a Git a vedere cose che stanno lavorando questi ragazzi chi è che sta lavorando non lo sai fino a che non si manda il patch nella mailing list quindi il lavoro su Zschel è difficile di...
+
+e aspettarsi che venga il mio gioco perché non lo sa.
+
+Brainrepo (51:51)
+Sì, sì, Beh non pensi che la competizione con robe tipo fish abbia spinto qualcosa? senso io mi sarei aspettato un cambio, una riattività differente, Ultimamente c'è stata un po' di competizione su quel campo, o almeno mi è sembrato di vedere.
+
+Carlo (52:17)
+Sì ma quello che succede alla fine è che non c'è un interesse di business a certo punto perché è un progetto open source che non c'è nessuno che lo paghi per esempio non so, Git va dai developer lavorando su Git
+
+sono open source maintainer, sì, ma c'è uno stipendio dietro, e diciamo si sviluppa un top di Git. Zshel non ha questo, Zshel è il default di Mac, ma Mac mi sa che uso una versione di 15 anni fa
+
+per loro è tutto a posto quindi non c'è penso che non ci sia la competizione perché non c'è un interesse di questa nessuno guadagna niente con questa competizione e a certo punto quello che è successo nel mondo terminal, CLI, questi ultimi tempi è che ci sono tools per esempio starship che è un
+
+un tema slash plugin manager che è super usato questi giorni che è cross shell quindi puoi usarlo con phish, usarlo con zshell, puoi usarlo con powershell, quella di windows quindi a certo punto nel mondo del sierai terminal quello che viene fuori sono queste cose che sono cross shell il shell è diventato un implementation detail
+
+di progetti più grossi. Non penso che ci sia tantissima competizione, non penso che per esempio Mac ci sarà un cambio a Mac, si scel diventerà, non lo so, Fish diventerà...
+
+default perché Mac aveva prima bash come default ma hanno cambiato per un tema di license non è che hanno cambiato per un tema di ⁓ perché si scende meglio no no no mi sa che prima era MIT e poi dopo è diventata GPL
+
+mi sa, non lo so, non ricordo esattamente, ma hanno detto ok questa non è valida, non ci sta per license quindi usiamo si c'è anche MIT.
+
+Brainrepo (54:53)
+Sì, sì. Mi chiedevo, mi chiedevo prima anche un'altra cosa che è un po' si distacca, si distacca da quello di cui stavamo parlando qualche minuto fa, qualche secondo fa. è riguardo ai plugin, detto no, inizia, sono persone che dicono io voglio portare il mio plugin di Cloud Code, il mio plugin di Codex dal tuo osservatorio, come vedi
+
+l'integrazione di plugin AI su HomeMyshele. visto delle cose interessanti? Delle robe da dire? però questo è veramente carino, questo può avere senso.
+
+Carlo (55:36)
+diciamo che per andare un po' prima prima degli agent di Cloud Code, di Codex, di Copilot e altri il terminal in Shell stava perdendo un po' davanti ai GUI
+
+Visual Studio Code, esempio, ha tutto lì su IntelliJ, e tutte queste cose, i clienti di Git, GUI. con questo dell'AI c'è stata come una seconda gioventù per il CLI, perché c'è tantissima gente che usa gli agent sul termine, non li usa, nella UI di Visual Studio Code per Copilot.
+
+il testo pad di codex, nessuno usa quello lì. Cursor è un'altra roba perché è super ben integrato ma gli agent che sono di CLI stanno dando come una seconda vita ai terminal, tutti che lavoriamo su questo mondo di non soltanto noi che siamo plugin manager.
+
+insomma, ma anche tutti gli altri stanno trovando che l'AI sta tornando l'interesse della gente al terminal e questo è per me quello più interessante che ci sta dando l'AI. Ma poi dopo i plug-in e tutte queste cose c'è un plug-in di Claude che mi sa che non abbiamo fatto il merge perché ci sono diverse opinioni, sono diverse pull request che...
+
+diciamo diversi sullo stesso di Claude, ma secondo me è molto interessante l'AI per questo che ti dico, perché sta portando la gente un'altra volta al terminal, io che sono un terminal lover diciamo, piace, mi fa piacere.
+
+Brainrepo (57:37)
+Sì, tra l'altro c'è questa abridazione, per esempio pensavo a Warp che ho utilizzato con piacere poche settimane, dire, poi l'ho abbandonato, però ecco che fa diverse cose eai che in realtà...
+
+Qualunque tipo di terminal ben configurato ti potrebbe fare altrettanto bene come un plugin di Omai.sh e quindi mi chiedevo se c'era del fermento da quel punto di vista e poi pensavo anche un'altra cosa interessante una cosa che riguarda il fatto delle terminal UI
+
+che come dicevi tu stanno andando molto di moda no? Credo che non l'abbiamo ancora capito bene però le Terminal UI arrivano con un beneficio interessante è che molte di queste Terminal UI sono integrabili by design fammi spiegare meglio perché secondo me la assumatura sta là qualche tempo fa
+
+io devo sviluppare un tool che mi serviva solo per me stesso per analizzare dei CSW con una certa struttura, metterci nel fuzzy finding, fare insomma delle robe che devo fare al volo per trovare un certo prodotto per parlare poi col product manager e gli innaugurda
+
+nel file io lo vedo, tu non lo vedi nella UI probabilmente avete sbagliato qualcosa voi. Una roba molto easy che poteva anche non essere legata all'informatica. By design, by default, by mindset, la prima cosa che mi venuta in mente è vite install e fare un'applicazione web con React. Questo è quello che mi è partito per
+
+per la testa eeeh così poi mi sono detto ma perché stiamo facendo così? perché? io ho ciò fzf ciò csv che è un'altra piccola applicazione cina per visualizzare i csv e filtrare direttamente la command line ciò il dannato pipe operator io non devo scrivere una riga di codice è un file bash di due righe
+
+è un filebase di due righe dove ho tutto integrato no c'è il fatto per esempio di fzf che ti permette la preview ti fa ti fa fare quello che vuoi anche la pasta al sugo volendo e quindi ho detto ma perché devo scrivere codice quando con un comando io posso raggiungere lo stesso obiettivo in un decimo del tempo senza codice da mantenere solo usando la pipe operator ma perché ce la siamo dimenticati
+
+Carlo (1:00:33)
+Sì, sì.
+
+sì sì no assolutamente assolutamente così tante volte e adesso con l'AI è ancora peggio perché dici ok plan mode guarda voglio un web, fai lo come vuoi e voglio mettere un csv voglio vedere voglio dei filter voglio che si metta a posto questo voglio vedere tutti che sono così tutti che sono così quindi
+
+adesso è facile diciamo sì lo facciamo così ma poi tu puoi chi ti racconta? Non è che venga mantenuto per l'AI autonomamente bisogna o pagare dei token o mettere il tuo tempo e quindi quello che dici è così l'idea è che sempre tutti i progetti di terminal tutti i CLI
+
+importanti, diciamo quelli che fanno le cose bene, rispettano lo standard out, che quello che dici tu del pipe, Che diciamo, processi qualche data, passi con un pipe nel standard out al...
+
+che fa qualsiasi altra cosa poi lo passa, diciamo l'ultimo passo per esempio fase finding e lì puoi vedere tutto quindi sì ce l'abbiamo dimenticata e penso che con l'AI anche c'è una seconda vita per questo perché forse tante volte non ricordi come era FZF per non lo so mettere i primi risultati bottom e i ultimi risultati up no? com'è che era quello?
+
+Lei ha queste cose e sa. Quindi perché guarda il help e trova le cose prima di te. Quindi secondo me dobbiamo dare una seconda vita, un'occhiata a usare i tool che abbiamo nei nostri computer. Tu hai parlato di FZF, parlato di cose, diciamo più niche, che non ci sono in tutti i termini, ma GREP, T.
+
+non lo so, tutte queste cose e anche i replacement più moderni che ci mettono dei colori e tutta la roba, queste queste tool possono essere usate per 50 anni in più o 100 anni in più e vengono essere utili sempre, sì sì sì.
+
+Secondo me c'è lo stesso... diciamo il futuro è simile al passato per noi perché non vedo che la gente vada via del terminal nei prossimi anni, spero mai perché personalmente mi piace tantissimo essere lì quindi anche spero che la gente possa trovare usando MySciero o altri progetti, diciamo un modo in cui sviluppare il suo lavoro in modo semplice facile come...
+
+usando diciamo poca ram, poca cpu, tutte queste cose che sento interessante del terminal quindi io vedo un futuro non crescendo tantissimo perché crescendo linealmente come prendiamo nuovi sviluppatori ma secondo me sempre come come side hustle
+
+tempo libero, progetto di tempo libero e poi vedremo. Non credo che Omegishan diventi a certo punto un lavoro full time, io solo, diciamo, abbiamo la motivazione tutti e tre come team di continuare il progetto, di mettere anche più contributo al dentro, tutta la storia, quindi
+
+Vedo un... non vedo, diciamo, non c'ho il titolare da no, 10x in due anni, no, non è questa l'idea, ma noi siamo sempre aperti ai nuovi sviluppatori e anche ai contributor, ci sarebbe una bella cosa, no, i contributor,
+
+potrebbe essere qualsiasi futuro, se guardi cosa è successo nell'ultimo anno
+
+potrebbe essere che a certo punto il terminal non ci sia più. Potrebbe essere. Quindi Omegishen sarà quella piccola tool per i geek di 60 anni che vogliono avere l'esperienza che avevano 50 anni fa o 20 anni fa.
+
+Non lo so, lo so, perché guarda nell'ultimo anno nessuno pensava che gli agents sarebbero quello che sono oggi o due anni fa e guarda adesso praticamente tutti adesso sviluppiamo più o meno con l'AI quindi sta cambiando tantissimo l'industria.
+
+Brainrepo (1:06:06)
+tra l'altro io sono uno di quelli che usa praticamente quasi esclusivamente il terminale anche quando devo che ne so fare grammar check di un testo lo facevo il terminale probabilmente non è la UI migliore ma è una roba che mi viene ormai automatica vedremo insomma assolutamente
+
+Carlo (1:06:29)
+Serve, serve.
+
+Brainrepo (1:06:35)
+A questo punto passiamo al momento tipico e topico del nostro podcast, il momento in cui i nostri host e i nostri guest condividano con noi un libro, podcast, film, un vino, qualunque cosa abbia catturato la loro attenzione e pensino sia interessante da condividere con la nostra community. Quindi la mia domanda è, Carlo, hai qualcosa da condividere con noi?
+
+Carlo (1:07:01)
+Ho pensato a questo e ho due cose da condividere. Prima cosa è un libro, l'ultimo libro che ho letto è 1984 di Orwell. La prima volta che lo leggevo non ero familiarizzato con Orwell. Mi è sembrato molto interessante perché diciamo è scritto negli anni 40 dopo la guerra.
+
+diciamo l'idea è che sia nel 1984 ma nel punto di vista di qualche anno dopo diciamo. È assolutamente pazzo come la tecnologia viene usata a quel mondo per controllare la società e quindi è qualcosa da pensarci, specialmente nei...
+
+nei momenti che siamo adesso. E come seconda cosa, per portare qualche cosettina della Catalogna dove io sono, vorrei condividere un album di musica, si chiama Fans Dal Sol, di un gruppo qua di vicino a Barcellona, quindi ti passerò il link così possiamo condividerlo con la comunità.
+
+Brainrepo (1:08:21)
+Volentierissimo, volentierissimo assolutamente. Anche io porto un libro, è un libro che ho avuto modo di rileggere questi giorni mentre ero in vacanza su un panorama bellissimo, è Sette Brevi Lezioni di Fisica di Carlo Rovelli, è un libercolo che si legge in veramente pochissimo pochissime...
+
+un'ora non di più ma che mi ha aiutato proprio a disconnettere completamente con tutto ciò che mi circondava ed è molto molto molto carino e per cui ve lo lo ve lo consiglio. Carlo ti faccio una domanda prima di salutarti. Ho sempre visto Barcellona come un hub tech molto molto interessante.
+
+ci può dire due cose di barcellona è veramente come si vede da fuori nel senso se c'è questo fermento tech
+
+Carlo (1:09:31)
+Secondo me ci sono due barcelone a quel punto, diciamo quella di questo app tag che è diciamo la zona vicino al mare più nel nord est della città, diciamo ci sono tutti questi unicorn company, il posto tipico di startup dove tantissimi persone di specialmente Europa ma...
+
+ovunque del mondo vengono a lavorare nel mondo tech. Quindi esiste, esiste infatti questo mondo e secondo me è interessante perché Barcellona è città carina per vivere diciamo, se compariamo con l'Italia è molto simile diciamo la cultura anche la maniera di vivere diciamo.
+
+Ma poi dopo c'è l'altra Barcellona dove non c'è niente di tech, è una città molto più... non so come dire ma città più tradizionale che probabilmente è quella città dove noi catalani viviamo e ci organizziamo. Quindi è una città che ha tantissimo da offrire ma non soltanto come uptech dove andare a lavorare e poi andare via.
+
+è interessante anche conoscere la cultura locale e tutta la roba. Si sente che sempre vengono più aziende, non soltanto a cominciare qua ma anche ad aprire app tecnologici qua per c'è ancora.
+
+Brainrepo (1:11:19)
+interessante. Io ho una città che ho amato, mio fratello ha vissuto e lavorato là per un po'. E lui mi diceva, va beh lui viene dal mondo dell'architettura e mi diceva che era una città magnifica.
+
+Carlo (1:11:34)
+Per gli architetti è il top 1 posto per essere sì.
+
+Brainrepo (1:11:39)
+Lui
+
+ha detto i due posti dove vivere barra morire sono Barcellone e Siviglia. Ehm... quindi sì. Carlo, grazie mille per esserci venuti a trovare. Magari ci organizziamo in futuro per fare una chiacchierata su Polkadot se voglia.
+
+Carlo (1:12:02)
+Certo, è
+
+la face B della mia vita lavorativa. Un piacere essere qua, veramente contento che mi hai invitato al podcast perché è un progetto molto interessante, l'ho trovato carino, non lo conoscevo prima. Grazie di più a te.
+
+Brainrepo (1:12:06)
+Magari ci si
+
+Grazie a te, è stata una chiacchierata molto interessante perché ci ha permesso di guardare dentro qualcosa che noi prendiamo, installiamo, sai, copia e incolla, installi e... bom, è là. In realtà capire cosa c'è sotto, sono persone, c'è dell'architettura del software che abbiamo avuto in modo...
+
+di di di di di di di di di di di di di di di di di di di di di i view è comunque molto bello per questo ti ringraziamo ancora. Detto questo io vi do appuntamento alla prossima settimana sempre qua su git bar e nulla ci sentiamo tra sette giorni ciao ciao
+
+Carlo (1:13:07)
+Ciao ciao!
+
