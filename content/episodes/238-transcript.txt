@@ -1,0 +1,1014 @@
+Brainrepo (00:01.79)
+Bene e benvenuti su GitBar, nuova settimana e nuovo episodio qua nel nostro bar degli sviluppatori. Lo so, saltato alcune puntate ma abbiate pazienza, troppe questioni personali in corso e non ero davvero in grado di accendere le telecamere. Mi scuso, promesso, giur in giurello, che questa estate riusciremo a essere un po' più costanti.
+
+Volevo intanto ringraziare Livio che i modi integermo e costanti ci supporta, quindi un grandissimo abbraccio e direi che a questo punto se siete d'accordo possiamo iniziare l'episodio. In questo episodio avremmo potuto, insomma, lettere, leggere...
+
+alcuni passaggi o ma quello che in realtà pochi la cosa di cui pochi parlano è invece della questione che vorremmo portare oggi nel podcast lo so sembra un po' sconclusionato ma considerate che sono le nove e mezzo di sera e la mia giornata è iniziata alle 5 minuti un quarto quindi abbiate pietà di me. Detto questo di cosa parliamo oggi e con chi lo facciamo parliamo di due elementi
+
+Quando si parla di AI e di utilizzo, no, di generazione di codice automatico, detta alla Salvatore San Filippo, spesso lo facciamo da una prospettiva molto individualista. E questo ragionamento succede perché
+
+nella prima fase questi strumenti sono stati adottati in modo massivo direttamente dagli sviluppatori perché le organizzazioni solitamente ci mettono un po' di di tempo ad abbracciare c'è chi lo fa più volacemente ma generalmente comunque c'è bisogno di tempo per settare l'impalcatura di governance ma le prime esperienze erano esperienze empiriche dello sviluppatore per cui
+
+Brainrepo (02:24.221)
+il focus anche di analisi era legato al ragionamento dell'individuo e del contributor in un ambito molto contenuto di utilizzo per il singolo senza affrontare il problema di team e di organizzazione quello che faremo oggi o almeno proveremo a fare con il mio amico Alfonso Graziano che già conoscete, ciao Alfo
+
+Alfonso Graziano (02:50.99)
+ciao ragazzi
+
+Brainrepo (02:52.285)
+Sono super felice sempre di averti qui, ormai ospite fisso del nostro podcast, ma ci fa super piacere proprio affrontare con te questo tipo di prospettiva, perché ultimamente tu ti stai occupando di questa cosa, quindi come scalare lo spec driven development e la generazione automatica di codice nel team e ultimamente hai portato anche un talk
+
+su come scalare a livello organizzazione da poco col nostro amico Steve, no?
+
+Alfonso Graziano (03:29.358)
+Diciamo che è un argomento interessante. Poi vabbè con Steve abbiamo fatto, che tra l'altro salutiamo uno dei nostri colleghi, in quel caso abbiamo fatto un workshop su SDD pratico. Poi però arriveranno dei talk che insomma portano un po' la nostra esperienza su come abbiamo scalato SDD a livello di organizzazione. Quindi che cosa abbiamo fatto con il learning path.
+
+Brainrepo (03:56.671)
+era un disclosure, non potevo dirlo.
+
+Alfonso Graziano (04:00.174)
+No, avrei dovuto fare il talk ad Amsterdam la settimana scorsa se non avessi avuto la febbre, però lo registrerò quindi sarà comunque a breve sul portale di Intanation, tutto a posto.
+
+Brainrepo (04:11.614)
+Ok, ok, No, perché ricordo che stavate stavate lavorando poi per divulgare quello che avete fatto poi dentro nirform per far scalare da una parte nel tuo team che ormai è da diverso tempo che utilizzate spec driven e poi tutto il lavoro che avete fatto all'organizzazione. Beh, te voi insomma non vi invito per niente. Però insomma oggi oggi proveremo ad affrontare questa prospettiva perché secondo me è quella che
+
+è meno coperta in generale e soprattutto è... finché si ragione in termini di tool e di come si usano i tool in un modo o nell'altro diciamo è abbastanza semplice ma quando oltre ai tool entra in gioco il coordinamento di persone tutto diventa un bordello totale no? e quindi ha senso provare a...
+
+fare un po' un focus e metterci una lente di ingrandimento. Considerando che anch'io nel mio team sto usando spec driven development, la prima domanda è io sono un tech lead o comunque sono un lead che guida un team, che ha la responsabilità di dare una direzione, aiutare il team a trovare la sua direzione, ok?
+
+e ho già provato magari spec driven development per conto mio cosa pensi sia opportuno fare proprio dei zero? cioè io sono un tech lead, c'è un team che ha sempre lavorato in modo classico quindi gira stories, prendo la story, organizzo lo sprint, prendo la story, la affronto nella board, faccio il delivery della mia story, siamo tutti felici, mi fanno la review probabilmente
+
+me la passano anche con look good to me e la immergiamo e andiamo avanti. cosa dobbiamo fare in un contesto di generazione di codice, di team? Come coordinare tutto?
+
+Alfonso Graziano (06:23.598)
+Secondo me ci sono un po' di casistiche differenti. La prima casistica, quella in cui molti team si ritrovano attualmente, io come TechLead magari ho già lavorato su queste cose, ho già utilizzato SDD in produzione, ma il mio team no, magari perché il team è nuovo, sono new hire, magari sono persone che vengono da un background un po' più classico, cioè non utilizzano AI
+
+in queste modalità e in quel caso la prima cosa che devi fare a mio avviso è lavorare tanto di upskilling fare tutta una serie di cose Mauro mi interrompo un attimino io sento un pelo di riverbero cioè mi sento in cassa in qualche giusto un po' proviamo? sì ancora un poco poco non so perché
+
+Brainrepo (07:11.454)
+Adesso? Adesso?
+
+Brainrepo (07:17.822)
+Allora dammi un attimo...
+
+perché pensavo fossi io ma in realtà qua vedo l'eco cancellation
+
+Prova a parlare.
+
+Brainrepo (07:34.974)
+Tu hai l'eco... Tu hai l'eco cancellation, forse non le mie cuffie.
+
+Alfonso Graziano (07:39.438)
+E va.
+
+Brainrepo (07:43.422)
+Prima?
+
+Alfonso Graziano (07:44.655)
+prova prova prova no non sento nulla vediamo poi nel caso ti ti rompo il scadolo allora dicevamo quindi ci sono due casistiche la prima casistica è io mi ritrovo a lavorare in un team dove nessuno utilizzate sti di prima in questo caso a mio avviso vanno fatte un po' un po' di cose facciamo finta che il progetto è nuovo no quindi stiamo ancora nella fase di formazione del team
+
+Brainrepo (07:51.678)
+Beh, tranquillo.
+
+Alfonso Graziano (08:13.582)
+la prima cosa che farei è iniziare ad adottare SdT sin dal principio quindi magari partiamo un pelo più lenti magari iniziamo ad integrare questa metodologia la prima settimana andiamo un po' più lenti sulla delivery che mi va benissimo
+
+però mi avviso alla prima cosa che dobbiamo fare essere tutti quanti sulla stessa pagina a saper utilizzare i tool e a quel punto tu come tech lead se hai già utilizzato tool sdd sei il champion
+
+Quello che farei io in un team è fare tanto per il programming, almeno inizialmente, per far vedere come utilizzare SDD, perché mi è capitato di fare delle chiacchierate con team che pensavano di utilizzare SDD in maniera corretta e poi facevano, insomma, alcuni dei classici errori che si fanno, che ci stanno assolutamente quando si inizia. Però se si fanno delle sessioni per il programming, se si fanno delle sessioni dove si lavora insieme,
+
+analizza un aspetto insieme, ci si lavora insieme, secondo me le cose possono andare molto veloci. Ti faccio un esempio pratico, il mio team quando abbiamo iniziato a lavorare, due new hire in near form, due persone molto molto molto competenti, ma nessuno che avevamo utilizzato SDT e quindi B-Med nel nostro caso in produzione. Magari avevano già l'intuizione di come potesse funzionare però non lo avevamo mai utilizzato.
+
+utilizzando questo approccio noi in una settimana siamo riusciti ad arrivare che i colleghi erano proficient più di me perché poi si sono presi loro in carico di gestire il contesto, aggiornare B-med, fare tutte le attività di routine e quindi questa è la prima cosa su cui andare a lavorare la seconda casistica che è quella di dire ok io mi ritrovo in un team dove già tutti quanti hanno utilizzato SDD
+
+Alfonso Graziano (10:13.454)
+quello che farei è comunque andare a definire delle pratiche di team perché SDD come metodologia possiamo utilizzarlo comunque in maniera diversa con dei flavor diversi dove teniamo le spec, facciamo le spec in append oppure le teniamo aggiornate ci sono tutta una serie di scelte che vanno fatte e vanno fatte a livello progettuale quindi
+
+una roba che secondo me ha senso fare è una meta spec o comunque qualcosa un documento, DR come lo vogliamo chiamare che definisca come il team utilizza SDD
+
+perché questa roba qui evolve nel tempo perché ti faccio un esempio pratico, noi attualmente stiamo utilizzando SDT ma non utilizziamo, qua mi menano se lo dico però lo diciamo comunque, non utilizziamo Bmed al 100 % con i binari che ti dovrebbe offrire Bmed perché in alcuni casi è un overkill, non c'ha senso, col tempo il team acquisisce, non so come dirlo,
+
+acquisisce abbastanza mastery tale per cui capiscono quando utilizzare lo strumento giusto e la metodologia giusta in quel contesto.
+
+Brainrepo (11:29.31)
+sai Alfo io questo è il nuovo progetto che ho fatto invece sono partito, probabilmente mi licenzi no perché sto scherzo, però sono partito con un approccio diametralmente opposto volevo fare un esperimento e cosa ho fatto? intanto avevo due new wire
+
+Alfonso Graziano (11:40.846)
+Ok, cominciamo.
+
+Brainrepo (11:48.639)
+New Air che però, due New Air è un'ingegneria near form lungo corso, semplicemente lavoriamo per un cliente per il quale dobbiamo costruire anche una certa cultura dello spec driven development, anche perché siamo là per quello fondamentalmente, quindi noi sì abbiamo una delivery
+
+ma soprattutto dobbiamo portare le pratiche. Questa è un po' la mission dell'azienda per cui lavoriamo entrambi. Quindi cosa ho provato a fare? Ho provato ad usare un approccio diametralmente opposto, molto più empirico, perché avevo bisogno che l'organizzazione e il team definisse le pratiche. Io di per sé sono una persona molto troppo opinionata, ok?
+
+tanto che per esempio se devo partire un progetto il bimaldinstal non lo farei mai ok? ma perché sono molto opinionato e ho le mie opinioni del 50 n di akaka che pensa insomma che le sue opinioni vadano contro tutti quindi per una volta ho detto proviamo a livello empirico a fare emergere quelle che sono le pratiche
+
+analizziamo e poi a quel punto contestualizziamo con l'esperienza che io porto come tech lead, come guida. Però portarla in una fase di retrospettiva dove c'era già un'esperienza comune e una serie di problemi legati al contesto dell'organizzazione dove si si approccia. Cosa ho fatto? Ho preso il team, gli ho detto utilizzate questo tool perché nel nostro caso specifico c'è un tool in posto, non vi dirò neanche sotto
+
+tortura che tu le è, però c'è un tool specifico che non amo per niente e utilizzatelo al meglio. Considerate che si tratta di spec driven development, quindi fate upskill, l'upskill che in azienda abbiamo è abbastanza profondo e ti aiuta a capire come usare soprattutto quali sono gli intenti di quello che stai facendo.
+
+Brainrepo (14:09.438)
+per cui partivamo da una base insomma che lo sai bene nei team non abbiamo scappati di casa, abbiamo persone con una certa professionalità per cui ho detto proviamo a vedere come l'organizzazione e il team si manifesta nelle pratiche e poi proviamo a fare un'analisi razionale di quello che ha funzionato, quali sono gli ostacoli, dove sono gli attriti e a quel punto ci caliamo una metodologia
+
+facendo in modo che la metodologia si sviluppi sull'approccio, al posto di essere una roba più guidata da letteratura, dal Vangelo secondo i diosmani e compagnia cantante. ho provato a fare... Scusa, giusto per finire. In modo pratico, come si è sviluppato? Semplicemente... Gira? Ho creato delle storie che avevano solo l'intento...
+
+Alfonso Graziano (14:53.149)
+No, no,
+
+Alfonso Graziano (15:01.934)
+Mmh.
+
+Brainrepo (15:07.806)
+Quindi anche in termini di requisiti, volutamente sono rimasto molto lasco perché avevo bisogno di misurare quanto lo sviluppatore uscisse dai vestiti di sviluppatori, diventasse più product guy, perché ormai i confini sono molto sfocati.
+
+E una volta che ho dato questi stories ho detto fate spec driven development come volete, non allineatevi sulle metodologie e ho settato una retrospettiva quindicinale ogni quindici giorni dove si analizza tutto e già per esempio tutto sta convergendo. Ed è incredibile perché molte delle pratiche da letteratura ci siamo resi conto sono zavorra.
+
+E una cosa che è emersa profondamente è che cos'è una spec? E quali sono i livelli della spec? Una cosa che nella letteratura raramente emerge, perché sì si parla di che cos'è una spec, ma dell'identificazione dei livelli di una spec consumabile dall'uomo e consumabile dalla macchina, e quali sono i gap tra uomo e macchina?
+
+Non è un ragionamento così mainstream nella comunicazione globale anche in termini di metodo, questa cosa è uscita in modo empirico ed è incredibile secondo me, veramente bello, è entusiasmato tantissimo.
+
+Alfonso Graziano (16:40.814)
+No, guarda, sono d'accordissimo con te sull'approccio anche perché anche noi abbiamo fatto una cosa molto molto simile. Siamo partiti dal dire, ok, in realtà abbiamo fatto una strada quasi al contrario, che è stata dire, ok, proviamo a iniziare a seguire il framework, in quel caso, perché ti offre dei boundaries,
+
+L'abbiamo iniziato a seguire, anche noi una retrospettiva, in questo caso settimanale, che però spesso e volentieri schippiamo, è più allineata al tuo time frame. E quello che abbiamo fatto col tempo, man mano che facevamo upskilling e quant'altro, abbiamo rimosso alcuni constraint.
+
+proprio tanti ne abbiamo rimossi, tale per cui attualmente abbiamo una metodologia di sviluppo che a mio avviso per First Principles è ancora SDD, ma è molto differente, molto più lightweight rispetto ai framework ciccioni come ci vengono venduti con 500 riga per spec.
+
+E secondo me questo è quello che ogni team dovrebbe trovare, il giusto bilanciamento rispetto a quello che gli serve. Poi, ovvio, c'è una differenza anche in termini di come il team è costruito. Noi banalmente non abbiamo un PM, quindi le nostre spec sono delle spec readable da Software Engineer.
+
+anche quando definiamo la spec con l'intento, no?
+
+Alfonso Graziano (18:23.342)
+facciamo polluccia, ci mettiamo anche delle informazioni dalla Software Engineering però mi immagino un team dove c'ha un Product Manager, team dove c'ha un design, un team veramente molto cross funzionale la spec che definisce l'intento non dovrebbe avere parti troppo tecniche quindi a mio avviso nel momento in cui un team inizia a utilizzare SDD un po' con Wayslow anche come SDD viene adottato
+
+è un po' il riflesso del team, della struttura del team, del livello di maturità del team. E questa roba, così come hai detto tu, fa emergere un sacco di cose interessanti.
+
+Brainrepo (19:06.494)
+Sì, sì, a livello pratico come stai facendo? Come funziona il flow?
+
+Alfonso Graziano (19:13.422)
+la dico male quello che facciamo al momento è come dicevo molto molto lightweight quindi ed è molto simile al processo di sviluppo che in realtà veniva fatto prima semplicemente con delle spec ben fatte poi dipende anche molto dalla casistica perché ti faccio un esempio ci sono casi in cui avere una spec vera propria
+
+potrebbe non aver troppo senso, cioè utilizziamo la storia, la classica storia gira come una spec, no? e quindi là dentro ci mettiamo una buona descrizione, mettiamo degli acceptance criteria che ci hanno senso, la rivediamo insieme, solitamente durante lo stand up e poi la persona se la prende quello che fa di solito è dare al buon copilot l'ID della storia, cioè abbiamo l'MCP, gli dice dobbiamo implementare sta roba, iniziamoci a lavorare
+
+Questo per storia è di grandezza abbastanza piccola. Quando dobbiamo fare dei refattering o comunque implementare delle cose un po' più grosse, un po' più ciccione...
+
+Facciamo in base a quello che serve solitamente dei documenti su Google Doc o degli ADR in Markdown in base a chi deve vederli. Se li dobbiamo vedere soltanto noi, ADR in Markdown li mandiamo come PR li rivediamo insieme anche in sincrono ci trovo abbastanza valore a rivedere le cose in sincrono in alcuni casi quindi è una cosa che facciamo. Oppure se è una roba che deve essere customer facing la condividiamo al cliente in Google Doc.
+
+di solito facciamo, quindi qua ti parlo di spec ancora, quindi facciamo commenti oppure anche qui una sessione sincrona tutta questa roba poi, tutta questa conoscenza, tutte le decisioni, tutto quanto diventa alla fine un file markdown che contiene la spec solitamente arrivato a questo punto contiene sia
+
+Alfonso Graziano (21:08.974)
+cosa vogliamo fare, sia come vogliamo farlo e in alcuni casi anche qualche dettaglio tecnico quando è necessario, quando il come vogliamo farlo cambia molto in base alla parte tecnica e poi da lì implementiamo SDD, cioè creiamo il piano, facciamo la reviewe di tutto quanto e questa roba qui
+
+almeno per quello che vediamo noi sta funzionando molto bene perché utilizziamo praticamente tra molte virgolette diversi livelli di SDD in base alla complessità del problema che stiamo affrontando quindi non ci facciamo il pipone a scrivere 500 righe di Markdown per una storia con 3 acceptance credit
+
+Brainrepo (21:47.071)
+perché state usando il tool giusto? perché se non le righe di Markdown sono due mila. Si usate quella sbagliata. Ranterò per un tool di SDD di cui non farò il nome ma ci ranterò tutto il giorno su questa cosa. Vieni preparati. Sì, io utilizzo un approccio molto simile, però adesso...
+
+Alfonso Graziano (22:04.654)
+il poll dei commenti per chi lo sa, per chi sta ascoltando, qual è il tool.
+
+Brainrepo (22:15.998)
+abbiamo iniziato, proprio fresco fresco, a cambiare leggermente l'approccio e a sperimentare un approccio nuovo. Allora, intanto come vi dicevo, per la natura del progetto che stiamo facendo, anche noi siamo senza product manager, perché stiamo facendo del tooling interno, che è molto complicato, che è un prodotto a tutti gli effetti, ma non abbiamo
+
+manager in questo caso quindi noi siamo i product manager del prodotto ecco con la che l'upskilling serve davvero e il tech lead oggi non può sostituirsi a un product manager ma il team che si sostituisce al product manager e questo passaggio sembra buttato là ma aprirebbe una parentesi per cui potremo rimanere settimane e quindi cosa succede si condividi l'intento, l'intento generale no?
+
+è un polo scope. Una volta che abbiamo condiviso l'intento e generalmente questo lo mettiamo dentro la storia gira, che è l'unica cosa che la storia gira contiene, insomma un minimo di asset and script, ma senza troppi dettagli, perché essendo del tooling tecnico io mi aspetto che i miei software engineer siano anche un po' dei test engineer.
+
+Alfonso Graziano (23:37.454)
+che i tuoi
+
+Brainrepo (23:44.223)
+immaginare gli edge case scenario, che siano anche un pelino risk manager per pensare cosa può andare storto, perché la figura dell'engineer dal mio punto di vista sta cambiando e quindi secondo me quella è la direzione, sto un po' promendo sull'acceleratore su questo.
+
+Alfonso Graziano (24:04.174)
+ti faccio una domanda dal vocato del diavolo, sono una persona orribile, ma premesso che sono d'accordissimo con te, il mercato è quello che cerca in cultura ed è quello che a mio avviso cerca ora anche se non tutti l'hanno notato, la domanda è ma...
+
+Brainrepo (24:07.774)
+Vai, devi!
+
+Alfonso Graziano (24:20.622)
+secondo te tutti i software engineer vogliono fare questo salto vogliono fare questo cambiamento vogliono affrontare vogliono diventare anche loro un po' PM, un po' tech lead cioè vogliono avere queste sfumature
+
+Brainrepo (24:35.454)
+No, no. Nel team ci sono software engineer diversi. Nel team attuale io ho persone molto dinamiche. Però ci sono, riconosco che ci sono dei software engineer, anche da noi, molto molto verticali, molto molto specializzati, che per cui sarebbe uno spreco nel termine... non voglio usare spreco.
+
+per cui sarebbe uno strecciare un po' too much e perderti una serie di vantaggi che in realtà non stai ottimizzando. sì, se io ho molto verticale, cosa vi posso dire, un king della performance, io mi uso le sue skill e mica gli dico diventa prodotto, però per esempio lo metto a ragionare sugli eschi scenario che riguardano la performance.
+
+perché c'è quel tipo
+
+Alfonso Graziano (25:32.654)
+Però, per quella persona lì, mi aspetto che se sei molto verticale su un topic, mi aspetto che tu abbia già una masteritale per cui fai già mitigazione del rischio, fai...
+
+Brainrepo (25:43.103)
+Esatto, esatto. Quindi sì, l'altro sviluppatore che vuole fare il single contributor, vuole scrivere solo il codice, diciamo che probabilmente sarà una figura che avrà delle difficoltà nel mercato. Non perché Mauro è brutto, è cattivo e non ci li vuole, ma perché il mercato sta cambiando. Oggi è molto più semplice essere cross funzionali, anche come persone.
+
+con dei rischi su cui poi potremmo aprire delle parentesi ma ecco perché per esempio nel team serve sempre possibilmente un product manager, uno esperto di prodotto, magari un UI UX designer senza lasciare a noi, senza sensibilità artistica e senza sensibilità di usabilità soprattutto la creazione di interi. Quindi insomma sì ci sono delle nuance.
+
+ma comunque oggi è molto più facile essere cross funzionali e se sei nella condizione di doverti gestire a solo secondo me ha senso sviluppare questo tipo di sensibilità un po' più orizzontali perché dal momento in cui la verticalità va a coprire delle nicchie molto definite di san filippo c'è ne uno o di matteo collina c'è ne uno qui cioè alla fine
+
+Il valore generato da persone dinamiche che per lavoro risolvono i problemi in ambito IT con codice specifiche è secondo me l'escigratis di prigioni in un momento dove il mercato ha un grande punto interrogativo.
+
+Ecco, ecco il meccanismo è questo. Comunque, ritornando alle spec, a quel punto cosa succede? Io condivido l'intento, un po' di scope e mi aspetto una spec di risposta che non io come tech lead, ma il team revisiona. Solitamente il tool tende a fare le spec
+
+Alfonso Graziano (27:49.23)
+mmm
+
+Brainrepo (28:01.918)
+enormi di fluff anche installando caveman spesso non si riesce ad abbassare e nella spec mi ci tira fuori anche le interfacce delle classi o delle funzioni e dico io frega cazzi quelli sono dettagli implementativi e non è questa la fase e questo secondo me gli LLM ancora hanno delle difficoltà nella fase di generazione delle spec no?
+
+Alfonso Graziano (28:18.926)
+non
+
+Alfonso Graziano (28:28.302)
+secondo me non è una questione di LLM, secondo me è una questione di TUL e di ARNES, sì. Stavo parlando con una persona all'AI DevCon a Londra, è stato un evento insomma dove abbiamo avuto un bel po' di nearformers, e stavo parlando con questa persona che in alcuni casi specifici, in alcuni domini specifici
+
+Brainrepo (28:34.238)
+di harnessing.
+
+Brainrepo (28:38.334)
+Ecco perché sto usando un tool di merda.
+
+Alfonso Graziano (28:57.934)
+è riuscito a costruire un harness su cose tipo RM, la NetSuite, queste cose qui, no l'ho detta male, non RM, che cosa? Enterprise Resource Management? Ergo, sì. E praticamente è riuscito a costruire un harness tale per cui su determinati domini lui può solo scrivere la spec, la parte di planning non gliene frega una mazza,
+
+Brainrepo (29:08.862)
+è un ERP
+
+Alfonso Graziano (29:25.39)
+perché ci sono tutta una serie di pattern che vengono ripetuti tale per cui tu lo dai dai la spec che dice cosa devi fare la gente con l'harnes giusto riesce a figuritare corretto
+
+Brainrepo (29:36.191)
+Sì, perché c'è magari un engineering playbook che ti aiuta. Però in realtà al di là di quello, secondo me, quello che io sto notando a livello di processo, tenete presente, ripeto, che è un percorso, un processo che non è da manuale, cioè lo stiamo affinando, lo stiamo comprendendo più che affinando, considerate che il progetto è partito veramente da pochissimo. Quindi qual era il nostro problema? E intanto che Storia inputa allo sviluppatore.
+
+che la trasforma in una spec e che a quel punto, con questa spec, qualcuno dovrà fare review. Solitamente ho sentito tante persone parlare il tech lead che fa review, ma detto tra di noi, ci sono... esatto, noi fondamentalmente spendiamo il 90 % del nostro tempo a rimuovere roadblockers, ok?
+
+Alfonso Graziano (30:19.822)
+No, che ci sei al tempo? Non mi puoi!
+
+Brainrepo (30:32.574)
+fondamentalmente siamo l'ANAS dello sviluppo software, ok? Alla fine è veramente difficile, quindi il meccanismo invece che io sto adottando è leggermente diverso e può sembrare controintuitivo, ma sta generando un botto di engaging. Cosa faccio? Ho chiesto all'ingegnere che quando fa la spec fa un piccolo talk di 15 minuti
+
+dove fa la presentazione della spec.
+
+Quindi c'è una demo della spec e la gente non deve scorrersi tremila righe e in più stiamo lavorando per tunare l'Harness in modo che possa fare slicing della spec. In modo che la spec che si presenta... guarda, c'ho gli appunti perché proprio oggi stavo pensando a come organizzare l'Harness.
+
+e ci stavo ragionando profondamente. L'aspect che ci interessa discutere è la parte che evidenzia cosa è in scope e cosa non è in scope. Primi due cose gli obiettivi ovvio, gli ascettance criteria ma senza tutti i cazzo di 7000 agi che scenario perché quelli non mi interessano
+
+Alfonso Graziano (31:58.543)
+e vediamo alla
+
+Brainrepo (32:01.119)
+cioè quelli è responsabilità dello sviluppatore e poi in code review ma non in spec review che è un'altra cosa in spec review io non voglio fare review d'interfacce non mi interessa
+
+Alfonso Graziano (32:15.63)
+Allora, a mio avviso dipende da quella... dalla tipologia di spec, da quello che stai provando a fare, cioè se stai integrando una nuova logica di business che è straintricata, che ti va toccare 50.000 pezzi, che ti va a fare tutta una serie di cose, forse andare a vedere gli edge case può avere senso in quello scenario lì, perché...
+
+perché in quello scenario lì noi li chiamiamo edge case però in realtà non sono edge case, cioè è come il codice deve funzionare per far sì che l'epipad va bene.
+
+Brainrepo (32:53.182)
+ma quello lo vedi in spec review o in code review? Quello il team lo affronta in spec review o in code review?
+
+Alfonso Graziano (32:57.966)
+io lo vedo
+
+Alfonso Graziano (33:01.902)
+Dipende da quanto se io gestisco male gli edge case va tutto puttane. Cioè se il costo di sistemare degli edge case è basso in code review perché non voglio investirci troppo tempo ora. Però se la spec
+
+C'ha tre requisiti e di quei tre requisiti c'ho 50 edge case perché questo lo devo toccare, questo lo devo gestire. Ti faccio un esempio molto banale. Noi stiamo lavorando su un agente. Abbiamo fatto un round di feedback dagli utenti, abbiamo raccolto 200 traces con dei feedback e abbiamo fatto clustering delle modalità di fallimento dell'agente corrente. Potremmo dire...
+
+si potrebbe dire che tutto quello che abbiamo implementato nella scorsa settimana sono edge case come gestire edge case, come dare cardere alla gente per me in caso sono... esattamente quindi se quello che noi chiamiamo edge case è il centro della spec allora non me ne frega niente, lo devi gestire all'inizio se no vabbè sti cazzi, ovviamente lo gestisci in fase di review
+
+Brainrepo (33:58.415)
+vabbè, in quel caso non è... In quel caso sono più votali della spec ovvio, certo.
+
+Brainrepo (34:18.334)
+Sì, sì no, perché secondo me sta là e secondo me c'è ancora molto da discutere su che cos'è una spec review, che cos'è una code review e cosa va dove. Di questa cosa non se ne parla tanto ma cambia tutto, cambia in termini di approccio, cambia in termini di distribuzione del carico di lavoro, a quel punto capisci se puoi fare una review in real time tipo una presentation.
+
+o no. Così come per esempio una cosa che ho dovuto affrontare è stata quella cosa che l'ho letto da qualche parte quindi riuso un nome che sto rubando, quella cosa che era lo Spec Theater, no? Questa spec super flaffosa di robe con 70.000 age case di cui alcuni manco se nevicasse il 15 di agosto.
+
+Sott'acqua. Quindi in realtà la costruzione di guardrail e di senso di spec secondo me è importante. Ed è una cosa condivisa. Per cui io mi aspetto che il team in una fase di design, perché la revisione della spec è una fase di design, si confronti attraverso una conversazione.
+
+Una volta fatta questa conversazione io mi aspetto uno sviluppo di second layer spec che è la parte che contiene i dettagli implementativi, le interfacce, tutte le robe che l'LM in fase di generazione della spec si butta là, ok, prendendo dalle confluence page, dai playbook, dalle robe, ma per me quello
+
+è già una fase implementativa.
+
+Alfonso Graziano (36:17.966)
+Assolutamente sono d'accordo e guarda ti faccio ti dico anche un'altra cosa a cui stavo pensando proprio questa settimana tutti i tool che noi oggi stiamo utilizzando per fare SDT sono nati tra virgolette
+
+prima del... io lo chiamo momento opus 4.5, cioè prima di novembre, insomma 25, dicembre 25, cioè prima che gli LLM avessero una potenza tale per cui in fase implementativa molte cose le fai zero shop, cioè tu gli dai un prompt e lui lo fa e l'implementazione è molto decente. Quindi un sacco del... workflow, un sacco della robustezza
+
+che Sdd doveva avere era dovuta dal fatto che i modelli fino a 6-8 mesi fa erano non buonissimi per utilizzo professionale. Oggi abbiamo dei modelli per cui
+
+se in molti casi, questo io lo vedo perché ho tirato giù delle cose solo con una spec senza l'implementation plan da paura veramente spettacolari perché i modelli al momento soprattutto con i vari utilizzi di subagents insomma tutte le varie cose tutto l'arnes che ci viene offerto
+
+abbiamo dei modelli e degli agenti abbastanza potenti per cui anche solo dato una spec molto minimale ma comunque completa senza supercazzole senza le 2.000 righe di spec ma che comunque ci dà delle informazioni i modelli riescono ad implementare roba
+
+Brainrepo (38:07.454)
+poi se mi permetti di aggiungere il fatto che la spec contenga dei dettagli implementativi vuol dire che tu stai almeno adesso super opinionato si può dire ma dipende ok diciamo tutti dipende dal mondo ma nella mia esperienza questo succede questo accade quando
+
+ti manca una vera ingegneria completa del contesto. Cioè, una cosa che ho capito, o almeno che penso di aver capito, è che in molti casi la gente pensa che la spec sia l'unique e la sola single source of truth. E manca l'azione di distillazione di pratiche dalla fase di planning.
+
+Se tu nella fase di planning, quindi la fase in cui la spec che rimane un documento molto più light, che però definisce gli intenti nel dettaglio, lo scope e gli asset and criteria, si tra
+
+Alfonso Graziano (39:16.526)
+completa morta di supercazzole
+
+Brainrepo (39:19.166)
+Esatto. Si deve trasformare in un dettaglio implementativo quello che ne viene il plan e un artefatto intermedio che in realtà può essere pregno di pratiche che possono essere promosse di azioni che possono essere promosse a pratiche. Allora a quel punto io mi aspetto che mi aspetto che l'ingegnere che sta trasformando la spec
+
+in implementazione, riconosca queste pratiche perché noi lavoriamo solo con senior e io mi aspetto di lavorare solo con senior, ok? Se c'è un team dove c'è il junior, è responsabilità del senior fare una review dei dettagli implementativi in modo che supporti il junior a sviluppare questo tipo di sensibilità, ma mi aspetto che l'ingegnere sia in grado di dire, hey raga, guardate quest'approccio.
+
+Cosa ne dite? Lo trasformiamo in pratica? Quali sono i confini per trasformarle in pratica? E quello diventa con un processo, una pratica che andrà a comporre il contesto globale del progetto o dell'organizzazione attraverso una schila, attraverso tutto quello che cazzo volete, ok? E a quel punto tu quella cosa non la ripeti, non fa parte delle spec, non ne fai review al massimo
+
+Alfonso Graziano (40:26.254)
+...
+
+Brainrepo (40:48.222)
+L'ingegnere che poi farà la review dei dettagli implementativi della feature NPU1 che vede questo approccio utilizzato dice no ma qua ha utilizzato questo approccio in modo non corretto fuori dallo scope dove questo approccio è interessante fammi rifinire i banderis della pratica e questo secondo me è un modo mature cioè il modo autoapprendente e io raramente
+
+oggi sento parlare di meccanismi autoapprendenti nello spec, quando c'è un'azione fattiva, qualcuno ne parla ma poi di team io mi sono confrontato con tanti amici anche fuori dalla nostra organizzazione e loro mi dicono si vabbè io faccio lo spec e implemento questi cazzi, e si vabbè ma qual è la knowledge base di progetto, la tua engineering guideline che stai sviluppando?
+
+Alfonso Graziano (41:47.951)
+io mi hai colpito un attivino al cuore perché infatti io nel libro nel capitolo che ho scritto su sdd l'ultimo step è
+
+dopo ogni spec la reflection è per capire come migliorare l'harness del sistema, capire come migliorare il contesto, le pratiche, tutto quanto, dopo ogni singola spec, dopo ogni singola storia che viene implementato e questo lo puoi fare sia in maniera semi-automatica con delle skill che fanno l'analisi e capiscono ok quali sono le cose che possiamo analizzare e ti dà dei candidati di cose
+
+una skill per automatizzare questo processo, puoi aggiornare questo pezzo di contesto, sia ovviamente in maniera manuale, quindi come detto tu, io noto che nella fase di planning c'è qualcosa che posso voler riutilizzare, lo vado a inserire nel mio guideline. Ti faccio una domanda, faccio...
+
+Brainrepo (42:50.942)
+Aspetta, fammi aggiungere una piccola cosa prima. Considera che per esempio io sto pianificando, sto proprio facendo il design, di un hook che alla fine della fase di planning ti dice stai utilizzando queste pratiche, quali vuoi promuovere e automaticamente ti promuovo le pratiche. Questo perché quando vi ho raccontato del modo in cui automatizzano le discovery dei progetti, la vera potenza di quel sistema era da una parte la reflection e dall'altra il learning. Quindi c'era il learning.
+
+si trasformava una lezione imparata e poi c'era una reflection che applicava quella lezione imparata sul contesto globale e sugli schemas globali e questa cosa detta parole può sembrare bla bla bla e ma va beh ma lo metti anche nelle skill e ci c'ha tanto le skill e scusa nelle spec e ci c'ha tanto le spec le sto facendo con llm llm in video del codice vede che questa pratica è applicata e si domani credici
+
+Alfonso Graziano (43:47.983)
+L'unica, ecco, sono completamente d'accordo con te, l'unica differenza che io faccio è l'ordine. Perché? In un mondo ideale, tu fai spec, plan, implementation. Nel mondo reale, dipendentemente dal tipo di sistema con cui stai lavorando, se lavori con un sistema non deterministico, un agent, succede tutti i giorni, quello che è il tuo piano lo implementi, poi ti accorgi che l'implementazione non funziona.
+
+subottimale quindi devi tornare indietro quindi io questa fase di catturare tutto ciò che ho appreso la faccio non dopo la fase di planning ma dopo che sono ok, cioè dopo che sono soddisfatto dell'implementazione perché l'implementazione iniziale dopo la fase di planning mi soddisfa
+
+in una buona percentuale di casi ma il diavolo nei dettagli e spesso e volentieri sono i casi in cui il plan non è complianto con quello che a me serve è il momento dove ci sono alcune delle lezioni più grosse quindi per questo io muovo
+
+Brainrepo (44:57.406)
+Assolutamente d'accordo con te io per esempio questo è un elemento che considero considererò proprio nell'affinamento del processo ed importantissimo credo che il motivo per cui io non ho ancora sbattuto il muso perché poi alla fine tutto viene dalle lezioni imparate non ho ancora sbattuto il muso sulla cosa è perché comunque
+
+non tutte le azioni si promuovono a pratica, è anche perché fondamentalmente sono io e un'altra persona che sta testando questo approccio nel team adesso, non è tutto il team che lo sta usando. Però il vero motivo è quello e quindi essendo molto picchi nella promozione di un elemento specifico a pratica in realtà
+
+sono cose di buon senso quelle che promuoviamo a pratica non sono dettagli implementativi sono metodo per esempio per tutto ciò che riguarda questo tipo di approccio uso un cazzo di adapter e quindi svincolami dall'accoppiamento stretto sono questo tipo di cose che noi tendiamo a produrre ma probabilmente molto guidato
+
+dall'esperienza specifica che noi stiamo facendo in un altro domine in un altro contesto potrebbe essere completamente diverso però ragazzi questo è il contesto dove sto lavorando e alla fine essendo un processo empirico non potrei fare altrimenti no
+
+Alfonso Graziano (46:37.678)
+Assolutamente. Ti volevo fare una domanda?
+
+tornando un attimino al ruolo del manager e al ruolo della gestione del team in un contesto dove 1 supponiamo di star lavorando con persone molto senior 2 supponiamo di star lavorando con persone molto senior che sanno utilizzare molto bene l'ai e quindi arrivano al punto di poter in maniera reale senza supercazzole riuscire ad orchestrare più agenti in parallelo portare avanti più in tasche in parallelo
+
+Ti racconto quella che la mia esperienza è quella di alcuni colleghi molto brevemente. Vorrei sentire la tua e capire come la stai gestendo. In alcuni casi il team è così bravo che riesce a prendere più pezzi di lavoro di complessità non banale, lavorarci in parallelo mentre la gente fa cose e dopo quattro ore
+
+Fatte così il cervello va completamente in meltdown perché tu ti ritrovi a lavorare su diciamo 3 barra 4 però stiamo sul numero 3 3 stream di lavoro ogni stream di lavoro sta andando avanti ogni stream di lavoro ha bisogno di essere revisionato validato quindi comunque c'è comunque la parte umana
+
+E tu hai, noi da Techlead un po' ci siamo abituati al context switching, brutto, quello che ogni cinque minuti ti arriva una notifica, però i software engineer solitamente non sono magari abituati a questa forma di context switch. E quello che ho notato, insomma, il feedback che mi sono arrivati è, Alfo, bellissimo, Io faccio quattro ore così, poi il mio cervello va in meltdown. Tu come la gestisci questa cosa nel team?
+
+Brainrepo (48:29.47)
+Allora io oggi non, il mio team non arriva a quel punto perché per la natura della cosa che stiamo sviluppando che è 80 % integration, 20 % development il team è più
+
+è più impegnato a smadonnare contro the Waps che è fondamentalmente a scrivere codici o a seguire gli agenti che fanno roba. Devo anche dire che però in contesti precedenti mi è capitato e l'ho vissuto, l'ho vissuto anch'io, E la domanda che faccio spero che tutti i miei superiori non sentano, ma dopo
+
+4 cazzo di ore che stai pascolando 5 agenti, quanto cazzo hai prodotto? E allora va a fanculo prenditi una coca cola e leggi i due articoli, questo è il mio approccio capito? O facciamoci una chiacchierata, parliamo delle lesson learned, quindi cerchi di bilanciare, perché questo tipo di persone veramente ti producono.
+
+troppo tanto e allora per esempio a un senior di questo tipo mi è capitato di dirgli ok calma tu questa settimana ti prendi due task piccolini piccolini e tutto il resto mi fai upskill del resto del team e quindi parli con persone e distribuisci quella tua knowledge perché il valore non è solo generare il codice e questo dal momento in cui il codice diventa veramente un elemento
+
+Alfonso Graziano (50:12.366)
+sono
+
+Brainrepo (50:24.094)
+un elemento volante, così veloce... cioè alla fine il fallore e tutto il resto.
+
+Alfonso Graziano (50:33.326)
+Assolutamente. Io una cosa che ho chiesto esplicitamente più volte proprio per una questione di insanità mentale è rallentare un pochettino, no? Anche perché noi lavoriamo bene, siamo bravi, deliberiamo, stiamo deliberando tutti quanti sono contenti, tutto quanto fantastico. Pensiamo a...
+
+quanto è gestibile nel lungo periodo e sostenibile nel lungo periodo quello che stiamo facendo. Io non voglio avere un software engineer molto bravo che dopo una settimana mi va un barnout completo o comunque arriva al weekend morto perché, insomma, hai un grado di stress così alto. Quindi quello che noi stiamo facendo è abbassare forzatamente in alcuni casi
+
+il rate di velocità, quindi il rate... quante cose facciamo in parallelo proprio per una questione sanità mentale e le cose che facciamo in parallelo sono cose o molto collegate tra di loro che quindi magari il contact switch non lo senti così tanto oppure così scollegate tra di loro per cui a una gli dai attenzione e l'altra... e l'altra...
+
+Brainrepo (51:44.702)
+e l'altro la lascio in background
+
+Alfonso Graziano (51:48.015)
+vada su, vada sei in background, quindi tu hai concentrazione su una cosa del tipo, sto sviluppando una feature e sto generando un report, sto facendo della roba che la gente può fare tranquillamente, io torno tra un quarto d'ora e vedo cosa combina.
+
+Brainrepo (52:06.174)
+Sì, posso vederlo anche domani nel senso... Quindi da quel punto di vista sono d'accordo con te. E poi comunque ragazzi miei, adesso entra il Mauro con l'accetta, una delle competenze del senior con l'S maiuscola sarà appunto essere capace di gestire l'hyper focus e il carico di lavoro. Quindi la responsabilità, la responsabilità del tech lead...
+
+Alfonso Graziano (52:09.518)
+...
+
+Brainrepo (52:34.206)
+quella di supervisionare il team e di fare in modo che ci sia una psychological safety, una healthy generalizzata nel team ed è una responsabilità che è del Techlead. Ma come la fa? Il Techlead la fa col setting dell'expectation. Il Techlead non è un bambinaio che devi dire no hai lavorato troppo adesso ti spengo la televisione. No. E su questo dobbiamo ancora svilupparla un po' di maturità.
+
+Non è il ruolo del tech lead, il self control è una soft skill professionale che è necessaria e questo lo dice uno che per un po' di tempo è stato single contributor ha affetto di ADHD con momenti di hyper focus, cioè uno che si ritrovato sedici ore davanti a un computer a programmare dopo la sedicesima ora, ok è rimasto una settimana all'etro.
+
+Alfonso Graziano (53:34.703)
+Allora, sono d'accordo con te, aggiungo un MA però che noi oggi stiamo sperimentando, soprattutto chi lavora con agenti, con più agenti, chi fa cose un po' più avanzate, sta sperimentando, non so se c'è un termine, però una specie di addiction che è
+
+caspita io sto andando come un treno sto riuscendo a fare delle cose assurde voglio fare di più voglio spingere di più voglio spingermi oltre non riesco a questo lo vedo su di me che è problematica come cosa amici a casa date date donazioni al boom break rep che poi mi passa alla psicologa però scherzavansia a parte
+
+Brainrepo (54:20.254)
+Ho appena chiuso la chiamata, prima di collegarmi con te ero con la terapista e uno dei punti era esattamente questo come setto i banderis, come setto i limiti no?
+
+Alfonso Graziano (54:30.318)
+e io questa cosa qui la sto trovando molto difficile personalmente ma vedo che anche colleghi molto forti molto schillati hanno difficoltà perché perché ti senti un supereroe cioè so che è brutta dirla però quando vedi che le cose funzionano quando riesci a produrre così tanto quando tu in una giornata tiri su una feature che dici va beh ma io questa roba la tiro su in dieci giorni
+
+inizi la mattina e la sera c'hai quella roba che funziona è una sensazione particolarmente addictive quindi capisco che noi capisco che le expectation da parte di una persona molto senior dovrebbero essere sappi di gestire il tuo tempo ma
+
+Brainrepo (55:14.462)
+Ecco ecco perché ti fai no no ma ecco perché ti metto carico ti carico le expectation su altre direzioni sulla tua responsabilità nel team sulla tua responsabilità sugli altri sul valore che stai generando nelle persone sul valore che stai generando nel cliente al di là del codice delle feature che rilasci su quanto stai facendo training dal cliente per migliorare il suo approccio e ti metto un carico di responsabilità cioè distribuisco il carico di responsabilità su più punti di valore
+
+Alfonso Graziano (55:22.734)
+...
+
+Brainrepo (55:44.19)
+tali per cui il punto dove tu corre a manetta è il 20 % della tua delivery.
+
+Alfonso Graziano (55:50.734)
+Sono d'accordissimo, ci sta come strategia. Ciao Luca!
+
+Luca (55:56.885)
+Ciao, sono entrato proprio a gamba tesa ma ho un po' il ritardo. No, non è vero, sono sempre stato qua, solo che sapete che sono sempre molto silenzioso. ehm, ma prego, continuate, poi mi rinfilo tra una mezz'oretta ancora. Poi durerà ancora, vedo, avete cominciato da poco.
+
+Brainrepo (56:02.974)
+Alfonso Graziano (56:18.094)
+Sì, sì,
+
+Brainrepo (56:20.286)
+Ti volevo fare una domanda, nell'adozione dello Spec Driven Development a livello di team quali sono stati gli ostacoli, cioè i rettaggi dei meccanismi e delle meccaniche, delle dinamiche di sviluppo in modalità precedenti? sono riflettuti o avevi un team di ninja che sono subito saltati a bordo eliminando l'attrito?
+
+Alfonso Graziano (56:50.254)
+Allora, premesso che ho avuto la fortuna di avere un team di ninja, quindi questo sì tantissimo, alcune cose su cui ho dovuto lavorare sono un po' la parte di ownership, quello che, insomma, soprattutto avendo New Hires, quello che è capitato è che l'expectation delle persone erano l'expectation del software engineer che si ritrova il task su gira
+
+implementare il task e delivere il tra virgolette tradizionale.
+
+Quello su cui abbiamo dovuto un pochettino lavorare come team è stato dire che ragazzi ci troviamo in un momento storico dove alcune cose stanno cambiando, abbiamo la possibilità di fare alcune cose diverse, ci troviamo anche in un contesto dove non c'abbiamo il PM che ci mette le storie e ragazzi io non sarò la persona che vi mette le storie perché lo odio infatti mi sono fatto un mini workflow su Copilot che mi crea le storie grazie Copilot
+
+così almeno un po'
+
+Brainrepo (57:54.879)
+scusa alfo, apro una parentesi nelle mie ci sono solo gli intenti tu non le metti mi sa che la nostra sia giusta una scusa perché ci rompe il cazzo a fare le storie
+
+Alfonso Graziano (58:04.878)
+Guarda, ti giuro, io odio scrivere le storie su Azure DevOps o chi altro. Quello che faccio io ragazzi, brucerò le foreste purtroppo per far sta roba, però a furia di token, quello che faccio io quando devo creare una storia, apro la chat di Copilot, scrivo quello che mi serve che venga fatto, quindi l'intento come lo vuoi chiamare, e
+
+copilot sa in automatico, c'è un hook che è la prima cosa che deve fare quando gli apro una chat e dà istruzioni è dammi un draft della storia se gli dico va bene lui me la crea con mcp su ggpops e basta questa cosa mi ha dato sicurità
+
+Brainrepo (58:43.55)
+Sai che è una cosa molto simile, però intanto l'ha detto e poi mi sono messo una serie di elementi, quindi c'è un loop, Una piccola skill che mi fa delle domande per renderla più completa. Quindi io ho praticamente sta roba, bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+
+non hai capito un cazzo, un frega te ne so quello che sto facendo, mi capita di diglielo spesso, oppure vado ad approfondire e implementare e c'ho proprio una struttura della storia. In realtà queste sono le storie per il prossimo sprint, quindi ragazzi ancora non le hanno viste bene bene fatte, però sarà una sorpresa.
+
+Alfonso Graziano (59:39.951)
+Però questo quindi, la questione dell'ownership è la prima cosa e poi un'altra cosa che a mio avviso è interessante è quello di cui parlavamo prima, cioè...
+
+Non sei solo un software engineer, cioè non sei tra virgolette un software engineer che iscrive solo il codice, ma mi aspetto da te un ragionamento di prodotto, mi aspetto da te che fai tanto QA. Noi lavoriamo su sistemi non deterministici, quindi mi aspetto che siccome lavoriamo su sistemi non deterministici, molte cose cambiano rispetto a come le implementi, come le giustisci, gli evals, creare testing, ragà...
+
+per sistemi non deterministici è divertentissimo ma al contempo ti fa bestentifattirare certe madonne che non si dovrebbe dire però lo diciamo e quindi questo cambiamento nel mindset insomma è arrivato con un po' di settimane per fortuna lavoro con dei ninja quindi è arrivato e ora vanno vanno come dei treni
+
+Brainrepo (01:00:43.774)
+Sì, io in realtà c'era un altro elemento che ho dovuto gestire ed è legato al senso di un'impotenza che i developers hanno con l'AI ed è lo scope creep e su questo ho fatto un cazzo di fatica. Quando si fa una spec spesso gli ingegneri tendono a uscirse nei...
+
+cose fuori di testa tipo la verifica di un certificato del... oppure cose del tipo un'architettura hyper... ma è bella alla padre Maronno no?
+
+Alfonso Graziano (01:01:24.814)
+o qualcuno inizia a sperimentare con cose che sono completamente autoscopo, tu non c'hai tempo per implementare quella roba e loro la testano, che è bellissimo, cioè se abbiamo il tempo...
+
+Brainrepo (01:01:35.103)
+No ma ce l'avresti anche perché tanto te la scrive lei hai la roba, il problema è che poi tu devi lasciare a un cliente che ha un certo schermo, perché il mio vero problema e credo sia anche il tuo è che vabbè tu puoi fare il prodotto bello quanto vuoi no? Però poi alla fine questo prodotto è qualcosa che lasci in legacy al cliente che se lo deve mantenere, stendere e fare le robe.
+
+una cosa che prima succedeva è che era abbastanza frustrante che i genti ti importava FPTS e si iniziava a scrivere le robe allora tu dovevi mettere i guardrails e dire FPTS è bellissimo lo uso in tutti i miei set pro ci abbiamo anche fatto una puntata di git bar force però occhio che so se c'hai un cliente o se il cliente ha una serie di junior che non distinguono un ciclo ford da un while
+
+probabilmente capisci bene che FPTF è un costo, FPTS o quello che volete, metteteci voi qualunque tipo di cosa, è un costo che quindi magari ecco, capire quel tipo di contesto ma tanto ce l'hai ma tanto lo lo lo lo se lo fanno leggere dalle AI se lo fanno spiegare ma che cazzo ci vuole? non è proprio così.
+
+Ecco questo è un passaggio di maturità che è un livello perché è già maturo no? Perché questa cosa magari l'ha già tamponata, già cresciuta e già non importa FPTS ma quando è veramente così facile farlo no? Overengineering perché l'effort per farlo a livello di codice costa molto meno ecco come ti poni tu
+
+per dire no non farlo, magari non ci costa un cazzo ed è molto più figo ed è molto più bello anche per noi lavorare su una code base del genere ecco e là tu da tech lead da persona che deve tenerla a direzione nel bene o nel male perché è una tua responsabilità devi lavorare per dire lo so, sono d'accordo con te però noi siamo professionisti, noi non stiamo giocando, stiamo là
+
+Alfonso Graziano (01:03:53.294)
+delizioso
+
+Brainrepo (01:03:57.919)
+abbiamo un obiettivo che non è solo la delivery, ma la delivery è la autosufficienza del prodotto perché noi facciamo delivery, ti aiutiamo a toglierti le castagne dal fuoco ma non ci muriamo dentro il cliente proprio per mindset aziendale, Noi arriviamo, ti aiutiamo a fare quelle famose delivery impossibili e poi ci puoi tranquillamente mettere la scarpa in culo perché noi il nostro l'abbiamo fatta, abbiamo fatto un po' di upskilling dei tuoi team
+
+e tu e ti ma adesso saranno in grado di tenerti il prodotto noi non siamo una società di prodotto ciao e arrivederci le hai e questa cosa la semplifica talmente tanto che questo spettro che l'effort aiutava e semplificava non nel tenere lontano ogni tanto si affascia e bisogna avere le antenne aperte quindi lo staff o il tech lead deve essere pronto a saltare
+
+e con motivazione e una narrativa solida, però.
+
+Alfonso Graziano (01:05:01.614)
+guarda sono completamente d'accordo è una casistica che mi è capitata in diversi diversi momenti del progetto su diversi livelli di maturità del progetto c'è anche da dire che insomma noi da TechLead magari abbiamo anche un aspetto un po' più da
+
+project manager su alcuni aspetti perché sappiamo che il progetto finisce tra tre mesi quindi entro quei tre mesi noi dobbiamo deliberare questo scope magari il software engineer giustamente
+
+non ha questa tipologia di visione o magari non ha tutti gli elementi dice ok fammi provare questa cosa iniziamo ad implementare questa roba perché perché dal punto di vista tecnico è ottimale ma noi non siamo pagati solo per prendere decisioni tecniche ottimali non è quella la variabile che noi vogliamo massimizzare la variabile che noi vogliamo massimizzare è un mix di variabili per far sì che
+
+Brainrepo (01:06:05.214)
+legata dal contesto.
+
+Alfonso Graziano (01:06:06.958)
+il cliente è contento, la delivery va bene, come detto due software poi manutenibile dopo da una serie di persone.
+
+Brainrepo (01:06:12.574)
+è sostenibile sì infatti mi piace lo raccontavo un amico se dovessi rappresentarmi come immagine da te Clid io mi dipingo molto come quel papà cagaca**o che ti devi comprare la prima macchina e lui ti dice no prenditi la station wagon perché la tua fidanzata è incinta non prenderti la bi posto e ma la station wagon fa cagare adesso renderò
+
+farò incazzare tutti i proprietari di station wagon la station wagon fa cagare vabbè sì però però occhio che poi se la la B posto te la devi vendere tra tre mesi perché sarei nella merda e quindi quindi questo è il vero problema è quello di costruire la narrativa cioè nel momento in cui non non ti puoi usare più l'elemento sì ma stiamo sprecando tempo risorse e denaro perché
+
+potenzialmente non stai sprecando tempo risorse e denaro o comunque marginale e quasi ininfluente, è come la giustifichi con la narrativa?
+
+se c'è ancora una narrativa perché in alcuni casi over-ingenerizzare ci può anche stare ma quando per esempio questo impatta nella manutenibilità queste narrative spesso rischiano di essere un po' più leggeri del dire deliberiamo tre settimane in ritardo per colpa di questa scelta
+
+Alfonso Graziano (01:07:41.135)
+C'è anche da dire che è un po' anche una questione di taste, Però quando sei in un progetto da un po', soprattutto se fai il tech lead, soprattutto se hai un modo di lavorare tanto anche con il cliente, quando alcune decisioni tecniche vengono prese dagli ingegneri...
+
+tu un po' fiuti il merdone che non ti arriva ora, ti arriva tra tre mesi perché quella... sì, c'è una questione di intuito perché quella decisione tecnica che ad oggi non sembra gigantesca può avere un impatto su cose downstream che tu sai che dovranno succedere, magari il team è con una visibilità.
+
+Brainrepo (01:08:10.814)
+E anche intuito,
+
+Brainrepo (01:08:26.654)
+Sì e poi ti capita anche che proprio hai la sensazione di saper il perché, Tipo rabdomante diciamo, aspetta questa cosa secondo me ritorna come un boomerang, ma non so perché, come cazzo l'argomento? Il problema è che...
+
+Luca (01:08:39.732)
+tremito nella forza. Io c'ho questo questo nome qui. Quando con Daniele, all'epoca l'abbiamo conosciuto, è stato ospite qua, quando veniva un'idea o un qualcosa, uno dei due faceva, sento un tremito nella forza e si capiva tutto. Comunque dai vostri discorsi mi sento molto meno solo. Io per fortuna, cioè non per fortuna,
+
+insomma i pochi team che gestisco comunque hanno la versione base di Claude, quindi non ho di questi problemi
+
+Alfonso Graziano (01:09:15.214)
+Quindi non c'è
+
+Luca (01:09:19.797)
+No, peggio purtroppo perché la mia scala attualmente è piccola, quindi ho direttamente i sales che decidono di riscrivere il back office usando le API di produzione, me lo dicono dopo un mese.
+
+Alfonso Graziano (01:09:36.27)
+questo segmento mi ha fatto un po' male, prometto che...
+
+Luca (01:09:39.22)
+No, sì, anche a me. Si rifanno i client usando le pie di produzione, e dico no, no, guarda, ma ho anche test, sì, ma su produzione, santo cielo. Però io non voglio essere disfattista. Allora avessi un team di questo, insomma, con queste problematiche.
+
+al momento che quello che in genere sto facendo io lascerei, lascerei perché non sono il detentore della verità quindi sì sento il tremito nella forza sì ciò è male però ho due strade uno potrei avere torto e quindi ok va bene non era male non era così male come pensavo
+
+molto improbabile però diciamo che c'è. Il secondo imparare a gestire queste situazioni qua, insomma, questi meccanismi sia dal punto di vista tecnico, beh, più banale che dal punto di vista umano, insomma, avete fatto casino, ok.
+
+risolvete o risolviamo in un certo modo. Forse è inutile anche, per conto mio adesso mentre vi ascoltavo, detto sì, stare a giustificare, ma forse potrebbero anche sbattere la testa sul muro. Poi ovvio, dipende dalle scale in cui si parla, perché sbattere la testa sul muro facendo crollare un'azienda di 100 mila dipendenti è un conto.
+
+però però sì cioè io sto vedendo le cose che stanno cambiando e soprattutto mi proietto in un futuro dove non ci sarà più nessuno a sentire questi tremiti nella forza e ci sarà, arriverà.
+
+Brainrepo (01:11:48.031)
+Guarda, hai ragione nel senso... quello che voglio chiarire è che il tech lead non è chi tiene il timone ma è quello che ricorda la direzione, Questo è importante perché il team che tiene il timone non è il tech lead che guida la barca. Il famoso trimito nella forza funziona in due modi.
+
+Difficilmente sai argomentare, specie quando hai un team molto schillato dove il mio team mi incalza, mi incalza e mi fa domande e mi dice ma sei sicuro? E hanno tutto il diritto di scavalcarmi se la decisione non impatta nella direzione, Quindi hanno quel diritto. Poi, là dipende molto dei punti fiducia che hai guadagnato nel team. A me è capitato
+
+di non riuscire ad argomentare però ho anche chiesto ragazzi io mi gioco i punti fiducia? Primo così Io mi gioco i punti fiducia è difficile spiegarlo e questo mi capita quando alcuni meccanismi sono veramente difficili a spiegare che magari impattano l'organizzazione, impattano dinamiche politiche no? che alcune cose puoi fare disclosure altre no, altre no ci sono anche questi questi quindi non è che
+
+ho proprio un'intuizione che sono un vegente con la palla di vettero e che magari non posso parlare di quattro stronzi che stanno impatando sulla direzione ma io devo per forza fare in quel modo e devo e devo e devo devo fare cioè per esempio a me è capitato col tooling devo utilizzare e ci ritorno un tool specifico non potevo dire di no perché ci erano delle dinamiche che non potevo dire di no non potevo neanche fare totale disclosure di tutti i dettagli
+
+e poteri forti mi hanno già staccato la camera. No, però ecco, in quel caso ti giochi la carta a fiducia e gli dici fidatevi di me e se hai lavorato bene come Teclid e quindi hai la carta a fiducia.
+
+Luca (01:13:46.42)
+sì, sì
+
+Alfonso Graziano (01:13:59.477)
+è quella fiducia da parte del team. Io una cosa che utilizzo in alcuni casi è quando... anche quando insomma c'è del... Oddio, come si dice? Quando non c'è un agreement all'interno del team, una roba che faccio è chiedere potresti vivere con questa decisione?
+
+Brainrepo (01:14:18.942)
+Accordo.
+
+Alfonso Graziano (01:14:26.798)
+premesso che non siete d'accordo con questa decisione ci puoi convivere nel 90? ma no! ma perché nella maggior parte dei casi qualcuno dice no secondo me le cose andrebbero fatte così, quell'altro fa ping pong e dice no va fatte così signori fermiamoci un attimino puoi vivere con questa decisione?
+
+Brainrepo (01:14:31.07)
+Che politica il correct che sei per descrivere il disagree and commit?
+
+Alfonso Graziano (01:14:50.958)
+pensi sia subottimale va bene ci puoi vivere comunque nella maggior parte dei casi la risposta è sì ma alla fine che me frega me l'accollo comunque
+
+Brainrepo (01:14:59.806)
+sti cazzi però là il passaggio significativo è quello immediatamente dopo che quando la decisione presa è la decisione del team quindi è assolutamente bannato il te l'avevo detto e bannare il te l'avevo detto all'interno del team non vuol dire bannarlo solo tre componenti del team vuol dire anche bannarlo nella relazione tra tech lead e
+
+Alfonso Graziano (01:15:10.19)
+...
+
+Brainrepo (01:15:29.982)
+è ingegnere tra senior e junior.
+
+Alfonso Graziano (01:15:36.014)
+Assolutamente.
+
+Brainrepo (01:15:36.927)
+il bannare il tè l'avevo detto quindi ti limita l'impatto che hai fortunatamente limita tutta la blaming culture che è un cazzo di cancro e rimuovendo la... non tutta, partono, limita una parte della blaming culture e questo è molto importante per cui disagreeing commit non siamo d'accordo bene prendiamo la decisione
+
+Bene, adesso poi alla fine se c'è proprio proprio un disagri finale, cioè è il Techlead che prende la decisione, punto. E il suo ruolo alla fine, se proprio non ha carta fiducia, deve lavorare un po' meglio però, non ha carta fiducia, il team si scorna, a quel punto c'è qualcuno che si deve dire, ehi ragazzi non siamo all'asilo, io sono il Techlead, la decisione se voi non siete in grado di prenderla ho la
+
+il dovere, non il diritto, o il dovere di prenderla io. Punto.
+
+Alfonso Graziano (01:16:40.334)
+anche perché poi sebbene la responsabilità sia del team di qualsiasi decisione poi lo stakeholder nel momento in cui buchi una deadline o succede qualcosa viene da te e sei tu poi che giustamente devi giustire l'expectation spiegare cosa è stato fatto quindi a mio avviso ci sta che
+
+Brainrepo (01:16:55.87)
+perché se l'ombrello, certo.
+
+Alfonso Graziano (01:17:07.822)
+Alla fine, sei tu che hai le responsabilità di quella roba, sei tu che decidi nel momento in cui non c'è un... Nel momento in cui il team non si mette d'accordo.
+
+Brainrepo (01:17:18.238)
+Devo dire che non mi è mai capitato nel lavoro con l'IT, ma quando ho lavorato nel turismo, molti di voi sanno che avevo un'azienda insieme a delle fantastiche persone che si occupava di destination management, di cose di turismo, insomma cose di questo tipo, mi è capitato che qualcuno mi abbia detto non mi mai sconclusionato la tua decisione perché
+
+C'era anche un lisa allineamento e questo ci può essere anche in ambito ET per fortuna con Irfan non mi è mai capitato però ci può essere anche un disallineamento di prospettive cioè quello che un ingegner vede non è necessariamente quello che un engineering manager o un tech lead vede no? in termini di prospettiva
+
+Alfonso Graziano (01:17:57.391)
+però la possibilità di dare contesto, la deve essere, un lavoro, dare contesto alle persone.
+
+Brainrepo (01:18:01.503)
+e e e
+
+Brainrepo (01:18:05.662)
+Esatto, però spesso quando non lavori con persone super senior te te parte il pipone e parte la polemica e a quel punto ripeto non mi è mai capitato nell'IT non so se è una questione di dominio ma nel turismo mi è capitato allora io ho fatto una cosa molto bella dovevo far capire molto bella ma anche molto stronza dovevo far capire che non è questione di ruoli o di gradini di una scala
+
+ma di responsabilità diverse di una macchina che si deve muovere. Sono responsabilità diverse, non sono medaglie attaccate a una giacchetta, Quindi cosa ho detto? Va bene, ma che cazzo ci vuole a fare quello che stai Perfetto, tu domani mattina inizi alle 9 in ufficio e fai esattamente quello che faccio io. E io faccio esattamente quello che fai.
+
+Per un giorno gli ho scaricato le responsabilità, questa cosa mi è costata, sì mi ha creato diversi danni, ma il valore che ho generato però, in quel caso specifico, è stato altissimo! Perché da quel momento la trust del team è stata, cioè non la trust, la visibilità che ha avuto il team delle dinamiche, non era l'esperienza del singolo, questa cosa si è diventata l'esperienza di tanti, adesso io l'ho potuto fare perché...
+
+l'amministratore della società ero io, si faceva vedere le cazzate quello che portavano a... ribibbia ero io però è stato un meccanismo che ha funzionato, ripeto non so se lo farei in ambito IT non ne ho mai sentito l'esigenza da quando lavoro per questa società però è stata un'esperienza interessante
+
+Alfonso Graziano (01:20:01.806)
+Senti invece cose che non sono cambiate, cioè cose che con AI, agent sd di tutta strada qui, cos'è che nel team non è cambiato? Quali sono i principi cardine che tu non vedi cambiati come dinamiche di team?
+
+Brainrepo (01:20:03.774)
+Bye!
+
+Alfonso Graziano (01:20:27.662)
+potrebbe essere una parentesi molto molto...
+
+Brainrepo (01:20:31.198)
+in realtà in realtà molte cose non sono cambiate anche nel processo cioè alla fine al di là del fatto che comunque ci sia un passaggio di review supplementare no? che è una cosa importante che a livello generale cosa non è cambiato? è una bella domanda
+
+Alfonso Graziano (01:20:55.438)
+team management lavoriamo ancora con le persone quindi tutti quegli aspetti sono uguali. Tu come Tech Lead cos'è che non è cambiato nella tua giornata quando vai a lavorare col team?
+
+Brainrepo (01:20:58.718)
+certo ma tu parli del ruolo del tech lead o
+
+Brainrepo (01:21:11.614)
+Non è cambiato l'importanza che daip ha all'app skill e al supporto e alla crescita personale che secondo me è siccome stai facendo anche management è la chiave di volta di quello che stai facendo perché lo sviluppo dell'individuo e lo sviluppo del team va di pari passo con lo sviluppo del team il fatto che tu debba essere un collante non è cambiato è diventato ancora più importante
+
+nel senso il meccanismo rimane identico, l'importanza aumenta perché questo insieme di strumenti tendono ad amplificare l'individualismo quindi questo è un altro elemento che non è cambiato ed è sempre molto importante quello di tenere la direzione quello di rimuovere i blockers, i blockers l'AI non ti li rimuove e quindi tu sei sempre la scazzare con gli stakeholder
+
+è al massimo è più complicato perché alcuni stakeholder c'hanno una risposta automatica della copia in colla o magari generata dall'AI
+
+Alfonso Graziano (01:22:21.326)
+Quello che hai detto di mantenere la direzione secondo me, almeno sulla mia pelle, è quello che noto che ha avuto forse una delle differenze più grosse in termini di peso. Perché ora noi possiamo andare su alcuni aspetti molto più veloci e quindi è un attimo ad andare a partire per la tangente. Quindi mi sto ritrovando per una buona percentuale del mio tempo proprio a assicurarci che stiamo andando nella direzione corretta.
+
+Brainrepo (01:22:48.862)
+Perché? Perché il throughput è un throughput della Madonna e tu sei un single bus in quello. Ecco perché diventa fondamentale allineare sull'intento e condividere il contesto, che è una cosa che detto prima, cioè dire stiamo andando in questa direzione, il cliente ha bisogno di questo perché il cliente ha queste problematiche, questa identità, ha questa cosa. Cosa che in altri contesti tu magari ti potresti parzialmente tenere per te, giusto?
+
+non hai bisogno di overloadare gli ingegneri tutte queste sovrastrutture perché erano troppo presi dalle delivery, adesso questa cosa ha più importanza quindi c'è c'è c'è è fondamentale. Domanda, abbiamo parlato di team, è a 1 ore e 20 fare questa domanda è un po'
+
+un un arachidi però però a livello di organizzazione tu tu da noi ti sei occupato hai supportato e ti sei occupato anche di di lavorare al processo di upskilling collettivo di una azienda anche abbastanza grande no? Quali sono gli elementi? Non voglio non voglio proprio aprire il capitolo di
+
+come si fa una AI transformation di una azione di consulenza di x centinaia di dipendenti perché potremmo rimanere ore a parlarne almeno da punti di vista differenti, da ruoli differenti però quali sono gli elementi che ti porti a casa di lesson learn di un meccanismo di upgrade di upskill, scusami, non siamo macchine
+
+di upskill collettivo di quelle dimensioni. Nel frattempo io riavvio la telecamera che dal caldo si sta spegnendo.
+
+Alfonso Graziano (01:24:50.83)
+ti ti racconto un attimino quelle che quelle che sono state alcune delle cose interessanti che abbiamo imparato anche perché ovviamente è stata la prima volta almeno da quando ci sono io che è stato fatto un processo di upskill così tra virgolette sulla larga scala per contesto per chi ci sta ascoltando abbiamo fatto un upskill obbligatorio per tutti gli individual contributor
+
+che in azienda sono circa 400 persone quindi un bel numero, bello ciccione, quindi vuol dire che abbiamo dovuto disegnare un path di upskill per 400 persone per fargli vedere in maniera pratica come utilizzare l'ai, come utilizzare Spectre Vector sui progetti come utilizzare agenti ovviamente anche tutta la parte delle basi
+
+che non puoi utilizzare Sdb se non sai come funziona un agente, se non conosci le basi, quindi noi siamo partiti dall'inizio e abbiamo costruito un vero e proprio learning path interno. Una delle scelte che abbiamo fatto è stata quella di non costruire tutto il materiale internamente bensì abbiamo fatto una cernita di tantissimo materiale ragazzi
+
+Quello che si vede in azienda è qualcosa come un 6 % di tutti i link, tutto il materiale. Quindi quello che abbiamo fatto inizialmente è stato... Ok, abbiamo delle persone, vogliamo far sì che tutte queste persone arrivino a un determinato punto di conoscenze e competenze.
+
+Come ce le portiamo? Partiamo da alcuni presupposti, partiamo dal presupposto che diverse persone partono da punti di partenza diversi, partiamo dal presupposto che qualcuno ha sperimentato, qualcuno utilizza già sul progetto, qualcuno non gliene frega una mazza, quindi abbiamo messo in... siamo partiti dal presupposto che ci potesse anche essere della resistenza, Che c'è stata ovviamente, perché quando dici a...
+
+Alfonso Graziano (01:27:08.334)
+400 software engineer, molto schillati, molto senior, ehi buongiorno, da oggi parzialmente o comunque in una più buona percentuale cambia il modo in lavori queste persone giustamente dicono ok fermate un attimo perché? quindi c'è questa parte qui da da gestire
+
+Quello che abbiamo fatto quindi è stato creare un percorso di apprendimento su più scaglioni, quindi c'è una parte obbligatoria per tutti, che è quella su Spectrum Development, cioè come si utilizza, e poi...
+
+tutto quello che viene prima di Spectreven Development, come dicevo Argenti, LLM, TULO, tutta sta roba qui, non obbligatoria, ma comunque molto utile per chi, insomma, era interessato. E quello che abbiamo fatto è stato...
+
+ovviamente non rendere questa attività solo teorica ma anche pratica quindi nel momento in quindi l'output che tu dovevi generare e il buon Mauro ride perché non so se ci sei passato anche tu su quel training ma suppongo di sì perché ora che è stato fatto lo possiamo dire era obbligatorio tranne che se mandavi un messaggino alle persone giuste che dicevano ma sì
+
+Brainrepo (01:28:18.526)
+Certo, certo, ero obbligatorio. Mannaggia a te.
+
+Alfonso Graziano (01:28:32.046)
+Anyway, ovviamente...
+
+Brainrepo (01:28:34.526)
+Sì vabbè ma ci stava, ci stava più che altro io ero molto opinionato sul tool proposto e lo sai ben lo sanno tutti la mia posizione in merito
+
+Alfonso Graziano (01:28:47.182)
+Ecco, anche sul tuo proposto, per esempio, per darti un po' di contesto, c'è anche una questione di...
+
+Brainrepo (01:28:56.926)
+No, a livello didattico, Alfa, a livello didattico anch'io avrei proposto quel tool. Te lo dico chiaro?
+
+Alfonso Graziano (01:29:04.238)
+però ti assicuro che è stata una scelta complessa e non banale perché alla fine siamo andati su quel tool dopo che abbiamo fatto tante tante tante valutazioni ci sono state le discussioni abbastanza accese perché quel tool, in questo caso Beamed
+
+a una curva di apprendimento e noi una cosa importantissima che dovevamo bilanciare era il fatto che sì volevamo che le persone facessero upskilling ma immaginati un'azienda che fa servizi non potevamo dire a queste persone fermati per cinque giorni per fare upskilling non era economicamente sostenibile quindi abbiamo dovuto trovare un balance che a mio avviso è stato trovato con un po' di difficoltà però
+
+Brainrepo (01:29:50.542)
+io ci ho perso 10 cazzo di ore a finire con la roba
+
+Alfonso Graziano (01:29:54.127)
+assolutamente e tu hai fatto, tu hai fatto suppongo solo il modulo obbligatorio perché poi c'erano perche' ovviamente però tutte le persone che partivano da zero che non è il tuo caso e ne abbiamo di persone che partivano da zero hanno fatto tutti anche gli altri moduli che quindi vuol dire che ci hanno investito tre volte il tuo effort quindi 30 ore di upskilling e quindi
+
+Brainrepo (01:30:00.735)
+Assolutamente sì!
+
+Brainrepo (01:30:19.71)
+che sono valore altissimo devo dirlo. Secondo me però c'era proprio una nuance su quelle intanto credo che molta della formazione sia stata fatta nelle guild e nelle community. In tutto il materiale che avete abbiamo condiviso nella community è stata...
+
+Alfonso Graziano (01:30:23.086)
+Assolutamente. Assolutamente.
+
+Alfonso Graziano (01:30:41.998)
+sono.
+
+Brainrepo (01:30:46.846)
+è stato molto molto importante e secondo me molto è stato fatto da quello. 2 la scelta di B-Mod nello specifico che a me sta sul culo livelli imperiali ormai lo sapete però come dicevo prima a livello di didattica è perfetto perché è cazzo è come che tu fai uno lo studio di web development usando cazzo Spark o Spring e poi poi piano piano dici ma sì ma questa è zavora
+
+allegiriamo, allegiriamo, allegiriamo, allegiriamo, allegiriamo, intanto hai visto tutto naturalmente questo lo fai se hai un po' di consapevolezza e capacità di rimuovere i guardrails ma grazie a Dio insomma siamo tutti abbastanza adulti da avere queste skill per cui va bene va assolutamente bene il fatto che per esempio sia stato valutato io ho trovato molto bello e molto importante per quanto magari le valutazioni
+
+andavano un po' po' riviste però ha dato valore al lavoro dell'individuo cioè io sto investendo x ore c'è qualcuno che il mio codice e le mie spec e il mio artefatisci li ha guardati anche se magari era automatico non lo so e onestamente non me lo vedo
+
+Alfonso Graziano (01:31:46.03)
+...
+
+E qui
+
+Alfonso Graziano (01:32:01.966)
+Scusate, apriamo una parentesi, quello che è stato fatto, siccome appunto abbiamo ricevuto 400 submission, che non è umanamente gestibile, anche qui è stata utilizzata lei a mio avviso in maniera intelligente, che è stata, noi vogliamo che le persone utilizzino Abimond in un certo modo, vogliamo che le persone facciano determinate cose, quindi il buon Steve che ringraziamo ha scritto un agente che fa
+
+analisi del codice, ti produce il tuo bel report e ti dice questo l'hai fatto bene e questo l'hai fatto un po' meno bene.
+
+Brainrepo (01:32:36.83)
+Ecco, il grading l'avrei eliminato perché il grading è l'assignazione di un valore e dato da uno strumento non deterministico non ha un cazzo di senso, diciamoci la verità.
+
+Alfonso Graziano (01:32:51.278)
+Sì.
+
+Alfonso Graziano (01:32:55.086)
+Allora l'obiettivo principale non era tanto dare uno score quanto beccare errori evidenti, quindi ti faccio un esempio, nell'utilizzo di BIMED noi vogliamo che tu ti crei un project context, ti crei una PRD, se il sistema vedeva che ci mancava una PRD si accendeva una lampadina che diceva sei sicuro che hai eseguito i passaggi correttamente.
+
+Brainrepo (01:33:16.958)
+lo so, però per esempio a me è capitato, che tra l'altro ho preso un voto anche abbastanza alto, me ne è capitato che per una nuance il modello non abbia colto, una cosa che in realtà c'era. Quindi ecco perché ti dico scrivimelo e il grading. Però stiamo parlando veramente di stronzata, anche perché non aveva nessuna...
+
+Alfonso Graziano (01:33:40.655)
+No, no, chiaro. Una cosa che, insomma, potrebbe essere interessante per la nostra audience è stato il progetto da realizzare. Perché tu di default, questa è stata una scelta che abbiamo fatto, di default c'avevi la classica tutu app proprio per chi, diceva, proprio per chi questo upskilling era un checkbox exercise. E per fortuna non abbiamo avuto molti casi, quindi se non avevi idee, proprio bianco, vedo nero...
+
+Potevi fare la tua to-do list, maledetto! Però per chi c'aveva voglia di sperimentare nelle regole c'era scritto che tu potevi fare qualsiasi Quindi noi abbiamo...
+
+Brainrepo (01:34:19.774)
+Sì lo so, ma non ti potevo mandare un CRM personale scritto con B-Mod che era mezzo giga di codice, capisci?
+
+Alfonso Graziano (01:34:29.198)
+non ha idea delle cose che le persone ci hanno mandato.
+
+Brainrepo (01:34:32.414)
+Ecco io ho avuto un po' pena di voi e quindi ho detto non vi posso condividere sta roba gigante faccio a starò e ok
+
+Alfonso Graziano (01:34:38.862)
+che sono stati mandati dei project meravigliosi di dimensioni molto diverse, quindi vuol dire che la gente magari ci ha lavorato il weekend, ha lavorato di sera ma non perché stavano facendo l'upskilling ma perché stavano facendo una roba che gli è piaciuta e questa per me è stata una delle vittorie più grosse, penso che sia vero per molte delle persone che ci seguono.
+
+Di solito, ragà, l'upskilling aziendale, qual lo dico e qual lo nego, è una rottura di palle, oggettivamente. Fare upskilling in azienda, a meno che tu non stia facendo una cosa davvero importante, è soltanto una perdita di tempo e una rottura di palle. Il feedback più bello che abbiamo ricevuto dai dev è stato, ragà, avete fatto una roba figa che mi ha insegnato qualcosa da cui mi porto qualcosa a casa.
+
+Brainrepo (01:35:14.328)
+ma anche senza negare.
+
+Alfonso Graziano (01:35:33.391)
+e questo per me è stato infatti nel working group che avevamo e che sono circolati diversi feedback quella secondo me è stata la vittoria più grossa cioè noi abbiamo creato le reimpact creato da dev per i dev validato dai dev e abbiamo avuto un buon feedback quindi quella secondo me è stata la cosa più
+
+più interessante di tutto questo esperimento e lo vediamo adesso perché le persone che utilizzano SpecDrivenDevelopment in produzione dopo aver seguito il learning path riescono ovviamente con tutte le difficoltà del caso perché comunque una cosa è fare una demo, una cosa è utilizzarlo 10 ore, una cosa è utilizzarlo sul progetto tura al giorno però riescono ad utilizzare questi strumenti quindi vuol dire che alla fine abbiamo fatto qualcosa di positivo
+
+Brainrepo (01:36:22.84)
+No no da quel punto di vista assolutamente niente da ridire e tra l'altro e tra l'altro ripeto
+
+è stato veramente veramente interessante e complesso anche da ragionare in termini di cazzo una dozione così massiva è facilissimo a fallire
+
+Alfonso Graziano (01:36:46.894)
+Posso fare una marchetta, cioè non è una marchetta però tra l'altro alla fine una versione diciamo estesa del learning pad l'abbiamo anche resa open source quindi non è sul github di Nierform è sul mio github personale anyway però se andate su github c'è il learning pad che noi utilizziamo esteso
+
+perché ovviamente quello di Nierform, quell'aziendale l'abbiamo dovuto tenere relegato per permettere alle persone di completarlo in un certo tempo però c'è una versione estesa su github quindi se c'avete voglia di fare upskilling lo trovate lì piccola marchetta, un repository github vedi questo poteva essere un balocco, mannaggia, non lo so giocato
+
+Brainrepo (01:37:31.831)
+e infatti mi sa che vista l'ora passiamo direttamente al paese dei valocoli
+
+Brainrepo (01:37:41.879)
+Luca, prima di passare al pensiero di Baluchi Luca, hai qualche domanda?
+
+Luca (01:37:47.316)
+Ero molto curioso di tutto quello che avete parlato finora però c'erano parecchi non detti quindi mi riservo il diritto di chiedere maggiori dettagli su questo, su un po' tutto, però forse è perché ero, stato distratto nei primi 40 minuti della puntata.
+
+No, tutto è abbastanza nuovo, interessante, avrei tante di quelle domande, perché voi ovviamente la state vivendo in una scala più grande di quella che attualmente la sto vivendo io, quindi sono dinamiche che le sento mie ma che ancora per fortuna non...
+
+non le ho viste così da vicino. Però avete una domanda, ce l'ho. Avete, vi siete concentrati molto su Dead, perché la vostra dimensione, la nostra dimensione, diciamo, è quella. Non so, perdonatemi se l'avete parlato anche prima. Invece, cosa è cambiato e cosa non è cambiato all'infuori del cerchio magico degli sviluppatori?
+
+quindi rapporto con stakeholders o con altre aree, altre reparti o insomma fuori dal cerchio magico di them.
+
+Brainrepo (01:39:27.448)
+ok e... Alfoo vuoi andare se no vado io come preferisci Allora si, intanto è cambiato che molti stickholder arrivano con idee un pelo più chiare o di microprototipi e se non arrivano con i microprototipi comunque hanno provato a fare qualcosa parlo di persone di prodotto hanno provato i classici no code tool o ai vibe
+
+Alfonso Graziano (01:39:31.918)
+No no
+
+Luca (01:39:32.372)
+se non l'avete già detto, se no mi riascolto la puntata.
+
+Brainrepo (01:39:54.84)
+code, tool, così questo tipo, quindi ti arrivano con delle cioffe che ha pedali che però cazzo chiariscono già un botto di requirements.
+
+Alfonso Graziano (01:40:07.502)
+per l'allineamento non come prodotto ma per allineare gli stakeholder
+
+Brainrepo (01:40:11.96)
+Esatto, quello che prima succedeva in realtà era che quando Prodotto arrivava non aveva un cazzo di idea di cosa voleva fare. Oggi quando Prodotto arriva, se il Product Manager o l'agente di Prodotto è un pellino sveglia, ha provato a farsi un prototipo, quindi ha iniziato a sbattereci la testa nelle identificazioni dei requirements.
+
+è nell'identificazione di problemi lapaliziani di processo, di contesto, di meccanismi basici, E quindi quando ti arriva a già fatto un percorso di self-analisi e di ricerca, 2, arriva con qualcosa che ti permette a te di capire il dominio più velocemente, perché molti non detti diventano palesi dal modo in cui
+
+Questo prototipo è creato, sviluppato, quel bottone è messo. Che non vuol dire che sia corretto, ma che vuol dire che sta passando l'informazione. Quindi questo è il primo elemento. Il secondo elemento è il fatto che anche i manager, mid manager, stanno, adesso dico una cosa bella, stanno diventando più affidabili.
+
+perché quale cazzo di action item che buttavano così dette non dette nei meeting ed aspettavano a noi dire alla fine del meeting ragazzi guarda alla fine di questo meeting con gli stakeholder queste sono gli action item che abbiamo tirato fuori assegnate a tizio caio questi questi questi soggetti questi stakeholder stanno iniziando a usare applicazioni come come granola come come war come crisp che
+
+come teams stessa che estragono gli action item e li salvano e quindi questi si ritrovano nella lista degli action item da una parte per cui quello stakeholder che doveva inseguire
+
+Brainrepo (01:42:25.369)
+lo devi ancora inseguire però alcune volte ti arriva direttamente lui e guardate che sembra una cazzata ma per il ruolo del tech lead che è fondamentalmente il ruolo anche del manager remove roadblocker prima l'abbiamo definito non so se c'eri l'anas dello sviluppo, l'anas del team, quello che deve togliere pietre dalla carreggiata ecco...cazzo questa roba è bella
+
+Alfonso Graziano (01:42:54.222)
+rompì la vita tantissimo cioè o meglio toglie la parte toglie una delle parti rompi scatole del lavoro che non è nulla assolutamente la mitica da la possibilità da la possibilità al tech lead di concentrarsi su cose un po
+
+Brainrepo (01:43:02.584)
+o la mitica, perché non tutti la usano.
+
+Alfonso Graziano (01:43:17.294)
+insomma un po' tra virgolette più importanti che dover rincorrere gli stakeholders e questa è effettivamente una cosa che hanno dato anch'io tantissimo che molto spesso anche persone che non sono nei meeting, che dovevano essere nei meeting ma per whatever reason non ci stanno ci chiedono che mi passi la transcription di granola e poi fanno cose sulla base della transcription di granola che è fantastico
+
+Brainrepo (01:43:42.488)
+questo ci aggiungerei il fatto, un lato anche negativo, è che da noi raramente capita, perché gli stakeholders solitamente, lavorando molto spesso per multinazionali, stakeholders sanno la complessità dell'osilopo software generalmente, quindi sanno che non è che c'è una delivery domani mattina, o almeno quelli che ho incontrato, io poi magari qualche eccezione ci può essere, però...
+
+hanno consapevolezza della complessità però mi immagino che in contesti più piccoli o meno consapevoli uno dei problemi da affrontare generato proprio da questa facilità e da questo contesto è quello di argomentare e spiegare complessità che non sono immediatamente percepibili.
+
+Alfonso Graziano (01:44:30.286)
+Il classico stakeholder che arriva ha fatto un prototipo su Lovaball e ti dice ma siamo in produzione.
+
+Brainrepo (01:44:36.024)
+mettiamola in produzione.
+
+Ma questo non è molto diverso da quello che si curava prima su Google e oggi si cura su ChatGPT. Parliamo dello stesso meccanismo, della stessa dinamica. Quindi sì, sono queste secondo me alcune delle... delle... delle meccaniche che stanno cambiando sulle figure che non sono necessariamente lo sviluppatore.
+
+Luca (01:45:02.613)
+condivido l'esperienza, infatti l'avevo anche accennato prima, che quantomeno riesci a visualizzare o avere la stessa visione di quello che hanno in mente perché hanno già tradotto dalla loro mente a qualcosa di tangibile quello che avevano in testa e che avrebbe richiesto tutta una serie di discussioni, sì ma come lo vuoi, però hai pensato a questo flusso, hai pensato a questo
+
+È tanto lavoro che si fanno al momento probabilmente anche a casa perché ho scoperto che la AI fatigue non colpisce solo noi ma anche loro. Beh, del resto noi eravamo, noi facevamo le notti davanti al computer quando stavamo imparando, adesso lo stanno facendo anche loro, soltanto che vanno a una velocità veramente... sono molto più veloci in output.
+
+poi sulla qualità dell'output va bene, lo sappiamo però c'è tanto output da validare e da controllare. Certo poi dicono, ci hanno provato, dammi un'occhiata a quello che ho fatto e lì cito un Piero Savastano in un video che ho visto, scusa il codice, non l'hai letto tu che l'hai fatto, lo devo leggere io, anche no grazie.
+
+Però il vero valore è proprio quello, realtà, vedi che cosa vogliono, vedi la loro idea anche in modo interattivo e ti risparmia parecchio.
+
+Brainrepo (01:46:28.216)
+Sì.
+
+Brainrepo (01:46:39.833)
+E in realtà ci sarebbe anche un altro elemento che ancora non va per la maggiore ma credo che ci sarà una tendenza che quella di usare, che le persone stanno iniziando a usare l'AI come companion thinking. Io ormai lo uso profondamente come compagno di ragionamento ed è fighissimo perché a differenza di mia moglie che dorme, mi molla da solo.
+
+quella roba c'è sempre, la qualità di mia moglie è decisamente superi di qualunque c'è a gpt. Questo credo mi garantisca un'altra settimana di sicurezza matrimoniale. Sì tra l'altro voi vedete anche il backstage con le luci arrafazzonate che cropperò perché mi ha morto la telecamera nel frattempo.
+
+Luca (01:47:22.132)
+e lì
+
+Brainrepo (01:47:37.88)
+No, però il fatto che appunto delle persone stiano iniziando ad usarlo come compagno di pensiero è importante. Io lo vedo dalle altre attività che non sono tecnologiche quando mi confronto con i soci e con i collaboratori. Cioè arrivano...
+
+Brainrepo (01:48:03.064)
+arrivano in pochi giorni con una profondità di ragionamento, io stesso arrivo da loro con una profondità di ragionamento che avrebbe preso magari sei mesi una stanza di tre persone, quattro persone a pensare quindi alla fine anche questo elemento è importante, poi da quando ho installato Hermes io gli sto scendendo le valigie perché è collegato con la mia Knowledge Base Hermes Auto Apprende quindi sto...
+
+sto sviluppando molto da quel punto di vista, non codici ma proprio pensieri, ragionamenti, cose varie e questa cosa ha riattivato il piacere del pensare e aprire tangenti considerate che io ho una skill che è appunto quella di quando apri una tangente traccia il pillar centrale è la tangente che stai aprendo nel ragionamento, ieri questa cosa non si poteva fare in modo così facile no?
+
+mentre stai parlando così o ragionando così a buffo
+
+Alfonso Graziano (01:49:07.758)
+Mauro, sono d'accordissimo su questa cosa e io mi ritrovo con tante persone schillate che lo fanno ed è bellissimo vedere come ragionano con quegli agenti quello che riescono a farci.
+
+C'è anche l'altra parte che dobbiamo considerare che è quella di delego il mio ragionamento alla gente e dai e ti assicuro ho visto persone anche fare quello la differenza è abbissale cioè noti proprio
+
+una differenza di diversi ordini di magnitudo rispetto a chi riesce ad utilizzare il tool per pensare e quindi attiva la mente ed escono cose meravigliose rispetto a chi dice ok questo è il problema dammi la soluzione e fa dispatch, la manda a chi la deve mandare ci sono dei poveri stanzi che la dobbiamo fare
+
+Brainrepo (01:49:59.8)
+è il famoso è il famoso cognitive surrender dal dal vangelo secondo osmani adesso io sappiate che prenderò per il culo tutti i carpati osmani di inizierò dalla lettera ai carpati piuttosto che dal vangelo secondo osmani perché ormai mi sono rotto il cazzo che questi scrivono un blog potà nuova rivoluzione il loop perché dieci minuti prima osmani è uscito con
+
+con il post loop però c'era gente che già lo usava va bene
+
+Brainrepo (01:50:36.505)
+No, faremo delle pillole durante l'estate su questi filoni, quindi saranno pillole, ahimè, perché anche noi facciamo le vacanze, però le faremo. Detto questo, da un'ora e cinquanta minuti passiamo al Paese dei Balocchi, il luogo tipico e topico dove sia i nostri host che i nostri guest condividono con noi un libro, un film o qualunque cosa abbia catturato l'attenzione.
+
+e o reputino interessante da condividere. Quindi la domanda è cosa avete da condividere con noi?
+
+Brainrepo (01:51:22.552)
+Alfò, cosa ci porti in dono come uno dei remaggi?
+
+Alfonso Graziano (01:51:28.782)
+allora vabbè io da buon appassionato di libri, raga vi porterò sempre un libro perché mi piacciono da morire quando al liceo ho scoperto che i libri non erano inutili ho detto va beh figo, bello puoi puoi davvero imparare roba puoi leggere cose le app che funzionano e quindi un libro che vi porto che mi ha
+
+aiutato particolarmente nelle ultime settimane, che non gli avrei dato a dulire, cioè è una roba che io non gli avrei dato neanche un eurocrawl, l'ho sentito in un paio di posti che ritengo interessanti, quindi ho detto va be',
+
+Brainrepo (01:52:06.456)
+e il famoso libro di Benja e Fede.
+
+Alfonso Graziano (01:52:10.254)
+perché? no si chiama The Trusted Advisor che è praticamente un libro sulla consulenza che detta così è brutta però è un libro su come gestire la fiducia, come gestire fiducia, come gestire le relazioni con diversi stakeholder che possono avere necessità differenti pensavo fosse una cosa molto superficiale all'americana
+
+e invece ragazzi dopo averlo detto tutto e dopo averlo applicato perché l'ho applicato su una situazione reale che mi ha portato diciamo buone tre settimane del mio tempo perché ho avuto insomma una questione importante e delicata allo stesso momento da gestire la tua state holder dopo aver applicato quelle cose non dico alla lettera però comunque in first principles è andato tutto liscissimo
+
+e quindi ho la prova che insomma determinate cose fatte in un certo modo funzionano quindi il mio balocco è The Trust and Advisor se siete dei consulenti soprattutto se siete dei consulenti che hanno rapporti con stakeholder lo consiglio tantissimo mi è piaciuto da morire e non è fuffa ripeto pensavo fosse una supercazzola all'americana invece tanta tanta roba
+
+Brainrepo (01:53:37.304)
+Quando hai detto supercazza dall'americana io ho pensato a Tony Robbins, non so perché ma ho pensato a lui.
+
+Alfonso Graziano (01:53:41.71)
+sì, era l'immagine che avevo in mente.
+
+Brainrepo (01:53:44.76)
+E quindi io porto come balocco l'evento che Tony Robbins terrà a Lyon tra qualche giorno. No, stavo pensando a che balocco portare.
+
+Brainrepo (01:54:04.312)
+e porto questo balocco che è una riflessione.
+
+Brainrepo (01:54:12.76)
+ultimamente ho fatto all in su tutto ciò che è tecnologia, per metermi al passo coi tempi, inseguire tutto. Il mio balocco è la digital deconexion che sto per iniziare a fare da 1 luglio fino a fine agosto. sono comprato una piccola moto e quindi me ne scapperò in giro in moto lasciando il computer spento.
+
+Questo è un baloco, cioè il consiglio del vecchio nonno che dice Masticazzi alleai. Spegniamo il portatile, mettiamoci un po' di musica e andiamo a fare una passeggiata, andiamo a fare qualcosa e poi magari quando torniamo a casa o dopo un mese riusciamo ad avere delle energie molto più importanti e soprattutto abbiamo rimesso in ordine un po' di informazioni perché
+
+il quello che mi stava succedendo ultimamente era che stavo ingestando talmente tante informazioni da non avere il tempo di farsi diventare le cose importanti di questa informazione, cioè cosa percola di nuovo, stavo ricadendo nel loop, cosa percola delle informazioni che sto ingestando, cosa rimane? Ecco, fatta la tara vedevo che molti elementi si perdevano e ne rimaneva veramente poco e quindi se questo deve essere
+
+ho ingestato un insieme di informazioni molto alta fino ad adesso adesso lasciamo si diventare questo senza senza davvero farmi mangiare dall'ansia di cosa sarà il mondo tra due mesi perché sì probabilmente saranno passate altre quattro tecniche non ci sarà più il loop development ci sarà qualche altra cosa ma i sette passaggi intermedi
+
+potranno essere summarizzati o riassunti con molto meno effort. ecco, questo...
+
+Brainrepo (01:56:21.784)
+Questo è un po' po' un po' il mio balocco Luca
+
+Luca (01:56:30.068)
+siamo soli. No.
+
+Brainrepo (01:56:32.728)
+se Alfonso mi appena scritto che è saltata la corrente a casa sua e entro subito
+
+Luca (01:56:38.324)
+bene allora il mio consiglio è perché spegne il computer cioè partite ma lasciate l'acceso e lasciate lavorare qualche lm locale anche da 8b no scherzo anzi anch'io lo farò e proprio per questo lo farò andando in un posto molto molto molto lontano
+
+Ho avuto l'esigenza di comunicare, avrò l'esigenza di comunicare con gli autotoni di questo posto molto molto lontano e quindi ho cominciato a imparare un po' di cose e oggettivamente non ce l'avevo mai pensato ma qualora anche voi dovesse avere qualche problema con la lingua insomma non solo inglese ovviamente ma come può essere il tedesco il cinese o il giapponese
+
+l'arabo o quello che è. Cioè ho scoperto un'app che è fatta veramente veramente veramente bene che è il traduttore vocale instant. Alla fine non fa niente di particolare, tu premi il microfono, detti e lui traduce istantaneamente. Però c'è tante opzioni, parecchio comode, oltre al fatto che ti puoi scaricare le varie lingue.
+
+offline e mi ha insomma mi ha colpito ma perché anche se era semplice come app però è fatta bene quindi se vi capita visto che siamo siamo giugno luglio non lo so visto che sarà tempo siamo giugno, intendo la puntata non so quando andrà in un domani
+
+Brainrepo (01:58:17.752)
+siamo a giugno a giugno
+
+Brainrepo (01:58:23.544)
+domani mattina
+
+Luca (01:58:27.092)
+vi so che siamo a giugno, molti partiranno per le ferie magari vanno in posti non anglofoni e insomma potrebbe essere utile come può essere utile? una cosa che ho scoperto che forse qualcuno già conosce Youglish per sapere la pronuncia in inglese sostanzialmente è un sito Youglish dove
+
+hai dubbi su come viene pronunciata una parola, tu scrivi quella parola e ti mostra tutti i video di youtube che dicono quella parola nel momento in cui la dicono. È abbastanza famosa, molto utile sicuramente per l'inglese, però ho scoperto che sta anche in tutte le altre lingue e quindi l'ho usato e lo sto usando per sostanzialmente riuscire a sopravvivere in posti lontani. Quindi sono affamato.
+
+sete o fame o sonno. Ma cacca va bene, però pappa sì. E quindi niente, questi sono proprio balocchi pratici perché anche i libri non ne sto leggendo se non uno su Pirati Corsari e Fili Bustieri, ma...
+
+è relativo.
+
+Brainrepo (01:59:43.032)
+No, potrebbe tornarmi utile per il mio francese di tutti i giorni visto che sbaglio gli accenti e i vicini di casa mi perculano a livello imperiale.
+
+Luca (01:59:52.34)
+ma col francese io non lo so non so se funziona tutto questo
+
+Brainrepo (01:59:58.008)
+Ok, ok, siamo a due ore precise spaccate in punto, quindi ringraziamo di nuovo Alfonso, grazie DSC venuto a trovare.
+
+Alfonso Graziano (02:00:09.837)
+Grazie ragazzi per l'invito, sempre stra divertente chiacchierare.
+
+Brainrepo (02:00:14.904)
+Ringrazio anche Luca, grazie mille, ma eri con noi, sappiamo bene. Ringraziamo anche la mia fotocamera che è morta quindi probabilmente dovrò giustificare un'altra spesa mia moglie. E niente vi do appuntamento alla prossima settimana. Ciao ciao!
+
+Luca (02:00:18.42)
+Scusate il ritardo, non sono sempre con voi.
+
+Luca (02:00:40.084)
+ciao
+
+Alfonso Graziano (02:00:40.141)
+Ciao!
+
+Brainrepo (02:00:45.177)
+Vedo un cazzo!
+
